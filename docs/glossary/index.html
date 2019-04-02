@@ -3,3 +3,21 @@ layout: default
 title: Glossary
 ---
 <h1 class="govuk-heading-xl">Glossary</h1>
+
+<p class="govuk-body-l">
+  The following is a glossary of terms used in the service.
+</p>
+
+<h2 class="govuk-heading-l">Acronyms</h2>
+<ul>
+  {% for acronym in site.data.acronyms %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body"><em>{{ acronym.acronym }}</em></p>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+      <p class="govuk-body">{{ acronym.meaning }}</p>
+    </div>
+  </div>
+  {% endfor %}
+</ul>
