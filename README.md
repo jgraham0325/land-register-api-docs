@@ -6,6 +6,8 @@ This repo will be updated and extended regularly, but will initially include the
 
 Please contact the Street Manager team directly through email or Slack, should you have any queries or require additional support.
 
+**NOTE:** This documentation is being trialled for use with the Street Manager pilot and private beta, it is not in final state and should not be taken as production documentation.
+
 ## GitHub pages
 
 This repository contains a folder `/docs` which is intended to be served as a [Jekyll](https://jekyllrb.com/docs/github-pages/) static HTML site for serving the documentation via GitHub pages. See [here](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for details on setting up the repository.
