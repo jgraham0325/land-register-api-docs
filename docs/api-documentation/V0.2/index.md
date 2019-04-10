@@ -163,8 +163,7 @@ from the service to give their users the most up-to-date view on what is
 going on with their works. Street Manager has a number of ways which you
 can extract data from the service.
 
-![](media/image4.png){width="5.694444444444445in"
-height="3.3472222222222223in"}
+![Getting data](images/getting-data-1.png)
 
 **Individual work data**
 
@@ -382,15 +381,13 @@ token is valid for one hour.** Once the token has been acquired it can
 be added to all protected resource requests made via swagger using the
 Authorize button.
 
-![](media/image5.jpg){width="1.7002777777777778in"
-height="0.6533333333333333in"}
+![authorise](images/authorise.png)
 
 When clicked this will present an input to enter the token. Once
 authorized then all protected resource requests made via swagger will
 have the token header set.
 
-![](media/image6.jpg){width="5.000695538057743in"
-height="2.3336111111111113in"}
+![available authorisations](images/available-authorisations.png)
 
 ### Error responses
 
@@ -438,8 +435,7 @@ permit application as well as how various actions affect the works
 lifecycle. These endpoints are all available as part of the street
 manager API and are discussed in more detail within the resource guide.
 
-![](media/image7.jpg){width="7.293873578302712in"
-height="2.643350831146107in"}
+![sequence diagram](images/sequence-calls-used-to-submit-and-respond-to-a-permit-application.png)
 
 The following actions can be performed at any subsequent stage in the
 sequence from the stage they are available:
@@ -720,8 +716,7 @@ Street Manager API supports retrieving details on sites, details TBC.
 
 #### Submit permit application
 
-![](media/image8.jpg){width="5.000695538057743in"
-height="3.1256944444444446in"}
+![Submit permit application](images/submit-permit-application.png)
 
 As shown in the sequence, a promoter submits a permit application at
 which point an HA can assess it. Both a promoter and HA can add comments
@@ -827,8 +822,7 @@ work.
 
 #### Assess permit application
 
-![](media/image8.jpg){width="5.000695538057743in"
-height="3.1256944444444446in"}
+![Assess permit application](images/assess-permit-application.png)
 
 As shown in the sequence diagram, once a permit application has been
 submitted an HA user can provide an assessment decision for the permit.
@@ -870,8 +864,7 @@ cannot assess their own permits.
 
 #### On site
 
-![](media/image9.jpg){width="5.564029965004375in"
-height="3.397361111111111in"}
+![On site](images/on-site.png)
 
 Once a permit has been submitted and granted by an HA, the promoter
 which raised the permit is able to:
@@ -972,8 +965,7 @@ exists on the works record, which will cover in a separate section.
 
 #### Add reinstatements
 
-![](media/image10.jpg){width="6.459304461942257in"
-height="3.297361111111111in"}
+![Add reinstatements](images/add-reinstatements.png)
 
 As shown in the sequence diagram, once the a work has been started by
 the promoter and an excavation was carried out, then a promoter can add
@@ -1039,8 +1031,7 @@ granted and started before that site can be made permanent.
 
 #### Add inspections
 
-![](media/image11.jpg){width="6.282639982502187in"
-height="3.062361111111111in"}
+![Add inspections](images/add-inspections.png)
 
 As shown in the sequence diagram above, once a work has been started
 then an HA can issue an inspection. Similar to reinstatements, this can
