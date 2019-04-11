@@ -8,6 +8,21 @@ Please contact the Street Manager team directly through email or Slack, should y
 
 **NOTE:** This documentation is being trialled for use with the Street Manager pilot and private beta, it is not in final state and should not be taken as production documentation.
 
+## Updating the API documentation
+
+Steps for creating a new API Specification version:
+1. Copy the previous versions entire folder (e.g. `cp -r docs/api-documentation/V0.2 docs/api-documentation/V0.3`)
+2. Update the API documentation in the new version
+3. Add a link to the new version in the `docs/api-documentation/index.html`
+
+Notes for updating the API documentation:
+* The API Documentation uses markdown augmented with [gov.uk design system styles](https://design-system.service.gov.uk/)
+* See [here](https://digitaldrummerj.me/styling-jekyll-markdown/) for guide on adding CSS styles to markdown HTML
+* Code sections should be wrapped in `<code>...</code>` tags
+* All paragraphs need to be followed with `{: .govuk-body}`
+* All heading must be followed by `{: .govuk-heading-l}`, `{: .govuk-heading-m}` etc.
+* Some HTML elements must use explicit HTML in markdown to render correctly, such as lists/tables, e.g. `<ol class="govuk-list govuk-list--bullet"><li>item</li></ol>` NOT `* item`
+
 ## GitHub pages
 
 This repository contains a folder `/docs` which is intended to be served as a [Jekyll](https://jekyllrb.com/docs/github-pages/) static HTML site for serving the documentation via GitHub pages. See [here](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for details on setting up the repository.

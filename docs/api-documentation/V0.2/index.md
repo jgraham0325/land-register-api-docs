@@ -2,11 +2,11 @@
 layout: default
 title: API specification V0.2
 ---
-<h1 class="govuk-heading-xl">API specification</h1>
+# API specification
+{: .govuk-heading-xl}
 
-<p class="govuk-body-l">
-  Version 0.2 Draft
-</p>
+Version 0.2 Draft
+{: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -46,8 +46,7 @@ The following is a list of significant changes since version 0.1 of this documen
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Exposed Street Lookup API, GeoJSON API and Reporting API
-    for external use, see <em>Technical Overview</em></li>
+  <li>Exposed Street Lookup API, GeoJSON API and Reporting API for external use, see <em>Technical Overview</em></li>
   <li>Details added for Polling endpoint planned for Reporting API, see <em>Technical Overview</em></li>
   <li>Plans added for Notifications, see <em>Technical Overview</em></li>
   <li>Details added for User account roles and permissions, see <em>Security</em></li>
@@ -107,7 +106,7 @@ organization and role. We will cover each in detail but at a high level
 they are:
 {: .govuk-body}
 
-**Promoter workflows:**
+**Promoter workflows**
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -118,8 +117,7 @@ they are:
   <li>Add comments to a works record</li>
 </ol>
 
-
-**Highway authority workflows:**
+**Highway authority workflows**
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -248,41 +246,36 @@ updated works.
 ## Versioning
 {: .govuk-heading-l #versioning}
 
-*Note: API versioning will only be used for updates which change
-existing API functions, potentially breaking existing integration and
-will only be introduced after private beta.*
+*Note: API versioning will only be used for updates which change existing API functions, potentially breaking existing integration and will only be introduced after private beta.*
+{: .govuk-body}
 
 ### Iteration and change
+{: .govuk-heading-m}
 
--   API updates to be released at fixed intervals -- potentially every 3
-    > or 6 months (TBD)
-
--   Only the newly released version, and one version previous to it,
-    > will be supported
-
--   API is versioned via request URL path
-
--   So you don't need to upgrade immediately, but you can only be one
-    > version out
-
--   Release notes will be published for each release
+<ol class="govuk-list govuk-list--bullet">
+  <li>API updates to be released at fixed intervals -- potentially every 3 or 6 months (TBD)</li>
+  <li>Only the newly released version, and one version previous to it, will be supported</li>
+  <li>API is versioned via request URL path</li>
+  <li>So you don't need to upgrade immediately, but you can only be one version out</li>
+  <li>Release notes will be published for each release</li>
+</ol>
 
 ### API Versioning
+{: .govuk-heading-m}
 
--   Versioning will be controlled via the URL path.
-
--   Versioning structure is TBC and will be researched during the pilot.
+<ol class="govuk-list govuk-list--bullet">
+  <li>Versioning will be controlled via the URL path.</li>
+  <li>Versioning structure is TBC and will be researched during the pilot.</li>
+</ol>
 
 ### Release Management
+{: .govuk-heading-m}
 
--   API users will be notified of changes/updates prior to them being
-    > released (e.g. via DfT email, newsletter and GitHub).
-
--   Releases / versions will consider the prevention of breaking change,
-    > with backwards compatibility being supported where appropriate.
-
--   Sandpit / pre-production environments will be made available to
-    > support new releases.
+<ol class="govuk-list govuk-list--bullet">
+  <li>API users will be notified of changes/updates prior to them being released (e.g. via DfT email, newsletter and GitHub).</li>
+  <li>Releases / versions will consider the prevention of breaking change, with backwards compatibility being supported where appropriate.</li>
+  <li>Sandpit / pre-production environments will be made available to support new releases.</li>
+</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -291,90 +284,86 @@ will only be introduced after private beta.*
 {: .govuk-heading-l #testing}
 
 ### Sandbox environment
+{: .govuk-heading-m}
 
-A sandbox environment is available for authorised users to test their
-API integration.
+A sandbox environment is available for authorised users to test their API integration.
+{: .govuk-body}
 
 Details TBC
+{: .govuk-body}
 
 ### Other testing
+{: .govuk-heading-m}
 
 #### Generating test client and server stubs
+{: .govuk-heading-s}
 
-It is possible to generate test clients and servers using the available
-API documentation (Swagger JSON) which can be retrieved directly from
-the exposed APIs in Sandbox environments. This allows isolated testing
-of your integration without dependency on test environments and can
-speed up development.
+It is possible to generate test clients and servers using the available API documentation (Swagger JSON) which can be retrieved directly from the exposed APIs in Sandbox environments. This allows isolated testing of your integration without dependency on test environments and can speed up development.
+{: .govuk-body}
 
-[[Swagger-codegen](https://swagger.io/tools/swagger-codegen/)]{.underline}
-supports generating client and server stubs for a variety of languages,
-see here for details. Below is an example of generating Java client and
-server stubs using the
-[[Swagger-codegen]{.underline}](https://swagger.io/tools/swagger-codegen/)
-utility.
+[Swagger-codegen](https://swagger.io/tools/swagger-codegen/) supports generating client and server stubs for a variety of languages, see here for details. Below is an example of generating Java client and server stubs using the [Swagger-codegen](https://swagger.io/tools/swagger-codegen/) utility.
+{: .govuk-body}
 
-**Requires:**
+**Requires**
+{: .govuk-body}
 
--   Java (tested with openjdk version "11.0.1" 2018-10-16)
-
--   Maven for build
-
--   Swagger Codegen
+<ol class="govuk-list govuk-list--bullet">
+  <li>Java (tested with openjdk version "11.0.1" 2018-10-16)</li>
+  <li>Maven for build</li>
+  <li>Swagger Codegen</li>
+</ol>
 
 #### Client
+{: .govuk-heading-s}
 
 Generated with command:
+{: .govuk-body}
 
-swagger-codegen generate -i swagger.json -l java -o
-./streetmanager-apiclient-java
+<code>swagger-codegen generate -i swagger.json -l java -o ./streetmanager-apiclient-java</code>
 
-The generated code for the template had a number of errors which
-required manual corrections.
+The generated code for the template had a number of errors which required manual corrections.
+{: .govuk-body}
 
 Corrections:
+{: .govuk-body}
 
--   pom.xml - updated \<java.version\>1.7\</java.version\> to
-    > \<java.version\>1.8\</java.version\> to support annotations
-
--   pom.xml - added dependency javax.annotation to replace deprecated
-    > class
-
--   Find/Replace body\@ApiParam to body,\@ApiParam due to template error
-    > on generated clients • Find/Replace new BigDecimal() to new
-    > BigDecimal(0)due to template error on generated tests
+<ol class="govuk-list govuk-list--bullet">
+  <li>pom.xml - updated <java.version>1.7</java.version> to <java.version>1.8</java.version> to support annotations</li>
+  <li>pom.xml - added dependency javax.annotation to replace deprecated class</li>
+  <li>Find/Replace body@ApiParam to body,@ApiParam due to template error on generated clients</li>
+  <li>Find/Replace new BigDecimal() to new BigDecimal(0)due to template error on generated tests</li>
+</ol>
 
 To build:
+{: .govuk-body}
 
-mvn package
+<code>mvn package</code>
 
 #### Server
+{: .govuk-heading-s}
 
 Generated with command:
+{: .govuk-body}
 
-swagger-codegen generate -i swagger.json -l spring -o
-./streetmanager-apistub-java-spring
+<code>swagger-codegen generate -i swagger.json -l spring -o ./streetmanager-apistub-java-spring<code>
 
-The generated code for the template had a number of errors which
-required manual corrections.
+The generated code for the template had a number of errors which required manual corrections.
+{: .govuk-body}
 
 Corrections:
+{: .govuk-body}
 
--   pom.xml - updated \<java.version\>1.7\</java.version\> to
-    > \<java.version\>1.8\</java.version\> to support annotations
+<ol class="govuk-list govuk-list--bullet">
+  <li>pom.xml - updated <java.version>1.7</java.version> to <java.version>1.8</java.version> to support annotations</li>
+  <li>pom.xml - added dependencies for javax.xml.bind to replace deprecated class</li>
+  <li>Find/Replace body\@ApiParam to body,\@ApiParam due to template error on generated controllers</li>
+  <li>Find/Replace new BigDecimal() to new BigDecimal(0)due to template error on generated tests To run:</li>
+</ol>
 
--   pom.xml - added dependencies for javax.xml.bind to replace
-    > deprecated class
-
--   Find/Replace body\@ApiParam to body,\@ApiParam due to template error
-    > on generated controllers
-
--   Find/Replace new BigDecimal() to new BigDecimal(0)due to template
-    > error on generated tests To run:
-
+<code>
 mvn package
-
-java -jar target/swagger-spring-1.0.0.jar \--server.port=8080
+java -jar target/swagger-spring-1.0.0.jar --server.port=8080
+</code>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -382,75 +371,89 @@ java -jar target/swagger-spring-1.0.0.jar \--server.port=8080
 ## Security
 {: .govuk-heading-l #security}
 
-###
-
 ### HTTPS
+{: .govuk-heading-m}
 
-All Street Manager APIs are secured using Transport Layer Security (TLS)
-v1.2 certificates signed by a standard certificate authority.
+All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2 certificates signed by a standard certificate authority.
+{: .govuk-body}
 
 ### Authentication and Authorization
+{: .govuk-heading-m}
 
 All resource endpoints in the API with the exception of authentication
 and health-checks, require a JWT to be passed in the \'token\' header of
 the request. The JWT contains information about the user and allows them
 to access routes, services, and resources that are permitted with that
 token. Without it the request will be met with a 401 error response.
+{: .govuk-body}
 
 ### User accounts and permissions
+{: .govuk-heading-m}
 
 External systems integrating with Street Manager should use specific
 credentials setup for API users. This is to allow Street Manager to
 differentiate between Web UI user accounts and API users. User accounts
 are assigned specific roles, such as *planner* and *admin*.
+{: .govuk-body}
 
 *Note: Currently systems who need to act as users associated with
 multiple organisations, i.e. submitting permits for multiple utility
 companies, need to use separate user accounts for each organisation.*
+{: .govuk-body}
 
 ### JWT
+{: .govuk-heading-m}
 
 Json Web Token (JWT) is an open standard for exchanging information
 securely. The entities of street manager exchange information using JWTs
 and resources of the street manager API require that a JWT be provided
 as part of the request. This will be discussed in detail as part of the
 security section.
+{: .govuk-body}
 
 ### Resource
+{: .govuk-heading-m}
 
-POST /authenticate
+<code>POST /authenticate</code>
 
 The authenticate endpoint takes a case sensitive username (email
 address) and password, returning a JWT token if successful. **The JWT
 token is valid for one hour.** Once the token has been acquired it can
 be added to all protected resource requests made via swagger using the
 Authorize button.
+{: .govuk-body}
 
 ![authorise](images/authorise.png)
 
 When clicked this will present an input to enter the token. Once
 authorized then all protected resource requests made via swagger will
 have the token header set.
+{: .govuk-body}
 
 ![available authorisations](images/available-authorisations.png)
 
 ### Error responses
+{: .govuk-heading-m}
 
 It's important to distinguish between authentication and authorization
 error responses as it will help narrow down where an issue is occurring.
+{: .govuk-body}
 
 ### Authentication Failed
+{: .govuk-heading-m}
 
-{ "message": "Authentication failed", "error": { "status": 401 }
+<code>{ "message": "Authentication failed", "error": { "status": 401 }</code>
 
 Authentication fails when the token provided in the request is invalid.
 The token may have expired or the value set as the token was incorrect.
 You may also see this error when calling the POST /authenticate endpoint
 with invalid credentials I.e. wrong username or password.
+{: .govuk-body}
 
 ### Access Restricted
+{: .govuk-heading-m}
 
-{ "message": "Access restricted", "error": { "status": 401 }
+<code>{ "message": "Access restricted", "error": { "status": 401 }</code>
 
 The access restricted error indicates that although the token was valid,
 the user does not have permissions to perform the desired action. This
@@ -458,13 +461,16 @@ error could arise for several reasons which will be listed in detail as
 part of the resource section, but common triggers would be attempting to
 manipulate entities (permit, reinstatement, inspection etc.) not related
 to your organization.
+{: .govuk-body}
 
 ### Rate limiting
+{: .govuk-heading-m}
 
 To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
 sending calls
+{: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -477,99 +483,88 @@ a large amount of data retrieval functionality whilst the street manager
 API drives a lot of key user workflows e.g. submit permit, assess
 permit, etc. These two APIs together form much of the common sequences a
 user is likely to perform.
+{: .govuk-body}
 
 Below is an example of sequence calls used to submit and respond to a
 permit application as well as how various actions affect the works
 lifecycle. These endpoints are all available as part of the street
 manager API and are discussed in more detail within the resource guide.
+{: .govuk-body}
 
 ![sequence diagram](images/sequence-calls-used-to-submit-and-respond-to-a-permit-application.png)
 
 The following actions can be performed at any subsequent stage in the
 sequence from the stage they are available:
+{: .govuk-body}
 
--   File upload
-
--   Add a comment
-
--   Add reinstatement
-
--   Add inspections
+<ol class="govuk-list govuk-list--bullet">
+  <li>File upload</li>
+  <li>Add a comment</li>
+  <li>Add reinstatement</li>
+  <li>Add inspections</li>
+</ol>
 
 Whilst the above focuses much on data manipulation via the street
 manager API, here is an example of some data retrieval calls that may be
 performed alongside these actions via the reporting API.
+{: .govuk-body}
 
--   **Permits awaiting assessment:** GET /permits?status=submitted
-
--   **Expiring interim reinstatements:** GET /sites?status=interim
-
--   **Disputed FPNs**: GET /fixed-penalty-notices?status=disputed
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Permits awaiting assessment</strong>: <code>GET /permits?status=submitted</code></li>
+  <li><strong>Expiring interim reinstatements</strong>: <code>GET /sites?status=interim</code></li>
+  <li><strong>Disputed FPNs</strong>: <code>GET /fixed-penalty-notices?status=disputed</code></li>
+</ol>
 
 ### Understanding the status of a work
+{: .govuk-heading-m}
 
 As a permit progresses through the sequence above the permit status
 changes. Knowing the various statuses of a permit allows you to filter
 lists of permits related to your organization through the reporting API.
 The statuses of a permit are:
+{: .govuk-body}
 
--   **submitted:** The permit is awaiting assessment
-
--   **granted_proposed:** The permit has been assessed as granted by an
-    HA
-
--   **granted_with_changes:** The permit has been assessed as granted
-    with changes by an HA
-
--   **refused:** The permit has been assessed as refused by an HA
-
--   **granted_in_progress:** The permit has been started by the
-    promoter after being granted
-
--   **closed:** The permit has been stopped by the promoter
-
--   **cancelled:** The permit has been cancelled by the promoter
-
--   **deemed_proposed:** The permit has been automatically deemed as it
-    was not assessed before the deadline date
-
--   **deemed_in_progress**: The permit has been started by the
-    promoter after being deemed
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>submitted</strong>: The permit is awaiting assessment</li>
+  <li><strong>granted_proposed</strong>: The permit has been assessed as granted by an HA</li>
+  <li><strong>granted_with_changes</strong>: The permit has been assessed as granted with changes by an HA</li>
+  <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
+  <li><strong>granted_in_progress</strong>: The permit has been started by the promoter after being granted</li>
+  <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
+  <li><strong>cancelled</strong>: The permit has been cancelled by the promoter</li>
+  <li><strong>deemed_proposed</strong>: The permit has been automatically deemed as it was not assessed before the deadline date</li>
+  <li><strong>deemed_in_progress</strong>: The permit has been started by the promoter after being deemed</li>
+</ol>
 
 Note: PAA/Major submission will be included as part of this sequence.
-
-###
+{: .govuk-body}
 
 ### Viewing works and permits
+{: .govuk-heading-m}
 
 #### Street Manager API
+{: .govuk-heading-s}
 
 When a permit has been submitted and a works record exists both
 promoters and HAs can view the works record via the GET work endpoint on
 the street manager API. This endpoint requires you to provide the **work
 reference number** which was supplied during the submission of the
 permit application.
+{: .govuk-body}
 
-GET /works/{work reference number}
+<code>GET /works/{work reference number}</code>
 
 This contains information about all of the entities associated with the
 work record, the properties of this response are:
+{: .govuk-body}
 
--   **Active permit:** The currently active permit associated with the
-    works. In the sequence above this would contain the permit awaiting
-    assessment
-
--   **Sites:** Any reinstatement sites that have been added to the works
-    (none initially)
-
--   **Inspections:** Any inspections that have been issued on the works
-    (none initially)
-
--   **FPNs:** Any fixed penalty notices that have been issued on the
-    works (none initially)
-
--   **Permits:** Summary of all permits that have been associated with
-    that works (I.e. multiple permits)
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Active permit</strong>: The currently active permit associated with the works. In the sequence above this would contain the permit awaiting assessment</li>
+  <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
+  <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
+  <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
+  <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (I.e. multiple permits)</li>
+</ol>
 
 It's also possible to retrieve only information about the permit itself
 using the GET permit endpoint. This endpoint requires you to provide the
@@ -578,31 +573,38 @@ permit application submission. As detailed in the submit permit
 application section of the resource guide, the permit reference number
 is simply the works reference number suffixed by an incrementing number
 e.g. {WRN}-01 for the first permit added to that work.
+{: .govuk-body}
 
-GET /works/{work reference number}/permits/{permit reference number}
+<code>GET /works/{work reference number}/permits/{permit reference number}</code>
 
 #### Reporting API
+{: .govuk-heading-s}
 
 The reporting API permits endpoint will be the most useful way to see
 all permits that are relevant to your organisation.
+{: .govuk-body}
 
 *Note: Reporting API data can be retrieved as CSV data to allow
 exporting data to tools such as Excel for more complex reporting needs,
 such as all permit details needed for Fee Reporting.*
+{: .govuk-body}
 
 For example, as an HA you can use the **status** property of a permit
 indicates the current state it is in, for submitted permits that are
 awaiting assessment the permit status will be "submitted".
+{: .govuk-body}
 
-GET /permits?status=submitted
+<code>GET /permits?status=submitted</code>
 
 The **status** query param can be changed to any of the values discussed
 above to retrieve permits in any stage of the sequence. This is
 discussed in more detail in the reporting API resource guide.
+{: .govuk-body}
 
 Promoters can use **status** values to find permits which the HA has
 responded to, see the Street Manager API resource guide for more details
 on Permit status values.
+{: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -610,40 +612,39 @@ on Permit status values.
 ## Resource Guide
 {: .govuk-heading-l #resource-guide}
 
-###
-
 ### Reporting API
+{: .govuk-heading-m}
 
 As discussed in the sequencing section, the reporting API allows
 promoters and HAs to query resource lists for their organization,
 filtering them by various properties. The reporting API currently allows
 users to retrieve the following:
+{: .govuk-body}
 
--   Permits
-
--   Comments
-
--   Fixed penalty notices
-
--   Sites
+<ol class="govuk-list govuk-list--bullet">
+  <li>Permits</li>
+  <li>Comments</li>
+  <li>Fixed penalty notices</li>
+  <li>Sites</li>
+</ol>
 
 Most endpoints on the reporting API are driven with pagination. This
 means the following common query params are available for most
 endpoints:
+{: .govuk-body}
 
--   **Before**: cursor to filter pagination results backwards (I.e.
-    retrieve everything before this item)
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Before</strong>: cursor to filter pagination results backwards (i.e. retrieve everything before this item)</li>
+  <li><strong>After</strong>: cursor to filter pagination results forwards (i.e. retrieve everything after this item) Each paginated response in the reporting API contains the following meta-data:</li>
+</ol>
 
--   **After**: cursor to filter pagination results forwards (I.e.
-    retrieve everything after this item) Each paginated response in the
-    reporting API contains the following meta-data:
-
-{ "pagination": { "page_start": 1, "total_rows": "50" }, "rows": [...] }
+<code>{ "pagination": { "page_start": 1, "total_rows": "50" }, "rows": [...] }</code>
 
 The page_start and total_rows properties indicate the current page of
 results returned in the response, in the context of the total number of
 available rows (records). The rows property contains the records for the
 current page.
+{: .govuk-body}
 
 By default there are a maximum 25 rows returned per page and each record
 in the rows array has a cursor property, which is that record's
@@ -652,55 +653,59 @@ example above, if you have 50 items total, with 25 items per page, to
 get the next page of results would simply involve taking the last item
 in the rows array, and using it's cursor value as the \'after\' query
 param value. This would result in the next metadata response
+{: .govuk-body}
 
 containing rows 26-50. The reason we use cursor based paging is to
 handle real time data. That is to say, the same items will not show up
 on different pages even as items are inserted/removed from the database
 in-between queries.
+{: .govuk-body}
 
 ### Permits
+{: .govuk-heading-m}
 
 #### View permits
+{: .govuk-heading-s}
 
 As discussed in the sequencing section, the reporting API allows
 promoters and HAs to query permits for their organization, filtering
 them by various properties such as status or works reference number. As
 well as this the reporting API allows users the retrieve count summary
 information about permits.
+{: .govuk-body}
 
 ### Get permits endpoint
+{: .govuk-heading-m}
 
-/permits
+<code>GET /permits</code>
 
 The permits endpoint retrieves a list of permits associated with the
 user. The endpoint allows configuration of results through the use of
 the following query params:
+{: .govuk-body}
 
--   **status**: The permit status I.e. submitted, granted
-
--   **query**: The work reference number associated with the permit
-    > (partial match)
-
--   **sort_column**: The property of the permit to order results by
-
--   **sort_direction**: Ascending/descending
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>status</strong>: The permit status I.e. submitted, granted</li>
+  <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
+  <li><strong>sort_column</strong>: The property of the permit to order results by</li>
+  <li><strong>sort_direction</strong>: Ascending/descending</li>
+</ol>
 
 ### Count permits endpoint
+{: .govuk-heading-m}
 
 <code>GET /permits/counts</code>
 
-The counts endpoint provides a total summary of permits grouped by their
-status. The response contains:
+The counts endpoint provides a total summary of permits grouped by their status. The response contains:
+{: .govuk-body}
 
--   Total refused applications
-
--   Total submitted applications
-
--   Total granted
-
--   Total in-progress permits
-
--   Total closed permits
+<ol class="govuk-list govuk-list--bullet">
+  <li>Total refused applications</li>
+  <li>Total submitted applications</li>
+  <li>Total granted</li>
+  <li>Total in-progress permits</li>
+  <li>Total closed permits</li>
+</ol>
 
 ### Comments
 {: .govuk-heading-m}
@@ -736,19 +741,17 @@ The reporting API allows users to view FPNs associated with their organization.
 Retrieves a list of FPNs that have been added to any works record associate with the currently authenticated user's organization. FPNs are issued via the street manager API (see FPN section). Similarly to the permits endpoint, FPNs can be filtered by status. The status of an FPN are:
 {: .govuk-body}
 
--   **issued**: Issued by the HA
-
--   **accepted**: Accepted by the promoter
-
--   **paid**: Confirmed as paid by the HA
-
--   **paid_discounted**: Confirmed as paid by the HA with a discount
-
--   **disputed**: Disputed by the promoter
-
--   **withdrawn**: Withdrawn by the HA
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>issued</strong>: Issued by the HA</li>
+  <li><strong>accepted</strong>: Accepted by the promoter</li>
+  <li><strong>paid</strong>: Confirmed as paid by the HA</li>
+  <li><strong>paid_discounted</strong>: Confirmed as paid by the HA with a discount</li>
+  <li><strong>disputed</strong>: Disputed by the promoter</li>
+  <li><strong>withdrawn</strong>: Withdrawn by the HA</li>
+</ol>
 
 **Sites**
+{: .govuk-body}
 
 Street Manager API supports retrieving details on sites, details TBC.
 {: .govuk-body}
@@ -793,7 +796,7 @@ The works reference number provided must be unique in the context of our system 
 The works coordinates field expects a <a href="http://geojson.org/">GeoJSON geometry</a> and must be a point, line string or polygon.
 {: .govuk-body}
 
-<code>{ "type": "Point", "coordinates": \[80000.00, 80000.00\] }</code>
+<code>{ "type": "Point", "coordinates": [80000.00, 80000.00] }</code>
 
 ##### Promoter SWA code and highway authority SWA code
 {: .govuk-heading-s}
@@ -993,7 +996,7 @@ This endpoint takes all the information required to create a reinstatement, a su
 The reinstatement coordinates field expects a <a href="http://geojson.org/">GeoJSON geometry</a> and must be a point, line string or polygon.
 {: .govuk-body}
 
-{ "type": "Point", "coordinates": \[80000.00, 80000.00\] }
+<code>{ "type": "Point", "coordinates": [80000.00, 80000.00] }</code>
 
 ### Get site endpoint
 {: .govuk-heading-m}
