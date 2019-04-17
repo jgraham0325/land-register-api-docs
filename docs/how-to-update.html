@@ -1,0 +1,63 @@
+---
+layout: default
+title: How to update
+---
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">How to update</h1>
+
+    <p class="govuk-body">
+      This documentation is a static HTML site generated from the <a href="https://github.com/departmentfortransport/street-manager-docs">street-manager-docs</a> repository
+    </p>
+
+    <p class="govuk-body govuk-!-font-weight-bold">Requires:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://github.com/">GitHub</a> account</li>
+      <li>An admin to add your GitHub user as a contributer to <a href="https://github.com/departmentfortransport/street-manager-docs">street-manager-docs</a></li>
+    </ul>
+
+    <p class="govuk-body">
+        See <a href="https://guides.github.com/">here</a> for guides to GitHub.
+    </p>
+
+    <p class="govuk-body govuk-!-font-weight-bold">Notes for updating the documentation:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The documentation uses markdown augmented with <a href="https://design-system.service.gov.uk/">gov.uk design system styles</a></li>
+      <li>See <a href="https://digitaldrummerj.me/styling-jekyll-markdown/">here</a> for guide on adding CSS styles to markdown HTML</li>
+      <li>Code sections should be wrapped in <em>&lt;code&gt;...&lt;/code&gt;</em> tags</li>
+      <li>All paragraphs need to be followed with <em>{: .govuk-body}</em></li>
+      <li>All heading must be followed by <em>{: .govuk-heading-l}</em>, <em>{: .govuk-heading-m}</em> etc.</li>
+      <li>Some HTML elements must use explicit HTML in markdown to render correctly, such as lists/tables, e.g. <em>&lt;ol class=&quot;govuk-list govuk-list--bullet&quot;&gt;&lt;li&gt;item&lt;/li&gt;&lt;/ol&gt;</em> NOT <em>* item</em></li>
+    </ul>
+
+    <p class="govuk-body">
+        To edit the documentation you can do it two ways, via GitHub directly or locally.
+    </p>
+
+    <h2 class="govuk-heading-m">Editing on GitHub directly</h2>
+
+    <p class="govuk-body">
+        You can use the GitHub website to edit raw files directly. This allows quick changes for small updates, but does not allow you to preview how the final rendered site will look.
+    </p>
+
+    <h2 class="govuk-heading-m">Locally</h2>
+
+    <p class="govuk-body">
+        You can clone the repository to your own machine, make changes there and preview them before pushing them back up for review and merging.
+    </p>
+
+    <p class="govuk-body govuk-!-font-weight-bold">Requires:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.ruby-lang.org/en/downloads/">Ruby 2.1.0 or higher</a></li>
+      <li><a href="https://bundler.io/">Bundler</a></li>
+    </ul>
+
+    <pre>
+        cd docs
+        bundle install
+        bundle exec jekyll serve # runs on http://localhost:4000/street-manager-docs/
+    </pre>
+
+  </div>
+</div>
