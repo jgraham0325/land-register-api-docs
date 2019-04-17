@@ -29,15 +29,17 @@ title: Business rules
 {% if rule.display %}
 
 <div class="govuk-grid-row">
-  <h3 id="rule-{{ rule.reference }}" class="govuk-heading-m">{{ rule.reference }} - {{ rule.name }}</h2>
+  <div class="govuk-grid-column-full">
+    <h3 id="rule-{{ rule.reference }}" class="govuk-heading-m">{{ rule.reference }} - {{ rule.name }}</h3>
 
-  {% if rule.image %}
-  <img src="images/{{ rule.image }}" style="width: 100%" alt="{{ rule.name }}">
-  {% endif %}
+    {% if rule.image %}
+    <img src="images/{{ rule.image }}" style="width: 100%" alt="{{ rule.name }}">
+    {% endif %}
 
-  <p class="govuk-body">
-    {{ rule.details | newline_to_br }}
-  </p>
+    <p class="govuk-body">
+      {{ rule.details | newline_to_br }}
+    </p>
+  </div>
 </div>
 {% endif %}
 
