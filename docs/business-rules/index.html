@@ -26,11 +26,20 @@ title: Business rules
 
 {% for rule in site.data.rules %}
 
-<h3 id="rule-{{ rule.reference }}" class="govuk-heading-m">{{ rule.reference }} - {{ rule.name }}</h2>
+{% if rule.display %}
 
-<p class="govuk-body">
-  {{ rule.details | newline_to_br }}
-</p>
+<div class="govuk-grid-row">
+  <h3 id="rule-{{ rule.reference }}" class="govuk-heading-m">{{ rule.reference }} - {{ rule.name }}</h2>
+
+  {% if rule.image %}
+  <img src="images/{{ rule.image }}" style="width: 100%" alt="{{ rule.name }}">
+  {% endif %}
+
+  <p class="govuk-body">
+    {{ rule.details | newline_to_br }}
+  </p>
+</div>
+{% endif %}
 
 {% endfor %}
 
