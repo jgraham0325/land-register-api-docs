@@ -16,6 +16,7 @@ title: Business rules
 
 <ol class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#business-rules">Business rules</a></li>
+  <li><a class="govuk-link" href="#flows">Flows</a></li>
   <li><a class="govuk-link" href="#terms">Terms</a></li>
 </ol>
 
@@ -42,6 +43,26 @@ title: Business rules
   </div>
 </div>
 {% endif %}
+
+{% endfor %}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+<h2 id="flows" class="govuk-heading-l">Flows</h2>
+
+{% for flow in site.data.flows %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h3 class="govuk-heading-m">{{ flow.title }}</h3>
+
+    {% if flow.image %}
+    <img src="images/flows/{{ flow.image }}" style="width: 100%" alt="{{ flow.title }}">
+    {% endif %}
+
+  </div>
+</div>
 
 {% endfor %}
 
