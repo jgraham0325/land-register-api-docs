@@ -216,8 +216,7 @@ added shortly.*
 To find out what has changed to your Works recently, there is an API
 endpoint available in the Reporting API which will return a list of
 Works which have had changes with a defined time period. This allows
-external integrators to poll Street Manager for changes and use the
-results to retrieve further information from the Works or Reporting API.
+external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the Works or Reporting API.
 {: .govuk-body}
 
 **Notifications**
@@ -1132,6 +1131,12 @@ Uploading a file is achieved through the file upload endpoint. This endpoint is 
 <code>POST /files</code>
 
 Once a file has been uploaded the response will contain a file ID. This is the unique identifier of the file in our system. Behind the scenes the file will be uploaded to S3 and virus scanned. This file ID can then be provided in the requests of the flows discussed above. Once a valid file ID is provided in the requests of the above flows, the file is then associated with the relevant entity.
+{: .govuk-body}
+
+#### Constraints
+{: .govuk-heading-s}
+
+One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
 ### Get file endpoint
