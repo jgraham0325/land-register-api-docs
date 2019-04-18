@@ -24,6 +24,26 @@ title: Business rules
 
 <h2 id="business-rules" class="govuk-heading-l">Business rules</h2>
 
+{% for rule in site.data.rules %}
+
+{% if rule.display %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h3 id="rule-{{ rule.reference }}" class="govuk-heading-m">{{ rule.reference }} - {{ rule.name }}</h3>
+
+    {% if rule.image %}
+    <img src="images/{{ rule.image }}" style="width: 100%" alt="{{ rule.name }}">
+    {% endif %}
+
+    <p class="govuk-body">
+      {{ rule.details | newline_to_br }}
+    </p>
+  </div>
+</div>
+{% endif %}
+
+{% endfor %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
