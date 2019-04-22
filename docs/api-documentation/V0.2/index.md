@@ -396,10 +396,33 @@ differentiate between Web UI user accounts and API users. User accounts
 are assigned specific roles, such as *planner* and *admin*.
 {: .govuk-body}
 
+Each user can perform read operations to every resource, however write
+operations are restricted based on a user's role and the organisation they are
+associated with.
+{: .govuk-body}
+
 *Note: Currently systems who need to act as users associated with
 multiple organisations, i.e. submitting permits for multiple utility
 companies, need to use separate user accounts for each organisation.*
 {: .govuk-body}
+
+The table below shows the current permissions per endpoint.
+{: .govuk-body}
+
+Endpoint|Roles|Same Organisation
+--------|-----|-----------------
+GET /\*|Public|Not Required
+POST /works|Planner|Required
+PUT /works/\*|Planner|Required
+PUT /works/\*|Planner|Required
+POST /works/{referenceNumber}/sites/{siteId}/reinstatements|Planner|Required
+POST /works/{referenceNumber}/inspections|HAOfficer|Required
+POST /works/{referenceNumber}/comments|Planner & HAOfficer|Required
+POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations|Planner & HAOfficer|Required
+POST /works/{referenceNumber}/fixed-penalty-notices|Planner & HAOfficer|Required
+POST /authenticate|Public|Required
+POST /files|Planner & HAOfficer|Required
+DELETE /files/{id}|Planner & HAOfficer|Required
 
 ### JWT
 {: .govuk-heading-m}
