@@ -648,18 +648,85 @@ In order to create an inspection the following steps should be followed:
     <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
     <p>
       If supporting evidence is required for an inspection (for example, a
-      photograph of a defect) a file can be associated with the inspection as
-      part of the POST request. This file(s) must be uploaded first, the
-      returned <code>file_id</code> submitted in the <code>file_ids</code> array
-      in the inspecion request and the <code>inspection_evidence</code> boolean
-      set to <code>true</code>.
+      photograph of a defect) one or more files can be associated with the
+      inspection as part of the POST request. The file(s) must be uploaded
+      first, the returned <code>file_id</code> submitted in the
+      <code>file_ids</code> array in the inspecion request and the
+      <code>inspection_evidence</code> boolean set to <code>true</code>.
     </p>
   </li>
   <li>
-    <strong>Create an inspection (Highway Authority)</strong>: <code>POST /works/{work reference number}/permits/{permit reference number}/inspection</code>
+    <strong>Create an inspection (Highway Authority)</strong>: <code>POST /works/{work reference number}/inspections</code>
     <p>
       Once a permit is in the "In Progress" or "Closed" state an inspection can
-      be recorded against it.
+      be recorded against it. When recording a Failed inspection it is possible
+      to create a reinspection which will act as a placeholder for a follow up
+      inspection.
+    </p>
+    <p>
+      Once an inspection is recorded against a work any previously scheduled
+      reinspections, for that work, will be removed.
+    </p>
+    <p>
+      Once an inspection is recorded against a work it cannot be updated.
+    </p>
+  </li>
+</ol>
+
+### Fixed Penalty Notices
+{: .govuk-heading-m}
+
+In order to create a fixed penalty notice the following steps should be
+followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
+    <p>
+      If supporting evidence is required for a fixed penalty notice (for
+      example, a photograph of a breach of conditions) one or more files can be
+      associated with the inspection as part of the POST request. The file(s)
+      must be uploaded first, the returned <code>file_id</code> submitted in the
+      <code>file_ids</code> array in the inspecion request and the
+      <code>fpn_evidence</code> boolean set to <code>true</code>.
+    </p>
+  </li>
+  <li>
+    <strong>Create a fixed penalty notice (Highway Authority)</strong>: <code>POST /works/{work reference number}/fixed-penalty-notices</code>
+    <p>
+      A fixed penalty notice can be created against a work as soon as it has
+      been created.
+    </p>
+  </li>
+  <li>
+    <strong>Accept a fixed penalty notice (Planner)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      Optional Step: A promoter can mark the fixed penalty notice as accepted
+      or, alternatively, they can pay it offline.
+    </p>
+  </li>
+  <li>
+    <strong>Dispute a fixed penalty notice (Planner)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      Optional Step: A promoter can dispute a fixed penalty notice. Once a
+      promoter disputes a fixed penality notice, they are able to retroactively
+      mark it as accepted, if required.
+    </p>
+  </li>
+  <li>
+    <strong>Set fixed penalty notice outcome (Highway Authority)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      The Highway Authority issuing the fixed penalty notice is able to
+      record the resolution of the fixed penality notice. Possible resolution
+      states are: Paid, Paid with Discount or Withdrawn.
     </p>
   </li>
 </ol>
