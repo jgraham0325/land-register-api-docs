@@ -413,6 +413,7 @@ as part of the request.
 The JWT is validated per service per request. Every service exposed by street
 manager will attempt to validate the JWT as part of its authentication and
 authorisation function.
+{: .govuk-body}
 
 The token expires 1 hour after it was generated, if an expired JWT is used in a
 request, an error with the HTTP status `401` will be returned.  In this scenario
