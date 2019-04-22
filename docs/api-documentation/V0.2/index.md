@@ -624,10 +624,10 @@ In order to create an inspection the following steps should be followed:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Create a work record (Planner)</strong>: <code>POST /works</code>
-
+  <p>
   Initially a promoter will create a work, which will, in tern, create a
   permit application
-  {: .govuk-body}
+  </p>
   </li>
   <li><strong>Approve the permit, if it's not a PAA or Immediate (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
   <li><strong>Start the work, if it's not a PAA or Immediate (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
