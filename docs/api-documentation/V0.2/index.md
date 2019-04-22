@@ -405,8 +405,8 @@ companies, need to use separate user accounts for each organisation.*
 {: .govuk-heading-m}
 
 Json Web Token (JWT) is an open standard for exchanging information
-securely. The entities of street manager exchange information using JWTs
-and resources of the street manager API require that a JWT be provided
+securely. The entities of Street Manager exchange information using JWTs
+and resources of the Street Manager API require that a JWT be provided
 as part of the request.
 {: .govuk-body}
 
@@ -489,7 +489,7 @@ sending an excessive number of calls.
 {: .govuk-heading-l #sequencing}
 
 As detailed in the Technical Overview section, the reporting API drives
-a large amount of data retrieval functionality whilst the street manager
+a large amount of data retrieval functionality whilst the Street Manager
 API drives a lot of key user workflows e.g. submit permit, assess
 permit, etc. These two APIs together form much of the common sequences a
 user is likely to perform.
