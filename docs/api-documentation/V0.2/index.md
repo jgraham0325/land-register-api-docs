@@ -373,17 +373,18 @@ java -jar target/swagger-spring-1.0.0.jar --server.port=8080
 ### HTTPS
 {: .govuk-heading-m}
 
-All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2 certificates signed by a standard certificate authority.
+All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2
+certificates signed by a standard certificate authority.
 {: .govuk-body}
 
-### Authentication and Authorization
+### Authentication and Authorisation
 {: .govuk-heading-m}
 
-All resource endpoints in the API with the exception of authentication
-and health-checks, require a JWT to be passed in the \'token\' header of
-the request. The JWT contains information about the user and allows them
-to access routes, services, and resources that are permitted with that
-token. Without it the request will be met with a 401 error response.
+All resource endpoints in the API, with the exception of authentication and
+status, require a [JWT](#jwt) to be passed in the \'token\' header of the
+request. The [JWT](#jwt) contains information about the user and allows them to
+access routes, services, and resources that are permitted with that token.
+Without it the request will be met with a 401 error response.
 {: .govuk-body}
 
 ### User accounts and permissions
@@ -406,8 +407,17 @@ companies, need to use separate user accounts for each organisation.*
 Json Web Token (JWT) is an open standard for exchanging information
 securely. The entities of street manager exchange information using JWTs
 and resources of the street manager API require that a JWT be provided
-as part of the request. This will be discussed in detail as part of the
-security section.
+as part of the request.
+{: .govuk-body}
+
+The JWT is validated per service per request. Every service exposed by street
+manager will attempt to validate the JWT as part of its authentication and
+authorisation function.
+
+The token expires 1 hour after it was generated, if an expired JWT is used in a
+request, an error with the HTTP status `401` will be returned.  In this scenario
+a new token will need to be generated using the <code>/work/authenticate</code>
+endpoint.
 {: .govuk-body}
 
 ### Resource
@@ -441,7 +451,7 @@ error responses as it will help narrow down where an issue is occurring.
 ### Authentication Failed
 {: .govuk-heading-m}
 
-<code>{ "message": "Authentication failed", "error": { "status": 401 }</code>
+<code>{ "message": "Authentication failed", "error": { "status": 401 } }</code>
 
 Authentication fails when the token provided in the request is invalid.
 The token may have expired or the value set as the token was incorrect.
@@ -452,7 +462,7 @@ with invalid credentials I.e. wrong username or password.
 ### Access Restricted
 {: .govuk-heading-m}
 
-<code>{ "message": "Access restricted", "error": { "status": 401 }</code>
+<code>{ "message": "Access restricted", "error": { "status": 401 } }</code>
 
 The access restricted error indicates that although the token was valid,
 the user does not have permissions to perform the desired action. This
@@ -468,7 +478,7 @@ to your organization.
 To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
-sending calls
+sending an excessive number of calls.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
