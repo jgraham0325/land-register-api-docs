@@ -616,6 +616,25 @@ responded to, see the Street Manager API resource guide for more details
 on Permit status values.
 {: .govuk-body}
 
+### Inspections
+{: .govuk-heading-m}
+
+In order to create an inspection the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+
+  Initially a promoter will create a work, which will, in tern, create a
+  permit application
+  {: .govuk-body}
+  </li>
+  <li><strong>Approve the permit, if it's not a PAA or Immediate (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
+  <li><strong>Start the work, if it's not a PAA or Immediate (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
+  <li><strong>Create an inspection (Highway Authority)</strong>: <code>GET /fixed-penalty-notices?status=disputed</code></li>
+</ol>
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
