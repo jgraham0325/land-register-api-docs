@@ -623,17 +623,46 @@ In order to create an inspection the following steps should be followed:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><strong>Create a work record (Planner)</strong>: <code>POST /works</code>
-  <p>
-  Initially a promoter will create a work, which will, in tern, create a
-  permit application
-  </p>
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
   </li>
-  <li><strong>Approve the permit, if it's not a PAA or Immediate (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
-  <li><strong>Start the work, if it's not a PAA or Immediate (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code></li>
-  <li><strong>Create an inspection (Highway Authority)</strong>: <code>GET /fixed-penalty-notices?status=disputed</code></li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
+    <p>
+      If supporting evidence is required for an inspection (for example, a
+      photograph of a defect) a file can be associated with the inspection as
+      part of the POST request. This file(s) must be uploaded first, the
+      returned <code>file_id</code> submitted in the <code>file_ids</code> array
+      in the inspecion request and the <code>inspection_evidence</code> boolean
+      set to <code>true</code>.
+    </p>
+  </li>
+  <li>
+    <strong>Create an inspection (Highway Authority)</strong>: <code>POST /works/{work reference number}/permits/{permit reference number}/inspection</code>
+    <p>
+      Once a permit is in the "In Progress" or "Closed" state an inspection can
+      be recorded against it.
+    </p>
+  </li>
 </ol>
-
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
