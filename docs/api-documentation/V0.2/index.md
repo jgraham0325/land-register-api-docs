@@ -409,21 +409,54 @@ companies, need to use separate user accounts for each organisation.*
 The table below shows the current permissions per endpoint.
 {: .govuk-body}
 
-Endpoint|Roles|Same Organisation
---------|-----|-----------------
-GET /\*|Public|Not Required
-POST /works|Planner|Required
-PUT /works/\*|Planner|Required
-PUT /works/\*|Planner|Required
-POST /works/{referenceNumber}/sites/{siteId}/reinstatements|Planner|Required
-POST /works/{referenceNumber}/inspections|HAOfficer|Required
-POST /works/{referenceNumber}/comments|Planner & HAOfficer|Required
-POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations|Planner & HAOfficer|Required
-POST /works/{referenceNumber}/fixed-penalty-notices|Planner & HAOfficer|Required
-POST /authenticate|Public|Required
-POST /files|Planner & HAOfficer|Required
-DELETE /files/{id}|Planner & HAOfficer|Required
+#### Works API
+{: .govuk-heading-s}
+
+Endpoint|Roles|Organisation Member\*
+--------|-----|---------------------
+<code>GET /\*</code>|Planner & HAOfficer|Not Required
+<code>POST /authenticate</code>|Public|Required
+<code>POST /files</code>|Planner & HAOfficer|Required
+<code>DELETE /files/{id}</code>|Planner & HAOfficer|Required
+<code>POST /works</code>|Planner|Required
+<code>PUT /works/\*</code>|Planner|Required
+<code>POST /works/{referenceNumber}/comments</code>|Planner & HAOfficer|Required
+<code>POST /works/{referenceNumber}/fixed-penalty-notices</code>|HAOfficer|Required
+<code>PUT /works/{referenceNumber}/fixed-penalty-notices/{fpnReferenceNumber}/status</code>|Planner & HAOfficer|Required
+<code>POST /works/{referenceNumber}/inspections</code>|HAOfficer|Required
+<code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code>|Planner & HAOfficer|Required
+<code>PUT /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code>|HAOfficer|Required
+<code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/status</code>|Planner & HAOfficer|Required
+<code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code>|Planner|Required
 {: .govuk-table}
+
+#### Reporting API
+{: .govuk-heading-s}
+
+Endpoint|Roles|Organisation Member\*
+--------|-----|---------------------
+<code>GET /\*</code>|Planner & HAOfficer|Not Required
+{: .govuk-table}
+
+#### Street Lookup API
+{: .govuk-heading-s}
+
+Endpoint|Roles|Organisation Member\*
+--------|-----|---------------------
+<code>GET /\*</code>|Planner & HAOfficer|Not Required
+{: .govuk-table}
+
+#### Geojson API
+{: .govuk-heading-s}
+
+Endpoint|Roles|Organisation Member\*
+--------|-----|---------------------
+<code>GET /\*</code>|Planner & HAOfficer|Not Required
+{: .govuk-table}
+
+\* An Organisation Member is a user with a SWA code matching the permit's
+<code>highway_authority_swa_code</code> or <code>promoter_swa_code</code>. This
+is enforced in addition to the user's role.
 
 ### JWT
 {: .govuk-heading-m}
