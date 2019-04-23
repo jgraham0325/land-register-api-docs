@@ -551,7 +551,7 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell"><code>GET /*</code></td>
       <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
