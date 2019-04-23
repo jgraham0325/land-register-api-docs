@@ -42,7 +42,17 @@ The Street Manager APIs are RESTful APIs to read/write data to the centralised S
 ### Updates
 {: .govuk-heading-m}
 
-The following is a list of significant changes since version 0.1 of this document:
+The following is a list of significant changes by version of this document.
+{: .govuk-body}
+
+Version 1.0:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated security section with details on user roles, see <em>Security</em></li>
+</ol>
+
+Version 0.2
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -63,6 +73,18 @@ The following is a list of significant changes since version 0.1 of this documen
     </ul>
   </li>
 </ol>
+
+### References
+{: .govuk-heading-m}
+
+For additional details, please see the following documents:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><a href="/street-manager-docs/business-rules/">Business rules</a>, for details on Street Managers business processes and logic as well as glossary of terms</li>
+  <li><a href="/street-manager-docs/onboarding/">Onboarding</a>, for details on how to start using Street Manager with-in your organisation</li>
+</ol>
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
