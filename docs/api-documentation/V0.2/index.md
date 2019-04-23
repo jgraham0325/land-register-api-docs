@@ -423,74 +423,74 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>GET /\*</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Not Required</td>
+      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /authenticate</code></td>
-      <td class="govuk-table__cell>Public</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /authenticate</code></td>
+      <td class="govuk-table__cell">Public</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /files</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /files</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>DELETE /files/{id}</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>DELETE /files/{id}</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works</code></td>
-      <td class="govuk-table__cell>Planner</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>PUT /works/\*</code></td>
-      <td class="govuk-table__cell>Planner</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>PUT /works/\*</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/comments</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/comments</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/fixed-penalty-notices</code></td>
-      <td class="govuk-table__cell>HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/fixed-penalty-notices</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>PUT /works/{referenceNumber}/fixed-penalty-notices/{fpnReferenceNumber}/status</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>PUT /works/{referenceNumber}/fixed-penalty-notices/{fpnReferenceNumber}/status</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/inspections</code></td>
-      <td class="govuk-table__cell>HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/inspections</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>PUT /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
-      <td class="govuk-table__cell>HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>PUT /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/status</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/status</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code></td>
-      <td class="govuk-table__cell>Planner</td>
-      <td class="govuk-table__cell>Required</td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
     </tr>
   </tbody>
 </table>
@@ -509,9 +509,9 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>GET /\*</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Not Required</td>
+      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
 </table>
@@ -530,9 +530,9 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>GET /\*</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Not Required</td>
+      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
 </table>
@@ -551,9 +551,9 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell><code>GET /\*</code></td>
-      <td class="govuk-table__cell>Planner &amp; HAOfficer</td>
-      <td class="govuk-table__cell>Not Required</td>
+      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
 </table>
