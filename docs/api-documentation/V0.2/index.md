@@ -423,6 +423,7 @@ POST /works/{referenceNumber}/fixed-penalty-notices|Planner & HAOfficer|Required
 POST /authenticate|Public|Required
 POST /files|Planner & HAOfficer|Required
 DELETE /files/{id}|Planner & HAOfficer|Required
+{: .govuk-table}
 
 ### JWT
 {: .govuk-heading-m}
