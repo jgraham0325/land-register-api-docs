@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V0.2
+title: API specification V1.0
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 0.2 Draft
+Version 1.0 Draft
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -216,8 +216,7 @@ added shortly.*
 To find out what has changed to your Works recently, there is an API
 endpoint available in the Reporting API which will return a list of
 Works which have had changes with a defined time period. This allows
-external integrators to poll Street Manager for changes and use the
-results to retrieve further information from the Works or Reporting API.
+external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the Works or Reporting API.
 {: .govuk-body}
 
 **Notifications**
@@ -374,17 +373,18 @@ java -jar target/swagger-spring-1.0.0.jar --server.port=8080
 ### HTTPS
 {: .govuk-heading-m}
 
-All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2 certificates signed by a standard certificate authority.
+All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2
+certificates signed by a standard certificate authority.
 {: .govuk-body}
 
-### Authentication and Authorization
+### Authentication and Authorisation
 {: .govuk-heading-m}
 
-All resource endpoints in the API with the exception of authentication
-and health-checks, require a JWT to be passed in the \'token\' header of
-the request. The JWT contains information about the user and allows them
-to access routes, services, and resources that are permitted with that
-token. Without it the request will be met with a 401 error response.
+All resource endpoints in the API, with the exception of authentication and
+status, require a [JWT](#jwt) to be passed in the \'token\' header of the
+request. The [JWT](#jwt) contains information about the user and allows them to
+access routes, services, and resources that are permitted with that token.
+Without it the request will be met with a 401 error response.
 {: .govuk-body}
 
 ### User accounts and permissions
@@ -396,19 +396,191 @@ differentiate between Web UI user accounts and API users. User accounts
 are assigned specific roles, such as *planner* and *admin*.
 {: .govuk-body}
 
+Each user can perform read operations to every resource, however write
+operations are restricted based on a user's role and the organisation they are
+associated with.
+{: .govuk-body}
+
 *Note: Currently systems who need to act as users associated with
 multiple organisations, i.e. submitting permits for multiple utility
 companies, need to use separate user accounts for each organisation.*
+{: .govuk-body}
+
+The table below shows the current permissions per endpoint.
+{: .govuk-body}
+
+#### Works API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Works API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /authenticate</code></td>
+      <td class="govuk-table__cell">None</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /files</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>DELETE /files/{id}</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /works/*</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/comments</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/fixed-penalty-notices</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /works/{referenceNumber}/fixed-penalty-notices/{fpnReferenceNumber}/status</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/inspections</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/status</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code></td>
+      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Reporting API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Reporting API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Street Lookup API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Street Lookup API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Geojson API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Geojson API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
+\* An Organisation Member is a user with a SWA code matching the permit's
+<code>highway_authority_swa_code</code> or <code>promoter_swa_code</code>. This
+is enforced in addition to the user's role.
 {: .govuk-body}
 
 ### JWT
 {: .govuk-heading-m}
 
 Json Web Token (JWT) is an open standard for exchanging information
-securely. The entities of street manager exchange information using JWTs
-and resources of the street manager API require that a JWT be provided
-as part of the request. This will be discussed in detail as part of the
-security section.
+securely. The entities of Street Manager exchange information using JWTs
+and resources of the Street Manager API require that a JWT be provided
+as part of the request.
+{: .govuk-body}
+
+The JWT is validated per service per request. Every service exposed by street
+manager will attempt to validate the JWT as part of its authentication and
+authorisation function.
+{: .govuk-body}
+
+The token expires 1 hour after it was generated, if an expired JWT is used in a
+request, an error with the HTTP status `401` will be returned.  In this scenario
+a new token will need to be generated using the <code>/work/authenticate</code>
+endpoint.
 {: .govuk-body}
 
 ### Resource
@@ -442,7 +614,7 @@ error responses as it will help narrow down where an issue is occurring.
 ### Authentication Failed
 {: .govuk-heading-m}
 
-<code>{ "message": "Authentication failed", "error": { "status": 401 }</code>
+<code>{ "message": "Authentication failed", "error": { "status": 401 } }</code>
 
 Authentication fails when the token provided in the request is invalid.
 The token may have expired or the value set as the token was incorrect.
@@ -453,7 +625,7 @@ with invalid credentials I.e. wrong username or password.
 ### Access Restricted
 {: .govuk-heading-m}
 
-<code>{ "message": "Access restricted", "error": { "status": 401 }</code>
+<code>{ "message": "Access restricted", "error": { "status": 401 } }</code>
 
 The access restricted error indicates that although the token was valid,
 the user does not have permissions to perform the desired action. This
@@ -469,7 +641,7 @@ to your organization.
 To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
-sending calls
+sending an excessive number of calls.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -479,7 +651,7 @@ sending calls
 {: .govuk-heading-l #sequencing}
 
 As detailed in the Technical Overview section, the reporting API drives
-a large amount of data retrieval functionality whilst the street manager
+a large amount of data retrieval functionality whilst the Street Manager
 API drives a lot of key user workflows e.g. submit permit, assess
 permit, etc. These two APIs together form much of the common sequences a
 user is likely to perform.
@@ -605,6 +777,121 @@ Promoters can use **status** values to find permits which the HA has
 responded to, see the Street Manager API resource guide for more details
 on Permit status values.
 {: .govuk-body}
+
+### Inspections
+{: .govuk-heading-m}
+
+In order to create an inspection the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
+    <p>
+      If supporting evidence is required for an inspection (for example, a
+      photograph of a defect) one or more files can be associated with the
+      inspection as part of the POST request. The file(s) must be uploaded
+      first, the returned <code>file_id</code> submitted in the
+      <code>file_ids</code> array in the inspecion request and the
+      <code>inspection_evidence</code> boolean set to <code>true</code>.
+    </p>
+  </li>
+  <li>
+    <strong>Create an inspection (Highway Authority)</strong>: <code>POST /works/{work reference number}/inspections</code>
+    <p>
+      Once a permit is in the "In Progress" or "Closed" state an inspection can
+      be recorded against it. When recording a Failed inspection it is possible
+      to create a reinspection which will act as a placeholder for a follow up
+      inspection.
+    </p>
+    <p>
+      Once an inspection is recorded against a work any previously scheduled
+      reinspections, for that work, will be removed.
+    </p>
+    <p>
+      Once an inspection is recorded against a work it cannot be updated.
+    </p>
+  </li>
+</ol>
+
+### Fixed Penalty Notices
+{: .govuk-heading-m}
+
+In order to create a fixed penalty notice the following steps should be
+followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
+    <p>
+      If supporting evidence is required for a fixed penalty notice (for
+      example, a photograph of a breach of conditions) one or more files can be
+      associated with the inspection as part of the POST request. The file(s)
+      must be uploaded first, the returned <code>file_id</code> submitted in the
+      <code>file_ids</code> array in the inspecion request and the
+      <code>fpn_evidence</code> boolean set to <code>true</code>.
+    </p>
+  </li>
+  <li>
+    <strong>Create a fixed penalty notice (Highway Authority)</strong>: <code>POST /works/{work reference number}/fixed-penalty-notices</code>
+    <p>
+      A fixed penalty notice can be created against a work as soon as it has
+      been created.
+    </p>
+  </li>
+  <li>
+    <strong>Accept a fixed penalty notice (Planner)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      Optional Step: A promoter can mark the fixed penalty notice as accepted
+      or, alternatively, they can pay it offline.
+    </p>
+  </li>
+  <li>
+    <strong>Dispute a fixed penalty notice (Planner)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      Optional Step: A promoter can dispute a fixed penalty notice. Once a
+      promoter disputes a fixed penality notice, they are able to retroactively
+      mark it as accepted, if required.
+    </p>
+  </li>
+  <li>
+    <strong>Set fixed penalty notice outcome (Highway Authority)</strong>: <code>PUT /works/{work reference number}/fixed-penalty-notices/{fpn reference number}/status</code>
+    <p>
+      The Highway Authority issuing the fixed penalty notice is able to
+      record the resolution of the fixed penality notice. Possible resolution
+      states are: Paid, Paid with Discount or Withdrawn.
+    </p>
+  </li>
+</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -1132,6 +1419,12 @@ Uploading a file is achieved through the file upload endpoint. This endpoint is 
 <code>POST /files</code>
 
 Once a file has been uploaded the response will contain a file ID. This is the unique identifier of the file in our system. Behind the scenes the file will be uploaded to S3 and virus scanned. This file ID can then be provided in the requests of the flows discussed above. Once a valid file ID is provided in the requests of the above flows, the file is then associated with the relevant entity.
+{: .govuk-body}
+
+#### Constraints
+{: .govuk-heading-s}
+
+One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
 ### Get file endpoint
