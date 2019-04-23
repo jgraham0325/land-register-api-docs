@@ -423,14 +423,14 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell"><code>GET /*</code></td>
       <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /authenticate</code></td>
-      <td class="govuk-table__cell">Public</td>
-      <td class="govuk-table__cell">Required</td>
+      <td class="govuk-table__cell">None</td>
+      <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /files</code></td>
@@ -448,7 +448,7 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>PUT /works/\*</code></td>
+      <td class="govuk-table__cell"><code>PUT /works/*</code></td>
       <td class="govuk-table__cell">Planner</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
@@ -509,7 +509,7 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell"><code>GET /*</code></td>
       <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
@@ -530,7 +530,7 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /\*</code></td>
+      <td class="govuk-table__cell"><code>GET /*</code></td>
       <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
