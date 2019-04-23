@@ -857,6 +857,9 @@ In order to create an inspection the following steps should be followed:
   </li>
 </ol>
 
+![Inspections sequence diagram 1](images/inspections-drawio.png)
+![Inspections sequence diagram 2](images/inspections-wsd.png)
+
 ### Fixed Penalty Notices
 {: .govuk-heading-m}
 
@@ -914,6 +917,9 @@ followed:
     </p>
   </li>
 </ol>
+
+![FPN sequence diagram 1](images/fpn-drawio.png)
+![FPN sequence diagram 2](images/fpn-wsd.png)
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
