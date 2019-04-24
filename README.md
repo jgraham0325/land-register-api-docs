@@ -25,7 +25,7 @@ Notes for updating the API documentation:
 
 ## GitHub pages
 
-This repository contains a folder `/docs` which is intended to be served as a [Jekyll](https://jekyllrb.com/docs/github-pages/) static HTML site for serving the documentation via GitHub pages. See [here](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for details on setting up the repository.
+This repository contains a folder `/docs` which is intended to be served as a [Jekyll](https://jekyllrb.com/docs/github-pages/) static HTML site for serving the documentation via [GitHub pages](https://departmentfortransport.github.io/street-manager-docs/). See [here](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for details on setting up the repository.
 
 ### Run locally
 
