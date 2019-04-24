@@ -986,7 +986,7 @@ It is currently not possible to access other organisation's reporting data howev
 Some of the resource endpoints on reporting API also include `/csv`. This will return all the results with the specified criteria in a CSV format.
 {: .govuk-body}
 
-#### Get permits
+#### Get permits
 {: .govuk-heading-s}
 
 <code>GET /permits</code>
@@ -1001,7 +1001,7 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
 </ol>
 
-#### Get inspections
+#### Get inspections
 {: .govuk-heading-s}
 
 Query params:
@@ -1060,7 +1060,6 @@ This endpoint takes all the information required to create a permit, as well as 
 {: .govuk-body}
 
 The promoter_swa_code and highway_authority_swa_code are particularly important fields in the request. Currently only a promoter can create a permit and works record so the promoter SWA code provided in the request much match that of the user authenticated to the system. This is determined by the token header of the request, which contains the JWT. In effect this means the promoter can only add a work or permit for their own organisation.
-
 {: .govuk-body}
 
 All SWA codes are left-padded to 4 digits, so for example if the SWA code of your promoter organisation is 10, this should be entered as "0010".
@@ -1209,6 +1208,7 @@ Creating an inspection will return a inspection reference number which can be us
 {: .govuk-heading-s}
 
 As shown in the sequencing section An HA user can issue a fixed penalty notice (FPN) against the work record at any point in the works life cycle. Promoters can view and dispute the FPN but they cannot issue their own. HA users may upload evidence to support their FPN but the workflow for this is explained in the file upload section.
+{: .govuk-body}
 
 #### Create FPN endpoint
 {: .govuk-heading-s}
@@ -1305,6 +1305,7 @@ As well as viewing comments on a work record level, you can also call the report
 {: .govuk-heading-s}
 
 Permit alterations allows promoters and HA users the ability to alter a permit once it's been created. Not all properties of a permit are changeable and thus depending on what's been changed and by who, there are currently 5 types of permit alterations:
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>
@@ -1331,13 +1332,23 @@ While HA imposed changes are applied to the permit automatically, promoter chang
 {: .govuk-body}
 
 #### Create alteration endpoint
+{: .govuk-heading-s}
+
 TBC
+{: .govuk-body}
+
 
 #### Update alteration status endpoint
+{: .govuk-heading-s}
+
 TBC
+{: .govuk-body}
 
 #### Get alteration endpoint
+{: .govuk-heading-s}
+
 TBC
+{: .govuk-body}
 
 ### GeoJSON API
 {: .govuk-heading-m}
