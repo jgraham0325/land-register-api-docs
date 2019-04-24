@@ -231,14 +231,7 @@ information efficiently for your organisation.
 **Continuous** **Polling**
 {: .govuk-body}
 
-*Note: The polling endpoint is planned for private beta, details will be
-added shortly.*
-{: .govuk-body}
-
-To find out what has changed to your Works recently, there is an API
-endpoint available in the Reporting API which will return a list of
-Works which have had changes with a defined time period. This allows
-external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the Works or Reporting API.
+The reporting API exposes a `/works/updates` endpoint for polling. See the resource guide for full information.
 {: .govuk-body}
 
 **Notifications**
@@ -938,10 +931,16 @@ users to retrieve the following:
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Permits</li>
+  <li>Inspections</li>
   <li>Comments</li>
   <li>Fixed penalty notices</li>
   <li>Sites</li>
+  <li>Workstreams</li>
+  <li>Work updates (polling endpoint)</li>
 </ol>
+
+#### Pagination
+{: .govuk-heading-s}
 
 Most endpoints on the reporting API are driven with pagination. This
 means the following common query params are available for most
@@ -968,35 +967,31 @@ example above, if you have 50 items total, with 25 items per page, to
 get the next page of results would simply involve taking the last item
 in the rows array, and using it's cursor value as the \'after\' query
 param value. This would result in the next metadata response
-{: .govuk-body}
-
 containing rows 26-50. The reason we use cursor based paging is to
 handle real time data. That is to say, the same items will not show up
 on different pages even as items are inserted/removed from the database
 in-between queries.
 {: .govuk-body}
 
-### Permits
-{: .govuk-heading-m}
-
-#### View permits
+#### Organisation specific data
 {: .govuk-heading-s}
 
-As discussed in the sequencing section, the reporting API allows
-promoters and HAs to query permits for their organization, filtering
-them by various properties such as status or works reference number. As
-well as this the reporting API allows users the retrieve count summary
-information about permits.
+The various resources queryable through the reporting API are only for the currently authenticated user's organisation.
+It is currently not possible to access other organisation's reporting data however the ability to provide an organisation SWA code as part of these requests is in the roadmap for Phase 2.
 {: .govuk-body}
 
-### Get permits endpoint
-{: .govuk-heading-m}
+#### CSV
+{: .govuk-heading-s}
+
+Some of the resource endpoints on reporting API also include `/csv`. This will return all the results with the specified criteria in a CSV format.
+{: .govuk-body}
+
+#### Get permits
+{: .govuk-heading-s}
 
 <code>GET /permits</code>
 
-The permits endpoint retrieves a list of permits associated with the
-user. The endpoint allows configuration of results through the use of
-the following query params:
+Query params:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1006,54 +1001,24 @@ the following query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
 </ol>
 
-### Count permits endpoint
-{: .govuk-heading-m}
+#### Get inspections
+{: .govuk-heading-s}
 
-<code>GET /permits/counts</code>
-
-The counts endpoint provides a total summary of permits grouped by their status. The response contains:
+Query params:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Total refused applications</li>
-  <li>Total submitted applications</li>
-  <li>Total granted</li>
-  <li>Total in-progress permits</li>
-  <li>Total closed permits</li>
+  <li><strong>inspection_response_type</strong>: inspection or reinspection</li>
+  <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
+  <li><strong>sort_direction</strong>: Ascending/descending</li>
 </ol>
 
-### Comments
-{: .govuk-heading-m}
-
-#### View Comments
-{: .govuk-heading-s}
-
-The reporting API allows users to view comments associated with their organization.
-{: .govuk-body}
-
-#### Get comments endpoint
-{: .govuk-heading-s}
-
-<code>GET /comments</code>
-
-Retrieves a list of comments that have been added to any works record associate with the currently authenticated user's organization. Comments are added via the street manager API (see comments section) and visible from this endpoint in the reporting API.
-{: .govuk-body}
-
-### FPNs
-{: .govuk-heading-m}
-
-#### View Fixed Penalty Notices
-{: .govuk-heading-s}
-
-The reporting API allows users to view FPNs associated with their organization.
-{: .govuk-body}
-
-#### Get FPNs endpoint
+#### Get FPNs
 {: .govuk-heading-s}
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record associate with the currently authenticated user's organization. FPNs are issued via the street manager API (see FPN section). Similarly to the permits endpoint, FPNs can be filtered by status. The status of an FPN are:
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the works API. FPNs can be filtered by status. The status of an FPN are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1065,27 +1030,25 @@ Retrieves a list of FPNs that have been added to any works record associate with
   <li><strong>withdrawn</strong>: Withdrawn by the HA</li>
 </ol>
 
-**Sites**
-{: .govuk-body}
-
-Street Manager API supports retrieving details on sites, details TBC.
-{: .govuk-body}
-
-### **Street Manager API**
-{: .govuk-heading-m}
-
-#### Submit permit application
+#### Polling
 {: .govuk-heading-s}
 
-![Submit permit application](images/submit-permit-application.png)
+<code>GET /works/updates</code>
 
-As shown in the sequence, a promoter submits a permit application at which point an HA can assess it. Both a promoter and HA can add comments to the works record once it exists. Both users can upload files for various workflows, but in the case of applying for a permit application, a promoter may choose to upload a file as part of their application (I.e. providing a traffic management plan). Files need to be uploaded via the file upload endpoint before than can be used as part of other requests, so often this endpoint is called first. See the **File Upload** section of the resource guide for details.
+Retrieves a list of works which have had changes within a defined time period. This allows
+external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API.
 {: .govuk-body}
 
-It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work. A work cannot exist without a permit.
+### **Works API**
+{: .govuk-heading-m}
+
+#### Work records and permits
+{: .govuk-heading-s}
+
+It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work depending on the work records current status. A work cannot exist without a permit.
 {: .govuk-body}
 
-There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location by a particular promoter.
+There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location.
 {: .govuk-body}
 
 #### Create work endpoint
@@ -1096,41 +1059,14 @@ There is also a concept of a work record's active permit, that is simply the mos
 This endpoint takes all the information required to create a permit, as well as some key identification information about the works record as a whole.
 {: .govuk-body}
 
-#### Constraints
-{: .govuk-heading-s}
+The promoter_swa_code and highway_authority_swa_code are particularly important fields in the request. Currently only a promoter can create a permit and works record so the promoter SWA code provided in the request much match that of the user authenticated to the system. This is determined by the token header of the request, which contains the JWT. In effect this means the promoter can only add a work or permit for their own organisation.
 
-**Work reference number**
 {: .govuk-body}
 
-The works reference number provided must be unique in the context of our system in order to create a new work.
+All SWA codes are left-padded to 4 digits, so for example if the SWA code of your promoter organisation is 10, this should be entered as "0010".
 {: .govuk-body}
 
-##### Works coordinates
-{: .govuk-heading-s}
-
-The works coordinates field expects a <a href="http://geojson.org/">GeoJSON geometry</a> and must be a point, line string or polygon.
-{: .govuk-body}
-
-<code>{ "type": "Point", "coordinates": [80000.00, 80000.00] }</code>
-
-##### Promoter SWA code and highway authority SWA code
-{: .govuk-heading-s}
-
-These are particularly important fields in the request. Currently only a promoter can create a permit and works record so the promoter SWA code provided in the request much match that of the user authenticated to the system. This is determined by the token header of the request, which contains the JWT. In effect this means the promoter can only add a work or permit for their own organization.
-{: .govuk-body}
-
-All SWA codes are left-padded to 4 digits, so for example if the SWA code of your promoter organization is 10, this should be entered as "0010".
-{: .govuk-body}
-
-As a promoter, the HA SWA code you choose is the organization which will be associated with the permit, and thus responsible for assessing the permit. This HA will also be the only organization able to add inspections or issue FPNs against the work record. Although generally most information in the system is viewable by any organization, only the HA and promoter responsible for the work can make actions against it.
-{: .govuk-body}
-
-#### Get work endpoint
-{: .govuk-heading-s}
-
-<code>GET /works/{work reference number}</code>
-
-Once the work has been created it can be retrieved using the GET endpoint, passing the work reference number that was used as part of the create request.
+As a promoter, the HA SWA code you choose is the organisation which will be associated with the permit, and thus responsible for assessing the permit. This HA will also be the only organisation able to add inspections or issue FPNs against the work record. Although generally most information in the system is viewable by any organisation, only the HA and promoter responsible for the work can make actions against it.
 {: .govuk-body}
 
 #### Create permit endpoint
@@ -1141,39 +1077,7 @@ Once the work has been created it can be retrieved using the GET endpoint, passi
 A work can have multiple permits associated with it so it possible to add a new permit to an existing works. This endpoint requires some of the same fields as the create work request but much of the information from the first permit will be used as the value for additional permits, and so only a subset of information is required.
 {: .govuk-body}
 
-#### Constraints
-{: .govuk-heading-s}
-
-It's not possible to add an additional permit to an existing works, unless the work is in an inactive state. The state of the work is derived by the status of the most recently added permit. So in short, an additional permit can only be added to a work if the most recently added permit on the existing works record has a status of closed, cancelled or refused.
-{: .govuk-body}
-
-### Get permit endpoint
-{: .govuk-heading-m}
-
-<code>GET /works/{work reference number}/permits/{permit reference number}</code>
-
-Once an additional permit has been added to an existing works record, it can be retrieved using the work and permit reference number. The permit reference number is simply the works reference number suffixed by an incrementing number e.g. {WRN}-01 for the first permit added to that work.
-{: .govuk-body}
-
-#### Assess permit application
-{: .govuk-heading-s}
-
-![Assess permit application](images/assess-permit-application.png)
-
-As shown in the sequence diagram, once a permit application has been submitted an HA user can provide an assessment decision for the permit. There are technically 4 assessment decision options:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Granted</li>
-  <li>Granted with changes</li>
-  <li>Refused</li>
-  <li>Deemed</li>
-</ol>
-
-*Note: Available options may change as functionality is updated/added*
-{: .govuk-body}
-
-Permits are deemed automatically when they exceed their response date, and granted with changes is a future function so these two options aren\'t explicitly supported as manually entry.
+It's not possible to add an additional permit to an existing works, unless the work is in an inactive state. The state of the work is derived by the status of the most recently added permit. So in short, an additional permit can only be added to a work if the most recently added permit on the existing works record has a status of closed, cancelled, refused or revoked.
 {: .govuk-body}
 
 #### Update status endpoint
@@ -1182,22 +1086,14 @@ Permits are deemed automatically when they exceed their response date, and grant
 <code>POST /works/{work reference number}/permits/{permit reference
 number}/status</code>
 
-Assessing a permit application is achieved through this endpoint by providing an assessment status. This also changes the overall permit status. Once a permit has been assessed it cannot be assessed again.
+The sequence section shows how a permit can be assessed and actioned at various stages by promoters and highway authorities. This endpoint drives all of these functions.
 {: .govuk-body}
 
-#### Constraints
-{: .govuk-heading-s}
-
-As mentioned in the submit permit application section, a permit can only be assessed by the highway authority that the permit was submitted to. This means HA users can only assess permits on work records they are associated with. If the permit was submitted to a different organization, they will not be able to assess it. Furthermore promoters cannot assess their own permits.
+A permit can only be actioned by the promoter and highway authority organisation it is associated with, these are specified when creating the work record.
 {: .govuk-body}
 
-### On site (start/stop works)
-{: .govuk-heading-m}
-
-#### On site
+#### On site (start/stop works)
 {: .govuk-heading-s}
-
-![On site](images/on-site.png)
 
 Once a permit has been submitted and granted by an HA, the promoter which raised the permit is able to:
 {: .govuk-body}
@@ -1209,7 +1105,7 @@ Once a permit has been submitted and granted by an HA, the promoter which raised
   <li>Indicate whether or not an excavation was carried out</li>
 </ol>
 
-These actions control various stages of the works record life cycle as per the sequence diagram above.
+These actions control various stages of the works record life cycle as shown in the sequencing section.
 {: .govuk-body}
 
 #### Start work endpoint
@@ -1220,17 +1116,11 @@ These actions control various stages of the works record life cycle as per the s
 When a permit is submitted initially, a proposed start and end date for the work must be provided. The start endpoint is then used to provide the date the work has actually began, and thus officially starting the work.
 {: .govuk-body}
 
-By setting an actual start date, the active permit's status will change to in-progress. This allows promoter organization users to add reinstatements against the works record if an excavation was carried out and it also allows highway authority users to add inspections, which will be covered in separate sections.
+By setting an actual start date, the active permit's status will change to in-progress. This allows the promoter to add reinstatements against the works record if an excavation was carried out and it also allows highway authority users to add inspections, which will be covered in separate sections.
 {: .govuk-body}
 
-#### Constraints
+#### Stop work endpoint
 {: .govuk-heading-s}
-
-The date provided must be in the past, you can\'t set an actual start date ahead of time. You can only start a work if the active permit has been granted. You can only provide an actual start date once, afterwards it cannot be changed.
-{: .govuk-body}
-
-### Stop work endpoint
-{: .govuk-heading-m}
 
 <code>PUT /works/{work reference number}/stop</code>
 
@@ -1240,52 +1130,32 @@ When a permit is submitted initially, a proposed start and end date for the work
 By setting an actual stop date via this endpoint, the active permit's status will change to closed. It's still possible to add reinstatements and inspections to closed works as they may be added retrospectively.
 {: .govuk-body}
 
-#### Constraints
+#### Excavation carried out endpoint
 {: .govuk-heading-s}
-
-The date provided must be in the past, you can\'t set an actual stop date ahead of time. You can only stop a work if the active permit is in progress I.e. a start date has been provided. You can only provide an actual stop date once, afterwards it cannot be changed. The actual stop date must be after the actual start date.
-{: .govuk-body}
-
-### Excavation carried out endpoint
-{: .govuk-heading-m}
 
 <code>PUT /works/{work reference number}/excavation</code>
 
 When a permit is submitted initially the excavation property indicates whether or not an excavation will need to be carried out as part of the work. Similar to proposed start and stop, this endpoint indicates whether or not an excavation was *actually* carried out.
 {: .govuk-body}
 
-Marking an excavation was carried out on an in-progress work record allows promoters to add reinstatements to that works record, which will be covered in a separate section.
+Marking an excavation was carried out on an in-progress work record allows promoters to add reinstatements to that works record. Once a reinstatement exists you can no longer use this endpoint to change whether or not an excavation was carried out.
 {: .govuk-body}
 
-#### Constraints
+#### Inspection units endpoint
 {: .govuk-heading-s}
-
-You can only make this request if the permit is in-progress or closed. You can only set whether or not an excavation was carried out once, afterwards it cannot be changed.
-{: .govuk-body}
-
-### Inspection units endpoint
-{: .govuk-heading-m}
 
 <code>PUT /works/{work reference number}/inspection-units</code>
 
 Once a permit is in progress and an excavation has been carried out, a promoter can log the inspection units associated with the currently active permit.
 {: .govuk-body}
 
-#### Constraints
-{: .govuk-heading-s}
-
-You can only make this request if the permit is in-progress or closed. You can only provide inspection-units if a reinstatement currently exists on the works record, which will cover in a separate section.
+You can only provide inspection-units if a reinstatement currently exists on the works record, which will cover in a separate section.
 {: .govuk-body}
 
-#### Reinstatements
-{: .govuk-heading-m}
-
-#### Add reinstatements
+#### Reinstatements (Promoter)
 {: .govuk-heading-s}
 
-![Add reinstatements](images/add-reinstatements.png)
-
-As shown in the sequence diagram, once the a work has been started by the promoter and an excavation was carried out, then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they made need to do this retrospectively.
+As shown in the sequencing section, once a work has been started by the promoter and an excavation was carried out, then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they made need to do this retrospectively.
 {: .govuk-body}
 
 In a similar vein to the relationship between a works and a permit, it's important to clarify the technical relationship between a site and a reinstatement. When creating a reinstatement for the first time, this will in effect create a site record. A site can have multiple reinstatement. You can create a site and a reinstatement at the same time, or you can create a reinstatement against an existing site. A site cannot exist without a reinstatement.
@@ -1294,69 +1164,37 @@ In a similar vein to the relationship between a works and a permit, it's importa
 A site is a representation of all the reinstatements carried out at a particular location but the most recently added reinstatement reflects the sites properties.
 {: .govuk-body}
 
-### Create site endpoint
-{: .govuk-heading-m}
+#### Create site endpoint
+{: .govuk-heading-s}
 
 <code>POST /works/{work reference number}/sites</code>
 
 This endpoint takes all the information required to create a reinstatement, a successful request will create a site with an associated reinstatement.
 {: .govuk-body}
 
-#### Constraints
+#### Get site endpoint
 {: .govuk-heading-s}
-
-##### Reinstatement coordinates
-{: .govuk-heading-s}
-
-The reinstatement coordinates field expects a <a href="http://geojson.org/">GeoJSON geometry</a> and must be a point, line string or polygon.
-{: .govuk-body}
-
-<code>{ "type": "Point", "coordinates": [80000.00, 80000.00] }</code>
-
-### Get site endpoint
-{: .govuk-heading-m}
 
 <code>GET /works/{work reference number}/sites/{site id}</code>
 
 Once a site has been created it can be retrieved using the GET endpoint, passing the site id which is returned as part of the create request.
 {: .govuk-body}
 
-### Create reinstatement endpoint
-{: .govuk-heading-m}
+#### Create reinstatement endpoint
+{: .govuk-heading-s}
 
 <code>POST /works/{work reference number}/sites/{site id}/reinstatements</code>
 
 A site can have multiple reinstatements associated with it so it is possible to add a new reinstatement to an existing site. This endpoint requires all of the same fields as the create site request.
 {: .govuk-body}
 
-#### Constraints
+A reinstatement can be interim or permanent. If the most recently added reinstatement on a site is interim, then a new permit is required to be granted and started before that site can be made permanent.
+{: .govuk-body}
+
+#### Inspections (HA)
 {: .govuk-heading-s}
 
-A reinstatement cannot be added before the actual start date of a work. A reinstatement can be interim or permanent. If the most recently added reinstatement on a site is interim, then a new permit is required to be granted and started before that site can be made permanent.
-{: .govuk-body}
-
-### Inspections
-{: .govuk-heading-m}
-
-#### Add inspections
-{: .govuk-heading-s}
-
-![Add inspections](images/add-inspections.png)
-
-As shown in the sequence diagram above, once a work has been started then an HA can issue an inspection. Similar to reinstatements, this can be done even after the works has been stopped and completed, in cases where the HA needs to do this retrospectively.
-{: .govuk-body}
-
-There are several inspection outcome types supported:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Passed</li>
-  <li>Unable to complete</li>
-  <li>Failed standard</li>
-  <li>Failed 2 hour • Failed 4 hour</li>
-</ol>
-
-When issuing a failed inspection it's also possible to upload supporting evidence. This requires using the file upload flow. See the File Upload section of the resource guide for details.
+As shown in the sequencing section, once a work has been started then an HA can issue an inspection. Similar to reinstatements, this can be done even after the works has been stopped and completed, in cases where the HA needs to do this retrospectively.
 {: .govuk-body}
 
 #### Create inspection endpoint
@@ -1364,54 +1202,29 @@ When issuing a failed inspection it's also possible to upload supporting evidenc
 
 <code>POST /works/{work reference number}/inspections</code>
 
-Creating an inspection will return a inspection reference number which can be used to retrieve an individual inspection via the GET endpoint provided. The inspection reference number is simply the works reference number suffixed by an incrementing number e.g. {WRN}-INSP-01 for the first inspection added to that work.
+Creating an inspection will return a inspection reference number which can be used to retrieve an individual inspection via the GET endpoint provided.
 {: .govuk-body}
 
-#### Get inspection endpoint
+#### Fixed Penalty Notices (HA)
 {: .govuk-heading-s}
 
-<code>GET /works/{work reference number}/inspections/{inspection reference
-number}</code>
-
-### FPNs
-{: .govuk-heading-m}
-
-#### Issue a FPN (HA only)
-{: .govuk-heading-s}
-
-An HA user can issue a fixed penalty notice against the work record at any point in the works life cycle. Promoters can view and dispute the FPN but they cannot issue their own. HA users may upload evidence to support their FPN but the workflow for this is explained in the file upload section. There are several statuses an FPN can have:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Issued</li>
-  <li>Accepted</li>
-  <li>Paid</li>
-  <li>Paid (discounted)</li>
-  <li>Disputed</li>
-  <li>Withdrawn</li>
-</ol>
+As shown in the sequencing section An HA user can issue a fixed penalty notice (FPN) against the work record at any point in the works life cycle. Promoters can view and dispute the FPN but they cannot issue their own. HA users may upload evidence to support their FPN but the workflow for this is explained in the file upload section.
 
 #### Create FPN endpoint
 {: .govuk-heading-s}
 
 <code>POST /works/{work reference number}/fixed-penalty-notices</code>
 
-Creating a FPN will return a FPN reference number which can be used to retrieve the individual FPN via the GET endpoint provided. The FPN reference number is simply the works reference number suffixed by an incrementing number e.g. {WRN}-FPN-01 for the first FPN added to that work.
+Creating a FPN will return a FPN reference number which can be used to retrieve the individual FPN via the GET endpoint provided.
 {: .govuk-body}
 
-#### Get FPN endpoint
-{: .govuk-heading-s}
-
-<code>GET /works/{work reference number}/fixed-penalty-notices/{FPN reference
-number}</code>
-
-#### Action FPN endpoint
+#### Update FPN status endpoint
 {: .govuk-heading-s}
 
 <code>PUT /works/{work reference number}/fixed-penalty-notices/{FPN reference
 number}/status</code>
 
-Both a promoter and HA can action FPNs in different way. When an FPN is created by the HA it is considered issued. A promoter can accept or dispute FPNs, whilst an HA officer can mark an FPN as withdrawn or paid.
+Both a promoter and HA can action FPNs in different ways as shown in the sequencing section. When an FPN is created by the HA it is considered issued. A promoter can accept or dispute FPNs, whilst an HA officer can mark an FPN as withdrawn or paid.
 {: .govuk-body}
 
 #### File upload
@@ -1433,38 +1246,35 @@ Several flows discussed in the previous sections allow users to add files as par
   <li>
     <strong>Issue a fixed penalty notice:</strong> HA users can upload evidence as part of issuing an FPN
   </li>
+  <li>
+    <strong>Works record:</strong> Both promoters and HA users can upload files to the work record
+  </li>
 </ol>
 
-Uploading a file is achieved through the file upload endpoint. This endpoint is required as part of all the above flows as any files that the user wishes to associate with the above requests must first be uploaded using this endpoint. As mentioned in the Sequencing section, you can upload files at any point in the works lifecycle.
+Uploading a file is achieved through the file upload endpoint. This endpoint is required as part of all the above flows as any files that the user wishes to associate with the above requests must first be uploaded using this endpoint.
 {: .govuk-body}
 
 *Note: The sequence for uploading files may change to allow drafting permits before uploading files.*
 {: .govuk-body}
 
-### Upload file endpoint
-{: .govuk-heading-m}
+#### Upload file endpoint
+{: .govuk-heading-s}
 
 <code>POST /files</code>
 
 Once a file has been uploaded the response will contain a file ID. This is the unique identifier of the file in our system. Behind the scenes the file will be uploaded to S3 and virus scanned. This file ID can then be provided in the requests of the flows discussed above. Once a valid file ID is provided in the requests of the above flows, the file is then associated with the relevant entity.
 {: .govuk-body}
 
-#### Constraints
-{: .govuk-heading-s}
-
 One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
-### Get file endpoint
-{: .govuk-heading-m}
+#### Get file endpoint
+{: .govuk-heading-s}
 
 <code>GET /files/{file ID}</code>
 
 Retrieves the file using the file ID.
 {: .govuk-body}
-
-#### Constraints
-{: .govuk-heading-s}
 
 As the file is virus scanned at the point of upload, it is not immediately available for retrieval. It's possible that this endpoint could return a file not found error response if the file has not yet been virus scanned and marked as safe or if the file was deemed unsafe and removed from the system.
 {: .govuk-body}
@@ -1472,65 +1282,79 @@ As the file is virus scanned at the point of upload, it is not immediately avail
 Typically the virus scanning process will only take a few seconds.
 {: .govuk-body}
 
-### Delete file endpoint
-{: .govuk-heading-m}
+#### Delete file endpoint
+{: .govuk-heading-s}
 
 <code>DELETE /files/{file ID}</code>
 
-Deletes a file from the system.
+Deletes a file from the system. Users can only delete files which their organisation uploaded. You cannot remove a file that's been linked to an entity. As soon as the file id is used as part of a create permit/reinstatement/FPN/inspection request then it is considered linked to that entity.
 {: .govuk-body}
 
-#### Constraints
+#### History
 {: .govuk-heading-s}
-
-You cannot remove a file that's been linked to an entity. As soon as the file id is used as part of a create permit/reinstatement/FPN/inspection request then it is considered linked to that entity.
-{: .govuk-body}
-
-### Comments
-{: .govuk-heading-m}
-
-#### Add comment
-{: .govuk-heading-s}
-
-Both promoter and highway authority users can add comments to a works record. When a comment is added to a works record it will be returned as part of the get works response.
-{: .govuk-body}
-
-#### Create comment endpoint
-{: .govuk-heading-s}
-
-<code>POST /works/{work reference number}/comments</code>
-
-Add a comment to a work record.
-{: .govuk-body}
-
-#### View comments
-{: .govuk-heading-s}
-
-The comments on an individual work record can be viewed as part of that work's history. This endpoint also returns audit events such as when a permit is assessed, started etc. You can distinguish history items as audits or comments by the **isComment** property.
-{: .govuk-body}
-
-### History endpoint
-{: .govuk-heading-m}
 
 <code>GET /works/{work reference number}/history</code>
 
-As well as viewing comments on a work record level, you can also call the reporting API comments endpoint to retrieve all comments associated with your users organization. See the Reporting API Comments section of the resource guide.
+The history endpoint returns audit events associated with that works record such as when a permit is assessed, start etc. As well as that it also returns comments that have been added to the work record. You can distinguish history items as audits or comments by the **isComment** property.
+{: .govuk-body}
+
+As well as viewing comments on a work record level, you can also call the reporting API comments endpoint to retrieve all comments associated with your users organization. See the Reporting API section of the resource guide.
+{: .govuk-body}
+
+#### Permit Alterations
+{: .govuk-heading-s}
+
+Permit alterations allows promoters and HA users the ability to alter a permit once it's been created. Not all properties of a permit are changeable and thus depending on what's been changed and by who, there are currently 5 types of permit alterations:
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Promoter change request:</strong> Promoter submitted alteration after permit is granted or in-progress
+  </li>
+  <li>
+    <strong>Work extension</strong> Promoter submitted proposed end date alteration to in-progress work
+  </li>
+  <li>
+    <strong>HA imposed change</strong> HA users impose changes to permit conditions after permit is granted or in-progress
+  </li>
+  <li>
+    <strong>HA change request:</strong> Currently in the roadmap for phase 2
+  </li>
+  <li>
+    <strong>Duration challenge:</strong> A work extension which has been challenged by the HA with a reasonable_period_end_date
+  </li>
+</ol>
+
+Creating an alteration will return a alteration reference number which can be used to retrieve an individual alteration via the GET endpoint provided.
+{: .govuk-body}
+
+While HA imposed changes are applied to the permit automatically, promoter change requests need to be granted (or deemed) before the changes are applied to the target permit.
+{: .govuk-body}
+
+#### Create alteration endpoint
+TBC
+
+#### Update alteration status endpoint
+TBC
+
+#### Get alteration endpoint
+TBC
+
+### GeoJSON API
+{: .govuk-heading-m}
+
+TBC
+{: .govuk-body}
+
+### Street Lookup API
+{: .govuk-heading-m}
+
+TBC
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-## Permit Alterations
-{: .govuk-heading-l #permit-alterations}
-
-API will support submitting permit alterations, details and sequencing TBC.
-{: .govuk-body}
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
 
 ## User and organisation registration
-{: .govuk-heading-l #user-and-organisation-registration}
+{: .govuk-heading-l #resource-guide}
 
 API will support user and organisation registration, details and sequencing TBC.
 {: .govuk-body}
