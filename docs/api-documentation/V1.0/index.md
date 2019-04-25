@@ -995,7 +995,7 @@ In order to create a reinstatement the following steps should be followed:
   </li>
 </ol>
 
-![Reinstatement sequence diagram](images/create-reinstatement-site.png)
+![Reinstatement sequence diagram](images/create-reinstatement-sites.png)
 
 ### Permit alterations
 {: .govuk-heading-m}
