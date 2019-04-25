@@ -297,18 +297,6 @@ updated works.
 ## Testing
 {: .govuk-heading-l #testing}
 
-### Sandbox environment
-{: .govuk-heading-m}
-
-A sandbox environment is available for authorised users to test their API integration.
-{: .govuk-body}
-
-Details TBC
-{: .govuk-body}
-
-### Other testing
-{: .govuk-heading-m}
-
 #### Generating test client and server stubs
 {: .govuk-heading-s}
 
