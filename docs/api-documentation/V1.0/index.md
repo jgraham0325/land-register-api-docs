@@ -388,8 +388,8 @@ java -jar target/swagger-spring-1.0.0.jar --server.port=8080
 ### HTTPS
 {: .govuk-heading-m}
 
-All Street Manager APIs are secured using Transport Layer Security (TLS) v1.2
-certificates signed by a standard certificate authority.
+All Street Manager web and API interfaces are secured using Transport Layer Security (TLS) v1.2
+certificates issued by [Let's Encrypt](https://letsencrypt.org/), currently signed by the 'DST Root CA X3' IdenTrust cross-signed intermediate certificate as listed in the [Chain of Trust](https://letsencrypt.org/certificates/) document.
 {: .govuk-body}
 
 ### Authentication and Authorisation
