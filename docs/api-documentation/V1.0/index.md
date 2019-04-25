@@ -689,6 +689,7 @@ sequence from the stage they are available:
   <li>Add a comment</li>
   <li>Add reinstatement</li>
   <li>Add inspections</li>
+  <li>Make alteration</li>
 </ol>
 
 Whilst the above focuses much on data manipulation via the street
@@ -721,6 +722,13 @@ The statuses of a permit are:
   <li><strong>cancelled</strong>: The permit has been cancelled by the promoter</li>
   <li><strong>deemed_proposed</strong>: The permit has been automatically deemed as it was not assessed before the deadline date</li>
   <li><strong>deemed_in_progress</strong>: The permit has been started by the promoter after being deemed</li>
+    <li><strong>revoked_proposed</strong>: The permit has been revoked when it was granted</li>
+  <li><strong>revoked_in_progress</strong>: The permit has been revoked when it was in progress</li>
+  <li><strong>revoked_closed</strong>: The permit has been revoked when it was in progress and the promoter has logged their actual stop date</li>
+  <li><strong>awaiting_assessment_in_progress</strong>: The permit has been created and placed straight to in progress awaiting assessment by an HA</li>
+  <li><strong>granted_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been granted</li>
+  <li><strong>refused_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been refused</li>
+  <li><strong>cancelled_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been cancelled</li>
 </ol>
 
 Note: PAA/Major submission will be included as part of this sequence.
@@ -751,6 +759,9 @@ work record, the properties of this response are:
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
   <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (I.e. multiple permits)</li>
+  <li><strong>Reinstatements</strong>: Summary of all reinstatements that have been associated with that works (none initially)</li>
+  <li><strong>History</strong>: Summary of all history associated with that works</li>
+  <li><strong>Files</strong>: Any files that have been uploaded on the works (none initially)</li>
 </ol>
 
 It's also possible to retrieve only information about the permit itself
@@ -914,6 +925,162 @@ followed:
 ![FPN sequence diagram 1](images/fpn-drawio.png)
 ![FPN sequence diagram 2](images/fpn-wsd.png)
 
+### Sites and reinstatements
+{: .govuk-heading-m}
+
+In order to create a reinstatement the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Create a site (Planner)</strong>: <code>POST /works/{workReferenceNumber}/sites</code>
+    <p>
+      Once a permit is in the "In Progress" or "Closed" state a site can
+      be created.
+    </p>
+    <p>
+      Once a site is recorded against a work a reinstatement can be optionally added to the site using <code>POST /works/{workReferenceNumber}/sites/{siteId}/reinstatements</code>
+    </p>
+    <p>
+      Once a site/reinstatement is recorded against a work it cannot be updated.
+    </p>
+  </li>
+</ol>
+
+### Permit alterations
+{: .govuk-heading-m}
+
+#### Promoter change request
+{: .govuk-heading-s}
+
+In order to create a promoter change request the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Request a change (Planner)</strong>: <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code>
+    <p>
+      Promoter should submit all fields in the original permit with the changes they require included.
+    </p>
+  </li>
+  <li>
+    <strong>Assess the alteration (Highway Authority)</strong>: <code>PUT 
+/works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}/status</code>
+    <p>
+      Once a permit alteration is submitted the Highway Authority can either grant or refuse it.
+    </p>
+    <p>
+      Once a permit alteration is granted by a Highway Authority the permit is updated with the altered values. 
+    </p>
+  </li>
+</ol>
+
+#### Promoter work extension
+{: .govuk-heading-s}
+
+In order to create a work extension the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Request a change (Planner)</strong>: <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code>
+    <p>
+      Promoter should submit all fields in the original permit containing a change to the proposed_stop_date.
+    </p>
+  </li>
+  <li>
+    <strong>Assess the alteration (Highway Authority)</strong>: <code>PUT 
+/works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}/status</code>
+    <p>
+      Once a permit alteration is submitted the Highway Authority can either grant, grant with duration challenge or refuse it. If the Highway Authority grants with duration challenge they also provide an alternative end_date for the work to be complete.
+    </p>
+    <p>
+      Once a permit alteration is granted by a Highway Authority the permit is updated with the altered values. 
+    </p>
+  </li>
+</ol>
+
+#### Highway Authority imposed changed
+{: .govuk-heading-s}
+
+In order to create a work extension the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      As per the usual permit flow, if the work isn't an immediate, the Highway
+      Authority will need to grant the application before work can begin.
+    </p>
+  </li>
+  <li>
+    <strong>Impose a change (Highway Authority)</strong>: <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code>
+    <p>
+      Highway Authority can impose changes to the conditions only. Highway Authority should submit all fields in the original permit containing a change to the conditions.
+    </p>
+    <p>
+      Once a imposed change is submitted by a Highway Authority the permit is updated with the altered values. No assessment is required.
+    </p>
+  </li>
+</ol>
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
@@ -937,6 +1104,9 @@ users to retrieve the following:
   <li>Sites</li>
   <li>Workstreams</li>
   <li>Work updates (polling endpoint)</li>
+  <li>Inspections</li>
+  <li>Workstreams</li>
+  <li>Polling</li>
 </ol>
 
 #### Pagination
@@ -1334,32 +1504,49 @@ While HA imposed changes are applied to the permit automatically, promoter chang
 #### Create alteration endpoint
 {: .govuk-heading-s}
 
-TBC
-{: .govuk-body}
+<code>POST /works/{work reference number}/permits/{permit reference number}/alterations</code>
 
+Creates a permit alteration. The model takes all editable fields on the permit. When a promoter uses this endpoint, the alteration will have an AlterationType of PROMOTER_CHANGE_REQUEST in the case that they do not extend the end date of the permit while it in in progress, or WORK_EXTENSION in the case that they do. Once the alteration is create it is required to be assessed by the associated HA.
+
+An HA can use this endpoint to impose changes. The HA must provide all details of the permit with changes only to the conditions section. The AlterationType in this case will be HA_IMPOSED_CHANGE. When an HA imposes a change that change is automatically applied to the permit. It will continue to have a status of Submitted but the permit will reflect the changes submitted. 
+{: .govuk-body}
 
 #### Update alteration status endpoint
 {: .govuk-heading-s}
 
-TBC
+<code>PUT /works/{work reference number}/permits/{permit reference number}/alterations/{permit alteration reference number}/status</code>
+
+The sequence section shows how an alteration can be assessed and actioned at various stages by promoters and highway authorities. This endpoint drives all of these functions.
 {: .govuk-body}
 
 #### Get alteration endpoint
 {: .govuk-heading-s}
 
-TBC
+<code>GET /works/{work reference number}/permits/{permit reference number}/alterations/{permit alteration reference number}</code>
+
+This alteration endpoint returns both the original and the proposed changes of a permit in addition to the reason for the alteration, assessment information and other information relevant to the alteration.
 {: .govuk-body}
 
 ### GeoJSON API
 {: .govuk-heading-m}
 
-TBC
+#### Get works endpoint
+{: .govuk-heading-s}
+
+<code>GET /works</code>
+
+This endpoint takes min and max easting and northing values to select all works within a bounding box. The works selected can be optionally filtered using the start and end date params.
 {: .govuk-body}
 
 ### Street Lookup API
 {: .govuk-heading-m}
 
-TBC
+#### Get streets endpoint
+{: .govuk-heading-s}
+
+<code>GET /nsg/streets</code>
+
+Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. 
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
