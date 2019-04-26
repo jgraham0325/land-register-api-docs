@@ -61,7 +61,7 @@ Version 0.2
   <li>Details added for Polling endpoint planned for Reporting API, see <em>Technical Overview</em></li>
   <li>Plans added for Notifications, see <em>Technical Overview</em></li>
   <li>Details added for User account roles and permissions, see <em>Security</em></li>
-  <li>Additional features added to Works API
+  <li>Additional features added to Work API
     <ul>
       <li>Works history</li>
       <li>Works comments</li>
@@ -166,13 +166,13 @@ Street Manager exposes a number of APIs to allow external applications
 to retrieve and submit data.
 {: .govuk-body}
 
-#### Works API
+#### Work API
 {: .govuk-heading-s}
 
 *This API is exposed externally.*
 {: .govuk-body}
 
-The street manager works API allows promoters and highway authority
+The street manager work API allows promoters and highway authority
 users to carry out a number of key workflows relevant to their
 organization and role. We will cover each in detail but at a high level
 they are:
@@ -265,7 +265,7 @@ can extract data from the service.
 **Individual work data**
 {: .govuk-body}
 
-The Works API provides endpoints which give the full detail available
+The Work API provides endpoints which give the full detail available
 for individual Works and Permits. Use these endpoints to retrieve
 details such as timings, comments, history and changes.
 {: .govuk-body}
@@ -462,11 +462,11 @@ companies, need to use separate user accounts for each organisation.*
 The table below shows the current permissions per endpoint.
 {: .govuk-body}
 
-#### Works API
+#### Work API
 {: .govuk-heading-s}
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption">Authorisation per endpoint for Works API</caption>
+  <caption class="govuk-table__caption">Authorisation per endpoint for Work API</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th class="govuk-table__header">Endpoint</th>
@@ -730,7 +730,7 @@ sequence from the stage they are available:
   <li>Make alteration</li>
 </ol>
 
-Whilst the above focuses much on data manipulation via the Works API, here is an example of some data retrieval calls that may be performed alongside these actions via the reporting API.
+Whilst the above focuses much on data manipulation via the Work API, here is an example of some data retrieval calls that may be performed alongside these actions via the reporting API.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1259,7 +1259,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the works API. FPNs can be filtered by status. The status of an FPN are:
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. The status of an FPN are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1280,7 +1280,7 @@ Retrieves a list of works which have had changes within a defined time period. T
 external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API.
 {: .govuk-body}
 
-### **Works API**
+### **Work API**
 {: .govuk-heading-m}
 
 #### Work records and permits
