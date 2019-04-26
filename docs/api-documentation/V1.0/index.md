@@ -16,7 +16,7 @@ Version 1.0 Draft
 <ol class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
-  <li><a class="govuk-link" href="#serviceenvironmentsintroduction">Service Environments Introduction</a></li>
+  <li><a class="govuk-link" href="#environments">Environments</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioning">Versioning</a></li>
   <li><a class="govuk-link" href="#testing">Testing</a></li>
@@ -108,8 +108,8 @@ TBC
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-## Service Environments Introduction
-{: .govuk-heading-l #serviceenvironmentsintroduction}
+## Environments
+{: .govuk-heading-l #environments}
 
 The Street Manager service provides three separate isolated application service environments.  Each of these environments contains a full stack deployment of Street Manager and are designated for specific purposes, as outlined below.
 {: .govuk-body}
