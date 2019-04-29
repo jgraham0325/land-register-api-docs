@@ -1591,7 +1591,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 ## Roadmap
 {: .govuk-heading-l #roadmap}
 
-The Street Manager roadmap shows the things we’re working on and when we hope to have them ready for you to use. To see the full service roadmap refer to the DfT roadshow slides. Below are some details on planned API changes.
+The Street Manager roadmap shows the things we’re working on and when we hope to have them ready for you to use. To see the full service roadmap refer to the DfT roadshow slides. Below are some details on planned API changes, detail on when they will be released and API changes will be available during private beta.
 {: .govuk-body}
 
 Street Manager is in private beta. This means it is still in active development and we’re regularly adding new features. The roadmap is a guide to what we have planned, but some things might change.
@@ -1609,10 +1609,10 @@ The Reporting API will be updated to allow additional search and filtering optio
 ### Delegated user details fields for POST/PUT endpoints for comments/history
 {: .govuk-heading-s}
 
-The Works API will allow External systems which integrate with Street Manager to supply internal user identifer details in API calls from their own systems so that their actions in Street Manager can be distinguished from other internal users sent via API. This will be recorded and displayed in areas such as Comments and Works History.
+The Work API will allow External systems which integrate with Street Manager to supply internal user identifer details in API calls from their own systems so that their actions in Street Manager can be distinguished from other internal users sent via API. This will be recorded and displayed in areas such as Comments and Works History.
 {: .govuk-body}
 
-The fields to be used for this have already been added to the Works API as placeholders for integration, see the **Swagger JSON** and **Resource Guide** for details.
+The fields to be used for this have already been added to the Work API as placeholders for integration, see the **Swagger JSON** and **Resource Guide** for details.
 {: .govuk-body}
 
 ### Returning transaction IDs on updates and use in polling endpoint
@@ -1624,7 +1624,7 @@ The Reporting API continuous polling will be updated to allow the use of Transac
 ### Making NSG inferred Street data non-mandatory if USRN supplied
 {: .govuk-heading-s}
 
-The Works API will be updated to make NSG Street data which can be inferred from USRN non-mandatory, to avoid data duplication and prevent potential differences in data due to external systems using different NSG releases.
+The Work API will be updated to make NSG Street data which can be inferred from USRN non-mandatory, to avoid data duplication and prevent potential differences in data due to external systems using different NSG releases.
 {: .govuk-body}
 
 ### Fee reporting
@@ -1636,7 +1636,7 @@ The Reporting API will include new endpoints to support reporting on chargeable 
 ### Inspections on historic works
 {: .govuk-heading-s}
 
-The Works API will be updated to allow submitting Inspections for works which have not been recorded in Street Manager. Note this is not intended as a way to migrate historic work data into Street Manager, only to support inspections during transition.
+The Work API will be updated to allow submitting Inspections for works which have not been recorded in Street Manager. Note this is not intended as a way to migrate historic work data into Street Manager, only to support inspections during transition.
 {: .govuk-body}
 
 ### Notifications
@@ -1650,9 +1650,27 @@ private beta.*
 {: .govuk-body}
 
 ### User and organisation self registration
-{: .govuk-heading-m}
+{: .govuk-heading-s}
 
 API will support user and organisation administration and registration functions, as such password reset, profile editing and user self registriction. These functions will be exposed via a new Party API, which will allow API users with admin permissions to
+{: .govuk-body}
+
+### Forward plans
+{: .govuk-heading-s}
+
+The Work API will be updated to allow submission of Forward plans for works.
+{: .govuk-body}
+
+### Noticing
+{: .govuk-heading-s}
+
+The Work API will be updated to allow submission of notices to noticing Highway Authorities.
+{: .govuk-body}
+
+### Error correction
+{: .govuk-heading-s}
+
+The Work API will be updated to include endpoints for correcting errors in submitted data against works.
 {: .govuk-body}
 
 ## Versions
