@@ -24,6 +24,7 @@ Version 1.0 Draft
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
   <li><a class="govuk-link" href="#roadmap">Roadmap</a></li>
+  <li><a class="govuk-link" href="#versions">Versions</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -38,41 +39,6 @@ This is the API guidance documentation for Street Manager, intended as a guide f
 
 The Street Manager APIs are RESTful APIs to read/write data to the centralised Street Manager system following [GDS guidelines](https://www.gov.uk/guidance/gds-api-technical-and-data-standards), not a peer to peer solution.
 {: .govuk-body}
-
-### Updates
-{: .govuk-heading-m}
-
-The following is a list of significant changes by version of this document.
-{: .govuk-body}
-
-Version 1.0:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Updated security section with details on user roles, see <em>Security</em></li>
-</ol>
-
-Version 0.2
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Exposed Street Lookup API, GeoJSON API and Reporting API for external use, see <em>Technical Overview</em></li>
-  <li>Details added for Polling endpoint planned for Reporting API, see <em>Technical Overview</em></li>
-  <li>Plans added for Notifications, see <em>Technical Overview</em></li>
-  <li>Details added for User account roles and permissions, see <em>Security</em></li>
-  <li>Additional features added to Work API
-    <ul>
-      <li>Works history</li>
-      <li>Works comments</li>
-      <li>Submit immediate permit</li>
-      <li>Permit alterations</li>
-      <li>Scheduled inspections</li>
-      <li>Permit cancellation</li>
-      <li>Submit PAA</li>
-      <li>Progress PAA to PA</li>
-    </ul>
-  </li>
-</ol>
 
 ### References
 {: .govuk-heading-m}
@@ -1637,5 +1603,47 @@ You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail
 ### User and organisation self registration
 {: .govuk-heading-m}
 
-API will support user and organisation registration, details and sequencing TBC.
+API will support user and organisation administration and registration functions, as such password reset, profile editing and user self registriction. These functions will be exposed via a new Party API, which will allow API users with admin permissions to
 {: .govuk-body}
+
+## Versions
+{: .govuk-heading-l #versions}
+
+The following is a list of significant changes by version of this document.
+{: .govuk-body}
+
+Version 1.0 (30/4/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added <em>Environments</em> section</li>
+  <li>Added <em>Versioning and Release Management</em> section</li>
+  <li>Added <em>Roadmap</em> section</li>
+  <li>Referenced Onboarding and Business rule documents</li>
+  <li>Updated <em>Sequencing</em> section with new flows and details</li>
+  <li>Updated security section with details on user roles, see <em>Security</em></li>
+  <li>Added static Swagger JSON files, see <em>Resource guide</em></li>
+  <li>Added detail on continuous polling endpoint, see <em>Technical Overview</em> and <em>Resource guide</em></li>
+</ol>
+
+Version 0.2 (27/03/2019 Draft)
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Exposed Street Lookup API, GeoJSON API and Reporting API for external use, see <em>Technical Overview</em></li>
+  <li>Details added for Polling endpoint planned for Reporting API, see <em>Technical Overview</em></li>
+  <li>Plans added for Notifications, see <em>Technical Overview</em></li>
+  <li>Details added for User account roles and permissions, see <em>Security</em></li>
+  <li>Additional features added to Work API
+    <ul>
+      <li>Works history</li>
+      <li>Works comments</li>
+      <li>Submit immediate permit</li>
+      <li>Permit alterations</li>
+      <li>Scheduled inspections</li>
+      <li>Permit cancellation</li>
+      <li>Submit PAA</li>
+      <li>Progress PAA to PA</li>
+    </ul>
+  </li>
+</ol>
