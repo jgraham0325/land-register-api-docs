@@ -121,7 +121,7 @@ All private beta users will begin in the SANDBOX ENVIRONMENT. You may dual-key a
 When you are ready, you can request access to the PRE-PRODUCTION and PRODUCTION ENVIRONMENT. Instead of dummy email addresses like those that were provided for SANDBOX, we will be using your users’ email addresses as the login username. Please avoid using dummy data within PRE-PRODUCTION and treat it as if it was the live system.
 {: .govuk-body}
 
-Two weeks’ notice will be required when you would like to move onto PRE-PRODUCTION/PRODUCTION. We will also need to ensure that you are paired up with a works promoter and local highway authority (LHA) within your geographical area accordingly.
+Two weeks’ notice will be required when you would like to move onto PRE-PRODUCTION/PRODUCTION.
 {: .govuk-body}
 
 Important: If you dual-key in EToN and the PRODUCTION, there will be duplicate records in the live system which may cause side affects in other services such duplicate works in [roadworks.org](https://roadworks.org). If this is necessary you should make other organisations aware so they can prevent this.
