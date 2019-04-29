@@ -13,7 +13,7 @@ Version 1.0 Draft
 ## Table of contents
 {: .govuk-heading-l #table-of-contents}
 
-<ol class="govuk-list govuk-list--number">
+<ul class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
@@ -23,9 +23,8 @@ Version 1.0 Draft
   <li><a class="govuk-link" href="#security">Security</a></li>
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
-  <li><a class="govuk-link" href="#permit-alterations">Permit Alterations</a></li>
-  <li><a class="govuk-link" href="#user-and-organisation-registration">User and organisation registration</a></li>
-</ol>
+  <li><a class="govuk-link" href="#roadmap">Roadmap</a></li>
+</ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -212,10 +211,7 @@ to be used as part of their request.
 
 The street manager street lookup API allows querying of NSG and ASD data
 based on location and USRN. This function is only available as part of
-submitting a permit for a work.
-{: .govuk-body}
-
-Details TBC
+submitting a permit for a work. See the resource guide for details.
 {: .govuk-body}
 
 #### GeoJson API
@@ -225,7 +221,7 @@ Details TBC
 {: .govuk-body}
 
 The street manager GeoJson API exposes works spatial data to
-authenticated users for use with mapping queries. Details TBC
+authenticated users for use with mapping queries. See the resource guide for details.
 {: .govuk-body}
 
 #### Open data API
@@ -234,7 +230,7 @@ authenticated users for use with mapping queries. Details TBC
 *This API is not yet available.*
 {: .govuk-body}
 
-Street Manager will support an API for Open Data users, details TBC.
+Street Manager will support an API for Open Data users, see the Roadmap section for details.
 {: .govuk-body}
 
 #### Reporting API
@@ -1626,8 +1622,20 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-## User and organisation registration
-{: .govuk-heading-l #resource-guide}
+## Roadmap
+{: .govuk-heading-l #roadmap}
+
+The Street Manager roadmap shows the things we’re working on and when we hope to have them ready for you to use. To see the full service roadmap refer to the DfT roadshow slides. Below are some details on sections relevant to planned API changes.
+{: .govuk-body}
+
+Street Manager is in private beta. This means it is still in active development and we’re regularly adding new features. The roadmap is a guide to what we have planned, but some things might change.
+{: .govuk-body}
+
+You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail about these features, or to suggest something else you’d like Street Manager to offer.
+{: .govuk-body}
+
+### User and organisation self registration
+{: .govuk-heading-m}
 
 API will support user and organisation registration, details and sequencing TBC.
 {: .govuk-body}
