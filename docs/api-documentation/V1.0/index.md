@@ -417,9 +417,9 @@ operations are restricted based on a user's role and the organisation they are
 associated with.
 {: .govuk-body}
 
-*Note: Currently systems who need to act as users associated with
+**Note:** *Currently systems who need to act as users associated with
 multiple organisations, i.e. submitting permits for multiple utility
-companies, need to use separate user accounts for each organisation.*
+companies, **need to use separate user accounts for each organisation**.*
 {: .govuk-body}
 
 The table below shows the current permissions per endpoint.
