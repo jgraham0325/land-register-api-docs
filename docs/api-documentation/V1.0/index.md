@@ -1591,13 +1591,62 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 ## Roadmap
 {: .govuk-heading-l #roadmap}
 
-The Street Manager roadmap shows the things we’re working on and when we hope to have them ready for you to use. To see the full service roadmap refer to the DfT roadshow slides. Below are some details on sections relevant to planned API changes.
+The Street Manager roadmap shows the things we’re working on and when we hope to have them ready for you to use. To see the full service roadmap refer to the DfT roadshow slides. Below are some details on planned API changes.
 {: .govuk-body}
 
 Street Manager is in private beta. This means it is still in active development and we’re regularly adding new features. The roadmap is a guide to what we have planned, but some things might change.
 {: .govuk-body}
 
 You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail about these features, or to suggest something else you’d like Street Manager to offer.
+{: .govuk-body}
+
+### Reporting API enhancements for search and filtering
+{: .govuk-heading-s}
+
+The Reporting API will be updated to allow additional search and filtering options, such as ability to query permit data from other organisations. The summary data returned will be increased to allow more flexible reporting and extracting data.
+{: .govuk-body}
+
+### Delegated user details fields for POST/PUT endpoints for comments/history
+{: .govuk-heading-s}
+
+The Works API will allow External systems which integrate with Street Manager to supply internal user identifer details in API calls from their own systems so that their actions in Street Manager can be distinguished from other internal users sent via API. This will be recorded and displayed in areas such as Comments and Works History.
+{: .govuk-body}
+
+The fields to be used for this have already been added to the Works API as placeholders for integration, see the **Swagger JSON** and **Resource Guide** for details.
+{: .govuk-body}
+
+### Returning transaction IDs on updates and use in polling endpoint
+{: .govuk-heading-s}
+
+The Reporting API continuous polling will be updated to allow the use of Transaction ID for filtering for easier polling.
+{: .govuk-body}
+
+### Making NSG inferred Street data non-mandatory if USRN supplied
+{: .govuk-heading-s}
+
+The Works API will be updated to make NSG Street data which can be inferred from USRN non-mandatory, to avoid data duplication and prevent potential differences in data due to external systems using different NSG releases.
+{: .govuk-body}
+
+### Fee reporting
+{: .govuk-heading-s}
+
+The Reporting API will include new endpoints to support reporting on chargeable activities.
+{: .govuk-body}
+
+### Inspections on historic works
+{: .govuk-heading-s}
+
+The Works API will be updated to allow submitting Inspections for works which have not been recorded in Street Manager. Note this is not intended as a way to migrate historic work data into Street Manager, only to support inspections during transition.
+{: .govuk-body}
+
+### Notifications
+{: .govuk-heading-s}
+
+See **Technical Overview - Getting data from Street Manager - Notifications** for details.
+{: .govuk-body}
+
+*Note: Notifications are currently in roadmap for Phase 3, not in
+private beta.*
 {: .govuk-body}
 
 ### User and organisation self registration
