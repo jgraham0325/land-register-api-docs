@@ -136,9 +136,6 @@ to retrieve and submit data.
 #### Work API
 {: .govuk-heading-s}
 
-*This API is exposed externally.*
-{: .govuk-body}
-
 The street manager work API allows promoters and highway authority
 users to carry out a number of key workflows relevant to their
 organization and role. We will cover each in detail but at a high level
@@ -174,9 +171,6 @@ to be used as part of their request.
 #### Street Lookup API
 {: .govuk-heading-s}
 
-*This API is exposed externally.*
-{: .govuk-body}
-
 The street manager street lookup API allows querying of NSG and ASD data
 based on location and USRN. This function is only available as part of
 submitting a permit for a work. See the resource guide for details.
@@ -184,9 +178,6 @@ submitting a permit for a work. See the resource guide for details.
 
 #### GeoJson API
 {: .govuk-heading-s}
-
-*This API is exposed externally.*
-{: .govuk-body}
 
 The street manager GeoJson API exposes works spatial data to
 authenticated users for use with mapping queries. See the resource guide for details.
@@ -203,9 +194,6 @@ Street Manager will support an API for Open Data users, see the Roadmap section 
 
 #### Reporting API
 {: .govuk-heading-s}
-
-*This API is exposed externally.*
-{: .govuk-body}
 
 The reporting API allows promoters and highway authority users to carry
 out a number of data analysis and reporting workflows, allowing them to
@@ -1686,6 +1674,12 @@ The Work API will be updated to allow submission of notices to noticing Highway 
 {: .govuk-heading-s}
 
 The Work API will be updated to include endpoints for correcting errors in submitted data against works.
+{: .govuk-body}
+
+### Open data API
+{: .govuk-heading-s}
+
+The Open data API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
 {: .govuk-body}
 
 ## Versions
