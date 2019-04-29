@@ -1,5 +1,5 @@
 ﻿row,reference,area,name,details,diagram,image,display
-,1,Permit fields,Works,,,,
+,1,Permit fields,Works,,,,1
 1,1.1,Permit fields,Work reference number,"If adding own promoter works reference, user able to enter text in field. Mandatory field.
 
 Validation: SWA prefix e.g. MU is from the SWA code list. Displays the organisation’s SWA short code e.g. MU or AZ followed by the three digit workstream prefix and a maximum of 18 characters after this.
@@ -193,14 +193,14 @@ Can result in the works category being updated if it goes over the relevant thre
 Clicking into a change request will highlight what has changed - both what the original values were and the new values",,,1
 32,5.7,,Deeming,"Promoter change request deems after 2 days
 No deem date for imposed changes as they apply instantly",,,1
-,6,,Revoking,,,,
+,6,,Revoking,,,,1
 33,6.1,,Revoking a permit,"- Only the HA can revoke a permit
 - Permit can be revoked at any point from when it was granted up to the point the work has stopped
 - If the permit was revoked before the work was started, promoter isn't able to do anything at the work record level i.e. start the work, except issue an FPN. Similarly promoter isn't able to do anything at the permit level i.e. add a change request
 - If the work has been started everything that can be carried out at the work record level should continue to be available i.e. reinstatements, inspections etc. Same goes for the permit level i.e. change requests, work extensions etc.
 - Any outstanding change requests against that permit at the point of revoking it, should also be revoked
 - Promoter able to submit a new permit on a works record if the existing permit has been revoked",,,1
-,7,,Cancelling,,,,
+,7,,Cancelling,,,,1
 34,7.1,,Cancelling a permit before assessment," Ability for a promoter to cancel a permit application within their organisation for which the works has not been started yet but after submission of permit.
 - Cancel after submission (before assessment) and Cancel after assessment possible.
 - Confirmation triggers in both scenarios and reason required if user wishes to go ahead with cancellation.
