@@ -38,12 +38,6 @@ title: Onboarding
 ## Introduction
 {: .govuk-heading-l #introduction}
 
-Many thanks for signing up to be part of Private Beta – we are excited to be working closely with you on Street Manager.
-{: .govuk-body}
-
-Your Private Beta Manager is Esme Moore, who will be your primary contact for all things related to Private Beta. (See the Communication channels section for more details)
-{: .govuk-body}
-
 In this Onboarding Induction Pack, you will find details about the scope and timelines of Street Manager, your roles and responsibilities, important information about communication channels, the FAQ and what information we plan to produce and have available to you during this phase.
 {: .govuk-body}
 
