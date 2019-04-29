@@ -61,10 +61,10 @@ The Swagger JSON files for each API are available below:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="json/work-swagger.json/">Work API</a></li>
-  <li><a href="json/reporting-swagger.json/">Reporting API</a></li>
-  <li><a href="json/lookup-swagger.json/">Street lookup API</a></li>
-  <li><a href="json/geojson-swagger.json/">GeoJSON API</a></li>
+  <li><a href="json/work-swagger.json">Work API</a></li>
+  <li><a href="json/reporting-swagger.json">Reporting API</a></li>
+  <li><a href="json/lookup-swagger.json">Street lookup API</a></li>
+  <li><a href="json/geojson-swagger.json">GeoJSON API</a></li>
 </ol>
 
 **Please be aware of the following:**
