@@ -84,11 +84,10 @@ In the Work API several request definitions contain `internal_user_identifier` a
 ## Onboarding
 {: .govuk-heading-l #onboarding}
 
-### Access to API pilot and sandbox environment
+### Access to sandbox environment for API testing
 {: .govuk-heading-m}
 
-Contact <a href="mailto:streetmanager@dft.gov.uk">streetmanager@dft.gov.uk</a> for details on how to
-join the API pilot and access to the sandbox environment.
+Contact <a href="mailto:streetmanager@dft.gov.uk">streetmanager@dft.gov.uk</a> for details on how to access to the sandbox environment for API testing.
 {: .govuk-body}
 
 ### Organisation registration and access to production system
