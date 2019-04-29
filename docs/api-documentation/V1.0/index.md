@@ -127,6 +127,8 @@ The Street Manager service provides three separate isolated application service 
 ### Available APIs
 {: .govuk-heading-m}
 
+![Getting data](images/getting-data-1.png)
+
 Street Manager exposes a number of APIs to allow external applications
 to retrieve and submit data.
 {: .govuk-body}
@@ -221,8 +223,6 @@ from the service to give their users the most up-to-date view on what is
 going on with their works. Street Manager has a number of ways which you
 can extract data from the service.
 {: .govuk-body}
-
-![Getting data](images/getting-data-1.png)
 
 **Individual work data**
 {: .govuk-body}
