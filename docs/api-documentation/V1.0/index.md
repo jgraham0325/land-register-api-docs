@@ -237,7 +237,7 @@ The reporting API exposes a `/works/updates` endpoint for polling. See the resou
 **Notifications**
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for Phase 3, not in
+*Note: Notifications are currently in roadmap for **Phase 3**, not in
 private beta.*
 {: .govuk-body}
 
@@ -1648,7 +1648,7 @@ The Work API will be updated to allow submitting Inspections for works which hav
 See **Technical Overview - Getting data from Street Manager - Notifications** for details.
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for Phase 3, not in
+*Note: Notifications are currently in roadmap for **Phase 3**, not in
 private beta.*
 {: .govuk-body}
 
