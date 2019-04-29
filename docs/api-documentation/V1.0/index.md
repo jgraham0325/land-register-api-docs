@@ -684,6 +684,7 @@ To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
 sending an excessive number of calls. 
+{: .govuk-body}
 
 Note that rate limiting thresholds will be under regular review and
 refinement during the Private Beta phase. The final Production values
