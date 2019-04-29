@@ -307,6 +307,21 @@ When the first participant organisations are approaching Production readiness, <
 ## Testing
 {: .govuk-heading-l #testing}
 
+#### Environments and usage
+{: .govuk-heading-s}
+
+See the <a href="#environments">Environments</a> section for details on which environment to use for different types of testing. If you require performing performance or security testing please contact Street Manager support beforehand, as this may have an impact on other users and each environment has specific rate limiting and protective monitoring which could impact your tests.
+{: .govuk-body}
+
+#### Reporting issues
+{: .govuk-heading-s}
+
+In order to correct issues and bugs found in Street Manager we require specific information so we can trace and attempt to reproduce errors.
+{: .govuk-body}
+
+Details will be provided to you at onboarding regarding how to report issues, the format and information required.
+{: .govuk-body}
+
 #### Generating test client and server stubs
 {: .govuk-heading-s}
 
