@@ -5,6 +5,8 @@ title: Onboarding
 # Onboarding
 {: .govuk-heading-xl}
 
+<p class="govuk-body-l">Version 0.1 Draft</p>
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <b>NOTE:</b> This documentation is being trialled for use with the Street Manager pilot and private beta, it is not in final state and should not be taken as production documentation.
@@ -70,7 +72,7 @@ To address the gap, the DfT worked with users from local authorities and utility
 ## Ways of working - Agile product delivery
 {: .govuk-heading-l #ways-of-working}
 
-In line with Government Digital Service (GDS) guidelines, the Street Manager project is being conducted in an agile way, meaning that we are following an iterative development approach. 
+In line with Government Digital Service (GDS) guidelines, the Street Manager project is being conducted in an agile way, meaning that we are following an iterative development approach.
 {: .govuk-body}
 
 We build the basics of the product first and then, based on regular user testing feedback, we enhance as we go. It provides the ability to adapt the product to meet changing requirements all the time. This means that you as users get to access the new system earlier on but also for us to adapt the system continuously. Rather than a fixed system that may be missing a few things, you get an organic one that can be added to as and when needed. The analogy we like to use is of building a house - you build the basic walls and roof first so that you can move in straight away but then you can choose what curtains or kitchen tiles you want when you’ve moved in.
