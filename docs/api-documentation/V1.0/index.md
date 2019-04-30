@@ -119,7 +119,7 @@ The Street Manager service provides three separate isolated application service 
   <li>Organisations intending to use only the Street Manager web frontend can leverage SANDBOX environment to test end-to-end permit journeys and familiarise their staff with the service.</li>
   <li>API integration developers can leverage the SANDBOX environment to access the latest Swagger documentation for the available API endpoints, as well as test their API clients against the Street Manager API services from their CI integration environment.</li>
   <li>SANDBOX is development-grade, therefore a) is subject to higher-velocity changes and releases; b) is not guaranteed to be highly-available nor highly-performant; c) may be subject to occasional resets of the underlying databases.</li>
-  <li>Users must agree not to submit sensitive nor personally identifiable data into the SANDBOX environment under any circumstances – only use of ‘dummy’ data is permitted.</li>
+  <li><b>Organisations and their users of Street Manager must agree not to submit sensitive nor personally identifiable data into the SANDBOX environment under any circumstances – only use of ‘dummy’ data is permitted.</b></li>
 </ol>
 
 
@@ -131,7 +131,7 @@ The Street Manager service provides three separate isolated application service 
   <li>Participant organisations must engage with the Street Manager project team to request access to this environment; access and credentials will be provided once it is agreed that the organisation has carried out sufficient preparation in SANDBOX and has reached a stage of PRE-PRODUCTION readiness.</li>
   <li>Where necessary, organisations are permitted to dual-key real production street works data within the PRE-PRODUCTION environment.</li>
   <li>PRE-PRODUCTION will also act as a ‘holding area’ to allow organisations to align with their local ecosystem partners prior to entering production-readiness.  That is, a Highway Authority may enter PRE-PRODUCTION a period of time before their local area promoters reach PRE-PRODUCTION readiness (or vice-versa).  The Highway Authority will not be able to enter PRODUCTION readiness until their local area promoter partners join them in PRE-PRODUCTION readiness and collaborate to comprehensively validate the end-to-end service operation procedures.</li>
-  <li>Organisations are permitted to leverage PRE-PRODUCTION for additional assurance activities such as focussed end-user testing and non-functional (performance/availability) testing – however, the Street Manager team must be engaged and in agreement around testing scope, volumes and dates before any such activities are approved.</li>
+  <li>Organisations are permitted to leverage PRE-PRODUCTION for additional assurance activities such as focussed end-user testing and non-functional (performance/availability) testing – <b>however, the Street Manager team must be engaged and in agreement around testing scope, volumes and scheduling before any such activities are approved.</b></li>
 </ol>
 
 
@@ -139,7 +139,7 @@ The Street Manager service provides three separate isolated application service 
 {: .govuk-heading-m}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>The PRODUCTION environment is an identical replica of the PRE-PRODUCTION environment.  The environment is for LIVE use only – neither functional nor non-functional testing shall be permitted within the live environment.</li>
+  <li>The PRODUCTION environment is an identical replica of the PRE-PRODUCTION environment.  <b>The environment is for LIVE use and LIVE data only</b> – neither functional nor non-functional testing shall be permitted within the live environment.</li>
   <li>Once an organisation has reached production-readiness – and have aligned with their local area ecosystem partners in that production-readiness – the organisations must engage with the Street Manager team to request access to the PRODUCTION environment.  At this stage the team will work with the organisation and its local area ecosystem partners to facilitate a transition into the PRODUCTION environment.</li>
   <li>In some cases, local area ecosystem alignment may not be possible within reasonable timeframes due to external factors.  In these cases, dual-keying may be necessary between the organisation, their existing EToN system, and the Street Manager Service.</li>
 </ol>
@@ -324,7 +324,7 @@ When the first participant organisations are approaching Production readiness, <
 #### Environments and usage
 {: .govuk-heading-s}
 
-See the <a href="#environments">Environments</a> section for details on which environment to use for different types of testing. If you require performing performance or security testing please contact Street Manager support beforehand, as this may have an impact on other users and each environment has specific rate limiting and protective monitoring which could impact your tests.
+See the <a href="#environments">Environments</a> section for details on which environment to use for different types of testing. If you require non-functional performance or security testing please contact Street Manager support to agree scope, volumes and scheduling beforehand, as this may have an impact on other users and each environment has specific rate limiting and protective controls which may invalidate your tests.
 {: .govuk-body}
 
 #### Reporting issues
@@ -683,7 +683,12 @@ to your organization.
 To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
-sending an excessive number of calls.
+sending an excessive number of calls. 
+{: .govuk-body}
+
+Note that rate limiting thresholds will be under regular review and
+refinement during the Private Beta phase. The final Production values
+will be confirmed prior to entering Public Beta.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
