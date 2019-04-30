@@ -47,6 +47,7 @@ In this Onboarding Induction Pack, you will find details about the scope and tim
 {: .govuk-heading-l #about-street-manager}
 
 Street Manager is a new digital service that will transform the planning, management and communication of street and road works.  It will be for registered users from local highway authorities, utility companies and their contractors.
+{: .govuk-body}
 
 In early 2017, the DfT began to investigate whether or not the current system for managing street works was fit for purpose in terms of the technology it uses, the needs of the user community and the rising demand for up to date and accurate data about road works. People were reporting frustrations about:
 {: .govuk-body}
