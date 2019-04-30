@@ -5,7 +5,7 @@ title: API specification V1.0
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.0 Draft
+Version 1.0
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -683,7 +683,7 @@ to your organization.
 To protect the system from denial of service attacks, repeated calls
 made in a short period of time from a single IP source will receive 405
 status responses. If you are receiving 405 responses ensure you are not
-sending an excessive number of calls. 
+sending an excessive number of calls.
 {: .govuk-body}
 
 Note that rate limiting thresholds will be under regular review and
