@@ -144,15 +144,15 @@
 			"properties": {
 				"street_special_desig_code": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				},
 				"special_desig_location_text": {
 					"type": "string",
-					"description": "Max length 255 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 255 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				},
 				"special_desig_description": {
 					"type": "string",
-					"description": "Max length 255 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 255 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				}
 			},
 			"required": [
@@ -1255,11 +1255,11 @@
 				},
 				"street_name": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				},
 				"area_name": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information",
 					"x-nullable": true
 				},
 				"usrn": {
@@ -1269,7 +1269,7 @@
 				},
 				"highway_authority": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse GeoJSON API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				},
 				"highway_authority_swa_code": {
 					"type": "string",
