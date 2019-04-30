@@ -9,9 +9,9 @@ title: Onboarding
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<b>NOTE:</b> This documentation is being trialled for use with the Street Manager pilot and private beta, it is not in final state and should not be taken as production documentation.
-{: .govuk-body}
-
+<p class="govuk-body">
+  <b>NOTE:</b> This documentation is being trialled for use with the <b>Street Manager private beta for authorised participates given credentials only</b>, it is not in final state and should not be taken as production documentation.
+</p>
 
 ## Table of contents
 {: .govuk-heading-l #table-of-contents}
