@@ -1,0 +1,38 @@
+---
+layout: default
+title: Business rules
+---
+<h1 class="govuk-heading-xl">Terms</h1>
+
+<p class="govuk-body-l">Version 0.1 Draft</p>
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+<p class="govuk-body">
+  <b>NOTE:</b> This documentation is being trialled for use with the <b>Street Manager private beta for authorised participants given credentials only</b>, it is not in final state and should not be taken as production documentation.
+</p>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table id="terms" class="govuk-table">
+      <caption class="govuk-table__caption">Terms</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Term</th>
+          <th class="govuk-table__header" scope="col">Definition</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% for acronym in site.data.acronyms %}
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="row">{{ acronym.acronym }}</th>
+          <td class="govuk-table__cell">{{ acronym.meaning }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
