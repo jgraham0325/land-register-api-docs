@@ -489,6 +489,9 @@
 				"validity_period_end_date": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"final_reinstatement": {
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -532,7 +535,8 @@
 				"permit_asds",
 				"work_type",
 				"sliding_end_date_candidate",
-				"validity_period_end_date"
+				"validity_period_end_date",
+				"final_reinstatement"
 			],
 			"type": "object"
 		},
@@ -1378,6 +1382,11 @@
 					"type": "string",
 					"description": "Max length 500 characters",
 					"x-nullable": true
+				},
+				"workstream_prefix": {
+					"type": "string",
+					"description": "Must consist of 3 positive whole numbers",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -1494,272 +1503,15 @@
 					"type": "number",
 					"format": "double",
 					"description": "Is whole number between 1 and 999 inclusive\nPermit must be in progress or closed\nCan only add inspection_units if an excavation was carried out\nCan only add inspection_units if the permit is in progress or closed"
-				}
-			},
-			"required": [
-				"inspection_units"
-			],
-			"type": "object"
-		},
-		"SiteCreateResponse": {
-			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
 				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
-				"site_id": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"site_id"
-			],
-			"type": "object"
-		},
-		"ReinstatementCreateRequest": {
-			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
-				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
-				"reinstatement_status": {
-					"$ref": "#/definitions/ReinstatementStatus",
-					"description": "See business rule ref. 4.4 - Making interim site permanent"
-				},
-				"reinstatement_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "reinstatement_date must be in the past\nMust be after actual start date\nMust be before actual end date (if entered)"
-				},
-				"depth": {
-					"type": "number",
-					"format": "double",
-					"description": "Is number between 0.01 and 99.99 inclusive, to two decimal places"
-				},
-				"length": {
-					"type": "number",
-					"format": "double",
-					"description": "Is number between 0.01 and 9999.99 inclusive, to two decimal places"
-				},
-				"width": {
-					"type": "number",
-					"format": "double",
-					"description": "Is number between 0.01 and 99.99 inclusive, to two decimal places"
-				},
-				"reinstatement_coordinates": {
-					"type": "object",
-					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
-				},
-				"location_description": {
-					"type": "string",
-					"description": "Max length 500 characters"
-				},
-				"location_types": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/LocationType"
-					},
-					"description": "Array values must be unique\nMust not contain null or undefined values"
-				},
-				"reinstatement_evidence": {
+				"final_reinstatement": {
 					"type": "boolean",
-					"description": "Whether reinstatement evidence has been supplied"
-				},
-				"file_ids": {
-					"type": "array",
-					"items": {
-						"type": "number",
-						"format": "double"
-					},
-					"description": "Required if reinstatement_evidence = true\nArray values must be unique\nMust not contain null or undefined values\nA file_id can only be associated with one section of Street Manager\nSee API specification Resource Guide > Works API > File upload for more information",
-					"x-nullable": true
+					"description": "Whether it is a final reinstatement"
 				}
 			},
 			"required": [
-				"reinstatement_status",
-				"reinstatement_date",
-				"depth",
-				"length",
-				"width",
-				"reinstatement_coordinates",
-				"location_description",
-				"location_types",
-				"reinstatement_evidence"
-			],
-			"type": "object"
-		},
-		"ReinstatementResponse": {
-			"properties": {
-				"reinstatement_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"permit_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"reinstatement_status": {
-					"$ref": "#/definitions/ReinstatementStatus"
-				},
-				"reinstatement_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"depth": {
-					"type": "number",
-					"format": "double"
-				},
-				"length": {
-					"type": "number",
-					"format": "double"
-				},
-				"width": {
-					"type": "number",
-					"format": "double"
-				},
-				"reinstatement_coordinates": {
-					"type": "object"
-				},
-				"location_description": {
-					"type": "string"
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"date_created": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"date_modified": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"location_types": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/LocationType"
-					}
-				},
-				"reinstatement_evidence": {
-					"type": "boolean"
-				},
-				"files": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/FileSummaryResponse"
-					},
-					"x-nullable": true
-				}
-			},
-			"required": [
-				"reinstatement_id",
-				"permit_id",
-				"reinstatement_status",
-				"reinstatement_date",
-				"depth",
-				"length",
-				"width",
-				"reinstatement_coordinates",
-				"location_description",
-				"end_date",
-				"date_created",
-				"date_modified",
-				"location_types",
-				"reinstatement_evidence"
-			],
-			"type": "object"
-		},
-		"SiteResponse": {
-			"properties": {
-				"site_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"site_description": {
-					"type": "string"
-				},
-				"permit_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"depth": {
-					"type": "number",
-					"format": "double"
-				},
-				"length": {
-					"type": "number",
-					"format": "double"
-				},
-				"width": {
-					"type": "number",
-					"format": "double"
-				},
-				"completed_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"site_status": {
-					"$ref": "#/definitions/ReinstatementStatus"
-				},
-				"location_types": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/LocationType"
-					}
-				},
-				"site_coordinates": {
-					"type": "object"
-				},
-				"reinstatements": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/ReinstatementResponse"
-					}
-				}
-			},
-			"required": [
-				"site_id",
-				"site_description",
-				"permit_id",
-				"depth",
-				"length",
-				"width",
-				"completed_date",
-				"end_date",
-				"site_status",
-				"location_types",
-				"site_coordinates",
-				"reinstatements"
-			],
-			"type": "object"
-		},
-		"ReinstatementCreateResponse": {
-			"properties": {
-				"reinstatement_id": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"reinstatement_id"
+				"inspection_units",
+				"final_reinstatement"
 			],
 			"type": "object"
 		},
@@ -2012,6 +1764,279 @@
 			"required": [
 				"emailAddress",
 				"password"
+			],
+			"type": "object"
+		},
+		"SiteCreateResponse": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"site_id": {
+					"type": "number",
+					"format": "double"
+				}
+			},
+			"required": [
+				"site_id"
+			],
+			"type": "object"
+		},
+		"ReinstatementCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"reinstatement_status": {
+					"$ref": "#/definitions/ReinstatementStatus",
+					"description": "See business rule ref. 4.4 - Making interim site permanent"
+				},
+				"reinstatement_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "reinstatement_date must be in the past\nMust be after actual start date\nMust be before actual end date (if entered)"
+				},
+				"depth": {
+					"type": "number",
+					"format": "double",
+					"description": "Is number between 0.01 and 99.99 inclusive, to two decimal places"
+				},
+				"length": {
+					"type": "number",
+					"format": "double",
+					"description": "Is number between 0.01 and 9999.99 inclusive, to two decimal places"
+				},
+				"width": {
+					"type": "number",
+					"format": "double",
+					"description": "Is number between 0.01 and 99.99 inclusive, to two decimal places"
+				},
+				"reinstatement_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
+				},
+				"location_description": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					},
+					"description": "Array values must be unique\nMust not contain null or undefined values"
+				},
+				"reinstatement_evidence": {
+					"type": "boolean",
+					"description": "Whether reinstatement evidence has been supplied"
+				},
+				"file_ids": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"format": "double"
+					},
+					"description": "Required if reinstatement_evidence = true\nArray values must be unique\nMust not contain null or undefined values\nA file_id can only be associated with one section of Street Manager\nSee API specification Resource Guide > Works API > File upload for more information",
+					"x-nullable": true
+				},
+				"inspection_units": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 1 and 999 inclusive\nPermit must be in progress or closed\nCan only add inspection_units if an excavation was carried out\nCan only add inspection_units if the permit is in progress or closed"
+				},
+				"final_reinstatement": {
+					"type": "boolean",
+					"description": "Whether it is a final reinstatement"
+				}
+			},
+			"required": [
+				"reinstatement_status",
+				"reinstatement_date",
+				"depth",
+				"length",
+				"width",
+				"reinstatement_coordinates",
+				"location_description",
+				"location_types",
+				"reinstatement_evidence",
+				"inspection_units",
+				"final_reinstatement"
+			],
+			"type": "object"
+		},
+		"ReinstatementResponse": {
+			"properties": {
+				"reinstatement_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"permit_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"reinstatement_status": {
+					"$ref": "#/definitions/ReinstatementStatus"
+				},
+				"reinstatement_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"depth": {
+					"type": "number",
+					"format": "double"
+				},
+				"length": {
+					"type": "number",
+					"format": "double"
+				},
+				"width": {
+					"type": "number",
+					"format": "double"
+				},
+				"reinstatement_coordinates": {
+					"type": "object"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"date_modified": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					}
+				},
+				"reinstatement_evidence": {
+					"type": "boolean"
+				},
+				"files": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FileSummaryResponse"
+					},
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"reinstatement_id",
+				"permit_id",
+				"reinstatement_status",
+				"reinstatement_date",
+				"depth",
+				"length",
+				"width",
+				"reinstatement_coordinates",
+				"location_description",
+				"end_date",
+				"date_created",
+				"date_modified",
+				"location_types",
+				"reinstatement_evidence"
+			],
+			"type": "object"
+		},
+		"SiteResponse": {
+			"properties": {
+				"site_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"site_description": {
+					"type": "string"
+				},
+				"permit_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"depth": {
+					"type": "number",
+					"format": "double"
+				},
+				"length": {
+					"type": "number",
+					"format": "double"
+				},
+				"width": {
+					"type": "number",
+					"format": "double"
+				},
+				"completed_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"site_status": {
+					"$ref": "#/definitions/ReinstatementStatus"
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					}
+				},
+				"site_coordinates": {
+					"type": "object"
+				},
+				"reinstatements": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ReinstatementResponse"
+					}
+				}
+			},
+			"required": [
+				"site_id",
+				"site_description",
+				"permit_id",
+				"depth",
+				"length",
+				"width",
+				"completed_date",
+				"end_date",
+				"site_status",
+				"location_types",
+				"site_coordinates",
+				"reinstatements"
+			],
+			"type": "object"
+		},
+		"ReinstatementCreateResponse": {
+			"properties": {
+				"reinstatement_id": {
+					"type": "number",
+					"format": "double"
+				}
+			},
+			"required": [
+				"reinstatement_id"
 			],
 			"type": "object"
 		},
@@ -2393,7 +2418,8 @@
 					"x-nullable": true
 				},
 				"permit_alteration_reason": {
-					"type": "string"
+					"type": "string",
+					"description": "Max length 500 characters"
 				}
 			},
 			"required": [
@@ -3001,133 +3027,6 @@
 				]
 			}
 		},
-		"/works/{workReferenceNumber}/sites": {
-			"post": {
-				"operationId": "CreateSite",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/SiteCreateResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateRequest"
-						}
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/sites/{siteId}": {
-			"get": {
-				"operationId": "GetSite",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/SiteResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "path",
-						"name": "siteId",
-						"required": true,
-						"format": "double",
-						"type": "number"
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/sites/{siteId}/reinstatements": {
-			"post": {
-				"operationId": "CreateReinstatement",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "path",
-						"name": "siteId",
-						"required": true,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateRequest"
-						}
-					}
-				]
-			}
-		},
 		"/works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}": {
 			"get": {
 				"operationId": "GetInspection",
@@ -3363,6 +3262,133 @@
 						"required": true,
 						"format": "double",
 						"type": "number"
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/sites": {
+			"post": {
+				"operationId": "CreateSite",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/SiteCreateResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/sites/{siteId}": {
+			"get": {
+				"operationId": "GetSite",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/SiteResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "siteId",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/sites/{siteId}/reinstatements": {
+			"post": {
+				"operationId": "CreateReinstatement",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "siteId",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateRequest"
+						}
 					}
 				]
 			}
