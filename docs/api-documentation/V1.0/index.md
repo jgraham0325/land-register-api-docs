@@ -1309,6 +1309,14 @@ All SWA codes are left-padded to 4 digits, so for example if the SWA code of you
 As a promoter, the HA SWA code you choose is the organisation which will be associated with the permit, and thus responsible for assessing the permit. This HA will also be the only organisation able to add inspections or issue FPNs against the work record. Although generally most information in the system is viewable by any organisation, only the HA and promoter responsible for the work can make actions against it.
 {: .govuk-body}
 
+You may provide a workstream_prefix, which corresponds to the workstream with
+which you would like to associate the works. A default workstream with prefix
+"000" exists for every organisation. If you do not explicitly provide a
+workstream_prefix, the works are associated with your organisation's default
+workstream. The workstream_prefix must match the prefix of a workstream
+associated with the user's organisation.
+{: .govuk-body}
+
 #### Create permit endpoint
 {: .govuk-heading-s}
 
