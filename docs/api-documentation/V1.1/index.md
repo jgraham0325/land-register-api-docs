@@ -5,7 +5,7 @@ title: API specification V1.0
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.0
+Version 1.1
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1741,6 +1741,14 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
+
+Version 1.1:
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added Polling-search endpoint, see <em>Resource guide</em> for Reporting API</li>
+  <li>Added Get streets endpoint by USRN endpoint, see <em>Resource guide</em> for Street Lookup API</li>
+</ol>
 
 Version 1.0 (30/4/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
