@@ -8,7 +8,8 @@ Example of WRN entered by user: SM-2121-1
 
 No forward slashes allowed (/) and WRN not case sensitive on manual or auto WRN.
 
-If user asks Street Manager to generate the WRN, this will be a randomly generated 8 digit number unique to Street Manager system (including prefix)- unique within each workstream in the same organisation.  8 digits in the WRN will need to be unique as this will be the distinguishing part; these 8 digits can be the same for two permits if the workstream is different for each.
+If user asks Street Manager to generate the WRN, this will be a randomly generated 8 digit number unique to each workstream in the same organisation within the Street Manager system (i.e. the 8 digits in the WRN will need to be unique as this will be the distinguishing part). 
+These 8 digits can be the same for two permits if the workstream is different for each.
 The WRN is generated using the following format:
 
 Format: works reference number with a numerical suffix (-1, -2, -3 etc) which counts up from 1 dependent on the number of permits which have been raised.
