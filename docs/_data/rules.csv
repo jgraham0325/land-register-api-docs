@@ -1,20 +1,24 @@
 ﻿row,reference,area,name,details,diagram,image,display
 ,1,Permit fields,Works,,,,1
-1,1.1,Permit fields,Work reference number (WRN), option on front end for user to manually enter their own existing WRN or to selection option for Street Manager to automatically generate one for them.
-If adding own promoter works reference, user able to enter text in field. Mandatory field.
+1,1.1,Permit fields,Promoter has option to add either their own works reference number (WRN) or have the system generate one.
 
-Validation: SWA prefix e.g. MU is from the SWA code list. Displays the organisation’s SWA short code e.g. MU or AZ followed by the three digit workstream prefix and a maximum of 18 characters after this.
-Example of WRN entered by user: SM-2121-1
+If adding own WRN, user able to enter text in field. Mandatory field. 
+Validation: maximum of 24 characters. 
+No forward slashes allowed (/)
 
-No forward slashes allowed (/) and WRN not case sensitive on manual or auto WRN.
+If generating WRN automatically, full WRN including an 8 digit number unique to each workstream in the same organisation within the Street Manager system - the 8 digits in the WRN will need to be unique as this will be the distinguishing part, but these 8 digits can be the same for two permits if the workstream is different for each.
 
-If user asks Street Manager to generate the WRN, this will be a randomly generated 8 digit number unique to each workstream in the same organisation within the Street Manager system (i.e. the 8 digits in the WRN will need to be unique as this will be the distinguishing part). 
-These 8 digits can be the same for two permits if the workstream is different for each.
-The WRN is generated using the following format:
+Generated in following format: 
+Works reference number with a numerical suffix (-1, -2, -3 etc) which counts up from 1 dependent on the number of permits which have been raised.
+{SWA_prefix} {workstream_prefix} - {Promoter works reference} - {StreetManager record suffix}
 
-Format: works reference number with a numerical suffix (-1, -2, -3 etc) which counts up from 1 dependent on the number of permits which have been raised.
-Example: If Work Reference Number is SM-2121-1, Permit reference number for the first permit generated will be SM-2121-1-01",N/A,,1
-3,1.3,Permit fields,Work type,"-Planned
+SWA prefix e.g. MU is from the SWA code list (workstream prefix and Promoter works reference stored separately against the works record)
+
+When the user selects the option the automatically create the WRN, it is created and stored against the works record when the first permit application is submitted.
+
+Both the manual or generated WRNs are not case sensitive.
+
+ 3,1.3,Permit fields,Work type,"-Planned
 (Minor, standard, and major works that are not immediate). Selecting this triggers progressive disclosure with in the UI of the question ""Is a temporary traffic regulation order (TTRO) required?""and saves the type of works as planned which triggers the planned permit application flow. Standard, Minor, Major/PAA applications are able to be created from this flow.
 SWA_prefix} {workstream_prefix} - {Promoter works reference} - {StreetManager record suffix}
 
