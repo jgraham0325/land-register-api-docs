@@ -1254,6 +1254,8 @@ Query params:
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
+  <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
+  <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
 </ol>
 
 #### Get inspections
@@ -1283,6 +1285,20 @@ Retrieves a list of FPNs that have been added to any works record. FPNs are issu
   <li><strong>paid_discounted</strong>: Confirmed as paid by the HA with a discount</li>
   <li><strong>disputed</strong>: Disputed by the promoter</li>
   <li><strong>withdrawn</strong>: Withdrawn by the HA</li>
+</ol>
+
+#### Get alterations
+{: .govuk-heading-s}
+
+<code>GET /alterations</code>
+
+Query params:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>sort_direction</strong>: Ascending/descending</li>
+  <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
+  <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
 </ol>
 
 #### Polling
