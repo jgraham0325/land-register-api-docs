@@ -1319,6 +1319,25 @@ Retrieves further information for the works provided in the request. This allows
 external integrators to retrieve additional information for the works returned by the <code>GET /works/updates</code> endpoint.
 {: .govuk-body}
 
+#### Fee reporting
+{: .govuk-heading-s}
+
+<code>POST /fees/csv</code>
+
+Retrieves a list of chargeable items which have had occured within a defined time period in CSV format.
+{: .govuk-body}
+
+Chargeable activities include:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Granting of a permit application</li>
+  <li>PAA progressed to PA - note, this occurs when a PA is received, not when it’s granted</li>
+  <li>Granting of a change request</li>
+  <li>Change in work category</li>
+</ol>
+
+{: .govuk-body}
+
 ### **Work API**
 {: .govuk-heading-m}
 
@@ -1728,11 +1747,6 @@ The Reporting API continuous polling will be updated to allow the use of Transac
 The Work API will be updated to make NSG Street data which can be inferred from USRN non-mandatory, to avoid data duplication and prevent potential differences in data due to external systems using different NSG releases.
 {: .govuk-body}
 
-### Fee reporting
-{: .govuk-heading-s}
-
-The Reporting API will include new endpoints to support reporting on chargeable activities.
-{: .govuk-body}
 
 ### Inspections on historic works
 {: .govuk-heading-s}
