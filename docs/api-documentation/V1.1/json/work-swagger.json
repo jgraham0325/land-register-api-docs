@@ -43,6 +43,28 @@
 			],
 			"type": "object"
 		},
+		"ReasonForRefusal": {
+			"enum": [
+				"RC10",
+				"RC11",
+				"RC12",
+				"RC20",
+				"RC21",
+				"RC22",
+				"RC23",
+				"RC30",
+				"RC31",
+				"RC32",
+				"RC33",
+				"RC40",
+				"RC41",
+				"RC42",
+				"RC43",
+				"RC44",
+				"RC50"
+			],
+			"type": "string"
+		},
 		"ActivityType": {
 			"enum": [
 				"highway_improvement_works",
@@ -217,6 +239,14 @@
 			"enum": [
 				"planned",
 				"immediate"
+			],
+			"type": "string"
+		},
+		"CloseFootway": {
+			"enum": [
+				"yes_provide_pedestrian_walkway",
+				"yes_provide_alternative_route",
+				"no"
 			],
 			"type": "string"
 		},
@@ -395,6 +425,13 @@
 					"type": "string",
 					"x-nullable": true
 				},
+				"reasons_for_refusal": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ReasonForRefusal"
+					},
+					"x-nullable": true
+				},
 				"activity_type": {
 					"$ref": "#/definitions/ActivityType"
 				},
@@ -500,6 +537,9 @@
 				"workstream_id": {
 					"type": "number",
 					"format": "double"
+				},
+				"close_footway": {
+					"$ref": "#/definitions/CloseFootway"
 				}
 			},
 			"required": [
@@ -545,7 +585,8 @@
 				"sliding_end_date_candidate",
 				"validity_period_end_date",
 				"final_reinstatement",
-				"workstream_id"
+				"workstream_id",
+				"close_footway"
 			],
 			"type": "object"
 		},
@@ -726,6 +767,11 @@
 					"description": "Max length 500 characters",
 					"x-nullable": true
 				},
+				"close_footway": {
+					"$ref": "#/definitions/CloseFootway",
+					"description": "Optional. If not provided, this will be defaulted to \"no\"",
+					"x-nullable": true
+				},
 				"permit_asds": {
 					"type": "array",
 					"items": {
@@ -773,6 +819,14 @@
 				"additional_comments": {
 					"type": "string",
 					"description": "Required if permit_status = refused\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"reasons_for_refusal": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ReasonForRefusal"
+					},
+					"description": "Array values must be unique\nMust contain between 1 and 5 values",
 					"x-nullable": true
 				},
 				"assessment_discount": {
@@ -1201,7 +1255,8 @@
 				},
 				"work_reference_number": {
 					"type": "string",
-					"description": "Max length 24 characters\nMust be unique in the system"
+					"description": "Max length 24 characters\nMust be unique in the system\nMust contain only alphanumeric characters and hyphens\nIf not supplied it will be auto-generated",
+					"x-nullable": true
 				},
 				"promoter_organisation": {
 					"type": "string",
@@ -1280,11 +1335,12 @@
 				},
 				"street_name": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
 				},
 				"area_name": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
 				},
 				"usrn": {
@@ -1294,7 +1350,8 @@
 				},
 				"highway_authority": {
 					"type": "string",
-					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
+					"description": "DEPRECATED: Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information",
+					"x-nullable": true
 				},
 				"highway_authority_swa_code": {
 					"type": "string",
@@ -1303,7 +1360,8 @@
 				"road_category": {
 					"type": "number",
 					"format": "double",
-					"description": "Is whole number between 0 and 4 inclusive"
+					"description": "Is whole number between 0 and 4 inclusive\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
 				},
 				"works_location_description": {
 					"type": "string",
@@ -1408,10 +1466,14 @@
 					"type": "string",
 					"description": "Must consist of 3 positive whole numbers",
 					"x-nullable": true
+				},
+				"close_footway": {
+					"$ref": "#/definitions/CloseFootway",
+					"description": "Optional. If not provided, this will be defaulted to \"no\"",
+					"x-nullable": true
 				}
 			},
 			"required": [
-				"work_reference_number",
 				"promoter_swa_code",
 				"approved_contractor",
 				"contractor_contact_details",
@@ -1421,11 +1483,8 @@
 				"excavation",
 				"traffic_management_plan",
 				"lane_rental_applicable",
-				"street_name",
 				"usrn",
-				"highway_authority",
 				"highway_authority_swa_code",
-				"road_category",
 				"works_location_description",
 				"works_coordinates",
 				"environmental_health_notifiable",
@@ -2037,10 +2096,14 @@
 			"properties": {
 				"idToken": {
 					"type": "string"
+				},
+				"organisationReference": {
+					"type": "string"
 				}
 			},
 			"required": [
-				"idToken"
+				"idToken",
+				"organisationReference"
 			],
 			"type": "object"
 		},
@@ -2440,6 +2503,11 @@
 				"additional_info": {
 					"type": "string",
 					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"close_footway": {
+					"$ref": "#/definitions/CloseFootway",
+					"description": "Optional. If not provided, this will be defaulted to \"no\"",
 					"x-nullable": true
 				},
 				"permit_alteration_reason": {
