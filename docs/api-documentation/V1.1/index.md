@@ -1307,7 +1307,10 @@ Query params:
 <code>GET /works/updates</code>
 
 Retrieves a list of works which have had changes within a defined time period. This allows
-external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API.
+external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API. 
+{: .govuk-body}
+
+In order to retrieve all updates since last usage, the start date could be set to the last date and time the user called the endpoint. Alternatively the user could provide the event date returned in the last entry of a previous result set.
 {: .govuk-body}
 
 #### Polling-search
