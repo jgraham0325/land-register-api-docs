@@ -918,6 +918,20 @@
 					},
 					{
 						"in": "query",
+						"name": "start_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
 						"name": "before",
 						"required": false,
 						"type": "integer"
@@ -1036,6 +1050,26 @@
 						"name": "end_date",
 						"required": false,
 						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "start_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "csv_export_prefix",
+						"required": false,
 						"type": "string"
 					}
 				]
