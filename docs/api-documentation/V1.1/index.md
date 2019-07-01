@@ -686,7 +686,7 @@ error responses as it will help narrow down where an issue is occurring.
 Authentication fails when the token provided in the request is invalid.
 The token may have expired or the value set as the token was incorrect.
 You may also see this error when calling the POST /authenticate endpoint
-with invalid credentials I.e. wrong username or password.
+with invalid credentials i.e. wrong username or password.
 {: .govuk-body}
 
 ### Access Restricted
@@ -813,7 +813,7 @@ work record, the properties of this response are:
   <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
-  <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (I.e. multiple permits)</li>
+  <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (i.e. multiple permits)</li>
   <li><strong>Reinstatements</strong>: Summary of all reinstatements that have been associated with that works (none initially)</li>
   <li><strong>History</strong>: Summary of all history associated with that works</li>
   <li><strong>Files</strong>: Any files that have been uploaded on the works (none initially)</li>
@@ -1253,7 +1253,7 @@ Query params:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><strong>status</strong>: The permit status I.e. submitted, granted</li>
+  <li><strong>status</strong>: The permit status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>

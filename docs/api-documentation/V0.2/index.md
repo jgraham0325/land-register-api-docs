@@ -447,7 +447,7 @@ error responses as it will help narrow down where an issue is occurring.
 Authentication fails when the token provided in the request is invalid.
 The token may have expired or the value set as the token was incorrect.
 You may also see this error when calling the POST /authenticate endpoint
-with invalid credentials I.e. wrong username or password.
+with invalid credentials i.e. wrong username or password.
 {: .govuk-body}
 
 ### Access Restricted
@@ -563,7 +563,7 @@ work record, the properties of this response are:
   <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
-  <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (I.e. multiple permits)</li>
+  <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (i.e. multiple permits)</li>
 </ol>
 
 It's also possible to retrieve only information about the permit itself
@@ -685,7 +685,7 @@ the following query params:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><strong>status</strong>: The permit status I.e. submitted, granted</li>
+  <li><strong>status</strong>: The permit status i.e. submitted, granted</li>
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
@@ -764,7 +764,7 @@ Street Manager API supports retrieving details on sites, details TBC.
 
 ![Submit permit application](images/submit-permit-application.png)
 
-As shown in the sequence, a promoter submits a permit application at which point an HA can assess it. Both a promoter and HA can add comments to the works record once it exists. Both users can upload files for various workflows, but in the case of applying for a permit application, a promoter may choose to upload a file as part of their application (I.e. providing a traffic management plan). Files need to be uploaded via the file upload endpoint before than can be used as part of other requests, so often this endpoint is called first. See the **File Upload** section of the resource guide for details.
+As shown in the sequence, a promoter submits a permit application at which point an HA can assess it. Both a promoter and HA can add comments to the works record once it exists. Both users can upload files for various workflows, but in the case of applying for a permit application, a promoter may choose to upload a file as part of their application (i.e. providing a traffic management plan). Files need to be uploaded via the file upload endpoint before than can be used as part of other requests, so often this endpoint is called first. See the **File Upload** section of the resource guide for details.
 {: .govuk-body}
 
 It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work. A work cannot exist without a permit.
@@ -928,7 +928,7 @@ By setting an actual stop date via this endpoint, the active permit's status wil
 #### Constraints
 {: .govuk-heading-s}
 
-The date provided must be in the past, you can\'t set an actual stop date ahead of time. You can only stop a work if the active permit is in progress I.e. a start date has been provided. You can only provide an actual stop date once, afterwards it cannot be changed. The actual stop date must be after the actual start date.
+The date provided must be in the past, you can\'t set an actual stop date ahead of time. You can only stop a work if the active permit is in progress i.e. a start date has been provided. You can only provide an actual stop date once, afterwards it cannot be changed. The actual stop date must be after the actual start date.
 {: .govuk-body}
 
 ### Excavation carried out endpoint
