@@ -1712,6 +1712,73 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
 {: .govuk-body}
 
+### Party API
+{: .govuk-heading-m}
+
+#### Get workstream
+{: .govuk-heading-s}
+
+<code>GET /organisations/{organisationReference}/workstreams/{workstreamId}</code>
+
+Returns the WorkstreamResponse associated with the organisation and workstream provided.
+{: .govuk-body}
+
+#### Get workstreams
+{: .govuk-heading-s}
+
+<code>GET /organisations/{organisationReference}/workstreams</code>
+
+Returns all workstreams associated with the organisation provided.
+{: .govuk-body}
+
+#### Post workstreams
+{: .govuk-heading-s}
+
+<code>POST /organisations/{organisationReference}/workstreams</code>
+
+Creates a new workstream associated with the organisation provided.
+{: .govuk-body}
+
+#### Put workstream
+{: .govuk-heading-s}
+
+<code>PUT /organisations/{organisationReference}/workstreams/{workstreamPrefix}</code>
+
+Updates the workstream details associated with the organisation and workstream provided.
+{: .govuk-body}
+
+#### Get organisation
+{: .govuk-heading-s}
+
+<code>GET /organisations/{organisationReference}</code>
+
+Returns the OrganisationResponse associated with the organisation provided.
+{: .govuk-body}
+
+#### Put organisation
+{: .govuk-heading-s}
+
+<code>PUT /organisations/{organisationReference}</code>
+
+Updates the organisation details associated with the organisation provided.
+{: .govuk-body}
+
+#### Get organisations
+{: .govuk-heading-s}
+
+<code>GET /organisations</code>
+
+Returns all organisations. Optional filter by organisation_type. Optional filter by query string which performs a partial search against organisation name.
+{: .govuk-body}
+
+#### Post contractors
+{: .govuk-heading-s}
+
+<code>POST /organisations/{organisationReference}/contractors</code>
+
+Links contractors to organisation allowing the contractors provided to work on behalf of the organisation provided.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Roadmap
