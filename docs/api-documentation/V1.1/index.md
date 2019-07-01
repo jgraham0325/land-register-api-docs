@@ -1316,6 +1316,9 @@ external integrators to provide a start and end date or the number of previous m
 In order to retrieve all updates since last usage, the start date could be set to the last date and time the user called the endpoint. Alternatively the user could provide the event date returned in the last entry of a previous result set.
 {: .govuk-body}
 
+Updates for a particular user can be excluded with an optional <code>exclude_events_from</code> field.
+{: .govuk-body}
+
 #### Polling-search
 {: .govuk-heading-s}
 
