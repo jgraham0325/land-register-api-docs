@@ -1797,6 +1797,14 @@ Returns all organisations. Optional filter by organisation_type. Optional filter
 Links contractors to organisation allowing the contractors provided to work on behalf of the organisation provided.
 {: .govuk-body}
 
+#### Delete organisation contractor
+{: .govuk-heading-s}
+
+<code>DELETE /organisations/{organisationReference}/contractors/{contractorOrganisationReference}</code>
+
+Deletes link between contractor and organisation removing the ability of the contractor provided to work on behalf of the organisation provided.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Roadmap
