@@ -263,7 +263,8 @@
 			"enum": [
 				"Planner",
 				"HighwayAuthority",
-				"Admin"
+				"Admin",
+				"Contractor"
 			],
 			"type": "string"
 		},
@@ -277,9 +278,9 @@
 					"type": "string",
 					"description": "Min length 6 characters\nMax length 99 characters"
 				},
-				"swa_code": {
+				"organisation_reference": {
 					"type": "string",
-					"description": "Max length 4 characters\nMust match a registered organisation swa_code"
+					"description": "Max length 20 characters\nMust match a registered organisation reference"
 				},
 				"role": {
 					"$ref": "#/definitions/UserGroup"
@@ -288,7 +289,7 @@
 			"required": [
 				"email",
 				"password",
-				"swa_code",
+				"organisation_reference",
 				"role"
 			],
 			"type": "object"
