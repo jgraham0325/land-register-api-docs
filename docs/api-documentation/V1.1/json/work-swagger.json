@@ -174,7 +174,7 @@
 				},
 				"special_desig_description": {
 					"type": "string",
-					"description": "Max length 255 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
+					"description": "Max length 300 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
 				}
 			},
 			"required": [
@@ -2654,6 +2654,149 @@
 				"file_ids"
 			],
 			"type": "object"
+		},
+		"ActivityCreateResponse": {
+			"properties": {
+				"activity_reference_number": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"activity_reference_number"
+			],
+			"type": "object"
+		},
+		"ActivityActivityType": {
+			"enum": [
+				"skips",
+				"scaffolding",
+				"hoarding",
+				"crane_mobile_platform",
+				"event",
+				"section50",
+				"section58",
+				"compound",
+				"other"
+			],
+			"type": "string"
+		},
+		"ActivityCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 1000001 and 99999999 inclusive\nSee business rule ref. 1.12 - USRN"
+				},
+				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"area_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 0 and 4 inclusive\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"activity_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
+				},
+				"activity_name": {
+					"type": "string",
+					"description": "Max length 100 characters"
+				},
+				"activity_activity_type": {
+					"$ref": "#/definitions/ActivityActivityType"
+				},
+				"activity_type_details": {
+					"type": "string",
+					"description": "Required if activity_activity_type = other\nMax length 100 characters",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"contact_details": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be in the future"
+				},
+				"start_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be in the future",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be after start_date"
+				},
+				"end_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be after start_date",
+					"x-nullable": true
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					},
+					"description": "Array values must be unique"
+				},
+				"activity_location_description": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType"
+				},
+				"collaborative_working": {
+					"type": "boolean"
+				},
+				"additional_info": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"usrn",
+				"activity_coordinates",
+				"activity_name",
+				"activity_activity_type",
+				"start_date",
+				"end_date",
+				"location_types",
+				"activity_location_description",
+				"traffic_management_type",
+				"collaborative_working"
+			],
+			"type": "object"
 		}
 	},
 	"info": {
@@ -3870,6 +4013,40 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/AddFileToWorkRequest"
+						}
+					}
+				]
+			}
+		},
+		"/activity": {
+			"post": {
+				"operationId": "CreateActivity",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/ActivityCreateResponse"
+						}
+					}
+				},
+				"description": "See business rules section 15 - Activities",
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ActivityCreateRequest"
 						}
 					}
 				]

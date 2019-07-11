@@ -137,6 +137,10 @@
 				"date_created": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"status_changed_date": {
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -158,7 +162,8 @@
 				"status",
 				"work_status",
 				"deadline_date",
-				"date_created"
+				"date_created",
+				"status_changed_date"
 			],
 			"type": "object"
 		},
@@ -555,6 +560,10 @@
 				"deadline_date": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"status_changed_date": {
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -573,7 +582,8 @@
 				"work_category",
 				"alteration_status",
 				"date_created",
-				"deadline_date"
+				"deadline_date",
+				"status_changed_date"
 			],
 			"type": "object"
 		},
@@ -898,6 +908,26 @@
 					},
 					{
 						"in": "query",
+						"name": "work_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_category",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkCategory"
+						}
+					},
+					{
+						"in": "query",
 						"name": "active_permit_only",
 						"required": false,
 						"type": "boolean"
@@ -1030,6 +1060,26 @@
 						"collectionFormat": "multi",
 						"items": {
 							"$ref": "#/definitions/PermitStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_category",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkCategory"
 						}
 					},
 					{
@@ -1400,7 +1450,11 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"$ref": "#/definitions/AlterationReportingResponse"
+							"$ref": "#/definitions/AlterationReportingResponse",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/AlterationSummaryResponse"
+							}
 						}
 					}
 				},
@@ -1414,6 +1468,36 @@
 					}
 				],
 				"parameters": [
+					{
+						"in": "query",
+						"name": "alteration_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/AlterationStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_category",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkCategory"
+						}
+					},
 					{
 						"in": "query",
 						"name": "start_date_created",
@@ -1432,32 +1516,29 @@
 						"in": "query",
 						"name": "before",
 						"required": false,
-						"type": "string"
+						"type": "integer"
 					},
 					{
 						"in": "query",
 						"name": "after",
 						"required": false,
-						"type": "string"
+						"type": "integer"
 					},
 					{
 						"in": "query",
 						"name": "sort_column",
 						"required": false,
-						"type": "string",
-						"enum": [
-							"date_created"
-						]
+						"type": "string"
 					},
 					{
 						"in": "query",
 						"name": "sort_direction",
 						"required": false,
-						"type": "string",
 						"enum": [
 							"asc",
 							"desc"
-						]
+						],
+						"type": "string"
 					}
 				]
 			}
@@ -1587,6 +1668,12 @@
 						"required": false,
 						"format": "double",
 						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "exclude_events_from",
+						"required": false,
+						"type": "string"
 					}
 				]
 			}
