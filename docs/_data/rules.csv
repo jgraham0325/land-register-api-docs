@@ -202,7 +202,45 @@ https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346565360217",,1
     - Failed - high
     - Failed - low
     - Unable to complete",,,1
-28,3.4,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application but can be changed.
+28,3.4,,Inspection failure reasons,"Options dependent on inspection type id:
+- SLG:
+    - Signage
+    - Distance(s)
+    - Safety Zone
+    - Barriers
+    - Traffic Control
+    - Pedestrian Provision
+    - Cyclist Provision
+    - Operative Qualification
+    - Equipment
+    - Materials
+    - Compaction
+    - Construction Layers
+    - Storage of Materials
+- Reinstatement:
+    - Damage to surround area
+    - Saw Cutting
+    - Acute Angles
+    - Verge
+    - Anti-skid
+    - Fixed Features
+    - Modular
+    - Proximity
+    - Incorrect
+    - Damaged
+    - Edge Sealant
+    - Over-banding
+    - Road Markings
+    - Infill/Pointing
+    - Ironwork/Apparatus
+    - Breaking Out/Fretting
+    - Interface Cracking
+    - Crowning
+    - Depression
+    - As Laid Profile
+    - Texture Depth
+    - Edge Depression",,,1
+29,3.5,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application but can be changed.
 
 Also, permit must be in progress or closed
 
