@@ -1,5 +1,6 @@
-﻿row,reference,area,name,details,diagram,image,display
+row,reference,area,name,details,diagram,image,display
 2,1,Permit fields,Permit fields process and outcomes,,,,1
+
 3,1.1,,Works reference number (WRN),"Promoter has option to add either their own works reference number (WRN) or have the system generate one.
 
 If adding own WRN, user able to enter text in field. Mandatory field. 
@@ -202,7 +203,45 @@ https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346565360217",,1
     - Failed - high
     - Failed - low
     - Unable to complete",,,1
-28,3.4,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application, but can be changed.
+28,3.4,,Inspection failure reasons,"Options dependent on inspection type ID:
+- SLG:
+    - Signage
+    - Distance(s)
+    - Safety Zone
+    - Barriers
+    - Traffic Control
+    - Pedestrian Provision
+    - Cyclist Provision
+    - Operative Qualification
+    - Equipment
+    - Materials
+    - Compaction
+    - Construction Layers
+    - Storage of Materials
+- Reinstatement:
+    - Damage to surround area
+    - Saw Cutting
+    - Acute Angles
+    - Verge
+    - Anti-skid
+    - Fixed Features
+    - Modular
+    - Proximity
+    - Incorrect
+    - Damaged
+    - Edge Sealant
+    - Over-banding
+    - Road Markings
+    - Infill/Pointing
+    - Ironwork/Apparatus
+    - Breaking Out/Fretting
+    - Interface Cracking
+    - Crowning
+    - Depression
+    - As Laid Profile
+    - Texture Depth
+    - Edge Depression",,,1
+29,3.5,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application, but can be changed.
 
 Also, permit must be in progress or closed.
 
