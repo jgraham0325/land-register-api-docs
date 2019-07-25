@@ -507,6 +507,15 @@
 			],
 			"type": "string"
 		},
+		"AlterationType": {
+			"enum": [
+				"PROMOTER_CHANGE_REQUEST",
+				"HA_CHANGE_REQUEST",
+				"HA_IMPOSED_CHANGE",
+				"WORK_EXTENSION"
+			],
+			"type": "string"
+		},
 		"AlterationSummaryResponse": {
 			"properties": {
 				"cursor": {
@@ -553,6 +562,9 @@
 				"alteration_status": {
 					"$ref": "#/definitions/AlterationStatus"
 				},
+				"alteration_type": {
+					"$ref": "#/definitions/AlterationType"
+				},
 				"date_created": {
 					"type": "string",
 					"format": "date-time"
@@ -581,6 +593,7 @@
 				"proposed_end_date",
 				"work_category",
 				"alteration_status",
+				"alteration_type",
 				"date_created",
 				"deadline_date",
 				"status_changed_date"
@@ -993,6 +1006,42 @@
 							"desc"
 						],
 						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "is_traffic_sensitive",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_high_impact_traffic_management",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "has_no_final_registration",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "has_excavation",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_early_start",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_deemed",
+						"required": false,
+						"type": "boolean"
 					}
 				]
 			}
@@ -1121,6 +1170,42 @@
 						"name": "csv_export_prefix",
 						"required": false,
 						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "is_traffic_sensitive",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_high_impact_traffic_management",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "has_no_final_registration",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "has_excavation",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_early_start",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_deemed",
+						"required": false,
+						"type": "boolean"
 					}
 				]
 			}
@@ -1480,6 +1565,16 @@
 					},
 					{
 						"in": "query",
+						"name": "alteration_type",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/AlterationType"
+						}
+					},
+					{
+						"in": "query",
 						"name": "work_status",
 						"required": false,
 						"type": "array",
@@ -1539,6 +1634,36 @@
 							"desc"
 						],
 						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "is_traffic_sensitive",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_high_impact_traffic_management",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_duration_extension",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_early_start",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_deemed",
+						"required": false,
+						"type": "boolean"
 					}
 				]
 			}

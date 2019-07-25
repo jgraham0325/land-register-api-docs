@@ -294,6 +294,24 @@
 			],
 			"type": "object"
 		},
+		"UserResponse": {
+			"properties": {
+				"organisation_reference": {
+					"type": "string"
+				},
+				"contracts": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/OrganisationSummaryResponse"
+					},
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"organisation_reference"
+			],
+			"type": "object"
+		},
 		"OrganisationContractsCreateRequest": {
 			"properties": {
 				"contractor_organisation_references": {
@@ -586,6 +604,40 @@
 						"in": "query",
 						"name": "query",
 						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/users/{email}": {
+			"get": {
+				"operationId": "GetUser",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/UserResponse"
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "email",
+						"required": true,
 						"type": "string"
 					}
 				]
