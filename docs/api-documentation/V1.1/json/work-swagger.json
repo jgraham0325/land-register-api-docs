@@ -1866,6 +1866,46 @@
 			],
 			"type": "object"
 		},
+		"FailureReason": {
+			"enum": [
+				"slg_signage",
+				"slg_distance",
+				"slg_safety_zone",
+				"slg_barriers",
+				"slg_traffic_control",
+				"slg_pedestrian_provision",
+				"slg_cyclist_provision",
+				"slg_operative_qualification",
+				"slg_equipment",
+				"slg_materials",
+				"slg_compaction",
+				"slg_construction_layers",
+				"slg_storage_of_materials",
+				"reinstatement_damage_to_surround_area",
+				"reinstatement_saw_cutting",
+				"reinstatement_acute_angles",
+				"reinstatement_verge",
+				"reinstatement_anti_skid",
+				"reinstatement_fixed_features",
+				"reinstatement_modular",
+				"reinstatement_proximity",
+				"reinstatement_materials_incorrect",
+				"reinstatement_materials_damaged",
+				"reinstatement_edge_sealant",
+				"reinstatement_over_banding",
+				"reinstatement_road_markings",
+				"reinstatement_infill_pointing",
+				"reinstatement_ironwork_apparatus",
+				"reinstatement_breaking_out_fretting",
+				"reinstatement_interface_cracking",
+				"reinstatement_crowning",
+				"reinstatement_depression",
+				"reinstatement_as_laid_profile",
+				"reinstatement_texture_depth",
+				"reinstatement_edge_depression"
+			],
+			"type": "string"
+		},
 		"DefectFixedOnsite": {
 			"enum": [
 				"yes_by_inspector",
@@ -1898,6 +1938,13 @@
 				},
 				"defect_details": {
 					"type": "string",
+					"x-nullable": true
+				},
+				"failure_reasons": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FailureReason"
+					},
 					"x-nullable": true
 				},
 				"unable_to_complete_details": {
@@ -2020,6 +2067,14 @@
 				"defect_details": {
 					"type": "string",
 					"description": "Required if inspection_outcome = failed_low or failed_high\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"failure_reasons": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FailureReason"
+					},
+					"description": "See business rule ref. 3.4 - Inspection failure reasons",
 					"x-nullable": true
 				},
 				"unable_to_complete_details": {
@@ -2827,6 +2882,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -2870,7 +2926,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -2911,7 +2968,8 @@
 					{
 						"token": [
 							"HighwayAuthority",
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -2958,7 +3016,8 @@
 					{
 						"token": [
 							"HighwayAuthority",
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3027,6 +3086,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3062,7 +3122,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3093,7 +3154,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3130,7 +3192,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3167,7 +3230,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3204,7 +3268,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3248,6 +3313,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3280,7 +3346,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3321,6 +3388,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3360,7 +3428,8 @@
 				"security": [
 					{
 						"token": [
-							"Planner"
+							"Planner",
+							"Contractor"
 						]
 					}
 				],
@@ -3408,6 +3477,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3515,6 +3585,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3525,6 +3596,12 @@
 						"name": "file",
 						"required": true,
 						"type": "file"
+					},
+					{
+						"in": "query",
+						"name": "swaCode",
+						"required": false,
+						"type": "string"
 					}
 				],
 				"consumes": [
@@ -3586,6 +3663,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3613,6 +3691,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3647,6 +3726,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3723,6 +3803,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3770,6 +3851,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3811,6 +3893,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3855,6 +3938,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3954,6 +4038,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
@@ -3996,6 +4081,7 @@
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
