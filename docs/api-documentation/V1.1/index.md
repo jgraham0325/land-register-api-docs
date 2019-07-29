@@ -66,6 +66,7 @@ The Swagger JSON files for each API are available below:
   <li><a href="json/reporting-swagger.json">Reporting API</a></li>
   <li><a href="json/lookup-swagger.json">Street lookup API</a></li>
   <li><a href="json/geojson-swagger.json">GeoJSON API</a></li>
+  <li><a href="json/party-swagger.json">Party API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -645,7 +646,7 @@ is enforced in addition to the user's role.
 
 Json Web Token (JWT) is an open standard for exchanging information
 securely. The entities of Street Manager exchange information using JWTs
-and resources of the Street Manager API require that a JWT be provided
+and resources of the Street Manager API require that a JWT ID token be provided
 as part of the request.
 {: .govuk-body}
 
@@ -654,10 +655,13 @@ manager will attempt to validate the JWT as part of its authentication and
 authorisation function.
 {: .govuk-body}
 
-The token expires 1 hour after it was generated, if an expired JWT is used in a
+The ID token expires 1 hour after it was generated, if an expired JWT is used in a
 request, an error with the HTTP status `401` will be returned.  In this scenario
-a new token will need to be generated using the <code>/work/authenticate</code>
-endpoint.
+a new token will need to be generated using the <code>/party/refresh</code>
+endpoint by supplying a Refresh token.
+
+To invalidate all JWT tokens associated with a user, the Access token should be provided
+to the <code>/party/logout</code> endpoint.
 {: .govuk-body}
 
 ### Resource
@@ -666,10 +670,10 @@ endpoint.
 <code>POST /authenticate</code>
 
 The authenticate endpoint takes a case sensitive username (email
-address) and password, returning a JWT token if successful. **The JWT
-token is valid for one hour.** Once the token has been acquired it can
-be added to all protected resource requests made via swagger using the
-Authorize button.
+address) and password, returning JWT ID, Access and Referesh tokens if successful.
+**The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
+is valid for 1 day.** Once the ID token has been acquired it canbe added to all
+protected resource requests made via swagger using the Authorize button.
 {: .govuk-body}
 
 ![authorise](images/authorise.png)
@@ -694,7 +698,7 @@ error responses as it will help narrow down where an issue is occurring.
 <code>{ "message": "Authentication failed", "error": { "status": 401 } }</code>
 
 Authentication fails when the token provided in the request is invalid.
-The token may have expired or the value set as the token was incorrect.
+The ID token may have expired or the value set as the token was incorrect.
 You may also see this error when calling the POST /authenticate endpoint
 with invalid credentials i.e. wrong username or password.
 {: .govuk-body}
@@ -1611,7 +1615,7 @@ Once a file has been uploaded the response will contain a file ID. This is the u
 One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
-The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of. 
+The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of.
 {: .govuk-body}
 
 #### Get file endpoint
