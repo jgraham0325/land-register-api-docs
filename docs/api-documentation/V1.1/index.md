@@ -1814,6 +1814,26 @@ Deletes link between contractor and organisation removing the ability of the con
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+#### Refresh tokens
+{: .govuk-heading-s}
+
+<code>POST /refresh</code>
+
+Accepts the user's Refresh JWT token and returns new ID and Access JWT tokens that are valid for 1 hour.
+{: .govuk-body}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+#### Logout
+{: .govuk-heading-s}
+
+<code>POST /logout</code>
+
+Accepts the user's Access JWT token and invalidates all JWTs associated with a user.
+{: .govuk-body}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
 ## Roadmap
 {: .govuk-heading-l #roadmap}
 
