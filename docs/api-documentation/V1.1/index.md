@@ -1926,7 +1926,7 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-Version 1.1 (30/5/2019):
+Version 1.1 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1949,6 +1949,8 @@ More detail is available in the V1.1 API documentation Resource Guide for the Cr
 Added new optional filter parameters for GET /fixed-penalty-notices to allow filtering by date
 Added new fields to GET /inspections response, returning Highway Authority and Promoter Organisation</li>
 
+<!-- 07/08/19 -->
+<li>`access_token` and `refresh_token` properties have been added to the response of `POST /authenticate`. The `refresh_token` can be provided to the new Party API `POST /refresh` endpoint to retrieve a refreshed `id_token` and `access_token`. The `access_token` can be provided to the Party API `POST /logout` endpoint to invalidate all tokens associated with a user.</li>
 </ol>
 
 Version 1.0 (30/4/2019):
