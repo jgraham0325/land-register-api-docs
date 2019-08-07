@@ -1284,6 +1284,12 @@ Query params:
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>is_traffic_sensitive</strong>: When true this will return permits where a traffic sensitive ASD has been selected</li>
+  <li><strong>is_high_impact_traffic_management</strong>: When true this will return permits with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
+  <li><strong>has_no_final_registration</strong>: When true this will return permits that have not yet submitted their final reinstatement</li>
+  <li><strong>has_excavation</strong>: When true this will return permits that have carried out an excavation</li>
+  <li><strong>is_early_start</strong>: When true this will return permits that have been flagged as an early start</li>
+  <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
 </ol>
 
 #### Get inspections
@@ -1304,7 +1310,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 
 #### Get alterations
 {: .govuk-heading-s}
@@ -1322,6 +1328,11 @@ Query params:
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>is_traffic_sensitive</strong>: When true this will return permit alterations where a traffic sensitive ASD has been selected</li>
+  <li><strong>is_high_impact_traffic_management</strong>: When true this will return permit alterations with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
+  <li><strong>is_duration_extension</strong>: When true this will return permit alterations that raised a duration extension</li>
+  <li><strong>is_early_start</strong>: When true this will return permit alterations that have been flagged as an early start</li>
+  <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
 </ol>
 
 #### Polling
@@ -1339,7 +1350,7 @@ In order to retrieve all updates since last usage, the start date could be set t
 Updates for a particular user can be excluded by populating the optional <code>exclude_events_from</code> field with their username.
 {: .govuk-body}
 
-Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 #### Polling-search
@@ -1370,7 +1381,7 @@ Chargeable activities include:
 
 {: .govuk-body}
 
-Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 ### **Work API**
@@ -1957,6 +1968,8 @@ Added new optional filter parameters for GET /fixed-penalty-notices to allow fil
 Added new fields to GET /inspections response, returning Highway Authority and Promoter Organisation</li>
 
 <!-- 07/08/19 -->
+<li>`New optional boolean properties have been added to the Reporting API `GET /permits` and `GET /alterations` endpoints for filtering results</li>
+
 <li>`access_token` and `refresh_token` properties have been added to the response of `POST /authenticate`. The `refresh_token` can be provided to the new Party API `POST /refresh` endpoint to retrieve a refreshed `id_token` and `access_token`. The `access_token` can be provided to the Party API `POST /logout` endpoint to invalidate all tokens associated with a user.</li>
 </ol>
 
