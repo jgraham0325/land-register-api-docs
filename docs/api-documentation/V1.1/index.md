@@ -290,6 +290,14 @@ Polling API endpoint to validate you have received notifications for all
 updated works.
 {: .govuk-body}
 
+**Contractors**
+{: .govuk-body}
+
+Contractors can use the Reporting API to extract data from the service both as
+JSON and CSV format. These endpoints allow you to extract most Work
+information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
@@ -1271,6 +1279,7 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
+  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
 
 #### Get inspections
@@ -1283,6 +1292,7 @@ Query params:
   <li><strong>inspection_response_type</strong>: inspection or reinspection</li>
   <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
+  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
 
 #### Get FPNs
@@ -1290,17 +1300,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. The status of an FPN are:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><strong>issued</strong>: Issued by the HA</li>
-  <li><strong>accepted</strong>: Accepted by the promoter</li>
-  <li><strong>paid</strong>: Confirmed as paid by the HA</li>
-  <li><strong>paid_discounted</strong>: Confirmed as paid by the HA with a discount</li>
-  <li><strong>disputed</strong>: Disputed by the promoter</li>
-  <li><strong>withdrawn</strong>: Withdrawn by the HA</li>
-</ol>
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
 
 #### Get alterations
 {: .govuk-heading-s}
@@ -1317,6 +1317,7 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
+  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
 
 #### Polling
@@ -1332,6 +1333,9 @@ In order to retrieve all updates since last usage, the start date could be set t
 {: .govuk-body}
 
 Updates for a particular user can be excluded by populating the optional <code>exclude_events_from</code> field with their username.
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
 {: .govuk-body}
 
 #### Polling-search
@@ -1360,6 +1364,9 @@ Chargeable activities include:
   <li>Change in work category</li>
 </ol>
 
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. 
 {: .govuk-body}
 
 ### **Work API**
