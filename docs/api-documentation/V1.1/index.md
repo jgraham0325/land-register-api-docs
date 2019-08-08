@@ -1736,6 +1736,14 @@ This alteration endpoint returns both the original and the proposed changes of a
 This endpoint takes min and max easting and northing values to select all works within a bounding box. The works selected can be optionally filtered using the start and end date params.
 {: .govuk-body}
 
+#### Get activities endpoint
+{: .govuk-heading-s}
+
+<code>GET /activities</code>
+
+This endpoint takes min and max easting and northing values to select all activities within a bounding box. The activities selected can be optionally filtered using the start and end date params.
+{: .govuk-body}
+
 ### Street Lookup API
 {: .govuk-heading-m}
 
