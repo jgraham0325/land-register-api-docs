@@ -1393,7 +1393,7 @@ If the user supplies a work_reference_number as part of the request body to POST
 <code><2 letter swa_org_prefix><3-letter workstream prefix><8 digit random number></code><br/>
 <br/>
 The generated work_reference_number is returned in the response.
-{: .govuk-body}
+{: .govuk-body
 
 The promoter_swa_code and highway_authority_swa_code are particularly important fields in the request. Currently only a promoter can create a permit and works record so the promoter SWA code provided in the request much match that of the user authenticated to the system. This is determined by the token header of the request, which contains the JWT. In effect this means the promoter can only add a work or permit for their own organisation.
 {: .govuk-body}
@@ -1618,7 +1618,7 @@ Once a file has been uploaded the response will contain a file ID. This is the u
 One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
-The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of. 
+The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of.
 {: .govuk-body}
 
 #### Get file endpoint
