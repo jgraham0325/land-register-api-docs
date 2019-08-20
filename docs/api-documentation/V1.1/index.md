@@ -1611,7 +1611,7 @@ Once a file has been uploaded the response will contain a file ID. This is the u
 One file can be uploaded at a time. This file cannot exceed 5MB.
 {: .govuk-body}
 
-The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of. 
+The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of.
 {: .govuk-body}
 
 #### Get file endpoint
