@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.2
+title: API specification V1.3
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.2
+Version 1.3
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1682,8 +1682,9 @@ The history endpoint returns audit events associated with that works record such
 {: .govuk-body}
 
 Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
+{: .govuk-body}
 
-<ol>
+<ol class="govuk-list govuk-list--bullet">
   <li><strong>Logging an Inspections</strong>: Inspection Reference Number</li>
   <li><strong>Applying for a Permit</strong>: Permit Reference Number</li>
   <li><strong>HA granting a permit applicaiton</strong>: Permit Reference Number</li>
@@ -1756,6 +1757,12 @@ This alteration endpoint returns both the original and the proposed changes of a
 
 #### Events and Activities
 {: .govuk-heading-s}
+
+<code>POST /activity</code>
+
+<code>GET /activity/{activity reference number}</code>
+
+<code>PUT /activity/{activity reference number}/cancel</code>
 
 Events or Activities allow a HA to represent different activites within Street Manager. There are 13 activity types currently supported by Street Manager:
 {: .govuk-body}
@@ -1914,6 +1921,8 @@ Accepts the user's Refresh JWT token and returns new ID and Access JWT tokens th
 
 Accepts the user's Access JWT token and invalidates all JWTs associated with a user.
 {: .govuk-body}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 #### Forgot Password
 {: .govuk-heading-s}
