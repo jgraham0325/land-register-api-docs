@@ -510,7 +510,7 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /*</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
@@ -520,27 +520,27 @@ The table below shows the current permissions per endpoint.
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /files</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>DELETE /files/{id}</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works</code></td>
-      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /works/*</code></td>
-      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/comments</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
@@ -550,7 +550,7 @@ The table below shows the current permissions per endpoint.
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /works/{referenceNumber}/fixed-penalty-notices/{fpnReferenceNumber}/status</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
@@ -560,7 +560,7 @@ The table below shows the current permissions per endpoint.
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
@@ -570,12 +570,27 @@ The table below shows the current permissions per endpoint.
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/status</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code></td>
-      <td class="govuk-table__cell">Planner</td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /activity</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /activity/{activityReferenceNumber}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /activity/{activityReferenceNumber}/cancel</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
   </tbody>
@@ -596,7 +611,7 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /*</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
@@ -617,7 +632,7 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /*</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
@@ -638,7 +653,7 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /*</code></td>
-      <td class="govuk-table__cell">Planner &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
@@ -1666,6 +1681,20 @@ Deletes a file from the system. Users can only delete files which their organisa
 The history endpoint returns audit events associated with that works record such as when a permit is assessed, start etc. As well as that it also returns comments that have been added to the work record. You can distinguish history items as audits or comments by the **isComment** property.
 {: .govuk-body}
 
+Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
+
+<ol>
+  <li><strong>Logging an Inspections</strong>: Inspection Reference Number</li>
+  <li><strong>Applying for a Permit</strong>: Permit Reference Number</li>
+  <li><strong>HA granting a permit applicaiton</strong>: Permit Reference Number</li>
+  <li><strong>Permit application deeming</strong>: Permit Reference Number</li>
+  <li><strong>Requesting a change</strong>: Change Request Reference Number</li>
+  <li><strong>Creating a site or reinstatement</strong>: Site ID</li>
+  <li><strong>Raising a FPN</strong>: FPN Reference Number</li>
+  <li><strong>Adding or removing a File to a work record</strong>: File ID</li>
+  <li><strong>Updating on site details of a work</strong>: Permit Reference Number</li>
+</ol>
+
 As well as viewing comments on a work record level, you can also call the reporting API comments endpoint to retrieve all comments associated with your users organization. See the Reporting API section of the resource guide.
 {: .govuk-body}
 
@@ -1706,7 +1735,7 @@ While HA imposed changes are applied to the permit automatically, promoter chang
 
 Creates a permit alteration. The model takes all editable fields on the permit. When a promoter uses this endpoint, the alteration will have an AlterationType of PROMOTER_CHANGE_REQUEST in the case that they do not extend the end date of the permit while it in in progress, or WORK_EXTENSION in the case that they do. Once the alteration is create it is required to be assessed by the associated HA.
 
-An HA can use this endpoint to impose changes. The HA must provide all details of the permit with changes only to the conditions section. The AlterationType in this case will be HA_IMPOSED_CHANGE. When an HA imposes a change that change is automatically applied to the permit. It will continue to have a status of Submitted but the permit will reflect the changes submitted.
+A HA can use this endpoint to impose changes. The HA must provide all details of the permit with changes only to the conditions section. The AlterationType in this case will be HA_IMPOSED_CHANGE. When an HA imposes a change that change is automatically applied to the permit. It will continue to have a status of Submitted but the permit will reflect the changes submitted.
 {: .govuk-body}
 
 #### Update alteration status endpoint
@@ -1723,6 +1752,34 @@ The sequence section shows how an alteration can be assessed and actioned at var
 <code>GET /works/{work reference number}/permits/{permit reference number}/alterations/{permit alteration reference number}</code>
 
 This alteration endpoint returns both the original and the proposed changes of a permit in addition to the reason for the alteration, assessment information and other information relevant to the alteration.
+{: .govuk-body}
+
+#### Events and Activities
+{: .govuk-heading-s}
+
+Events or Activities allow a HA to represent different activites within Street Manager. There are 13 activity types currently supported by Street Manager:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+ <li>Highway improvement works</li>
+ <li>Highway repair and maintenance works</li>
+ <li>Utility asset works</li>
+ <li>Utility repair and maintenance works</li>
+ <li> Diversionary Works</li>
+ <li>Disconnection or alteration of supply</li>
+ <li>Permanent reinstatement</li>
+ <li>Remedial works</li>
+ <li>Section 58</li>
+ <li>Section 50</li>
+ <li>Core Sampling</li>
+ <li>Statutory Infrastructure Works</li>
+ <li>Works for Rail Purposes</li>
+</ol>
+
+Creating an activity using the POST endpoint will return an activity reference number which can be used to retrieve an individual activity via the GET endpoint provided
+{: .govuk-body}
+
+Activities can be flagged as being cancelled by HA which initially raised the activity. The activity reference number is required. Optionally a reason for cancelling the activity can be provided. Activites are cancelled via the PUT endpoint provided.
 {: .govuk-body}
 
 ### GeoJSON API
@@ -1856,6 +1913,22 @@ Accepts the user's Refresh JWT token and returns new ID and Access JWT tokens th
 <code>POST /logout</code>
 
 Accepts the user's Access JWT token and invalidates all JWTs associated with a user.
+{: .govuk-body}
+
+#### Forgot Password
+{: .govuk-heading-s}
+
+<code>POST /forgot-password</code>
+
+Accepts the user's email address. An email will be sent to this address with a verification code, if a user with the address exists in Street Manager.
+{: .govuk-body}
+
+#### Reset Forgotten Password
+{: .govuk-heading-s}
+
+<code>POST /reset-password</code>
+
+Accepts the user's email address, verification code and the new password. The verification code can be found in the email that was sent following a POST to <code>/forgot-password</code>.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
