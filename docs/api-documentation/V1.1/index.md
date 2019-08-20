@@ -1388,13 +1388,6 @@ All POST and PUT endpoints will contain two properties, internal_user_identifier
 This endpoint takes all the information required to create a permit, as well as some key identification information about the works record as a whole.
 {: .govuk-body}
 
-If the user supplies a work_reference_number as part of the request body to POST /works then it must only contain alphanumeric characters, dashes ('-' - Unicode number U+002D) and underscores ('_' - Unicode number U+005F). If the user does not supply a work_reference_number then it will be auto-generated with the following format:<br/>
-<br/>
-<code><2 letter swa_org_prefix><3-letter workstream prefix><8 digit random number></code><br/>
-<br/>
-The generated work_reference_number is returned in the response.
-{: .govuk-body}
-
 The promoter_swa_code and highway_authority_swa_code are particularly important fields in the request. Currently only a promoter can create a permit and works record so the promoter SWA code provided in the request much match that of the user authenticated to the system. This is determined by the token header of the request, which contains the JWT. In effect this means the promoter can only add a work or permit for their own organisation.
 {: .govuk-body}
 
