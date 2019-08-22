@@ -104,6 +104,73 @@
 				"permit_status"
 			],
 			"type": "object"
+		},
+		"ActivityActivityType": {
+			"enum": [
+				"skips",
+				"scaffolding",
+				"hoarding",
+				"crane_mobile_platform",
+				"event",
+				"section50",
+				"section58",
+				"compound",
+				"other"
+			],
+			"type": "string"
+		},
+		"ActivityResponse": {
+			"properties": {
+				"activity_centre_point": {
+					"type": "string"
+				},
+				"activity_coordinates": {
+					"type": "string"
+				},
+				"activity_name": {
+					"type": "string"
+				},
+				"activity_location_description": {
+					"type": "string"
+				},
+				"activity_reference_number": {
+					"type": "string"
+				},
+				"activity_type": {
+					"$ref": "#/definitions/ActivityActivityType"
+				},
+				"area_name": {
+					"type": "string"
+				},
+				"cancelled": {
+					"type": "boolean"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"street_name": {
+					"type": "string"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"activity_centre_point",
+				"activity_coordinates",
+				"activity_name",
+				"activity_location_description",
+				"activity_reference_number",
+				"activity_type",
+				"area_name",
+				"cancelled",
+				"end_date",
+				"street_name",
+				"start_date"
+			],
+			"type": "object"
 		}
 	},
 	"info": {
@@ -137,7 +204,87 @@
 					{
 						"token": [
 							"Planner",
-							"HighwayAuthority"
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "work_reference_number",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/activities": {
+			"get": {
+				"operationId": "GetActivitiesIntersectingBounds",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ActivityResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get activities endpoint for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
 						]
 					}
 				],

@@ -142,7 +142,8 @@
 				"refused_auto",
 				"cancelled_auto",
 				"awaiting_assessment_in_progress",
-				"revoked_closed"
+				"revoked_closed",
+				"deemed_closed"
 			],
 			"type": "string"
 		},
@@ -247,6 +248,26 @@
 				"yes_provide_pedestrian_walkway",
 				"yes_provide_alternative_route",
 				"no"
+			],
+			"type": "string"
+		},
+		"LaneRentalAssessmentOutcome": {
+			"enum": [
+				"chargeable",
+				"potentially_chargeable",
+				"charges_waived",
+				"exempt",
+				"charges_not_applicable"
+			],
+			"type": "string"
+		},
+		"LaneRentalAssessmentChargeBand": {
+			"enum": [
+				"charge_band_1",
+				"charge_band_2",
+				"charge_band_3",
+				"charge_band_4",
+				"charge_band_5"
 			],
 			"type": "string"
 		},
@@ -540,6 +561,30 @@
 				},
 				"close_footway": {
 					"$ref": "#/definitions/CloseFootway"
+				},
+				"lane_rental_assessment_outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_additional_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_charge_band": {
+					"$ref": "#/definitions/LaneRentalAssessmentChargeBand",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_chargeable_days": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_charges_agreed": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"is_lane_rental": {
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -586,7 +631,8 @@
 				"validity_period_end_date",
 				"final_reinstatement",
 				"workstream_id",
-				"close_footway"
+				"close_footway",
+				"is_lane_rental"
 			],
 			"type": "object"
 		},
@@ -682,6 +728,11 @@
 				"works_location_description": {
 					"type": "string",
 					"description": "Max length 500 characters"
+				},
+				"works_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon",
+					"x-nullable": true
 				},
 				"environmental_health_notifiable": {
 					"type": "boolean"
@@ -846,6 +897,47 @@
 			],
 			"type": "object"
 		},
+		"PermitLaneRentalAssessmentUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome"
+				},
+				"additional_details": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"charge_band": {
+					"$ref": "#/definitions/LaneRentalAssessmentChargeBand",
+					"x-nullable": true
+				},
+				"chargeable_days": {
+					"type": "number",
+					"format": "double",
+					"description": "Whole number between 1 and 10000",
+					"x-nullable": true
+				},
+				"charges_agreed": {
+					"type": "boolean",
+					"description": "Required if outcome = 'chargeable'",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"outcome"
+			],
+			"type": "object"
+		},
 		"DurationCalculationResponse": {
 			"properties": {
 				"calendar_days": {
@@ -943,6 +1035,10 @@
 				},
 				"isComment": {
 					"type": "boolean",
+					"x-nullable": true
+				},
+				"object_reference": {
+					"type": "string",
 					"x-nullable": true
 				}
 			},
@@ -1255,7 +1351,7 @@
 				},
 				"work_reference_number": {
 					"type": "string",
-					"description": "Max length 24 characters\nMust be unique in the system\nMust contain only alphanumeric characters and hyphens\nIf not supplied it will be auto-generated",
+					"description": "Max length 24 characters\nMust be unique in the system\nMust contain only alphanumeric characters, dashes and underscores\nIf not supplied it will be auto-generated",
 					"x-nullable": true
 				},
 				"promoter_organisation": {
@@ -1520,6 +1616,28 @@
 			],
 			"type": "object"
 		},
+		"WorkStartRevertRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"revert_reason": {
+					"type": "string",
+					"description": "revert_reason max length 500 characters\nPermit must be in progress\nWork must be planned\nWork must not have any reinstatements"
+				}
+			},
+			"required": [
+				"revert_reason"
+			],
+			"type": "object"
+		},
 		"WorkStopUpdateRequest": {
 			"properties": {
 				"internal_user_identifier": {
@@ -1540,6 +1658,28 @@
 			},
 			"required": [
 				"actual_stop_date"
+			],
+			"type": "object"
+		},
+		"WorkStopRevertRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"revert_reason": {
+					"type": "string",
+					"description": "revert_reason max length 500 characters\nPermit must be closed\nWork must be completed"
+				}
+			},
+			"required": [
+				"revert_reason"
 			],
 			"type": "object"
 		},
@@ -2154,11 +2294,19 @@
 				},
 				"organisationReference": {
 					"type": "string"
+				},
+				"accessToken": {
+					"type": "string"
+				},
+				"refreshToken": {
+					"type": "string"
 				}
 			},
 			"required": [
 				"idToken",
-				"organisationReference"
+				"organisationReference",
+				"accessToken",
+				"refreshToken"
 			],
 			"type": "object"
 		},
@@ -2475,6 +2623,11 @@
 				"works_location_description": {
 					"type": "string",
 					"description": "Max length 500 characters"
+				},
+				"works_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon",
+					"x-nullable": true
 				},
 				"environmental_health_notifiable": {
 					"type": "boolean"
@@ -2852,6 +3005,124 @@
 				"collaborative_working"
 			],
 			"type": "object"
+		},
+		"ActivityResponse": {
+			"properties": {
+				"activity_reference_number": {
+					"type": "string"
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"street_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"area_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"activity_coordinates": {
+					"type": "object"
+				},
+				"activity_name": {
+					"type": "string"
+				},
+				"activity_activity_type": {
+					"$ref": "#/definitions/ActivityActivityType"
+				},
+				"activity_type_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"contact_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"start_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					}
+				},
+				"activity_location_description": {
+					"type": "string"
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType"
+				},
+				"collaborative_working": {
+					"type": "boolean"
+				},
+				"additional_info": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"cancelled": {
+					"type": "boolean"
+				},
+				"cancelled_reason": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"highway_authority_swa_code": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"activity_reference_number",
+				"usrn",
+				"activity_coordinates",
+				"activity_name",
+				"activity_activity_type",
+				"start_date",
+				"end_date",
+				"location_types",
+				"activity_location_description",
+				"traffic_management_type",
+				"collaborative_working",
+				"cancelled",
+				"highway_authority_swa_code"
+			],
+			"type": "object"
+		},
+		"ActivityCancelRequest": {
+			"properties": {
+				"cancellation_reason": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
 		}
 	},
 	"info": {
@@ -2992,6 +3263,49 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/PermitStatusUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/permits/{permitReferenceNumber}/lane-rental-assessments": {
+			"put": {
+				"operationId": "UpdatePermitLaneRentalAssessment",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					}
+				},
+				"description": "See business rule ref. 18.1 - Adding a lane rental assessment to a permit",
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "permitReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/PermitLaneRentalAssessmentUpdateRequest"
 						}
 					}
 				]
@@ -3177,6 +3491,44 @@
 				]
 			}
 		},
+		"/works/{workReferenceNumber}/revert-start": {
+			"put": {
+				"operationId": "RevertActualStartDate",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See business rule ref. 11.5 - Revert work start",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkStartRevertRequest"
+						}
+					}
+				]
+			}
+		},
 		"/works/{workReferenceNumber}/stop": {
 			"put": {
 				"operationId": "UpdateActualStopDate",
@@ -3210,6 +3562,44 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/WorkStopUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/revert-stop": {
+			"put": {
+				"operationId": "RevertActualStopDate",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See business rule ref. 11.6 - Revert work stop",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkStopRevertRequest"
 						}
 					}
 				]
@@ -4133,6 +4523,75 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/ActivityCreateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/activity/{activityReferenceNumber}": {
+			"get": {
+				"operationId": "GetActivity",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ActivityResponse"
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "activityReferenceNumber",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/activity/{activityReferenceNumber}/cancel": {
+			"put": {
+				"operationId": "CancelActivity",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "activityReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ActivityCancelRequest"
 						}
 					}
 				]
