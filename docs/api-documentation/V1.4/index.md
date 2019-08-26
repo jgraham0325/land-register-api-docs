@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.3
+title: API specification V1.4
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.3
+Version 1.4
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1505,6 +1505,14 @@ When a permit is submitted initially, a proposed start and end date for the work
 By setting an actual start date, the active permit's status will change to in-progress. This allows the promoter to add reinstatements against the works record if an excavation was carried out and it also allows highway authority users to add inspections, which will be covered in separate sections.
 {: .govuk-body}
 
+#### Revert start work endpoint
+{: .govuk-heading-s}
+
+<code>PUT /works/{work reference number}/revert-start</code>
+
+If a permit has been started accidentally, it can be reverted using this endpoint. This will remove the actual start date and change the active permit's status back to proposed.
+{: .govuk-body}
+
 #### Stop work endpoint
 {: .govuk-heading-s}
 
@@ -1514,6 +1522,14 @@ When a permit is submitted initially, a proposed start and end date for the work
 {: .govuk-body}
 
 By setting an actual stop date via this endpoint, the active permit's status will change to closed. It's still possible to add reinstatements and inspections to closed works as they may be added retrospectively.
+{: .govuk-body}
+
+#### Revert stop work endpoint
+{: .govuk-heading-s}
+
+<code>PUT /works/{work reference number}/revert-stop</code>
+
+If a permit has been stopped accidentally, it can be reverted using this endpoint. This will remove the actual end date and change the active permit's status back to in-progress.
 {: .govuk-body}
 
 #### Excavation carried out endpoint
