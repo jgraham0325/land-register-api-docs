@@ -1963,6 +1963,14 @@ Accepts the user's email address. An email will be sent to this address with a v
 Accepts the user's email address, verification code and the new password. The verification code can be found in the email that was sent following a POST to <code>/forgot-password</code>.
 {: .govuk-body}
 
+#### Invite user
+{: .govuk-heading-s}
+
+<code>POST /invite-user</code>
+
+Accepts the required user's email address and desired role and creates a new user. An email will be sent to the new user which will contain their username and a temporary password that they will be required to change.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Roadmap
