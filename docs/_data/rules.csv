@@ -73,7 +73,7 @@ Revoked
 ****Note - currently the working day duration factors in bank holidays. However, as the Street Manager system receives bank holiday data from gov.uk up to the end of the following year, any works that extend beyond that won't be factoring in bank holidays****
 ",TBD - What type of flow/diagram do you want for this? Which extract from EToN spec? https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf,,1
 9,1.7,,Calendar day,Street Manager calculates calendar days based on a 24 hour clock. So for example the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.,As above,,1
-10,1.8,,Deadline Date,"The deadline date is the end of the response period, and forms part of the logic linked to deeming. For all application types, the clock starts counting down from the next working day after submission. Anything submitted after 16:30 is effectively the same as submitting them the next working day
+10,1.8,,Deadline date,"The deadline date is the end of the response period, and forms part of the logic linked to deeming. For all application types, the clock starts counting down from the next working day after submission. Anything submitted after 16:30 is effectively the same as submitting them the next working day
 
 The response periods for all types of applications before they deem are as follows‌:
 
@@ -102,7 +102,7 @@ If the proposed start date is less than the notice period date, the promoter wil
 If they do have pre-approval the promoter is required to share the name of the person who agreed to the early start, together with any additional details. 
 If they do not have pre-approval, the promoter is required to include justification for an early start request.
 ",,,1
-12,1.10,,Permit application deeming,"The deadline / response date are the same. This is the date by which the HA needs to respond to the submission of the permit application by in order to avoid the permit deeming. 
+12,1.10,,Permit application deeming,"The deadline / response date are the same. This is the date by which the HA needs to respond to a permit application submission in order to avoid the permit deeming. 
 
 The response periods for permit applications before deeming are as follows‌:
 
@@ -116,10 +116,8 @@ The response periods for permit applications before deeming are as follows‌:
 
 - Immediate - 2 working days 
 
-EToN specification states: ""The response period does not include the day on which the notification was given."" so anything submitted after 16:30, is effectively the same as submitting them the next working day; the working day calculation is 00:00 - 16:30 each day.
-
 Example scenario:
-If a PAA is submitted on Tuesday at 14:00 it’ll deem in 28 calendar days, with the count starting from the next day (Wednesday), so Wednesday  is day 1, so Wednesday + 27 calendar days would be your deadline date
+If a PAA is submitted on Tuesday at 14:00 it’ll deem in 28 calendar days, with the count starting from the next day (Wednesday), so Wednesday  is day 1, so Wednesday + 27 calendar days would be your deadline date
 If this PAA was to be submitted after 16:30 on the same Tuesday, this effectively acts as through the PAA was submitted the next day, which means the response period is actually two days away, so same scenario different time:
 
 1. Permit submitted Tuesday 16:31
@@ -130,7 +128,7 @@ If this PAA was to be submitted after 16:30 on the same Tuesday, this effectivel
 
 When adding a further permit to a works record, certain things cannot be changed. These include the works location (including coordinates and USRN) and the works reference number. For this reason, when adding a new permit to a works record, the map section of the permit journey is skipped and the user is first taken to the works location details page. Currently, if you need to submit a permit for a new set of coordinates or different USRN, you have to raise a new works.",,,1
 15,1.13,,Business month,"For the purpose of deeming (see permit application deeming), a business month is 28 calendar days",,,1
-16,1.14,,Activity Type,"Activity type has come to serve several purposes in Street Manager. It is intended to provide a high-level summary of the works in a few words that will mean something to the public when using external websites. Secondly, it is the replacement for EToN phases of works. You will simply choose an activity type of Interim to Perm or remedial works when issuing a subsequent permit on a work record. It will also be the mechanism which allows the HA to record a S.58 or S.50. The full list of activity types is below:
+16,1.14,,Activity type,"Activity type has come to serve several purposes in Street Manager. It is intended to provide a high-level summary of the works in a few words that will mean something to the public when using external websites. Secondly, it is the replacement for EToN phases of works. You will simply choose an activity type of Interim to Perm or remedial works when issuing a subsequent permit on a work record. It will also be the mechanism which allows the HA to record a S.58 or S.50. The full list of activity types is below:
 
 - Highway improvement works
 - Highway repair and maintenance works
@@ -212,7 +210,7 @@ Non compliance - follow up & follow up completion:
     - Failed - high
     - Failed - low
     - Unable to complete",,,1
-28,3.4,,Failure cateogies,"Failure categories for both SLG and Reinstatement inspection types. Options available dependent on inspection type
+28,3.4,,Failure categories,"Failure categories for both SLG and Reinstatement inspection types. Options available dependent on inspection type
 Able to select multiple with no limit to the number that can be selected
 'Defect sites' text field mandatory",,,1
 29,3.5,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application, but can be changed.
@@ -229,23 +227,23 @@ Note - this will change in the future to allow inspections on proposed works als
 if 'reinstatement status ID' = permanent, calculated based off depth entered:
 - If  'Depth'  <= 1.5 then should be 2 years from reinstatement date. E.g. if reinstatement added 13/06/18, end date is 12/06/20
 - If 'Depth' > 1.5 then should be 3 years from reinstatement date. E.g. if reinstatement added 13/06/18, end date is 12/06/21",,,1
-34,4.2,,Restriction to adding a reinstatement,"Promoter only able to add a reinstatement if they have indicated an excavation is required. The answer to this question defaults with what was entered at the time of the permit application but can be changed
+34,4.2,,Restriction to adding a reinstatement,"The promoter is only able to add a reinstatement if they have indicated an excavation is required. The answer to this question defaults with what was entered at the time of the permit application but it can be changed.
 
-Permit must also either be in progress or closed",,,1
-35,4.3,,Adding sites and reinstatements to sites,"To add a new site, select 'Add a reinstatement' at the work record level
+The status of the permit must also either be in progress or closed.",,,1
+35,4.3,,Adding sites and reinstatements to sites,"To add a new site, select 'Add a reinstatement' at the work record level.
 
-To add a reinstatement to an existing site, click into that site from the work record and click 'Add another reinstatement'
+To add a reinstatement to an existing site, click into that site from the work record and click 'Add another reinstatement'.
 
 When there is a final registration the 'Has the final site been registered?' field on the works record will be updated to 'Yes"". The default is 'no'.",,,1
-36,4.4,,Making interim site permanent,"In order to make an interim site permanent user needs to add a new permanent reinstatement to an existing site. However, user cannot add a permanent reinstatement to an existing site if the site was made interim in the lifetime of the current permit (i.e. you can't go interim -> permanent on the same permit)
+36,4.4,,Making interim site permanent,"In order to make an interim site permanent user needs to add a new permanent reinstatement to an existing site. However, user cannot add a permanent reinstatement to an existing site if the site was made interim in the lifetime of the current permit (i.e. you can't go interim -> permanent on the same permit).
 
-User required to submit a new permit if they wish to make an interim site permanent ",,,1
-37,4.5,,Reinstatement date,"Unable to enter date before 'Actual start date' entered
-Unable to enter date after 'Actual end date' IF this has been entered
-Unable to enter a date in the future",,,1
-38,4.6,,Updating a reinstatement,"To update a reinstatement, add another reinstatement to that site. This will then be considered the active reinstatement for that site. Note - one restriction to this is if you accidentally selected ""interim"" instead of ""permanent"". As covered above in 4.4, in these circumstances a new permit would be required.",,,1
+User required to submit a new permit if they wish to make an interim site permanent.",,,1
+37,4.5,,Reinstatement date,"A user can only enter a reinstatement date until the works' 'Actual start date' has been logged.
+The user will not be able to enter a reinstatement date occuring after the 'actual end date', if the 'Actual end date' has been logged.
+It is also not possible to enter a reinstatement date in the future.",,,1
+38,4.6,,Updating a reinstatement,"To update a reinstatement, the user must add another reinstatement to that site. This will then be considered the active reinstatement. Note - one restriction to this is if you accidentally selected ""interim"" instead of ""permanent"". As covered above in 4.4, in these circumstances a new permit would be required.",,,1
 ,,,,,,,FALSE
-40,5,Change requests,Change requests process and outcomes,,"https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346572219731
+40,5,Change requests,Change request process and outcomes,,"https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346572219731
 
 https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346572862384",,1
 41,5.1,,Types of change requests,"Change request types:
@@ -253,7 +251,7 @@ https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346572862384",,1
 - Work extension: raised by the promoter and requires HA to assess - grant, grant with duration challenge and refuse
 - Imposed change: raised by the HA and is automatically applied to the permit",,,1
 42,5.2,,Raising a change request,"Only one change request can be raised and be live per permit at any one time.
-Can be raised at any point after a permit has been granted and before the work has been stopped
+A change request can be raised at any point after a permit has been granted and before the work has been stopped.
 To raise, click into the change request that you wish to alter and click the option. Will be required to provide a reason for the change.",,,1
 43,5.3,,Raising a promoter change request,"Promoter can submit a change request on a raised permit after it has been granted, and before the work has stopped.
 However, the promoter is not able to submit a change request for any USRN-related data i.e. street name, area name (if provided), highway authority, road category, or the works reference number.
@@ -261,14 +259,14 @@ However, the promoter is not able to submit a change request for any USRN-relate
 If the change request is raised after work has started, it will not be possible to change the actual start date and time.",,,1
 44,5.4,,Raising a work extension,"HA able to grant with a duration challenge. In this instance, HA must provide a reasonable period end date and reason for the challenge.
 Can result in the works category being updated if it goes over the relevant threshold",,,1
-45,5.5,,Assessing a promoter change request,"- If change request granted, permit will update with the new values
-- If change request refused, permit will remain unchanged. Important note - it's only the change request itself that gets refused, not the permit as a whole
-- If work extension granted with duration challenge, 'Reasonable period end date' field will update accordingly with the new date entered by the HA",,,1
-46,5.6,,Viewing change requests,"Details of change requests displayed on the permit details page
-Clicking into a change request will highlight what has changed - both what the original values were and the new values",,,1
+45,5.5,,Assessing a promoter change request,"- If a change request is granted, the permit will update with the new values.
+- If a change request is refused, the permit will remain unchanged. Important note - it's only the change request itself that gets refused, not the permit as a whole.
+- If a work extension is granted with duration challenge, the 'Reasonable period end date' field will update accordingly with the new date entered by the HA.",,,1
+46,5.6,,Viewing change requests,"Details of the change requests are displayed on the permit details page.
+Clicking into a change request will highlight what has changed - both what the original values were and the new values.",,,1
 47,5.7,,Deeming,"Promoter change request deems after 2 working days
 ",,,1
-48,5.8,,Imposing a change,Functionality only available to the Highway Authority and only the adding or removing of conditions can be imposed,,,1
+48,5.8,,Imposing a change,This functionality is only available to the Highway Authority and can only be used to impose adding or removing conditions.,,,1
 ,,,,,,,FALSE
 50,6,Revoking a permit,Revoking process and outcomes,,,,1
 51,6.1,,Revoking a permit,"Only the HA can revoke a permit, which can be revoked at any point from when it was granted up to the point the works stopped. If the permit was revoked before the works started, the promoter won’t be able to perform any works record-level actions i.e. log works start. Similarly, the promoter won’t be able to perform any permit actions i.e. add a change request.
@@ -309,21 +307,21 @@ Cancellation will trigger updating the works record status to ‘cancelled’ �
 
 If a promoter cancels a permit with the status ‘submitted’, ‘granted_proposed’ or ‘deemed_proposed’ the status changes to ‘cancelled’.
 
-If an HA revokes a proposed permit (i.e. before being granted) with the status of granted_proposed or deemed_proposed, then the status will change to revoked_proposed
+If an HA revokes a proposed permit (i.e. before being granted) with the status of granted_proposed or deemed_proposed, then the status will change to revoked_proposed.
 
-If an HA revokes a permit that is in progress (i.e. after being assessed and granted) with the status granted_in_progress or deemed_in_progress and the assessment status must be granted_proposed, granted_with_changes, deemed_proposed or granted_auto, then the status changes to revoked_in_progress
+If an HA revokes a permit that is in progress (i.e. after being assessed and granted) with the status granted_in_progress or deemed_in_progress and the assessment status must be granted_proposed, granted_with_changes, deemed_proposed or granted_auto, then the status changes to revoked_in_progress.
 
 ",,,1
 ,,,,,,,FALSE
 66,11,On site details,On site process and outcomes,,,,1
 67,11.1,,Actual work start,Only a Promoter associated with the work can update the actual work start date and time after a permit has been granted.,,,1
 68,11.2,,Actual work stop,Only a Promoter associated with the work can update the actual work stop date and time after a permit is in progress.,,,1
-69,11.3,,Excavation carried out,Only a Promoter associated with the work can update the excavation required field when a permit is in progress. It can be changed until the point that a reinstatement is recorded. Can only record a reinstatement when excavation carried out is true. Is defaulted from permit application,,,1
-70,11.4,,Inspection units,Only a Promoter associated with the work can update the inspection units while a permit is in progress. At least one reinstatement needs to be recorded before inspection units can be added. Field defaulted with 1 once at least one reinstatement added,,,1
-71,11.5,,Display the details,All of the details above that are added at the work record level are displayed also on the permit details page so that they are viewable for permits that are no longer active,,,1
+69,11.3,,Excavation carried out,Only a Promoter associated with the work can update the excavation required field when a permit is in progress. It can be changed until the point that a reinstatement is recorded. Can only record a reinstatement when excavation carried out is true. Is defaulted from permit application.,,,1
+70,11.4,,Inspection units,Only a Promoter associated with the work can update the inspection units while a permit is in progress. At least one reinstatement needs to be recorded before inspection units can be added. Field defaulted with 1 once at least one reinstatement added.,,,1
+71,11.5,,Display the details,All of the details above that are added at the works record level are displayed also on the permit details page so that they are viewable for permits that are no longer active.,,,1
 ,,,,,,,FALSE
 73,12,Works History,Works history process and outcomes,,,,1
-74,12.1,,Works history,All users can view the entire history of a works,,,1
+74,12.1,,Works history,All users can view the entire history of a works.,,,1
 ,,,,,,,FALSE
 76,13,Validity period,Validity period process and outcomes,,,,1
 77,13.1,,Validity period,"Validity periods for each works category are as follows. Note, these are all working days and include the original start date:
@@ -359,23 +357,23 @@ Sorted by date in ascending order.
 ,,,,,,,FALSE
 82,15,Workstreams,Workstreams,,,,1
 83,15.1,,Workstreams prefix ,"While creating new works in street manager, the organisation code and workstream prefix is automatically included in the works reference number which is LR000. 
-When setting up their organisation’s workstreams, users can provide their own workstream prefix (we recommend users do this). This must be between 1- 999. If using a system-generated prefix, Street Manager will begin prefixes automatically with 000
+When setting up their organisation’s workstreams, users can provide their own workstream prefix (we recommend users do this). This must be between 1- 999. If using a system-generated prefix, Street Manager will begin prefixes automatically with 000.
 ",,,1
 ,,,,,,,FALSE
 85,16,Map,Map process and outcomes,,,,1
-86,16.1,,Date filter,Defaults with the current date in the 'From' field and 14 days after the current date in the 'To' field,,,1
+86,16.1,,Date filter,Defaults with the current date in the 'From' field and 14 days after the current date in the 'To' field.,,,1
 87,16.2,,Displaying works,"Limited to displaying 500 words, for performance reasons.
-Results not displayed on map when user clicks out three zoom levels higher than the default view after the point of clicking on the address from the search results",,,1
+Results not displayed on map when user clicks out three zoom levels higher than the default view after the point of clicking on the address from the search results.",,,1
 ,,,,,,,FALSE
 89,17,Search,Search process and outcomes,,,,1
 90,17.1,,Searching using search bar on list pages,"Search bar added to PA, CR, WR and PAA tabs.
 
 Search rules:
-- Complete and partial search
-- Search retains all currently applied filters and vice-versa
+- Complete and partial search.
+- Search retains all currently applied filters and vice-versa.
 - Search term remains when changing between tabs after the user has searched for something i.e. if a user types in a search term (and doesn’t click submit) and then clicks a different tab, the text will disappear.
 - If, however, the user types in a search term (and clicks submit) and then clicks a different tab, the search term will still be in the box.
-- Allows user to search for street name and works reference number across each tab but if the user enters the area, town or post code no results will be shown as the database only searches for the partial or complete street name
+- Allows user to search for street name and works reference number across each tab but if the user enters the area, town or post code no results will be shown as the database only searches for the partial or complete street name.
 - For PA, WR and PAA tabs, if you search by works reference number or street name, the export CSV link will export results with that search term (as well as any filters applied) but will not export any sorting on the columns.",,,1
 91,17.2,,Advanced filtering on list pages,"Advanced filtering options available for lists on the following tabs:
 - PAA
@@ -385,22 +383,22 @@ Search rules:
 
 Once selected, the filter is applied to the list and results will be displayed. 
 
-Filters selection is not persisted when user changes tabs. Note that each tab (with the exception of the Change Requests) offers the user a link to export the list. The list exported will retain the advanced search results but any sorting will not be exported.
+Filters selection is not persisted when user changes tabs. Note that each tab (with the exception of the change requests) offers the user a link to export the list. The list exported will retain the advanced search results but any sorting will not be exported.
 
-Note that working within traffic sensitive times checkbox on CR tab will not return any results yet due a dependancy on known issue being fixed around ASD change requests.",,,1
+Note that working within traffic sensitive times checkbox on change request tab will not return any results yet due a dependency on known issue being fixed around ASD change requests.",,,1
 ,,,,,,,FALSE
 93,18,Lane rental assessment,Lane rental process and outcomes,,,,1
 94,18.1,,Adding a lane rental assessment to a permit,"HA able to add a Lane Rental Assessment or Charge on the Application Details from a link on the 'Review permit application details' page where they can fill out the one page lane rental form and submit.
 
 Drop down charge band options:- Select a charge band- Charge band 1- Charge band 2- Charge band 3- Charge band 4- Charge band 5
 
-User is only able to enter whole numbers in chargeable days  field.
+User is only able to enter whole numbers in chargeable days  field.
 
 Optional selection with hint text:
-- Chargeable- Works will incur a lane rental charge. Add or amend details at any time
-- Potentially chargeable - Flag or follow up for inspection
-- Charges waived- (e.g. Due to collaborative works)
-- Exempt - Works fall outside the lane rental scheme
+- Chargeable: Works will incur a lane rental charge. Add or amend details at any time
+- Potentially chargeable: Flag or follow up for inspection
+- Charges waived: (e.g. Due to collaborative works)
+- Exempt: Works fall outside the lane rental scheme
 - Charges not applicable to works
 
 The lane rental form provides the HA the following ability:
@@ -409,37 +407,37 @@ The lane rental form provides the HA the following ability:
 - Ability to identify if the permit is chargeable
 - Ability to apply charge band/tier
 - Ability to apply number of chargeable days
-- Ability to highlight if charge has been agreed (Defaulted to ‘No’ in SM)
+- Ability to highlight if charge has been agreed (Defaulted to ‘No’ in Street Manager)
 
-Banner for “Lane rental details added” shown to user upon assessment completion to permit applications details page
+The banner for “Lane rental details added” is shown to the user (upon completing an assessment) on permit applications details page.
 
 Lane rental assessment submission recorded in history of works record.
 
 HA able to add lane rental information at any status (they are not restricted in SM, pre or post grant)",,,1
-95,18.2,,Lane rental applicable roads flagged to user when drawing permit on map,"When the user draws their permit on the map, there is a flag (text) which is visible when a Lane Rental USRN is selected based on ASD applicable road on map 
+95,18.2,,Lane rental applicable roads flagged to user when drawing permit on map,"When the user draws their permit on the map, they will be alerted through a text flag which is visible when a Lane Rental USRN is selected based on the ASDs that apply. 
 
-Text reads “Lane rental applies”
+Text reads “Lane rental applies”.
 
-Flag is visible when a Lane Rental USRN is selected based on ASD
+The flag is visible when a Lane Rental USRN is selected based on ASD.
 
-Ability to reveal additional Lane Rental details from ASD to view
+User has the ability to reveal additional Lane Rental details from the ASDs.
 
-Link to help and guidance on various lane rental schemes 
+A link is provided so users can explore help and guidance on lane rental schemes. 
 
-Flag (text) permit works is on lane rental applicable road on Check your answers page ‘Apply for works - Review permit application details’ page in the permit journey
+The flag (text) permit works is on lane rental applicable road on Check your answers page ‘Apply for works - Review permit application details’ page in the permit journey.
 
-Text reads “Lane rental charges may apply for these works”
+Text reads “Lane rental charges may apply for these works”.
 ",,,1
 ,,,,,,,FALSE
-97,19,File Upload,File upload process and outcomes,,,,1
-98,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment (search for, upload - up to 5mb per file - 100mb total per permit)
-Attachments presented back to user in table format on next screen after upload
-User able to add multiple",,,1
+97,19,File upload,File upload process and outcomes,,,,1
+98,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment (search for, upload - up to 5mb per file - 100mb total per permit).
+Attachments presented back to user in table format on next screen after upload.
+User able to add multiple.",,,1
 ,,,,,,,FALSE
 100,20,Contractors,Contractors process and outcomes,,,,1
 101,20.1,,Adding a contractor,Only admin users can add a contractor organisation and only to their own organisation (determined by the SWA code against that admin users).,,,1
 102,20.2,,Removing a contractor,Only admin users can remove a contractor organisation. Removing them will remove any permissions they have to work on behalf of that organisation,,,1
-103,20.3,,Switching between organisations,"Currently, contractor can only work on behalf of one organisation at a time. When they log in, they are required to choose which organisation they wish to work on behalf of. They have the option of switching between organisations at any point. Contractor only able to choose organisations that have added them to their list of contractors (see 20.1)",,,1
+103,20.3,,Switching between organisations,"Currently, contractor can only work on behalf of one organisation at a time. When they log in, they are required to choose which organisation they wish to work on behalf of. They have the option of switching between organisations at any point. Also, contractors can only choose organisations that have added them to their list of contractors (see 20.1)",,,1
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
