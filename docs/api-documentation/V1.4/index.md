@@ -682,6 +682,7 @@ The ID token expires 1 hour after it was generated, if an expired JWT is used in
 request, an error with the HTTP status `401` will be returned.  In this scenario
 a new token will need to be generated using the <code>/party/refresh</code>
 endpoint by supplying a Refresh token.
+{: .govuk-body}
 
 To invalidate all JWT tokens associated with a user, the Access token should be provided
 to the <code>/party/logout</code> endpoint.
@@ -695,7 +696,7 @@ to the <code>/party/logout</code> endpoint.
 The authenticate endpoint takes a case sensitive username (email
 address) and password, returning JWT ID, Access and Referesh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
-is valid for 1 day.** Once the ID token has been acquired it canbe added to all
+is valid for 1 day.** Once the ID token has been acquired it can be added to all
 protected resource requests made via swagger using the Authorize button.
 {: .govuk-body}
 
@@ -707,6 +708,19 @@ have the token header set.
 {: .govuk-body}
 
 ![available authorisations](images/available-authorisations.png)
+
+If authenticating for the first time with a temporary password, a 307 Temporary 
+Redirect to <code>authenticate/initial</code> will be returned, which can be called 
+with the same request body.
+{: .govuk-body}
+
+<code>POST /authenticate/initial</code>
+
+After a user has been invited to the system by their organisation admin using the 
+Party API <code>/invite-user</code> endpoint, they need to set a new password. This 
+endpoint can be called with a new user's email address and temporary password, and will 
+return a token that should be provided to the Party API <code>/set-password</code> endpoint.
+{: .govuk-body}
 
 ### Error responses
 {: .govuk-heading-m}
@@ -1969,6 +1983,14 @@ Accepts the user's email address, verification code and the new password. The ve
 <code>POST /invite-user</code>
 
 Accepts the required user's email address and desired role and creates a new user. An email will be sent to the new user which will contain their username and a temporary password that they will be required to change.
+{: .govuk-body}
+
+#### Set password
+{: .govuk-heading-s}
+
+<code>POST /set-password</code>
+
+Accepts the user's email address, new password and token (returned from the Work API <code>/authenticate/initial</code> endpoint). This will overwrite the temporary password received by email (from the <code>/invite-user</code> endpoint) and activate the user's account. The response will include the same authentication tokens returned from the Work API <code>/authenticate</code> endpoint.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
