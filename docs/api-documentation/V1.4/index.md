@@ -1778,6 +1778,14 @@ The sequence section shows how an alteration can be assessed and actioned at var
 This alteration endpoint returns both the original and the proposed changes of a permit in addition to the reason for the alteration, assessment information and other information relevant to the alteration.
 {: .govuk-body}
 
+#### Permit Discount
+{: .govuk-heading-s}
+
+<code>PUT /works/{work reference number}/permits/{permit reference number}/permit-discount</code>
+
+This alteration endpoint allows a HA to amend permit discounts applied and reason after assessment.
+{: .govuk-body}
+
 #### Events and Activities
 {: .govuk-heading-s}
 
@@ -1810,6 +1818,17 @@ Creating an activity using the POST endpoint will return an activity reference n
 {: .govuk-body}
 
 Activities can be flagged as being cancelled by HA which initially raised the activity. The activity reference number is required. Optionally a reason for cancelling the activity can be provided. Activites are cancelled via the PUT endpoint provided.
+{: .govuk-body}
+
+#### Forward Plans
+{: .govuk-heading-s}
+
+<code>POST /forward-plans</code>
+
+Forward plans allow a Planner to supply information about road or street works in their longterm programme, which may include those works in their annual operating programme, or three or five year rolling programmes. Giving advance notice with a forward plan helps with collaboration of works. Forward plans are only for major works and can only be progressed to a PAA.
+{: .govuk-body}
+
+Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number.
 {: .govuk-body}
 
 ### GeoJSON API
