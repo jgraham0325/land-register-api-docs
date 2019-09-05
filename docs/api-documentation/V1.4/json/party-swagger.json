@@ -394,6 +394,64 @@
 				"access_token"
 			],
 			"type": "object"
+		},
+		"InviteUserRequest": {
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"role": {
+					"$ref": "#/definitions/UserGroup"
+				}
+			},
+			"required": [
+				"email",
+				"role"
+			],
+			"type": "object"
+		},
+		"SetPasswordResponse": {
+			"properties": {
+				"idToken": {
+					"type": "string"
+				},
+				"organisationReference": {
+					"type": "string"
+				},
+				"accessToken": {
+					"type": "string"
+				},
+				"refreshToken": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"idToken",
+				"organisationReference",
+				"accessToken",
+				"refreshToken"
+			],
+			"type": "object"
+		},
+		"SetPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"password",
+				"token"
+			],
+			"type": "object"
 		}
 	},
 	"info": {
@@ -881,6 +939,63 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/LogoutRequest"
+						}
+					}
+				]
+			}
+		},
+		"/invite-user": {
+			"post": {
+				"operationId": "InviteUser",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Admin"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/InviteUserRequest"
+						}
+					}
+				]
+			}
+		},
+		"/set-password": {
+			"post": {
+				"operationId": "SetPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/SetPasswordResponse"
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/SetPasswordRequest"
 						}
 					}
 				]

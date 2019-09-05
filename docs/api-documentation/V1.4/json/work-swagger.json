@@ -499,6 +499,10 @@
 					"format": "double",
 					"x-nullable": true
 				},
+				"assessment_discount_reason": {
+					"type": "string",
+					"x-nullable": true
+				},
 				"is_ttro_required": {
 					"type": "boolean",
 					"x-nullable": true
@@ -897,6 +901,34 @@
 			],
 			"type": "object"
 		},
+		"PermitDiscountUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"assessment_discount": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 0 and 100 inclusive"
+				},
+				"assessment_discount_reason": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"assessment_discount"
+			],
+			"type": "object"
+		},
 		"PermitLaneRentalAssessmentUpdateRequest": {
 			"properties": {
 				"internal_user_identifier": {
@@ -978,6 +1010,15 @@
 				"is_early_start"
 			],
 			"type": "object"
+		},
+		"WorkStatus": {
+			"enum": [
+				"planned",
+				"in_progress",
+				"completed",
+				"cancelled"
+			],
+			"type": "string"
 		},
 		"PermitSummaryResponse": {
 			"properties": {
@@ -1269,14 +1310,40 @@
 				"work_reference_number": {
 					"type": "string"
 				},
+				"workstream_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"promoter_swa_code": {
+					"type": "string"
+				},
+				"highway_authority_swa_code": {
+					"type": "string"
+				},
+				"street_name": {
+					"type": "string"
+				},
+				"area_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"work_status": {
+					"$ref": "#/definitions/WorkStatus"
+				},
 				"active_permit": {
-					"$ref": "#/definitions/PermitResponse"
+					"$ref": "#/definitions/PermitResponse",
+					"x-nullable": true
 				},
 				"permits": {
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/PermitSummaryResponse"
-					}
+					},
+					"x-nullable": true
 				},
 				"history": {
 					"type": "array",
@@ -1316,8 +1383,12 @@
 			"required": [
 				"work_id",
 				"work_reference_number",
-				"active_permit",
-				"permits",
+				"workstream_id",
+				"promoter_swa_code",
+				"highway_authority_swa_code",
+				"street_name",
+				"usrn",
+				"work_status",
 				"history"
 			],
 			"type": "object"
@@ -2244,12 +2315,11 @@
 				},
 				"additional_failure_comments": {
 					"type": "string",
-					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nMax length 500 characters",
+					"description": "Max length 500 characters",
 					"x-nullable": true
 				},
 				"inspection_evidence": {
 					"type": "boolean",
-					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required",
 					"x-nullable": true
 				},
 				"file_ids": {
@@ -2264,13 +2334,13 @@
 				"reinspection_date": {
 					"type": "string",
 					"format": "date-time",
-					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nDate must occur today or a date in the future",
+					"description": "Date must occur today or a date in the future",
 					"x-nullable": true
 				},
 				"reinspection_date_time": {
 					"type": "string",
 					"format": "date-time",
-					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nThe date for reinspection_date_time must match the date for reinspection_date\nTime must occur today or a date in the future",
+					"description": "The date for reinspection_date_time must match the date for reinspection_date\nTime must occur today or a date in the future",
 					"x-nullable": true
 				},
 				"username": {
@@ -2322,6 +2392,17 @@
 			"required": [
 				"emailAddress",
 				"password"
+			],
+			"type": "object"
+		},
+		"InitialAuthenticationResponse": {
+			"properties": {
+				"token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"token"
 			],
 			"type": "object"
 		},
@@ -3123,6 +3204,208 @@
 				}
 			},
 			"type": "object"
+		},
+		"ActivityUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"activity_name": {
+					"type": "string",
+					"description": "Max length 100 characters"
+				},
+				"activity_activity_type": {
+					"$ref": "#/definitions/ActivityActivityType"
+				},
+				"activity_type_details": {
+					"type": "string",
+					"description": "Required if activity_activity_type = other\nMax length 100 characters",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"contact_details": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be in the future"
+				},
+				"start_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be in the future",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be after start_date"
+				},
+				"end_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Must be after start_date",
+					"x-nullable": true
+				},
+				"location_types": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LocationType"
+					},
+					"description": "Array values must be unique"
+				},
+				"activity_location_description": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType"
+				},
+				"collaborative_working": {
+					"type": "boolean"
+				},
+				"additional_info": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"activity_name",
+				"activity_activity_type",
+				"start_date",
+				"end_date",
+				"location_types",
+				"activity_location_description",
+				"traffic_management_type",
+				"collaborative_working"
+			],
+			"type": "object"
+		},
+		"ForwardPlanCreateResponse": {
+			"properties": {
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"work_reference_number": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"forward_plan_reference_number",
+				"work_reference_number"
+			],
+			"type": "object"
+		},
+		"ForwardPlanCreateRequest": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string",
+					"description": "Max length 24 characters\nMust be unique in the system\nMust contain only alphanumeric characters, dashes and underscores\nIf not supplied it will be auto-generated",
+					"x-nullable": true
+				},
+				"promoter_swa_code": {
+					"type": "string",
+					"description": "Max length 4 characters"
+				},
+				"highway_authority_swa_code": {
+					"type": "string",
+					"description": "Max length 4 characters"
+				},
+				"workstream_prefix": {
+					"type": "string",
+					"description": "Must consist of 3 positive whole numbers",
+					"x-nullable": true
+				},
+				"works_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
+				},
+				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"area_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 1000001 and 99999999 inclusive\nSee business rule ref. 1.12 - USRN"
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 0 and 4 inclusive\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "end_date must be on or after start_date"
+				},
+				"works_location_description": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"description_of_work": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"project_reference_number": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType",
+					"x-nullable": true
+				},
+				"additional_info": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"forward_plan_asds": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/PermitASD"
+					},
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"promoter_swa_code",
+				"highway_authority_swa_code",
+				"works_coordinates",
+				"usrn",
+				"start_date",
+				"end_date",
+				"works_location_description",
+				"description_of_work"
+			],
+			"type": "object"
 		}
 	},
 	"info": {
@@ -3263,6 +3546,51 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/PermitStatusUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/permits/{permitReferenceNumber}/permit-discount": {
+			"put": {
+				"operationId": "UpdatePermitDiscount",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "permitReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/PermitDiscountUpdateRequest"
 						}
 					}
 				]
@@ -3502,7 +3830,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rule ref. 11.5 - Revert work start",
+				"description": "See business rule ref. 21.1 - Revert work start",
 				"security": [
 					{
 						"token": [
@@ -3578,7 +3906,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rule ref. 11.6 - Revert work stop",
+				"description": "See business rule ref. 21.2 - Revert work stop",
 				"security": [
 					{
 						"token": [
@@ -3943,6 +4271,33 @@
 					}
 				},
 				"description": "See API specification Security section for more information",
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/AuthenticationRequest"
+						}
+					}
+				]
+			}
+		},
+		"/authenticate/initial": {
+			"post": {
+				"operationId": "AuthenticateInitial",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/InitialAuthenticationResponse"
+						}
+					}
+				},
 				"security": [],
 				"parameters": [
 					{
@@ -4559,6 +4914,40 @@
 						"type": "string"
 					}
 				]
+			},
+			"put": {
+				"operationId": "UpdateActivity",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "Altered"
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ActivityUpdateRequest"
+						}
+					},
+					{
+						"in": "path",
+						"name": "activityReferenceNumber",
+						"required": true,
+						"type": "string"
+					}
+				]
 			}
 		},
 		"/activity/{activityReferenceNumber}/cancel": {
@@ -4592,6 +4981,44 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/ActivityCancelRequest"
+						}
+					}
+				]
+			}
+		},
+		"/forward-plans": {
+			"post": {
+				"operationId": "CreateForwardPlan",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanCreateResponse"
+						}
+					},
+					"409": {
+						"description": "Conflict"
+					}
+				},
+				"description": "See business rules section 22 - Forward plans",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanCreateRequest"
 						}
 					}
 				]
