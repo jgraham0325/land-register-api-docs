@@ -861,6 +861,7 @@ work record, the properties of this response are:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Active permit</strong>: The currently active permit associated with the works. In the sequence above this would contain the permit awaiting assessment</li>
+  <li><strong>Forward plan</strong>:Summary of a forward plan if it has been added to the works (none initially)</li>
   <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
