@@ -1379,7 +1379,7 @@ Query params:
   <li><strong>proposed_start_date</strong>: Date range filtering based on the proposed_start_date property</li>
   <li><strong> proposed_end_date </strong>: Date range filtering based on the proposed_end_date property</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
-  <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
+  <li><strong>query</strong>: The work reference number associated with the forward plan (partial match)</li>
 </ol>
 
 #### Polling
