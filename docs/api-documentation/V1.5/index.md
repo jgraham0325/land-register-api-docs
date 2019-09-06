@@ -709,16 +709,16 @@ have the token header set.
 
 ![available authorisations](images/available-authorisations.png)
 
-If authenticating for the first time with a temporary password, a 307 Temporary 
-Redirect to <code>authenticate/initial</code> will be returned, which can be called 
+If authenticating for the first time with a temporary password, a 307 Temporary
+Redirect to <code>authenticate/initial</code> will be returned, which can be called
 with the same request body.
 {: .govuk-body}
 
 <code>POST /authenticate/initial</code>
 
-After a user has been invited to the system by their organisation admin using the 
-Party API <code>/invite-user</code> endpoint, they need to set a new password. This 
-endpoint can be called with a new user's email address and temporary password, and will 
+After a user has been invited to the system by their organisation admin using the
+Party API <code>/invite-user</code> endpoint, they need to set a new password. This
+endpoint can be called with a new user's email address and temporary password, and will
 return a token that should be provided to the Party API <code>/set-password</code> endpoint.
 {: .govuk-body}
 
@@ -861,6 +861,7 @@ work record, the properties of this response are:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Active permit</strong>: The currently active permit associated with the works. In the sequence above this would contain the permit awaiting assessment</li>
+  <li><strong>Forward plan</strong>: Summary of a forward plan if it has been added to the works (none initially)</li>
   <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
@@ -1839,10 +1840,12 @@ Activities can be flagged as being cancelled by HA which initially raised the ac
 
 <code>POST /forward-plans</code>
 
+<code>GET /works/{work reference number}/forward-plans/{forward plan reference number}</code>
+
 Forward plans allow a Planner to supply information about road or street works in their longterm programme, which may include those works in their annual operating programme, or three or five year rolling programmes. Giving advance notice with a forward plan helps with collaboration of works. Forward plans are only for major works and can only be progressed to a PAA.
 {: .govuk-body}
 
-Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number.
+Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number which can be used to retrieve an individual forward plan via the GET endpoint provided.
 {: .govuk-body}
 
 ### GeoJSON API
