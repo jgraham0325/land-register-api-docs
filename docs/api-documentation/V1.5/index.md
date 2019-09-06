@@ -1842,10 +1842,12 @@ Activities can be flagged as being cancelled by HA which initially raised the ac
 
 <code>GET /works/{work reference number}/forward-plans/{forward plan reference number}</code>
 
+<code>PUT /works/{work reference number}/forward-plans/{forward plan reference number}</code>
+
 Forward plans allow a Planner to supply information about road or street works in their longterm programme, which may include those works in their annual operating programme, or three or five year rolling programmes. Giving advance notice with a forward plan helps with collaboration of works. Forward plans are only for major works and can only be progressed to a PAA.
 {: .govuk-body}
 
-Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number which can be used to retrieve an individual forward plan via the GET endpoint provided.
+Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number which can be used to retrieve an individual forward plan via the GET endpoint provided, or update an individual forward plan via the PUT endpoint provided.
 {: .govuk-body}
 
 ### GeoJSON API
