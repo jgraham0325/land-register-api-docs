@@ -588,6 +588,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /activity/{activityReferenceNumber}</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /activity/{activityReferenceNumber}/cancel</code></td>
       <td class="govuk-table__cell">HAOfficer</td>
@@ -709,16 +714,16 @@ have the token header set.
 
 ![available authorisations](images/available-authorisations.png)
 
-If authenticating for the first time with a temporary password, a 307 Temporary 
-Redirect to <code>authenticate/initial</code> will be returned, which can be called 
+If authenticating for the first time with a temporary password, a 307 Temporary
+Redirect to <code>authenticate/initial</code> will be returned, which can be called
 with the same request body.
 {: .govuk-body}
 
 <code>POST /authenticate/initial</code>
 
-After a user has been invited to the system by their organisation admin using the 
-Party API <code>/invite-user</code> endpoint, they need to set a new password. This 
-endpoint can be called with a new user's email address and temporary password, and will 
+After a user has been invited to the system by their organisation admin using the
+Party API <code>/invite-user</code> endpoint, they need to set a new password. This
+endpoint can be called with a new user's email address and temporary password, and will
 return a token that should be provided to the Party API <code>/set-password</code> endpoint.
 {: .govuk-body}
 
@@ -1825,6 +1830,8 @@ This alteration endpoint allows a HA to amend permit discounts applied and reaso
 
 <code>GET /activity/{activity reference number}</code>
 
+<code>PUT /activity/{activity reference number}</code>
+
 <code>PUT /activity/{activity reference number}/cancel</code>
 
 Events or Activities allow a HA to represent different activites within Street Manager. There are 13 activity types currently supported by Street Manager:
@@ -1846,10 +1853,12 @@ Events or Activities allow a HA to represent different activites within Street M
  <li>Works for Rail Purposes</li>
 </ol>
 
-Creating an activity using the POST endpoint will return an activity reference number which can be used to retrieve an individual activity via the GET endpoint provided
+Creating an activity using the <code>POST</code> endpoint will return an activity reference number which will be used to retrieve, edit and delete an activity.
 {: .govuk-body}
-
-Activities can be flagged as being cancelled by HA which initially raised the activity. The activity reference number is required. Optionally a reason for cancelling the activity can be provided. Activites are cancelled via the PUT endpoint provided.
+Editing an activity will only update the activity details. To do so, one must provide the activity reference number along with the activity details they wish to edit, through the <code> PUT/activity/{activity reference number}</code> endpoint.
+{: .govuk-body}
+Cancelling an activity is only possible by the HA which initially raised the activity, through the <code> PUT/activity/{activity reference number}/cancel</code> endpoint.
+The activity reference number must be provided, while the cancellation reason is optional.
 {: .govuk-body}
 
 #### Forward Plans
