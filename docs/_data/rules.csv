@@ -213,11 +213,11 @@ Non compliance - follow up & follow up completion:
 28,3.4,,Failure categories,"Failure categories for both SLG and Reinstatement inspection types. Options available dependent on inspection type
 Able to select multiple with no limit to the number that can be selected
 'Defect sites' text field mandatory",,,1
-29,3.5,,Restriction to adding an inspection,"HA only able to add an Inspection if promoter has indicated an excavation was required. The answer to this question defaults to what was inputed at the time of the permit application, but can be changed.
+29,3.5,,Adding an inspection,"Inspections can be added against a work record from the point that a works record has been created on Street Manager. In other words, inspections can be added at every stage of a works record – from submitted right through to closed.
 
-Also, permit must be in progress or closed.
+HAs have the ability to log additional information for their inspection regardless of its outcome (unable to complete/fail/pass - not just for a fail)
 
-Note - this will change in the future to allow inspections on proposed works also.",,,1
+HAs can also upload evidence regardless of outcome (photo update consistent with the other uploads within SM)",,,1
 ,,,,,,,FALSE
 32,4,Reinstatements and sites,Reinstatement process and outcomes,,https://miro.com/app/board/o9J_kxvrShc=/?moveToWidget=3074457346433801830,,1
 33,4.1,,Reinstatement end date,"Auto-calculated based on both reinstatement status and depth.
@@ -280,30 +280,35 @@ It is possible, however, for the promoter to submit a new permit on a works reco
 ",,,1
 ,,,,,,,FALSE
 53,7,Cancelling a permit,Cancelling process and outcomes,,,,1
-54,7.1,,Cancelling a permit before assessment,"This defines the ability for a promoter to cancel a permit application within their organisation for which the works have not been started yet – but after submission of the permit.
+54,7.1,,Cancelling a permit before assessment,"Promoters can cancel a permit application (for both planned and immediate works) for which the works have not yet started in two scenarios after the permit has been submitted:
 
-It is possible to cancel a permit after submission (before assessment), and after assessment. 
+• Before assessment
+• After assessment
 
-If the user wishes to go ahead with the cancellation in both scenarios listed above, this will trigger a confirmation request and a reason for cancellation – if they wish to go ahead with it. This functionality is to allow the promoter to remove any works that are no longer required – even if the permit has already been granted. Note, the works will be cancelled, not permanently deleted.
+If the user wishes to go ahead with the cancellation in both scenarios listed above, this triggers a confirmation request and a reason for cancellation. This functionality allows the promoter to remove any works that are no longer required – even if the permit has already been granted. Note, the works will be cancelled, not permanently deleted.
 
-It is not possible for a user (promoter) to cancel any work that is not from their own promoter organisation. 
+It is not possible for a user (promoter) to cancel any work that is not from their own organisation. 
 
-HAs are unable to cancel a works (unless they log in as a promoter to cancel works they had raised).  
+HAs are unable to cancel a works – unless they log in as a promoter to cancel works they themselves had raised.  
 
-Cancellation will trigger updating the works record status to ‘cancelled’ – if the last live permit on the works record is set to cancelled.
+Cancellation will trigger updating the works record status to ‘cancelled’ – if the last live permit on the works record is set to cancelled. 
+
+No charges will be applicable for cancelled permits if the cancellation happens before the permit has been granted (i.e. nothing will be exported in the fees reporting).
+
+Immediate permits can also be cancelled. However, an immediate permit cannot be cancelled if a reinstatement has been recorded or the work stop has been logged.
 ",https://miro.com/app/board/o9J_kyAz-tk=/?moveToWidget=3074457346577559700,,1
 ,,,,,,,FALSE
-56,8,Commenting on a work,Commenting process and outcomes,,,,1
-57,8.1,,Commenting on a work,"Only users that are associated with a works can comment. Users associated with a works include being from the workstream and authorised organisation / contractor tied to a particular works record.
+57,8,Commenting on a work,Commenting process and outcomes,,,,1
+58,8.1,,Commenting on a work,"Only users that are associated with a works can comment. Users associated with a works include being from the workstream and authorised organisation / contractor tied to a particular works record.
 ",,,1
-58,8.2,,Topic,Only Highway Authorities can comment with the topic ‘overrun warning’.,,,1
+59,8.2,,Topic,Only Highway Authorities can comment with the topic ‘overrun warning’.,,,1
 ,,,,,,,FALSE
-60,9,Updating the status of an alteration,Alteration status process and outcomes,,,,1
-61,9.1,,Authorisation,"The status of a permit changes when an action is taken by the Highway Authority, which then triggers a change in status.
+61,9,Updating the status of an alteration,Alteration status process and outcomes,,,,1
+62,9.1,,Authorisation,"The status of a permit changes when an action is taken by the Highway Authority, which then triggers a change in status.
 ",,,1
 ,,,,,,,FALSE
-63,10,Updating the status of a permit,Permit status process and outcomes,,,,1
-64,10.1,,Permit Status,"When a permit with the status ‘submitted’ or ‘awaiting_assessment_in_progress’ is granted or refused by the HA, the status then changes to ‘granted_proposed’ or ‘refused’. 
+64,10,Updating the status of a permit,Permit status process and outcomes,,,,1
+65,10.1,,Permit Status,"When a permit with the status ‘submitted’ or ‘awaiting_assessment_in_progress’ is granted or refused by the HA, the status then changes to ‘granted_proposed’ or ‘refused’. 
 
 If a promoter cancels a permit with the status ‘submitted’, ‘granted_proposed’ or ‘deemed_proposed’ the status changes to ‘cancelled’.
 
@@ -313,18 +318,18 @@ If an HA revokes a permit that is in progress (i.e. after being assessed and gra
 
 ",,,1
 ,,,,,,,FALSE
-66,11,On site details,On site process and outcomes,,,,1
-67,11.1,,Actual work start,Only a Promoter associated with the work can update the actual work start date and time after a permit has been granted.,,,1
-68,11.2,,Actual work stop,Only a Promoter associated with the work can update the actual work stop date and time after a permit is in progress.,,,1
-69,11.3,,Excavation carried out,Only a Promoter associated with the work can update the excavation required field when a permit is in progress. It can be changed until the point that a reinstatement is recorded. Can only record a reinstatement when excavation carried out is true. Is defaulted from permit application.,,,1
-70,11.4,,Inspection units,Only a Promoter associated with the work can update the inspection units while a permit is in progress. At least one reinstatement needs to be recorded before inspection units can be added. Field defaulted with 1 once at least one reinstatement added.,,,1
-71,11.5,,Display the details,All of the details above that are added at the works record level are displayed also on the permit details page so that they are viewable for permits that are no longer active.,,,1
+67,11,On site details,On site process and outcomes,,,,1
+68,11.1,,Actual work start,Only a Promoter associated with the work can update the actual work start date and time after a permit has been granted.,,,1
+69,11.2,,Actual work stop,Only a Promoter associated with the work can update the actual work stop date and time after a permit is in progress.,,,1
+70,11.3,,Excavation carried out,Only a Promoter associated with the work can update the excavation required field when a permit is in progress. It can be changed until the point that a reinstatement is recorded. Can only record a reinstatement when excavation carried out is true. Is defaulted from permit application.,,,1
+71,11.4,,Inspection units,Only a Promoter associated with the work can update the inspection units while a permit is in progress. At least one reinstatement needs to be recorded before inspection units can be added. Field defaulted with 1 once at least one reinstatement added.,,,1
+72,11.5,,Display the details,All of the details above that are added at the works record level are displayed also on the permit details page so that they are viewable for permits that are no longer active.,,,1
 ,,,,,,,FALSE
-73,12,Works History,Works history process and outcomes,,,,1
-74,12.1,,Works history,All users can view the entire history of a works.,,,1
+74,12,Works History,Works history process and outcomes,,,,1
+75,12.1,,Works history,All users can view the entire history of a works.,,,1
 ,,,,,,,FALSE
-76,13,Validity period,Validity period process and outcomes,,,,1
-77,13.1,,Validity period,"Validity periods for each works category are as follows. Note, these are all working days and include the original start date:
+77,13,Validity period,Validity period process and outcomes,,,,1
+78,13.1,,Validity period,"Validity periods for each works category are as follows. Note, these are all working days and include the original start date:
 - PAAs - out of scope currently
 - Major - 5 working days
 - Standard - 5 working days
@@ -339,8 +344,8 @@ Non-traffic sensitivity is determined by the following scenarios:
 If the permit application is for a traffic sensitive and/or category 0, 1, or 2 road, then the proposed end date will not shift.
 ",,,1
 ,,,,,,,FALSE
-79,14,Fees Report,Fees report process and outcomes,,,,1
-80,14.1,,Fees report,"A fees report can be generated by either the HA or a promoter. In order to do so, the user specifies the dates to report on using the ‘To and From’ date selectors to specify the date range for which they want to generate a report. Currently, the system only allows for reports with a maximum of 31 days. This is done for performance reasons, due to the number of entries that could potentially be returned.
+80,14,Fees Report,Fees report process and outcomes,,,,1
+81,14.1,,Fees report,"A fees report can be generated by either the HA or a promoter. In order to do so, the user specifies the dates to report on using the ‘To and From’ date selectors to specify the date range for which they want to generate a report. Currently, the system only allows for reports with a maximum of 31 days. This is done for performance reasons, due to the number of entries that could potentially be returned.
 
 Dates queried are the date of the chargeable activity.
 
@@ -355,18 +360,18 @@ Chargeable activities reported on are:
 Sorted by date in ascending order.
 ",,,1
 ,,,,,,,FALSE
-82,15,Workstreams,Workstreams,,,,1
-83,15.1,,Workstreams prefix ,"While creating new works in street manager, the organisation code and workstream prefix is automatically included in the works reference number which is LR000. 
+83,15,Workstreams,Workstreams,,,,1
+84,15.1,,Workstreams prefix ,"While creating new works in street manager, the organisation code and workstream prefix is automatically included in the works reference number which is LR000. 
 When setting up their organisation’s workstreams, users can provide their own workstream prefix (we recommend users do this). This must be between 1- 999. If using a system-generated prefix, Street Manager will begin prefixes automatically with 000.
 ",,,1
 ,,,,,,,FALSE
-85,16,Map,Map process and outcomes,,,,1
-86,16.1,,Date filter,Defaults with the current date in the 'From' field and 14 days after the current date in the 'To' field.,,,1
-87,16.2,,Displaying works,"Limited to displaying 500 words, for performance reasons.
+86,16,Map,Map process and outcomes,,,,1
+87,16.1,,Date filter,Defaults with the current date in the 'From' field and 14 days after the current date in the 'To' field.,,,1
+88,16.2,,Displaying works,"Limited to displaying 500 words, for performance reasons.
 Results not displayed on map when user clicks out three zoom levels higher than the default view after the point of clicking on the address from the search results.",,,1
 ,,,,,,,FALSE
-89,17,Search,Search process and outcomes,,,,1
-90,17.1,,Searching using search bar on list pages,"Search bar added to PA, CR, WR and PAA tabs.
+90,17,Search,Search process and outcomes,,,,1
+91,17.1,,Searching using search bar on list pages,"Search bar added to PA, CR, WR and PAA tabs.
 
 Search rules:
 - Complete and partial search.
@@ -375,7 +380,7 @@ Search rules:
 - If, however, the user types in a search term (and clicks submit) and then clicks a different tab, the search term will still be in the box.
 - Allows user to search for street name and works reference number across each tab but if the user enters the area, town or post code no results will be shown as the database only searches for the partial or complete street name.
 - For PA, WR and PAA tabs, if you search by works reference number or street name, the export CSV link will export results with that search term (as well as any filters applied) but will not export any sorting on the columns.",,,1
-91,17.2,,Advanced filtering on list pages,"Advanced filtering options available for lists on the following tabs:
+92,17.2,,Advanced filtering on list pages,"Advanced filtering options available for lists on the following tabs:
 - PAA
 - Works records
 - Permit applications
@@ -387,8 +392,8 @@ Filters selection is not persisted when user changes tabs. Note that each tab (w
 
 Note that working within traffic sensitive times checkbox on change request tab will not return any results yet due a dependency on known issue being fixed around ASD change requests.",,,1
 ,,,,,,,FALSE
-93,18,Lane rental assessment,Lane rental process and outcomes,,,,1
-94,18.1,,Adding a lane rental assessment to a permit,"HA able to add a Lane Rental Assessment or Charge on the Application Details from a link on the 'Review permit application details' page where they can fill out the one page lane rental form and submit.
+94,18,Lane rental assessment,Lane rental process and outcomes,,,,1
+95,18.1,,Adding a lane rental assessment to a permit,"HA able to add a Lane Rental Assessment or Charge on the Application Details from a link on the 'Review permit application details' page where they can fill out the one page lane rental form and submit.
 
 Drop down charge band options:- Select a charge band- Charge band 1- Charge band 2- Charge band 3- Charge band 4- Charge band 5
 
@@ -414,7 +419,7 @@ The banner for “Lane rental details added” is shown to the user (upon comple
 Lane rental assessment submission recorded in history of works record.
 
 HA able to add lane rental information at any status (they are not restricted in SM, pre or post grant)",,,1
-95,18.2,,Lane rental applicable roads flagged to user when drawing permit on map,"When the user draws their permit on the map, they will be alerted through a text flag which is visible when a Lane Rental USRN is selected based on the ASDs that apply. 
+96,18.2,,Lane rental applicable roads flagged to user when drawing permit on map,"When the user draws their permit on the map, they will be alerted through a text flag which is visible when a Lane Rental USRN is selected based on the ASDs that apply. 
 
 Text reads “Lane rental applies”.
 
@@ -429,28 +434,48 @@ The flag (text) permit works is on lane rental applicable road on Check your ans
 Text reads “Lane rental charges may apply for these works”.
 ",,,1
 ,,,,,,,FALSE
-97,19,File upload,File upload process and outcomes,,,,1
-98,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment (search for, upload - up to 5mb per file - 100mb total per permit).
+98,19,File upload,File upload process and outcomes,,,,1
+99,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment (search for, upload - up to 5mb per file - 100mb total per permit).
 Attachments presented back to user in table format on next screen after upload.
 User able to add multiple.",,,1
 ,,,,,,,FALSE
-100,20,Contractors,Contractors process and outcomes,,,,1
-101,20.1,,Adding a contractor,Only admin users can add a contractor organisation and only to their own organisation (determined by the SWA code against that admin users).,,,1
-102,20.2,,Removing a contractor,Only admin users can remove a contractor organisation. Removing them will remove any permissions they have to work on behalf of that organisation,,,1
-103,20.3,,Switching between organisations,"Currently, contractor can only work on behalf of one organisation at a time. When they log in, they are required to choose which organisation they wish to work on behalf of. They have the option of switching between organisations at any point. Also, contractors can only choose organisations that have added them to their list of contractors (see 20.1)",,,1
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
+101,20,Contractors,Contractors process and outcomes,,,,1
+102,20.1,,Adding a contractor,Only admin users can add a contractor organisation and only to their own organisation (determined by the SWA code against that admin users).,,,1
+103,20.2,,Removing a contractor,Only admin users can remove a contractor organisation. Removing them will remove any permissions they have to work on behalf of that organisation,,,1
+104,20.3,,Switching between organisations,"Currently, contractor can only work on behalf of one organisation at a time. When they log in, they are required to choose which organisation they wish to work on behalf of. They have the option of switching between organisations at any point. Also, contractors can only choose organisations that have added them to their list of contractors (see 20.1)",,,1
+,,,,,,,FALSE
+106,21,Revert Start and Stop,Revert process and outcomes,,#REF!,,1
+107,21.1,,Reverting the start date and time,"It is not possible to revert the start date of a works if the following apply:
+• The stop date and time has been entered
+• A reinstatement has been added
+• 'Yes' selected for the 'Final site registered?' question
+• It's an immediate works
+• The permit has been revoked
+
+If logging the actual start date and time causes the proposed end date to slide (due to the validity period) and then the start date is reverted, the proposed end date will also revert to what it was originally.
+
+The user is required to provide a reason for reverting.",#REF!,,1
+108,21.2,,Reverting the stop date and time,"It is not possible to revert the start date if the following applies:
+• Another permit has been added against that works record
+
+The user is required to provide a reason for reverting.",#REF!,,1
+,,,,,,,FALSE
+110,22,Forward Plans,Forward plans process and outcomes,,#REF!,,1
+111,22.1,,Submitting a forward plan,"Forward plans allow a Planner to supply information about works that are part of their longterm programme (whether their annual operating programme, or their 3 or 5 year rolling programme). Giving advance notice with a forward plan helps with collaboration of works and management of the road network. 
+
+It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
+
+Forward plans can be edited or cancelled at any point up until they are closed, with the exception of certain details, namely the workstream, the highway authority and the USRN. ",#REF!,,1
+112,22.2,,Progressing a forward plan into a PAA,"Forward plans are only for major works and can only be progressed to a PAA when they have a status of 'Raised'.
+
+When progressed to a PAA, the forward plan's status automatically gets set to 'Closed' so that there is only one active plan, PAA or permit against a works record at any given time.",#REF!,,1
+,,,,,,,FALSE
+114,23,Activities (API users only currently),Activities process and outcomes  - API users only currently,,#REF!,,1
+115,23.1,,Adding an activity,Only an HA can add an activity ,#REF!,,1
+116,23.2,,Cancel an activity,"Only the HA that added the activity can cancel it. 
+When cancelled, the activity will be flagged as cancelled and will continue to be displayed in the map",#REF!,,1
+117,23.3,,Edit an activity,"Only the HA that added the activity can edit it. 
+Unable to edit the activity location or works area.",#REF!,,1
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
