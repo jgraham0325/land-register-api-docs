@@ -33,3 +33,14 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2019 - 13
     </a>
   </li> 
+
+
+<h2 id="documentation" class="govuk-heading-l">Documentation</h2>
+
+<ul class="govuk-list govuk-list--bullet">
+  
+  <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/190610_Street%20Manager%20Newsletter%2011.pdf">
+      Street Manager - Newsletter 2019 - 11
+    </a>
+  </li> 
