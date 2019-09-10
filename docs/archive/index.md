@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Newsletters
+title: Archive
 ---
-<h1 class="govuk-heading-xl">Newsletters</h1>
+<h1 class="govuk-heading-xl">Archive</h1>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
