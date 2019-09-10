@@ -13,7 +13,8 @@ title: Archive of newsletters and communication
     <li><a class="govuk-link" href="#other communication">Other communication</a></li>
   
 <ul class="govuk-list govuk-list--bullet">
-  <li><a class="govuk-link" href="google.co.uk">Street Manager Newsletter 01/08/2019</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/190610_Street Manager Newsletter 11.pdf">
+    Street Manager Newsletter - 2019 - 11
 </ul>
 
 
