@@ -52,4 +52,4 @@ bundle exec jekyll serve # runs on http://127.0.0.1:4000/street-manager-docs/
 2. Click bottom left corner and select "Remote-Containers: Open Folder in Container" (requires extension)
 3. Wait for container to be built
 4. Run task to launch Jekyll via `Terminal -> Run Task -> Jeykll`
-5. Browse to http://localhost:4000
+5. Browse to http://0.0.0.0:4000/street-manager-docs/
