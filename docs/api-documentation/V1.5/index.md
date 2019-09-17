@@ -1308,7 +1308,7 @@ Query params:
   <li><strong>status</strong>: The permit status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
-  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assesment (if exists) i.e. chargeable, exempt</li>
+  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
@@ -1357,7 +1357,7 @@ Query params:
   <li><strong>alteration_status</strong>: The alteration status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
-  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assesment (if exists) i.e. chargeable, exempt</li>
+  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
