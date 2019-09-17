@@ -1322,7 +1322,7 @@ Query params:
   <li><strong>is_early_start</strong>: When true this will return permits that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
     <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
-  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" or "potentially chargeable", and the work is taking place on a lane rental applicable road</li>
+  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Get inspections
@@ -1368,7 +1368,7 @@ Query params:
   <li><strong>is_early_start</strong>: When true this will return permit alterations that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
   <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
-  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", and the work is taking place on a lane rental applicable road</li>
+  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Polling
