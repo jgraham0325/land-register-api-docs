@@ -7,13 +7,12 @@ title: Archive of newsletters and communication
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
   <li><a class="govuk-link" href="#newsletters">Newsletters</a></li>
-    <li><a class="govuk-link" href="#other communication">Other communication</a></li>
+    <li><a class="govuk-link" href="#other communication">Other%20Communication</a></li>
   
   <h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
   
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/180702_Street%20Manager%20Newsletter%201.pdf">
     Street Manager Newsletter - 2018 - 1
-</li>
   
   <li>
     <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/180724_Street%20Manager%20Newsletter%202.pdf">
