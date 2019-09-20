@@ -5,7 +5,7 @@ title: API specification V1.4
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.4
+Version 1.5
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1929,40 +1929,6 @@ Updates the workstream details associated with the organisation and workstream p
 Returns the OrganisationResponse associated with the organisation provided.
 {: .govuk-body}
 
-#### Put organisation
-{: .govuk-heading-s}
-
-<code>PUT /organisations/{organisationReference}</code>
-
-Updates the organisation details associated with the organisation provided.
-{: .govuk-body}
-
-#### Get organisations
-{: .govuk-heading-s}
-
-<code>GET /organisations</code>
-
-Returns all organisations. Optional filter by organisation_type. Optional filter by query string which performs a partial search against organisation name.
-{: .govuk-body}
-
-#### Post contractors
-{: .govuk-heading-s}
-
-<code>POST /organisations/{organisationReference}/contractors</code>
-
-Links contractors to organisation allowing the contractors provided to work on behalf of the organisation provided.
-{: .govuk-body}
-
-#### Delete organisation contractor
-{: .govuk-heading-s}
-
-<code>DELETE /organisations/{organisationReference}/contractors/{contractorOrganisationReference}</code>
-
-Deletes link between contractor and organisation removing the ability of the contractor provided to work on behalf of the organisation provided.
-{: .govuk-body}
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
 #### Refresh tokens
 {: .govuk-heading-s}
 
@@ -1997,14 +1963,6 @@ Accepts the user's email address. An email will be sent to this address with a v
 <code>POST /reset-password</code>
 
 Accepts the user's email address, verification code and the new password. The verification code can be found in the email that was sent following a POST to <code>/forgot-password</code>.
-{: .govuk-body}
-
-#### Invite user
-{: .govuk-heading-s}
-
-<code>POST /invite-user</code>
-
-Accepts the required user's email address and desired role and creates a new user. An email will be sent to the new user which will contain their username and a temporary password that they will be required to change.
 {: .govuk-body}
 
 #### Set password
