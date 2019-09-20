@@ -1328,6 +1328,7 @@ Query params:
   <li><strong>status</strong>: The permit status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
+  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
@@ -1340,6 +1341,8 @@ Query params:
   <li><strong>has_excavation</strong>: When true this will return permits that have carried out an excavation</li>
   <li><strong>is_early_start</strong>: When true this will return permits that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
+  <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
+  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Get inspections
@@ -1374,6 +1377,7 @@ Query params:
   <li><strong>alteration_status</strong>: The alteration status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
+  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
@@ -1383,6 +1387,8 @@ Query params:
   <li><strong>is_duration_extension</strong>: When true this will return permit alterations that raised a duration extension</li>
   <li><strong>is_early_start</strong>: When true this will return permit alterations that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
+  <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
+  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Polling
