@@ -6,8 +6,6 @@ title: Archive of newsletters and communication
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<h2 class="govuk-heading-l">Table of contents</h2>
-
 <ol class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#newsletters">Newsletters</a></li>
     <li><a class="govuk-link" href="#other communication">Other communication</a></li>
@@ -19,7 +17,6 @@ title: Archive of newsletters and communication
 
 
 ---
-</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -34,9 +31,6 @@ title: Archive of newsletters and communication
     </a>
   </li> 
 
-
-<h2 id="documentation" class="govuk-heading-l">Documentation</h2>
-
 <ul class="govuk-list govuk-list--bullet">
   
   <li>
@@ -44,13 +38,10 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2018 - 3
     </a>
   </li> 
-  
-  </ol>
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-
-<h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
 
 <ul class="govuk-list govuk-list--bullet">
   
@@ -65,8 +56,6 @@ title: Archive of newsletters and communication
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-<h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
-
 <ul class="govuk-list govuk-list--bullet">
   
   <li>
@@ -79,8 +68,6 @@ title: Archive of newsletters and communication
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-
-<h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
 
 <ul class="govuk-list govuk-list--bullet">
   
@@ -95,8 +82,6 @@ title: Archive of newsletters and communication
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-<h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
-
 <ul class="govuk-list govuk-list--bullet">
   
   <li>
@@ -109,8 +94,6 @@ title: Archive of newsletters and communication
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-
-<h2 id="documentation" class="govuk-heading-l">Newsletters</h2>
 
 <ul class="govuk-list govuk-list--bullet">
   
