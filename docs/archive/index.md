@@ -60,3 +60,33 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2019 - 8
     </a>
   </li> 
+
+<li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/190319_Street%20Manager%20Newsletter%209.pdf">
+      Street Manager Newsletter - 2019 - 9
+    </a>
+  </li>
+  
+  <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/190501_Street%20Manager%20Newsletter%2010.docx">
+      Street Manager Newsletter - 2019 - 10
+    </a>
+  </li>
+  
+   <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/190610_Street%20Manager%20Newsletter%2011.pdf">
+      Street Manager Newsletter - 2019 - 11
+    </a>
+  </li>
+  
+   <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/Street%20Manager%20Newsletter%2012.pdf">
+      Street Manager Newsletter - 2019 - 12
+    </a>
+  </li>
+  
+   <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/Street%20Manager%20Newsletter%2013.pdf">
+      Street Manager Newsletter - 2019 - 13
+    </a>
+  </li>
