@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.4
+title: API specification V1.6
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.5
+Version 1.6
 {: .govuk-body-l}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -591,6 +591,26 @@ The table below shows the current permissions per endpoint.
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /activity/{activityReferenceNumber}/cancel</code></td>
       <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /forward-plans</code></td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code></td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
   </tbody>
@@ -1308,7 +1328,6 @@ Query params:
   <li><strong>status</strong>: The permit status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
-  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
@@ -1321,8 +1340,6 @@ Query params:
   <li><strong>has_excavation</strong>: When true this will return permits that have carried out an excavation</li>
   <li><strong>is_early_start</strong>: When true this will return permits that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
-    <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
-  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Get inspections
@@ -1357,7 +1374,6 @@ Query params:
   <li><strong>alteration_status</strong>: The alteration status i.e. submitted, granted</li>
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
-  <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
@@ -1367,8 +1383,6 @@ Query params:
   <li><strong>is_duration_extension</strong>: When true this will return permit alterations that raised a duration extension</li>
   <li><strong>is_early_start</strong>: When true this will return permit alterations that have been flagged as an early start</li>
   <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
-  <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
-  <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
 #### Polling
@@ -1850,10 +1864,27 @@ Activities can be flagged as being cancelled by HA which initially raised the ac
 
 <code>PUT /works/{work reference number}/forward-plans/{forward plan reference number}</code>
 
+<code>PUT /works/{work reference number}/forward-plans/{forward plan reference number}/cancel</code>
+
 Forward plans allow a Planner to supply information about road or street works in their longterm programme, which may include those works in their annual operating programme, or three or five year rolling programmes. Giving advance notice with a forward plan helps with collaboration of works. Forward plans are only for major works and can only be progressed to a PAA.
 {: .govuk-body}
 
-Creating a forward plan using the POST endpoint will return a work reference number and a forward plan reference number which can be used to retrieve an individual forward plan via the GET endpoint provided, or update an individual forward plan via the PUT endpoint provided.
+The POST endpoint will create a forward plan and return a work reference number and a forward plan reference number, which can be used to retrieve an individual forward plan via the GET endpoint provided.
+{: .govuk-body}
+
+The GET endpoint will require the work reference number and forward plan reference number of the intended forward plan to return information.
+{: .govuk-body}
+
+There are two PUT endpoints, one to update and one to cancel the forward plan.
+{: .govuk-body}
+
+The first PUT endpoint will update a forward plan and will require a work reference number, forward plan reference number and a minimum of the mandatory information that you wish to update.
+{: .govuk-body}
+
+The second PUT endpoint (labeled 'cancel') will cancel the forward plan, and subsequently, the work it superseeds. This will require a work reference number, forward plan reference number and a cancellation reason.
+{: .govuk-body}
+
+There is no versioning available when updating information, so information changed is lost.
 {: .govuk-body}
 
 ### GeoJSON API
