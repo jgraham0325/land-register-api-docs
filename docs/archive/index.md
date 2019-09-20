@@ -6,7 +6,6 @@ title: Archive of newsletters and communication
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<ol class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#newsletters">Newsletters</a></li>
     <li><a class="govuk-link" href="#other communication">Other communication</a></li>
   
