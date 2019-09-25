@@ -1931,6 +1931,14 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
 {: .govuk-body}
 
+#### Get nsg search
+{: .govuk-heading-s}
+
+<code>GET /nsg/search</code>
+
+Returns street data based on a query search across the NSG street_descriptor, locality_name, town_name and administrative_area.
+{: .govuk-body}
+
 ### Party API
 {: .govuk-heading-m}
 
