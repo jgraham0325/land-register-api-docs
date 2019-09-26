@@ -1514,8 +1514,10 @@ It's not possible to add an additional permit to an existing works, unless the w
 ##### Progress a forward plan to a PAA
 
 When a forward plan is created, a works is created with no permits. In this scenario, this endpoint is used to raise the first permit on the works. This permit will always be a PAA. This endpoint requires some of the same fields as the create forward plan request but much of the information from the forward plan will be used as the value for the PAA, and so only a subset of information is required.
+{: .govuk-body}
 
 In order to progress a forward plan to a PAA, the forward plan must have a status of "raised". Upon successful progression, the forward plan's status will be updated to "closed".
+{: .govuk-body}
 
 #### Update status endpoint
 {: .govuk-heading-s}
