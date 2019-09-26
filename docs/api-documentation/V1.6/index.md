@@ -910,7 +910,7 @@ The statuses of a permit are:
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>submitted</strong>: The permit is awaiting assessment</li>
   <li><strong>granted_proposed</strong>: The permit has been assessed as granted by an HA</li>
-  <li><strong>granted_with_changes</strong>: The permit has been assessed as granted with changes by an HA</li>
+  <li><strong>permit_modification_request</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted_proposed/refused by an HA.</li>
   <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
   <li><strong>granted_in_progress</strong>: The permit has been started by the promoter after being granted</li>
   <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
@@ -1024,6 +1024,51 @@ In order to carry out much of the actions against a work record the associated p
 </ol>
 
 ![permit create and assess diagram](images/create-and-assess-permits.png)
+
+#### Permit modification requests (Available in public beta)
+{: .govuk-heading-s}
+
+HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted_proposed` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for. 
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Modification request (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      Via the assessment endpoint, the HA requests changes to the permit.
+    </p>
+  </li>
+  <li>
+    <strong>Create permit alteration (Promoter)</strong>: <code>POST /works/{work reference number}/permits/{permit reference number}/alterations</code>
+    <p>
+      Promoter submits requested changes via change request
+    </p>
+  </li>
+  <li>
+    <strong>Assess the alteration (Highway Authority)</strong>: <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}/status</code>
+    <p>
+      Once a permit alteration is submitted the Highway Authority can either grant or refuse it.
+    </p>
+    <p>
+      Once a permit alteration is granted by a Highway Authority the permit is updated with the altered values.
+    </p>
+  </li>
+  <li>
+    <strong>Approve or reject the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      The HA makes a final assessment decision on the permit
+    </p>
+  </li>
+</ol>
+![permit modification request diagram](images/permit_modification_request.png)
+
 
 ### Inspections
 {: .govuk-heading-m}
@@ -1811,7 +1856,7 @@ Deletes a file from the system. Users can only delete files which their organisa
 
 <code>GET /works/{work reference number}/history</code>
 
-The history endpoint returns audit events associated with that works record such as when a permit is assessed, start etc. As well as that it also returns comments that have been added to the work record. You can distinguish history items as audits or comments by the **isComment** property.
+The history endpoint returns audit events associated with that works record such as when a permit is assessed, a comment is added etc.
 {: .govuk-body}
 
 Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
