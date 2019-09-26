@@ -184,10 +184,12 @@ they are:
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Submit permit application</li>
+  <li>Submit forward plan</li>
   <li>Carry out a work</li>
   <li>Create reinstatement</li>
   <li>Action an FPN</li>
   <li>Add comments to a works record</li>
+  <li>Submit a permit alteration (change-request, work extension)</li>
 </ol>
 
 **Highway authority workflows**
@@ -196,7 +198,9 @@ they are:
 <ol class="govuk-list govuk-list--bullet">
   <li>Assess permit application</li>
   <li>Issue an inspection</li>
+  <li>Schedule reinspecitons</li>
   <li>Issue an FPN</li>
+  <li>Submit event and highway license activities</li>
   <li>Add comments to a works record</li>
 </ol>
 
@@ -216,7 +220,7 @@ submitting a permit for a work. See the resource guide for details.
 #### GeoJson API
 {: .govuk-heading-s}
 
-The street manager GeoJson API exposes works spatial data to
+The street manager GeoJson API exposes works and events spatial data to
 authenticated users for use with mapping queries. See the resource guide for details.
 {: .govuk-body}
 
@@ -296,7 +300,7 @@ updated works.
 
 Contractors can use the Reporting API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of.
+information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the work-api. 
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -674,6 +678,71 @@ The table below shows the current permissions per endpoint.
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /*</code></td>
       <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Party API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Party API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /logout</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /refresh</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /organisations/{organisationReference}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /organisations/{organisationReference}/workstreams</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /organisations/{organisationReference}/workstreams</code></td>
+      <td class="govuk-table__cell">Planner &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>GET /organisations/{organisationReference}/workstreams/{workstreamId}</code>
+      </td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>PUT /organisations/{organisationReference}/workstreams/{workstreamPrefix}</code>
+      </td>
+      <td class="govuk-table__cell">Planner &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /users/{email}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; Admin</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
