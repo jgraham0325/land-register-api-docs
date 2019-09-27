@@ -2246,6 +2246,72 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
+### Upcoming Changes for Public Beta
+{: .govuk-heading-s #upcoming-changes}
+
+The following changes are expected to be available in the Public Beta Release of
+the Street Manager APIs
+
+#### Work API
+##### New Resources
+Create a scheduled inspection from a works record.
+```
+POST /works/{workReferenceNumber}/scheduled-inspections
+{
+    inspection_date,
+    inspection_date_time?,
+    inspection_type,
+    inspection_category
+}
+```
+
+Cancel a works' scheduled inspection.
+```
+DELETE /works/{workReferenceNumber}/scheduled-inspections
+```
+
+##### Updated Resources
+```
+POST /works/{wrn}/inspections
+{
+       + call_logged_reference?,
+       - unable_to_complete_details,
+       + outcome_details?,
+}
+```
+`outcome_details` is required when the outcome is either `unable_to_complete` or
+`non_compliant`
+
+Allow a user to associate a permit with an FPN.
+```
+POST /works/{workReferenceNumber}/fixed-penalty-notices
+{
+        + permit_reference_number?
+}
+```
+
+##### Updated Eumns
+_Inspection Type_
+```
+slg -> live_site
+defect_inspection -> non_compliance
+```
+
+_Inspection Category_
+```
++ site_occupancy (selectable if type = live_site)
++ conditions (selectable if type = live_site)
+```
+
+_Inspection Outcomes_
+```
+withdraw_defect -> agreed_site_compliance
++ works_stopped
++ works_stopped_apparatus_remaining
++ works_in_progress
++ works_in_progress_no_carriageway_incursion
+```
+
 Version 1.2 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
