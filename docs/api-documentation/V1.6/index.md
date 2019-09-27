@@ -2060,7 +2060,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
 {: .govuk-body}
 
-#### Get nsg search
+#### Get nsg search (Available in public beta)
 {: .govuk-heading-s}
 
 <code>GET /nsg/search</code>
@@ -2263,12 +2263,19 @@ Update Work API with the following changes:
 <li>Update the <code>InspectionType</code> enum to rename <code>slg</code> to <code>live_site</code> and <code>defect_inspection</code> to <code>non_compliance</code></li>
 <li>Update the <code>InspectionCategory</code> enum to add <code>site_occupancy</code> and <code>conditions</code> both selectable on the Create Inspection request if the InspectionType is <code>live_site</code></li>
 <li>Update the <code>InspectionOutcomes</code> enum to rename <code>withdraw_defect</code> to <code>agreed_site_compliance</code> and add <code>works_stopped</code>, <code>works_stopped_apparatus_remaining</code>, <code>works_in_progress</code>, <code>works_in_progress_no_carriageway_incursion</code></li>
+<li>Update the <code>POST /works{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
 </ol>
 
 Update Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
+</ol>
+
+Update Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+<li>Add <code>GET /nsg/search</code> endpoint. (See resource guide for details)</li>
 </ol>
 
 Version 1.6 (03/10/2019):
@@ -2279,13 +2286,23 @@ Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>BREAKING CHANGE: Update Work API to change <code>POST /works/{workReferenceNumber}/inspections</code> and <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code>. <code>failure_reasons</code> updated from a string array to an array of <code>FailReasonDetails</code>, which is composed of a <code>failure_reason</code>, of type <code>FailReason</code> enum; <code>site\_ids</code>, an array of affected sites; and <code>details</code>, a free text field description</li>
+<li>BREAKING CHANGE: How we recieve and provide NSG Special Designation information from the API now matches the NSG specification, we've introduced <code>special_desig_start_time</code>, <code>special_desig_end_time</code> and <code>special_desig_periodicity_code</code> to various requests, see the swagger docs for more detail.</li>
 <li>Update Work API's <code>POST /works/{workReferenceNumber}/permits</code> to allow permit to be created on a works with only a forward plan.</li>
+<li>Update <code>GET /works/{workReferenceNumber}/history</code> with an <code>event</code> which is an enum of high-level event types that can occur in the system.</li>
+<li>Added <code>PUT /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code> endpoint to allow Promoters/Contractors to cancel forward plans. (See resource guide for details)</li>
 </ol>
 
 Updated Reporting API with non-breaking changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>Update Reporting API to add three optional query parameters added to the <code>GET /permits</code> and <code>GET /alterations</code> endpoints in the Reporting API to enable lane rental filtering: <code>lane_rental_assessment_outcome</code>, array of <code>LaneRentalAssessmentOutcome; charges_not_agreed</code>, of type boolean; <code>lane_rental_charges_potentially_apply</code>, of type boolean</li>
+<li>Update the <code>POST /works/updates</code> endpoint with an <code>update_id</code> property. </li>
+</ol>
+
+Updated GeoJSON API with non-breaking changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+<li>Added <code>GET /forward-plans</code> endpoint to fetch forward plans in particular bounding box</li>
 </ol>
 
 Updated Party API with the following changes:
