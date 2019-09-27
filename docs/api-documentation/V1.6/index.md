@@ -198,7 +198,7 @@ they are:
 <ol class="govuk-list govuk-list--bullet">
   <li>Assess permit application</li>
   <li>Issue an inspection</li>
-  <li>Schedule reinspecitons</li>
+  <li>Schedule reinspections</li>
   <li>Issue an FPN</li>
   <li>Submit event and highway license activities</li>
   <li>Add comments to a works record</li>
@@ -910,7 +910,7 @@ The statuses of a permit are:
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>submitted</strong>: The permit is awaiting assessment</li>
   <li><strong>granted_proposed</strong>: The permit has been assessed as granted by an HA</li>
-  <li><strong>permit_modification_request</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted_proposed/refused by an HA.</li>
+  <li><strong>permit_modification_request (available in public beta)</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted_proposed/refused by an HA.</li>
   <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
   <li><strong>granted_in_progress</strong>: The permit has been started by the promoter after being granted</li>
   <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
