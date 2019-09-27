@@ -2252,8 +2252,9 @@ The following is a list of significant changes by version of this document.
 Upcoming Changes for Public Beta (01/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
-<ol class="govuk-list govuk-list--bullet">
 Update Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
 <li>BREAKING CHANGE: Update the request body of `POST /works/{workReferenceNumber}/inspections` renaming the field `unable_to_complete_details` to `outcome_details`, allowing `non_compliant` inspections and `unable_to_complete` inspection outcomes to use the same field to record additional details. Note that there can only ever be one scheduled inspection per work record.</li>
 <li>Add `POST /works/{workReferenceNumber}/scheduled-inspections` to create a scheduled inspection from a work record. With a body with the following poperties: `inspection_date`, of type DateTime; Optional `inspection_date_time`, of type DateTime to be used to specify the time of a scheduled inspeciton; `inspection_type`, of type `InspectionType` enum; `inspection_category` of type `InspectionCategory` enum</li>
 <li>Add `DELETE /works/{workReferenceNumber}/scheduled-inspections` to cancel the scheduled inspection for a work record. Note that there can only ever be one scheduled inspection per work record</li>
@@ -2264,8 +2265,9 @@ Update Work API with the following changes:
 <li>Update the `InspectionOutcomes` enum to rename `withdraw_defect` to `agreed_site_compliance` and add `works_stopped`, `works_stopped_apparatus_remaining`, `works_in_progress`, `works_in_progress_no_carriageway_incursion`</li>
 </ol>
 
-<ol class="govuk-list govuk-list--bullet">
 Update Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
 <li>Update the `GET /forward-plans` endpoint to accept the following query parameters: `status`, of type `ForwardPlanStatus` array; `start_date` of type DateTime; `end_date` of type DateTime; `query` of type string, which will search by street name or forward plan reference number</li>
 </ol>
 
@@ -2273,19 +2275,22 @@ Version 1.6 (03/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <!-- 27/09/19 -->
-<ol class="govuk-list govuk-list--bullet">
 Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
 <li>BREAKING CHANGE: Update Work API to change `POST /works/{workReferenceNumber}/inspections` and `GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}`. `failure_reasons` updated from a string array to an array of `FailReasonDetails`, which is composed of a `failure_reason`, of type `FailReason` enum; `site\_ids`, an array of affected sites; and `details`, a free text field description</li>
 <li>Update Work API's `POST /works/{workReferenceNumber}/permits` to allow permit to be created on a works with only a forward plan.</li>
 </ol>
 
-<ol class="govuk-list govuk-list--bullet">
 Updated Reporting API with non-breaking changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
 <li>Update Reporting API to add three optional query parameters added to the `GET /permits` and `GET /alterations` endpoints in the Reporting API to enable lane rental filtering: `lane_rental_assessment_outcome`, array of `LaneRentalAssessmentOutcome`; `charges_not_agreed`, of type boolean; `lane_rental_charges_potentially_apply`, of type boolean</li>
 </ol>
 
-<ol class="govuk-list govuk-list--bullet">
 Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
 <li>Update Party API to allow non-Amdin, Planner users create and update workstreams associated with their organisation</li>
 </ol>
 
@@ -2313,9 +2318,10 @@ Version 1.3 (22/08/2019):
 Version 1.2 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
+Updated Work API with non-breaking changes:
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-Updated Work API with non-breaking changes:
 
 <!-- 07/08/19 -->
 <li>New optional boolean properties have been added to the Reporting API `GET /permits` and `GET /alterations` endpoints for filtering results</li>
