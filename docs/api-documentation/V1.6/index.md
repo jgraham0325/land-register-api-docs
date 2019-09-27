@@ -2251,10 +2251,14 @@ The following is a list of significant changes by version of this document.
 
 The following changes are expected to be available in the Public Beta Release of
 the Street Manager APIs
+{: .govuk-body}
 
 #### Work API
+{: .govuk-heading-s}
 ##### New Resources
+{: .govuk-heading-s}
 Create a scheduled inspection from a works record.
+{: .govuk-body}
 ```
 POST /works/{workReferenceNumber}/scheduled-inspections
 {
@@ -2266,11 +2270,13 @@ POST /works/{workReferenceNumber}/scheduled-inspections
 ```
 
 Cancel a works' scheduled inspection.
+{: .govuk-body}
 ```
 DELETE /works/{workReferenceNumber}/scheduled-inspections
 ```
 
 ##### Updated Resources
+{: .govuk-heading-s}
 ```
 POST /works/{wrn}/inspections
 {
@@ -2281,8 +2287,10 @@ POST /works/{wrn}/inspections
 ```
 `outcome_details` is required when the outcome is either `unable_to_complete` or
 `non_compliant`
+{: .govuk-body}
 
 Allow a user to associate a permit with an FPN.
+{: .govuk-body}
 ```
 POST /works/{workReferenceNumber}/fixed-penalty-notices
 {
@@ -2291,19 +2299,23 @@ POST /works/{workReferenceNumber}/fixed-penalty-notices
 ```
 
 ##### Updated Eumns
+{: .govuk-heading-s}
 _Inspection Type_
+{: .govuk-body .govuk-!-font-weight-bold}
 ```
 slg -> live_site
 defect_inspection -> non_compliance
 ```
 
 _Inspection Category_
+{: .govuk-body .govuk-!-font-weight-bold}
 ```
 + site_occupancy (selectable if type = live_site)
 + conditions (selectable if type = live_site)
 ```
 
 _Inspection Outcomes_
+{: .govuk-body .govuk-!-font-weight-bold}
 ```
 withdraw_defect -> agreed_site_compliance
 + works_stopped
