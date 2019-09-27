@@ -2255,20 +2255,20 @@ Upcoming Changes for Public Beta (01/11/2019):
 Update Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>BREAKING CHANGE: Update the request body of `POST /works/{workReferenceNumber}/inspections` renaming the field `unable_to_complete_details` to `outcome_details`, allowing `non_compliant` inspections and `unable_to_complete` inspection outcomes to use the same field to record additional details. Note that there can only ever be one scheduled inspection per work record.</li>
-<li>Add `POST /works/{workReferenceNumber}/scheduled-inspections` to create a scheduled inspection from a work record. With a body with the following poperties: `inspection_date`, of type DateTime; Optional `inspection_date_time`, of type DateTime to be used to specify the time of a scheduled inspeciton; `inspection_type`, of type `InspectionType` enum; `inspection_category` of type `InspectionCategory` enum</li>
-<li>Add `DELETE /works/{workReferenceNumber}/scheduled-inspections` to cancel the scheduled inspection for a work record. Note that there can only ever be one scheduled inspection per work record</li>
-<li>Update the request body of `POST /works/{workReferenceNumber}/inspections` to an optional field `call_logged_reference` of type string</li>
-<li>Update the request body of `POST /works/{workReferenceNumber}/fixed-penalty-notices` to add the optional field `permit_reference_number` to allow users to associated FPNs with specific permits</li>
-<li>Update the `InspectionType` enum to rename `slg` to `live_site` and `defect_inspection` to `non_compliance`</li>
-<li>Update the `InspectionCategory` enum to add `site_occupancy` and `conditions` both selectable on the Create Inspection request if the InspectionType is `live_site`</li>
-<li>Update the `InspectionOutcomes` enum to rename `withdraw_defect` to `agreed_site_compliance` and add `works_stopped`, `works_stopped_apparatus_remaining`, `works_in_progress`, `works_in_progress_no_carriageway_incursion`</li>
+<li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> renaming the field <code>unable_to_complete_details</code> to <code>outcome_details</code>, allowing <code>non_compliant</code> inspections and <code>unable_to_complete</code> inspection outcomes to use the same field to record additional details. Note that there can only ever be one scheduled inspection per work record.</li>
+<li>Add <code>POST /works/{workReferenceNumber}/scheduled-inspections</code> to create a scheduled inspection from a work record. With a body with the following poperties: <code>inspection_date</code>, of type DateTime; Optional <code>inspection_date_time</code>, of type DateTime to be used to specify the time of a scheduled inspeciton; <code>inspection_type</code>, of type <code>InspectionType</code> enum; <code>inspection_category</code> of type <code>InspectionCategory</code> enum</li>
+<li>Add <code>DELETE /works/{workReferenceNumber}/scheduled-inspections</code> to cancel the scheduled inspection for a work record. Note that there can only ever be one scheduled inspection per work record</li>
+<li>Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> to an optional field <code>call_logged_reference</code> of type string</li>
+<li>Update the request body of <code>POST /works/{workReferenceNumber}/fixed-penalty-notices</code> to add the optional field <code>permit_reference_number</code> to allow users to associated FPNs with specific permits</li>
+<li>Update the <code>InspectionType</code> enum to rename <code>slg</code> to <code>live_site</code> and <code>defect_inspection</code> to <code>non_compliance</code></li>
+<li>Update the <code>InspectionCategory</code> enum to add <code>site_occupancy</code> and <code>conditions</code> both selectable on the Create Inspection request if the InspectionType is <code>live_site</code></li>
+<li>Update the <code>InspectionOutcomes</code> enum to rename <code>withdraw_defect</code> to <code>agreed_site_compliance</code> and add <code>works_stopped</code>, <code>works_stopped_apparatus_remaining</code>, <code>works_in_progress</code>, <code>works_in_progress_no_carriageway_incursion</code></li>
 </ol>
 
 Update Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>Update the `GET /forward-plans` endpoint to accept the following query parameters: `status`, of type `ForwardPlanStatus` array; `start_date` of type DateTime; `end_date` of type DateTime; `query` of type string, which will search by street name or forward plan reference number</li>
+<li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
 </ol>
 
 Version 1.6 (03/10/2019):
@@ -2278,14 +2278,14 @@ Version 1.6 (03/10/2019):
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>BREAKING CHANGE: Update Work API to change `POST /works/{workReferenceNumber}/inspections` and `GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}`. `failure_reasons` updated from a string array to an array of `FailReasonDetails`, which is composed of a `failure_reason`, of type `FailReason` enum; `site\_ids`, an array of affected sites; and `details`, a free text field description</li>
-<li>Update Work API's `POST /works/{workReferenceNumber}/permits` to allow permit to be created on a works with only a forward plan.</li>
+<li>BREAKING CHANGE: Update Work API to change <code>POST /works/{workReferenceNumber}/inspections</code> and <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code>. <code>failure_reasons</code> updated from a string array to an array of <code>FailReasonDetails</code>, which is composed of a <code>failure_reason</code>, of type <code>FailReason</code> enum; <code>site\_ids</code>, an array of affected sites; and <code>details</code>, a free text field description</li>
+<li>Update Work API's <code>POST /works/{workReferenceNumber}/permits</code> to allow permit to be created on a works with only a forward plan.</li>
 </ol>
 
 Updated Reporting API with non-breaking changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>Update Reporting API to add three optional query parameters added to the `GET /permits` and `GET /alterations` endpoints in the Reporting API to enable lane rental filtering: `lane_rental_assessment_outcome`, array of `LaneRentalAssessmentOutcome`; `charges_not_agreed`, of type boolean; `lane_rental_charges_potentially_apply`, of type boolean</li>
+<li>Update Reporting API to add three optional query parameters added to the <code>GET /permits</code> and <code>GET /alterations</code> endpoints in the Reporting API to enable lane rental filtering: <code>lane_rental_assessment_outcome</code>, array of <code>LaneRentalAssessmentOutcome<code>; <code>charges_not_agreed</code>, of type boolean; <code>lane_rental_charges_potentially_apply</code>, of type boolean</li>
 </ol>
 
 Updated Party API with the following changes:
