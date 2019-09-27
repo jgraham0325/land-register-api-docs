@@ -300,7 +300,7 @@ updated works.
 
 Contractors can use the Reporting API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the work-api. 
+information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the work-api.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1028,7 +1028,7 @@ In order to carry out much of the actions against a work record the associated p
 #### Permit modification requests (Available in public beta)
 {: .govuk-heading-s}
 
-HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted_proposed` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for. 
+HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted_proposed` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2272,10 +2272,8 @@ Version 1.6 (03/10/2019):
 <!-- 27/09/19 -->
 <ol class="govuk-list govuk-list--bullet">
 Updated Work API with the following changes:
-
 <li>BREAKING CHANGE: Update Work API to change `POST /works/{workReferenceNumber}/inspections` and `GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}`. `failure_reasons` updated from a string array to an array of `FailReasonDetails`, which is composed of a `failure_reason`, of type `FailReason` enum; `site\_ids`, an array of affected sites; and `details`, a free text field description</li>
 <li>Update Work API's `POST /works/{workReferenceNumber}/permits` to allow permit to be created on a works with only a forward plan.</li>
-
 </ol>
 
 <ol class="govuk-list govuk-list--bullet">
