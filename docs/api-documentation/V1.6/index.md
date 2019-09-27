@@ -8,6 +8,9 @@ title: API specification V1.6
 Version 1.6
 {: .govuk-body-l}
 
+This document details upcoming changes to the API being released for Public Beta for advance view. The full implementation and technical reference for these changes will be available for testing in Sandbox environment after the 1st of November.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Table of contents
@@ -2246,20 +2249,24 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-### Upcoming Changes for Public Beta
-{: .govuk-heading-s #upcoming-changes}
+Upcoming Changes for Public Beta (01/11/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
 
 The following changes are expected to be available in the Public Beta Release of
 the Street Manager APIs
 {: .govuk-body}
 
-#### Work API
-{: .govuk-heading-s}
-##### New Resources
-{: .govuk-heading-s}
-Create a scheduled inspection from a works record.
-{: .govuk-body}
-```
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+
+<h3 class="govuk-heading-m">Work API</h3>
+
+
+<h4 class="govuk-heading-s">New Resources</h4>
+
+<p class="govuk-body">Create a scheduled inspection from a works record.</p>
+
+<pre>
 POST /works/{workReferenceNumber}/scheduled-inspections
 {
     inspection_date,
@@ -2267,75 +2274,109 @@ POST /works/{workReferenceNumber}/scheduled-inspections
     inspection_type,
     inspection_category
 }
-```
+</pre>
 
-Cancel a works' scheduled inspection.
-{: .govuk-body}
-```
+<p class="govuk-body">Cancel a works' scheduled inspection.</p>
+
+<pre>
 DELETE /works/{workReferenceNumber}/scheduled-inspections
-```
+</pre>
 
-##### Updated Resources
-{: .govuk-heading-s}
-```
+<h3 class="govuk-heading-s">Updated Resources</h3>
+
+<pre>
 POST /works/{wrn}/inspections
 {
        + call_logged_reference?,
        - unable_to_complete_details,
        + outcome_details?,
 }
-```
 
-```
 POST /works/updates
 {
          work_reference_number
          update_date_time
        + update_id
 }
-```
+</pre>
 
-`outcome_details` is required when the outcome is either `unable_to_complete` or
-`non_compliant`
-{: .govuk-body}
+<p class="govuk-body">`outcome_details` is required when the outcome is either `unable_to_complete` or
+`non_compliant`</p>
 
-Allow a user to associate a permit with an FPN.
-{: .govuk-body}
-```
+<p class="govuk-body">Allow a user to associate a permit with an FPN.</p>
+
+<pre>
 POST /works/{workReferenceNumber}/fixed-penalty-notices
 {
         + permit_reference_number?
 }
-```
+</pre>
 
-##### Updated Eumns
-{: .govuk-heading-s}
-_Inspection Type_
-{: .govuk-body .govuk-!-font-weight-bold}
-```
-slg -> live_site
-defect_inspection -> non_compliance
-```
+<h3 class="govuk-heading-s">Updated Eumns</h3>
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <p class="govuk-body">Inspection Type</p>
 
-_Inspection Category_
-{: .govuk-body .govuk-!-font-weight-bold}
-```
-+ site_occupancy (selectable if type = live_site)
-+ conditions (selectable if type = live_site)
-```
+    <pre>
+    slg -> live_site
+    defect_inspection -> non_compliance
+    </pre>
+  </li>
+  <li>
+    <p class="govuk-body">Inspection Category</p>
 
-_Inspection Outcomes_
+    <pre>
+    + site_occupancy (selectable if type = live_site)
+    + conditions (selectable if type = live_site)
+    </pre>
+  </li>
+  <li>
+    <p class="govuk-body">Inspection Outcomes</p>
+
+    <pre>
+    withdraw_defect -> agreed_site_compliance
+    + works_stopped
+    + works_stopped_apparatus_remaining
+    + works_in_progress
+    + works_in_progress_no_carriageway_incursion
+    </pre>
+  </li>
+</ol>
+
+  </li>
+</ol>
+
+Version 1.6 (03/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
-```
-withdraw_defect -> agreed_site_compliance
-+ works_stopped
-+ works_stopped_apparatus_remaining
-+ works_in_progress
-+ works_in_progress_no_carriageway_incursion
-```
+
+<!-- <ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol> -->
+
+Version 1.5 (20/09/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
+
+Version 1.4 (05/09/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
+
+Version 1.3 (22/08/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
 
 Version 1.2 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
+
 
 <ol class="govuk-list govuk-list--bullet">
 Updated Work API with non-breaking changes:
