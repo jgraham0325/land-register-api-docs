@@ -184,10 +184,12 @@ they are:
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Submit permit application</li>
+  <li>Submit forward plan</li>
   <li>Carry out a work</li>
   <li>Create reinstatement</li>
   <li>Action an FPN</li>
   <li>Add comments to a works record</li>
+  <li>Submit a permit alteration (change-request, work extension)</li>
 </ol>
 
 **Highway authority workflows**
@@ -196,7 +198,9 @@ they are:
 <ol class="govuk-list govuk-list--bullet">
   <li>Assess permit application</li>
   <li>Issue an inspection</li>
+  <li>Schedule reinspections</li>
   <li>Issue an FPN</li>
+  <li>Submit event and highway license activities</li>
   <li>Add comments to a works record</li>
 </ol>
 
@@ -216,7 +220,7 @@ submitting a permit for a work. See the resource guide for details.
 #### GeoJson API
 {: .govuk-heading-s}
 
-The street manager GeoJson API exposes works spatial data to
+The street manager GeoJson API exposes works and events spatial data to
 authenticated users for use with mapping queries. See the resource guide for details.
 {: .govuk-body}
 
@@ -296,7 +300,7 @@ updated works.
 
 Contractors can use the Reporting API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of.
+information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the work-api. 
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -679,6 +683,71 @@ The table below shows the current permissions per endpoint.
   </tbody>
 </table>
 
+#### Party API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Party API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /*</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /logout</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /refresh</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /organisations/{organisationReference}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /organisations/{organisationReference}/workstreams</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /organisations/{organisationReference}/workstreams</code></td>
+      <td class="govuk-table__cell">Planner &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>GET /organisations/{organisationReference}/workstreams/{workstreamId}</code>
+      </td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <code>PUT /organisations/{organisationReference}/workstreams/{workstreamPrefix}</code>
+      </td>
+      <td class="govuk-table__cell">Planner &amp; Admin</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /users/{email}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
 \* An Organisation Member is a user with a SWA code matching the permit's
 <code>highway_authority_swa_code</code> or <code>promoter_swa_code</code>. This
 is enforced in addition to the user's role.
@@ -841,7 +910,7 @@ The statuses of a permit are:
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>submitted</strong>: The permit is awaiting assessment</li>
   <li><strong>granted_proposed</strong>: The permit has been assessed as granted by an HA</li>
-  <li><strong>granted_with_changes</strong>: The permit has been assessed as granted with changes by an HA</li>
+  <li><strong>permit_modification_request (available in public beta)</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted_proposed/refused by an HA.</li>
   <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
   <li><strong>granted_in_progress</strong>: The permit has been started by the promoter after being granted</li>
   <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
@@ -955,6 +1024,51 @@ In order to carry out much of the actions against a work record the associated p
 </ol>
 
 ![permit create and assess diagram](images/create-and-assess-permits.png)
+
+#### Permit modification requests (Available in public beta)
+{: .govuk-heading-s}
+
+HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted_proposed` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for. 
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
+    <p>
+      Initially a promoter will create a work, which will, in turn, create a
+      permit application.
+    </p>
+  </li>
+  <li>
+    <strong>Modification request (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      Via the assessment endpoint, the HA requests changes to the permit.
+    </p>
+  </li>
+  <li>
+    <strong>Create permit alteration (Promoter)</strong>: <code>POST /works/{work reference number}/permits/{permit reference number}/alterations</code>
+    <p>
+      Promoter submits requested changes via change request
+    </p>
+  </li>
+  <li>
+    <strong>Assess the alteration (Highway Authority)</strong>: <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}/status</code>
+    <p>
+      Once a permit alteration is submitted the Highway Authority can either grant or refuse it.
+    </p>
+    <p>
+      Once a permit alteration is granted by a Highway Authority the permit is updated with the altered values.
+    </p>
+  </li>
+  <li>
+    <strong>Approve or reject the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
+    <p>
+      The HA makes a final assessment decision on the permit
+    </p>
+  </li>
+</ol>
+![permit modification request diagram](images/permit_modification_request.png)
+
 
 ### Inspections
 {: .govuk-heading-m}
@@ -1754,7 +1868,7 @@ Deletes a file from the system. Users can only delete files which their organisa
 
 <code>GET /works/{work reference number}/history</code>
 
-The history endpoint returns audit events associated with that works record such as when a permit is assessed, start etc. As well as that it also returns comments that have been added to the work record. You can distinguish history items as audits or comments by the **isComment** property.
+The history endpoint returns audit events associated with that works record such as when a permit is assessed, a comment is added etc.
 {: .govuk-body}
 
 Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
