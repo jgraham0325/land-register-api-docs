@@ -8,6 +8,9 @@ title: API specification V1.6
 Version 1.6
 {: .govuk-body-l}
 
+This document details upcoming changes to the API being released for Public Beta for advance view. The full implementation and technical reference for these changes will be available for testing in Sandbox environment after the 1st of November.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Table of contents
@@ -2286,8 +2289,30 @@ Updated Party API with the following changes:
 <li>Update Party API to allow non-Amdin, Planner users create and update workstreams associated with their organisation</li>
 </ol>
 
+Version 1.5 (20/09/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
+
+Version 1.4 (05/09/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
+
+Version 1.3 (22/08/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>TODO</li>
+</ol>
+
 Version 1.2 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
+
 
 <ol class="govuk-list govuk-list--bullet">
 Updated Work API with non-breaking changes:
