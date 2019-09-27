@@ -2246,83 +2246,47 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-### Upcoming Changes for Public Beta
+Upcoming Changes for Public Beta (01/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
-The following changes are expected to be available in the Public Beta Release of
-the Street Manager APIs
-{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+Update Work API with the following changes:
+<li>BREAKING CHANGE: Update the request body of `POST /works/{workReferenceNumber}/inspections` renaming the field `unable_to_complete_details` to `outcome_details`, allowing `non_compliant` inspections and `unable_to_complete` inspection outcomes to use the same field to record additional details. Note that there can only ever be one scheduled inspection per work record.</li>
+<li>Add `POST /works/{workReferenceNumber}/scheduled-inspections` to create a scheduled inspection from a work record. With a body with the following poperties: `inspection_date`, of type DateTime; Optional `inspection_date_time`, of type DateTime to be used to specify the time of a scheduled inspeciton; `inspection_type`, of type `InspectionType` enum; `inspection_category` of type `InspectionCategory` enum</li>
+<li>Add `DELETE /works/{workReferenceNumber}/scheduled-inspections` to cancel the scheduled inspection for a work record. Note that there can only ever be one scheduled inspection per work record</li>
+<li>Update the request body of `POST /works/{workReferenceNumber}/inspections` to an optional field `call_logged_reference` of type string</li>
+<li>Update the request body of `POST /works/{workReferenceNumber}/fixed-penalty-notices` to add the optional field `permit_reference_number` to allow users to associated FPNs with specific permits</li>
+<li>Update the `InspectionType` enum to rename `slg` to `live_site` and `defect_inspection` to `non_compliance`</li>
+<li>Update the `InspectionCategory` enum to add `site_occupancy` and `conditions` both selectable on the Create Inspection request if the InspectionType is `live_site`</li>
+<li>Update the `InspectionOutcomes` enum to rename `withdraw_defect` to `agreed_site_compliance` and add `works_stopped`, `works_stopped_apparatus_remaining`, `works_in_progress`, `works_in_progress_no_carriageway_incursion`</li>
+</ol>
 
-#### Work API
-{: .govuk-heading-s}
-##### New Resources
-{: .govuk-heading-s}
-Create a scheduled inspection from a works record.
-{: .govuk-body}
-```
-POST /works/{workReferenceNumber}/scheduled-inspections
-{
-    inspection_date,
-    inspection_date_time?,
-    inspection_type,
-    inspection_category
-}
-```
+<ol class="govuk-list govuk-list--bullet">
+Update Reporting API with the following changes:
+<li>Update the `GET /forward-plans` endpoint to accept the following query parameters: `status`, of type `ForwardPlanStatus` array; `start_date` of type DateTime; `end_date` of type DateTime; `query` of type string, which will search by street name or forward plan reference number</li>
+</ol>
 
-Cancel a works' scheduled inspection.
-{: .govuk-body}
-```
-DELETE /works/{workReferenceNumber}/scheduled-inspections
-```
-
-##### Updated Resources
-{: .govuk-heading-s}
-```
-POST /works/{wrn}/inspections
-{
-       + call_logged_reference?,
-       - unable_to_complete_details,
-       + outcome_details?,
-}
-```
-`outcome_details` is required when the outcome is either `unable_to_complete` or
-`non_compliant`
-{: .govuk-body}
-
-Allow a user to associate a permit with an FPN.
-{: .govuk-body}
-```
-POST /works/{workReferenceNumber}/fixed-penalty-notices
-{
-        + permit_reference_number?
-}
-```
-
-##### Updated Eumns
-{: .govuk-heading-s}
-_Inspection Type_
+Version 1.6 (03/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
-```
-slg -> live_site
-defect_inspection -> non_compliance
-```
 
-_Inspection Category_
-{: .govuk-body .govuk-!-font-weight-bold}
-```
-+ site_occupancy (selectable if type = live_site)
-+ conditions (selectable if type = live_site)
-```
+<!-- 27/09/19 -->
+<ol class="govuk-list govuk-list--bullet">
+Updated Work API with the following changes:
 
-_Inspection Outcomes_
-{: .govuk-body .govuk-!-font-weight-bold}
-```
-withdraw_defect -> agreed_site_compliance
-+ works_stopped
-+ works_stopped_apparatus_remaining
-+ works_in_progress
-+ works_in_progress_no_carriageway_incursion
-```
+<li>BREAKING CHANGE: Update Work API to change `POST /works/{workReferenceNumber}/inspections` and `GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}`. `failure_reasons` updated from a string array to an array of `FailReasonDetails`, which is composed of a `failure_reason`, of type `FailReason` enum; `site\_ids`, an array of affected sites; and `details`, a free text field description</li>
+<li>Update Work API's `POST /works/{workReferenceNumber}/permits` to allow permit to be created on a works with only a forward plan.</li>
+
+</ol>
+
+<ol class="govuk-list govuk-list--bullet">
+Updated Reporting API with non-breaking changes:
+<li>Update Reporting API to add three optional query parameters added to the `GET /permits` and `GET /alterations` endpoints in the Reporting API to enable lane rental filtering: `lane_rental_assessment_outcome`, array of `LaneRentalAssessmentOutcome`; `charges_not_agreed`, of type boolean; `lane_rental_charges_potentially_apply`, of type boolean</li>
+</ol>
+
+<ol class="govuk-list govuk-list--bullet">
+Updated Party API with the following changes:
+<li>Update Party API to allow non-Amdin, Planner users create and update workstreams associated with their organisation</li>
+</ol>
 
 Version 1.2 (07/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
@@ -2331,7 +2295,7 @@ Version 1.2 (07/08/2019):
 Updated Work API with non-breaking changes:
 
 <!-- 07/08/19 -->
-<li>`New optional boolean properties have been added to the Reporting API `GET /permits` and `GET /alterations` endpoints for filtering results</li>
+<li>New optional boolean properties have been added to the Reporting API `GET /permits` and `GET /alterations` endpoints for filtering results</li>
 
 <li>`access_token` and `refresh_token` properties have been added to the response of `POST /authenticate`. The `refresh_token` can be provided to the new Party API `POST /refresh` endpoint to retrieve a refreshed `id_token` and `access_token`. The `access_token` can be provided to the Party API `POST /logout` endpoint to invalidate all tokens associated with a user.</li>
 
