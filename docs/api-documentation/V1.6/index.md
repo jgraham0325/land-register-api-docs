@@ -2298,21 +2298,35 @@ Version 1.5 (20/09/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>TODO</li>
+  <li>Updated inspections endpoint in Work API</li>
+  <li>Updated authentication endpoint response in Work API</li>
+  <li>Updated Work API to add additional forward plan endpoints and fields in existing endpoints</li>
+  <li>Added forward plan endpoints to Reporting API</li>
+  <li>Updated GET /works/updates endpoint on the Reporting API to include details on comments.</li>
+  <li>Updated API documentation to explain permit reference number generation.</li>
 </ol>
 
 Version 1.4 (05/09/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>TODO</li>
+  <li>Added Revert start and stop endpoints to Work API</li>
+  <li>Added activities endpoints to Work API.</li>
+  <li>Updated PermitSummaryResponse object in Reporting API to return more fields.</li>
+  <li>Added forward plan endpoints to Work API.</li>
+  <li>Added permit discount endpoint for updating discount after assessment to Work API.</li>
 </ol>
 
 Version 1.3 (22/08/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>TODO</li>
+  <li>Audit events in the history response will include an object_reference. Where further information is required about what has changed this, object_reference can be used to find more details on the object</li>
+  <li>Contractors can use the Reporting API to extract data from the service both as JSON and CSV format. These endpoints allow you to extract most works information efficiently for the organisations for which you're working. swa_code parameters are available on the endpoints which must be used by contractors to provide the SWA code of the promoter they are working for.</li>
+  <li>Added lane rental assessment endpoints to Work API.</li>
+  <li>Added activities endpoint to Geojson API to find activities in a given area.</li>
+  <li>Added forgot password and password reset endpoints to Party API.</li>
+  <li>Updated WRN validation to allow underscores as a replace character for non-URL friendly characters.</li>
 </ol>
 
 Version 1.2 (07/08/2019):
