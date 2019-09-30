@@ -2041,6 +2041,14 @@ This endpoint takes min and max easting and northing values to select all works 
 This endpoint takes min and max easting and northing values to select all activities within a bounding box. The activities selected can be optionally filtered using the start and end date params.
 {: .govuk-body}
 
+#### Get forward plans endpoint
+{: .govuk-heading-s}
+
+<code>GET /forward-plans</code>
+
+This endpoint takes min and max easting and northing values to select all raised forward plans within a bounding box. The forward plans selected can be optionally filtered using the start and end date params.
+{: .govuk-body}
+
 ### Street Lookup API
 {: .govuk-heading-m}
 
