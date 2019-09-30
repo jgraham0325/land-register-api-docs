@@ -2298,6 +2298,7 @@ Updated Work API with the following changes:
 <li>Update Work API's <code>POST /works/{workReferenceNumber}/permits</code> to allow permit to be created on a works with only a forward plan.</li>
 <li>Update <code>GET /works/{workReferenceNumber}/history</code> with an <code>event</code> which is an enum of high-level event types that can occur in the system.</li>
 <li>Added <code>PUT /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code> endpoint to allow Promoters/Contractors to cancel forward plans. (See resource guide for details)</li>
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
 </ol>
 
 Updated Reporting API with non-breaking changes:
@@ -2305,18 +2306,27 @@ Updated Reporting API with non-breaking changes:
 <ol class="govuk-list govuk-list--bullet">
 <li>Update Reporting API to add three optional query parameters added to the <code>GET /permits</code> and <code>GET /alterations</code> endpoints in the Reporting API to enable lane rental filtering: <code>lane_rental_assessment_outcome</code>, array of <code>LaneRentalAssessmentOutcome; charges_not_agreed</code>, of type boolean; <code>lane_rental_charges_potentially_apply</code>, of type boolean</li>
 <li>Update the <code>POST /works/updates</code> endpoint with an <code>update_id</code> property. </li>
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
 </ol>
 
 Updated GeoJSON API with non-breaking changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>Added <code>GET /forward-plans</code> endpoint to fetch forward plans in particular bounding box</li>
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
 </ol>
 
 Updated Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>Update Party API to allow non-Amdin, Planner users create and update workstreams associated with their organisation</li>
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
+</ol>
+
+Updated Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
 </ol>
 
 Version 1.5 (20/09/2019):
