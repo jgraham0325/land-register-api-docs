@@ -2271,7 +2271,9 @@ Update Work API with the following changes:
 <li>Update the <code>InspectionType</code> enum to rename <code>slg</code> to <code>live_site</code> and <code>defect_inspection</code> to <code>non_compliance_follow_up</code></li>
 <li>Update the <code>InspectionCategory</code> enum to add <code>site_occupancy</code> and <code>conditions</code> both selectable on the Create Inspection request if the InspectionType is <code>live_site</code></li>
 <li>Update the <code>InspectionOutcomes</code> enum to rename <code>withdraw_defect</code> to <code>agreed_site_compliance</code> and add <code>works_stopped</code>, <code>works_stopped_apparatus_remaining</code>, <code>works_in_progress</code>, <code>works_in_progress_no_carriageway_incursion</code></li>
-<li>Update the <code>POST /works{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
+<li>Update the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
+<li>Update the validation of <code>POST /works/{workReferenceNumber}/inspections</code> the fields <code>was_call_logged</code>, <code>call_logged_to</code>, <code>call_logged_summary</code>, <code>call_logged_reference</code> are only accepted when when the InspectionType is set to <code>live_site</code> and the inspection outcome is set to <code>failed_high</code></li>
+<li>Update the of <code>POST /works</code> and <code>POST /works/{workReferenceNumber}/permits</code> to automatically add the manditory permit conditions <code>NCT01a</code> and <code>NCT01b</code>. If these conditions are supplied as part of the create requests their <code>comment</code> property will be ignored</li>
 </ol>
 
 Update Reporting API with the following changes:
