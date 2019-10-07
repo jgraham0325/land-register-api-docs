@@ -363,8 +363,9 @@ Sorted by date in ascending order.
 ",,,1
 ,,,,,,,FALSE
 83,15,Workstreams,Workstreams,,,,1
-84,15.1,,Workstreams prefix ,"While creating new works in street manager, the organisation code and workstream prefix is automatically included in the works reference number which is LR000. 
-When setting up their organisation’s workstreams, users can provide their own workstream prefix (we recommend users do this). This must be between 1- 999. If using a system-generated prefix, Street Manager will begin prefixes automatically with 000.
+84,15.1,,Workstreams prefix ,"The Street Manager system creates by default the prefix ‘000’ for every organisation. It is strongly advised that before users start raising works in Street Manager, they first set up their workstreams and allocate to them numerical prefixes between 1 - 999.
+
+Note, the organisation code is automatically included in the workstream prefix when raising works.
 ",,,1
 ,,,,,,,FALSE
 86,16,Map,Map process and outcomes,,,,1
@@ -437,7 +438,7 @@ Text reads “Lane rental charges may apply for these works”.
 ",,,1
 ,,,,,,,FALSE
 98,19,File upload,File upload process and outcomes,,,,1
-99,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment (search for, upload - up to 5mb per file - 100mb total per permit).
+99,19.1,,Upload functionality within SM (i.e. traffic management plan or inspection evidence),"Ability for user to add an attachment - up to 5mb per file and 100mb total per permit
 Attachments presented back to user in table format on next screen after upload.
 User able to add multiple.",,,1
 ,,,,,,,FALSE
@@ -472,17 +473,22 @@ Forward plans can be edited or cancelled at any point up until they are closed, 
 
 When progressed to a PAA, the forward plan's status automatically gets set to 'Closed' so that there is only one active plan, PAA or permit against a works record at any given time.",#REF!,,1
 ,,,,,,,FALSE
-114,23,Activities (API users only currently),Activities process and outcomes  - API users only currently,,#REF!,,1
+114,23,Activities,Activities process and outcomes,,#REF!,,1
 115,23.1,,Adding an activity,Only an HA can add an activity ,#REF!,,1
 116,23.2,,Cancel an activity,"Only the HA that added the activity can cancel it. 
 When cancelled, the activity will be flagged as cancelled and will continue to be displayed in the map",#REF!,,1
 117,23.3,,Edit an activity,"Only the HA that added the activity can edit it. 
 Unable to edit the activity location or works area.",#REF!,,1
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
-,,,,,,,
+,,,,,,,FALSE
+119,24,User Registration,User registration process and outcomes,,#REF!,,1
+120,24.1,,Adding a new user,"Only admin users can add new users to their organisation
+Need to enter the exact match email address for the account they wish to add/remove. System will validate if the user has already been added and inform the user if so
+Admin users logged in under a promoter organisation are only able to add promoter users. HA admin users are able to add both HA and promoter users
+",#REF!,,1
+121,24.2,,Removing a user,"Only admin users can remove a user from their organisation
+Need to enter the exact match email address for the account they wish to add/remove. System will validate if the user exists and inform them if they don't
+Removed users will still be displayed in historical audits of actions they carried out in the system",#REF!,,1
+122,24.3,,Editing a user,Currently no functionality to edit a user. Admin user should remove and re-add any users that need to have their details edited,#REF!,,1
 ,,,,,,,
 ,,,,,,,
 ,,,,,,,
