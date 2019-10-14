@@ -22,7 +22,7 @@ Planned and unplanned outages are an unavoidable part of a digital service. The 
 {: .govuk-heading-s}
 
 <p class="govuk-body">
-Outages will be announced on the <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Service desk</a>. You can also ask for information in <a class="govuk-link" href="https://dftstreetmanager.slack.com/">DfT Street Manager Slack</a>.
+Outages will be announced on the <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Service desk</a>.
 </p>
 
 ## What to do during an outage
