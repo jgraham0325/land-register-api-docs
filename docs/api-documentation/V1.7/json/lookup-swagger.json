@@ -38,6 +38,24 @@
 			],
 			"type": "object"
 		},
+		"AdditionalSpecialDesignationsPeriodicityCode": {
+			"enum": [
+				"1",
+				"2",
+				"3",
+				"7",
+				"8",
+				"9",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16"
+			],
+			"type": "string"
+		},
 		"AdditionalSpecialDesignationsResponse": {
 			"properties": {
 				"street_special_desig_code": {
@@ -48,6 +66,20 @@
 				},
 				"special_desig_description": {
 					"type": "string"
+				},
+				"special_desig_start_time": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"special_desig_end_time": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"special_desig_periodicity_code": {
+					"$ref": "#/definitions/AdditionalSpecialDesignationsPeriodicityCode",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -106,6 +138,10 @@
 				"street_line": {
 					"type": "string",
 					"x-nullable": true
+				},
+				"street_centre_point": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -120,6 +156,38 @@
 				"primary_notice_authorities",
 				"interest_authorities",
 				"additional_special_designations_response"
+			],
+			"type": "object"
+		},
+		"StreetSummaryResponse": {
+			"properties": {
+				"street_descriptor": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"administrative_area": {
+					"type": "string"
+				},
+				"street_centre_point": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"street_descriptor",
+				"area",
+				"town",
+				"usrn",
+				"administrative_area",
+				"street_centre_point"
 			],
 			"type": "object"
 		}
@@ -215,6 +283,43 @@
 						"required": true,
 						"format": "double",
 						"type": "number"
+					}
+				]
+			}
+		},
+		"/nsg/search": {
+			"get": {
+				"operationId": "GetStreetsByQuery",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/StreetSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get nsg search endpoint for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "query",
+						"required": true,
+						"type": "string"
 					}
 				]
 			}

@@ -265,7 +265,9 @@
 				"Planner",
 				"HighwayAuthority",
 				"Admin",
-				"Contractor"
+				"Contractor",
+				"API",
+				"UI"
 			],
 			"type": "string"
 		},
@@ -284,14 +286,17 @@
 					"type": "string",
 					"description": "Max length 20 characters\nMust match a registered organisation reference"
 				},
-				"role": {
-					"$ref": "#/definitions/UserGroup"
+				"roles": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/UserGroup"
+					}
 				}
 			},
 			"required": [
 				"email",
 				"organisation_reference",
-				"role"
+				"roles"
 			],
 			"type": "object"
 		},
@@ -402,12 +407,12 @@
 					"description": "Max length 50 characters"
 				},
 				"role": {
-					"$ref": "#/definitions/UserGroup"
+					"$ref": "#/definitions/UserGroup",
+					"x-nullable": true
 				}
 			},
 			"required": [
-				"email",
-				"role"
+				"email"
 			],
 			"type": "object"
 		},
