@@ -35,7 +35,7 @@
 			"enum": [
 				"submitted",
 				"granted_proposed",
-				"granted_with_changes",
+				"Permit modification request",
 				"refused",
 				"granted_in_progress",
 				"closed",
@@ -48,7 +48,8 @@
 				"refused_auto",
 				"cancelled_auto",
 				"awaiting_assessment_in_progress",
-				"revoked_closed"
+				"revoked_closed",
+				"deemed_closed"
 			],
 			"type": "string"
 		},
@@ -169,6 +170,71 @@
 				"end_date",
 				"street_name",
 				"start_date"
+			],
+			"type": "object"
+		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"closed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanResponse": {
+			"properties": {
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatus"
+				},
+				"work_centre_point": {
+					"type": "string"
+				},
+				"work_coordinates": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"description_of_work": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"forward_plan_reference_number",
+				"work_reference_number",
+				"forward_plan_status",
+				"work_centre_point",
+				"work_coordinates",
+				"street",
+				"start_date",
+				"end_date",
+				"description_of_work",
+				"promoter_organisation",
+				"location_description"
 			],
 			"type": "object"
 		}
@@ -329,6 +395,85 @@
 						"name": "end_date",
 						"required": false,
 						"format": "date-time",
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/forward-plans": {
+			"get": {
+				"operationId": "GetForwardPlansIntersectBoundingBox",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ForwardPlanResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get ForwardPlans endpoint for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "forward_plan_reference_number",
+						"required": false,
 						"type": "string"
 					}
 				]

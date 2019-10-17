@@ -129,7 +129,7 @@
 			"enum": [
 				"submitted",
 				"granted_proposed",
-				"granted_with_changes",
+				"permit_modification_request",
 				"refused",
 				"granted_in_progress",
 				"closed",
@@ -163,6 +163,24 @@
 			],
 			"type": "object"
 		},
+		"ASDPeriodicityCode": {
+			"enum": [
+				"1",
+				"2",
+				"3",
+				"7",
+				"8",
+				"9",
+				"10",
+				"11",
+				"12",
+				"13",
+				"14",
+				"15",
+				"16"
+			],
+			"type": "string"
+		},
 		"PermitASD": {
 			"properties": {
 				"street_special_desig_code": {
@@ -176,6 +194,22 @@
 				"special_desig_description": {
 					"type": "string",
 					"description": "Max length 300 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information"
+				},
+				"special_desig_start_time": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 0 and 2400 inclusive\nUse Street Lookup API endpoint /nsg/streets to lookup this information",
+					"x-nullable": true
+				},
+				"special_desig_end_time": {
+					"type": "number",
+					"format": "double",
+					"description": "Is whole number between 0 and 2400 inclusive\nUse Street Lookup API endpoint /nsg/streets to lookup this information",
+					"x-nullable": true
+				},
+				"special_desig_periodicity_code": {
+					"$ref": "#/definitions/ASDPeriodicityCode",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -592,6 +626,10 @@
 				},
 				"is_lane_rental": {
 					"type": "boolean"
+				},
+				"pending_change_details": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -891,12 +929,17 @@
 				"assessment_discount": {
 					"type": "number",
 					"format": "double",
-					"description": "Required if permit_status = granted_proposed or granted_with_changes\nIs whole number between 0 and 100 inclusive",
+					"description": "Required if permit_status = granted_proposed\nIs whole number between 0 and 100 inclusive",
 					"x-nullable": true
 				},
 				"revoke_reason": {
 					"type": "string",
 					"description": "Required if permit_status = revoked_proposed or revoked_in_progress\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"pending_change_details": {
+					"type": "string",
+					"description": "Required if permit_status = permit_modification_request\nMax length 500 characters",
 					"x-nullable": true
 				}
 			},
@@ -1180,6 +1223,10 @@
 				"object_reference": {
 					"type": "string",
 					"x-nullable": true
+				},
+				"update_id": {
+					"type": "number",
+					"format": "double"
 				}
 			},
 			"required": [
@@ -1187,7 +1234,8 @@
 				"topic",
 				"details",
 				"username",
-				"event"
+				"event",
+				"update_id"
 			],
 			"type": "object"
 		},
@@ -1257,9 +1305,9 @@
 		},
 		"InspectionType": {
 			"enum": [
-				"slg",
+				"live_site",
 				"reinstatement",
-				"defect_inspection"
+				"non_compliance_follow_up"
 			],
 			"type": "string"
 		},
@@ -1272,7 +1320,9 @@
 				"routine",
 				"joint_site_visit",
 				"follow_up",
-				"follow_up_completion"
+				"follow_up_completion",
+				"site_occupancy",
+				"conditions"
 			],
 			"type": "string"
 		},
@@ -1283,7 +1333,12 @@
 				"failed_low",
 				"failed_high",
 				"further_inspections_required",
-				"withdraw_defect"
+				"agreed_site_compliance",
+				"non_compliant_with_conditions",
+				"works_stopped_apparatus_remaining",
+				"works_in_progress_no_carriageway_incursion",
+				"works_in_progress",
+				"works_stopped"
 			],
 			"type": "string"
 		},
@@ -2183,19 +2238,19 @@
 		},
 		"FailureReason": {
 			"enum": [
-				"slg_signage",
-				"slg_distance",
-				"slg_safety_zone",
-				"slg_barriers",
-				"slg_traffic_control",
-				"slg_pedestrian_provision",
-				"slg_cyclist_provision",
-				"slg_operative_qualification",
-				"slg_equipment",
-				"slg_materials",
-				"slg_compaction",
-				"slg_construction_layers",
-				"slg_storage_of_materials",
+				"live_site_signage",
+				"live_site_distance",
+				"live_site_safety_zone",
+				"live_site_barriers",
+				"live_site_traffic_control",
+				"live_site_pedestrian_provision",
+				"live_site_cyclist_provision",
+				"live_site_operative_qualification",
+				"live_site_equipment",
+				"live_site_materials",
+				"live_site_compaction",
+				"live_site_construction_layers",
+				"live_site_storage_of_materials",
 				"reinstatement_damage_to_surround_area",
 				"reinstatement_saw_cutting",
 				"reinstatement_acute_angles",
@@ -2300,7 +2355,7 @@
 					},
 					"x-nullable": true
 				},
-				"unable_to_complete_details": {
+				"inspection_outcome_details": {
 					"type": "string",
 					"x-nullable": true
 				},
@@ -2312,6 +2367,10 @@
 					"type": "string",
 					"x-nullable": true
 				},
+				"call_logged_reference": {
+					"type": "string",
+					"x-nullable": true
+				},
 				"call_logged_summary": {
 					"type": "string",
 					"x-nullable": true
@@ -2320,7 +2379,7 @@
 					"$ref": "#/definitions/DefectFixedOnsite",
 					"x-nullable": true
 				},
-				"additional_failure_comments": {
+				"additional_comments": {
 					"type": "string",
 					"x-nullable": true
 				},
@@ -2454,17 +2513,22 @@
 					"description": "See business rule ref. 3.4 - Inspection failure reasons",
 					"x-nullable": true
 				},
-				"unable_to_complete_details": {
+				"inspection_outcome_details": {
 					"type": "string",
-					"description": "Required if inspection_outcome = unable_to_complete_inspection\nMax length 500 characters",
+					"description": "Required if inspection_outcome = unable_to_complete_inspection or non_compliant_with_conditions\nMax length 500 characters",
 					"x-nullable": true
 				},
 				"was_call_logged": {
 					"type": "boolean",
-					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
+					"description": "Required if inspection_outcome = failed_high and inspection_type = live_site",
 					"x-nullable": true
 				},
 				"call_logged_to": {
+					"type": "string",
+					"description": "Required if was_call_logged = true\nMax length 100 characters",
+					"x-nullable": true
+				},
+				"call_logged_reference": {
 					"type": "string",
 					"description": "Required if was_call_logged = true\nMax length 100 characters",
 					"x-nullable": true
@@ -2476,10 +2540,10 @@
 				},
 				"defect_fixed_on_site": {
 					"$ref": "#/definitions/DefectFixedOnsite",
-					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
+					"description": "Required if inspection_outcome = failed_high and inspection_type = live_site",
 					"x-nullable": true
 				},
-				"additional_failure_comments": {
+				"additional_comments": {
 					"type": "string",
 					"description": "Max length 500 characters",
 					"x-nullable": true
@@ -2535,6 +2599,44 @@
 				"inspection_category",
 				"inspection_outcome",
 				"username"
+			],
+			"type": "object"
+		},
+		"ScheduledInspectionCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"scheduled_inspection_type": {
+					"$ref": "#/definitions/InspectionType"
+				},
+				"scheduled_inspection_category": {
+					"$ref": "#/definitions/InspectionCategory",
+					"description": "See business rule ref. 3.2 - Inspection category"
+				},
+				"scheduled_inspection_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Date must occur today or a date in the future"
+				},
+				"scheduled_inspection_date_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "The date for scheduled_inspection_date_time must match the date for scheduled_inspection_date\nTime must occur today or a date in the future",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"scheduled_inspection_type",
+				"scheduled_inspection_category",
+				"scheduled_inspection_date"
 			],
 			"type": "object"
 		},
@@ -3380,6 +3482,16 @@
 		},
 		"ActivityCancelRequest": {
 			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
 				"cancellation_reason": {
 					"type": "string",
 					"description": "Max length 500 characters",
@@ -3496,6 +3608,16 @@
 		},
 		"ForwardPlanCreateRequest": {
 			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
 				"work_reference_number": {
 					"type": "string",
 					"description": "Max length 24 characters\nMust be unique in the system\nMust contain only alphanumeric characters, dashes and underscores\nIf not supplied it will be auto-generated",
@@ -3704,6 +3826,16 @@
 		},
 		"ForwardPlanUpdateRequest": {
 			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
 				"works_coordinates": {
 					"type": "object",
 					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
@@ -3758,6 +3890,16 @@
 		},
 		"ForwardPlanCancelRequest": {
 			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
 				"cancelled_reason": {
 					"type": "string",
 					"description": "Max length 500 characters"
@@ -4617,6 +4759,69 @@
 				]
 			}
 		},
+		"/works/{workReferenceNumber}/scheduled-inspections": {
+			"delete": {
+				"operationId": "DeleteScheduledInspection",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateScheduledInspection",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created"
+					}
+				},
+				"description": "See business rules section 3 - Inspections",
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ScheduledInspectionCreateRequest"
+						}
+					}
+				]
+			}
+		},
 		"/authenticate": {
 			"post": {
 				"operationId": "Authenticate",
@@ -4631,7 +4836,7 @@
 						}
 					}
 				},
-				"description": "See API specification Security section for more information",
+				"description": "If authenticating for the first time with a temporary password, a 307 Temporary Redirect to `/authenticate/initial` will be returned,\nwhich can be called with the same request body.\n\nA sessionToken property may be returned from this redirect endpoint, which can be used to set a permanent password with the `/set-password`\nendpoint on the Party API.\n\nSee API specification Security section for more information.",
 				"security": [],
 				"parameters": [
 					{
@@ -4659,6 +4864,7 @@
 						}
 					}
 				},
+				"description": "This endpoint can be used to authenticate with a temporary password.\n\nA sessionToken property may be returned, which can be used to set a permanent password with the `/set-password`\nendpoint on the Party API.",
 				"security": [],
 				"parameters": [
 					{
