@@ -520,6 +520,9 @@ All Street Manager web and API interfaces are secured using Transport Layer Secu
 certificates issued by [Let's Encrypt](https://letsencrypt.org/), currently signed by the 'DST Root CA X3' IdenTrust cross-signed intermediate certificate as listed in the [Chain of Trust](https://letsencrypt.org/certificates/) document.
 {: .govuk-body}
 
+When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error. 
+{: .govuk-body}
+
 ### Authentication and Authorisation
 {: .govuk-heading-m}
 
