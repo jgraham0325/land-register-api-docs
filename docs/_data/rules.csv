@@ -380,7 +380,7 @@ Note, the organisation code is automatically included in the workstream prefix w
 ,,,,,,,FALSE
 86,16,Map,Map process and outcomes,,,,1
 87,16.1,,Date filter,Defaults with the current date in the 'From' field and 14 days after the current date in the 'To' field.,,,1
-88,16.2,,Displaying works,"Limited to displaying 500 words, for performance reasons.
+88,16.2,,Displaying works,"Limited to displaying 500 works, for performance reasons.
 Results not displayed on map when user clicks out three zoom levels higher than the default view after the point of clicking on the address from the search results.",,,1
 ,16.3,,USRN search,USRN must be a value between 100001 and 99999999,,,1
 ,,,,,,,FALSE
