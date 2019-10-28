@@ -520,7 +520,7 @@ All Street Manager web and API interfaces are secured using Transport Layer Secu
 certificates issued by [Let's Encrypt](https://letsencrypt.org/), currently signed by the 'DST Root CA X3' IdenTrust cross-signed intermediate certificate as listed in the [Chain of Trust](https://letsencrypt.org/certificates/) document.
 {: .govuk-body}
 
-When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error. 
+When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error.
 {: .govuk-body}
 
 ### Authentication and Authorisation
@@ -1436,7 +1436,7 @@ users to retrieve the following:
   <li><a class="govuk-link" href="#get-inspections">Inspections</a></li>
   <li>Comments</li>
   <li><a class="govuk-link" href="#get-fpns">Fixed penalty notices</a></li>
-  <li><a class="govuk-link" href="#get-site-endpoint">Sites</a></li>
+  <li><a class="govuk-link" href="#get-reinstatements">Reinstatements</a></li>
   <li>Workstreams</li>
   <li><a class="govuk-link" href="#polling">Work updates (polling endpoint)</a></li>
   <li><a class="govuk-link" href="#get-inspections">Inspections</a></li>
@@ -1537,6 +1537,15 @@ Query params:
 <code>GET /fixed-penalty-notices</code>
 
 Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
+
+#### Get reinstatements
+{: .govuk-heading-s}
+
+<code>GET /reinstatements</code>
+
+Retrieves a list of Reinstatements that have been added to any works record. Reinstatements are created via the work API. Reinstatements can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
 
 #### Get alterations
 {: .govuk-heading-s}
@@ -2338,6 +2347,22 @@ Update Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Update the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to make <code>close_footway</code> mandatory</li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits</code> to make <code>close_footway</code> mandatory</li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> to make <code>close_footway</code> mandatory</li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to remove <code>highway_authority</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to remove <code>promoter_organisation</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to remove <code>promoter_contact_details</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits</code> to remove <code>promoter_contact_details</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> to remove <code>promoter_contact_details</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to rename <code>approved_contractor</code> to <code>secondary_contact</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits</code> to rename <code>approved_contractor</code> to <code>secondary_contact</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> to rename <code>approved_contractor</code> to <code>secondary_contact</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}</code> to rename <code>contractor_contact_details</code> to <code>secondary_contact_number</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits</code> to rename <code>contractor_contact_details</code> to <code>secondary_contact_number</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> to rename <code>contractor_contact_details</code> to <code>secondary_contact_number</code></li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> to make <code>reasons_for_refusal</code> mandatory when refusing permits</li>
+  <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> to make <code>inspection_evidence</code> mandatory</li>
 </ol>
 
 Version 1.7 (17/10/2019):
@@ -2381,12 +2406,12 @@ Version 1.6 (03/10/2019):
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>BREAKING CHANGE: Update Work API to change <code>POST /works/{workReferenceNumber}/inspections</code> and <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code>. <code>failure_reasons</code> updated from a string array to an array of <code>FailReasonDetails</code>, which is composed of a <code>failure_reason</code>, of type <code>FailReason</code> enum; <code>site\_ids</code>, an array of affected sites; and <code>details</code>, a free text field description</li>
-  <li>BREAKING CHANGE: How we recieve and provide NSG Special Designation information from the API now matches the NSG specification, we've introduced <code>special_desig_start_time</code>, <code>special_desig_end_time</code> and <code>special_desig_periodicity_code</code> to various requests, see the swagger docs for more detail.</li>
-  <li>Update Work API's <code>POST /works/{workReferenceNumber}/permits</code> to allow permit to be created on a works with only a forward plan.</li>
-  <li>Update <code>GET /works/{workReferenceNumber}/history</code> with an <code>event</code> which is an enum of high-level event types that can occur in the system.</li>
-  <li>Added <code>PUT /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code> endpoint to allow Promoters/Contractors to cancel forward plans. (See resource guide for details)</li>
-  <li>Restrict API users to the API interface and UI users to the UI interface</li>
+<li>BREAKING CHANGE: Update Work API to change <code>POST /works/{workReferenceNumber}/inspections</code> and <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code>. <code>failure_reasons</code> updated from a string array to an array of <code>FailReasonDetails</code>, which is composed of a <code>failure_reason</code>, of type <code>FailReason</code> enum; <code>site\_ids</code>, an array of affected sites; and <code>details</code>, a free text field description</li>
+<li>BREAKING CHANGE: How we recieve and provide NSG Special Designation information from the API now matches the NSG specification, we've introduced <code>special_desig_start_time</code>, <code>special_desig_end_time</code> and <code>special_desig_periodicity_code</code> to various requests, see the swagger docs for more detail.</li>
+<li>Update Work API's <code>POST /works/{workReferenceNumber}/permits</code> to allow permit to be created on a works with only a forward plan.</li>
+<li>Update <code>GET /works/{workReferenceNumber}/history</code> with an <code>event</code> which is an enum of high-level event types that can occur in the system.</li>
+<li>Added <code>PUT /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code> endpoint to allow Promoters/Contractors to cancel forward plans. (See resource guide for details)</li>
+<li>Restrict API users to the API interface and UI users to the UI interface</li>
 </ol>
 
 Updated Reporting API with non-breaking changes:
