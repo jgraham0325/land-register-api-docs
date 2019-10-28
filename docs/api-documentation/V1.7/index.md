@@ -2343,6 +2343,10 @@ Update Work API with the following changes:
 Version 1.7 (17/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added Sandbox testing strategy details to Testing section</li>
+</ol>
+
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
@@ -2368,10 +2372,6 @@ Update Street Lookup API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 <li>Add <code>GET /nsg/search</code> endpoint. (See resource guide for details)</li>
-</ol>
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Added Sandbox testing strategy details to Testing section</li>
 </ol>
 
 Version 1.6 (03/10/2019):
