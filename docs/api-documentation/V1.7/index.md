@@ -2340,7 +2340,7 @@ Update Work API with the following changes:
   <li>Update the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
 </ol>
 
-Version 1.7 (03/10/2019):
+Version 1.7 (17/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 Updated Work API with the following changes:
