@@ -2140,7 +2140,7 @@ This endpoint takes min and max easting and northing values to select all raised
 
 <code>GET /nsg/streets</code>
 
-Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
+Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
 {: .govuk-body}
 
 #### Get streets endpoint (USRN)
@@ -2148,7 +2148,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -2393,10 +2393,17 @@ Update Reporting API with the following changes:
   <li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>forward_plan_status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
 </ol>
 
+Update GeoJSON API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>GET /works</code>, <code>GET /activities</code> and <code>GET /forward-plans</code> endpoints have been updated to return GeoJSON FeatureCollection objects. Each GeoJSON Feature object now contains a <code>geometry</code> property which now reflects what the <code>works_coordinates</code> previously were. Each GeoJSON Feature object also now contains a <code>properties</code> property which contains all previously available fields returned from the respective endpoints, for example <code>work_reference_number</code> would be found here.</li>
+</ol>
+
 Update Street Lookup API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>Add <code>GET /nsg/search</code> endpoint. (See resource guide for details)</li>
+  <li>Add <code>GET /nsg/search</code> endpoint. (See resource guide for details)</li>
+  <li><code>GET /nsg/streets</code> and <code>GET /nsg/streets/{ursn}</code> endpoints have been updated to return <code>street_special_desig_code</code> as an integer in order to reflect the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).</li>
 </ol>
 
 Version 1.6 (03/10/2019):
