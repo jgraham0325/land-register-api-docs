@@ -520,7 +520,7 @@ All Street Manager web and API interfaces are secured using Transport Layer Secu
 certificates issued by [Let's Encrypt](https://letsencrypt.org/), currently signed by the 'DST Root CA X3' IdenTrust cross-signed intermediate certificate as listed in the [Chain of Trust](https://letsencrypt.org/certificates/) document.
 {: .govuk-body}
 
-When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error.
+When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error. 
 {: .govuk-body}
 
 ### Authentication and Authorisation
@@ -2139,7 +2139,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -2344,26 +2344,12 @@ Version 1.7 (17/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-<<<<<<< HEAD
-  <li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>forward_plan_status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
-</ol>
-
-Update GeoJSON API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>GET /works</code>, <code>GET /activities</code> and <code>GET /forward-plans</code> endpoints have been updated to return GeoJSON FeatureCollection objects. Each GeoJSON Feature object now contains a <code>geometry</code> property which now reflects what the <code>works_coordinates</code> previously were. Each GeoJSON Feature object also now contains a <code>properties</code> property which contains all previously available fields returned from the respective endpoints, for example <code>work_reference_number</code> would be found here.</li>
-=======
   <li>Added Sandbox testing strategy details to Testing section</li>
->>>>>>> master
 </ol>
 
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<<<<<<< HEAD
-  <li>Add <code>GET /nsg/search</code> endpoint. (See resource guide for details)</li>
-  <li><code>GET /nsg/streets</code> and <code>GET /nsg/streets/{ursn}</code> endpoints have been updated to return <code>street_special_desig_code</code> as an integer in order to reflect the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).</li>
-=======
   <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> renaming the field <code>unable_to_complete_details</code> to <code>inspection_outcome_details</code>, allowing <code>non_compliant</code> inspections and <code>unable_to_complete</code> inspection outcomes to use the same field to record additional details. Note that there can only ever be one scheduled inspection per work record.</li>
   <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> and response body of <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code> renaming the field <code>additional_failure_comments</code> to <code>additional_comments</code></li>
   <li>Add <code>POST /works/{workReferenceNumber}/scheduled-inspections</code> to create a scheduled inspection from a work record. With a body with the following poperties: <code>inspection_date</code>, of type DateTime; Optional <code>inspection_date_time</code>, of type DateTime to be used to specify the time of a scheduled inspeciton; <code>inspection_type</code>, of type <code>InspectionType</code> enum; <code>inspection_category</code> of type <code>InspectionCategory</code> enum</li>
@@ -2374,7 +2360,6 @@ Updated Work API with the following changes:
   <li>Update the <code>InspectionOutcomes</code> enum to rename <code>withdraw_defect</code> to <code>agreed_site_compliance</code> and add <code>works_stopped</code>, <code>works_stopped_apparatus_remaining</code>, <code>works_in_progress</code>, <code>works_in_progress_no_carriageway_incursion</code></li>
   <li>Update the validation of <code>POST /works/{workReferenceNumber}/inspections</code> the fields <code>was_call_logged</code>, <code>call_logged_to</code>, <code>call_logged_summary</code>, <code>call_logged_reference</code> are only accepted when when the InspectionType is set to <code>live_site</code> and the inspection outcome is set to <code>failed_high</code></li>
   <li>Update the of <code>POST /works</code> and <code>POST /works/{workReferenceNumber}/permits</code> to automatically add the manditory permit conditions <code>NCT01a</code> and <code>NCT01b</code>. If these conditions are supplied as part of the create requests their <code>comment</code> property will be ignored</li>
->>>>>>> master
 </ol>
 
 Update Reporting API with the following changes:
