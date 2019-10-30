@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.7
+title: API specification V1.8
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.7
+Version 1.8
 {: .govuk-body-l}
 
 This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available for testing in Sandbox environment after the 1st of November.
@@ -1446,34 +1446,35 @@ users to retrieve the following:
 {: .govuk-heading-s}
 
 Most endpoints on the reporting API are driven with pagination. This
-means the following common query params are available for most
-endpoints:
+is controlled by the <strong>offset</strong> query param,
+which indicates the starting point from which to return data.
 {: .govuk-body}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li><strong>Before</strong>: cursor to filter pagination results backwards (i.e. retrieve everything before this item)</li>
-  <li><strong>After</strong>: cursor to filter pagination results forwards (i.e. retrieve everything after this item) Each paginated response in the reporting API contains the following meta-data:</li>
-</ol>
+Each paginated response in the reporting API contains the following meta-data:
+{: .govuk-body}
 
-<code>{ "pagination": { "page_start": 1, "total_rows": "50" }, "rows": [...] }</code>
+<code>{ "pagination": { "has_next_page": true, "total_rows": "50" }, "rows": [...] }</code>
 
-The page_start and total_rows properties indicate the current page of
-results returned in the response, in the context of the total number of
-available rows (records). The rows property contains the records for the
+The <strong>has_next_page</strong> and <strong>total_rows</strong> properties indicate if
+additional pages of results are available to be returned, in the context of the total number
+of rows (records).
+{: .govuk-body}
+
+The <strong>total_rows</strong> property can return a maximum number of <strong>501</strong>,
+if 501 is returned it indicates that there may be more rows available in the database to query.
+This is confirmed if <strong>has_next_page</strong> is <strong>true</strong>, and means that if
+there are more than 501 rows, and the offset is greater than 501, additional rows will be returned,
+but the total_rows property will still be limited to 501 rows.
+{: .govuk-body}
+
+The rows property contains the records for the
 current page.
 {: .govuk-body}
 
-By default there are a maximum 25 rows returned per page and each record
-in the rows array has a cursor property, which is that record's
-placement in the context of the total result set. Therefore in the
-example above, if you have 50 items total, with 25 items per page, to
-get the next page of results would simply involve taking the last item
-in the rows array, and using it's cursor value as the \'after\' query
-param value. This would result in the next metadata response
-containing rows 26-50. The reason we use cursor based paging is to
-handle real time data. That is to say, the same items will not show up
-on different pages even as items are inserted/removed from the database
-in-between queries.
+By default, there are a maximum of 25 rows returned per page. Therefore, in the
+example above, if you have 50 items total with 25 items per page, to
+get the next page of results the offset should be set to 25.
+The next response would contain rows 26-50.
 {: .govuk-body}
 
 #### Organisation specific data
@@ -2343,7 +2344,7 @@ The following is a list of significant changes by version of this document.
 Upcoming Changes for Public Beta (01/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
-Update Work API with the following changes:
+Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Update the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint to allow HA's to submit a <code>permit_modification_request</code>. See sequencing section for more details.</li>
@@ -2363,6 +2364,21 @@ Update Work API with the following changes:
   <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> to rename <code>contractor_contact_details</code> to <code>secondary_contact_number</code></li>
   <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> to make <code>reasons_for_refusal</code> mandatory when refusing permits</li>
   <li>BREAKING CHANGE: Update the request body of <code>POST /works/{workReferenceNumber}/inspections</code> to make <code>inspection_evidence</code> mandatory</li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE:<code> GET /permits/counts</code> endpoint and associated response body removed</li>
+  <li>BREAKING CHANGE:<code> GET /sites</code> endpoint and associated response body removed</li>
+  <li>BREAKING CHANGE: Reporting API pagination updated across all reporting endpoints:</li>
+  <ol>
+    <li><code>before</code> and <code>after</code> query params removed</li>
+    <li><code>offset</code> query param added instead (optional for the first page, must be a non-negative integer)</li>
+    <li><code>total_count</code> response property will no longer return exact number of rows, instead, 501 will be the maximum number of rows returned by this count</li>
+    <li><code>page_start</code> property removed from <code>PaginationResponse</code></li>
+    <li><code>ReportingSummaryResponse</code> removed, meaning the <code>cursor</code> property is also removed from each paginated endpoint response</li>
+  </ol>
 </ol>
 
 Version 1.7 (17/10/2019):
