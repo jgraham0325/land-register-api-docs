@@ -2341,7 +2341,7 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-Upcoming Changes for Public Beta (01/11/2019):
+Version 1.8 (01/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
 Updated Work API with the following changes:
