@@ -284,7 +284,8 @@
 				},
 				"organisation_reference": {
 					"type": "string",
-					"description": "Max length 20 characters\nMust match a registered organisation reference"
+					"description": "Max length 20 characters\nIf provided, this must match a registered organisation reference",
+					"x-nullable": true
 				},
 				"roles": {
 					"type": "array",
@@ -295,7 +296,6 @@
 			},
 			"required": [
 				"email",
-				"organisation_reference",
 				"roles"
 			],
 			"type": "object"

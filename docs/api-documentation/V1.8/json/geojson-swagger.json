@@ -31,6 +31,31 @@
 			],
 			"type": "string"
 		},
+		"GeoJSONCentrePointType": {
+			"enum": [
+				"Point"
+			],
+			"type": "string"
+		},
+		"GeoJSONCentrePoint": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONCentrePointType"
+				},
+				"coordinates": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"format": "double"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object"
+		},
 		"PermitStatus": {
 			"enum": [
 				"submitted",
@@ -53,7 +78,7 @@
 			],
 			"type": "string"
 		},
-		"WorkResponse": {
+		"WorkProperties": {
 			"properties": {
 				"work_reference_number": {
 					"type": "string"
@@ -82,10 +107,8 @@
 					"$ref": "#/definitions/TrafficManagementType"
 				},
 				"work_centre_point": {
-					"type": "string"
-				},
-				"work_coordinates": {
-					"type": "string"
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
 				},
 				"permit_status": {
 					"$ref": "#/definitions/PermitStatus"
@@ -101,8 +124,83 @@
 				"end_date",
 				"traffic_management_type",
 				"work_centre_point",
-				"work_coordinates",
 				"permit_status"
+			],
+			"type": "object"
+		},
+		"FeatureType": {
+			"enum": [
+				"Feature"
+			],
+			"type": "string"
+		},
+		"GeoJSONFeatureType": {
+			"enum": [
+				"Point",
+				"LineString",
+				"Polygon"
+			],
+			"type": "string"
+		},
+		"GeoJSONGeometry": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONFeatureType"
+				},
+				"coordinates": {
+					"type": "array",
+					"items": {
+						"type": "object"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object"
+		},
+		"WorkFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/WorkProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object"
+		},
+		"FeatureCollectionType": {
+			"enum": [
+				"FeatureCollection"
+			],
+			"type": "string"
+		},
+		"WorkResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WorkFeature"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"features"
 			],
 			"type": "object"
 		},
@@ -120,13 +218,11 @@
 			],
 			"type": "string"
 		},
-		"ActivityResponse": {
+		"ActivityProperties": {
 			"properties": {
 				"activity_centre_point": {
-					"type": "string"
-				},
-				"activity_coordinates": {
-					"type": "string"
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
 				},
 				"activity_name": {
 					"type": "string"
@@ -160,7 +256,6 @@
 			},
 			"required": [
 				"activity_centre_point",
-				"activity_coordinates",
 				"activity_name",
 				"activity_location_description",
 				"activity_reference_number",
@@ -173,6 +268,44 @@
 			],
 			"type": "object"
 		},
+		"ActivityFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/ActivityProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object"
+		},
+		"ActivityResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ActivityFeature"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"features"
+			],
+			"type": "object"
+		},
 		"ForwardPlanStatus": {
 			"enum": [
 				"raised",
@@ -181,7 +314,7 @@
 			],
 			"type": "string"
 		},
-		"ForwardPlanResponse": {
+		"ForwardPlanProperties": {
 			"properties": {
 				"forward_plan_reference_number": {
 					"type": "string"
@@ -193,10 +326,8 @@
 					"$ref": "#/definitions/ForwardPlanStatus"
 				},
 				"work_centre_point": {
-					"type": "string"
-				},
-				"work_coordinates": {
-					"type": "string"
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
 				},
 				"street": {
 					"type": "string"
@@ -228,13 +359,50 @@
 				"work_reference_number",
 				"forward_plan_status",
 				"work_centre_point",
-				"work_coordinates",
 				"street",
 				"start_date",
 				"end_date",
 				"description_of_work",
 				"promoter_organisation",
 				"location_description"
+			],
+			"type": "object"
+		},
+		"ForwardPlanFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/ForwardPlanProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object"
+		},
+		"ForwardPlanResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ForwardPlanFeature"
+					}
+				}
+			},
+			"required": [
+				"type",
+				"features"
 			],
 			"type": "object"
 		}
@@ -258,10 +426,7 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/WorkResponse"
-							}
+							"$ref": "#/definitions/WorkResponse"
 						}
 					}
 				},
@@ -337,10 +502,7 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/ActivityResponse"
-							}
+							"$ref": "#/definitions/ActivityResponse"
 						}
 					}
 				},
@@ -410,10 +572,7 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/ForwardPlanResponse"
-							}
+							"$ref": "#/definitions/ForwardPlanResponse"
 						}
 					}
 				},
