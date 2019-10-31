@@ -43,11 +43,6 @@ title: Offline
   Works on site must continue regardless of service availability. If the outage is short-term, you can wait for the service to come back online. Otherwise, you can manually record your actions using the forms below and send them directly to the responsible parties either via email or any other way that has been agreed.
 </p>
 
-<h2 class="govuk-heading-s">For external systems that integrate with the service</h2>
-
-<p class="govuk-body">
-  See the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/api-documentation/">API documentation</a> for details on how to recover from an outage.
-</p>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
