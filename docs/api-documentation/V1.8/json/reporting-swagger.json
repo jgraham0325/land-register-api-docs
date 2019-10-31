@@ -35,7 +35,7 @@
 			"enum": [
 				"submitted",
 				"granted_proposed",
-				"granted_with_changes",
+				"permit_modification_request",
 				"refused",
 				"granted_in_progress",
 				"closed",
@@ -112,9 +112,6 @@
 		},
 		"PermitSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -252,7 +249,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"work_reference_number",
 				"permit_reference_number",
 				"promoter_swa_code",
@@ -289,18 +285,17 @@
 		},
 		"PaginationResponse": {
 			"properties": {
-				"page_start": {
-					"type": "number",
-					"format": "double"
-				},
 				"total_rows": {
 					"type": "number",
 					"format": "double"
+				},
+				"has_next_page": {
+					"type": "boolean"
 				}
 			},
 			"required": [
-				"page_start",
-				"total_rows"
+				"total_rows",
+				"has_next_page"
 			],
 			"type": "object"
 		},
@@ -319,82 +314,6 @@
 			"required": [
 				"pagination",
 				"rows"
-			],
-			"type": "object"
-		},
-		"ApplicationCountsEntry": {
-			"properties": {
-				"refused": {
-					"type": "number",
-					"format": "double"
-				},
-				"awaiting_assessment": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"refused",
-				"awaiting_assessment"
-			],
-			"type": "object"
-		},
-		"ApplicationCounts": {
-			"properties": {
-				"total": {
-					"$ref": "#/definitions/ApplicationCountsEntry"
-				}
-			},
-			"required": [
-				"total"
-			],
-			"type": "object"
-		},
-		"PermitCountsEntry": {
-			"properties": {
-				"granted_not_started": {
-					"type": "number",
-					"format": "double"
-				},
-				"in_progress": {
-					"type": "number",
-					"format": "double"
-				},
-				"closed": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"granted_not_started",
-				"in_progress",
-				"closed"
-			],
-			"type": "object"
-		},
-		"PermitCounts": {
-			"properties": {
-				"total": {
-					"$ref": "#/definitions/PermitCountsEntry"
-				}
-			},
-			"required": [
-				"total"
-			],
-			"type": "object"
-		},
-		"PermitCountsResponse": {
-			"properties": {
-				"applications": {
-					"$ref": "#/definitions/ApplicationCounts"
-				},
-				"permits": {
-					"$ref": "#/definitions/PermitCounts"
-				}
-			},
-			"required": [
-				"applications",
-				"permits"
 			],
 			"type": "object"
 		},
@@ -459,9 +378,6 @@
 		},
 		"InspectionSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"inspection_date": {
 					"type": "string",
 					"format": "date-time"
@@ -508,7 +424,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"inspection_date",
 				"inspection_response_type",
 				"work_reference_number",
@@ -562,9 +477,6 @@
 		},
 		"FPNSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"fpn_reference_number": {
 					"type": "string"
 				},
@@ -592,7 +504,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"fpn_reference_number",
 				"work_reference_number",
 				"promoter",
@@ -632,9 +543,6 @@
 		},
 		"ForwardPlanSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -669,7 +577,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"work_reference_number",
 				"forward_plan_reference_number",
 				"promoter_organisation",
@@ -724,9 +631,6 @@
 		},
 		"AlterationSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -805,7 +709,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"work_reference_number",
 				"permit_reference_number",
 				"alteration_reference_number",
@@ -846,54 +749,6 @@
 			],
 			"type": "object"
 		},
-		"ReinstatementStatus": {
-			"enum": [
-				"interim",
-				"permanent"
-			],
-			"type": "string"
-		},
-		"SiteSummaryResponse": {
-			"properties": {
-				"site_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"work_reference_number": {
-					"type": "string"
-				},
-				"swa_organisation_name": {
-					"type": "string"
-				},
-				"location_description": {
-					"type": "string"
-				},
-				"street_name": {
-					"type": "string"
-				},
-				"area_name": {
-					"type": "string"
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"reinstatement_status": {
-					"$ref": "#/definitions/ReinstatementStatus"
-				}
-			},
-			"required": [
-				"site_id",
-				"work_reference_number",
-				"swa_organisation_name",
-				"location_description",
-				"street_name",
-				"area_name",
-				"end_date",
-				"reinstatement_status"
-			],
-			"type": "object"
-		},
 		"CommentTopic": {
 			"enum": [
 				"GENERAL",
@@ -906,9 +761,6 @@
 		},
 		"CommentSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -927,7 +779,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"work_reference_number",
 				"topic",
 				"author_email_address",
@@ -984,9 +835,6 @@
 		},
 		"WorkstreamSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"workstream_id": {
 					"type": "number",
 					"format": "double"
@@ -1013,7 +861,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"workstream_id",
 				"organisation_id",
 				"prefix",
@@ -1041,11 +888,15 @@
 			],
 			"type": "object"
 		},
+		"ReinstatementStatus": {
+			"enum": [
+				"interim",
+				"permanent"
+			],
+			"type": "string"
+		},
 		"ReinstatementSummaryResponse": {
 			"properties": {
-				"cursor": {
-					"type": "string"
-				},
 				"site_id": {
 					"type": "number",
 					"format": "double"
@@ -1074,7 +925,6 @@
 				}
 			},
 			"required": [
-				"cursor",
 				"site_id",
 				"work_reference_number",
 				"swa_organisation_name",
@@ -1218,13 +1068,7 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
-						"required": false,
-						"type": "integer"
-					},
-					{
-						"in": "query",
-						"name": "after",
+						"name": "offset",
 						"required": false,
 						"type": "integer"
 					},
@@ -1310,39 +1154,6 @@
 						"name": "lane_rental_charges_potentially_apply",
 						"required": false,
 						"type": "boolean"
-					}
-				]
-			}
-		},
-		"/permits/counts": {
-			"get": {
-				"operationId": "GetPermitCounts",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/PermitCountsResponse"
-						}
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
 					}
 				]
 			}
@@ -1588,15 +1399,10 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
+						"name": "offset",
 						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "after",
-						"required": false,
-						"type": "string"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
@@ -1730,13 +1536,7 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
-						"required": false,
-						"type": "integer"
-					},
-					{
-						"in": "query",
-						"name": "after",
+						"name": "offset",
 						"required": false,
 						"type": "integer"
 					},
@@ -1903,13 +1703,7 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
-						"required": false,
-						"type": "integer"
-					},
-					{
-						"in": "query",
-						"name": "after",
+						"name": "offset",
 						"required": false,
 						"type": "integer"
 					},
@@ -2108,13 +1902,7 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
-						"required": false,
-						"type": "integer"
-					},
-					{
-						"in": "query",
-						"name": "after",
+						"name": "offset",
 						"required": false,
 						"type": "integer"
 					},
@@ -2191,52 +1979,6 @@
 				]
 			}
 		},
-		"/sites": {
-			"get": {
-				"operationId": "GetSites",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/SiteSummaryResponse"
-							}
-						}
-					}
-				},
-				"description": "Returns all sites associated with the logged in user's organisation. Optional filter by status",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "status",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/ReinstatementStatus"
-						}
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					}
-				]
-			}
-		},
 		"/comments": {
 			"get": {
 				"operationId": "GetComments",
@@ -2263,15 +2005,10 @@
 				"parameters": [
 					{
 						"in": "query",
-						"name": "before",
+						"name": "offset",
 						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "after",
-						"required": false,
-						"type": "string"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
@@ -2381,15 +2118,10 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
+						"name": "offset",
 						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "after",
-						"required": false,
-						"type": "string"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
@@ -2441,15 +2173,10 @@
 					},
 					{
 						"in": "query",
-						"name": "before",
+						"name": "offset",
 						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "after",
-						"required": false,
-						"type": "string"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
