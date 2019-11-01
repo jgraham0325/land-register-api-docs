@@ -503,7 +503,7 @@ access routes, services, and resources that are permitted with that token.
 Without it the request will be met with a 401 error response.
 {: .govuk-body}
 
-A `systemToken` API key is also available on the Party API, this token is for internal use only and is not required for any exposed endpoint.
+A <code>systemToken</code> API key is also available on the Party API, this token is for internal use only and is not required for any exposed endpoint.
 {: .govuk-body}
 
 ### User accounts and permissions
