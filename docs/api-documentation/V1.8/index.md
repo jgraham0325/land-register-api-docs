@@ -130,7 +130,7 @@ The Street Manager service provides two separate isolated application service en
 
 <ol class="govuk-list govuk-list--bullet">
   <li>The PRODUCTION environment is <b>for LIVE use and LIVE data only</b> – neither functional nor non-functional testing is permitted against the live environment.</li>
-  <li>Once an organisation has reached production-readiness – and have aligned with their local area ecosystem partners in that production-readiness – the organisations must engage with the Street Manager team inform them of their production readiness.  At this stage the team will work with the organisation to facilitate a transition into the PRODUCTION environment.</li>
+  <li>Once an organisation has reached production-readiness – and have aligned with their local area ecosystem partners in that production-readiness – the organisations must engage with the Street Manager team to inform them of their production readiness.  At this stage the team will work with the organisation to facilitate a transition into the PRODUCTION environment.</li>
   <li>In some cases, local area ecosystem alignment may not be possible within reasonable timeframes due to external factors.  In these cases, dual-keying may be necessary between the organisation, their existing EToN system, and the Street Manager Service.</li>
 </ol>
 
@@ -384,7 +384,7 @@ This will not always be possible and organisations may need to test using accoun
   <li>
     <p class="govuk-body govuk-!-font-weight-bold">Contractors</p>
     <p class="govuk-body">
-    Request your contractor organisation to be associated with a specific Promoter (or HA acting as Promoter for self permitting) in SANDBOX. Arrange with Promoter to create a Workstream for your test permits. If you need an HA account to assessment your test permits you may request an HA account (same as a Promoter, see above).
+    Request your contractor organisation to be associated with a specific Promoter (or HA acting as Promoter for self permitting) in SANDBOX. Arrange with Promoter to create a Workstream for your test permits. If you need an HA account to assess your test permits you may request an HA account (same as a Promoter, see above).
     </p>
     <p class="govuk-body">
     If your users operate directly as users for a Promoter, managed by their organisation directly and not as contractors users working for many organisations under single account, you may request users for that Promoter and test under Workstreams based on your normal actions for the Promoter and should liaise with the Promoter during testing.
@@ -503,7 +503,7 @@ access routes, services, and resources that are permitted with that token.
 Without it the request will be met with a 401 error response.
 {: .govuk-body}
 
-A `systemToken` API key is also available on the Party API, this token is for internal use only and is not required for any exposed endpoint.
+A <code>systemToken</code> API key is also available on the Party API, this token is for internal use only and is not required for any exposed endpoint.
 {: .govuk-body}
 
 ### User accounts and permissions
