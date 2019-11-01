@@ -49,7 +49,7 @@ As the primary contact, <b>your main responsibilities typically would include</b
   <li>Arranging for admin users to be set up.  Admin users will then be able to set up any other users in your organisation.  There is no limit on the number of people who can use Street Manager.  Even if you plan to use an API, we will still need you to agree to the terms and conditions and you may want to set up other people in your organisation with access to the user interface (website).</li>
 </ol>
 
-You will need to start the sign-up process by emailing [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk) using the below template.  From 1st November you will also be able to start using our official gov.uk site and email address: (add address)
+You will need to start the sign-up process by emailing [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk) using the below template.
 {: .govuk-body}
 
 ## Template to request sign-up:
