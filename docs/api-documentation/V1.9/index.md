@@ -2314,10 +2314,6 @@ The following is a list of significant changes by version of this document.
 Upcoming Changes for Version 1.9 (14/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>Updated wording to reflect entering Public Beta phase; re-worked environments and release management sections.</li>
-</ol>
-
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
@@ -2328,6 +2324,10 @@ Updated Work API with the following changes:
 
 Version 1.8 (31/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated wording to reflect entering Public Beta phase; re-worked environments and release management sections.</li>
+</ol>
 
 Updated Work API with the following changes:
 {: .govuk-body}
