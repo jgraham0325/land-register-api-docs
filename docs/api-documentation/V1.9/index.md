@@ -2311,11 +2311,7 @@ The Data Export API will allow non street works authority users, such as Mobile 
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-<<<<<<< HEAD
 Upcoming Changes for Version 1.9 (14/11/2019):
-=======
-Version 1.8 (01/11/2019):
->>>>>>> master
 {: .govuk-heading-s #upcoming-changes}
 
 <ol class="govuk-list govuk-list--bullet">
