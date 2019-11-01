@@ -266,7 +266,7 @@ The reporting API exposes a `/works/updates` endpoint for polling. See the resou
 **Notifications**
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for later in **Phase 3**.*
+*Note: Notifications are currently in roadmap for later in **Phase 4**.*
 {: .govuk-body}
 
 Street Manager will offer a Notification service which will send Push
@@ -2272,7 +2272,7 @@ The Work API will be updated to allow submitting Inspections for works which hav
 See **Technical Overview - Getting data from Street Manager - Notifications** for details.
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for later in **Phase 3***
+*Note: Notifications are currently in roadmap for later in **Phase 4***
 {: .govuk-body}
 
 ### User and organisation self registration
