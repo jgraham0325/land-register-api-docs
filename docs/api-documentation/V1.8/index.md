@@ -212,7 +212,7 @@ The Street Manager GeoJson API exposes works and events spatial data to
 authenticated users for use with mapping queries. See the resource guide for details.
 {: .govuk-body}
 
-#### Open Data API
+#### Data Export API
 {: .govuk-heading-s}
 
 *This API is not yet available.*
@@ -287,7 +287,7 @@ updated works.
 
 Contractors can use the Reporting API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. `swa_code` parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the `work-api`.
+information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -343,7 +343,7 @@ The following are examples of what we consider to be breaking and non-breaking c
 <li>Adding a new endpoint to support new functionality or an enhancement to existing functionality</li>
 </ol>
 
-When the first participant organisations are approaching Production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX environment alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to minimise them, the occasional breaking change may be required in order to release critical fixes.
+When the first participant organisations are approaching production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX environment alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to minimise them, the occasional breaking change may be required in order to release critical fixes.
 {: .govuk-body}
 
 
@@ -2299,10 +2299,10 @@ The Work API will be updated to allow submission of notices to noticing Highway 
 The Work API will be updated to include endpoints for correcting errors in submitted data against works.
 {: .govuk-body}
 
-### Open data API
+### Data Export API
 {: .govuk-heading-s}
 
-The Open data API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
+The Data Export API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
 {: .govuk-body}
 
 ## Versions
