@@ -9,7 +9,7 @@ title: Onboarding
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-Street Manager is open to everyone from 1st November 2019!
+<b>Street Manager is open to everyone from 1st November 2019!</b>
 {: .govuk-body}
 
 As you know, Street Manager is a new digital service for planning and managing street and road works in one place.
@@ -30,16 +30,18 @@ You can use this service to:
 </ol>
 
 ## When can you sign up?
-{: .govuk-heading-l}
+{: .govuk-heading-m}
 
 From 1st November, Street Manager enters into Public Beta phase, when the service is open to everyone to use. This means that you can access the Sandbox test environment as well as the Production environment which is where real data will live.  Everyone who registers to sign up and completes the registration process will be added to a waitlist. Access will then be granted to each organisation from in order of registration completion.
-How to sign up and what you will need to know
 {: .govuk-body}
+
+## How to sign up and what you will need to know
+{: .govuk-heading-m}
 
 You will need to be the person with the authority (primary contact) within your organisation to sign your organisation up to Street Manager.
 {: .govuk-body}
 
-As the primary contact, your main responsibilities typically would include:
+As the primary contact, <b>your main responsibilities typically would include</b>:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -47,11 +49,11 @@ As the primary contact, your main responsibilities typically would include:
   <li>Arranging for admin users to be set up.  Admin users will then be able to set up any other users in your organisation.  There is no limit on the number of people who can use Street Manager.  Even if you plan to use an API, we will still need you to agree to the terms and conditions and you may want to set up other people in your organisation with access to the user interface (website).</li>
 </ol>
 
-You will need to start the sign-up process by emailing (add new email address) using the below template.  From 1st November you will also be able to start using our official gov.uk site and email address: (add address)
+You will need to start the sign-up process by emailing [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk) using the below template.  From 1st November you will also be able to start using our official gov.uk site and email address: (add address)
 {: .govuk-body}
 
 ## Template to request sign-up:
-{: .govuk-heading-l}
+{: .govuk-heading-m}
 Title: Request to sign up to Street Manager
 {: .govuk-body}
 Body:
