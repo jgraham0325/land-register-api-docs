@@ -384,7 +384,7 @@ This will not always be possible and organisations may need to test using accoun
   <li>
     <p class="govuk-body govuk-!-font-weight-bold">Contractors</p>
     <p class="govuk-body">
-    Request your contractor organisation to be associated with a specific Promoter (or HA acting as Promoter for self permitting) in SANDBOX. Arrange with Promoter to create a Workstream for your test permits. If you need an HA account to assessment your test permits you may request an HA account (same as a Promoter, see above).
+    Request your contractor organisation to be associated with a specific Promoter (or HA acting as Promoter for self permitting) in SANDBOX. Arrange with Promoter to create a Workstream for your test permits. If you need an HA account to assess your test permits you may request an HA account (same as a Promoter, see above).
     </p>
     <p class="govuk-body">
     If your users operate directly as users for a Promoter, managed by their organisation directly and not as contractors users working for many organisations under single account, you may request users for that Promoter and test under Workstreams based on your normal actions for the Promoter and should liaise with the Promoter during testing.
