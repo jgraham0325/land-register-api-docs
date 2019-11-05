@@ -2311,8 +2311,19 @@ The Data Export API will allow non street works authority users, such as Mobile 
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-Version 1.8 (01/11/2019):
+Upcoming Changes for Version 1.9 (14/11/2019):
 {: .govuk-heading-s #upcoming-changes}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE: <code>permit_id</code> has been removed from the response of <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code></li>
+  <li>BREAKING CHANGE: <code>permit_id</code> has been made optional from the response of <code>GET /works/{workReferenceNumber}</code> "sites" property</li>
+  <li>BREAKING CHANGE: <code>permit_id</code> has been made optional from the response of <code>GET /works/{workReferenceNumber}/sites/{siteId}</code></li>
+</ol>
+
+Version 1.8 (31/10/2019):
+{: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Updated wording to reflect entering Public Beta phase; re-worked environments and release management sections.</li>
