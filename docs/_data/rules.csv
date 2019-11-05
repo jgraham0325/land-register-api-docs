@@ -546,5 +546,5 @@ If HA is not happy the change request contains all the modifications that were r
 
 HA is able to change the assessment decision to grant or refuse at any point up until a change request has been submitted by the promoter. 
 
-Note - existing change request deeming functionality applies where it will deem after 2 working days. This will be further extended at a later date to take into account what remains of the response period for the permit",#REF!,,1
+Note - existing change request deeming functionality applies where it will deem after 2 working days. This will be further extended at a later date to take into account what remains of the response period for the permit ",#REF!,,1
 129,25.4,,Viewing permits with 'Modification requested' status,New 'Modification requested' status added to the permit application status filter on the Applications and works page,#REF!,,1
