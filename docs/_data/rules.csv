@@ -540,11 +540,3 @@ Removed users will still be displayed in historical audits of actions they carri
 127,25.2,,Submitting a PMR,"Promoter can submit a PMR using the regular change request functionality by adding a change request with the modifications requested.
 
 Note - promoter won't be charged for submitting a change request that is a result of a PMR",#REF!,,1
-128,25.3,,Assessing a change request as a result of a PMR,"If the HA is happy with that the change request contains all the modifications that were requested, they can grant the change request. Note - currently this won't automatically grant the permit. HA still needs to grant the permit separately
-
-If HA is not happy the change request contains all the modifications that were requested, they can refuse the change request, adding a note to explain. The permit will remain with a modification request assessment status until the HA actually grants or refuses it so the promoter has the option to add subsequent change request until the HA is happy with changes submitted. Alternatively, they can refuse the change request and then subequently refuse the permit.
-
-HA is able to change the assessment decision to grant or refuse at any point up until a change request has been submitted by the promoter. 
-
-Note - existing change request deeming functionality applies where it will deem after 2 working days. This will be further extended at a later date to take into account what remains of the response period for the permit ",#REF!,,1
-129,25.4,,Viewing permits with 'Modification requested' status,New 'Modification requested' status added to the permit application status filter on the Applications and works page,#REF!,,1
