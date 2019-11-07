@@ -2311,6 +2311,83 @@ The Data Export API will allow non street works authority users, such as Mobile 
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
+Upcoming changes
+{: .govuk-heading-s}
+
+Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status updates will be released in Version 1.9, with permit status, assessment status and forward plan status following afterwards.
+
+Assessment status
+
+The available values for a permit's `assessment_status` field will be updated and will no longer re-use the same values of the `permit_status` field. The new `assessment_status` values are:
+<ol class="govuk-list govuk-list--bullet">
+  <li>granted</li>
+  <li>granted_auto</li>
+  <li>refused</li>
+  <li>refused_auto</li>
+  <li>permit_modification_request</li>
+  <li>revoked</li>
+</ol>
+
+Deeming will no longer exist as an `assessment_status`, instead a the response of `GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}` will now contain a boolean `is_deemed` property to indicate whether or not a permit has deemed.
+
+Now that `assessment_status` and `permit_status` will contain different values, permit assessment will now be carried out by a new endpoint `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess`. Actions that will be carried out by this new endpoint include:
+<ol class="govuk-list govuk-list--bullet">
+  <li>Granting</li>
+  <li>Refusing</li>
+  <li>Modification requesting</li>
+  <li>Revoking</li>
+</ol>
+
+Cancelling a permit will still continue to be carried out using the existing endpoint `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status`. The following properties will be removed from this endpoint and migrated to the `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess` endpoint:
+<ol class="govuk-list govuk-list--bullet">
+  <li>reasons_for_refusal</li>
+  <li>assessment_discount</li>
+  <li>revoke_reason</li>
+  <li>pending_change_details</li>
+</ol>
+
+Permit status and forward plan status
+
+The available values for the `permit_status` field will be changing across the Works API, Reporting API and GeoJSON API. The new `permit_status` values are:
+<ol class="govuk-list govuk-list--bullet">
+  <li>submitted</li>
+  <li>granted</li>
+  <li>refused requesting</li>
+  <li>permit_modification_request</li>
+  <li>revoked</li>
+  <li>closed</li>
+  <li>progressed</li>
+  <li>cancelled</li>
+</ol>
+
+The `forward_plan_status` available values will also be updated to replace `closed` with `progressed`. The new list of `forward_plan_status` values are:
+<ol class="govuk-list govuk-list--bullet">
+  <li>raised</li>
+  <li>progressed</li>
+  <li>cancelled</li>
+</ol>
+
+The new `progressed` `permit_status` and `forward_plan_status` will be applied under 2 scenarios:
+<ol class="govuk-list govuk-list--bullet">
+  <li>A forward plan's `forward_plan_status` value is set to `progressed` when the forward plan is progressed to a PAA.</li>
+  <li>A PAA's `permit_status` value is set to `progressed` when the PAA is progressed to a major permit.</li>
+</ol>
+
+Breaking changes summary:
+<ol class="govuk-list govuk-list--bullet">
+  <li>The available values for `permit_status`, `assessment_status` and `forward_plan_status` will be updated.</li>
+  <li>
+    Permit assessment and revoking will now be carried out using a new `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess` endpoint, with only cancelling now being carried out using the existing `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status` endpoint. The following fields will be removed from the latter:
+    <ol>
+      <li>reasons_for_refusal</li>
+      <li>assessment_discount</li>
+      <li>revoke_reason</li>
+      <li>pending_change_details</li>
+    </ol>
+  </li>
+  <li>Deeming is no longer tracked as an `assessment_status`. It is now available via an `is_deemed` boolean in the response `GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}`</li>
+</ol>
+
 Upcoming Changes for Version 1.9 (14/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
@@ -2325,6 +2402,11 @@ Updated Work API with the following changes:
   <li>length, width, depth and final_reinstatement fields are now optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. They are still mandatory for reinstatements where <code>reinstatement_type</code> is set to excavation. This is in preperation for non-notifiable works.</li>
   <li>secondary_reinstatement_coordinates optional field introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> it must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon.</li>
   <li>number_of_holes optional field introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> this will be required if the reinstatement_type is one of bar holes, core holes or pole testing which will be supported when non-notifiable reinstatements are introduced to the system</li>
+  <li><code>work_status</code> will be added to the responses of the following endpoints:
+  <ol>
+    <li><code>GET /works/{workReferenceNumber}</code></li>
+    <li><code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code></li>
+  </ol>
 </ol>
 
 Updated Reporting API with the following changes:
