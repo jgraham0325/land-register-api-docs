@@ -2315,22 +2315,29 @@ Upcoming changes
 {: .govuk-heading-s}
 
 Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status updates will be released in Version 1.9, with permit status, assessment status and forward plan status following afterwards.
+{: .govuk-body}
 
 Assessment status
+{: .govuk-heading-s}
 
-The available values for a permit's `assessment_status` field will be updated and will no longer re-use the same values of the `permit_status` field. The new `assessment_status` values are:
+The available values for a permit's <code>assessment_status</code> field will be updated and will no longer re-use the same values of the <code>permit_status</code> field. The new <code>assessment_status</code> values are:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>granted</li>
-  <li>granted_auto</li>
-  <li>refused</li>
-  <li>refused_auto</li>
-  <li>permit_modification_request</li>
-  <li>revoked</li>
+  <li><code>granted</code></li>
+  <li><code>granted_auto</code></li>
+  <li><code>refused</code></li>
+  <li><code>refused_auto</code></li>
+  <li><code>permit_modification_request</code></li>
+  <li><code>revoked</code></li>
 </ol>
 
-Deeming will no longer exist as an `assessment_status`, instead a the response of `GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}` will now contain a boolean `is_deemed` property to indicate whether or not a permit has deemed.
+Deeming will no longer exist as an <code>assessment_status</code>, instead the response of <code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code> will now contain a boolean <code>is_deemed</code> property to indicate whether or not a permit has deemed.
+{: .govuk-body}
 
-Now that `assessment_status` and `permit_status` will contain different values, permit assessment will now be carried out by a new endpoint `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess`. Actions that will be carried out by this new endpoint include:
+Now that <code>assessment_status</code> and <code>permit_status</code> will contain different values, permit assessment will now be carried out by a new endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess</code>. Actions that will be carried out by this new endpoint include:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
   <li>Granting</li>
   <li>Refusing</li>
@@ -2338,54 +2345,65 @@ Now that `assessment_status` and `permit_status` will contain different values, 
   <li>Revoking</li>
 </ol>
 
-Cancelling a permit will still continue to be carried out using the existing endpoint `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status`. The following properties will be removed from this endpoint and migrated to the `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess` endpoint:
+Cancelling a permit will still continue to be carried out using the existing endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code>. The following properties will be removed from this endpoint and migrated to the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess</code> endpoint:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>reasons_for_refusal</li>
-  <li>assessment_discount</li>
-  <li>revoke_reason</li>
-  <li>pending_change_details</li>
+  <li><code>reasons_for_refusal</code></li>
+  <li><code>assessment_discount</code></li>
+  <li><code>revoke_reason</code></li>
+  <li><code>pending_change_details</code></li>
 </ol>
 
 Permit status and forward plan status
+{: .govuk-heading-s}
 
-The available values for the `permit_status` field will be changing across the Works API, Reporting API and GeoJSON API. The new `permit_status` values are:
+The available values for the <code>permit_status</code> field will be changing across the Works API, Reporting API and GeoJSON API. The new <code>permit_status</code> values are:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>submitted</li>
-  <li>granted</li>
-  <li>refused requesting</li>
-  <li>permit_modification_request</li>
-  <li>revoked</li>
-  <li>closed</li>
-  <li>progressed</li>
-  <li>cancelled</li>
+  <li><code>submitted</code></li>
+  <li><code>granted</code></li>
+  <li><code>refused</code></li>
+  <li><code>permit_modification_request</code></li>
+  <li><code>revoked</code></li>
+  <li><code>closed</code></li>
+  <li><code>progressed</code></li>
+  <li><code>cancelled</code></li>
 </ol>
 
-The `forward_plan_status` available values will also be updated to replace `closed` with `progressed`. The new list of `forward_plan_status` values are:
+The <code>forward_plan_status</code> available values will also be updated to replace <code>closed</code> with <code>progressed</code>. The new list of <code>forward_plan_status</code> values are:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>raised</li>
-  <li>progressed</li>
-  <li>cancelled</li>
+  <li><code>raised</code></li>
+  <li><code>progressed</code></li>
+  <li><code>cancelled</code></li>
 </ol>
 
-The new `progressed` `permit_status` and `forward_plan_status` will be applied under 2 scenarios:
+The new <code>progressed</code> <code>permit_status</code> and <code>forward_plan_status</code> will be applied under 2 scenarios:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>A forward plan's `forward_plan_status` value is set to `progressed` when the forward plan is progressed to a PAA.</li>
-  <li>A PAA's `permit_status` value is set to `progressed` when the PAA is progressed to a major permit.</li>
+  <li>A forward plan's <code>forward_plan_status</code> value is set to <code>progressed</code> when the forward plan is progressed to a PAA.</li>
+  <li>A PAA's <code>permit_status</code> value is set to <code>progressed</code> when the PAA is progressed to a major permit.</li>
 </ol>
 
 Breaking changes summary:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>The available values for `permit_status`, `assessment_status` and `forward_plan_status` will be updated.</li>
+  <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
   <li>
-    Permit assessment and revoking will now be carried out using a new `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess` endpoint, with only cancelling now being carried out using the existing `PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status` endpoint. The following fields will be removed from the latter:
+    Permit assessment and revoking will now be carried out using a new <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assess</code> endpoint, with only cancelling now being carried out using the existing <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint. The following fields will be removed from the latter:
     <ol>
-      <li>reasons_for_refusal</li>
-      <li>assessment_discount</li>
-      <li>revoke_reason</li>
-      <li>pending_change_details</li>
+      <li><code>reasons_for_refusal</code></li>
+      <li><code>assessment_discount</code></li>
+      <li><code>revoke_reason</code></li>
+      <li><code>pending_change_details</code></li>
     </ol>
   </li>
-  <li>Deeming is no longer tracked as an `assessment_status`. It is now available via an `is_deemed` boolean in the response `GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}`</li>
+  <li>Deeming is no longer tracked as an <code>assessment_status</code>. It is now available via an <code>is_deemed</code> boolean in the response of <code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code></li>
 </ol>
 
 Upcoming Changes for Version 1.9 (14/11/2019):
