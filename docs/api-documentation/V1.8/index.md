@@ -8,7 +8,7 @@ title: API specification V1.8
 Version 1.8
 {: .govuk-body-l}
 
-This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available for testing in SANDBOX environment after the 1st of November.
+This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments on the 1st of November.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
