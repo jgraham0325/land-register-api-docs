@@ -2311,6 +2311,19 @@ The Data Export API will allow non street works authority users, such as Mobile 
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
+Upcoming changes for a future release:
+{: .govuk-heading-s #upcoming-changes}
+
+Work API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE: <code>reinstatement_type</code> will be added as a new required field for <code>POST /works/${workReferenceNumber}/sites</code>. This is to prepare for the introduction of non-notifiable reinstatement work records. The value provided to this field should be <code>excavation</code> for current street manager reinstatements until the non-notifiable works feature is released. Reinstatement type is only provided when creating a site, any reinstatements added to an existing site will share the same <code>reinstatement_type</code></li>
+  <li><code>inspection_units</code> will be optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. Default to 1.</li>
+  <li><code>length</code>, <code>width</code>, <code>depth</code> and <code>final_reinstatement</code> fields will be optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. They will still be mandatory for reinstatements where <code>reinstatement_type</code> is set to excavation. This is in preperation for non-notifiable works.</li>
+  <li><code>secondary_reinstatement_coordinates</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>, it must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon.</li>
+  <li><code>number_of_holes</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> this will be required if the reinstatement_type is one of bar holes, core holes or pole testing which will be supported when non-notifiable reinstatements are introduced to the system</li>
+</ol>
+
 Upcoming Changes for Version 1.9 (14/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
@@ -2320,11 +2333,6 @@ Updated Work API with the following changes:
   <li>BREAKING CHANGE: <code>permit_id</code> has been removed from the response of <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}</code></li>
   <li>BREAKING CHANGE: <code>permit_id</code> has been made optional from the response of <code>GET /works/{workReferenceNumber}</code> "sites" property</li>
   <li>BREAKING CHANGE: <code>permit_id</code> has been made optional from the response of <code>GET /works/{workReferenceNumber}/sites/{siteId}</code></li>
-  <li>BREAKING CHANGE: <code>reinstatement_type</code> has been added as a new required field for <code>POST /works/${workReferenceNumber}/sites</code> this is to prepare for the introduction of non-notifiable reinstatement work records. The value provided to this field should be <code>excavation</code> for current street manager reinstatements until the non-notifiable works feature is released. Reinstatement type is only provided when creating a site, any reinstatements added to an existing site will share the same <code>reinstatement_type</code></li>
-  <li>Inspection units are now optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. Default to 1.</li>
-  <li>length, width, depth and final_reinstatement fields are now optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. They are still mandatory for reinstatements where <code>reinstatement_type</code> is set to excavation. This is in preperation for non-notifiable works.</li>
-  <li>secondary_reinstatement_coordinates optional field introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> it must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon.</li>
-  <li>number_of_holes optional field introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> this will be required if the reinstatement_type is one of bar holes, core holes or pole testing which will be supported when non-notifiable reinstatements are introduced to the system</li>
 </ol>
 
 Updated Reporting API with the following changes:
