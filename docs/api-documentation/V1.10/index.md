@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.9
+title: API specification V1.10
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.9
+Version 1.10
 {: .govuk-body-l}
 
 This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments after the 14th of November.
@@ -2314,6 +2314,9 @@ The following is a list of significant changes by version of this document.
 Upcoming changes for a future release:
 {: .govuk-heading-s #upcoming-changes}
 
+Upcoming changes for Version 1.10 (28/11/2019):
+{: .govuk-heading-s #upcoming-changes}
+
 Work API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
@@ -2324,7 +2327,7 @@ Work API will be updated with the following changes:
   <li><code>number_of_holes</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> this will be required if the reinstatement_type is one of bar holes, core holes or pole testing which will be supported when non-notifiable reinstatements are introduced to the system</li>
 </ol>
 
-Upcoming Changes for Version 1.9 (14/11/2019):
+Version 1.9 (14/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
 Updated Work API with the following changes:
