@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.9
+title: API specification V1.10
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.9
+Version 1.10
 {: .govuk-body-l}
 
 This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments after the 14th of November.
@@ -2314,46 +2314,8 @@ The following is a list of significant changes by version of this document.
 Upcoming changes for a future release:
 {: .govuk-heading-s #upcoming-changes}
 
-Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status updates have been released in Version 1.9, with permit status, assessment status and forward plan status following afterwards.
+Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status and assessment status updates have been released in Versions 1.9 and 1.10 respectively, with permit status and forward plan status following afterwards.
 {: .govuk-body}
-
-Assessment status
-{: .govuk-heading-s}
-
-The available values for a permit's <code>assessment_status</code> field will be updated and will no longer re-use the same values of the <code>permit_status</code> field. The new <code>assessment_status</code> values are:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>granted</code></li>
-  <li><code>granted_auto</code></li>
-  <li><code>refused</code></li>
-  <li><code>refused_auto</code></li>
-  <li><code>permit_modification_request</code></li>
-  <li><code>revoked</code></li>
-</ol>
-
-Deeming will no longer exist as an <code>assessment_status</code>, instead the response of <code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code> will now contain a boolean <code>is_deemed</code> property to indicate whether or not a permit has deemed.
-{: .govuk-body}
-
-Now that <code>assessment_status</code> and <code>permit_status</code> will contain different values, permit assessment will now be carried out by a new endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code>. Actions that will be carried out by this new endpoint include:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Granting</li>
-  <li>Refusing</li>
-  <li>Modification requesting</li>
-  <li>Revoking</li>
-</ol>
-
-Cancelling a permit will still continue to be carried out using the existing endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code>. The following properties will be removed from this endpoint and migrated to the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>reasons_for_refusal</code></li>
-  <li><code>assessment_discount</code></li>
-  <li><code>revoke_reason</code></li>
-  <li><code>pending_change_details</code></li>
-</ol>
 
 Permit status and forward plan status
 {: .govuk-heading-s}
@@ -2394,6 +2356,53 @@ Breaking changes summary:
 
 <ol class="govuk-list govuk-list--bullet">
   <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
+</ol>
+
+Version 1.10 (28/11/2019):
+{: .govuk-heading-s #upcoming-changes}
+
+Assessment status
+{: .govuk-heading-s}
+
+The available values for a permit's <code>assessment_status</code> field will be updated and will no longer re-use the same values of the <code>permit_status</code> field. The new <code>assessment_status</code> values are:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>granted</code></li>
+  <li><code>granted_auto</code></li>
+  <li><code>refused</code></li>
+  <li><code>refused_auto</code></li>
+  <li><code>permit_modification_request</code></li>
+  <li><code>revoked</code></li>
+</ol>
+
+Deeming will no longer exist as an <code>assessment_status</code>, instead the response of <code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code> will now contain a boolean <code>is_deemed</code> property to indicate whether or not a permit has deemed.
+{: .govuk-body}
+
+Now that <code>assessment_status</code> and <code>permit_status</code> will contain different values, permit assessment will now be carried out by a new endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code>. Actions that will be carried out by this new endpoint include:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Granting</li>
+  <li>Refusing</li>
+  <li>Modification requesting</li>
+  <li>Revoking</li>
+</ol>
+
+Cancelling a permit will still continue to be carried out using the existing endpoint <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code>. The following properties will be removed from this endpoint and migrated to the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>reasons_for_refusal</code></li>
+  <li><code>assessment_discount</code></li>
+  <li><code>revoke_reason</code></li>
+  <li><code>pending_change_details</code></li>
+</ol>
+
+Breaking changes summary:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
   <li>
     Permit assessment and revoking will now be carried out using a new <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint, with only cancelling now being carried out using the existing <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/status</code> endpoint. The following fields will be removed from the latter:
     <ol>
