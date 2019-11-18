@@ -20,7 +20,7 @@ This document details upcoming changes to the API being released for Public Beta
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#swagger-documentation">Swagger Documentation</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
-  <li><a class="govuk-link" href="#connecting">Connecting to Street Manager</a></li>
+  <li><a class="govuk-link" href="#connecting">Connecting to the API services</a></li>
   <li><a class="govuk-link" href="#timing">Timing</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
@@ -138,7 +138,7 @@ The Street Manager service provides two separate isolated application service en
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-## Connecting to Street Manager
+## Connecting to the API services
 {: .govuk-heading-l #connecting}
 
 In order to connect to the Street Manager environments, your API client must be configured to connect to an environment-specific API URL via [HTTPS](#https).  
@@ -2435,7 +2435,7 @@ Version 1.9 (14/11/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Added the 'Connecting to Street Manager' section to the API documentation, to explicitly call out the need for clients to connect via DNS CNAMEs, rather than specific fixed IP addresses.</li>
+  <li>Added the 'Connecting to the API services' section to the API documentation, to explicitly call out the need for clients to connect via DNS CNAMEs, rather than specific fixed IP addresses.</li>
 </ol>
 
 Updated Work API with the following changes:
