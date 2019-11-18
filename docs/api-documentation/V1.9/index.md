@@ -8,7 +8,7 @@ title: API specification V1.9
 Version 1.9
 {: .govuk-body-l}
 
-This document details upcoming changes to the API being released for Public Beta for advance view, see the Versions section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments after the 14th of November.
+This document details upcoming changes to the API being released for Public Beta for advance view, see the 'Versions and Changes' section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments after the 14th of November.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -20,6 +20,7 @@ This document details upcoming changes to the API being released for Public Beta
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#swagger-documentation">Swagger Documentation</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
+  <li><a class="govuk-link" href="#connecting">Connecting to Street Manager</a></li>
   <li><a class="govuk-link" href="#timing">Timing</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
@@ -28,7 +29,7 @@ This document details upcoming changes to the API being released for Public Beta
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
   <li><a class="govuk-link" href="#roadmap">Roadmap</a></li>
-  <li><a class="govuk-link" href="#versions">Versions</a></li>
+  <li><a class="govuk-link" href="#versions">Versions and Changes</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -134,6 +135,20 @@ The Street Manager service provides two separate isolated application service en
   <li>In some cases, local area ecosystem alignment may not be possible within reasonable timeframes due to external factors.  In these cases, dual-keying may be necessary between the organisation, their existing EToN system, and the Street Manager Service.</li>
 </ol>
 
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+## Connecting to Street Manager
+{: .govuk-heading-l #connecting}
+
+In order to connect to the Street Manager environments, your API client must be configured to connect to an environment-specific API URL via [HTTPS](#https).  
+{: .govuk-body}
+
+It is important to note that the hostname within the URL contains a DNS CNAME. Due to the nature of Street Manager's highly-available cloud-native design, <b>the underlying IP addresses resolved from this CNAME are subject to change frequently and without notice.</b>
+{: .govuk-body} 
+
+Therefore, if your IT department restrict outbound internet access from your API client to the Street Manager service via a perimeter firewall or some other means, it is important that access to Street Manager is whitelisted on the basis of the DNS CNAME and not the transient underlying IP addresses.
+{: .govuk-body} 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -484,13 +499,13 @@ java -jar target/swagger-spring-1.0.0.jar --server.port=8080
 {: .govuk-heading-l #security}
 
 ### HTTPS
-{: .govuk-heading-m}
+{: .govuk-heading-m #https}
 
 All Street Manager web and API interfaces are secured using Transport Layer Security (TLS) v1.2
-certificates issued by [Let's Encrypt](https://letsencrypt.org/), currently signed by the 'DST Root CA X3' IdenTrust cross-signed intermediate certificate as listed in the [Chain of Trust](https://letsencrypt.org/certificates/) document.
+certificates issued by Amazon Web Services.  These certificates are signed by the 'Amazon Root CA 1' certificate as listed in the 'Certification Authorities' section of the [AWS Chain of Trust](https://www.amazontrust.com/repository/) document.
 {: .govuk-body}
 
-When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in a <code>Failed to fetch</code> error.
+When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in an error.
 {: .govuk-body}
 
 ### Authentication and Authorisation
@@ -2305,20 +2320,20 @@ The Work API will be updated to include endpoints for correcting errors in submi
 The Data Export API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
 {: .govuk-body}
 
-## Versions
+## Versions and Changes
 {: .govuk-heading-l #versions}
 
-The following is a list of significant changes by version of this document.
+This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Upcoming changes for a future release:
+### Upcoming changes for a future release
 {: .govuk-heading-s #upcoming-changes}
 
 Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status updates have been released in Version 1.9, with permit status, assessment status and forward plan status following afterwards.
 {: .govuk-body}
 
 Assessment status
-{: .govuk-heading-s}
+{: .govuk-body .govuk-!-font-weight-bold}
 
 The available values for a permit's <code>assessment_status</code> field will be updated and will no longer re-use the same values of the <code>permit_status</code> field. The new <code>assessment_status</code> values are:
 {: .govuk-body}
@@ -2356,7 +2371,7 @@ Cancelling a permit will still continue to be carried out using the existing end
 </ol>
 
 Permit status and forward plan status
-{: .govuk-heading-s}
+{: .govuk-body .govuk-!-font-weight-bold}
 
 The available values for the <code>permit_status</code> field will be changing across the Works API, Reporting API and GeoJSON API. The new <code>permit_status</code> values are:
 {: .govuk-body}
@@ -2390,7 +2405,7 @@ The new <code>progressed</code> <code>permit_status</code> and <code>forward_pla
 </ol>
 
 Breaking changes summary:
-{: .govuk-body}
+{: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
@@ -2417,7 +2432,11 @@ Work API will be updated with the following changes:
 </ol>
 
 Version 1.9 (14/11/2019):
-{: .govuk-heading-s #upcoming-changes}
+{: .govuk-body .govuk-!-font-weight-bold}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added the 'Connecting to Street Manager' section to the API documentation, to explicitly call out the need for clients to connect via DNS CNAMEs, rather than specific fixed IP addresses.</li>
+</ol>
 
 Updated Work API with the following changes:
 {: .govuk-body}
