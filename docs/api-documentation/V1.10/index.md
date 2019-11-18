@@ -20,6 +20,7 @@ This document details upcoming changes to the API being released for Public Beta
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#swagger-documentation">Swagger Documentation</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
+  <li><a class="govuk-link" href="#connecting">Connecting to Street Manager</a></li>
   <li><a class="govuk-link" href="#timing">Timing</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
