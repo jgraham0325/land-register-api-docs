@@ -141,14 +141,14 @@ The Street Manager service provides two separate isolated application service en
 ## Connecting to the API services
 {: .govuk-heading-l #connecting}
 
-In order to connect to the Street Manager environments, your API client must be configured to connect to an environment-specific API URL via [HTTPS](#https).  
+In order to connect to the Street Manager environments, your API client must be configured to connect to an environment-specific API URL via [HTTPS](#https).
 {: .govuk-body}
 
 It is important to note that the hostname within the URL contains a DNS CNAME. Due to the nature of Street Manager's highly-available cloud-native design, <b>the underlying IP addresses resolved from this CNAME are subject to change frequently and without notice.</b>
-{: .govuk-body} 
+{: .govuk-body}
 
 Therefore, if your IT department restrict outbound internet access from your API client to the Street Manager service via a perimeter firewall or some other means, it is important that access to Street Manager is whitelisted on the basis of the DNS CNAME and not the transient underlying IP addresses.
-{: .govuk-body} 
+{: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -2466,6 +2466,9 @@ Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>BREAKING CHANGE: <code>swa_organisation_name</code> has been removed from the response of <code>GET /reinstatements</code> endpoint, replaced by <code>promoter_organisation</code> and <code>highway_authority</code></li>
+  <li>BREAKING CHANGE: <code>permit_status</code> has been removed as a sorting filter from sort_column parameter on<code>GET /permits</code> endpoint</li>
+  <li>BREAKING CHANGE: <code>forward_plan_status</code> has been removed as a sorting filter from from sort_column parameter on <code>GET /forward-plans</code> endpoint</li>
+  <li>BREAKING CHANGE: <code>sort_column and sort_direction </code> have been removed as paramters on <code>GET /forward-plans</code> endpoint</li>
 </ol>
 
 Version 1.8 (31/10/2019):
