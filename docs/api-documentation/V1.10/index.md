@@ -2092,6 +2092,17 @@ The second PUT endpoint (labeled 'cancel') will cancel the forward plan, and sub
 There is no versioning available when updating information, so information changed is lost.
 {: .govuk-body}
 
+#### Section 81s
+{: .govuk-heading-s}
+
+<code>POST /section-81-works/section-81s</code>
+
+S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
+{: .govuk-body} 
+
+The POST endpoint will create a section 81 and return a work reference number and a section 81 reference number.
+{: .govuk-body}
+
 ### GeoJSON API
 {: .govuk-heading-m}
 
@@ -2438,6 +2449,7 @@ Work API will be updated with the following changes:
   <li><code>length</code>, <code>width</code>, <code>depth</code> and <code>final_reinstatement</code> fields will be optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. They will still be mandatory for reinstatements where <code>reinstatement_type</code> is set to excavation. This is in preperation for non-notifiable works.</li>
   <li><code>secondary_reinstatement_coordinates</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>, it must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon.</li>
   <li><code>number_of_holes</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code> this will be required if the reinstatement_type is one of bar holes, core holes or pole testing which will be supported when non-notifiable reinstatements are introduced to the system</li>
+  <li>Add <code>POST /section-81-works/section-81s</code> to create a new Section 81 work.</li>
 </ol>
 
 Version 1.9 (14/11/2019):
