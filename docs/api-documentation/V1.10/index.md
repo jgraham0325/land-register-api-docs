@@ -2098,7 +2098,7 @@ There is no versioning available when updating information, so information chang
 <code>POST /section-81-works/section-81s</code>
 
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
-{: .govuk-body} 
+{: .govuk-body}
 
 The POST endpoint will create a section 81 and return a work reference number and a section 81 reference number.
 {: .govuk-body}
@@ -2445,6 +2445,11 @@ Work API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>BREAKING CHANGE: <code>reinstatement_type</code> will be added as a new required field for <code>POST /works/${workReferenceNumber}/sites</code>. This is to prepare for the introduction of non-notifiable reinstatement work records. The value provided to this field should be <code>excavation</code> for current street manager reinstatements until the non-notifiable works feature is released. Reinstatement type is only provided when creating a site, any reinstatements added to an existing site will share the same <code>reinstatement_type</code></li>
+  <li>BREAKING CHANGE: <code>final_reinstatement</code> property has been removed from <code>PUT /works/{workReferenceNumber}/inspection-units</code>. This can now be updated using the new <code>PUT /works/{workReferenceNumber}/final-reinstatement</code> endpoint. Inspection units can now be updated so long as there is an existing site/reinstatement for a work, and will be audited individually using the existing inspection_units_logged audit event</li>
+  <li>BREAKING CHANGE: <code>PUT /works/{workReferenceNumber}/excavation</code> removed. Promoters should now raise a permit alteration to update whether an excavation was carried out.</li>
+  <li>BREAKING CHANGE: <code>site_id</code> and <code>permit_id</code> response fields have removed. These have been replaced with <code>site_number</code> and <code>permit_reference_number</code> respectively. The biggest impact of this change to when fetching the details of a site, the existing <code>GET /works/{workReferenceNumber}/sites/{siteId}</code> endpoint has been replaced with <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code></li>
+  <li><code>inspection_units</code> added to response of <code>GET /works/${workReferenceNumber}</code></li>
+  <li>A new endpoint <code>PUT /works/{workReferenceNumber}/final-reinstatement</code> has been created to update the <code>final_reinstatement</code> property. This is only applicable for works with excavation reinstatements, and a new audit event has been added for this, <code>final_site_registered</code></li>
   <li><code>inspection_units</code> will be optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. Default to 1.</li>
   <li><code>length</code>, <code>width</code>, <code>depth</code> and <code>final_reinstatement</code> fields will be optional for <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>. They will still be mandatory for reinstatements where <code>reinstatement_type</code> is set to excavation. This is in preperation for non-notifiable works.</li>
   <li><code>secondary_reinstatement_coordinates</code> optional field will be introduced to <code>POST /works/${workReferenceNumber}/sites</code> and <code>POST /works/${workReferenceNumber}/sites/${siteId}/reinstatements</code>, it must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon.</li>
