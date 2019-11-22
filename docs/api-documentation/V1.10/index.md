@@ -8,7 +8,7 @@ title: API specification V1.10
 Version 1.10
 {: .govuk-body-l}
 
-This document details upcoming changes to the API being released for Public Beta for advance view, see the 'Versions and Changes' section for details. The full implementation and reference for these changes will be available in the SANDBOX and PRODUCTION environments after the 21st of November.
+This document details upcoming changes to the API being released during Public Beta for advance view, see the 'Versions and Changes' section for details.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -281,7 +281,7 @@ The reporting API exposes a `/works/updates` endpoint for polling. See the resou
 **Notifications**
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for later in **Phase 4**.*
+*Note: Notifications are currently in roadmap for future release (post April 2020).*
 {: .govuk-body}
 
 Street Manager will offer a Notification service which will send Push
@@ -896,7 +896,7 @@ sending an excessive number of calls.
 {: .govuk-body}
 
 Note that rate limiting thresholds will be under regular review and
-refinement during the Public Beta phase. The final Production values
+refinement during the Public Beta. The final Production values
 will be confirmed prior to entering Public Beta.
 {: .govuk-body}
 
@@ -1465,8 +1465,7 @@ The next response would contain rows 26-50.
 #### Organisation specific data
 {: .govuk-heading-s}
 
-The various resources queryable through the reporting API are only for the currently authenticated user's organisation.
-It is currently not possible to access other organisation's reporting data however the ability to provide an organisation SWA code as part of these requests is in the roadmap for Phase 2.
+The various resources queryable through the reporting API are only for the currently authenticated user's organisation or associated organisation as a contractor.
 {: .govuk-body}
 
 #### CSV
@@ -1641,7 +1640,7 @@ There is also a concept of a work record's active permit, that is simply the mos
 ### Delegated Users
 {: .govuk-heading-s #delegated-users}
 
-All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment). These properties are currently placeholders but in Phase 2 they will be stored and link the action to a specific user rather than an organisation.
+All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment).
 {: .govuk-body}
 
 #### Create work endpoint
@@ -1972,13 +1971,13 @@ Permit alterations allows promoters and HA users the ability to alter a permit o
     <strong>Promoter change request:</strong> Promoter submitted alteration after permit is granted or in-progress
   </li>
   <li>
-    <strong>Work extension</strong> Promoter submitted proposed end date alteration to in-progress work
+    <strong>Work extension:</strong> Promoter submitted proposed end date alteration to in-progress work
   </li>
   <li>
-    <strong>HA imposed change</strong> HA users impose changes to permit conditions after permit is granted or in-progress
+    <strong>HA imposed change:</strong> HA users impose changes to permit conditions after permit is granted or in-progress
   </li>
   <li>
-    <strong>HA change request:</strong> Currently in the roadmap for phase 2
+    <strong>HA change request:</strong> Currently in the roadmap for future release (post April 2020)
   </li>
   <li>
     <strong>Duration challenge:</strong> A work extension which has been challenged by the HA with a reasonable_period_end_date
@@ -2298,7 +2297,7 @@ The Work API will be updated to allow submitting Inspections for works which hav
 See **Technical Overview - Getting data from Street Manager - Notifications** for details.
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for later in **Phase 4***
+*Note: Notifications are currently in roadmap for future release (post April 2020).*
 {: .govuk-body}
 
 ### User and organisation self registration
@@ -2492,7 +2491,7 @@ Version 1.8 (31/10/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated wording to reflect entering Public Beta phase; re-worked environments and release management sections.</li>
+  <li>Updated wording to reflect entering Public Beta; re-worked environments and release management sections.</li>
 </ol>
 
 Updated Work API with the following changes:
