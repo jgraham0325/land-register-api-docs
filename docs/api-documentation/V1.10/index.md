@@ -73,6 +73,7 @@ The Swagger JSON files for each API are available below:
   <li><a href="json/lookup-swagger.json">Street Lookup API JSON</a></li>
   <li><a href="json/geojson-swagger.json">GeoJSON API JSON</a></li>
   <li><a href="json/party-swagger.json">Party API JSON</a></li>
+  <li><a href="json/export-swagger.json">Data Export API JSON</a></li>
 </ol>
 
 You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
@@ -84,6 +85,7 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/lookup/docs/">Street Lookup API</a></li>
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/geojson/docs/">GeoJSON API</a></li>
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -230,10 +232,7 @@ authenticated users for use with mapping queries. See the resource guide for det
 #### Data Export API
 {: .govuk-heading-s}
 
-*This API is not yet available.*
-{: .govuk-body}
-
-Street Manager will support an API for Open Data users, see the Roadmap section for details.
+Street Manager supports an API for Open Data users. The Data Export API allows non street works authority users, such as Mobile Application developers, to retrieve information about works. See Open Data and the resource guide for details.
 {: .govuk-body}
 
 #### Reporting API
@@ -304,6 +303,55 @@ Contractors can use the Reporting API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
 information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
 {: .govuk-body}
+
+**Open Data**
+{: .govuk-body}
+
+Street Manager maintains an hourly scheduled job, which retrieves data of permits that have been added or changed in the past hour, and stores it as CSV. This data is only available to data export users.
+{: .govuk-body}
+
+The CSV will contain:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Work reference number</li>
+  <li>Permit reference number</li>
+  <li>Promoter SWA code</li>
+  <li>Promoter organisation</li>
+  <li>Highway authority</li>
+  <li>Works location coordinates</li>
+  <li>Works location description</li>
+  <li>Street name</li>
+  <li>Area name</li>
+  <li>Work category</li>
+  <li>Description of work</li>
+  <li>Traffic management type</li>
+  <li>Assessment status</li>
+  <li>Proposed start date</li>
+  <li>Proposed end date</li>
+  <li>Proposed start time</li>
+  <li>Proposed end time</li>
+  <li>Actual start date</li>
+  <li>Actual end date</li>
+  <li>Permit status</li>
+  <li>Work status</li>
+  <li>Deadline date</li>
+  <li>Date created</li>
+  <li>Status changed date</li>
+  <li>USRN</li>
+  <li>Is active permit</li>
+  <li>Permit conditions</li>
+  <li>Road category</li>
+  <li>Is traffic sensitive</li>
+  <li>Has no final reinstatement</li>
+  <li>Is deemed</li>
+  <li>Excavation carried out</li>
+  <li>Is early start</li>
+  <li>Is high impact traffic management</li>
+  <li>Is lane rental</li>
+  <li>Lane rental assessment outcome</li>
+  <li>Lane rental charges not agreed</li>
+  <li>Lane rental charges potentially apply</li>
+</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -787,6 +835,27 @@ The table below shows the current permissions per endpoint.
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /users/{email}</code></td>
       <td class="govuk-table__cell">Planner, Contractor &amp; Admin</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Data Export API
+{: .govuk-heading-s}
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Authorisation per endpoint for Data Export API</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Endpoint</th>
+      <th class="govuk-table__header">Roles</th>
+      <th class="govuk-table__header">Organisation Member*</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /work-data</code></td>
+      <td class="govuk-table__cell">DataExport</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
   </tbody>
@@ -2243,6 +2312,17 @@ Accepts the user's email address, verification code and the new password. The ve
 Accepts the user's email address, new password and token (returned from the Work API <code>/authenticate/initial</code> endpoint). This will overwrite the temporary password received by email (from the <code>/invite-user</code> endpoint) and activate the user's account. The response will include the same authentication tokens returned from the Work API <code>/authenticate</code> endpoint.
 {: .govuk-body}
 
+### Data Export API
+{: .govuk-heading-m}
+
+#### Get latest Work Data CSV
+{: .govuk-heading-s}
+
+<code>GET /work-data</code>
+
+Retrieves data of permits which have been added or changed within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Roadmap
@@ -2327,7 +2407,7 @@ The Work API will be updated to include endpoints for correcting errors in submi
 ### Data Export API
 {: .govuk-heading-s}
 
-The Data Export API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
+The Data Export API will be updated to export other data, including forward plans and activities.
 {: .govuk-body}
 
 ## Versions and Changes
@@ -2385,6 +2465,10 @@ Breaking changes summary:
 
 Version 1.10 (28/11/2019):
 {: .govuk-heading-s #upcoming-changes}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Add new Data Export API with endpoint <code>GET /work-data</code>. (See the resource guide for details)</li>
+</ol>
 
 Assessment status
 {: .govuk-heading-s}
