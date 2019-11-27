@@ -85,6 +85,7 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/lookup/docs/">Street Lookup API</a></li>
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/geojson/docs/">GeoJSON API</a></li>
   <li><a href="https://api.sandbox.stwrks-dev.net/v1/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -2319,7 +2320,7 @@ Accepts the user's email address, new password and token (returned from the Work
 
 <code>GET /work-data</code>
 
-Retrieves data of permits which have been added or changed within the last hour in CSV format. See the Data Export API and Open Data in the Technical Overview for details.
+Retrieves data of permits which have been added or changed within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -2466,7 +2467,7 @@ Version 1.10 (28/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Now that the Data Export API is available, details on who can access this data, and what this data contains, has been added. Add <code>GET /work-data</code> endpoint. (See the resource guide for details)</li>
+  <li>Add new Data Export API with endpoint <code>GET /work-data</code>. (See the resource guide for details)</li>
 </ol>
 
 Assessment status
