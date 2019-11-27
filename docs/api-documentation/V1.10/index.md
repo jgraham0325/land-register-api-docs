@@ -1331,12 +1331,6 @@ In order to create a reinstatement the following steps should be followed:
     </p>
   </li>
   <li>
-    <strong>Set excavation carried out (Planner)</strong>: <code>PUT /works/{work reference number}/excavation</code>
-    <p>
-      This can be skipped if you set excavation_required to true during the creation of the permit
-    </p>
-  </li>
-  <li>
     <strong>Create a site (Planner)</strong>: <code>POST /works/{workReferenceNumber}/sites</code>
     <p>
       Once a permit is in the "In Progress" or "Closed" state a site can
@@ -1795,7 +1789,7 @@ Once a permit has been submitted and granted by an HA, the promoter which raised
   <li>Start a work</li>
   <li>Stop a work</li>
   <li>Provide inspection units</li>
-  <li>Indicate whether or not an excavation was carried out</li>
+  <li>Update Final site registered</li>
 </ol>
 
 These actions control various stages of the works record life cycle as shown in the sequencing section.
@@ -1839,26 +1833,20 @@ By setting an actual stop date via this endpoint, the active permit's status wil
 If a permit has been stopped accidentally, it can be reverted using this endpoint. This will remove the actual end date and change the active permit's status back to in-progress.
 {: .govuk-body}
 
-#### Excavation carried out endpoint
-{: .govuk-heading-s}
-
-<code>PUT /works/{work reference number}/excavation</code>
-
-When a permit is submitted initially the excavation property indicates whether or not an excavation will need to be carried out as part of the work. Similar to proposed start and stop, this endpoint indicates whether or not an excavation was *actually* carried out.
-{: .govuk-body}
-
-Marking an excavation was carried out on an in-progress work record allows promoters to add reinstatements to that works record. Once a reinstatement exists you can no longer use this endpoint to change whether or not an excavation was carried out.
-{: .govuk-body}
-
 #### Inspection units endpoint
 {: .govuk-heading-s}
 
 <code>PUT /works/{work reference number}/inspection-units</code>
 
-Once a permit is in progress and an excavation has been carried out, a promoter can log the inspection units associated with the currently active permit.
+You can only provide inspection units if a reinstatement currently exists on the works record. Adding a reinstatement is covered in a separate section.
 {: .govuk-body}
 
-You can only provide inspection-units if a reinstatement currently exists on the works record, which will cover in a separate section.
+#### Final reinstatement endpoint
+{: .govuk-heading-s}
+
+<code>PUT /works/{work reference number}/final-reinstatement</code>
+
+Once a permit is in progress, and an excavation site has been added to the work, a promoter can flag that the final site has been registered for that work. Adding a reinstatement is covered in a separate section.
 {: .govuk-body}
 
 #### Reinstatements (Promoter)
