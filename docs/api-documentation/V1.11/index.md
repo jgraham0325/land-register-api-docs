@@ -2467,7 +2467,7 @@ Work API will be updated with the following changes:
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>
+  <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>.</li>
 </ol>
 
 Version 1.10 (28/11/2019):
