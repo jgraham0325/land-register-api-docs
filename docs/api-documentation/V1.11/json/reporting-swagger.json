@@ -919,7 +919,7 @@
 		},
 		"ReinstatementSummaryResponse": {
 			"properties": {
-				"site_id": {
+				"site_number": {
 					"type": "number",
 					"format": "double"
 				},
@@ -950,7 +950,7 @@
 				}
 			},
 			"required": [
-				"site_id",
+				"site_number",
 				"work_reference_number",
 				"promoter_organisation",
 				"highway_authority",

@@ -2451,6 +2451,25 @@ Breaking changes summary:
   <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
 </ol>
 
+Version 1.11 (12/12/2019):
+{: .govuk-heading-s #upcoming-changes}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
+</ol>
+
+Work API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE: <code>site_id</code> and <code>permit_id</code> response fields have removed. These have been replaced with <code>site_number</code> and <code>permit_reference_number</code> respectively. The biggest impact of this change to when fetching the details of a site, the existing <code>GET /works/{workReferenceNumber}/sites/{siteId}</code> endpoint has been replaced with <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code></li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>.</li>
+</ol>
+
 Version 1.10 (28/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 

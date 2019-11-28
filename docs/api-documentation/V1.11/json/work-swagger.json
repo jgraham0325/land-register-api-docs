@@ -401,10 +401,6 @@
 				"work_category": {
 					"$ref": "#/definitions/WorkCategory"
 				},
-				"permit_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"work_id": {
 					"type": "number",
 					"format": "double"
@@ -692,7 +688,6 @@
 				"proposed_end_date",
 				"permit_status",
 				"work_category",
-				"permit_id",
 				"work_id",
 				"work_reference_number",
 				"promoter_organisation",
@@ -1334,16 +1329,15 @@
 		},
 		"SiteSummaryResponse": {
 			"properties": {
-				"site_id": {
+				"site_number": {
 					"type": "number",
 					"format": "double"
 				},
 				"site_description": {
 					"type": "string"
 				},
-				"permit_id": {
-					"type": "number",
-					"format": "double",
+				"permit_reference_number": {
+					"type": "string",
 					"x-nullable": true
 				},
 				"depth": {
@@ -1382,7 +1376,7 @@
 				}
 			},
 			"required": [
-				"site_id",
+				"site_number",
 				"site_description",
 				"completed_date",
 				"end_date",
@@ -2022,13 +2016,13 @@
 		},
 		"SiteCreateResponse": {
 			"properties": {
-				"site_id": {
+				"site_number": {
 					"type": "number",
 					"format": "double"
 				}
 			},
 			"required": [
-				"site_id"
+				"site_number"
 			],
 			"type": "object"
 		},
@@ -2142,9 +2136,8 @@
 					"type": "number",
 					"format": "double"
 				},
-				"permit_id": {
-					"type": "number",
-					"format": "double",
+				"permit_reference_number": {
+					"type": "string",
 					"x-nullable": true
 				},
 				"reinstatement_status": {
@@ -2229,16 +2222,15 @@
 		},
 		"SiteResponse": {
 			"properties": {
-				"site_id": {
+				"site_number": {
 					"type": "number",
 					"format": "double"
 				},
 				"site_description": {
 					"type": "string"
 				},
-				"permit_id": {
-					"type": "number",
-					"format": "double",
+				"permit_reference_number": {
+					"type": "string",
 					"x-nullable": true
 				},
 				"depth": {
@@ -2292,7 +2284,7 @@
 				}
 			},
 			"required": [
-				"site_id",
+				"site_number",
 				"site_description",
 				"completed_date",
 				"end_date",
@@ -2458,7 +2450,7 @@
 		},
 		"SiteDetails": {
 			"properties": {
-				"site_id": {
+				"site_number": {
 					"type": "number",
 					"format": "double"
 				},
@@ -2467,7 +2459,7 @@
 				}
 			},
 			"required": [
-				"site_id",
+				"site_number",
 				"site_description"
 			],
 			"type": "object"
@@ -2636,7 +2628,7 @@
 				"failure_reason": {
 					"$ref": "#/definitions/FailureReason"
 				},
-				"site_ids": {
+				"site_numbers": {
 					"type": "array",
 					"items": {
 						"type": "number",
@@ -4941,7 +4933,7 @@
 				]
 			}
 		},
-		"/works/{workReferenceNumber}/sites/{siteId}": {
+		"/works/{workReferenceNumber}/sites/{siteNumber}": {
 			"get": {
 				"operationId": "GetSite",
 				"produces": [
@@ -4974,7 +4966,7 @@
 					},
 					{
 						"in": "path",
-						"name": "siteId",
+						"name": "siteNumber",
 						"required": true,
 						"format": "double",
 						"type": "number"
@@ -4982,7 +4974,7 @@
 				]
 			}
 		},
-		"/works/{workReferenceNumber}/sites/{siteId}/reinstatements": {
+		"/works/{workReferenceNumber}/sites/{siteNumber}/reinstatements": {
 			"post": {
 				"operationId": "CreateReinstatement",
 				"produces": [
@@ -5014,7 +5006,7 @@
 					},
 					{
 						"in": "path",
-						"name": "siteId",
+						"name": "siteNumber",
 						"required": true,
 						"format": "double",
 						"type": "number"
