@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.10
+title: API specification V1.11
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.10
+Version 1.11
 {: .govuk-body-l}
 
 This document details upcoming changes to the API being released during Public Beta for advance view, see the 'Versions and Changes' section for details.
