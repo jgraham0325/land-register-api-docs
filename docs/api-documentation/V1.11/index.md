@@ -2153,10 +2153,15 @@ There is no versioning available when updating information, so information chang
 
 <code>POST /section-81-works/section-81s</code>
 
+<code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
+
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
 {: .govuk-body}
 
 The POST endpoint will create a section 81 and return a work reference number and a section 81 reference number.
+{: .govuk-body}
+
+The GET endpoint will require the work reference number and section 81 reference number of the intended section 81 to return information.
 {: .govuk-body}
 
 ### GeoJSON API
@@ -2456,6 +2461,7 @@ Version 1.11 (12/12/2019):
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
+  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Work API will be updated with the following changes:
