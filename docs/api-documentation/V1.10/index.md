@@ -2451,6 +2451,31 @@ Breaking changes summary:
   <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
 </ol>
 
+Version 1.11 (12/12/2019):
+{: .govuk-heading-s #upcoming-changes}
+
+Work API will be updated with the following changes: {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>Existing `POST /works/${workReferenceNumber}/permits` endpoint updated to allow a permit to be created on a historical and non-notifiable work, optional `workstream_prefix` field added to request to allow workstream to be set on submission of first permit on a historical and non-notifiable work</li>
+	<li>BREAKING CHANGE: failure_reason_details.sites.site_number now optional on GET /works/${workReferenceNumber}/inspections/${inspectionReferenceNumber} response to support historic works</li>
+	<li>Optional failure_reason_details.sites.site_name added to GET /works/${workReferenceNumber}/inspections/${inspectionReferenceNumber} response</li>
+	<li>New POST `/historic-works/inspections` endpoint to create an inspection on a historic work</li>
+	<li>New POST `/non-notifiable-works/sites` endpoint to create a reinstatement on a non-notifiable work</li>
+	<li>`POST /works`, `POST /permits` and `POST /permit-alterations` request updated to make `special_desig_location_text` field optional</li>
+</ol>
+
+Lookup API will be updated with the following changes: {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>Breaking change: `street_line` and `street_centre_point` on `GET /nsg/streets/{usrn}` response will be returned as GeoJSON object rather than string</li>
+	<li>BREAKING CHANGE: `GET /nsg​/streets​/{usrn}` response updated to make `special_desig_location_text` field optional</li>
+</ol>
+
+Party API will be updated with the following changes: {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New `GET /organisations` endpoint to allow retrieval of organisations</li>
+	<li>BREAKING CHANGE: `POST /invite-user` endpoint request updated to require `first_name` and `last_name` fields</li>
+</ol>
+
 Version 1.10 (28/11/2019):
 {: .govuk-heading-s #upcoming-changes}
 
