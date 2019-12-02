@@ -1015,28 +1015,36 @@ Whilst the above focuses much on data manipulation via the Work API, here is an 
 {: .govuk-heading-m}
 
 As a permit progresses through the sequence above the permit status
-changes. Knowing the various statuses of a permit allows you to filter
+changes. Knowing the various statuses of a work and a permit allows you to filter
 lists of permits related to your organization through the reporting API.
+{: .govuk-body}
+
+The statuses of a work are:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>planned</strong>: The work has not yet started i.e. works start has not been logged</li>
+  <li><strong>in_progress</strong>: The work has been started but not yet completed i.e. works start has been logged but works stop has not</li>
+  <li><strong>completed</strong>: The work has been finished i.e. works stop has been logged</li>
+  <li><strong>cancelled</strong>: The active permit on the work has been cancelled</li>
+  <li><strong>unattributable</strong>: An unattributable work record</li>
+  <li><strong>historical</strong>: The work record was created from a historical inspection or FPN</li>
+  <li><strong>non_notifiable</strong>: The work record was created from a non notifiable reinstatement</li>
+  <li><strong>section_81</strong>: The work record was created from a section 81</li>
+</ol>
+
 The statuses of a permit are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>submitted</strong>: The permit is awaiting assessment</li>
-  <li><strong>granted_proposed</strong>: The permit has been assessed as granted by an HA</li>
-  <li><strong>permit_modification_request (available in public beta)</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted_proposed/refused by an HA.</li>
+  <li><strong>granted</strong>: The permit has deemed or has been assessed as granted by an HA</li>
+  <li><strong>permit_modification_request (available in public beta)</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted/refused by an HA.</li>
   <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
-  <li><strong>granted_in_progress</strong>: The permit has been started by the promoter after being granted</li>
   <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
   <li><strong>cancelled</strong>: The permit has been cancelled by the promoter</li>
-  <li><strong>deemed_proposed</strong>: The permit has been automatically deemed as it was not assessed before the deadline date</li>
-  <li><strong>deemed_in_progress</strong>: The permit has been started by the promoter after being deemed</li>
-    <li><strong>revoked_proposed</strong>: The permit has been revoked when it was granted</li>
-  <li><strong>revoked_in_progress</strong>: The permit has been revoked when it was in progress</li>
-  <li><strong>revoked_closed</strong>: The permit has been revoked when it was in progress and the promoter has logged their actual stop date</li>
-  <li><strong>awaiting_assessment_in_progress</strong>: The permit has been created and placed straight to in progress awaiting assessment by an HA</li>
-  <li><strong>granted_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been granted</li>
-  <li><strong>refused_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been refused</li>
-  <li><strong>cancelled_auto</strong>: The PAA has been proceeded to a permit before it was assessed. The permit has been cancelled</li>
+  <li><strong>revoked</strong>: The permit has been revoked after it was granted</li>
+  <li><strong>progressed</strong>: The PAA has been progressed to a major permit</li>
 </ol>
 
 Note: PAA/Major submission will be included as part of this sequence.
@@ -1141,7 +1149,7 @@ In order to carry out much of the actions against a work record the associated p
 #### Permit modification requests (Available in public beta)
 {: .govuk-heading-s}
 
-HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted_proposed` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for.
+HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2404,14 +2412,12 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Upcoming changes for a future release:
+Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
 
-Over the next few Street Manager API releases, there will be some updates to how statuses are handled. Work status, permit status and assessment status will now be independent of one another and the available values for each will be updated. Forward plan status will also see some changes to its available values. Work status and assessment status updates have been released in Versions 1.9 and 1.10 respectively, with permit status and forward plan status following afterwards.
-{: .govuk-body}
-
-Permit status and forward plan status
-{: .govuk-body .govuk-!-font-weight-bold}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
+</ol>
 
 The available values for the <code>permit_status</code> field will be changing across the Works API, Reporting API and GeoJSON API. The new <code>permit_status</code> values are:
 {: .govuk-body}
@@ -2434,28 +2440,6 @@ The <code>forward_plan_status</code> available values will also be updated to re
   <li><code>raised</code></li>
   <li><code>progressed</code></li>
   <li><code>cancelled</code></li>
-</ol>
-
-The new <code>progressed</code> <code>permit_status</code> and <code>forward_plan_status</code> will be applied under 2 scenarios:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>A forward plan's <code>forward_plan_status</code> value is set to <code>progressed</code> when the forward plan is progressed to a PAA.</li>
-  <li>A PAA's <code>permit_status</code> value is set to <code>progressed</code> when the PAA is progressed to a major permit.</li>
-</ol>
-
-Breaking changes summary:
-{: .govuk-body .govuk-!-font-weight-bold}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>The available values for <code>permit_status</code>, <code>assessment_status</code> and <code>forward_plan_status</code> will be updated.</li>
-</ol>
-
-Version 1.11 (12/12/2019):
-{: .govuk-heading-s #upcoming-changes}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
 </ol>
 
 Work API will be updated with the following changes:
