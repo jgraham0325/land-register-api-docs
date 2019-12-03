@@ -1012,7 +1012,7 @@ Whilst the above focuses much on data manipulation via the Work API, here is an 
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Permits awaiting assessment</strong>: <code>GET /permits?status=submitted</code></li>
-  <li><strong>Expiring interim reinstatements</strong>: <code>GET /reinstatements?status=interim</code></li>
+  <li><strong>Expiring interim reinstatements</strong>: <code>GET /reinstatements?status=interim&latest_reinstatements_only=true</code></li>
   <li><strong>Disputed FPNs</strong>: <code>GET /fixed-penalty-notices?status=disputed</code></li>
 </ol>
 
