@@ -2457,8 +2457,7 @@ Version 1.11 (12/12/2019):
 Work API will be updated with the following changes: {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>Existing `POST /works/${workReferenceNumber}/permits` endpoint updated to allow a permit to be created on a historical and non-notifiable work, optional `workstream_prefix` field added to request to allow workstream to be set on submission of first permit on a historical and non-notifiable work</li>
-	<li>BREAKING CHANGE: failure_reason_details.sites.site_number now optional on GET /works/${workReferenceNumber}/inspections/${inspectionReferenceNumber} response to support historic works</li>
-	<li>Optional failure_reason_details.sites.site_name added to GET /works/${workReferenceNumber}/inspections/${inspectionReferenceNumber} response</li>
+	<li>Optional failure_reason_details.site_name added to GET /works/${workReferenceNumber}/inspections/${inspectionReferenceNumber} response</li>
 	<li>New POST `/historic-works/inspections` endpoint to create an inspection on a historic work</li>
 	<li>New POST `/non-notifiable-works/sites` endpoint to create a reinstatement on a non-notifiable work</li>
 	<li>`POST /works`, `POST /permits` and `POST /permit-alterations` request updated to make `special_desig_location_text` field optional</li>
