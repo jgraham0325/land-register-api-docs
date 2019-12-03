@@ -2187,10 +2187,15 @@ There is no versioning available when updating information, so information chang
 
 <code>POST /section-81-works/section-81s</code>
 
+<code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
+
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
 {: .govuk-body}
 
 The POST endpoint will create a section 81 and return a work reference number and a section 81 reference number.
+{: .govuk-body}
+
+The GET endpoint will require the work reference number and section 81 reference number of the intended section 81 to return information.
 {: .govuk-body}
 
 ### GeoJSON API
@@ -2449,8 +2454,11 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
 
+All APIs will be updated with the following changes:
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
-  <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
+  <li>BREAKING CHANGE: <code>site_id</code> and <code>permit_id</code> response fields have removed. These have been replaced with <code>site_number</code> and <code>permit_reference_number</code> respectively.</li>
 </ol>
 
 The available values for the <code>permit_status</code> field will be changing across the Works API, Reporting API and GeoJSON API. The new <code>permit_status</code> values are:
@@ -2498,13 +2506,13 @@ Party API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
+  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Reporting API updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in version 1.12</li>
-  <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>.</li>
 </ol>
 
 Data Export API updated with the following changes:
