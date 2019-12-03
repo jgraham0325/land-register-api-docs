@@ -2462,9 +2462,25 @@ Work API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>BREAKING CHANGE: <code>site_id</code> and <code>permit_id</code> response fields have removed. These have been replaced with <code>site_number</code> and <code>permit_reference_number</code> respectively. The biggest impact of this change to when fetching the details of a site, the existing <code>GET /works/{workReferenceNumber}/sites/{siteId}</code> endpoint has been replaced with <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code></li>
+  <li>Existing <code>POST /works/{workReferenceNumber}/permits</code> endpoint updated to allow a permit to be created on a historical and non-notifiable work, optional <code>workstream_prefix</code> field added to request to allow workstream to be set on submission of first permit on a historical and non-notifiable work</li>
+	<li>Optional failure_reason_details.site_name added to <code>GET /works/{workReferenceNumber}/inspections/{inspectionReferenceNumber} response</code></li>
+	<li>New <code>POST /historic-works/inspections</code> endpoint to create an inspection on a historic work</li>
+	<li>New <code>POST /non-notifiable-works/sites</code> endpoint to create a reinstatement on a non-notifiable work</li>
+	<li>Existing <code>POST /works</code>, <code>POST /permits</code> and <code>POST /permit-alterations</code> requests updated to make <code>special_desig_location_text</code> field optional</li>
 </ol>
 
-Updated Reporting API with the following changes:
+Lookup API will be updated with the following changes: {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
+	<li>BREAKING CHANGE: <code>GET /nsg​/streets​/{usrn}</code> response updated to make <code>special_desig_location_text</code> field optional</li>
+</ol>
+
+Party API will be updated with the following changes: {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
+</ol>
+
+Reporting API updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>.</li>
