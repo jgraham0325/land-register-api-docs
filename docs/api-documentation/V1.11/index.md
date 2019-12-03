@@ -2502,6 +2502,7 @@ Lookup API will be updated with the following changes:
 Party API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
   <li>Replace <code>site_id</code> and <code>permit_id</code> with <code>site_number</code> and <code>permit_reference_number</code>.</li>
   <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
