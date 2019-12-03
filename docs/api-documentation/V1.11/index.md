@@ -2478,7 +2478,6 @@ Lookup API will be updated with the following changes: {: .govuk-body}
 Party API will be updated with the following changes: {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
-	<li>BREAKING CHANGE: <code>POST /invite-user</code> endpoint request updated to require <code>first_name</code> and <code>last_name</code> fields</li>
 </ol>
 
 Reporting API updated with the following changes:
