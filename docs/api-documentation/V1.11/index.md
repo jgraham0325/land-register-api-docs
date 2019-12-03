@@ -670,7 +670,7 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/sites/{siteId}/reinstatements</code></td>
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/sites/{siteNumber}/reinstatements</code></td>
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
@@ -858,6 +858,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">DataExport</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /fixed-penalty-notices/csv</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
   </tbody>
 </table>
 
@@ -1007,7 +1012,7 @@ Whilst the above focuses much on data manipulation via the Work API, here is an 
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Permits awaiting assessment</strong>: <code>GET /permits?status=submitted</code></li>
-  <li><strong>Expiring interim reinstatements</strong>: <code>GET /sites?status=interim</code></li>
+  <li><strong>Expiring interim reinstatements</strong>: <code>GET /reinstatements?status=interim</code></li>
   <li><strong>Disputed FPNs</strong>: <code>GET /fixed-penalty-notices?status=disputed</code></li>
 </ol>
 
@@ -1039,7 +1044,7 @@ The statuses of a permit are:
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>submitted</strong>: The permit is awaiting assessment</li>
   <li><strong>granted</strong>: The permit has deemed or has been assessed as granted by an HA</li>
-  <li><strong>permit_modification_request (available in public beta)</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted/refused by an HA.</li>
+  <li><strong>permit_modification_request</strong>: The permit has been assessed as a permit modification request by an HA, it can still be subsequently assessed as granted/refused by an HA.</li>
   <li><strong>refused</strong>: The permit has been assessed as refused by an HA</li>
   <li><strong>closed</strong>: The permit has been stopped by the promoter</li>
   <li><strong>cancelled</strong>: The permit has been cancelled by the promoter</li>
@@ -1146,7 +1151,7 @@ In order to carry out much of the actions against a work record the associated p
 
 ![permit create and assess diagram](images/create-and-assess-permits.png)
 
-#### Permit modification requests (Available in public beta)
+#### Permit modification requests
 {: .govuk-heading-s}
 
 HA Officers will have the option to assess permit applications as a `permit_modification_request`. This means the work can not be started until the HA makes a final assessment, i.e. `granted` or `refused`. They can do this at any time, but the promoter will have the option to submit permit alterations in order to address the changes the HA has asked for.
@@ -1188,7 +1193,7 @@ HA Officers will have the option to assess permit applications as a `permit_modi
     </p>
   </li>
 </ol>
-![permit modification request diagram](images/permit_modification_request.png)
+![permit modification request diagram](images/permit-modification-request.png)
 
 
 ### Inspections
@@ -1313,7 +1318,25 @@ followed:
 ### Sites and reinstatements
 {: .govuk-heading-m}
 
-In order to create a reinstatement the following steps should be followed:
+Reinstatements can be created as part of a non-notifiable work record or a planned work record. Reinstatement and sites have the following types:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    excavation
+  </li>
+  <li>
+    bar_holes
+  </li>
+  <li>
+    core_holes
+  </li>
+  <li>
+    pole_testing
+  </li>
+</ol>
+
+The type is only specified when creating a site, any reinstatements created an against existing site will inherit the type from the site they are created against. Excavation sites can only be created for work records which have an active permit which is in-progress or complete and where excavation is set to true in the permit application. A typical flow is as follows: 
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1321,7 +1344,7 @@ In order to create a reinstatement the following steps should be followed:
     <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
     <p>
       Initially a promoter will create a work, which will, in turn, create a
-      permit application.
+      permit application. Excavation will be true when promoter wishes to raise excavation sites
     </p>
   </li>
   <li>
@@ -1345,7 +1368,7 @@ In order to create a reinstatement the following steps should be followed:
       be created.
     </p>
     <p>
-      Once a site is recorded against a work a reinstatement can be optionally added to the site using <code>POST /works/{workReferenceNumber}/sites/{siteId}/reinstatements</code>
+      Once a site is recorded against a work a reinstatement of the same type can be optionally added to the site using <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code>
     </p>
     <p>
       Once a site/reinstatement is recorded against a work it cannot be updated.
@@ -1539,7 +1562,7 @@ The next response would contain rows 26-50.
 The various resources queryable through the reporting API are only for the currently authenticated user's organisation or associated organisation as a contractor.
 {: .govuk-body}
 
-#### CSV
+#### CSV Endpoints (Deprecated V1.11. To be removed V1.12)
 {: .govuk-heading-s}
 
 Some of the resource endpoints on reporting API also include `/csv`. This will return all the results with the specified criteria in a CSV format.
@@ -1860,10 +1883,10 @@ Once a permit is in progress, and an excavation site has been added to the work,
 #### Reinstatements (Promoter)
 {: .govuk-heading-s}
 
-As shown in the sequencing section, once a work has been started by the promoter and an excavation was carried out, then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they made need to do this retrospectively.
+As shown in the sequencing section, once a work has been started by the promoter then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they may need to do this retrospectively.
 {: .govuk-body}
 
-In a similar vein to the relationship between a works and a permit, it's important to clarify the technical relationship between a site and a reinstatement. When creating a reinstatement for the first time, this will in effect create a site record. A site can have multiple reinstatement. You can create a site and a reinstatement at the same time, or you can create a reinstatement against an existing site. A site cannot exist without a reinstatement.
+In a similar vein to the relationship between a works and a permit, it's important to clarify the technical relationship between a site and a reinstatement. When creating a reinstatement for the first time, this will in effect create a site record. A site can have multiple reinstatement. You can create a site and a reinstatement at the same time, or you can create a reinstatement against an existing site. A site cannot exist without a reinstatement. All reinstatements belonging to a site will be of the same type e.g. excavation
 {: .govuk-body}
 
 A site is a representation of all the reinstatements carried out at a particular location but the most recently added reinstatement reflects the sites properties.
@@ -1880,15 +1903,15 @@ This endpoint takes all the information required to create a reinstatement, a su
 #### Get site endpoint
 {: .govuk-heading-s}
 
-<code>GET /works/{work reference number}/sites/{site id}</code>
+<code>GET /works/{work reference number}/sites/{site number}</code>
 
-Once a site has been created it can be retrieved using the GET endpoint, passing the site id which is returned as part of the create request.
+Once a site has been created it can be retrieved using the GET endpoint, passing the site number which is returned as part of the create request.
 {: .govuk-body}
 
 #### Create reinstatement endpoint
 {: .govuk-heading-s}
 
-<code>POST /works/{work reference number}/sites/{site id}/reinstatements</code>
+<code>POST /works/{work reference number}/sites/{site number}/reinstatements</code>
 
 A site can have multiple reinstatements associated with it so it is possible to add a new reinstatement to an existing site. This endpoint requires all of the same fields as the create site request.
 {: .govuk-body}
@@ -2016,7 +2039,7 @@ Audit events in the history response will include an object_reference. Where fur
   <li><strong>HA granting a permit applicaiton</strong>: Permit Reference Number</li>
   <li><strong>Permit application deeming</strong>: Permit Reference Number</li>
   <li><strong>Requesting a change</strong>: Change Request Reference Number</li>
-  <li><strong>Creating a site or reinstatement</strong>: Site ID</li>
+  <li><strong>Creating a site or reinstatement</strong>: Site Number</li>
   <li><strong>Raising a FPN</strong>: FPN Reference Number</li>
   <li><strong>Adding or removing a File to a work record</strong>: File ID</li>
   <li><strong>Updating on site details of a work</strong>: Permit Reference Number</li>
@@ -2028,12 +2051,15 @@ As well as viewing comments on a work record level, you can also call the report
 #### Permit Alterations
 {: .govuk-heading-s}
 
-Permit alterations allows promoters and HA users the ability to alter a permit once it's been created. Not all properties of a permit are changeable and thus depending on what's been changed and by who, there are currently 5 types of permit alterations:
+Permit alterations allows promoters and HA users the ability to alter a permit once it's been created. Not all properties of a permit are changeable and thus depending on what's been changed and by who, the type of permit alterations are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>
-    <strong>Promoter change request:</strong> Promoter submitted alteration after permit is granted or in-progress
+    <strong>Promoter change request:</strong> Promoter submitted alteration after permit has been granted or in-progress
+  </li>
+  <li>
+    <strong>Promoter imposed change:</strong> Promoter submitted alteration before permit has been granted or in response to a permit modification request.
   </li>
   <li>
     <strong>Work extension:</strong> Promoter submitted proposed end date alteration to in-progress work
@@ -2192,6 +2218,14 @@ This endpoint takes min and max easting and northing values to select all activi
 <code>GET /forward-plans</code>
 
 This endpoint takes min and max easting and northing values to select all raised forward plans within a bounding box. The forward plans selected can be optionally filtered using the start and end date params.
+{: .govuk-body}
+
+#### Get HS2 Act Limits endpoint
+{: .govuk-heading-s}
+
+<code>GET /hs2-act-limits</code>
+
+This endpoint takes min and max easting and northing values to select all HS2 act limits within a bounding box. 
 {: .govuk-body}
 
 ### Street Lookup API
@@ -2453,13 +2487,15 @@ Work API will be updated with the following changes:
 	<li>Existing <code>POST /works</code>, <code>POST /permits</code> and <code>POST /permit-alterations</code> requests updated to make <code>special_desig_location_text</code> field optional</li>
 </ol>
 
-Lookup API will be updated with the following changes: {: .govuk-body}
+Lookup API will be updated with the following changes:
+{: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
 	<li>BREAKING CHANGE: <code>GET /nsg​/streets​/{usrn}</code> response updated to make <code>special_desig_location_text</code> field optional</li>
 </ol>
 
-Party API will be updated with the following changes: {: .govuk-body}
+Party API will be updated with the following changes:
+{: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
 </ol>
@@ -2467,7 +2503,14 @@ Party API will be updated with the following changes: {: .govuk-body}
 Reporting API updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
+  <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in version 1.12</li>
   <li>BREAKING CHANGE: <code>site_id</code> response field has been removed from <code>ReinstatementSummaryResponse</code> and replaced with <code>site_number</code>.</li>
+</ol>
+
+Data Export API updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>POST /fixed-penalty-notices/csv</code> endpoint added to trigger generation of FPN CSV file which will be exportable in a later version</li>
 </ol>
 
 Version 1.10 (28/11/2019):
