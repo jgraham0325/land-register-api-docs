@@ -1336,7 +1336,7 @@ Reinstatements can be created as part of a non-notifiable work record or a plann
   </li>
 </ol>
 
-The type is only specified when creating a site, any reinstatements created an against existing site will inherit the type from the site they are created against. Excavation sites can only be created for work records which have an active permit which is in-progress or complete and where excavation is set to true in the permit application. A typical flow is as follows: 
+The type is only specified when creating a site, any reinstatements created an against existing site will inherit the type from the site they are created against. Excavation sites can only be created for work records which have an active permit which is in-progress or complete and where excavation is set to true in the permit application. A typical flow is as follows:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2230,7 +2230,7 @@ This endpoint takes min and max easting and northing values to select all raised
 
 <code>GET /hs2-act-limits</code>
 
-This endpoint takes min and max easting and northing values to select all HS2 act limits within a bounding box. 
+This endpoint takes min and max easting and northing values to select all HS2 act limits within a bounding box.
 {: .govuk-body}
 
 ### Street Lookup API
@@ -2498,7 +2498,9 @@ Work API will be updated with the following changes:
 Lookup API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-	<li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
+	<li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets</code> response will be returned as GeoJSON object rather than string</li>
+  <li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
+  <li>BREAKING CHANGE: <code>street_centre_point</code> on <code>GET /nsg/search</code> response will be returned as GeoJSON object rather than string</li>
 	<li>BREAKING CHANGE: <code>GET /nsg​/streets​/{usrn}</code> response updated to make <code>special_desig_location_text</code> field optional</li>
 </ol>
 
