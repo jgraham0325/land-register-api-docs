@@ -2451,6 +2451,12 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Upcoming changes for a future release:
+{: .govuk-heading-s #upcoming-changes}
+
+The GET /CSV endpoints have been deprecated on the Reporting endpoint and will be removed in a future release.  This functionality will be replaced by new functionality on the Data Export API.  This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
+{: .govuk-body}
+
 Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
 
