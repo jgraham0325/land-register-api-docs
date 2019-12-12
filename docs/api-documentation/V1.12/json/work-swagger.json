@@ -392,10 +392,6 @@
 				"work_category": {
 					"$ref": "#/definitions/WorkCategory"
 				},
-				"work_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -634,9 +630,8 @@
 				"final_reinstatement": {
 					"type": "boolean"
 				},
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
+				"workstream_prefix": {
+					"type": "string"
 				},
 				"close_footway": {
 					"$ref": "#/definitions/CloseFootway"
@@ -679,7 +674,6 @@
 				"proposed_end_date",
 				"permit_status",
 				"work_category",
-				"work_id",
 				"work_reference_number",
 				"promoter_organisation",
 				"promoter_swa_code",
@@ -716,7 +710,7 @@
 				"sliding_end_date_candidate",
 				"validity_period_end_date",
 				"final_reinstatement",
-				"workstream_id",
+				"workstream_prefix",
 				"close_footway",
 				"is_lane_rental",
 				"work_status"
@@ -1544,16 +1538,11 @@
 		},
 		"WorkResponse": {
 			"properties": {
-				"work_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
+				"workstream_prefix": {
+					"type": "string"
 				},
 				"promoter_swa_code": {
 					"type": "string"
@@ -1657,9 +1646,8 @@
 				}
 			},
 			"required": [
-				"work_id",
 				"work_reference_number",
-				"workstream_id",
+				"workstream_prefix",
 				"promoter_swa_code",
 				"promoter_organisation",
 				"highway_authority_swa_code",
@@ -2137,10 +2125,6 @@
 		},
 		"ReinstatementResponse": {
 			"properties": {
-				"reinstatement_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"permit_reference_number": {
 					"type": "string",
 					"x-nullable": true
@@ -2212,7 +2196,6 @@
 				}
 			},
 			"required": [
-				"reinstatement_id",
 				"reinstatement_status",
 				"reinstatement_date",
 				"reinstatement_coordinates",
@@ -2298,18 +2281,6 @@
 				"location_types",
 				"site_coordinates",
 				"reinstatements"
-			],
-			"type": "object"
-		},
-		"ReinstatementCreateResponse": {
-			"properties": {
-				"reinstatement_id": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"reinstatement_id"
 			],
 			"type": "object"
 		},
@@ -2787,44 +2758,6 @@
 			],
 			"type": "object"
 		},
-		"ScheduledInspectionCreateRequest": {
-			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
-				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
-				"scheduled_inspection_type": {
-					"$ref": "#/definitions/InspectionType"
-				},
-				"scheduled_inspection_category": {
-					"$ref": "#/definitions/InspectionCategory",
-					"description": "See business rule ref. 3.2 - Inspection category",
-					"x-nullable": true
-				},
-				"scheduled_inspection_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "Date must occur today or a date in the future"
-				},
-				"scheduled_inspection_date_time": {
-					"type": "string",
-					"format": "date-time",
-					"description": "The date for scheduled_inspection_date_time must match the date for scheduled_inspection_date\nTime must occur today or a date in the future",
-					"x-nullable": true
-				}
-			},
-			"required": [
-				"scheduled_inspection_type",
-				"scheduled_inspection_date"
-			],
-			"type": "object"
-		},
 		"AuthenticationResponse": {
 			"properties": {
 				"idToken": {
@@ -3030,18 +2963,6 @@
 			},
 			"required": [
 				"fpn_status"
-			],
-			"type": "object"
-		},
-		"CommentCreateResponse": {
-			"properties": {
-				"comment_id": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"comment_id"
 			],
 			"type": "object"
 		},
@@ -3925,9 +3846,8 @@
 				"highway_authority_swa_code": {
 					"type": "string"
 				},
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
+				"workstream_prefix": {
+					"type": "string"
 				},
 				"works_coordinates": {
 					"type": "object"
@@ -3992,7 +3912,7 @@
 				"promoter_contact_details",
 				"highway_authority",
 				"highway_authority_swa_code",
-				"workstream_id",
+				"workstream_prefix",
 				"works_coordinates",
 				"street_name",
 				"usrn",
@@ -4086,6 +4006,44 @@
 			},
 			"required": [
 				"cancelled_reason"
+			],
+			"type": "object"
+		},
+		"ScheduledInspectionCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"scheduled_inspection_type": {
+					"$ref": "#/definitions/InspectionType"
+				},
+				"scheduled_inspection_category": {
+					"$ref": "#/definitions/InspectionCategory",
+					"description": "See business rule ref. 3.2 - Inspection category",
+					"x-nullable": true
+				},
+				"scheduled_inspection_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Date must occur today or a date in the future"
+				},
+				"scheduled_inspection_date_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "The date for scheduled_inspection_date_time must match the date for scheduled_inspection_date\nTime must occur today or a date in the future",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"scheduled_inspection_type",
+				"scheduled_inspection_date"
 			],
 			"type": "object"
 		},
@@ -4296,9 +4254,8 @@
 				"promoter_swa_code": {
 					"type": "string"
 				},
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
+				"workstream_prefix": {
+					"type": "string"
 				},
 				"location_types": {
 					"type": "array",
@@ -4347,7 +4304,7 @@
 				"highway_authority_swa_code",
 				"promoter_organisation",
 				"promoter_swa_code",
-				"workstream_id",
+				"workstream_prefix",
 				"location_types",
 				"inspection_date",
 				"section_81_type",
@@ -5607,10 +5564,7 @@
 				],
 				"responses": {
 					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateResponse"
-						}
+						"description": "Created"
 					}
 				},
 				"description": "See business rules section 4 - Reinstatements and sites",
@@ -5722,69 +5676,6 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/InspectionCreateRequest"
-						}
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/scheduled-inspections": {
-			"delete": {
-				"operationId": "DeleteScheduledInspection",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": ""
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					}
-				]
-			},
-			"post": {
-				"operationId": "CreateScheduledInspection",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"201": {
-						"description": "Created"
-					}
-				},
-				"description": "See business rules section 3 - Inspections",
-				"security": [
-					{
-						"token": [
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/ScheduledInspectionCreateRequest"
 						}
 					}
 				]
@@ -6120,10 +6011,7 @@
 				],
 				"responses": {
 					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/CommentCreateResponse"
-						}
+						"description": "Created"
 					}
 				},
 				"description": "See business rules section 8 - Commenting",
@@ -6678,6 +6566,69 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/ForwardPlanCancelRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/scheduled-inspections": {
+			"delete": {
+				"operationId": "DeleteScheduledInspection",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateScheduledInspection",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created"
+					}
+				},
+				"description": "See business rules section 3 - Inspections",
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ScheduledInspectionCreateRequest"
 						}
 					}
 				]
