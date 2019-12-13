@@ -1,6 +1,6 @@
 ---
 layout: default
-title: API specification V1.11
+title: API specification V1.12
 ---
 # API specification
 {: .govuk-heading-xl}
@@ -8,7 +8,7 @@ title: API specification V1.11
 Version 1.12
 {: .govuk-body-l}
 
-This document details upcoming changes to the API being released during Public Beta for advance view, see the 'Versions and Changes' section for details.
+As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API (Version 1.13 and onward) will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -2451,7 +2451,15 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Upcoming changes for a future release:
+Version 1.12 (19/12/2019):
+{: .govuk-heading-s}
+
+This version of the specification is the V1 Baseline version that contains all legally required API functions.
+{: .govuk-body}
+
+TODO draft update 1.12 changes
+
+Upcoming changes for a future release (TODO remove):
 {: .govuk-heading-s #upcoming-changes}
 
 The GET /CSV endpoints have been deprecated on the Reporting endpoint and will be removed in a future release.  This functionality will be replaced by new functionality on the Data Export API.  This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
