@@ -319,36 +319,6 @@
 			],
 			"type": "object"
 		},
-		"UserForgotPasswordRequest": {
-			"properties": {
-				"email": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"email"
-			],
-			"type": "object"
-		},
-		"UserResetPasswordRequest": {
-			"properties": {
-				"email": {
-					"type": "string"
-				},
-				"verification_code": {
-					"type": "string"
-				},
-				"password": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"email",
-				"verification_code",
-				"password"
-			],
-			"type": "object"
-		},
 		"OrganisationContractsCreateRequest": {
 			"properties": {
 				"contractor_organisation_references": {
@@ -398,6 +368,36 @@
 			},
 			"required": [
 				"access_token"
+			],
+			"type": "object"
+		},
+		"UserForgotPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email"
+			],
+			"type": "object"
+		},
+		"UserResetPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"verification_code": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"verification_code",
+				"password"
 			],
 			"type": "object"
 		},
@@ -694,6 +694,55 @@
 				]
 			}
 		},
+		"/organisations": {
+			"get": {
+				"operationId": "GetOrganisations",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/OrganisationSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get organisations for more information",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "type",
+						"required": false,
+						"type": "string",
+						"enum": [
+							"PROMOTER",
+							"HA",
+							"CONTRACTOR"
+						]
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
 		"/users/{email}": {
 			"get": {
 				"operationId": "GetUser",
@@ -724,54 +773,6 @@
 						"name": "email",
 						"required": true,
 						"type": "string"
-					}
-				]
-			}
-		},
-		"/forgot-password": {
-			"post": {
-				"operationId": "ForgotPassword",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/UserForgotPasswordRequest"
-						}
-					}
-				]
-			}
-		},
-		"/reset-password": {
-			"post": {
-				"operationId": "ResetPassword",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/UserResetPasswordRequest"
-						}
 					}
 				]
 			}
@@ -822,6 +823,54 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/LogoutRequest"
+						}
+					}
+				]
+			}
+		},
+		"/forgot-password": {
+			"post": {
+				"operationId": "ForgotPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserForgotPasswordRequest"
+						}
+					}
+				]
+			}
+		},
+		"/reset-password": {
+			"post": {
+				"operationId": "ResetPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserResetPasswordRequest"
 						}
 					}
 				]

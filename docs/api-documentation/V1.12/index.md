@@ -2298,6 +2298,14 @@ Updates the workstream details associated with the organisation and workstream p
 #### Get organisation
 {: .govuk-heading-s}
 
+<code>GET /organisations</code> (available from version 1.13)
+
+Returns a list of OrganisationSummaryResponses.
+Optionally these can be filtered using the query params
+type: Filter by organisation type. Available values include PROMOTER, HA and CONTRACTOR
+query: Filter by organisation name. This will perform a partial search on the organisations name.
+{: .govuk-body}
+
 <code>GET /organisations/{organisationReference}</code>
 
 Returns the OrganisationResponse associated with the organisation provided.
@@ -2457,6 +2465,20 @@ Upcoming changes for a future release:
 The GET /CSV endpoints have been deprecated on the Reporting endpoint and will be removed in a future release.  This functionality will be replaced by new functionality on the Data Export API.  This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
 {: .govuk-body}
 
+Upcoming Version 1.13:
+{: .govuk-heading-s #upcoming-changes}
+
+Party API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
+</ol>
+
+Version 1.12:
+{: .govuk-heading-s #upcoming-changes}
+
+In previous verions of the documentation <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> was listed as being released on the Party API. This was incorrect. This endpoint is available on the Works API and the documentation has been corrected.
+
 Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
 
@@ -2499,6 +2521,7 @@ Work API will be updated with the following changes:
 	<li>New <code>POST /historic-works/inspections</code> endpoint to create an inspection on a historic work</li>
 	<li>New <code>POST /non-notifiable-works/sites</code> endpoint to create a reinstatement on a non-notifiable work</li>
 	<li>Existing <code>POST /works</code>, <code>POST /permits</code> and <code>POST /permit-alterations</code> requests updated to make <code>special_desig_location_text</code> field optional</li>
+  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Lookup API will be updated with the following changes:
@@ -2508,13 +2531,6 @@ Lookup API will be updated with the following changes:
   <li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
   <li>BREAKING CHANGE: <code>street_centre_point</code> on <code>GET /nsg/search</code> response will be returned as GeoJSON object rather than string</li>
 	<li>BREAKING CHANGE: <code>GET /nsg​/streets​/{usrn}</code> response updated to make <code>special_desig_location_text</code> field optional</li>
-</ol>
-
-Party API will be updated with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
-  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Reporting API updated with the following changes:
