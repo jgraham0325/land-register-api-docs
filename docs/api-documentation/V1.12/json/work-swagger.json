@@ -1260,7 +1260,13 @@
 				"scheduled_inspection_created",
 				"alteration_applied_auto",
 				"section_81_submitted",
-				"final_reinstatement_updated"
+				"final_reinstatement_updated",
+				"section_81_acknowledged",
+				"section_81_accepted",
+				"section_81_accepted_fixed",
+				"section_81_rejected",
+				"section_81_resolved_by_ha",
+				"section_81_cancelled"
 			],
 			"type": "string"
 		},
@@ -1503,6 +1509,53 @@
 			],
 			"type": "object"
 		},
+		"Section81Severity": {
+			"enum": [
+				"HIGH",
+				"LOW"
+			],
+			"type": "string"
+		},
+		"Section81Status": {
+			"enum": [
+				"issued",
+				"acknowledged",
+				"accepted",
+				"accepted_fixed",
+				"rejected",
+				"resolved_by_ha",
+				"cancelled"
+			],
+			"type": "string"
+		},
+		"Section81SummaryResponse": {
+			"properties": {
+				"section_81_reference_number": {
+					"type": "string"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"section_81_severity": {
+					"$ref": "#/definitions/Section81Severity"
+				},
+				"section_81_status": {
+					"$ref": "#/definitions/Section81Status"
+				}
+			},
+			"required": [
+				"section_81_reference_number",
+				"date_created",
+				"location_description",
+				"section_81_severity",
+				"section_81_status"
+			],
+			"type": "object"
+		},
 		"FileResponse": {
 			"properties": {
 				"file_id": {
@@ -1635,6 +1688,10 @@
 					"items": {
 						"$ref": "#/definitions/FPNSummaryResponse"
 					},
+					"x-nullable": true
+				},
+				"section_81": {
+					"$ref": "#/definitions/Section81SummaryResponse",
 					"x-nullable": true
 				},
 				"files": {
@@ -4073,13 +4130,6 @@
 			],
 			"type": "string"
 		},
-		"Section81Severity": {
-			"enum": [
-				"HIGH",
-				"LOW"
-			],
-			"type": "string"
-		},
 		"Section81CreateRequest": {
 			"properties": {
 				"internal_user_identifier": {
@@ -4197,12 +4247,6 @@
 			],
 			"type": "object"
 		},
-		"Section81Status": {
-			"enum": [
-				"issued"
-			],
-			"type": "string"
-		},
 		"Section81Response": {
 			"properties": {
 				"section_81_reference_number": {
@@ -4310,6 +4354,44 @@
 				"section_81_type",
 				"made_safe_by_ha",
 				"additional_details"
+			],
+			"type": "object"
+		},
+		"Section81WorkType": {
+			"enum": [
+				"PERMIT_WORKS",
+				"NON_NOTIFIABLE_WORKS"
+			],
+			"type": "string"
+		},
+		"Section81StatusUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"section_81_status": {
+					"$ref": "#/definitions/Section81Status"
+				},
+				"status_reason": {
+					"type": "string",
+					"description": "Required if Section81Status = rejected, accepted_fixed, resolved or cancelled\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"work_type": {
+					"$ref": "#/definitions/Section81WorkType",
+					"description": "Required if Section81Status = accepted",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"section_81_status"
 			],
 			"type": "object"
 		},
@@ -6704,6 +6786,51 @@
 						"name": "section81ReferenceNumber",
 						"required": true,
 						"type": "string"
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/status": {
+			"put": {
+				"operationId": "UpdateSection81Status",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See business rules ref section 26 - Section 81s",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "section81ReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/Section81StatusUpdateRequest"
+						}
 					}
 				]
 			}

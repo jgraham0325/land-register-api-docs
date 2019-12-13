@@ -993,6 +993,96 @@
 				"rows"
 			],
 			"type": "object"
+		},
+		"Section81Severity": {
+			"enum": [
+				"HIGH",
+				"LOW"
+			],
+			"type": "string"
+		},
+		"Section81Status": {
+			"enum": [
+				"issued",
+				"acknowledged",
+				"accepted",
+				"accepted_fixed",
+				"rejected",
+				"resolved_by_ha",
+				"cancelled"
+			],
+			"type": "string"
+		},
+		"Section81SummaryResponse": {
+			"properties": {
+				"issue_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"section_81_reference_number": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"severity": {
+					"$ref": "#/definitions/Section81Severity"
+				},
+				"made_safe_by_ha": {
+					"type": "boolean"
+				},
+				"status": {
+					"$ref": "#/definitions/Section81Status"
+				},
+				"status_changed_date": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"issue_date",
+				"section_81_reference_number",
+				"promoter_organisation",
+				"highway_authority",
+				"location_description",
+				"street",
+				"area",
+				"severity",
+				"made_safe_by_ha",
+				"status",
+				"status_changed_date"
+			],
+			"type": "object"
+		},
+		"Section81ReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Section81SummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
+			"type": "object"
 		}
 	},
 	"info": {
@@ -1856,6 +1946,83 @@
 						"name": "swa_code",
 						"required": false,
 						"type": "string"
+					}
+				]
+			}
+		},
+		"/section-81s": {
+			"get": {
+				"operationId": "GetSection81s",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/Section81ReportingResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > Get Permits for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"collectionFormat": "multi",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "severity",
+						"required": false,
+						"collectionFormat": "multi",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_direction",
+						"required": false,
+						"type": "string",
+						"enum": [
+							"asc",
+							"desc"
+						]
 					}
 				]
 			}
