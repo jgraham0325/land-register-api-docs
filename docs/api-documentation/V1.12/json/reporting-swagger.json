@@ -718,7 +718,8 @@
 					"type": "string"
 				},
 				"area_name": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
 				},
 				"location_description": {
 					"type": "string"
@@ -748,7 +749,6 @@
 				"promoter_organisation",
 				"highway_authority",
 				"street_name",
-				"area_name",
 				"location_description",
 				"registration_date",
 				"reinstatement_date",
@@ -996,8 +996,8 @@
 		},
 		"Section81Severity": {
 			"enum": [
-				"HIGH",
-				"LOW"
+				"high",
+				"low"
 			],
 			"type": "string"
 		},

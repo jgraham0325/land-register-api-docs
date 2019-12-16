@@ -1511,8 +1511,8 @@
 		},
 		"Section81Severity": {
 			"enum": [
-				"HIGH",
-				"LOW"
+				"high",
+				"low"
 			],
 			"type": "string"
 		},
@@ -4359,8 +4359,8 @@
 		},
 		"Section81WorkType": {
 			"enum": [
-				"PERMIT_WORKS",
-				"NON_NOTIFIABLE_WORKS"
+				"permit_works",
+				"non_notifiable_works"
 			],
 			"type": "string"
 		},

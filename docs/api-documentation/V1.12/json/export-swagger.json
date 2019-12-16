@@ -72,6 +72,13 @@
 			],
 			"type": "string"
 		},
+		"Section81Severity": {
+			"enum": [
+				"high",
+				"low"
+			],
+			"type": "string"
+		},
 		"Section81CSVExportRequest": {
 			"properties": {
 				"swa_code": {
@@ -87,6 +94,13 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/Section81Status"
+					},
+					"x-nullable": true
+				},
+				"severity": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Section81Severity"
 					},
 					"x-nullable": true
 				}
@@ -222,6 +236,163 @@
 				}
 			},
 			"type": "object"
+		},
+		"PermitStatus": {
+			"enum": [
+				"submitted",
+				"granted",
+				"permit_modification_request",
+				"refused",
+				"closed",
+				"cancelled",
+				"revoked",
+				"progressed"
+			],
+			"type": "string"
+		},
+		"WorkStatus": {
+			"enum": [
+				"planned",
+				"in_progress",
+				"completed",
+				"cancelled",
+				"unattributable",
+				"historical",
+				"non_notifiable",
+				"section_81"
+			],
+			"type": "string"
+		},
+		"WorkCategory": {
+			"enum": [
+				"minor",
+				"standard",
+				"major",
+				"immediate_urgent",
+				"immediate_emergency",
+				"paa"
+			],
+			"type": "string"
+		},
+		"LaneRentalAssessmentOutcome": {
+			"enum": [
+				"chargeable",
+				"potentially_chargeable",
+				"charges_waived",
+				"exempt",
+				"charges_not_applicable"
+			],
+			"type": "string"
+		},
+		"PermitCsvExportPrefix": {
+			"enum": [
+				"PA",
+				"WR",
+				"PAA"
+			],
+			"type": "string"
+		},
+		"PermitCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/PermitStatus"
+					},
+					"x-nullable": true
+				},
+				"work_status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WorkStatus"
+					},
+					"x-nullable": true
+				},
+				"work_category": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/WorkCategory"
+					},
+					"x-nullable": true
+				},
+				"lane_rental_assessment_outcome": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/LaneRentalAssessmentOutcome"
+					},
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"start_date_created": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"end_date_created": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"active_permit_only": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"csv_export_prefix": {
+					"$ref": "#/definitions/PermitCsvExportPrefix",
+					"x-nullable": true
+				},
+				"is_traffic_sensitive": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"is_high_impact_traffic_management": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"has_no_final_registration": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"has_excavation": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"is_early_start": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"is_deemed": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"lane_rental_charges_not_agreed": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"lane_rental_charges_potentially_apply": {
+					"type": "boolean",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
 		}
 	},
 	"info": {
@@ -314,7 +485,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
 				"security": [
 					{
 						"token": [
@@ -350,7 +520,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
 				"security": [
 					{
 						"token": [
@@ -386,7 +555,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
 				"security": [
 					{
 						"token": [
@@ -422,7 +590,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
 				"security": [
 					{
 						"token": [
@@ -458,7 +625,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
 				"security": [
 					{
 						"token": [
@@ -491,7 +657,6 @@
 						"description": "No content"
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
 				"security": [
 					{
 						"token": [
@@ -508,6 +673,41 @@
 						"required": true,
 						"format": "double",
 						"type": "number"
+					}
+				]
+			}
+		},
+		"/permits/csv": {
+			"post": {
+				"operationId": "GeneratePermitCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/PermitCSVExportRequest"
+						}
 					}
 				]
 			}
