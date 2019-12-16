@@ -278,6 +278,14 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"password": {
 					"type": "string",
 					"description": "Min length 6 characters\nMax length 99 characters",
@@ -297,6 +305,8 @@
 			},
 			"required": [
 				"email",
+				"first_name",
+				"last_name",
 				"roles"
 			],
 			"type": "object"
@@ -349,7 +359,7 @@
 			],
 			"type": "object"
 		},
-		"TokenRefereshRequest": {
+		"TokenRefreshRequest": {
 			"properties": {
 				"refresh_token": {
 					"type": "string"
@@ -407,13 +417,23 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"role": {
 					"$ref": "#/definitions/UserGroup",
 					"x-nullable": true
 				}
 			},
 			"required": [
-				"email"
+				"email",
+				"first_name",
+				"last_name"
 			],
 			"type": "object"
 		},
@@ -476,6 +496,14 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"organisation_reference": {
 					"type": "string",
 					"description": "Max length 20 characters"
@@ -483,6 +511,8 @@
 			},
 			"required": [
 				"email",
+				"first_name",
+				"last_name",
 				"organisation_reference"
 			],
 			"type": "object"
@@ -798,7 +828,7 @@
 						"name": "body",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/TokenRefereshRequest"
+							"$ref": "#/definitions/TokenRefreshRequest"
 						}
 					}
 				]
