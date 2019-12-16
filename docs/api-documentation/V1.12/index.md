@@ -2314,7 +2314,7 @@ Updates the workstream details associated with the organisation and workstream p
 #### Get organisation
 {: .govuk-heading-s}
 
-<code>GET /organisations</code> (available from version 1.13)
+<code>GET /organisations</code>
 
 Returns a list of OrganisationSummaryResponses.
 Optionally these can be filtered using the query params
@@ -2481,16 +2481,8 @@ Version 1.12 (19/12/2019):
 This version of the specification is the V1 Baseline version that contains all legally required API functions.
 {: .govuk-body}
 
-TODO draft update 1.12 changes
-
-Upcoming changes for a future release (TODO remove):
-{: .govuk-heading-s #upcoming-changes}
-
-The GET /CSV endpoints have been deprecated on the Reporting endpoint and will be removed in a future release.  This functionality will be replaced by new functionality on the Data Export API.  This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
+The GET /CSV endpoints have been removed on the Reporting endpoint and will be available via the Data Export API in a future release. This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
 {: .govuk-body}
-
-Upcoming Version 1.13:
-{: .govuk-heading-s #upcoming-changes}
 
 Work API will be updated with the following changes:
 {: .govuk-body}
@@ -2510,10 +2502,8 @@ Party API will be updated with the following changes:
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
 </ol>
 
-Version 1.12:
-{: .govuk-heading-s #upcoming-changes}
-
 In previous verions of the documentation <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> was listed as being released on the Party API. This was incorrect. This endpoint is available on the Works API and the documentation has been corrected.
+{: .govuk-body}
 
 Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
