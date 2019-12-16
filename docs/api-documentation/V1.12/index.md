@@ -1719,6 +1719,17 @@ Chargeable activities include:
 Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
+#### Section 81s
+{: .govuk-heading-s}
+
+<code>GET /section-81s</code>
+
+Retrieves a list of section 81s which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
+
 ### **Work API**
 {: .govuk-heading-m}
 
@@ -2189,6 +2200,8 @@ There is no versioning available when updating information, so information chang
 
 <code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
 
+<code>PUT /works/{work reference number}/section-81s/{section 81 reference number}/status</code>
+
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
 {: .govuk-body}
 
@@ -2196,6 +2209,9 @@ The POST endpoint will create a section 81 and return a work reference number an
 {: .govuk-body}
 
 The GET endpoint will require the work reference number and section 81 reference number of the intended section 81 to return information.
+{: .govuk-body}
+
+The PUT endpoint will update the status of a section 81 and will require a work reference number, section 81 reference number and optionally a promoter response or work type depending on the desired status outcome.
 {: .govuk-body}
 
 ### GeoJSON API
@@ -2475,6 +2491,18 @@ The GET /CSV endpoints have been deprecated on the Reporting endpoint and will b
 
 Upcoming Version 1.13:
 {: .govuk-heading-s #upcoming-changes}
+
+Work API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>PUT /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/status</code> endpoint to allow updates to the status of a section 81</li>
+</ol>
+
+Reporting API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /section-81s</code> endpoint to retrieve all section 81s associated with the authenticated user's organisation</li>
+</ol>
 
 Party API will be updated with the following changes:
 {: .govuk-body}
