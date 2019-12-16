@@ -3,7 +3,227 @@
 	"consumes": [
 		"application/json"
 	],
-	"definitions": {},
+	"definitions": {
+		"CSVExportResponse": {
+			"properties": {
+				"csv_id": {
+					"type": "number",
+					"format": "double"
+				}
+			},
+			"required": [
+				"csv_id"
+			],
+			"type": "object"
+		},
+		"FPNStatus": {
+			"enum": [
+				"issued",
+				"accepted",
+				"paid",
+				"paid_discounted",
+				"disputed",
+				"withdrawn"
+			],
+			"type": "string"
+		},
+		"FPNCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FPNStatus"
+					},
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "start_date must be before or the same as end_date if both are provided",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "end_date must be the same as or after start_date if both are provided",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
+		"Section81Status": {
+			"enum": [
+				"issued",
+				"acknowledged",
+				"accepted",
+				"accepted_fixed",
+				"rejected",
+				"resolved_by_ha",
+				"cancelled"
+			],
+			"type": "string"
+		},
+		"Section81CSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/Section81Status"
+					},
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
+		"ReinstatementStatus": {
+			"enum": [
+				"interim",
+				"permanent"
+			],
+			"type": "string"
+		},
+		"ReinstatementCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ReinstatementStatus"
+					},
+					"x-nullable": true
+				},
+				"latest_reinstatements_only": {
+					"type": "boolean",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
+		"FeesCSVExportRequest": {
+			"properties": {
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"swa_code": {
+					"type": "string",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"start_date",
+				"end_date"
+			],
+			"type": "object"
+		},
+		"InspectionResponseType": {
+			"enum": [
+				"inspection",
+				"reinspection"
+			],
+			"type": "string"
+		},
+		"InspectionCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"inspection_response_type": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/InspectionResponseType"
+					},
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"progressed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"forward_plan_status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ForwardPlanStatus"
+					},
+					"x-nullable": true
+				},
+				"proposed_start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"proposed_end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		}
+	},
 	"info": {
 		"title": "data-export-api",
 		"version": "1.0.0",
@@ -28,13 +248,266 @@
 								}
 							}
 						}
+					},
+					"204": {
+						"description": "No content"
 					}
 				},
+				"description": "See API specification Resource Guide > Data Export API > Work Data CSV for more information",
 				"security": [
 					{
 						"token": [
 							"DataExport"
 						]
+					}
+				],
+				"parameters": []
+			}
+		},
+		"/fixed-penalty-notices/csv": {
+			"post": {
+				"operationId": "GenerateFPNsCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/FPNCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/section-81s/csv": {
+			"post": {
+				"operationId": "GenerateSection81sCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/Section81CSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/reinstatements/csv": {
+			"post": {
+				"operationId": "GenerateReinstatementsCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/fees/csv": {
+			"post": {
+				"operationId": "GenerateFeesCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/FeesCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/inspections/csv": {
+			"post": {
+				"operationId": "GenerateInspectionCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/InspectionCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/forward-plans/csv": {
+			"post": {
+				"operationId": "GenerateForwardPlanCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/csv/{csvId}": {
+			"get": {
+				"operationId": "GetCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > CSV for more information\nDeprecated - this will be removed in a future release",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "csvId",
+						"required": true,
+						"format": "double",
+						"type": "number"
 					}
 				]
 			}
@@ -50,6 +523,9 @@
 			"name": "token",
 			"in": "header",
 			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority",
+				"Contractor": "Contractor",
 				"DataExport": "DataExport"
 			}
 		}
