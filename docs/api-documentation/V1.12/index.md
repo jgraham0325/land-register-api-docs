@@ -266,7 +266,7 @@ details such as timings, comments, history and changes.
 **Reporting**
 {: .govuk-body}
 
-You can use the Reporting API to extract data from the service both as
+You can use the Data Export API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
 information efficiently for your organisation.
 {: .govuk-body}
@@ -299,7 +299,7 @@ updated works.
 **Contractors**
 {: .govuk-body}
 
-Contractors can use the Reporting API to extract data from the service both as
+Contractors can use the Data Export API to extract data from the service both as
 JSON and CSV format. These endpoints allow you to extract most Work
 information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
 {: .govuk-body}
@@ -859,7 +859,12 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>POST /fixed-penalty-notices/csv</code></td>
+      <td class="govuk-table__cell"><code>POST /*/csv</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /csv/{csvId}</code></td>
       <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
@@ -1102,11 +1107,6 @@ e.g. {WRN}-01 for the first permit added to that work.
 
 The reporting API permits endpoint will be the most useful way to see
 all permits that are relevant to your organisation.
-{: .govuk-body}
-
-*Note: Reporting API data can be retrieved as CSV data to allow
-exporting data to tools such as Excel for more complex reporting needs,
-such as all permit details needed for Fee Reporting.*
 {: .govuk-body}
 
 For example, as an HA you can use the **status** property of a permit
@@ -1560,12 +1560,6 @@ The next response would contain rows 26-50.
 {: .govuk-heading-s}
 
 The various resources queryable through the reporting API are only for the currently authenticated user's organisation or associated organisation as a contractor.
-{: .govuk-body}
-
-#### CSV Endpoints (Deprecated V1.11. To be removed V1.12)
-{: .govuk-heading-s}
-
-Some of the resource endpoints on reporting API also include `/csv`. This will return all the results with the specified criteria in a CSV format.
 {: .govuk-body}
 
 #### Get permits
@@ -2417,18 +2411,6 @@ The fields to be used for this have already been added to the Work API as placeh
 The Reporting API continuous polling will be updated to allow the use of Transaction ID for filtering for easier polling.
 {: .govuk-body}
 
-### Making NSG inferred Street data non-mandatory if USRN supplied
-{: .govuk-heading-s}
-
-The Work API will be updated to make NSG Street data which can be inferred from USRN non-mandatory, to avoid data duplication and prevent potential differences in data due to external systems using different NSG releases.
-{: .govuk-body}
-
-
-### Inspections on historic works
-{: .govuk-heading-s}
-
-The Work API will be updated to allow submitting Inspections for works which have not been recorded in Street Manager. Note this is not intended as a way to migrate historic work data into Street Manager, only to support inspections during transition.
-{: .govuk-body}
 
 ### Notifications
 {: .govuk-heading-s}
@@ -2443,12 +2425,6 @@ See **Technical Overview - Getting data from Street Manager - Notifications** fo
 {: .govuk-heading-s}
 
 API will support user and organisation administration and registration functions, as such password reset, profile editing and user self registriction. These functions will be exposed via a new Party API, which will allow API users with admin permissions to
-{: .govuk-body}
-
-### Forward plans
-{: .govuk-heading-s}
-
-The Work API will be updated to allow submission of Forward plans for works.
 {: .govuk-body}
 
 ### Noticing
