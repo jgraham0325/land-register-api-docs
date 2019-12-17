@@ -6,10 +6,22 @@ type: article
 published: 'true'
 status: publish
 ---
+<br />
+
 <div class="divTable" style="border: 1px solid #ccc;" >
+  <div class="divTableHeading">
+    <div class="divTableRow">
+      <div class="divTableCell firstCol">Term</div>
+      <div class="divTableCell">Definition</div>
+    </div>
+  </div>
   <div class="divTableBody">
     <div class="divTableRow">
-      <div class="divTableCell" id="firstCol">&nbsp;</div>
+      <div class="divTableCell firstCol">&nbsp;</div>
+      <div class="divTableCell">&nbsp;</div>
+    </div>
+    <div class="divTableRow">
+      <div class="divTableCell firstCol">&nbsp;</div>
       <div class="divTableCell">&nbsp;</div>
     </div>
     <div class="divTableRow">
@@ -20,7 +32,7 @@ status: publish
 </div>
 
 <style>
-#firstCol{
+.firstCol{
 	width: 20%;
 }
 .divTable{
