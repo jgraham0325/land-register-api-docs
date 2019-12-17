@@ -1019,6 +1019,9 @@
 					"type": "string",
 					"format": "date-time"
 				},
+				"work_reference_number": {
+					"type": "string"
+				},
 				"section_81_reference_number": {
 					"type": "string"
 				},
@@ -1054,6 +1057,7 @@
 			},
 			"required": [
 				"issue_date",
+				"work_reference_number",
 				"section_81_reference_number",
 				"promoter_organisation",
 				"highway_authority",
