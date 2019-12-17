@@ -8,7 +8,7 @@ status: publish
 ---
 <br />
 
-<div class="divTable" style="border: 1px solid #ccc;" >
+<div class="divTable" style="border: 0.5px solid #ccc;" >
   <div class="divTableHeading">
     <div class="divTableRow">
       <div class="divTableCell firstCol">Term</div>
@@ -17,8 +17,8 @@ status: publish
   </div>
   <div class="divTableBody">
     <div class="divTableRow">
-      <div class="divTableCell firstCol">&nbsp;</div>
-      <div class="divTableCell">&nbsp;</div>
+      <div class="divTableCell firstCol">Additional Street Data</div>
+      <div class="divTableCell">Additional Street Data (“ASD”) refers to extra information about a street that may affect works. This is part of the National Street Gazetteer (NSG) database, and includes things such as road centre lines, ownership details, level of reinstatement required, height, weight and width restrictions and direction of travel. This includes designations which identifies highly trafficked highways so that promoters know they must give greater advanced warning of proposed works or activities. Depending on circumstances, a designation may apply to the carriageway only, to a footway or pedestrian area only, or to any part of a length of street. Designations may only apply to certain times of day, days of the week, or days of the year.</div>
     </div>
     <div class="divTableRow">
       <div class="divTableCell firstCol">&nbsp;</div>
@@ -32,6 +32,11 @@ status: publish
 </div>
 
 <style>
+body {
+        font-family:nta,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+
+	font-size: 14px;
+}
 .firstCol{
 	width: 20%;
 }
@@ -42,19 +47,16 @@ status: publish
 .divTableRow {
 	display: table-row;
 }
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-}
 .divTableCell, .divTableHead {
-	border: 1px solid #cccccc;
+	border: 0.5px solid #cccccc;
 	display: table-cell;
-	padding: 3px 10px;
+	padding: 10px 10px;
 }
 .divTableHeading {
 	background-color: #EEE;
 	display: table-header-group;
 	font-weight: bold;
+	font-size: 14px;
 }
 .divTableFoot {
 	background-color: #EEE;
@@ -63,5 +65,7 @@ status: publish
 }
 .divTableBody {
 	display: table-row-group;
+	font-size: 14px;
+        line-height: 1.6;
 }
 </style>
