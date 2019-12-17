@@ -1035,7 +1035,8 @@
 					"type": "string"
 				},
 				"area": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
 				},
 				"section_81_severity": {
 					"$ref": "#/definitions/Section81Severity"
@@ -1058,7 +1059,6 @@
 				"highway_authority",
 				"location_description",
 				"street",
-				"area",
 				"section_81_severity",
 				"made_safe_by_ha",
 				"section_81_status",
@@ -1968,7 +1968,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get Permits for more information",
 				"security": [
 					{
 						"token": [

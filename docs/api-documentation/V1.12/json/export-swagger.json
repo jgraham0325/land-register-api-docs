@@ -437,7 +437,7 @@
 		},
 		"/fixed-penalty-notices/csv": {
 			"post": {
-				"operationId": "GenerateFPNsCSV",
+				"operationId": "GenerateFPNCSV",
 				"produces": [
 					"application/json"
 				],
@@ -449,7 +449,6 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
 				"security": [
 					{
 						"token": [
@@ -473,7 +472,7 @@
 		},
 		"/section-81s/csv": {
 			"post": {
-				"operationId": "GenerateSection81sCSV",
+				"operationId": "GenerateSection81CSV",
 				"produces": [
 					"application/json"
 				],
@@ -508,7 +507,7 @@
 		},
 		"/reinstatements/csv": {
 			"post": {
-				"operationId": "GenerateReinstatementsCSV",
+				"operationId": "GenerateReinstatementCSV",
 				"produces": [
 					"application/json"
 				],
@@ -543,7 +542,7 @@
 		},
 		"/fees/csv": {
 			"post": {
-				"operationId": "GenerateFeesCSV",
+				"operationId": "GenerateFeeCSV",
 				"produces": [
 					"application/json"
 				],
@@ -646,37 +645,6 @@
 				]
 			}
 		},
-		"/csv/{csvId}": {
-			"get": {
-				"operationId": "GetCSV",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "csvId",
-						"required": true,
-						"format": "double",
-						"type": "number"
-					}
-				]
-			}
-		},
 		"/permits/csv": {
 			"post": {
 				"operationId": "GeneratePermitCSV",
@@ -711,6 +679,42 @@
 					}
 				]
 			}
+		},
+		"/csv/{csvId}": {
+			"get": {
+				"operationId": "GetCsv",
+				"produces": [
+					"text/csv"
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"text/csv": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "csvId",
+						"required": true,
+						"type": "number"
+					}
+				]
+			}
 		}
 	},
 	"produces": [
@@ -723,9 +727,6 @@
 			"name": "token",
 			"in": "header",
 			"scopes": {
-				"Planner": "Planner",
-				"HighwayAuthority": "HighwayAuthority",
-				"Contractor": "Contractor",
 				"DataExport": "DataExport"
 			}
 		}
