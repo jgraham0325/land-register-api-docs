@@ -8,7 +8,7 @@ title: API specification V1.12
 Version 1.12
 {: .govuk-body-l}
 
-This document details upcoming changes to the API being released during Public Beta for advance view, see the 'Versions and Changes' section for details.
+As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API (Version 1.13 and onward) will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -1691,6 +1691,39 @@ Retrieves further information for the works provided in the request. This allows
 external integrators to retrieve additional information for the works returned by the <code>GET /works/updates</code> endpoint.
 {: .govuk-body}
 
+#### Fee reporting
+{: .govuk-heading-s}
+
+<code>POST /fees/csv</code>
+
+Retrieves a list of chargeable items which have had occured within a defined time period in CSV format.
+{: .govuk-body}
+
+Chargeable activities include:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Granting of a permit application</li>
+  <li>PAA progressed to PA - note, this occurs when a PA is received, not when it’s granted</li>
+  <li>Granting of a change request</li>
+  <li>Change in work category</li>
+</ol>
+
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
+
+#### Section 81s
+{: .govuk-heading-s}
+
+<code>GET /section-81s</code>
+
+Retrieves a list of section 81s which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
+
 ### **Work API**
 {: .govuk-heading-m}
 
@@ -2161,6 +2194,8 @@ There is no versioning available when updating information, so information chang
 
 <code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
 
+<code>PUT /works/{work reference number}/section-81s/{section 81 reference number}/status</code>
+
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
 {: .govuk-body}
 
@@ -2168,6 +2203,9 @@ The POST endpoint will create a section 81 and return a work reference number an
 {: .govuk-body}
 
 The GET endpoint will require the work reference number and section 81 reference number of the intended section 81 to return information.
+{: .govuk-body}
+
+The PUT endpoint will update the status of a section 81 and will require a work reference number, section 81 reference number and optionally a promoter response or work type depending on the desired status outcome.
 {: .govuk-body}
 
 ### GeoJSON API
@@ -2269,6 +2307,14 @@ Updates the workstream details associated with the organisation and workstream p
 
 #### Get organisation
 {: .govuk-heading-s}
+
+<code>GET /organisations</code> (available from version 1.13)
+
+Returns a list of OrganisationSummaryResponses.
+Optionally these can be filtered using the query params
+type: Filter by organisation type. Available values include PROMOTER, HA and CONTRACTOR
+query: Filter by organisation name. This will perform a partial search on the organisations name.
+{: .govuk-body}
 
 <code>GET /organisations/{organisationReference}</code>
 
@@ -2405,11 +2451,45 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Upcoming changes for a future release:
+Version 1.12 (19/12/2019):
+{: .govuk-heading-s}
+
+This version of the specification is the V1 Baseline version that contains all legally required API functions.
+{: .govuk-body}
+
+TODO draft update 1.12 changes
+
+Upcoming changes for a future release (TODO remove):
 {: .govuk-heading-s #upcoming-changes}
 
 The GET /CSV endpoints have been deprecated on the Reporting endpoint and will be removed in a future release.  This functionality will be replaced by new functionality on the Data Export API.  This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
 {: .govuk-body}
+
+Upcoming Version 1.13:
+{: .govuk-heading-s #upcoming-changes}
+
+Work API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>PUT /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/status</code> endpoint to allow updates to the status of a section 81</li>
+</ol>
+
+Reporting API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /section-81s</code> endpoint to retrieve all section 81s associated with the authenticated user's organisation</li>
+</ol>
+
+Party API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
+</ol>
+
+Version 1.12:
+{: .govuk-heading-s #upcoming-changes}
+
+In previous verions of the documentation <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> was listed as being released on the Party API. This was incorrect. This endpoint is available on the Works API and the documentation has been corrected.
 
 Version 1.11 (12/12/2019):
 {: .govuk-heading-s #upcoming-changes}
@@ -2453,6 +2533,7 @@ Work API will be updated with the following changes:
 	<li>New <code>POST /historic-works/inspections</code> endpoint to create an inspection on a historic work</li>
 	<li>New <code>POST /non-notifiable-works/sites</code> endpoint to create a reinstatement on a non-notifiable work</li>
 	<li>Existing <code>POST /works</code>, <code>POST /permits</code> and <code>POST /permit-alterations</code> requests updated to make <code>special_desig_location_text</code> field optional</li>
+  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Lookup API will be updated with the following changes:
@@ -2462,13 +2543,6 @@ Lookup API will be updated with the following changes:
   <li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> on <code>GET /nsg/streets/{usrn}</code> response will be returned as GeoJSON object rather than string</li>
   <li>BREAKING CHANGE: <code>street_centre_point</code> on <code>GET /nsg/search</code> response will be returned as GeoJSON object rather than string</li>
 	<li>BREAKING CHANGE: <code>GET /nsg​/streets​/{usrn}</code> response updated to make <code>special_desig_location_text</code> field optional</li>
-</ol>
-
-Party API will be updated with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
-  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Reporting API updated with the following changes:
