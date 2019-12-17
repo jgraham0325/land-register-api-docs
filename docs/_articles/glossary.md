@@ -53,35 +53,13 @@ status: publish
 </div>
 
 
-<!--
 
-<div class="divTable" style="border: 0.5px solid #ccc;" >
-  <div class="divTableHeading">
-    <div class="divTableRow">
-      <div class="divTableCell firstCol">Term</div>
-      <div class="divTableCell">Definition</div>
-    </div>
-  </div>
-  <div class="divTableBody">
-    <div class="divTableRow">
-      <div class="divTableCell firstCol">Additional Street Data</div>
-      <div class="divTableCell">Additional Street Data (“ASD”) refers to extra information about a street that may affect works. This is part of the National Street Gazetteer (NSG) database, and includes things such as road centre lines, ownership details, level of reinstatement required, height, weight and width restrictions and direction of travel. This includes designations which identifies highly trafficked highways so that promoters know they must give greater advanced warning of proposed works or activities. Depending on circumstances, a designation may apply to the carriageway only, to a footway or pedestrian area only, or to any part of a length of street. Designations may only apply to certain times of day, days of the week, or days of the year.</div>
-    </div>
-    <div class="divTableRow">
-      <div class="divTableCell firstCol">&nbsp;</div>
-      <div class="divTableCell">&nbsp;</div>
-    </div>
-    <div class="divTableRow">
-      <div class="divTableCell" id="firstCol">&nbsp;</div>
-      <div class="divTableCell">&nbsp;</div>
-    </div>
-  </div>
-</div>-->
+
+
 
 <style>
 body {
         font-family:nta,Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
-
 	font-size: 14px;
 }
 .firstCol{
