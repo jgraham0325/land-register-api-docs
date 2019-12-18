@@ -630,14 +630,6 @@
 		},
 		"WorkstreamSummaryResponse": {
 			"properties": {
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"organisation_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"prefix": {
 					"type": "string"
 				},
@@ -656,8 +648,6 @@
 				}
 			},
 			"required": [
-				"workstream_id",
-				"organisation_id",
 				"prefix",
 				"name",
 				"status",
