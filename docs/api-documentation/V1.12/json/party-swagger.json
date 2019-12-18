@@ -13,10 +13,6 @@
 		},
 		"WorkstreamResponse": {
 			"properties": {
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
-				},
 				"status": {
 					"$ref": "#/definitions/WorkstreamStatus"
 				},
@@ -42,29 +38,26 @@
 					"type": "string",
 					"x-nullable": true
 				},
-				"organisation_id": {
-					"type": "number",
-					"format": "double"
+				"organisation_reference": {
+					"type": "string"
 				}
 			},
 			"required": [
-				"workstream_id",
 				"status",
 				"prefix",
 				"name",
-				"organisation_id"
+				"organisation_reference"
 			],
 			"type": "object"
 		},
 		"WorkstreamCreateResponse": {
 			"properties": {
-				"workstream_id": {
-					"type": "number",
-					"format": "double"
+				"prefix": {
+					"type": "string"
 				}
 			},
 			"required": [
-				"workstream_id"
+				"prefix"
 			],
 			"type": "object"
 		},
@@ -278,14 +271,6 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
-				"first_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
-				"last_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
 				"password": {
 					"type": "string",
 					"description": "Min length 6 characters\nMax length 99 characters",
@@ -305,8 +290,6 @@
 			},
 			"required": [
 				"email",
-				"first_name",
-				"last_name",
 				"roles"
 			],
 			"type": "object"
@@ -359,7 +342,7 @@
 			],
 			"type": "object"
 		},
-		"TokenRefreshRequest": {
+		"TokenRefereshRequest": {
 			"properties": {
 				"refresh_token": {
 					"type": "string"
@@ -417,23 +400,13 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
-				"first_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
-				"last_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
 				"role": {
 					"$ref": "#/definitions/UserGroup",
 					"x-nullable": true
 				}
 			},
 			"required": [
-				"email",
-				"first_name",
-				"last_name"
+				"email"
 			],
 			"type": "object"
 		},
@@ -496,14 +469,6 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
-				"first_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
-				"last_name": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
 				"organisation_reference": {
 					"type": "string",
 					"description": "Max length 20 characters"
@@ -511,8 +476,6 @@
 			},
 			"required": [
 				"email",
-				"first_name",
-				"last_name",
 				"organisation_reference"
 			],
 			"type": "object"
@@ -527,7 +490,7 @@
 		}
 	},
 	"paths": {
-		"/organisations/{organisationReference}/workstreams/{workstreamId}": {
+		"/organisations/{organisationReference}/workstreams/{workstreamPrefix}": {
 			"get": {
 				"operationId": "GetWorkstream",
 				"produces": [
@@ -561,10 +524,51 @@
 					},
 					{
 						"in": "path",
-						"name": "workstreamId",
+						"name": "workstreamPrefix",
 						"required": true,
-						"format": "double",
-						"type": "number"
+						"type": "string"
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateWorkstream",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Put workstream for more information",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "workstreamPrefix",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkstreamUpdateRequest"
+						}
 					}
 				]
 			}
@@ -645,50 +649,6 @@
 				]
 			}
 		},
-		"/organisations/{organisationReference}/workstreams/{workstreamPrefix}": {
-			"put": {
-				"operationId": "UpdateWorkstream",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": ""
-					}
-				},
-				"description": "See API specification Resource Guide > Party API > Put workstream for more information",
-				"security": [
-					{
-						"token": [
-							"Admin",
-							"Planner"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "organisationReference",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "path",
-						"name": "workstreamPrefix",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/WorkstreamUpdateRequest"
-						}
-					}
-				]
-			}
-		},
 		"/organisations/{organisationReference}": {
 			"get": {
 				"operationId": "GetOrganisation",
@@ -719,55 +679,6 @@
 						"in": "path",
 						"name": "organisationReference",
 						"required": true,
-						"type": "string"
-					}
-				]
-			}
-		},
-		"/organisations": {
-			"get": {
-				"operationId": "GetOrganisations",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/OrganisationSummaryResponse"
-							}
-						}
-					}
-				},
-				"description": "See API specification Resource Guide > Party API > Get organisations for more information",
-				"security": [
-					{
-						"token": [
-							"Admin",
-							"Planner",
-							"HighwayAuthority",
-							"Contractor"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "type",
-						"required": false,
-						"type": "string",
-						"enum": [
-							"PROMOTER",
-							"HA",
-							"CONTRACTOR"
-						]
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
 						"type": "string"
 					}
 				]
@@ -828,7 +739,7 @@
 						"name": "body",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/TokenRefreshRequest"
+							"$ref": "#/definitions/TokenRefereshRequest"
 						}
 					}
 				]
