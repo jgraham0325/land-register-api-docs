@@ -1966,7 +1966,8 @@
 					{
 						"token": [
 							"Planner",
-							"HighwayAuthority"
+							"HighwayAuthority",
+							"Contractor"
 						]
 					}
 				],
@@ -1990,6 +1991,43 @@
 						"items": {
 							"$ref": "#/definitions/Section81Severity"
 						}
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"type": "integer"
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_column",
+						"required": false,
+						"enum": [
+							"status_changed_date"
+						],
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_direction",
+						"required": false,
+						"enum": [
+							"asc",
+							"desc"
+						],
+						"type": "string"
 					}
 				]
 			}
