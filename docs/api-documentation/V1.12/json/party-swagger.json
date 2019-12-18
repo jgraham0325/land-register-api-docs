@@ -271,6 +271,14 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"password": {
 					"type": "string",
 					"description": "Min length 6 characters\nMax length 99 characters",
@@ -290,6 +298,8 @@
 			},
 			"required": [
 				"email",
+				"first_name",
+				"last_name",
 				"roles"
 			],
 			"type": "object"
@@ -342,7 +352,7 @@
 			],
 			"type": "object"
 		},
-		"TokenRefereshRequest": {
+		"TokenRefreshRequest": {
 			"properties": {
 				"refresh_token": {
 					"type": "string"
@@ -400,13 +410,23 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"role": {
 					"$ref": "#/definitions/UserGroup",
 					"x-nullable": true
 				}
 			},
 			"required": [
-				"email"
+				"email",
+				"first_name",
+				"last_name"
 			],
 			"type": "object"
 		},
@@ -469,6 +489,14 @@
 					"type": "string",
 					"description": "Max length 50 characters"
 				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
 				"organisation_reference": {
 					"type": "string",
 					"description": "Max length 20 characters"
@@ -476,6 +504,8 @@
 			},
 			"required": [
 				"email",
+				"first_name",
+				"last_name",
 				"organisation_reference"
 			],
 			"type": "object"
@@ -684,6 +714,55 @@
 				]
 			}
 		},
+		"/organisations": {
+			"get": {
+				"operationId": "GetOrganisations",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/OrganisationSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get organisations for more information",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "type",
+						"required": false,
+						"type": "string",
+						"enum": [
+							"PROMOTER",
+							"HA",
+							"CONTRACTOR"
+						]
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
 		"/users/{email}": {
 			"get": {
 				"operationId": "GetUser",
@@ -739,7 +818,7 @@
 						"name": "body",
 						"required": true,
 						"schema": {
-							"$ref": "#/definitions/TokenRefereshRequest"
+							"$ref": "#/definitions/TokenRefreshRequest"
 						}
 					}
 				]
