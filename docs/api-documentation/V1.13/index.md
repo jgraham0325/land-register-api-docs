@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.13
+title: API specification V1.12
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.13
+Version 1.12
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API (Version 1.13 and onward) will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
@@ -266,8 +266,8 @@ details such as timings, comments, history and changes.
 **Reporting**
 {: .govuk-body}
 
-You can use the Data Export API to extract data from the service both as
-JSON and CSV format. These endpoints allow you to extract most Work
+You can use the Data Export API to extract data from the service in
+CSV format. These endpoints allow you to extract most Work
 information efficiently for your organisation.
 {: .govuk-body}
 
@@ -299,9 +299,7 @@ updated works.
 **Contractors**
 {: .govuk-body}
 
-Contractors can use the Data Export API to extract data from the service both as
-JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
+Contractors can use the Data Export API to extract data from the service in CSV format. These endpoints allow you to extract most Work information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
 {: .govuk-body}
 
 **Open Data**
@@ -2538,7 +2536,7 @@ Lookup API will be updated with the following changes:
 Reporting API updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in version 1.12</li>
+  <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in version 1.13</li>
 </ol>
 
 Data Export API updated with the following changes:
@@ -2811,7 +2809,7 @@ Version 1.3 (22/08/2019):
 
 <ol class="govuk-list govuk-list--bullet">
   <li>Audit events in the history response will include an object_reference. Where further information is required about what has changed this, object_reference can be used to find more details on the object</li>
-  <li>Contractors can use the Data Export API to extract data from the service both as JSON and CSV format. These endpoints allow you to extract most works information efficiently for the organisations for which you're working. swa_code parameters are available on the endpoints which must be used by contractors to provide the SWA code of the promoter they are working for.</li>
+  <li>Contractors can use the Reporting API to extract data from the service both as JSON and CSV format. These endpoints allow you to extract most works information efficiently for the organisations for which you're working. swa_code parameters are available on the endpoints which must be used by contractors to provide the SWA code of the promoter they are working for.</li>
   <li>Added lane rental assessment endpoints to Work API.</li>
   <li>Added activities endpoint to Geojson API to find activities in a given area.</li>
   <li>Added forgot password and password reset endpoints to Party API.</li>
