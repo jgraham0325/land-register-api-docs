@@ -8,7 +8,7 @@ title: API specification V1.12
 Version 1.12
 {: .govuk-body-l}
 
-As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API (Version 1.13 and onward) will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
+As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of the V1 specification will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for full details.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -403,10 +403,6 @@ The following are examples of what we consider to be breaking and non-breaking c
 <li>Adding new data to response objects (accepting risk that this breaks some formal contract JSON deserialisers)</li>
 <li>Adding a new endpoint to support new functionality or an enhancement to existing functionality</li>
 </ol>
-
-When the first participant organisations are approaching production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX environment alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to minimise them, the occasional breaking change may be required in order to release critical fixes.
-{: .govuk-body}
-
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
