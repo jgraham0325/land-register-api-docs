@@ -1,12 +1,14 @@
 ---
 layout: article
-title: Glossary - work in progress
-date: 2019-12-17T16:25:26.694Z
+title: Glossary
+date: 2019-12-19T16:25:26.694Z
 type: article
 published: 'true'
 status: publish
 ---
-<br /><br /><div class="divTable">
+<br /><br />
+
+<div class="divTable">
 <div class="divTableBody">
 <div class="divTableRow">
 <div class="divTableCell">
