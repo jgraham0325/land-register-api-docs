@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Glossary - work in progress
+title: Glossary
 date: 2019-12-17T16:25:26.694Z
 type: article
 published: 'true'
