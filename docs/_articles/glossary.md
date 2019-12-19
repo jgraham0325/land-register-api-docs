@@ -6,7 +6,9 @@ type: article
 published: 'true'
 status: publish
 ---
-<br /><br /><div class="divTable">
+<br /><br />
+
+<div class="divTable">
 <div class="divTableBody">
 <div class="divTableRow">
 <div class="divTableCell">
