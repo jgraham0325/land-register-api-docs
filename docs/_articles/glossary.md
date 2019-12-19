@@ -6,9 +6,7 @@ type: article
 published: 'true'
 status: publish
 ---
-<br /><br />
-
-<div class="divTable">
+<br /><br /><div class="divTable">
 <div class="divTableBody">
 <div class="divTableRow">
 <div class="divTableCell">
@@ -758,7 +756,7 @@ body {
 }
 .divTable{
 	display: table;
-	width: 100%;
+	width: 960px;
         border: 0.5px solid #ccc;
 }
 .divTableRow {
