@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Glossary
-date: 2019-12-17T16:25:26.694Z
+date: 2019-12-19T16:25:26.694Z
 type: article
 published: 'true'
 status: publish
