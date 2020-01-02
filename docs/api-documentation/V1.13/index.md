@@ -2190,7 +2190,7 @@ There is no versioning available when updating information, so information chang
 
 <code>POST /section-81-works/section-81s</code>
 
-<code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
+<code>GET /works/{work reference number}/section-81s/{section 81 reference number}</code>
 
 <code>PUT /works/{work reference number}/section-81s/{section 81 reference number}/status</code>
 
@@ -2476,7 +2476,7 @@ Party API will be updated with the following changes:
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
 </ol>
 
-In previous verions of the documentation <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> was listed as being released on the Party API. This was incorrect. This endpoint is available on the Works API and the documentation has been corrected.
+In previous verions of the documentation <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> was listed as being released on the Party API. This was incorrect. This endpoint is available on the Works API and the documentation has been corrected.
 {: .govuk-body}
 
 Version 1.11 (12/12/2019):
@@ -2521,7 +2521,7 @@ Work API will be updated with the following changes:
 	<li>New <code>POST /historic-works/inspections</code> endpoint to create an inspection on a historic work</li>
 	<li>New <code>POST /non-notifiable-works/sites</code> endpoint to create a reinstatement on a non-notifiable work</li>
 	<li>Existing <code>POST /works</code>, <code>POST /permits</code> and <code>POST /permit-alterations</code> requests updated to make <code>special_desig_location_text</code> field optional</li>
-  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
+  <li>A new endpoint <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Lookup API will be updated with the following changes:
