@@ -2187,7 +2187,7 @@ There is no versioning available when updating information, so information chang
 
 <code>POST /section-81-works/section-81s</code>
 
-<code>GET /section-81-works/{work reference number}/section-81s/{section 81 reference number}</code>
+<code>GET /works/{work reference number}/section-81s/{section 81 reference number}</code>
 
 S81 is a part of NRSWA that details the need for works promoters to maintain and inspect their assets within the highway. A failure in these assets is commonly known as a S81 failure and could include covers that are broken.
 {: .govuk-body}
@@ -2514,7 +2514,7 @@ Party API will be updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
 	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
-  <li>A new endpoint <code>GET /section-81-works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
+  <li>A new endpoint <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> has been created to view a specific section 81s details.</li>
 </ol>
 
 Reporting API updated with the following changes:
