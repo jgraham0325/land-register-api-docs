@@ -120,15 +120,17 @@ See works reference number (WRN) section for details on how the workstream prefi
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
+Forward plan statuses</div>
 
-**Figure.** Forward plan statuses</div>
-
-
+_(Previously section 22 in Business rules v0.1 draft)_   
 
 
 **<span id="3-paa">3.2. PAAs</span>**
 
 * x
+
+
+
 
 <style>
 .center {
@@ -140,10 +142,14 @@ See works reference number (WRN) section for details on how the workstream prefi
 div.polaroid50 {
   width: 50%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2), 0 1px 15px 0 rgba(0, 0, 0, 0.19);
 }
-
 div.container {
   text-align: center;
   padding: 0px 20px 10px 20px;
+  font-size: 12px;
+}
+.figure {
+  font-size: 12px;
+}
 </style>
