@@ -119,7 +119,12 @@ See works reference number (WRN) section for details on how the workstream prefi
 * All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
-<img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" class="center" alt="Street Manager Forward plan statuses" width="450px" />
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
+
+**Figure.** Forward plan statuses</div>
+
+
+
 
 **<span id="3-paa">3.2. PAAs</span>**
 
@@ -132,4 +137,13 @@ See works reference number (WRN) section for details on how the workstream prefi
   margin-right: auto;
   width: 50%;
 }
+div.polaroid50 {
+  width: 50%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.container {
+  text-align: center;
+  padding: 0px 20px 10px 20px;
 </style>
