@@ -22,6 +22,7 @@ status: publish
 2. <a href="#2-workstreams">Workstreams</a><br />
 3. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
 3.1 <a href="#3-forwardplans">Forward plans</a><br />
+3.2 [PAAs](#3-paa)<br />
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -118,4 +119,17 @@ See works reference number (WRN) section for details on how the workstream prefi
 * All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
+<img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" class="center" alt="Street Manager Forward plan statuses" width="450px" />
 
+**<span id="3-paa">3.2. PAAs</span>**
+
+* x
+
+<style>
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+</style>
