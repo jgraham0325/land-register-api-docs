@@ -18,6 +18,7 @@ status: publish
 1. <a href="#1--general-rules-and-validation">General rules and validation</a><br />
 1.1 <a href="#1-numbers">Numbers</a><br />
 1.2 <a href="#1-datetime">Dates and times</a><br />
+1.3 [Coordinates](#1-coordinates)<br />
 1.3 <a href="#1-charlimits">Text character limits</a><br />
 2. <a href="#2-workstreams">Workstreams</a><br />
 3. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
@@ -39,6 +40,18 @@ All numbers within Street Manager system are non-negative.
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
+
+
+**<span id="1-coordinates">1.3. Coordinations</span>**
+
+Coordinates must be a GeoJSON geometry (using British National Grid, easting and northing pairs).
+
+
+**<span id="1-usrn">1.4. USRN</span>**
+
+USRN must be a value between 100001 and 99999999.
+
+_(Previously section 16.3 in Business rules v0.1 draft)_
 
 
 **<span id="1-charlimits">1.3. Text character limits</span>**
@@ -120,12 +133,12 @@ See works reference number (WRN) section for details on how the workstream prefi
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
-Forward plan statuses</div>
+A diagram of forward plan statuses</div>
 
-_(Previously section 22 in Business rules v0.1 draft)_   
+_(Previously section 22 in Business rules v0.1 draft)_  
 
 
-**<span id="3-paa">3.2. PAAs</span>**
+**<span id="3-paa">3.2. Permit applications</span>**
 
 * x
 
@@ -147,9 +160,11 @@ div.polaroid50 {
 div.container {
   text-align: center;
   padding: 0px 20px 10px 20px;
-  font-size: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
 }
-.figure {
+em {
   font-size: 12px;
 }
 </style>
