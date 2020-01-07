@@ -19,8 +19,10 @@ status: publish
 1.1 <a href="#1-numbers">Numbers</a><br />
 1.2 <a href="#1-datetime">Dates and times</a><br />
 1.3 <a href="#1-charlimits">Text character limits</a><br />
-2. <a href="#2--workstreams">Workstreams</a><br />
-3. <a href="#3--submissions-and-applications">Submissions and applications</a><br />
+2. <a href="#2-workstreams">Workstreams</a><br />
+3. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
+3.1 <a href="#3-forwardplans">Forward plans</a><br />
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -30,11 +32,13 @@ status: publish
 
 All numbers within Street Manager system are non-negative.
 
+
 **<span id="1-datetime">1.2. Dates and times</span>**
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
+
 
 **<span id="1-charlimits">1.3. Text character limits</span>**
 
@@ -71,7 +75,7 @@ These include:
 * Contact details
 * Street special designation code
 
-1.3.3 Multi-line text areas
+**1.3.3 Multi-line text areas**
 
 Text areas for large comment fields are limited to the max length of 1500 characters.
 
@@ -106,3 +110,12 @@ See works reference number (WRN) section for details on how the workstream prefi
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## 3. Submissions and applications
+
+**<span id="3-forwardplans">3.1. Forward plans</span>**
+
+* It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
+* Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
+* All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
+* When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
+
+
