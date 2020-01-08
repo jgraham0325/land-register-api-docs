@@ -33,6 +33,16 @@ _Archive of Business rules v0.1 draft can be found here: <https://departmentfort
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+## Changes
+
+| Section | Change comment |
+|:--------|:---------------|
+| 1.      | Added |
+| 1.1.    | Updated |
+| 1.2.    | Updated |
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
 ## 1.  General rules and validation
 
 **<span id="1-numbers">1.1. Numbers</span>**
