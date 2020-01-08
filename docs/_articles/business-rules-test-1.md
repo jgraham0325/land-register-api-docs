@@ -34,15 +34,26 @@ status: publish
 
 All numbers within Street Manager system are non-negative.
 
-
 **<span id="1-datetime">1.2. Dates and times</span>**
+
+**1.2.1 Date and time format**
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
+**1.2.2 Working day**
 
-**<span id="1-coordinates">1.3. Coordinations</span>**
+Street Manager calculates working days based on bank holidays, public holidays, and weekends – not times. For example, the period from 00:00 - 16:30 is considered a working day. Any time before 16:30 is recorded as _that_ working day. Any time after 16:30 is considered the next working day.
+
+****Note - currently the working day duration factors in bank holidays. However, as the Street Manager system receives bank holiday data from gov.uk up to the end of the following year, any works that extend beyond that won't be factoring in bank holidays****
+
+_(Previously section 1.6 in Business rules v0.1 draft)_
+
+
+
+
+**<span id="1-coordinates">1.3. Coordinates</span>**
 
 Coordinates must be a GeoJSON geometry (using British National Grid, easting and northing pairs).
 
@@ -52,6 +63,14 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 USRN must be a value between 100001 and 99999999.
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
+
+
+
+
+
+
+
+
 
 
 **<span id="1-charlimits">1.3. Text character limits</span>**
@@ -125,44 +144,11 @@ See works reference number (WRN) section for details on how the workstream prefi
 
 ## 3. Works submissions and applications
 
-**<span id="3-refnumbers">3.1. Reference numbers**</span>
-
-**Works reference number (WRN)**
+**<span id="3-refnumbers">3.1. Works reference number (WRN)**</span>
 
 xxx
 
 _(Previously section 1.1 in Business rules v0.1 draft)_  
-
-
-**Permit reference number**
-
-xxx
-
-_(Previously section 1.2 in Business rules v0.1 draft)_  
-
-
-
-**<span id="3-workstype">3.2. Works type**</span>
-
-xxx
-
-_(Previously section 1.3 in Business rules v0.1 draft)_  
-
-
-
-**<span id="3-workstype">3.3. Works category**</span>
-
-xxx
-
-_(Previously section 1.4 in Business rules v0.1 draft)_  
-
-
-
-
-
-
-
-
 
 
 
@@ -179,13 +165,61 @@ A diagram of forward plan statuses</div>
 _(Previously section 22 in Business rules v0.1 draft)_  
 
 
-**<span id="3-pa">3.2. Permit applications</span>**
-* x
+
+
+
+
+**<span id="3-pa">3.4. PAA & Permit applications</span>**
+
+**3.3.1. Permit reference number**
+
+xxx
+
+_(Previously section 1.2 in Business rules v0.1 draft)_  
+
+
+
+**3.3.2. Works type**
+
+xxx
+
+_(Previously section 1.3 in Business rules v0.1 draft)_  
+
+
+
+**3.3.3. Works category**
+
+xxx
+
+_(Previously section 1.4 in Business rules v0.1 draft)_  
+
+
+
+**3.3.4. Permit application statuses**
+
+**PAA statuses**
+
+<Insert diagram>
+
+**Permit statuses**
+
+<Insert diagram>
+
+_(Previously section 1.5 in Business rules v0.1 draft)_  
+
+
+
 
 
 **3.x.x. Early start**
 * x
 
+
+**<span id="3-workstype">3.3. Works category**</span>
+
+xxx
+
+_(Previously section 1.4 in Business rules v0.1 draft)_  
 
 
 
