@@ -9,10 +9,7 @@ status: publish
 # Glossary
 Version 0.1.0 draft
 
-Table of contents
-
-Glossary
-Change history
+[Change history](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)
 
 
 <br /><br />
