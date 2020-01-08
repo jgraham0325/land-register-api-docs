@@ -9,11 +9,9 @@ status: publish
 # Glossary
 Version 0.1.0 draft
 
-Table of contents
+[Change history](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)
 
-Glossary
-Change history
-
+****
 
 <br /><br />
 
@@ -741,12 +739,3 @@ Change history
 </tbody>
 </table>
 
-
-
-## Change history
-
-| Version | Action | Term | Previous definition | New definition |
-|:--------|:-------|:-----|:--------------------|:---------------|
-| 0.1.1   | Add | Example |  | Means y |
-| 0.1.1   | Update | Example | Means x | Means y |
-| 0.1.1   | Remove | Example | Means x |  |
