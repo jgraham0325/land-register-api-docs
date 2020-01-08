@@ -11,6 +11,7 @@ Version 0.1.0 draft
 
 [Change history](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)
 
+****
 
 <br /><br />
 
