@@ -180,7 +180,7 @@ A diagram of forward plan statuses</div>
 
 _(Previously section 22 in Business rules v0.1 draft)_  
 
-
+<br /><br />
 
 
 
@@ -188,6 +188,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 **<span id="3-pa">3.3. PAA & Permit applications</span>**
 
 **3.3.1. Statuses**
+_(Previously section 1.5 in Business rules v0.1 draft)_ 
 
 **3.3.1.1. PAA statuses**
 
@@ -209,7 +210,7 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.3. Works type**
+**3.3.3. Works types**
 
 xxx
 
@@ -218,33 +219,54 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.4. Works category**
+**3.3.4. Works categories**
 
-xxx
+* x
+* x
+
+< Insert diagram >
 
 _(Previously section 1.4 in Business rules v0.1 draft)_  
 
+<br />
 
 
-
-
-_(Previously section 1.5 in Business rules v0.1 draft)_  
-
-
-
-
-
-**3.x.x. Early start**
+**3.3.5. Early start**
 * x
 
 
-**<span id="3-workstype">3.3. Works category**</span>
+**3.3.6. Works category**
 
 xxx
 
-_(Previously section 1.4 in Business rules v0.1 draft)_  
+_(Previously section 1.9 in Business rules v0.1 draft)_  
+
+<br />
 
 
+**3.3.7. Assessment period
+
+For all works categories, the clock starts counting down from the next working day after submission.
+
+Table: Assessment period by works category:
+
+| Works category | Assessment period |
+|:---------------|:------------------|
+| Major PAA      | 28 calendar days |
+| Major PA       | 5 working days   |
+| Standard       | 5 working days   |
+| Minor          | 2 working days   |
+| Immediate      | 2 working days   |
+
+_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
+
+
+
+Deem**
+
+xxx
+
+_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_  
 
 
 
