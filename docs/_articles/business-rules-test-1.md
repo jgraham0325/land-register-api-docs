@@ -13,6 +13,9 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 **NOTE:** This documentation is being trialled for use with the **Street Manager private beta for authorised participants given credentials only**, it is not in final state and should not be taken as production documentation.
 
+_Archive of Business rules v0.1 draft can be found here: <https://departmentfortransport.github.io/street-manager-docs/business-rules/xxx>_
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Table of contents
@@ -64,6 +67,19 @@ _(Previously section 1.7 in Business rules v0.1 draft)_
 
 
 <br />
+
+
+
+**1.2.3 Calendar month**
+
+For the purpose of deeming, a calendar month is calculated as 28 calendar days.
+
+_(Previously section 1.13 in Business rules v0.1 draft)_
+
+
+<br />
+
+
 
 **<span id="1-coordinates">1.3. Coordinates</span>**
 
@@ -187,7 +203,9 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 **<span id="3-pa">3.3. PAA & Permit applications</span>**
 
-**3.3.1. Statuses**
+<br />
+
+**3.3.1. Statuses**  
 _(Previously section 1.5 in Business rules v0.1 draft)_ 
 
 **3.3.1.1. PAA statuses**
@@ -301,7 +319,7 @@ _(Previously section 26 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## Viewing and managing records
+## View and manage records
 
 List pages, search and filtering
 
@@ -344,15 +362,75 @@ Validity period
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+
+
+
+
 ## Sites and Reinstatements
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
+
+
+
+
+
+
+## Activities and events
+
+**<span id="4-pa">4.x. Activity reference number</span>**
+
+x
+
+**<span id="4-pa">4.x. Activity types</span>**
+
+x
+
+_(Previously section 1.14 in Business rules v0.1 draft)_
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
 
 ## Inspections and non-compliance
 
 **<span id="4-pa">4.x. Inspection reference number</span>**
 
 x
+
+_(Previously section 3.1 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection types and categories</span>**
+
+x
+
+_(Previously section 3.2 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection outcomes</span>**
+
+x
+
+_(Previously section 3.3 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection failure categories</span>**
+
+x
+
+_(Previously section 3.4 in Business rules v0.1 draft)_ 
+
+
+**<span id="4-pa">4.x. Inspection scheduling</span>**
+
+x
+
+_(Previously section 3.6 in Business rules v0.1 draft)_ 
+
+
 
 
 
@@ -363,6 +441,25 @@ x
 **<span id="4-pa">4.x. FPN reference number</span>**
 
 x
+
+_(Previously section 2.2 in Business rules v0.1 draft)_ 
+
+**<span id="3-pa">3.3. FPN statuses</span>**
+
+< insert diagram >
+
+_(Previously section 2.1 in Business rules v0.1 draft)_ 
+
+<br />
+
+
+
+
+
+
+
+
+
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
