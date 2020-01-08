@@ -360,7 +360,7 @@ Log works start
 
 Rules
 
-Log works stop
+Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
 
 Rules
 
@@ -380,22 +380,56 @@ Validity period
 
 ## Sites and Reinstatements
 
-**<span id="4-pa">4.x. Add a reinstatement</span>**
-
-* To add a reinstatement on a works record, the latest permit must be in 'In progress or 'Closed' status and require excavation.
-* A new site will be added automatically if 'Add a reinstatement' is selected on the works record level.
-* To add a reinstatement to an existing site, select 'Add another reinstatement' on the site record level.
 
 
-_(Previously section 4.2 & 4.3 in Business rules v0.1 draft)_
+**<span id="4-pa">4.x. Reinstatement types</span>**
+
+x
+
+_(Previously section 4.7 in Business rules v0.1 draft)_
+
+
+
 
 
 **<span id="4-pa">4.x. Site number</span>**
 
+* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
+
+
+
+**<span id="4-pa">4.x. Add a reinstatement</span>**
+
+* To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
+* Reinstatement date must be:
+  + the current date or in the past
+  + on or before the actual end date if works stop has been logged
+  + A user can only enter a reinstatement date until the works' 'Actual start date' has been logged. (WHAT DOES THIS MEAN?)
+* To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
+* All historical reinstatement details are available on the 'site record' page.
+* This functionality may be used to correct a mistake on the previous reinstatement.
+  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new permit would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
+
+
+_(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
+
+
+
+
+
+**<span id="4-pa">4.x. Making interim site permanent</span>**
+
 x
 
+_(Previously section 4.4 in Business rules v0.1 draft)_
 
-**<span id="4-pa">4.x. Reinstatement end date</span>**
+
+
+
+
+
+
+**<span id="4-pa">4.x. Reinstatement end date?? right term?</span>**
 
 x
 
@@ -408,16 +442,6 @@ _(Previously section 4.1 in Business rules v0.1 draft)_
 * Alternatively, select 'Change' on the works record level against 'Final site registered'.
 
 _(Previously section 4.3 in Business rules v0.1 draft)_
-
-
-**<span id="4-pa">4.x. Making interim site permanent</span>**
-
-x
-
-_(Previously section 4.4 in Business rules v0.1 draft)_
-
-
-
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
