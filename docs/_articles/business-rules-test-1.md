@@ -252,11 +252,11 @@ Table: Assessment period by works category:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
-| Major PAA      | 28 calendar days |
-| Major PA       | 5 working days   |
-| Standard       | 5 working days   |
-| Minor          | 2 working days   |
-| Immediate      | 2 working days   |
+| Major PAA      | 28 calendar days  |
+| Major PA       | 5 working days    |
+| Standard       | 5 working days    |
+| Minor          | 2 working days    |
+| Immediate      | 2 working days    |
 
 _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
 
