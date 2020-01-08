@@ -180,19 +180,57 @@ _(Previously section 26 in Business rules v0.1 draft)_
 
 
 
-## Search and filtering
+## Viewing and managing records
 
-Map
-
-Filtering
-
-Search
+List pages, search and filtering
 
 Expiring interim page is xxx
 
 
+Map
+
+Map Filtering
+
+Map Search
 
 
+Works history
+
+
+Commenting on a works record
+
+Topic
+
+
+
+
+
+## Deliver and execute works
+
+Log works start
+
+Rules
+
+Log works stop
+
+Rules
+
+Revert works start / works stop
+
+Inspection units
+
+Validity period
+
+
+## Reinstatements
+
+## Inspections and non-compliance
+
+## Fixed penalty notice (FPN)
+
+
+
+## Fee reporting
 
 
 <style>
