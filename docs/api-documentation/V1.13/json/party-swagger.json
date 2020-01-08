@@ -197,6 +197,9 @@
 						"$ref": "#/definitions/OrganisationSummaryResponse"
 					},
 					"x-nullable": true
+				},
+				"is_hs2_applicable": {
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -207,7 +210,8 @@
 				"phone_number",
 				"postcode",
 				"prefix",
-				"organisation_type"
+				"organisation_type",
+				"is_hs2_applicable"
 			],
 			"type": "object"
 		},
@@ -322,6 +326,36 @@
 			],
 			"type": "object"
 		},
+		"UserForgotPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email"
+			],
+			"type": "object"
+		},
+		"UserResetPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"verification_code": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"verification_code",
+				"password"
+			],
+			"type": "object"
+		},
 		"OrganisationContractsCreateRequest": {
 			"properties": {
 				"contractor_organisation_references": {
@@ -371,36 +405,6 @@
 			},
 			"required": [
 				"access_token"
-			],
-			"type": "object"
-		},
-		"UserForgotPasswordRequest": {
-			"properties": {
-				"email": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"email"
-			],
-			"type": "object"
-		},
-		"UserResetPasswordRequest": {
-			"properties": {
-				"email": {
-					"type": "string"
-				},
-				"verification_code": {
-					"type": "string"
-				},
-				"password": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"email",
-				"verification_code",
-				"password"
 			],
 			"type": "object"
 		},
@@ -797,6 +801,54 @@
 				]
 			}
 		},
+		"/forgot-password": {
+			"post": {
+				"operationId": "ForgotPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserForgotPasswordRequest"
+						}
+					}
+				]
+			}
+		},
+		"/reset-password": {
+			"post": {
+				"operationId": "ResetPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserResetPasswordRequest"
+						}
+					}
+				]
+			}
+		},
 		"/refresh": {
 			"post": {
 				"operationId": "Refresh",
@@ -843,54 +895,6 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/LogoutRequest"
-						}
-					}
-				]
-			}
-		},
-		"/forgot-password": {
-			"post": {
-				"operationId": "ForgotPassword",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/UserForgotPasswordRequest"
-						}
-					}
-				]
-			}
-		},
-		"/reset-password": {
-			"post": {
-				"operationId": "ResetPassword",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/UserResetPasswordRequest"
 						}
 					}
 				]

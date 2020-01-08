@@ -16,50 +16,6 @@
 			],
 			"type": "object"
 		},
-		"FPNStatus": {
-			"enum": [
-				"issued",
-				"accepted",
-				"paid",
-				"paid_discounted",
-				"disputed",
-				"withdrawn"
-			],
-			"type": "string"
-		},
-		"FPNCSVExportRequest": {
-			"properties": {
-				"swa_code": {
-					"type": "string",
-					"description": "Must be provided if user is a contractor\nUp to four digits",
-					"x-nullable": true
-				},
-				"query": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"status": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/FPNStatus"
-					},
-					"x-nullable": true
-				},
-				"start_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "start_date must be before or the same as end_date if both are provided",
-					"x-nullable": true
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "end_date must be the same as or after start_date if both are provided",
-					"x-nullable": true
-				}
-			},
-			"type": "object"
-		},
 		"Section81Status": {
 			"enum": [
 				"issued",
@@ -139,6 +95,50 @@
 			},
 			"type": "object"
 		},
+		"FPNStatus": {
+			"enum": [
+				"issued",
+				"accepted",
+				"paid",
+				"paid_discounted",
+				"disputed",
+				"withdrawn"
+			],
+			"type": "string"
+		},
+		"FPNCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FPNStatus"
+					},
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "start_date must be before or the same as end_date if both are provided",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "end_date must be the same as or after start_date if both are provided",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
 		"FeesCSVExportRequest": {
 			"properties": {
 				"start_date": {
@@ -158,83 +158,6 @@
 				"start_date",
 				"end_date"
 			],
-			"type": "object"
-		},
-		"InspectionResponseType": {
-			"enum": [
-				"inspection",
-				"reinspection"
-			],
-			"type": "string"
-		},
-		"InspectionCSVExportRequest": {
-			"properties": {
-				"swa_code": {
-					"type": "string",
-					"description": "Must be provided if user is a contractor\nUp to four digits",
-					"x-nullable": true
-				},
-				"query": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"inspection_response_type": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/InspectionResponseType"
-					},
-					"x-nullable": true
-				},
-				"start_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"end_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				}
-			},
-			"type": "object"
-		},
-		"ForwardPlanStatus": {
-			"enum": [
-				"raised",
-				"cancelled",
-				"progressed"
-			],
-			"type": "string"
-		},
-		"ForwardPlanCSVExportRequest": {
-			"properties": {
-				"swa_code": {
-					"type": "string",
-					"description": "Must be provided if user is a contractor\nUp to four digits",
-					"x-nullable": true
-				},
-				"query": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"forward_plan_status": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/ForwardPlanStatus"
-					},
-					"x-nullable": true
-				},
-				"proposed_start_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"proposed_end_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				}
-			},
 			"type": "object"
 		},
 		"PermitStatus": {
@@ -393,6 +316,83 @@
 				}
 			},
 			"type": "object"
+		},
+		"InspectionResponseType": {
+			"enum": [
+				"inspection",
+				"reinspection"
+			],
+			"type": "string"
+		},
+		"InspectionCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"inspection_response_type": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/InspectionResponseType"
+					},
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
+		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"progressed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanCSVExportRequest": {
+			"properties": {
+				"swa_code": {
+					"type": "string",
+					"description": "Must be provided if user is a contractor\nUp to four digits",
+					"x-nullable": true
+				},
+				"query": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"forward_plan_status": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ForwardPlanStatus"
+					},
+					"x-nullable": true
+				},
+				"proposed_start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"proposed_end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				}
+			},
+			"type": "object"
 		}
 	},
 	"info": {
@@ -404,72 +404,6 @@
 		}
 	},
 	"paths": {
-		"/work-data": {
-			"get": {
-				"operationId": "GetLatestWorkDataCsv",
-				"produces": [
-					"text/csv"
-				],
-				"responses": {
-					"200": {
-						"content": {
-							"text/csv": {
-								"schema": {
-									"type": "string"
-								}
-							}
-						}
-					},
-					"204": {
-						"description": "No content"
-					}
-				},
-				"description": "See API specification Resource Guide > Data Export API > Work Data CSV for more information",
-				"security": [
-					{
-						"token": [
-							"DataExport"
-						]
-					}
-				],
-				"parameters": []
-			}
-		},
-		"/fixed-penalty-notices/csv": {
-			"post": {
-				"operationId": "GenerateFPNCSV",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/CSVExportResponse"
-						}
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": false,
-						"schema": {
-							"$ref": "#/definitions/FPNCSVExportRequest"
-						}
-					}
-				]
-			}
-		},
 		"/section-81s/csv": {
 			"post": {
 				"operationId": "GenerateSection81CSV",
@@ -540,6 +474,73 @@
 				]
 			}
 		},
+		"/fixed-penalty-notices/csv": {
+			"post": {
+				"operationId": "GenerateFPNsCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/FPNCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/work-data": {
+			"get": {
+				"operationId": "GetLatestWorkDataCsv",
+				"produces": [
+					"text/csv"
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"text/csv": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"204": {
+						"description": "No content"
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Work Data CSV for more information",
+				"security": [
+					{
+						"token": [
+							"DataExport"
+						]
+					}
+				],
+				"parameters": []
+			}
+		},
 		"/fees/csv": {
 			"post": {
 				"operationId": "GenerateFeeCSV",
@@ -570,6 +571,41 @@
 						"required": false,
 						"schema": {
 							"$ref": "#/definitions/FeesCSVExportRequest"
+						}
+					}
+				]
+			}
+		},
+		"/permits/csv": {
+			"post": {
+				"operationId": "GeneratePermitCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CSVExportResponse"
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/PermitCSVExportRequest"
 						}
 					}
 				]
@@ -645,41 +681,6 @@
 				]
 			}
 		},
-		"/permits/csv": {
-			"post": {
-				"operationId": "GeneratePermitCSV",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/CSVExportResponse"
-						}
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": false,
-						"schema": {
-							"$ref": "#/definitions/PermitCSVExportRequest"
-						}
-					}
-				]
-			}
-		},
 		"/csv/{csvId}": {
 			"get": {
 				"operationId": "GetCsv",
@@ -727,6 +728,9 @@
 			"name": "token",
 			"in": "header",
 			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority",
+				"Contractor": "Contractor",
 				"DataExport": "DataExport"
 			}
 		}

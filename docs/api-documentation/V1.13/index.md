@@ -2455,6 +2455,7 @@ Version 1.13 (08/01/2019):
 
 Work API has been updated with the following changes:
 {: .govuk-body}
+
 <ol class="govuk-list govuk-list--bullet">
     <li><code>POST /works/{workReferenceNumber}/comments</code> updated to remove comment_id</li>
     <li>The <code>WorkType</code> enum has been updated to include <code>hs2_highway_works</code> as a valid type</li>
@@ -2467,6 +2468,25 @@ Work API has been updated with the following changes:
     <li>The <code>POST /works/{workReferenceNumber}/comments</code> endpoint has been updated to remove the id of the created comment</li>
     <li>The <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> endpoint has been updated to include <code>status_changed_date</code></li>
     <li>The <code>GET /permits/category</code> endpoint has been extended to accept a <code>hs2_highway_works</code> parameter</li>
+</ol>
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li>Added <code>GET /section-81s</code> endpoint to allow a list of Section 81s to be retrieved</li>
+</ol>
+
+Party API has be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>GET /organisations</code> endpoint to allow retrieval of organisations</li>
+</ol>
+
+Data Export API has be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+	<li>New <code>POST fixed-penalty-notices/csv</code> endpoint to enable async CSV generation</li>
 </ol>
 
 Version 1.12 (19/12/2019):
