@@ -232,23 +232,17 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 
 
 **3.3.5. Early start**
+
 * x
 
-
-**3.3.6. Works category**
-
-xxx
-
-_(Previously section 1.9 in Business rules v0.1 draft)_  
-
+_(Previously section 1.9 in Business rules v0.1 draft)_ 
+ 
 <br />
 
 
-**3.3.7. Assessment period
+**3.3.6. Assessment period**
 
-For all works categories, the clock starts counting down from the next working day after submission.
-
-Table: Assessment period by works category:
+The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
@@ -260,14 +254,16 @@ Table: Assessment period by works category:
 
 _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
 
+<br />
 
 
-Deem**
+**3.3.7. Multiple permit applications per works record**
 
-xxx
+* x
 
-_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_  
-
+_(Previously section 1.12 in Business rules v0.1 draft)_ 
+ 
+<br />
 
 
 
