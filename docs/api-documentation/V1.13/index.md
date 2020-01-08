@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.12
+title: API specification V1.13
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.12
+Version 1.13
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API (Version 1.13 and onward) will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
@@ -2449,6 +2449,26 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.13 (08/01/2019):
+{: .govuk-heading-s}
+
+
+Work API has been updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>POST /works/{workReferenceNumber}/comments</code> updated to remove comment_id</li>
+    <li>The <code>WorkType</code> enum has been updated to include <code>hs2_highway_works</code> as a valid type</li>
+    <li>The <code>WorkCategory</code> enum has been updated to include <code>hs2_highwaycode> as a valid category</li>
+    <li>The Permit and Work endpoints have been extended to include HS2 specific fields</li>
+    <li>The <code>WorkResponse</code> has been updated to no longer return the <code>historical_permit_reference</code></li>
+    <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
+    <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
+    <li>The <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> endpoint has been updated to remove the id of the created reinstatement</li>
+    <li>The <code>POST /works/{workReferenceNumber}/comments</code> endpoint has been updated to remove the id of the created comment</li>
+    <li>The <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> endpoint has been updated to include <code>status_changed_date</code></li>
+    <li>The <code>GET /permits/category</code> endpoint has been extended to accept a <code>hs2_highway_works</code> parameter</li>
+</ol>
+
 Version 1.12 (19/12/2019):
 {: .govuk-heading-s}
 
@@ -2536,7 +2556,7 @@ Lookup API will be updated with the following changes:
 Reporting API updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in version 1.13</li>
+  <li>DEPRECATION: All CSV export endpoints i.e. endpoints ending in <code>/csv</code> are now deprecated and will be removed in an upcoming version</li>
 </ol>
 
 Data Export API updated with the following changes:
