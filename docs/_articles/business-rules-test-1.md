@@ -36,17 +36,17 @@ All numbers within Street Manager system are non-negative.
 
 **<span id="1-datetime">1.2. Dates and times</span>**
 
+
 **1.2.1 Date and time format**
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
+
 **1.2.2 Working day**
 
-Street Manager calculates working days based on bank holidays, public holidays, and weekends – not times. For example, the period from 00:00 - 16:30 is considered a working day. Any time before 16:30 is recorded as _that_ working day. Any time after 16:30 is considered the next working day.
-
-****Note - currently the working day duration factors in bank holidays. However, as the Street Manager system receives bank holiday data from gov.uk up to the end of the following year, any works that extend beyond that won't be factoring in bank holidays****
+See the glossary for the definition of a working day: <https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html>
 
 _(Previously section 1.6 in Business rules v0.1 draft)_
 
