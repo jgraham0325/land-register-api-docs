@@ -9,6 +9,8 @@ status: publish
 # Business rules
 <span class="govuk-body-l">Version 1.13</span>
 
+Refer to the glossary for definitions of terms: <https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html>
+
 **NOTE:** This documentation is being trialled for use with the **Street Manager private beta for authorised participants given credentials only**, it is not in final state and should not be taken as production documentation.
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -34,6 +36,8 @@ status: publish
 
 All numbers within Street Manager system are non-negative.
 
+<br />
+
 **<span id="1-datetime">1.2. Dates and times</span>**
 
 
@@ -52,11 +56,20 @@ _(Previously section 1.6 in Business rules v0.1 draft)_
 
 
 
+**1.2.2 Calendar day**
+
+Street Manager calculates calendar days based on a 24 hour clock. So for example the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
+
+_(Previously section 1.7 in Business rules v0.1 draft)_
+
+
+<br />
 
 **<span id="1-coordinates">1.3. Coordinates</span>**
 
 Coordinates must be a GeoJSON geometry (using British National Grid, easting and northing pairs).
 
+<br />
 
 **<span id="1-usrn">1.4. USRN</span>**
 
@@ -71,7 +84,7 @@ _(Previously section 16.3 in Business rules v0.1 draft)_
 
 
 
-
+<br />
 
 **<span id="1-charlimits">1.3. Text character limits</span>**
 
@@ -130,7 +143,9 @@ All other text areas are limited to 500 characters. These include:
 * Cancellation reason
 
 
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
 
 ## 2. Workstreams
 
@@ -151,6 +166,7 @@ xxx
 _(Previously section 1.1 in Business rules v0.1 draft)_  
 
 
+<br />
 
 **<span id="3-forwardplans">3.2. Forward plans</span>**
 
@@ -164,64 +180,93 @@ A diagram of forward plan statuses</div>
 
 _(Previously section 22 in Business rules v0.1 draft)_  
 
+<br /><br />
 
 
 
 
+**<span id="3-pa">3.3. PAA & Permit applications</span>**
 
-**<span id="3-pa">3.4. PAA & Permit applications</span>**
+**3.3.1. Statuses**
+_(Previously section 1.5 in Business rules v0.1 draft)_ 
 
-**3.3.1. Permit reference number**
+**3.3.1.1. PAA statuses**
+
+< Insert diagram >
+
+**3.3.1.2. Permit statuses**
+
+< Insert diagram >
+
+<br />
+
+
+**3.3.2. Permit reference number**
 
 xxx
 
 _(Previously section 1.2 in Business rules v0.1 draft)_  
 
+<br />
 
 
-**3.3.2. Works type**
+**3.3.3. Works types**
 
 xxx
 
 _(Previously section 1.3 in Business rules v0.1 draft)_  
 
+<br />
 
 
-**3.3.3. Works category**
+**3.3.4. Works categories**
 
-xxx
+* x
+* x
+
+< Insert diagram >
 
 _(Previously section 1.4 in Business rules v0.1 draft)_  
 
+<br />
 
 
-**3.3.4. Permit application statuses**
-
-**PAA statuses**
-
-<Insert diagram>
-
-**Permit statuses**
-
-<Insert diagram>
-
-_(Previously section 1.5 in Business rules v0.1 draft)_  
-
-
-
-
-
-**3.x.x. Early start**
+**3.3.5. Early start**
 * x
 
 
-**<span id="3-workstype">3.3. Works category**</span>
+**3.3.6. Works category**
 
 xxx
 
-_(Previously section 1.4 in Business rules v0.1 draft)_  
+_(Previously section 1.9 in Business rules v0.1 draft)_  
+
+<br />
 
 
+**3.3.7. Assessment period
+
+For all works categories, the clock starts counting down from the next working day after submission.
+
+Table: Assessment period by works category:
+
+| Works category | Assessment period |
+|:---------------|:------------------|
+| Major PAA      | 28 calendar days  |
+| Major PA       | 5 working days    |
+| Standard       | 5 working days    |
+| Minor          | 2 working days    |
+| Immediate      | 2 working days    |
+
+_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
+
+
+
+Deem**
+
+xxx
+
+_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_  
 
 
 
