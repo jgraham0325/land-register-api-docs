@@ -13,6 +13,9 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 **NOTE:** This documentation is being trialled for use with the **Street Manager private beta for authorised participants given credentials only**, it is not in final state and should not be taken as production documentation.
 
+_Archive of Business rules v0.1 draft can be found here: <https://departmentfortransport.github.io/street-manager-docs/business-rules/xxx>_
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Table of contents
@@ -27,6 +30,16 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 3.1 <a href="#3-forwardplans">Forward plans</a><br />
 3.2 [PAAs](#3-paa)<br />
 
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+## Changes
+
+| Section | Change comment |
+|:--------|:---------------|
+| 1.      | Added |
+| 1.1.    | Updated |
+| 1.2.    | Updated |
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -64,6 +77,19 @@ _(Previously section 1.7 in Business rules v0.1 draft)_
 
 
 <br />
+
+
+
+**1.2.3 Calendar month**
+
+For the purpose of deeming, a calendar month is calculated as 28 calendar days.
+
+_(Previously section 1.13 in Business rules v0.1 draft)_
+
+
+<br />
+
+
 
 **<span id="1-coordinates">1.3. Coordinates</span>**
 
@@ -187,7 +213,9 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 **<span id="3-pa">3.3. PAA & Permit applications</span>**
 
-**3.3.1. Statuses**
+<br />
+
+**3.3.1. Statuses**  
 _(Previously section 1.5 in Business rules v0.1 draft)_ 
 
 **3.3.1.1. PAA statuses**
@@ -232,23 +260,17 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 
 
 **3.3.5. Early start**
+
 * x
 
-
-**3.3.6. Works category**
-
-xxx
-
-_(Previously section 1.9 in Business rules v0.1 draft)_  
-
+_(Previously section 1.9 in Business rules v0.1 draft)_ 
+ 
 <br />
 
 
-**3.3.7. Assessment period
+**3.3.6. Assessment period**
 
-For all works categories, the clock starts counting down from the next working day after submission.
-
-Table: Assessment period by works category:
+The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
@@ -260,14 +282,16 @@ Table: Assessment period by works category:
 
 _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
 
+<br />
 
 
-Deem**
+**3.3.7. Multiple permit applications per works record**
 
-xxx
+* x
 
-_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_  
-
+_(Previously section 1.12 in Business rules v0.1 draft)_ 
+ 
+<br />
 
 
 
@@ -305,7 +329,7 @@ _(Previously section 26 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## Viewing and managing records
+## View and manage records
 
 List pages, search and filtering
 
@@ -336,7 +360,7 @@ Log works start
 
 Rules
 
-Log works stop
+Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
 
 Rules
 
@@ -348,15 +372,139 @@ Validity period
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+
+
+
+
 ## Sites and Reinstatements
 
+
+
+**<span id="4-pa">4.x. Reinstatement types</span>**
+
+x
+
+_(Previously section 4.7 in Business rules v0.1 draft)_
+
+
+
+
+
+**<span id="4-pa">4.x. Site number</span>**
+
+* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
+
+
+
+**<span id="4-pa">4.x. Add a reinstatement</span>**
+
+* To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
+* Reinstatement date must be:
+  + the current date or in the past
+  + on or before the actual end date if works stop has been logged
+  + A user can only enter a reinstatement date until the works' 'Actual start date' has been logged. (WHAT DOES THIS MEAN?)
+* To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
+* All historical reinstatement details are available on the 'site record' page.
+* This functionality may be used to correct a mistake on the previous reinstatement.
+  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new permit would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
+
+
+_(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
+
+
+
+
+
+**<span id="4-pa">4.x. Making interim site permanent</span>**
+
+x
+
+_(Previously section 4.4 in Business rules v0.1 draft)_
+
+
+
+
+
+
+
+**<span id="4-pa">4.x. Reinstatement end date?? right term?</span>**
+
+x
+
+_(Previously section 4.1 in Business rules v0.1 draft)_
+
+
+**<span id="4-pa">4.x. Register final site</span>**
+
+* Final site may be registered by marking 'Are you registering the final site?' as Yes when adding a reinstatement.
+* Alternatively, select 'Change' on the works record level against 'Final site registered'.
+
+_(Previously section 4.3 in Business rules v0.1 draft)_
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
+
+
+
+
+
+
+## Activities and events
+
+**<span id="4-pa">4.x. Activity reference number</span>**
+
+x
+
+**<span id="4-pa">4.x. Activity types</span>**
+
+x
+
+_(Previously section 1.14 in Business rules v0.1 draft)_
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
 
 ## Inspections and non-compliance
 
 **<span id="4-pa">4.x. Inspection reference number</span>**
 
 x
+
+_(Previously section 3.1 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection types and categories</span>**
+
+x
+
+_(Previously section 3.2 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection outcomes</span>**
+
+x
+
+_(Previously section 3.3 in Business rules v0.1 draft)_ 
+
+**<span id="4-pa">4.x. Inspection failure categories</span>**
+
+x
+
+_(Previously section 3.4 in Business rules v0.1 draft)_ 
+
+
+**<span id="4-pa">4.x. Inspection scheduling</span>**
+
+x
+
+_(Previously section 3.6 in Business rules v0.1 draft)_ 
+
+
 
 
 
@@ -367,6 +515,25 @@ x
 **<span id="4-pa">4.x. FPN reference number</span>**
 
 x
+
+_(Previously section 2.2 in Business rules v0.1 draft)_ 
+
+**<span id="3-pa">3.3. FPN statuses</span>**
+
+< insert diagram >
+
+_(Previously section 2.1 in Business rules v0.1 draft)_ 
+
+<br />
+
+
+
+
+
+
+
+
+
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
