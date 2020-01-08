@@ -380,6 +380,46 @@ Validity period
 
 ## Sites and Reinstatements
 
+**<span id="4-pa">4.x. Add a reinstatement</span>**
+
+* To add a reinstatement on a works record, the latest permit must be in 'In progress or 'Closed' status and require excavation.
+* A new site will be added automatically if 'Add a reinstatement' is selected on the works record level.
+* To add a reinstatement to an existing site, select 'Add another reinstatement' on the site record level.
+
+
+_(Previously section 4.2 & 4.3 in Business rules v0.1 draft)_
+
+
+**<span id="4-pa">4.x. Site number</span>**
+
+x
+
+
+**<span id="4-pa">4.x. Reinstatement end date</span>**
+
+x
+
+_(Previously section 4.1 in Business rules v0.1 draft)_
+
+
+**<span id="4-pa">4.x. Register final site</span>**
+
+* Final site may be registered by marking 'Are you registering the final site?' as Yes when adding a reinstatement.
+* Alternatively, select 'Change' on the works record level against 'Final site registered'.
+
+_(Previously section 4.3 in Business rules v0.1 draft)_
+
+
+**<span id="4-pa">4.x. Making interim site permanent</span>**
+
+x
+
+_(Previously section 4.4 in Business rules v0.1 draft)_
+
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
