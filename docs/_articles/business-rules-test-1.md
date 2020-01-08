@@ -123,12 +123,50 @@ See works reference number (WRN) section for details on how the workstream prefi
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## 3. Submissions and applications
+## 3. Works submissions and applications
 
-**<span id="3-forwardplans">3.1. Reference numbers**</span>
+**<span id="3-refnumbers">3.1. Reference numbers**</span>
+
+**Works reference number (WRN)**
+
+xxx
+
+_(Previously section 1.1 in Business rules v0.1 draft)_  
 
 
-**<span id="3-forwardplans">3.1. Forward plans</span>**
+**Permit reference number**
+
+xxx
+
+_(Previously section 1.2 in Business rules v0.1 draft)_  
+
+
+
+**<span id="3-workstype">3.2. Works type**</span>
+
+xxx
+
+_(Previously section 1.3 in Business rules v0.1 draft)_  
+
+
+
+**<span id="3-workstype">3.3. Works category**</span>
+
+xxx
+
+_(Previously section 1.4 in Business rules v0.1 draft)_  
+
+
+
+
+
+
+
+
+
+
+
+**<span id="3-forwardplans">3.2. Forward plans</span>**
 
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
 * Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
@@ -145,7 +183,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 * x
 
 
-**<span id="3-earlystart">3.x. Early start</span>**
+**3.x.x. Early start**
 * x
 
 
@@ -157,9 +195,17 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 
 
-
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Changes to applications and permits
+
+**<span id="4-pa">4.x. Change request reference number</span>**
+
+x
+
+**<span id="4-pa">4.x. Change request types</span>**
+
+x
 
 **<span id="4-pa">4.x. Editing application pre-assessment</span>**
 
@@ -168,7 +214,7 @@ _(Previously section 26 in Business rules v0.1 draft)_
 
 **<span id="4-pa">4.x. Modified application</span>**
 
-
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Revoking a permit
 
@@ -178,7 +224,7 @@ _(Previously section 26 in Business rules v0.1 draft)_
 * x
 
 
-
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Viewing and managing records
 
@@ -203,7 +249,7 @@ Topic
 
 
 
-
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Deliver and execute works
 
@@ -221,16 +267,34 @@ Inspection units
 
 Validity period
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## Reinstatements
+## Sites and Reinstatements
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Inspections and non-compliance
 
+**<span id="4-pa">4.x. Inspection reference number</span>**
+
+x
+
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
 ## Fixed penalty notice (FPN)
 
+**<span id="4-pa">4.x. FPN reference number</span>**
 
+x
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Fee reporting
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
 <style>
