@@ -141,9 +141,56 @@ A diagram of forward plan statuses</div>
 _(Previously section 22 in Business rules v0.1 draft)_  
 
 
-**<span id="3-paa">3.2. Permit applications</span>**
-
+**<span id="3-pa">3.2. Permit applications</span>**
 * x
+
+
+**<span id="3-earlystart">3.x. Early start</span>**
+* x
+
+
+
+
+
+
+
+
+
+
+
+
+## Changes to applications and permits
+
+**<span id="4-pa">4.x. Editing application pre-assessment</span>**
+
+_(Previously section 26 in Business rules v0.1 draft)_ 
+
+
+**<span id="4-pa">4.x. Modified application</span>**
+
+
+
+## Revoking a permit
+
+
+
+**<span id="3-assesspa">3.x. Permit application assessment</span>**
+* x
+
+
+
+
+## Search and filtering
+
+Map
+
+Filtering
+
+Search
+
+Expiring interim page is xxx
+
+
 
 
 
