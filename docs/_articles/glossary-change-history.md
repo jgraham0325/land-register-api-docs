@@ -8,6 +8,8 @@ status: publish
 ---
 # Glossary
 
+[< Back to Glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html)
+
 ## Change history
 
 | Version | Action | Term | Previous definition | New definition |
