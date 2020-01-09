@@ -10,6 +10,8 @@ status: publish
 
 Note that this documentation is being trialled for use with the Street Manager Beta and is aimed towards authorised Beta participants. **As Street Manager remains under active development, this documentation will continue to develop over time.**
 
+Refer to the glossary for definitions of terms: <https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html>
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Releases
