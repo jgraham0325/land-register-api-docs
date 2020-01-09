@@ -7,9 +7,9 @@ published: 'true'
 status: publish
 ---
 # Glossary
-Version 0.1.0 draft
+<span style="float:left">Version 0.1.0 draft</span>
 
-[Change history](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)<br /><br />
+<span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span><br /><br />
 
 <!-- PASTE BELOW THIS LINE -->
 
