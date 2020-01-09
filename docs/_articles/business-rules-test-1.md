@@ -8,17 +8,21 @@ status: publish
 ---
 # Business rules
 
-<span class="govuk-body-l">Version 1.13</span>
+<span class="govuk-body-l" style="float:left">Version 1.13</span>
 
+<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span--><br /><br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
 ## Table of contents
 
-1. <a href="#1--general-rules-and-validation">General rules and validation</a><br />
-1.1  <a href="#1-numbers">Numbers</a><br />
-1.2 <a href="#1-datetime">Dates and times</a><br />
+1. [General rules and validation](#1--general-rules-and-validation)<br />
+1.1 [Numbers](#1-numbers)<br />
+1.2 [Dates and times](#1-datetime)
+   * Date and time format
+   * Working day
+
 1.3 [Coordinates](#1-coordinates)<br />
 1.3 <a href="#1-charlimits">Text character limits</a><br />
 1. <a href="#2-workstreams">Workstreams</a><br />
@@ -34,16 +38,16 @@ status: publish
 
 ## 1.  General rules and validation
 
-**<span id="1-numbers">1.1. Numbers</span>**
+### 1.1. Numbers
 
 All numbers within Street Manager system are non-negative.
 
 <br />
 
-**<span id="1-datetime">1.2. Dates and times</span>**
+### <span id="1-datetime">1.2. Dates and times</span>
 
 
-**1.2.1 Date and time format**
+#### 1.2.1 Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
 
