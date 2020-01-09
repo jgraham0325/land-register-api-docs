@@ -10,30 +10,22 @@ status: publish
 
 <span class="govuk-body-l">Version 1.13</span>
 
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
-
-## Changes
-
-| Section | Change comment |
-|:--------|:---------------|
-| 1.      | Added |
-| 1.1.    | Updated |
-| 1.2.    | Updated |
-
 
 
 ## Table of contents
 
 1. <a href="#1--general-rules-and-validation">General rules and validation</a><br />
-1.1 <a href="#1-numbers">Numbers</a><br />
+1.1  <a href="#1-numbers">Numbers</a><br />
 1.2 <a href="#1-datetime">Dates and times</a><br />
 1.3 [Coordinates](#1-coordinates)<br />
 1.3 <a href="#1-charlimits">Text character limits</a><br />
-2. <a href="#2-workstreams">Workstreams</a><br />
-3. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
+1. <a href="#2-workstreams">Workstreams</a><br />
+1. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
 3.1 <a href="#3-forwardplans">Forward plans</a><br />
 3.2 [PAAs](#3-paa)<br />
-
+1. [Changes](#changes)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -538,6 +530,37 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 ## Fee reporting
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
+
+
+
+
+
+
+## Changes
+
+| Section | Change comment |
+|:--------|:---------------|
+| 1.      | Added |
+| 1.1.    | Updated |
+| 1.2.    | Updated |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <style>
