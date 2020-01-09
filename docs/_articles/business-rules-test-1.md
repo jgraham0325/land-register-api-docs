@@ -38,16 +38,16 @@ status: publish
 
 ## 1.  General rules and validation
 
-**<span id="1-numbers">1.1. Numbers</span>**
+### 1.1. Numbers
 
 All numbers within Street Manager system are non-negative.
 
 <br />
 
-**<span id="1-datetime">1.2. Dates and times</span>**
+### <span id="1-datetime">1.2. Dates and times</span>
 
 
-**1.2.1 Date and time format**
+#### 1.2.1 Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
 
