@@ -18,17 +18,14 @@ status: publish
 ## Table of contents
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
-1.1 [Numbers](#1-numbers)<br />
-1.2 [Dates and times](#1-datetime)
-   * Date and time format
-   * Working day
-
-1.3 [Coordinates](#1-coordinates)<br />
-1.3 <a href="#1-charlimits">Text character limits</a><br />
-1. <a href="#2-workstreams">Workstreams</a><br />
-1. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
-3.1 <a href="#3-forwardplans">Forward plans</a><br />
-3.2 [PAAs](#3-paa)<br />
+  1.1 [Numbers](#1-numbers)<br />
+  1.2 [Dates and times](#1-datetime)<br />
+  1.3 [Coordinates](#1-coordinates)<br />
+  1.3 [Text character limits](#1-charlimits)<br />
+1. [Workstreams](#2-workstreams)<br />
+1. [Submissions and applications](#3-submissions-and-applications)<br />
+  3.1 [Forward plans](#3-forwardplans)<br />
+  3.2 [PAAs](#3-paa)<br />
 1. [Changes](#changes)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
