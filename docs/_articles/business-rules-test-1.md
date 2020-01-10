@@ -547,13 +547,15 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 ### 4.x. Inspection reference number
 
-x
+* The inspection reference number is generated in the following format: {WRN}-INSP-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first inspection created on the works record and counts up consecutively for each additional inspection (i.e. -01, -02, -03 etc).
 
 _(Previously section 3.1 in Business rules v0.1 draft)_ 
 
 ### 4.x. Inspection types and categories
 
-x
+
 
 _(Previously section 3.2 in Business rules v0.1 draft)_ 
 
@@ -601,13 +603,12 @@ _(Previously section 2.2 in Business rules v0.1 draft)_
 ### 3.3. FPN statuses
 
 * The FPN statuses are as follows:
-    * Issued - The initial status of an FPN issued by a HA. (Applicable for all FPNs)
-    * Accepted - Promoter may change to this FPN status when to acknowledge receipt of FPN. (Optional status change)
-    * Disputed - Promoter may change to this FPN status when in discussion with the HA about the validity of an FPN. (Optional status change)
-    * Withdrawn - HA may change to this FPN stattus if HA agree to withdraw FPN. (if applicable)
-    * Paid - HA acknowledge that the promoter payment (no discount) has been received. (if applicable)
-    * Paid (Discounted) - HA acknowledge that the promoter payment (with discount) has been received. (if applicable)
-
+    * **Issued** - The initial status of an FPN issued by a HA. (Applicable for all FPNs)
+    * **Accepted** - Promoter may change to this FPN status when to acknowledge receipt of FPN. (Optional status change)
+    * **Disputed** - Promoter may change to this FPN status when in discussion with the HA about the validity of an FPN. (Optional status change)
+    * **Withdrawn** - HA may change to this FPN status if HA agree to withdraw FPN. (if applicable)
+    * **Paid** - HA acknowledge that the promoter payment (no discount) has been received. (if applicable)
+    * **Paid (Discounted)** - HA acknowledge that the promoter payment (with discount) has been received. (if applicable)
 
 < insert diagram >
 
