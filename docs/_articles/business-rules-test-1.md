@@ -497,9 +497,12 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Reinstatement end date?? right term?
+### 4.x. Reinstatement end date
 
-x
+* If the reinstatement state is 'interim', the interim period end date is 6 months from the reinstatement date e.g. if an interim reinstatement date is 26/10/18 then the end date should be 25/04/19
+* If the reinstatement state is 'permanent' and
+    * depth is less than or equal to 1.5m, the end date (guarantee expiry date) is 2 years from the reinstatement date e.g. if reinstatement added 13/06/18, end date is 12/06/20.
+    * depth is greater than 1.5m, the end date (guarantee expiry date) is 3 years from the reinstatement date e.g. if reinstatement added 13/06/18, end date is 12/06/21.
 
 _(Previously section 4.1 in Business rules v0.1 draft)_
 
