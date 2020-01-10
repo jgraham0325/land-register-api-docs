@@ -555,6 +555,8 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 
 ### 4.x. Inspection types and categories
 
+* Inspections may be added by a HA at any stage of a works record.
+
 | Inspection type | Inspection categories |
 |:----------------|:----------------------|
 | Live Site                | Category A<br />Site occupancy<br />Conditions<br />Third party<br />Routine |
@@ -562,12 +564,13 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 | Non-compliance follow up | Joint site visit<br />Follow up<br />Follow up completion |
 | Section 81               | Not applicable |
 
-_(Previously section 3.2 in Business rules v0.1 draft)_ 
+_(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_ 
 
 ### 4.x. Inspection outcomes
 
 * If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided.
 * If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was made safe by HA.
+* Additional information and evidence/photos may be provided by HA for all outcomes.
 * The inspection outcomes available for inspection types and categories are as below:
 
 | Inspection type | Inspection outcomes |
@@ -577,20 +580,23 @@ _(Previously section 3.2 in Business rules v0.1 draft)_
 | Live Site type with Conditions category | Passed<br />Non compliant (with conditions)<br />Unable to complete inspection |
 | Non-compliance follow up with Joint site visit category | Further inspections required<br />Agreed site compliance<br />Unable to complete inspection |
 
+_(Previously section 3.3 & 3.5 in Business rules v0.1 draft)_ 
 
 
-_(Previously section 3.3 in Business rules v0.1 draft)_ 
 
-### 4.x. Inspection failure categories
-
-x
-
-_(Previously section 3.4 in Business rules v0.1 draft)_ 
+<!-- SECTION NOT REQUIRED
+### x. Inspection failure categories
+_(Previously section 3.4 in Business rules v0.1 draft)_ -->
 
 
 ### 4.x. Inspection scheduling
 
-x
+* HA may schedule one inspection against a works record.
+* A scheduled inspection consists of a date, time (optional) and inspection type & category.
+* The date provided must be today or in the future. If time is provided, it must occur in the future.
+* A scheduled inspection may be cancelled from the works record.
+* A scheduled inspection that has not been cancelled will be automatically removed when any inspection is submitted.
+* A new scheduled inspection may be created as part of any add an inspection process. Alternatively, A new scheduled inspection may be created directly on the works record level.
 
 _(Previously section 3.6 in Business rules v0.1 draft)_ 
 
