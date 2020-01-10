@@ -339,6 +339,9 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 _(Previously section 1.14 in Business rules v0.1 draft)_
 
 
+### 3.3.9. PA assessment options
+
+* x
 
 
 
@@ -354,13 +357,27 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 ### 4.x. Change request reference number
 
-x
+* The change request reference number is generated in the following format: {permit reference number} -CR- {numerical suffix}
+    * See the **permit reference number** section for more details.
+    * Numerical suffix - A minimum of two numbers starting from 01 for the first change request created on the PA and counts up consecutively for each additional change request (i.e. -01, -02, -03 etc).
 
 ### 4.x. Change request types
 
-x
+* The change request types are as follows:
 
-### 4.x. Editing application pre-assessment
+| Change request type | User type initiating | Criteria | Assessment required? |
+|:--------------------|:---------------------|:---------|:------------------------|
+| **Promoter imposed/applied change** (modified application) - A change record of changes made by the promoter before HA PA assessment. | Promoter | PA is awaiting assessment | No |
+| **Promoter change request** - A change request submitted by the promoter after HA PA assessment. | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
+| **Work extension** - A change request where the proposed end date is changed. | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
+| **HA imposed change** - A change record of HA imposed changes that are automatically applied to the permit application (e.g. changes to conditions) | HA | PA in status 'Granted' or 'In progress' | No |
+
+_(Previously section 5.1 in Business rules v0.1 draft)_ 
+
+
+### 4.x. Promoter imposed/applied change 
+
+* 
 
 _(Previously section 26 in Business rules v0.1 draft)_ 
 
@@ -370,8 +387,13 @@ _(Previously section 26 in Business rules v0.1 draft)_
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
-### 3.x. Permit application assessment
+### 3.x. Change request assessment options
+
 * x
+
+_(Previously section 5.1 in Business rules v0.1 draft)_ 
+
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -493,7 +515,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 ### 4.x. Making interim site permanent
 
-x
+* If an existing site is in 'interim' state, a new permit must be raised to add a 'permanent' reinstatement to the existing site.
 
 _(Previously section 4.4 in Business rules v0.1 draft)_
 
