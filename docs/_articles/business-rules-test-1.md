@@ -558,9 +558,9 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 | Inspection type | Inspection categories |
 |:----------------|:----------------------|
 | Live Site                | Category A<br />Site occupancy<br />Conditions<br />Third party<br />Routine |
-| Reinstatement            | 5 working days    |
-| Non-compliance follow up | 5 working days    |
-| Section 81               | 2 working days    |
+| Reinstatement            | Category B<br />Category C<br />Third party<br />Routine |
+| Non-compliance follow up | Joint site visit<br />Follow up<br />Follow up completion |
+| Section 81               | Not applicable |
 
 
 _(Previously section 3.2 in Business rules v0.1 draft)_ 
