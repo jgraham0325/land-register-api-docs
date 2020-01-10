@@ -72,7 +72,7 @@ _(Previously section 1.7 in Business rules v0.1 draft)_
 
 **1.2.3 Calendar month**
 
-For the purpose of deeming, a calendar month is calculated as 28 calendar days.
+For the purpose of deeming and early start, a calendar month is calculated as 28 calendar days.
 
 _(Previously section 1.13 in Business rules v0.1 draft)_
 
@@ -269,20 +269,28 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.5. Early start**
+#### 3.3.5. Early start
 
-* x
+* If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
+* Early start calculation will include the working day during which the application is being made.
+* The minimum advance notice by works category are as follows:
+
+| Works category | Minimum advance notice |
+|:---------------|:-----------------------|
+| Major PAA      | 3 calendar months (84 calendar days in Street Manager)|
+| Major PA       | 10 working days        |
+| Standard       | 10 working days        |
+| Minor          | 3 working days         |
+| Immediate      | Not applicable         |
 
 _(Previously section 1.9 in Business rules v0.1 draft)_ 
  
 <br />
 
 
-#### 3.3.6. Assessment period and deeming
+#### 3.3.6. Assessment period
 
-* The permit application will be automatically granted if not assessed within the assessment period and marked as deemed.
-* Deem date (also known as deadline date) is the date by which the HA needs to assess a PA before a PA deems.
-* The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
+The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
@@ -297,9 +305,12 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.7. Multiple permit applications per works record**
+#### 3.3.7. Adding permit applications (PA)
 
-* x
+* PA's may be added from the Home page resulting in a new works record or added to an existing works record.
+* PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
+* Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
+* A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
 
 _(Previously section 1.12 in Business rules v0.1 draft)_ 
  
