@@ -562,12 +562,22 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 | Non-compliance follow up | Joint site visit<br />Follow up<br />Follow up completion |
 | Section 81               | Not applicable |
 
-
 _(Previously section 3.2 in Business rules v0.1 draft)_ 
 
 ### 4.x. Inspection outcomes
 
-x
+* If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided.
+* If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was made safe by HA.
+* The inspection outcomes available for inspection types and categories are as below:
+
+| Inspection type | Inspection outcomes |
+|:----------------|:--------------------|
+| Live Site (excl. Site occupancy & Conditions), Reinstatement and Non-compliance follow up (excl. Joint site visit) | Passed<br />Failed — high<br />Failed — low<br />Unable to complete inspection |
+| Live Site type with Site occupancy category | Works stopped - Apparatus remaining<br />Works in progress - No carriageway incursion<br />Works in progress<br />Works stopped<br />Unable to complete inspection |
+| Live Site type with Conditions category | Passed<br />Non compliant (with conditions)<br />Unable to complete inspection |
+| Non-compliance follow up with Joint site visit category | Further inspections required<br />Agreed site compliance<br />Unable to complete inspection |
+
+
 
 _(Previously section 3.3 in Business rules v0.1 draft)_ 
 
