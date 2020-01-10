@@ -278,9 +278,11 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.6. Assessment period**
+#### 3.3.6. Assessment period and deeming
 
-The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
+* The permit application will be automatically granted if not assessed within the assessment period and marked as deemed.
+* Deem date (also known as deadline date) is the date by which the HA needs to assess a PA before a PA deems.
+* The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
