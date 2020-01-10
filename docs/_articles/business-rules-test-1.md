@@ -449,6 +449,13 @@ Validity period
 <!-- ==================================================== -->
 
 
+### 4.x. Sites and site numbers
+
+* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
+* For each works record, the site numbers begin at 1 and counts up consecutively for each additional site (i.e. Site 1, Site 2, Site 3 etc).
+* All historical reinstatement details are available for each site on the individual 'site record' pages.
+
+
 ### 4.x. Reinstatement types
 
 x
@@ -459,21 +466,15 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Site number
-
-* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
-
-
 
 ### 4.x. Add a reinstatement
 
 * To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
-  + the current date or in the past
-  + on or before the actual end date if works stop has been logged
-  + A user can only enter a reinstatement date until the works' 'Actual start date' has been logged. (WHAT DOES THIS MEAN?)
+    * the current date or in the past
+    * on or after the actual start date
+    * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
-* All historical reinstatement details are available on the 'site record' page.
 * This functionality may be used to correct a mistake on the previous reinstatement.
   + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new permit would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
@@ -496,9 +497,12 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Reinstatement end date?? right term?
+### 4.x. Reinstatement end date
 
-x
+* If the reinstatement state is 'interim', the interim period end date is 6 months from the reinstatement date e.g. if an interim reinstatement date is 26/10/18 then the end date should be 25/04/19
+* If the reinstatement state is 'permanent' and
+    * depth is less than or equal to 1.5m, the end date (guarantee expiry date) is 2 years from the reinstatement date e.g. if reinstatement added 13/06/18, end date is 12/06/20.
+    * depth is greater than 1.5m, the end date (guarantee expiry date) is 3 years from the reinstatement date e.g. if reinstatement added 13/06/18, end date is 12/06/21.
 
 _(Previously section 4.1 in Business rules v0.1 draft)_
 
@@ -596,6 +600,7 @@ _(Previously section 3.4 in Business rules v0.1 draft)_ -->
 * The date provided must be today or in the future. If time is provided, it must occur in the future.
 * A scheduled inspection may be cancelled from the works record.
 * A scheduled inspection that has not been cancelled will be automatically removed when any inspection is submitted.
+* A scheduled inspection will remain on the works record until it is cancelled or an inspection is added regardless of the date and time the inspection was scheduled for.
 * A new scheduled inspection may be created as part of any add an inspection process. Alternatively, A new scheduled inspection may be created directly on the works record level.
 
 _(Previously section 3.6 in Business rules v0.1 draft)_ 
