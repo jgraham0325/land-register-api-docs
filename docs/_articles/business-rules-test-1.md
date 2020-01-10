@@ -449,6 +449,13 @@ Validity period
 <!-- ==================================================== -->
 
 
+### 4.x. Sites and site numbers
+
+* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
+* For each works record, the site numbers begin at 1 and counts up consecutively for each additional site (i.e. Site 1, Site 2, Site 3 etc).
+* All historical reinstatement details are available for each site on the individual 'site record' pages.
+
+
 ### 4.x. Reinstatement types
 
 x
@@ -459,21 +466,15 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Site number
-
-* A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
-
-
 
 ### 4.x. Add a reinstatement
 
 * To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
-  + the current date or in the past
-  + on or before the actual end date if works stop has been logged
-  + A user can only enter a reinstatement date until the works' 'Actual start date' has been logged. (WHAT DOES THIS MEAN?)
+    * the current date or in the past
+    * on or after the actual start date
+    * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
-* All historical reinstatement details are available on the 'site record' page.
 * This functionality may be used to correct a mistake on the previous reinstatement.
   + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new permit would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
