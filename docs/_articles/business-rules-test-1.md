@@ -53,7 +53,7 @@ See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/o
 
 **1.2.2 Working day**
 
-See the glossary for the definition of a working day: <https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html>
+See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the definition of a working day.
 
 _(Previously section 1.6 in Business rules v0.1 draft)_
 
@@ -210,18 +210,19 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 
 
-**<span id="3-pa">3.3. PAA & Permit applications</span>**
+**<span id="3-pa">3.3. PAA & Permit applications (PA)</span>**
 
 <br />
 
-**3.3.1. Statuses**  
+#### 3.3.1. Statuses
+
 _(Previously section 1.5 in Business rules v0.1 draft)_ 
 
-**3.3.1.1. PAA statuses**
+##### 3.3.1.1. PAA statuses
 
 < Insert diagram >
 
-**3.3.1.2. Permit statuses**
+##### 3.3.1.2. Permit statuses
 
 < Insert diagram >
 
@@ -241,21 +242,25 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.3. Works types**
+#### 3.3.3. Works types
 
 * Works types are as follows:
     * **Planned** - Minor, Standard, and Major works that are not Immediate
-    * **Immediate** - See the glossary for more details on immediate works. The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
+    * **Immediate** - See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works. The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
 
 _(Previously section 1.3 in Business rules v0.1 draft)_  
 
 <br />
 
 
-**3.3.4. Works categories**
+#### 3.3.4. Works categories
 
-* x
-* x
+* Works categories are as follows:
+    * **Minor**
+    * **Standard**
+    * **Major PAA/PA**
+
+See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
 < Insert diagram >
 
