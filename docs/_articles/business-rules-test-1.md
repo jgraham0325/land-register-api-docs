@@ -304,7 +304,8 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 #### 3.3.6. Assessment period
 
-The assessment period will begin from the next working day after application submission. The assessment period for each works category are as follows:
+* The assessment period will begin from the next working day after application submission.
+* The assessment period for each works category are as follows:
 
 | Works category | Assessment period |
 |:---------------|:------------------|
@@ -330,6 +331,12 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
  
 <br />
 
+
+### 3.3.8. Works activity types
+
+* See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
+
+_(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 
@@ -365,6 +372,9 @@ _(Previously section 26 in Business rules v0.1 draft)_
 
 ### 3.x. Permit application assessment
 * x
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
 
 
 
@@ -511,7 +521,7 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Activities and events
+## Activities
 <!-- ==================================================== -->
 
 ### 4.x. Activity reference number
@@ -522,12 +532,6 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 <br />
 
-
-### 4.x. Activity types
-
-x
-
-_(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
