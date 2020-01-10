@@ -596,6 +596,7 @@ _(Previously section 3.4 in Business rules v0.1 draft)_ -->
 * The date provided must be today or in the future. If time is provided, it must occur in the future.
 * A scheduled inspection may be cancelled from the works record.
 * A scheduled inspection that has not been cancelled will be automatically removed when any inspection is submitted.
+* A scheduled inspection will remain on the works record until it is cancelled or an inspection is added regardless of the date and time the inspection was scheduled for.
 * A new scheduled inspection may be created as part of any add an inspection process. Alternatively, A new scheduled inspection may be created directly on the works record level.
 
 _(Previously section 3.6 in Business rules v0.1 draft)_ 
