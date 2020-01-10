@@ -493,7 +493,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 ### 4.x. Making interim site permanent
 
-x
+* If an existing site is in 'interim' state, a new permit must be raised to add a 'permanent' reinstatement to the existing site.
 
 _(Previously section 4.4 in Business rules v0.1 draft)_
 
