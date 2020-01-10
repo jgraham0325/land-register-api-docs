@@ -367,10 +367,10 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 | Change request type | User type initiating | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
-| **Promoter imposed/applied change** (modified application) - A change record of changes made by the promoter before HA PA assessment. | Promoter | PA is awaiting assessment | No |
-| **Promoter change request** - A change request submitted by the promoter after HA PA assessment. | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
-| **Work extension** - A change request where the proposed end date is changed. | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
-| **HA imposed change** - A change record of HA imposed changes that are automatically applied to the permit application (e.g. changes to conditions) | HA | PA in status 'Granted' or 'In progress' | No |
+| **Promoter imposed/applied change** (modified application) | Promoter | PA is awaiting assessment | No |
+| **Promoter change request** | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
+| **Works extension** | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
+| **HA imposed change** | HA | PA in status 'Granted' or 'In progress' | No |
 
 _(Previously section 5.1 in Business rules v0.1 draft)_ 
 
