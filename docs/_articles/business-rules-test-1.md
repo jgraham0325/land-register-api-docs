@@ -458,7 +458,13 @@ Validity period
 
 ### 4.x. Reinstatement types
 
-x
+* The reinstatement types are as follows:
+    * Excavation
+    * Bar holes
+    * Core holes
+    * Pole testing
+* Reinstatement measurements and whether the reinstatement is a final reinstatement must be provided for excavation reinstatement type.
+* Number of holes must be provided for bar holes, core holes and pole testing reinstatement types.
 
 _(Previously section 4.7 in Business rules v0.1 draft)_
 
