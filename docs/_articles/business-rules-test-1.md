@@ -228,9 +228,13 @@ _(Previously section 1.5 in Business rules v0.1 draft)_
 <br />
 
 
-**3.3.2. Permit reference number**
+#### 3.3.2. Permit reference number
 
-xxx
+* The permit reference number is generated in the following format: {WRN} - {numerical suffix}
+    * WRN - See the works reference number section for more details
+    * Numerical suffix - A minimum of two numbers starting from 01 for the first PAA or permit application created on the works record and counts up consecutively for each additional permit application (i.e. -01, -02, -03 etc).
+* A permit reference number is automatically generated when a PAA or permit application has been submitted.
+* The permit reference number is the reference number that promoters needs to display on on-site permit boards.
 
 _(Previously section 1.2 in Business rules v0.1 draft)_  
 
