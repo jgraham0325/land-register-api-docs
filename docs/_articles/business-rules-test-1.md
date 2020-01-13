@@ -367,22 +367,20 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 * The change request types are as follows:
 
-| Change request type | User type initiating | Criteria | Assessment required? |
+| Change request type | Available for | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
 | Promoter imposed change (modified application) | Promoter | PA is awaiting assessment | No |
 | Promoter change request | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
-| Works extension | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
+| Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
 | HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
 
 * For promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
 * A PA's assessment period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
-* The following cannot be changed on a PA: 
-    * Permit reference number or works reference number
-    * USRN
-    * USRN address e.g. road/street & road category
-    * Primary notice authority the PA is submitted to
+* A works extension change request may include other changes in addition to a change to the proposed end date.
+* HA imposed change is currently limited to adding or removing conditions.
 
-_(Previously section 5.1, 26 in Business rules v0.1 draft)_ 
+
+_(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_ 
 
 
 
@@ -400,10 +398,10 @@ _(Previously section 5.1, 26 in Business rules v0.1 draft)_
 | Assessment option | Change request type | Assessment option description |
 |:------------------|:--------------------|:---|
 | Grant | Promoter change request & works extension | Changes will be applied to the PA. |
-| Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents. | 
-| Grant with duration challenge | Works extension | HA to provide a reasonable period end date and reason for the duration challenge. The new proposed end date and reasonable period end date will be applied to the PA. |
+| Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment. | 
+| Grant with duration challenge | Works extension | HA to provide a reasonable period end date and reason for the duration challenge. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
 
-_(Previously section 5.1 & 5.4 in Business rules v0.1 draft)_ 
+_(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_ 
 
 
 
@@ -413,9 +411,23 @@ _(Previously section 5.1 & 5.4 in Business rules v0.1 draft)_
 * A change request may be added to PA's that are not 'Refused', 'Revoked' or 'Closed'
 * The works category may be updated if the works duration is changed.
 * Change requests may not be added to a PAA.
+* The following cannot be changed on a PA: 
+    * Permit reference number or works reference number
+    * USRN
+    * USRN address e.g. road/street & road category
+    * Primary notice authority the PA is submitted to
+* Proposed start date may not be changed if works start has been logged.
+* All change requests show the original details and changed values.
 
-_(Previously section 5.4 in Business rules v0.1 draft)_ 
 
+_(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_ 
+
+
+### 4.x. Assessment period
+
+* The assessment period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
+
+_(Previously section 5.7 in Business rules v0.1 draft)_ 
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
