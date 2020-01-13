@@ -920,6 +920,9 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 * Out of scope: inspection chargeable transaction ; fee amounts
 
+_(Previously section 14.1 in Business rules v0.1 draft)_ 
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
