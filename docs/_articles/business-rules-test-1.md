@@ -369,31 +369,52 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 | Change request type | User type initiating | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
-| **Promoter imposed/applied change** (modified application) | Promoter | PA is awaiting assessment | No |
-| **Promoter change request** | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
-| **Works extension** | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
-| **HA imposed change** | HA | PA in status 'Granted' or 'In progress' | No |
+| Promoter imposed change (modified application) | Promoter | PA is awaiting assessment | No |
+| Promoter change request | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
+| Works extension | Promoter | Same criteria as 'Promoter change request' and change request to only contains a change to the proposed end date | Yes |
+| HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
 
-_(Previously section 5.1 in Business rules v0.1 draft)_ 
+* For promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
+* A PA's assessment period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
+* The following cannot be changed on a PA: 
+    * Permit reference number or works reference number
+    * USRN
+    * USRN address e.g. road/street & road category
+    * Primary notice authority the PA is submitted to
+
+_(Previously section 5.1, 26 in Business rules v0.1 draft)_ 
 
 
-### 4.x. Promoter imposed/applied change 
 
-* 
+### 4.x. Change request statuses
 
-_(Previously section 26 in Business rules v0.1 draft)_ 
+< insert diagram >
 
 
-### 4.x. Modified application
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
 ### 3.x. Change request assessment options
 
-* x
+* The assessment options for change requests are as follows:
 
-_(Previously section 5.1 in Business rules v0.1 draft)_ 
+| Assessment option | Change request type | Assessment option description |
+|:------------------|:--------------------|:---|
+| Grant | Promoter change request & works extension | Changes will be applied to the PA. |
+| Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents. | 
+| Grant with duration challenge | Works extension | HA to provide a reasonable period end date and reason for the duration challenge. The new proposed end date and reasonable period end date will be applied to the PA. |
+
+_(Previously section 5.1 & 5.4 in Business rules v0.1 draft)_ 
+
+
+
+### 4.x. Adding change requests
+
+* Each PA may have only one change request awaiting assessment. 
+* A change request may be added to PA's that are not 'Refused', 'Revoked' or 'Closed'
+* The works category may be updated if the works duration is changed.
+* Change requests may not be added to a PAA.
+
+_(Previously section 5.4 in Business rules v0.1 draft)_ 
 
 
 
