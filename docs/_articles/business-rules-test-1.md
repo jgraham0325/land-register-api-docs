@@ -419,7 +419,7 @@ _(Previously section 7 in Business rules v0.1 draft)_
 
 #### 3.3.1. PAA & PA statuses
 
-_(Previously section 1.5 in Business rules v0.1 draft)_ 
+_(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
 
 ##### 3.3.1.1. PAA statuses
 
@@ -560,8 +560,35 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 ## Deliver and execute works
 <!-- ==================================================== -->
 
+### Logging works start
 
-Log works start
+* To log a works start
+    * PA must be in 'granted' status,
+    * date and time must be provided, and
+    * works cannot be started in the future or before the proposed start.
+
+_(Previously section 11.1 in Business rules v0.1 draft)_ 
+
+
+### Logging works stop
+
+* To log a works stop
+    * works must be in 'in progress' status,
+    * date and time must be provided, and
+    * date must occur on or after the actual start date
+    * date must occur today or a date in the past
+
+_(Previously section 11.2 in Business rules v0.1 draft)_ 
+
+
+### Changing the number of inspection units
+
+* Inspection units may be changed while the works is 'in progress' status.
+* At least one reinstatement needs to be recorded before inspection units can be added.
+    * The number of inspection units is defaulted to 1.
+
+_(Previously section 11.4 in Business rules v0.1 draft)_ 
+
 
 Rules
 
