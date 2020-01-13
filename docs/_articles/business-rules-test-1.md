@@ -33,17 +33,17 @@ status: publish
   3.2. [Works statuses]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      3.3.1. [&#09; Permit reference number]()<br />
-      &#09;3.3.2. [Works types]()<br />
-      &#09;3.3.3. [Works categories]()<br />
-      &#09;3.3.4. [Works activity types]()<br />
-      &#09;3.3.5. [Adding PAA & PA]()<br />
-      &#09;3.3.6. [Early start]()<br />
-      &#09;3.3.7. [PAA & PA assessment options]()<br />
-      &#09;3.3.8. [PAA & PA assessment periods]()<br />
-      &#09;3.3.9. [Cancelling PAA & PA]()<br />
-      &#09;3.3.10. [PAA & PA statuses]()<br />
-4. [Changes to applications and permits](#changes)<br />
+      - 3.3.1. [Permit reference number]()<br />
+      - 3.3.2. [Works types]()<br />
+      - 3.3.3. [Works categories]()<br />
+      - 3.3.4. [Works activity types]()<br />
+      - 3.3.5. [Adding PAA & PA]()<br />
+      - 3.3.6. [Early start]()<br />
+      - 3.3.7. [PAA & PA assessment options]()<br />
+      - 3.3.8. [PAA & PA assessment periods]()<br />
+      - 3.3.9. [Cancelling PAA & PA]()<br />
+      - 3.3.10. [PAA & PA statuses]()<br />
+4. [Changing applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
@@ -52,8 +52,8 @@ status: publish
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
 5. [Revoking a permit]()<br />
-6. [Deliver and execute works]()<br />
-7. [View and manage records]()<br />
+6. [Delivering and executing works]()<br />
+7. [Viewing and managing records]()<br />
 8. [Sites and reinstatements]()<br />
   x.x [Sites and site numbers]()<br />
   x.x [Reinstatement types]()<br />
@@ -442,7 +442,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Changes to applications and permits
+## Changing applications and permits
 <!-- ==================================================== -->
 
 ### 4.x. Change request reference number
@@ -557,7 +557,7 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Deliver and execute works
+## Delivering and executing works
 <!-- ==================================================== -->
 
 ### Logging works start
@@ -629,7 +629,7 @@ Validity period
 
 
 <!-- ==================================================== -->
-## View and manage records
+## Viewing and managing records
 <!-- ==================================================== -->
 
 ### Commenting on a works record
@@ -642,10 +642,10 @@ Validity period
     * Section 74
     * Overrun warning (only available to HA)
 
-_(Previously section 8 in Business rules v0.1 draft)_ 
+_(Previously section 8 in Business rules v0.1 draft)_
 
 
-#### Works history
+### Works history
 
 * Works history is available for each works record showing all events related to the works record. The works history includes:
     * Date and time
@@ -654,12 +654,86 @@ _(Previously section 8 in Business rules v0.1 draft)_
     * Username
 
 
+### Map application
+
+* The date filter is automatically defaulted with the current date in the 'From' field and 14 days after the current date in the 'To' field.
+* For performance reasons, the map application is limited to 
+    * displaying a maximum of 500 results, and
+    * displaying results within three zoom levels higher than the default
+
+_(Previously section 16 in Business rules v0.1 draft)_
+
+
+### Searching records
+
+* Search functionality is available on the following list pages:
+    * Permit applications
+    * Change requests
+    * Works records
+    * PAAs to progress
+    * Forward plans
+    * Registered reinstatements
+* Search by works reference number, permit reference number or road/street
+    * Partial search compatible - Street Manager will return results that contain the search term and does not need the full reference or street.
+* Search and filtering may be used in combination.
+
+_(Previously section 17.1 in Business rules v0.1 draft)_
+
+
+### Exporting records
+
+* Export functionality is available on the following list pages:
+    * Permit applications
+    * Change requests
+    * Works records
+    * PAAs to progress
+    * Forward plans
+    * Fixed penalty notices (FPN)
+    * Inspections
+    * Registered reinstatements (coming soon)
+    * Comments (coming soon)
+
+### Advanced filtering
+
+* Advanced filtering is available on the following list pages:
+    * Permit applications
+    * Change requests
+    * Works records
+    * Forward plans
+* Each list page have different filter options available.
+* Note: the URL/web address may be shared or bookmarked/saved with filters currently applied.
+
+* Logic behind advanced filters are as below:
+
+| Filter name | Logic/description |
+|:------------|:------------------|
+| Works start / end date | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
+| Awaiting assessment | Applications awaiting assessment - often the records have the status of 'Submitted' |
+| Lane rental - Chargeable | |
+| Lane rental - Potentially chargeable | |
+| Lane rental - Charges waived | |
+| Lane rental - Exempt | |
+| Lane rental - Charges not applicable | |
+| Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
+| High impact traffic management | Traffic management type: Road closure; Contraflow;  Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs than < tbc test results > . |
+| Works with excavation | On works record list: return works records where latest ???? permits indicating that excavation is required. On PA list: return any PAs where excavation is required. |
+| Deemed | PA or change request that have deemed. |
+| Early start | Proposed timings have indicated that the permit is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
+| Lane rental charges (potentially) apply | Work takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
+| Lane rental charges not agreed | A lane rental assessment has been added with an outcome of "Chargeable" and charges have not been agreed. |
+| Duration extension | On change request list only: change requests with works extension request |
+
+_(Previously section 17.2 in Business rules v0.1 draft)_
+
+
+
 List pages, search and filtering
 
 Expiring interim page is xxx
 
 
-Map
+
 
 Map Filtering
 
@@ -911,9 +985,9 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 * The fee report results are sorted by date of the chargeable transaction in ascending order.
 
 * The following will be provided to support organisations calculating the fees due:
-    * The road category
-    * are there traffic-sensitive designations for the works' USRN ('Is street is traffic-sensitive') and 
-    * **Is works is traffic-sensitive** - if any traffic-sensitive designations were selected by the promoter as applicable to the works.
+    * **Road category**
+    * **Is street is traffic-sensitive** - are there any traffic-sensitive designations for the works' USRN?
+    * **Is works is traffic-sensitive** - were any traffic-sensitive designations selected by the promoter on the PA?
 
 * Note: The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable transaction took place.
 * For example, if a permit is granted then soon after a work extension was also granted changing it from a standard to a major permit, there would be three transactions for this permit in the fee report:
