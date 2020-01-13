@@ -152,7 +152,7 @@ All other text areas are limited to 500 characters. These include:
 * Collaboration details
 * Description of collaborative works* Early start pre approval details
 * Early start pre approval reason 
-* Additional info (apply for permit) / comments (revoke) / details (lane rental assessment / collaborative working) 
+* Additional info (apply for works) / comments (revoke) / details (lane rental assessment / collaborative working) 
 * Revoke reason
 * Permit discount reason
 * Reinstatement location description
@@ -286,7 +286,8 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 #### 3.3.5. Early start
 
 * If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
-* Early start calculation will include the working day during which the application is being made.
+* The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for works process.
+* The early start calculation will include the day of the application is made.
 * The minimum advance notice by works category are as follows:
 
 | Works category | Minimum advance notice |
@@ -304,6 +305,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 #### 3.3.6. Assessment period
 
+* The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
 * The assessment period will begin from the next working day after application submission.
 * The assessment period for each works category are as follows:
 
