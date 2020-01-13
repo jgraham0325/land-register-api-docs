@@ -32,16 +32,16 @@ status: publish
   3.1. [Works reference number(WRN)]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      3.3.1. [Permit reference number]()<br />
-      3.3.2. [Works types]()<br />
-      3.3.3. [Works categories]()<br />
-      3.3.4. [Works activity types]()<br />
-      3.3.5. [Adding permit applications (PA)]()<br />
-      3.3.6. [Early start]()<br />
-      3.3.7. [PA assessment options]()<br />
-      3.3.8. [PA assessment periods]()<br />
-      3.3.9. [Cancelling permits]()<br />
-      3.3.10. [PAA & PA statuses]()<br />
+      &#09;3.3.1. [Permit reference number]()<br />
+      &#09;3.3.2. [Works types]()<br />
+      &#09;3.3.3. [Works categories]()<br />
+      &#09;3.3.4. [Works activity types]()<br />
+      &#09;3.3.5. [Adding permit applications (PA)]()<br />
+      &#09;3.3.6. [Early start]()<br />
+      &#09;3.3.7. [PA assessment options]()<br />
+      &#09;3.3.8. [PA assessment periods]()<br />
+      &#09;3.3.9. [Cancelling permits]()<br />
+      &#09;3.3.10. [PAA & PA statuses]()<br />
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
@@ -50,32 +50,32 @@ status: publish
   x.x [Change request assessment period]()<br />
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
-X. [Revoking a permit]()<br />
-X. [Deliver and execute works]()<br />
-X. [View and manage records]()<br />
-X. [Sites and reinstatements]()<br />
+5. [Revoking a permit]()<br />
+6. [Deliver and execute works]()<br />
+7. [View and manage records]()<br />
+8. [Sites and reinstatements]()<br />
   x.x [Sites and site numbers]()<br />
   x.x [Reinstatement types]()<br />
   x.x [Adding reinstatements]()<br />
   x.x [Making interim sites permanent]()<br />
   x.x [Reinstatement end dates]()<br />
   x.x [Registering final sites]()<br />
-X. [Activities]()<br />
+9. [Activities]()<br />
   x.x [Activity reference number]()<br />
-X. [Inspections and non-compliance]()<br />
+10. [Inspections and non-compliance]()<br />
   x.x [Inspection reference number]()<br />
   x.x [Inspection types and categories]()<br />
   x.x [Inspection outcomes]()<br />
   x.x [Scheduling inspections]()<br />
-X. [Fixed penalty notice (FPN)]()<br />
+11. [Fixed penalty notice (FPN)]()<br />
   x.x [FPN reference number]()<br />
   x.x [FPN statuses]()<br />
-X. [Fee reporting]()<br />
+12. [Fee reporting]()<br />
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
-X. [Changes](#changes)<br />
+13. [Changes](#changes)<br />
 
 
 X. []()<br />
