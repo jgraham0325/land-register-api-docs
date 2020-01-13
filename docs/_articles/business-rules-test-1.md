@@ -31,7 +31,17 @@ status: publish
 3. [Works submissions and applications](#3-works-submissions-and-applications)<br />
   3.1. [Works reference number(WRN)]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
-  3.2. [PAA and permit applications](#3-paa)<br />
+  3.3. [PAA and permit applications (PA)](#3-paa)<br />
+      3.3.1. [Permit reference number]()<br />
+      3.3.2. [Works types]()<br />
+      3.3.3. [Works categories]()<br />
+      3.3.4. [Works activity types]()<br />
+      3.3.5. [Adding permit applications (PA)]()<br />
+      3.3.6. [Early start]()<br />
+      3.3.7. [PA assessment options]()<br />
+      3.3.8. [PA assessment periods]()<br />
+      3.3.9. [Cancelling permit applications (PA)]()<br />
+      3.3.10. [Permit reference number]()<br />
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
@@ -39,7 +49,7 @@ status: publish
   x.x [Change request assessment options]()<br />
   x.x [Change request assessment period]()<br />
   x.x [Change request statuses]()<br />
-  x.x [Cancel change request]()<br />
+  x.x [Cancelling change requests]()<br />
 X. [Revoking a permit]()<br />
 X. [Deliver and execute works]()<br />
 X. [View and manage records]()<br />
@@ -49,6 +59,7 @@ X. [View and manage records]()<br />
 
 X. []()<br />
   x.x []()<br />
+      x.x.x. []()<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -285,7 +296,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 <br />
 
 
-### 3.3.8. Works activity types
+#### 3.3.8. Works activity types
 
 * See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
 
@@ -334,13 +345,13 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-### 3.3.9. PA assessment options
+#### 3.3.9. PA assessment options
 
 * x
 
 
 
-#### 3.3.6. PA assessment period
+#### 3.3.6. PA assessment periods
 
 * The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
 * The assessment period will begin from the next working day after application submission.
@@ -359,7 +370,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-### 3.3.9. Cancel PAAs and PAs
+#### 3.3.9. Canceling permit applications (PA)
 
 * x
 
@@ -466,7 +477,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Cancel change request
+### 4.x. Cancelling change requests
 
 * x
 
