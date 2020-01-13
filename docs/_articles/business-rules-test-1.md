@@ -35,9 +35,16 @@ status: publish
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
-  x.x [Change request statuses]()<br />
-  x.x [Change request assessment options]()<br />
   x.x [Adding change requests]()<br />
+  x.x [Change request assessment options]()<br />
+  x.x [Change request assessment period]()<br />
+  x.x [Change request statuses]()<br />
+  x.x [Cancel change request]()<br />
+X. [Revoking a permit]()<br />
+X. [Deliver and execute works]()<br />
+X. [View and manage records]()<br />
+
+
 
 
 X. []()<br />
@@ -237,22 +244,6 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 ### 3.3. PAA and permit applications (PA)
 
-<br />
-
-#### 3.3.1. Statuses
-
-_(Previously section 1.5 in Business rules v0.1 draft)_ 
-
-##### 3.3.1.1. PAA statuses
-
-< Insert diagram >
-
-##### 3.3.1.2. Permit statuses
-
-< Insert diagram >
-
-<br />
-
 
 #### 3.3.2. Permit reference number
 
@@ -294,6 +285,34 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 <br />
 
 
+### 3.3.8. Works activity types
+
+* See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
+
+_(Previously section 1.14 in Business rules v0.1 draft)_
+
+
+
+
+#### 3.3.7. Adding permit applications (PA)
+
+* PA's may be added from the Home page resulting in a new works record or added to an existing works record.
+* PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
+* Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
+* A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
+
+_(Previously section 1.12 in Business rules v0.1 draft)_ 
+ 
+<br />
+
+
+
+
+
+
+
+
+
 #### 3.3.5. Early start
 
 * If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
@@ -312,6 +331,13 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 _(Previously section 1.9 in Business rules v0.1 draft)_ 
  
 <br />
+
+
+
+### 3.3.9. PA assessment options
+
+* x
+
 
 
 #### 3.3.6. PA assessment period
@@ -333,28 +359,29 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.7. Adding permit applications (PA)
-
-* PA's may be added from the Home page resulting in a new works record or added to an existing works record.
-* PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
-* Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
-* A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
-
-_(Previously section 1.12 in Business rules v0.1 draft)_ 
- 
-<br />
-
-
-### 3.3.8. Works activity types
-
-* See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
-
-_(Previously section 1.14 in Business rules v0.1 draft)_
-
-
-### 3.3.9. PA assessment options
+### 3.3.9. Cancel PAAs and PAs
 
 * x
+
+
+
+
+<br />
+
+#### 3.3.1. Statuses
+
+_(Previously section 1.5 in Business rules v0.1 draft)_ 
+
+##### 3.3.1.1. PAA statuses
+
+< Insert diagram >
+
+##### 3.3.1.2. Permit statuses
+
+< Insert diagram >
+
+<br />
+
 
 
 
@@ -415,12 +442,6 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Change request statuses
-
-< insert diagram >
-
-
-
 
 ### 3.x. Change request assessment options
 
@@ -444,7 +465,26 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 
+
+### 4.x. Cancel change request
+
+* x
+
+
+### 4.x. Change request statuses
+
+< insert diagram >
+
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
+
+
 
 
 
@@ -463,6 +503,32 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
+<!-- ==================================================== -->
+## Deliver and execute works
+<!-- ==================================================== -->
+
+
+Log works start
+
+Rules
+
+Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
+
+Rules
+
+Revert works start / works stop
+
+Inspection units
+
+Validity period
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+
+
 
 
 
@@ -490,28 +556,6 @@ Commenting on a works record
 Topic
 
 
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
-
-
-<!-- ==================================================== -->
-## Deliver and execute works
-<!-- ==================================================== -->
-
-
-Log works start
-
-Rules
-
-Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
-
-Rules
-
-Revert works start / works stop
-
-Inspection units
-
-Validity period
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
