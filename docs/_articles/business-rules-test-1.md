@@ -22,15 +22,26 @@ status: publish
 <!-- ==================================================== -->
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
-  1.1 [Numbers](#1-numbers)<br />
-  1.2 [Dates and times](#1-datetime)<br />
-  1.3 [Coordinates](#1-coordinates)<br />
-  1.3 [Text character limits](#1-charlimits)<br />
-1. [Workstreams](#2-workstreams)<br />
-1. [Submissions and applications](#3-submissions-and-applications)<br />
-  3.1 [Forward plans](#3-forwardplans)<br />
-  3.2 [PAAs](#3-paa)<br />
-1. [Changes](#changes)<br />
+  1.1. [Numbers](#11-numbers)<br />
+  1.2. [Dates and times](#12-datetime)<br />
+  1.3. [Coordinates](#13-coordinates)<br />
+  1.4. [USRN](#14-usrn)<br />
+  1.5. [Text character limits](#15-charlimits)<br />
+2. [Workstreams](#2-workstreams)<br />
+3. [Works submissions and applications](#3-works-submissions-and-applications)<br />
+  3.1. [Works reference number(WRN)]()<br />
+  3.2. [Forward plans](#32-forwardplans)<br />
+  3.2. [PAA and permit applications](#3-paa)<br />
+4. [Changes to applications and permits](#changes)<br />
+  x.x [Change request reference number]()<br />
+  x.x [Change request types]()<br />
+  x.x [Change request statuses]()<br />
+  x.x [Change request assessment options]()<br />
+  x.x [Adding change requests]()<br />
+
+
+X. []()<br />
+  x.x []()<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -142,7 +153,7 @@ These include:
 * Contact details
 * Street special designation code
 
-#### 1.3.3 Multi-line text areas
+#### 1.3.3. Multi-line text areas
 
 Text areas for large comment fields are limited to the max length of 1500 characters.
 
@@ -224,7 +235,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 
 
-### 3.3. PAA & Permit applications (PA)
+### 3.3. PAA and permit applications (PA)
 
 <br />
 
@@ -303,7 +314,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.6. Assessment period
+#### 3.3.6. PA assessment period
 
 * The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
 * The assessment period will begin from the next working day after application submission.
@@ -379,8 +390,28 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
 
-
 _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_ 
+
+
+
+
+### 4.x. Adding change requests
+
+* Each PA may have only one change request awaiting assessment. 
+* A change request may be added to PA's that are not 'Refused', 'Revoked' or 'Closed'
+* The works category may be updated if the works duration is changed.
+* Change requests may not be added to a PAA.
+* The following cannot be changed on a PA: 
+    * Permit reference number or works reference number
+    * USRN
+    * USRN address e.g. road/street
+    * Road category
+    * Primary notice authority the PA is submitted to
+* Proposed start date may not be changed if works start has been logged.
+* All change requests show the original details and changed values.
+
+_(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_ 
+
 
 
 
@@ -405,29 +436,12 @@ _(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Adding change requests
-
-* Each PA may have only one change request awaiting assessment. 
-* A change request may be added to PA's that are not 'Refused', 'Revoked' or 'Closed'
-* The works category may be updated if the works duration is changed.
-* Change requests may not be added to a PAA.
-* The following cannot be changed on a PA: 
-    * Permit reference number or works reference number
-    * USRN
-    * USRN address e.g. road/street & road category
-    * Primary notice authority the PA is submitted to
-* Proposed start date may not be changed if works start has been logged.
-* All change requests show the original details and changed values.
-
-
-_(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_ 
-
-
-### 4.x. Assessment period
+### 4.x. Change request assessment period
 
 * The assessment period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
 
 _(Previously section 5.7 in Business rules v0.1 draft)_ 
+
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
