@@ -33,7 +33,7 @@ status: publish
   3.2. [Works statuses]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      &#09;3.3.1. [Permit reference number]()<br />
+      3.3.1. [&#09; Permit reference number]()<br />
       &#09;3.3.2. [Works types]()<br />
       &#09;3.3.3. [Works categories]()<br />
       &#09;3.3.4. [Works activity types]()<br />
@@ -399,16 +399,19 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.9. Canceling PAA & PA
+#### 3.3.9. Cancelling PAA & PA
 
-* PAA applications and planned PA may be cancelled if in 'submitted' or 'granted' statuses and works start has not been logged.
+* PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment) or 'granted' statuses and works start has not been logged.
 * Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
 * Immediate PA may not be cancelled if
     * works stop has been logged
     * reinstatement(s) have been added
     * the immediate PA has been revoked
 * If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
+* Promoters may only cancel PAA & PA that they have full permissions to.
+* The PAA or PA status and works status will be set to 'Cancelled'.
 
+_(Previously section 7 in Business rules v0.1 draft)_ 
 
 
 
@@ -515,7 +518,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 ### 4.x. Cancelling change requests
 
-* x
+* Promoters may only cancel change requests for permit applications that they have full permissions to.
 
 
 ### 4.x. Change request statuses
@@ -543,7 +546,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 * HA may revoke a permit that has been granted and before works stop has been logged.
 * If a PA is revoked 
     * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the permit by the promoter.
-    * after works start has been logged, the promoter may log works stop and add reinstatements.
+    * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
     * with a change request awaiting assessment on a PA, the change request be revoked automatically.
 
 _(Previously section 6.1 in Business rules v0.1 draft)_ 
@@ -582,6 +585,20 @@ Validity period
 <!-- ==================================================== -->
 ## View and manage records
 <!-- ==================================================== -->
+
+### Commenting on a works record
+
+* Users associated with a works can add a comment on the works record. Users associated with a works include being from the HA the works has been submitted to, being from (or working on behalf of) the promoter organisation that submitted the works and with access to the associated workstream.
+* A topic must be selected when adding a comment. The comment topics are as follows:
+    * General
+    * FPN
+    * Inspection
+    * Section 74
+    * Overrun warning (only available to HA)
+
+_(Previously section 8 in Business rules v0.1 draft)_ 
+
+
 
 List pages, search and filtering
 
