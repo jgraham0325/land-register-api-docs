@@ -901,20 +901,24 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 ## Fee reporting
 <!-- ==================================================== -->
 
-* A fee report is available showing individual entries for every chargeable activity within a specified date range. Dates queried are the date of the chargeable activity.
-* The chargeable activities included are as follows:
+* A fee report is available showing individual entries for every chargeable transaction within a specified date range. Dates queried are the date of the chargeable transaction.
+* The chargeable transactions included are as follows:
     * Granting of a permit application
     * PAA progressed to PA - note, this occurs upon receipt of the permit application, not when it is granted
     * Granting of a change request
     * A change in work category
 * The maximum date range for the fee report is 31 calendar days.
-* The fee report results are sorted by date of the chargeable activity in ascending order.
-* The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable activity took place.
-* For example, if a permit is granted then soon after a work extension was also granted changing it from a standard to a major permit, there would be three entries for this permit in the fee report:
+* The fee report results are sorted by date of the chargeable transaction in ascending order.
+* The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable transaction took place.
+* The road category, are there traffic-sensitive designations for the works' USRN ('Is street is traffic-sensitive') and if any traffic-sensitive designations were selected by the promoter as applicable to the works ('Is works is traffic-sensitive') will be provided to support organisations calculating the fees due.
+
+* For example, if a permit is granted then soon after a work extension was also granted changing it from a standard to a major permit, there would be three transactions for this permit in the fee report:
     * granting of a permit application, 
     * granting of a change request 
     * change in work category
-    * The works category field for all three of these entries will be 'major'.
+    * The works category field for all three of these transactions will be 'major'.
+
+* Out of scope: inspection chargeable transaction ; fee amounts
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
