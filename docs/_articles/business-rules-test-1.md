@@ -29,18 +29,19 @@ status: publish
   1.5. [Text character limits](#15-charlimits)<br />
 2. [Workstreams](#2-workstreams)<br />
 3. [Works submissions and applications](#3-works-submissions-and-applications)<br />
-  3.1. [Works reference number(WRN)]()<br />
+  3.1. [Works reference number (WRN)]()<br />
+  3.2. [Works statuses]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
       &#09;3.3.1. [Permit reference number]()<br />
       &#09;3.3.2. [Works types]()<br />
       &#09;3.3.3. [Works categories]()<br />
       &#09;3.3.4. [Works activity types]()<br />
-      &#09;3.3.5. [Adding permit applications (PA)]()<br />
+      &#09;3.3.5. [Adding PAA & PA]()<br />
       &#09;3.3.6. [Early start]()<br />
-      &#09;3.3.7. [PA assessment options]()<br />
-      &#09;3.3.8. [PA assessment periods]()<br />
-      &#09;3.3.9. [Cancelling permits]()<br />
+      &#09;3.3.7. [PAA & PA assessment options]()<br />
+      &#09;3.3.8. [PAA & PA assessment periods]()<br />
+      &#09;3.3.9. [Cancelling PAA & PA]()<br />
       &#09;3.3.10. [PAA & PA statuses]()<br />
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
@@ -255,6 +256,15 @@ _(Previously section 15 & 15.1 in Business rules v0.1 draft)_
 _(Previously section 1.1 in Business rules v0.1 draft)_  
 
 
+
+
+<br />
+
+### 3.2. Works statuses
+
+< insert diagram >
+
+
 <br />
 
 ### 3.2. Forward plans
@@ -326,7 +336,7 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.7. Adding permit applications (PA)
+#### 3.3.7. Adding PAA & PA
 
 * PA's may be added from the Home page resulting in a new works record or added to an existing works record.
 * PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
@@ -338,11 +348,9 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 <br />
 
 
+#### 3.3.7. Progressing PAA to PA
 
-
-
-
-
+* 
 
 
 #### 3.3.5. Early start
@@ -366,13 +374,13 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.9. PA assessment options
+#### 3.3.9. PAA & PA assessment options
 
 * x
 
 
 
-#### 3.3.6. PA assessment periods
+#### 3.3.6. PAA & PA assessment periods
 
 * The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
 * The assessment period will begin from the next working day after application submission.
@@ -391,9 +399,15 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.9. Canceling permit applications (PA)
+#### 3.3.9. Canceling PAA & PA
 
-* x
+* PAA applications and planned PA may be cancelled if in 'submitted' or 'granted' statuses and works start has not been logged.
+* Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
+* Immediate PA may not be cancelled if
+    * works stop has been logged
+    * reinstatement(s) have been added
+    * the immediate PA has been revoked
+* If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
 
 
 
@@ -411,6 +425,7 @@ _(Previously section 1.5 in Business rules v0.1 draft)_
 ##### 3.3.1.2. Permit statuses
 
 < Insert diagram >
+
 
 <br />
 
@@ -529,7 +544,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 * If a PA is revoked 
     * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the permit by the promoter.
     * after works start has been logged, the promoter may log works stop and add reinstatements.
-    * with a change request awaiting assessment on a PA, the change request will also be revoked.
+    * with a change request awaiting assessment on a PA, the change request be revoked automatically.
 
 _(Previously section 6.1 in Business rules v0.1 draft)_ 
 
