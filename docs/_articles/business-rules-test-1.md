@@ -31,24 +31,56 @@ status: publish
 3. [Works submissions and applications](#3-works-submissions-and-applications)<br />
   3.1. [Works reference number(WRN)]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
-  3.2. [PAA and permit applications](#3-paa)<br />
+  3.3. [PAA and permit applications (PA)](#3-paa)<br />
+      3.3.1. [Permit reference number]()<br />
+      3.3.2. [Works types]()<br />
+      3.3.3. [Works categories]()<br />
+      3.3.4. [Works activity types]()<br />
+      3.3.5. [Adding permit applications (PA)]()<br />
+      3.3.6. [Early start]()<br />
+      3.3.7. [PA assessment options]()<br />
+      3.3.8. [PA assessment periods]()<br />
+      3.3.9. [Cancelling permits]()<br />
+      3.3.10. [PAA & PA statuses]()<br />
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
   x.x [Change request assessment options]()<br />
   x.x [Change request assessment period]()<br />
+  x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
-  x.x [Cancel change request]()<br />
 X. [Revoking a permit]()<br />
 X. [Deliver and execute works]()<br />
 X. [View and manage records]()<br />
-
-
+X. [Sites and reinstatements]()<br />
+  x.x [Sites and site numbers]()<br />
+  x.x [Reinstatement types]()<br />
+  x.x [Adding reinstatements]()<br />
+  x.x [Making interim sites permanent]()<br />
+  x.x [Reinstatement end dates]()<br />
+  x.x [Registering final sites]()<br />
+X. [Activities]()<br />
+  x.x [Activity reference number]()<br />
+X. [Inspections and non-compliance]()<br />
+  x.x [Inspection reference number]()<br />
+  x.x [Inspection types and categories]()<br />
+  x.x [Inspection outcomes]()<br />
+  x.x [Scheduling inspections]()<br />
+X. [Fixed penalty notice (FPN)]()<br />
+  x.x [FPN reference number]()<br />
+  x.x [FPN statuses]()<br />
+X. [Fee reporting]()<br />
+  x.x []()<br />
+  x.x []()<br />
+  x.x []()<br />
+  x.x []()<br />
+X. [Changes](#changes)<br />
 
 
 X. []()<br />
   x.x []()<br />
+      x.x.x. []()<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -285,7 +317,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 <br />
 
 
-### 3.3.8. Works activity types
+#### 3.3.8. Works activity types
 
 * See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
 
@@ -334,13 +366,13 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-### 3.3.9. PA assessment options
+#### 3.3.9. PA assessment options
 
 * x
 
 
 
-#### 3.3.6. PA assessment period
+#### 3.3.6. PA assessment periods
 
 * The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
 * The assessment period will begin from the next working day after application submission.
@@ -359,7 +391,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-### 3.3.9. Cancel PAAs and PAs
+#### 3.3.9. Canceling permit applications (PA)
 
 * x
 
@@ -368,7 +400,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 
 <br />
 
-#### 3.3.1. Statuses
+#### 3.3.1. PAA & PA statuses
 
 _(Previously section 1.5 in Business rules v0.1 draft)_ 
 
@@ -466,7 +498,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Cancel change request
+### 4.x. Cancelling change requests
 
 * x
 
@@ -565,7 +597,7 @@ Topic
 
 
 <!-- ==================================================== -->
-## Sites and Reinstatements
+## Sites and reinstatements
 <!-- ==================================================== -->
 
 
@@ -593,7 +625,7 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Add a reinstatement
+### 4.x. Adding reinstatements
 
 * To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
@@ -611,7 +643,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Making interim site permanent
+### 4.x. Making interim sites permanent
 
 * If an existing site is in 'interim' state, a new permit must be raised to add a 'permanent' reinstatement to the existing site.
 
@@ -623,7 +655,7 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Reinstatement end date
+### 4.x. Reinstatement end dates
 
 * If the reinstatement state is 'interim', the interim period end date is 6 months from the reinstatement date e.g. if an interim reinstatement date is 26/10/18 then the end date should be 25/04/19
 * If the reinstatement state is 'permanent' and
@@ -633,9 +665,9 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 _(Previously section 4.1 in Business rules v0.1 draft)_
 
 
-### 4.x. Register final site
+### 4.x. Registering final sites
 
-* Final site may be registered by marking 'Are you registering the final site?' as Yes when adding a reinstatement.
+* Final sites may be registered by marking 'Are you registering the final site?' as 'Yes' when adding a reinstatement.
 * Alternatively, select 'Change' on the works record level against 'Final site registered'.
 
 _(Previously section 4.3 in Business rules v0.1 draft)_
@@ -719,7 +751,7 @@ _(Previously section 3.3 & 3.5 in Business rules v0.1 draft)_
 _(Previously section 3.4 in Business rules v0.1 draft)_ -->
 
 
-### 4.x. Inspection scheduling
+### 4.x. Scheduling inspections
 
 * HA may schedule one inspection against a works record.
 * A scheduled inspection consists of a date, time (optional) and inspection type & category.
