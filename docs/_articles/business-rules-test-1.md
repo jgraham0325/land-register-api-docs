@@ -581,11 +581,30 @@ _(Previously section 11.1 in Business rules v0.1 draft)_
 _(Previously section 11.2 in Business rules v0.1 draft)_ 
 
 
+### Validity periods
+
+* Only applicable for works on non-traffic sensitive category 3 or 4 roads.
+    * Non-traffic sensitivity is determined either by there being no traffic-sensitive designations for the works' USRN or if there are, none were selected by the promoter as applicable to the works.
+* If a works' actual start date is later than the proposed start date and within validity period, Street Manager will shift the proposed end date accordingly maintaining the same works duration as originally proposed starting from the actual start date.
+* The validity periods for each works category are as follows (includes original start date):
+
+| Works category | Validity period        |
+|:---------------|:-----------------------|
+| Major PAA      | Currently out of scope |
+| Major PA       | 5 working days         |
+| Standard       | 5 working days         |
+| Minor          | 2 working days         |
+| Immediate      | Not applicable         |
+
+_(Previously section 13 in Business rules v0.1 draft)_ 
+
+
+
 ### Changing the number of inspection units
 
-* Inspection units may be changed while the works is 'in progress' status.
-* At least one reinstatement needs to be recorded before inspection units can be added.
+* The number of inspection units will be added when the first reinstatement is submitted.
     * The number of inspection units is defaulted to 1.
+* The number of inspection units may be changed without submitting another reinstatement.
 
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
 
@@ -626,6 +645,14 @@ Validity period
 _(Previously section 8 in Business rules v0.1 draft)_ 
 
 
+#### Works history
+
+* Works history is available for each works record showing all events related to the works record. The works history includes:
+    * Date and time
+    * Topic
+    * Details (description of the event)
+    * Username
+
 
 List pages, search and filtering
 
@@ -637,13 +664,6 @@ Map
 Map Filtering
 
 Map Search
-
-
-Works history
-
-
-Commenting on a works record
-
 Topic
 
 
