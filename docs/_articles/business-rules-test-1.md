@@ -419,7 +419,7 @@ _(Previously section 7 in Business rules v0.1 draft)_
 
 #### 3.3.1. PAA & PA statuses
 
-_(Previously section 1.5 in Business rules v0.1 draft)_ 
+_(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
 
 ##### 3.3.1.1. PAA statuses
 
