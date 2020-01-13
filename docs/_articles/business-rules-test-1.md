@@ -33,7 +33,7 @@ status: publish
   3.2. [Works statuses]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      &#09;3.3.1. [Permit reference number]()<br />
+      3.3.1. [&#09; Permit reference number]()<br />
       &#09;3.3.2. [Works types]()<br />
       &#09;3.3.3. [Works categories]()<br />
       &#09;3.3.4. [Works activity types]()<br />
@@ -411,6 +411,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 * Promoters may only cancel PAA & PA that they have full permissions to.
 * The PAA or PA status and works status will be set to 'Cancelled'.
 
+_(Previously section 7 in Business rules v0.1 draft)_ 
 
 
 
@@ -584,6 +585,20 @@ Validity period
 <!-- ==================================================== -->
 ## View and manage records
 <!-- ==================================================== -->
+
+### Commenting on a works record
+
+* Users associated with a works can add a comment on the works record. Users associated with a works include being from the HA the works has been submitted to, being from (or working on behalf of) the promoter organisation that submitted the works and with access to the associated workstream.
+* A topic must be selected when adding a comment. The comment topics are as follows:
+    * General
+    * FPN
+    * Inspection
+    * Section 74
+    * Overrun warning (only available to HA)
+
+_(Previously section 8 in Business rules v0.1 draft)_ 
+
+
 
 List pages, search and filtering
 
