@@ -40,8 +40,8 @@ status: publish
       3.3.6. [Early start]()<br />
       3.3.7. [PA assessment options]()<br />
       3.3.8. [PA assessment periods]()<br />
-      3.3.9. [Cancelling permit applications (PA)]()<br />
-      3.3.10. [Permit reference number]()<br />
+      3.3.9. [Cancelling permits]()<br />
+      3.3.10. [PAA & PA statuses]()<br />
 4. [Changes to applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
@@ -379,7 +379,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 
 <br />
 
-#### 3.3.1. Statuses
+#### 3.3.1. PAA & PA statuses
 
 _(Previously section 1.5 in Business rules v0.1 draft)_ 
 
