@@ -286,7 +286,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 #### 3.3.5. Early start
 
 * If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
-* The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for works process.
+* The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for permit process.
 * The early start calculation will include the day of the application is made.
 * The minimum advance notice by works category are as follows:
 
@@ -439,8 +439,13 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 ## Revoking a permit
 <!-- ==================================================== -->
 
+* HA may revoke a permit that has been granted and before works stop has been logged.
+* If a PA is revoked 
+    * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the permit by the promoter.
+    * after works start has been logged, the promoter may log works stop and add reinstatements.
+    * with a change request awaiting assessment on a PA, the change request will also be revoked.
 
-
+_(Previously section 6.1 in Business rules v0.1 draft)_ 
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
