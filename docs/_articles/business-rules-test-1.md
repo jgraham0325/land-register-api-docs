@@ -909,9 +909,13 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
     * A change in work category
 * The maximum date range for the fee report is 31 calendar days.
 * The fee report results are sorted by date of the chargeable transaction in ascending order.
-* The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable transaction took place.
-* The road category, are there traffic-sensitive designations for the works' USRN ('Is street is traffic-sensitive') and if any traffic-sensitive designations were selected by the promoter as applicable to the works ('Is works is traffic-sensitive') will be provided to support organisations calculating the fees due.
 
+* The following will be provided to support organisations calculating the fees due:
+    * The road category
+    * are there traffic-sensitive designations for the works' USRN ('Is street is traffic-sensitive') and 
+    * **Is works is traffic-sensitive** - if any traffic-sensitive designations were selected by the promoter as applicable to the works.
+
+* Note: The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable transaction took place.
 * For example, if a permit is granted then soon after a work extension was also granted changing it from a standard to a major permit, there would be three transactions for this permit in the fee report:
     * granting of a permit application, 
     * granting of a change request 
