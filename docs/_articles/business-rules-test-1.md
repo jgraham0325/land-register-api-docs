@@ -40,7 +40,7 @@ status: publish
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment options]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA assessment periods]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
 4. [Changing applications and permits](#changes)<br />
@@ -48,7 +48,7 @@ status: publish
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
   x.x [Change request assessment options]()<br />
-  x.x [Change request assessment period]()<br />
+  x.x [Change request response period]()<br />
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
 5. [Revoking a permit]()<br />
@@ -358,9 +358,9 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 * If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
 * The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for permit process.
 * The early start calculation will include the day of the application is made.
-* The minimum advance notice by works category are as follows:
+* The minimum notice period by works category are as follows:
 
-| Works category | Minimum advance notice |
+| Works category | Minimum notice period  |
 |:---------------|:-----------------------|
 | Major PAA      | 3 calendar months (84 calendar days in Street Manager)|
 | Major PA       | 10 working days        |
@@ -380,13 +380,13 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.6. PAA & PA assessment periods
+#### 3.3.6. PAA & PA response periods
 
-* The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
-* The assessment period will begin from the next working day after application submission.
-* The assessment period for each works category are as follows:
+* The response period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
+* The response period will begin from the next working day after application submission.
+* The response period for each works category are as follows:
 
-| Works category | Assessment period |
+| Works category | Response period |
 |:---------------|:------------------|
 | Major PAA      | 28 calendar days  |
 | Major PA       | 5 working days    |
@@ -463,7 +463,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 | HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
 
 * For promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
-* A PA's assessment period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
+* A PA's response period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
 
@@ -507,9 +507,9 @@ _(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Change request assessment period
+### 4.x. Change request response period
 
-* The assessment period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
+* The response period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
 
 _(Previously section 5.7 in Business rules v0.1 draft)_ 
 
