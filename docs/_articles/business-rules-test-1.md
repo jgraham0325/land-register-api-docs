@@ -705,19 +705,17 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 * Logic behind advanced filters are as below:
 
-| Filter name            | Logic/description |
-|:-----------------------|:------------------|
-| Works start / end date | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
-
-
-| Awaiting assessment | Applications awaiting assessment - often the records have the status of 'Submitted' |
-| Lane rental - Chargeable | |
-| Lane rental - Potentially chargeable | |
-| Lane rental - Charges waived | |
-| Lane rental - Exempt | |
-| Lane rental - Charges not applicable | |
+| Filter name              | Logic/description |
+|:-------------------------|:------------------|
+| Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
+| Awaiting assessment      | Applications awaiting assessment - often the records have the status of 'Submitted' |
+| Lane rental - Chargeable | x |
+| Lane rental - Potentially chargeable | x |
+| Lane rental - Charges waived | x |
+| Lane rental - Exempt     | x |
+| Lane rental - Charges not applicable | x |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
-| High impact traffic management | Traffic management type: Road closure; Contraflow;  Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| High impact traffic management | Traffic management type: Road closure; Contraflow<br />Lane closuremm; Convoy working; Multi-way signals; Two-way signals |
 | Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs than < tbc test results > . |
 | Works with excavation | On works record list: return works records where latest ???? permits indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
