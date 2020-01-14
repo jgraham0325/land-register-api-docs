@@ -33,16 +33,16 @@ status: publish
   3.2. [Works statuses]()<br />
   3.2. [Forward plans](#32-forwardplans)<br />
   3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      &nbsp;&nbsp;&nbsp;  3.3.1. [Permit reference number]()<br />
-      - 3.3.2. [Works types]()<br />
-      - 3.3.3. [Works categories]()<br />
-      - 3.3.4. [Works activity types]()<br />
-      - 3.3.5. [Adding PAA & PA]()<br />
-      - 3.3.6. [Early start]()<br />
-      - 3.3.7. [PAA & PA assessment options]()<br />
-      - 3.3.8. [PAA & PA assessment periods]()<br />
-      - 3.3.9. [Cancelling PAA & PA]()<br />
-      - 3.3.10. [PAA & PA statuses]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.1. [Permit reference number]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.2. [Works types]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.3. [Works categories]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment options]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA assessment periods]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
 4. [Changing applications and permits](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
