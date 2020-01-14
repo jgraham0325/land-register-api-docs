@@ -95,46 +95,12 @@ X. []()<br />
 
 All numbers within Street Manager system are non-negative.
 
-<br />
 
 ### <span id="1-datetime">1.2. Dates and times</span>
-
-
-#### 1.2.1 Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
-
-
-#### 1.2.2 Working day
-
-See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the definition of a working day.
-
-_(Previously section 1.6 in Business rules v0.1 draft)_
-
-
-
-#### 1.2.2 Calendar day
-
-Street Manager calculates calendar days based on a 24 hour clock. So for example the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
-
-_(Previously section 1.7 in Business rules v0.1 draft)_
-
-
-<br />
-
-
-
-#### 1.2.3 Calendar month
-
-For the purpose of deeming and early start, a calendar month is calculated as 28 calendar days.
-
-_(Previously section 1.13 in Business rules v0.1 draft)_
-
-
-<br />
-
 
 
 ### 1.3. Coordinates
@@ -143,13 +109,11 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 <br />
 
-### 1.4. USRN
+### 1.4. Unique Street Reference Number (USRN)
 
 USRN must be a value between 100001 and 99999999.
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
-
-
 
 
 
@@ -304,7 +268,7 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 
 * Works types are as follows:
     * **Planned** - Minor, Standard, and Major works that are not Immediate
-    * **Immediate** - See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works. The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
+    * **Immediate** - See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works.  The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
 
 _(Previously section 1.3 in Business rules v0.1 draft)_  
 
@@ -318,7 +282,7 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
     * **Standard**
     * **Major PAA/PA**
 
-See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
+See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
 < Insert diagram >
 
