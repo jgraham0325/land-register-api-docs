@@ -703,7 +703,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 * Each list page have different filter options available.
 * Note: the URL/web address may be shared or bookmarked/saved with filters currently applied.
 
-* Logic behind advanced filters are as below:
+* Advanced filters and descriptions below:
 
 | Filter name              | Logic/description |
 |:-------------------------|:------------------|
