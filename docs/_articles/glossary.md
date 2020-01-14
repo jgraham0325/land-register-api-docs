@@ -11,11 +11,13 @@ status: publish
 
 <span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span><br /><br />
 
-<!-- PASTE BELOW THIS LINE 
+<!-- ---------------------------------------------------------
+--------------------------------------------------------------
+To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table and paste the HTML below.
 
-To convert from Word doc to HTML, use https://wordhtml.com/ and paste the HTML below.
-
--->
+**** PASTE BELOW THIS SECTION ****
+-------------------------------------------------------------
+--------------------------------------------------------- -->
 
 
 
