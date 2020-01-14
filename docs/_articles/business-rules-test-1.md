@@ -715,8 +715,8 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Lane rental - Exempt     | x |
 | Lane rental - Charges not applicable | x |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
-| High impact traffic management | Traffic management type: Road closure; Contraflow<br />Lane closuremm; Convoy working; Multi-way signals; Two-way signals |
-| Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs than < tbc test results > . |
+| High impact traffic management | Traffic management type: Road closure; Contraflow<br />Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs < tbc test results > . |
 | Works with excavation | On works record list: return works records where latest ???? permits indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
 | Early start | Proposed timings have indicated that the permit is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
