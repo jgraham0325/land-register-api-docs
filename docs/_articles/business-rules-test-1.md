@@ -705,9 +705,11 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 * Logic behind advanced filters are as below:
 
-| Filter name | Logic/description |
-|:------------|:------------------|
+| Filter name            | Logic/description |
+|:-----------------------|:------------------|
 | Works start / end date | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
+
+
 | Awaiting assessment | Applications awaiting assessment - often the records have the status of 'Submitted' |
 | Lane rental - Chargeable | |
 | Lane rental - Potentially chargeable | |
