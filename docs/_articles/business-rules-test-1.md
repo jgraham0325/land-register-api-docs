@@ -313,12 +313,6 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 _(Previously section 1.12 in Business rules v0.1 draft)_ 
  
-<br />
-
-
-#### 3.3.7. Progressing PAA to PA
-
-* 
 
 
 #### 3.3.5. Early start
@@ -377,7 +371,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
     * the immediate PA has been revoked
 * If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
 * Promoters may only cancel PAA & PA that they have full permissions to.
-* The PAA or PA status and works status will be set to 'Cancelled'.
+* The PAA/PA status and works status will be set to 'Cancelled'.
 
 _(Previously section 7 in Business rules v0.1 draft)_ 
 
@@ -824,8 +818,30 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
     * **SWA number** - The four-digit portion of the organisation's SWA code i.e. the SWA code without the two-character prefix.
     * **Numerical suffix** - A minimum of three numbers starting from 001 for the first activity by the organisation and counts up consecutively for each additional activity (i.e. -001, -002, -003 etc).
 
-<br />
 
+
+### Activity statuses
+
+< insert diagram >
+
+_(Previously section 23.2 in Business rules v0.1 draft)_ 
+
+
+### Managing activities
+
+* HAs may add activities for their organisation at any point.
+* The activity types are as follows:
+    * Skips
+    * Scaffolding
+    * Hoarding
+    * Crane/mobile platform
+    * Event
+    * Section 50
+    * Section 58
+    * Compound
+    * Other (enter a brief description)
+* HAs may change or cancel an activity added by their own organisation.
+    * The Activity Location or activity area cannot be changed.
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
