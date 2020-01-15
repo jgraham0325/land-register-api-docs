@@ -404,11 +404,13 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 ##### 3.4.10.1. PAA statuses
 
-< Insert diagram >
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PAA%20statuses.jpg" alt="Street Manager - PAA statuses" width="100%" />
+A diagram of PAA statuses</div>
 
 ##### 3.4.10.2. PA statuses
 
-< Insert diagram >
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20statuses.jpg" alt="Street Manager - PA statuses" width="100%" /></a>
+A diagram of PA statuses</div>
 
 
 <br />
