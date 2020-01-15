@@ -23,56 +23,57 @@ status: publish
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
-  1.2. [Date and time format](#12-datetime)<br />
+  1.2. [Date and time format](#12-date-and-time-format)<br />
   1.3. [Coordinates](#13-coordinates)<br />
-  1.4. [USRN](#14-usrn)<br />
-  1.5. [Text character limits](#15-charlimits)<br />
+  1.4. [USRN](#14-unique-street-reference-number-usrn)<br />
+  1.5. [File upload size](#15-file-upload-size)<br />
+  1.6. [Text character limits](#16-text-character-limits)<br />
 2. [Workstreams](#2-workstreams)<br />
 3. [Works submissions and applications](#3-works-submissions-and-applications)<br />
-  3.1. [Works reference number (WRN)]()<br />
-  3.2. [Works statuses]()<br />
-  3.2. [Forward plans](#32-forwardplans)<br />
-  3.3. [PAA and permit applications (PA)](#3-paa)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.1. [Permit reference number]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.2. [Works types]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.3. [Works categories]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
+  3.1. [Works reference number (WRN)](#31-works-reference-number-wrn)<br />
+  3.2. [Works statuses](#32-works-statuses)<br />
+  3.3. [Forward plans](#33-forward-plans)<br />
+  3.4. [PAA and permit applications (PA)](#34-paa-and-permit-applications-pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.1. [Permit reference number](#341-permit-reference-number)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.2. [Works types](#342-works-types)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.3. [Works categories](#343-works-categories)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types](#344-works-activity-types)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA](#344-adding-paa--pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start](#345-early-start)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options](#346-paa--pa-assessment-decision-options)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods](#)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA](#)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses](#)<br />
 4. [Changing permit applications](#changes)<br />
-  x.x [Change request reference number]()<br />
-  x.x [Change request types]()<br />
-  x.x [Adding change requests]()<br />
-  x.x [Change request assessment decision options]()<br />
-  x.x [Change request response period]()<br />
-  x.x [Cancelling change requests]()<br />
-  x.x [Change request statuses]()<br />
-5. [Revoking a PA]()<br />
-6. [Delivering and executing works]()<br />
-7. [Viewing and managing records]()<br />
-8. [Sites and reinstatements]()<br />
-  x.x [Sites and site numbers]()<br />
-  x.x [Reinstatement types]()<br />
-  x.x [Adding reinstatements]()<br />
-  x.x [Making interim sites permanent]()<br />
-  x.x [Reinstatement end dates]()<br />
-  x.x [Registering final sites]()<br />
-9. [Activities]()<br />
-  x.x [Activity reference number]()<br />
-10. [Inspections and non-compliance]()<br />
-  x.x [Inspection reference number]()<br />
-  x.x [Inspection types and categories]()<br />
-  x.x [Inspection outcomes]()<br />
-  x.x [Scheduling inspections]()<br />
-11. [Fixed penalty notice (FPN)]()<br />
-  x.x [FPN reference number]()<br />
-  x.x [FPN statuses]()<br />
-12. [Lane rental]()<br />
-13. [Fee reporting]()<br />
+  x.x [Change request reference number](#)<br />
+  x.x [Change request types](#)<br />
+  x.x [Adding change requests](#)<br />
+  x.x [Change request assessment decision options](#)<br />
+  x.x [Change request response period](#)<br />
+  x.x [Cancelling change requests](#)<br />
+  x.x [Change request statuses](#)<br />
+5. [Revoking a PA](#)<br />
+6. [Delivering and executing works](#)<br />
+7. [Viewing and managing records](#)<br />
+8. [Sites and reinstatements](#)<br />
+  x.x [Sites and site numbers](#)<br />
+  x.x [Reinstatement types](#)<br />
+  x.x [Adding reinstatements](#)<br />
+  x.x [Making interim sites permanent](#)<br />
+  x.x [Reinstatement end dates](#)<br />
+  x.x [Registering final sites](#)<br />
+9. [Activities](#)<br />
+  x.x [Activity reference number](#)<br />
+10. [Inspections and non-compliance](#)<br />
+  x.x [Inspection reference number](#)<br />
+  x.x [Inspection types and categories](#)<br />
+  x.x [Inspection outcomes](#)<br />
+  x.x [Scheduling inspections](#)<br />
+11. [Fixed penalty notice (FPN)](#)<br />
+  x.x [FPN reference number](#)<br />
+  x.x [FPN statuses](#)<br />
+12. [Lane rental](#)<br />
+13. [Fee reporting](#)<br />
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
@@ -305,7 +306,7 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 
-#### 3.4.4. Adding PAA & PA
+#### 3.4.5. Adding PAA & PA
 
 * PA's may be added from the Home page resulting in a new works record or added to an existing works record.
 * PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
@@ -316,7 +317,7 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
  
 
 
-#### 3.4.5. Early start
+#### 3.4.6. Early start
 
 * If a PAA/PA does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
 * The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for PAA/PA process.
@@ -337,7 +338,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.4.6. PAA & PA assessment decision options
+#### 3.4.7. PAA & PA assessment decision options
 
 * The assessment decision options for PAA/PA are as follows:
 
@@ -351,7 +352,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.4.7. PAA & PA response periods
+#### 3.4.8. PAA & PA response periods
 
 * The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
 * The response period will begin from the next working day after application submission.
@@ -370,7 +371,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.4.8. Cancelling PAA & PA
+#### 3.4.9. Cancelling PAA & PA
 
 * PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment) or 'granted' statuses and works start has not been logged.
 * Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
@@ -388,15 +389,15 @@ _(Previously section 7 in Business rules v0.1 draft)_
 
 <br />
 
-#### 3.4.9. PAA & PA statuses
+#### 3.4.10. PAA & PA statuses
 
 _(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
 
-##### 3.4.9.1. PAA statuses
+##### 3.4.10.1. PAA statuses
 
 < Insert diagram >
 
-##### 3.4.9.2. PA statuses
+##### 3.4.10.2. PA statuses
 
 < Insert diagram >
 
