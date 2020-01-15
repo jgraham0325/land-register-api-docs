@@ -40,7 +40,7 @@ status: publish
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment options]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA assessment periods]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
 4. [Changing applications and permits](#changes)<br />
@@ -48,7 +48,7 @@ status: publish
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
   x.x [Change request assessment options]()<br />
-  x.x [Change request assessment period]()<br />
+  x.x [Change request response period]()<br />
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
 5. [Revoking a permit]()<br />
@@ -95,46 +95,12 @@ X. []()<br />
 
 All numbers within Street Manager system are non-negative.
 
-<br />
 
 ### <span id="1-datetime">1.2. Dates and times</span>
-
-
-#### 1.2.1 Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
-
-
-#### 1.2.2 Working day
-
-See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the definition of a working day.
-
-_(Previously section 1.6 in Business rules v0.1 draft)_
-
-
-
-#### 1.2.2 Calendar day
-
-Street Manager calculates calendar days based on a 24 hour clock. So for example the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
-
-_(Previously section 1.7 in Business rules v0.1 draft)_
-
-
-<br />
-
-
-
-#### 1.2.3 Calendar month
-
-For the purpose of deeming and early start, a calendar month is calculated as 28 calendar days.
-
-_(Previously section 1.13 in Business rules v0.1 draft)_
-
-
-<br />
-
 
 
 ### 1.3. Coordinates
@@ -143,13 +109,11 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 <br />
 
-### 1.4. USRN
+### 1.4. Unique Street Reference Number (USRN)
 
 USRN must be a value between 100001 and 99999999.
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
-
-
 
 
 
@@ -304,7 +268,7 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 
 * Works types are as follows:
     * **Planned** - Minor, Standard, and Major works that are not Immediate
-    * **Immediate** - See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works. The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
+    * **Immediate** - See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works.  The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
 
 _(Previously section 1.3 in Business rules v0.1 draft)_  
 
@@ -318,7 +282,7 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
     * **Standard**
     * **Major PAA/PA**
 
-See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
+See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
 < Insert diagram >
 
@@ -358,9 +322,9 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 * If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
 * The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for permit process.
 * The early start calculation will include the day of the application is made.
-* The minimum advance notice by works category are as follows:
+* The minimum notice period by works category are as follows:
 
-| Works category | Minimum advance notice |
+| Works category | Minimum notice period  |
 |:---------------|:-----------------------|
 | Major PAA      | 3 calendar months (84 calendar days in Street Manager)|
 | Major PA       | 10 working days        |
@@ -380,13 +344,13 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.6. PAA & PA assessment periods
+#### 3.3.6. PAA & PA response periods
 
-* The assessment period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
-* The assessment period will begin from the next working day after application submission.
-* The assessment period for each works category are as follows:
+* The response period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
+* The response period will begin from the next working day after application submission.
+* The response period for each works category are as follows:
 
-| Works category | Assessment period |
+| Works category | Response period |
 |:---------------|:------------------|
 | Major PAA      | 28 calendar days  |
 | Major PA       | 5 working days    |
@@ -463,7 +427,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 | HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
 
 * For promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
-* A PA's assessment period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
+* A PA's response period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
 
@@ -507,9 +471,9 @@ _(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Change request assessment period
+### 4.x. Change request response period
 
-* The assessment period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
+* The response period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
 
 _(Previously section 5.7 in Business rules v0.1 draft)_ 
 
@@ -703,7 +667,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 * Each list page have different filter options available.
 * Note: the URL/web address may be shared or bookmarked/saved with filters currently applied.
 
-* Logic behind advanced filters are as below:
+* Advanced filters and descriptions below:
 
 | Filter name              | Logic/description |
 |:-------------------------|:------------------|
