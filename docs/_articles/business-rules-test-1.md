@@ -537,6 +537,19 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 _(Previously section 11.1 in Business rules v0.1 draft)_ 
 
 
+### Reverting works start
+
+* Works start may be reverted if
+    * works stop is not logged for the current PA
+    * a reinstatement has not been logged for the current PA
+    * for planned works (i.e. not immediate works)
+    * the PA has not been revoked.
+
+_(Previously section 21.1 in Business rules v0.1 draft)_ 
+
+
+
+
 ### Logging works stop
 
 * To log a works stop
@@ -549,11 +562,12 @@ _(Previously section 11.2 in Business rules v0.1 draft)_
 
 
 
-### Logging works stop
+### Reverting works stop
 
-* To log a works stop
+* Works stop may be reverted if
+    * a PA has not been added on the same works record after the works stop was logged.
 
-_(Previously section 11.2 in Business rules v0.1 draft)_ 
+_(Previously section 21.2 in Business rules v0.1 draft)_ 
 
 
 
@@ -585,17 +599,7 @@ _(Previously section 13 in Business rules v0.1 draft)_
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
 
 
-Rules
 
-Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
-
-Rules
-
-Revert works start / works stop
-
-Inspection units
-
-Validity period
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
