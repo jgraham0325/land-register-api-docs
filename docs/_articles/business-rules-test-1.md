@@ -358,6 +358,10 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 * HA may change the assessment decision to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
+* Street Manager will automatically set a record's assessment decision under the following circumstances:
+    * Immediate works that are started and completed before the HA has provided an assessment decision will have the assessment decision of "Granted (auto)".
+    * When a major PA is assessed, the associated PAA will take on the matching assessment decision if the HA has separately not provided an assessment decision for the PAA. e.g. if a major PA is refused, the PAA will have the assessment decision of "Refused (auto)".
+
 _(Previously section 25.3 in Business rules v0.1 draft)_ 
 
 
@@ -510,7 +514,8 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 ### 4.7. Change request statuses
 
-< insert diagram >
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Change%20request%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Change%20request%20statuses.jpg" alt="Street Manager - Change request statuses" width="100%" /></a>
+A diagram of Change request statuses</div>
 
 
 
