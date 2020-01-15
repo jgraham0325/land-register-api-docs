@@ -77,12 +77,12 @@ status: publish
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
-14. [Changes](#changes)<br />
+<!-- 14. [Changes](#changes)<br /> 
 
 
 X. []()<br />
   x.x []()<br />
-      x.x.x. []()<br />
+      x.x.x. []()<br /> -->
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -117,7 +117,7 @@ USRN must be a value between 100001 and 99999999.
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
 
-### File upload size
+### 1.5. File upload size
 
 * Maximum file size must be less than 5MB.
 * All files on a single permit application must total less than 100mb.
@@ -126,13 +126,13 @@ _(Previously section 19 in Business rules v0.1 draft)_
 
 
 
-### 1.3. Text character limits
+### 1.6. Text character limits
 
-#### 1.3.1. Username field
+#### 1.6.1. Username field
 
 The max length for username fields is 50 characters.
 
-#### 1.3.2. Single-line text fields
+#### 1.6.2. Single-line text fields
 
 Max length is 100 characters.
 
@@ -161,7 +161,7 @@ These include:
 * Contact details
 * Street special designation code
 
-#### 1.3.3. Multi-line text areas
+#### 1.6.3. Multi-line text areas
 
 Text areas for large comment fields are limited to the max length of 1500 characters.
 
@@ -235,7 +235,7 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 
 <br />
 
-### 3.2. Forward plans
+### 3.3. Forward plans
 
 * Forward plans are for giving advance notice of major works only.
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
@@ -253,10 +253,10 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 
 
-### 3.3. PAA and permit applications (PA)
+### 3.4. PAA and permit applications (PA)
 
 
-#### 3.3.2. Permit reference number
+#### 3.4.1. Permit reference number
 
 * The permit reference number is generated in the following format: {WRN} - {numerical suffix}
     * **WRN** - See the works reference number section for more details.
@@ -269,7 +269,7 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.3. Works types
+#### 3.4.2. Works types
 
 * Works types are as follows:
     * **Planned** - Minor, Standard, and Major works that are not Immediate
@@ -280,7 +280,7 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.4. Works categories
+#### 3.4.3. Works categories
 
 * Works categories are as follows:
     * **Minor**
@@ -296,7 +296,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.8. Works activity types
+#### 3.4.4. Works activity types
 
 * See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the works activity types.
 
@@ -305,7 +305,7 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.7. Adding PAA & PA
+#### 3.4.4. Adding PAA & PA
 
 * PA's may be added from the Home page resulting in a new works record or added to an existing works record.
 * PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
@@ -316,7 +316,7 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
  
 
 
-#### 3.3.5. Early start
+#### 3.4.5. Early start
 
 * If a PAA/PA does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
 * The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for PAA/PA process.
@@ -337,7 +337,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.9. PAA & PA assessment decision options
+#### 3.4.6. PAA & PA assessment decision options
 
 * The assessment decision options for PAA/PA are as follows:
 
@@ -351,7 +351,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.6. PAA & PA response periods
+#### 3.4.7. PAA & PA response periods
 
 * The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
 * The response period will begin from the next working day after application submission.
@@ -370,7 +370,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 <br />
 
 
-#### 3.3.9. Cancelling PAA & PA
+#### 3.4.8. Cancelling PAA & PA
 
 * PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment) or 'granted' statuses and works start has not been logged.
 * Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
@@ -388,15 +388,15 @@ _(Previously section 7 in Business rules v0.1 draft)_
 
 <br />
 
-#### 3.3.1. PAA & PA statuses
+#### 3.4.9. PAA & PA statuses
 
 _(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
 
-##### 3.3.1.1. PAA statuses
+##### 3.4.9.1. PAA statuses
 
 < Insert diagram >
 
-##### 3.3.1.2. PA statuses
+##### 3.4.9.2. PA statuses
 
 < Insert diagram >
 
@@ -413,16 +413,16 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Change requests (CR)
+## 4. Change requests (CR)
 <!-- ==================================================== -->
 
-### 4.x. Change request reference number
+### 4.1. Change request reference number
 
 * The change request reference number is generated in the following format: {permit reference number} -CR- {numerical suffix}
     * See the **permit reference number** section for more details.
     * Numerical suffix - A minimum of two numbers starting from 01 for the first change request created on the PA and counts up consecutively for each additional change request (i.e. -01, -02, -03 etc).
 
-### 4.x. Change request types
+### 4.2. Change request types
 
 * The change request types are as follows:
 
@@ -444,7 +444,7 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Adding change requests
+### 4.3. Adding change requests
 
 * Each PA may have only one change request awaiting assessment. 
 * A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'
@@ -465,7 +465,7 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 
 
 
-### 3.x. Change request assessment decision options
+### 4.4. Change request assessment decision options
 
 * The assessment decision options for change requests are as follows:
 
@@ -482,7 +482,7 @@ _(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Change request response period
+### 4.5. Change request response period
 
 * The response period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
 
@@ -491,12 +491,12 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Cancelling change requests
+### 4.6. Cancelling change requests
 
 * Promoters may only cancel change requests for PAs that they have full-access permissions to.
 
 
-### 4.x. Change request statuses
+### 4.7. Change request statuses
 
 < insert diagram >
 
@@ -515,7 +515,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Revoking a PA
+## 5. Revoking a PA
 <!-- ==================================================== -->
 
 * HA may revoke a PA that has been granted and before works stop has been logged.
@@ -532,10 +532,10 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Delivering and executing works
+## 6. Delivering and executing works
 <!-- ==================================================== -->
 
-### Logging works start
+### 6.1. Logging works start
 
 * To log a works start
     * PA must be in 'granted' status,
@@ -545,7 +545,7 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 _(Previously section 11.1 in Business rules v0.1 draft)_ 
 
 
-### Reverting works start
+### 6.2. Reverting works start
 
 * Works start may be reverted if
     * works stop is not logged for the current PA
@@ -558,7 +558,7 @@ _(Previously section 21.1 in Business rules v0.1 draft)_
 
 
 
-### Logging works stop
+### 6.3. Logging works stop
 
 * To log a works stop
     * works must be in 'in progress' status,
@@ -570,7 +570,7 @@ _(Previously section 11.2 in Business rules v0.1 draft)_
 
 
 
-### Reverting works stop
+### 6.4. Reverting works stop
 
 * Works stop may be reverted if
     * a PA has not been added on the same works record after the works stop was logged.
@@ -580,7 +580,7 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 
 
 
-### Validity periods
+### 6.5. Validity periods
 
 * Only applicable for works on non-traffic sensitive category 3 or 4 roads.
     * Non-traffic sensitivity is determined either by there being no traffic-sensitive designations for the works' USRN or if there are, none were selected by the promoter as applicable to the works.
@@ -599,7 +599,7 @@ _(Previously section 13 in Business rules v0.1 draft)_
 
 
 
-### Changing the number of inspection units
+### 6.6. Changing the number of inspection units
 
 * The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
      * The number of inspection units is defaulted to 1.
@@ -617,10 +617,10 @@ _(Previously section 11.4 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Viewing and managing records
+## 7. Viewing and managing records
 <!-- ==================================================== -->
 
-### Commenting on a works record
+### 7.1. Commenting on a works record
 
 * Users associated with a works can add a comment on the works record. Users associated with a works include being from the HA the works has been submitted to, being from (or working on behalf of) the promoter organisation that submitted the works and with access to the associated workstream.
 * A topic must be selected when adding a comment. The comment topics are as follows:
@@ -633,7 +633,7 @@ _(Previously section 11.4 in Business rules v0.1 draft)_
 _(Previously section 8 in Business rules v0.1 draft)_
 
 
-### Works history
+### 7.2. Works history
 
 * Works history is available for each works record showing all events related to the works record. The works history includes:
     * Date and time
@@ -642,7 +642,7 @@ _(Previously section 8 in Business rules v0.1 draft)_
     * Username
 
 
-### Map application
+### 7.3. Map application
 
 * The date filter is automatically defaulted with the current date in the 'From' field and 14 days after the current date in the 'To' field.
 * For performance reasons, the map application is limited to 
@@ -652,7 +652,7 @@ _(Previously section 8 in Business rules v0.1 draft)_
 _(Previously section 16 in Business rules v0.1 draft)_
 
 
-### Searching records
+### 7.4. Searching records
 
 * Search functionality is available on the following list pages:
     * Permit applications
@@ -668,7 +668,7 @@ _(Previously section 16 in Business rules v0.1 draft)_
 _(Previously section 17.1 in Business rules v0.1 draft)_
 
 
-### Advanced filtering
+### 7.5. Advanced filtering
 
 * Advanced filtering is available on the following list pages:
     * Permit applications
@@ -704,7 +704,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 
 
-### Exporting records
+### 7.6. Exporting records
 
 * Export functionality is available on the following list pages:
     * Permit applications
@@ -719,15 +719,6 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 
 
-
-
-
-
-Map Search
-
-
-
-
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -736,18 +727,18 @@ Map Search
 
 
 <!-- ==================================================== -->
-## Sites and reinstatements
+## 8. Sites and reinstatements
 <!-- ==================================================== -->
 
 
-### 4.x. Sites and site numbers
+### 8.1. Sites and site numbers
 
 * A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
 * For each works record, the site numbers begin at 1 and counts up consecutively for each additional site (i.e. Site 1, Site 2, Site 3 etc).
 * All historical reinstatement details are available for each site on the individual 'site record' pages.
 
 
-### 4.x. Reinstatement types
+### 8.2. Reinstatement types
 
 * The reinstatement types are as follows:
     * Excavation
@@ -764,7 +755,7 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Adding reinstatements
+### 8.3. Adding reinstatements
 
 * To add a reinstatement, the latest PA must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
@@ -782,7 +773,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Making interim sites permanent
+### 8.4. Making interim sites permanent
 
 * If an existing site is in 'interim' state, a new PA must be raised to add a 'permanent' reinstatement to the existing site.
 
@@ -794,7 +785,7 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 
 
 
-### 4.x. Reinstatement end dates
+### 8.5. Reinstatement end dates
 
 * If the reinstatement state is 'interim', the interim period end date is 6 months from the reinstatement date e.g. if an interim reinstatement date is 26/10/18 then the end date should be 25/04/19
 * If the reinstatement state is 'permanent' and
@@ -804,7 +795,9 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 _(Previously section 4.1 in Business rules v0.1 draft)_
 
 
-### 4.x. Registering final sites
+
+
+### 8.6. Registering final sites
 
 * Final sites may be registered by marking 'Are you registering the final site?' as 'Yes' when adding a reinstatement.
 * Alternatively, select 'Change' on the works record level against 'Final site registered'.
@@ -822,10 +815,10 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Activities
+## 9. Activities
 <!-- ==================================================== -->
 
-### 4.x. Activity reference number
+### 9.1. Activity reference number
 
 * The activity reference number is generated in the following format: ARN- {SWA number} - {numerical suffix}
     * **SWA number** - The four-digit portion of the organisation's SWA code i.e. the SWA code without the two-character prefix.
@@ -833,14 +826,15 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 
 
-### Activity statuses
+### 9.2. Activity statuses
 
 < insert diagram >
 
 _(Previously section 23.2 in Business rules v0.1 draft)_ 
 
 
-### Managing activities
+
+### 9.3. Managing activities
 
 * HAs may add activities for their organisation at any point.
 * The activity types are as follows:
@@ -865,10 +859,10 @@ _(Previously section 23.2 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Inspections and non-compliance
+## 10. Inspections and non-compliance
 <!-- ==================================================== -->
 
-### 4.x. Inspection reference number
+### 10.1. Inspection reference number
 
 * The inspection reference number is generated in the following format: {WRN}-INSP-{numerical suffix}
     * **WRN** - See the works reference number section for more details.
@@ -876,7 +870,9 @@ _(Previously section 23.2 in Business rules v0.1 draft)_
 
 _(Previously section 3.1 in Business rules v0.1 draft)_ 
 
-### 4.x. Inspection types and categories
+
+
+### 10.2. Inspection types and categories
 
 * Inspections may be added by a HA at any stage of a works record.
 
@@ -889,7 +885,9 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 
 _(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_ 
 
-### 4.x. Inspection outcomes
+
+
+### 10.3. Inspection outcomes
 
 * If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided.
 * If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was made safe by HA.
@@ -907,12 +905,8 @@ _(Previously section 3.3 & 3.5 in Business rules v0.1 draft)_
 
 
 
-<!-- SECTION NOT REQUIRED
-### x. Inspection failure categories
-_(Previously section 3.4 in Business rules v0.1 draft)_ -->
 
-
-### 4.x. Scheduling inspections
+### 10.4. Scheduling inspections
 
 * HA may schedule one inspection against a works record.
 * A scheduled inspection consists of a date, time (optional) and inspection type & category.
@@ -935,10 +929,10 @@ _(Previously section 3.6 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Fixed penalty notice (FPN)
+## 11. Fixed penalty notice (FPN)
 <!-- ==================================================== -->
 
-### 4.x. FPN reference number
+### 11.1. FPN reference number
 
 * The FPN reference number is generated in the following format: {WRN}-FPN-{numerical suffix}
     * **WRN** - See the works reference number section for more details.
@@ -946,7 +940,7 @@ _(Previously section 3.6 in Business rules v0.1 draft)_
 
 _(Previously section 2.2 in Business rules v0.1 draft)_ 
 
-### 3.3. FPN statuses
+### 11.2. FPN statuses
 
 * The FPN statuses are as follows:
     * **Issued** - The initial status of an FPN issued by a HA. (Applicable for all FPNs)
@@ -967,8 +961,6 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 
 
-
-
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -978,10 +970,10 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Lane rental
+## 12. Lane rental
 <!-- ==================================================== -->
 
-### Lane rental assessment or charge types
+### 12.1. Lane rental assessment or charge types
 
 * The lane rental charge types and descriptions are as follows:
 
@@ -996,7 +988,7 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 _(Previously section 18.1 in Business rules v0.1 draft)_ 
 
 
-### Adding a lane rental assessment to a PA
+### 12.2. Adding a lane rental assessment to a PA
 
 * HA may add a lane rental assessment or charge on any PA at any time.
 * If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
@@ -1012,7 +1004,7 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Fee reporting
+## 13. Fee reporting
 <!-- ==================================================== -->
 
 * A fee report is available showing individual entries for every chargeable transaction within a specified date range. Dates queried are the date of the chargeable transaction.
