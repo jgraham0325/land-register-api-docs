@@ -347,7 +347,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 | Refuse               | All PAA/PA     |
 | Modification request | PA only        |
 
-* Mo
+* HA may change the assessment decision to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
 
 
@@ -437,6 +437,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 * A PA's response period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
+* Promoter change requests include the change requests submitted as a response to a 'modification request' assessment decision.
 
 _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_ 
 
@@ -473,6 +474,9 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 | Grant | Promoter change request & works extension | Changes will be applied to the PA. |
 | Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment. | 
 | Grant with duration challenge | Works extension | HA to provide a reasonable period end date and reason for the duration challenge. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
+
+* Note: Currently, granting or refusing a change request created as a response to 'modification request' will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon).
+
 
 _(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_ 
 
