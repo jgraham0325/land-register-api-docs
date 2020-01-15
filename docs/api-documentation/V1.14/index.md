@@ -226,7 +226,7 @@ submitting a permit for a work. See the resource guide for details.
 {: .govuk-heading-s}
 
 The Street Manager GeoJson API exposes works and events spatial data to
-authenticated users for use with mapping queries. See the resource guide for details.
+authenticated users for use with mapping queries. This API returns data in the form of [GeoJSON](https://tools.ietf.org/html/rfc7946#section-4) using BNG (British National Grid [EPSG:27700](https://epsg.io/27700)) as the Coordinate Reference System, as per Street Works industry standard. See the resource guide for details.
 {: .govuk-body}
 
 #### Data Export API
@@ -2208,6 +2208,9 @@ The PUT endpoint will update the status of a section 81 and will require a work 
 
 ### GeoJSON API
 {: .govuk-heading-m}
+
+This API returns data in the form of [GeoJSON](https://tools.ietf.org/html/rfc7946#section-4) using BNG (British National Grid [EPSG:27700](https://epsg.io/27700)) as the Coordinate Reference System, as per Street Works industry standard.
+{: .govuk-body}
 
 #### Get works endpoint
 {: .govuk-heading-s}
