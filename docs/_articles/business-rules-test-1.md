@@ -39,7 +39,7 @@ status: publish
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start]()<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment options]()<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
@@ -47,7 +47,7 @@ status: publish
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
-  x.x [Change request assessment options]()<br />
+  x.x [Change request assessment decision options]()<br />
   x.x [Change request response period]()<br />
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
@@ -123,6 +123,7 @@ _(Previously section 16.3 in Business rules v0.1 draft)_
 * All files on a single permit application must total less than 100mb.
 
 _(Previously section 19 in Business rules v0.1 draft)_
+
 
 
 ### 1.3. Text character limits
@@ -336,9 +337,17 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 
 
-#### 3.3.9. PAA & PA assessment options
+#### 3.3.9. PAA & PA assessment decision options
 
-* x
+* The assessment decision options for PAA/PA are as follows:
+
+| Assessment decision  | Applicable for |
+|:---------------------|:---------------|
+| Grant                | All PAA/PA     |
+| Refuse               | All PAA/PA     |
+| Modification request | PA only        |
+
+* Mo
 
 
 
@@ -404,7 +413,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Changing permit applications
+## Change requests (CR)
 <!-- ==================================================== -->
 
 ### 4.x. Change request reference number
@@ -437,7 +446,7 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 ### 4.x. Adding change requests
 
 * Each PA may have only one change request awaiting assessment. 
-* A change request may be added to PA's that are not 'Refused', 'Revoked' or 'Closed'
+* A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'
 * The works category may be updated if the works duration is changed.
 * Change requests may not be added to a PAA.
 * The following cannot be changed on a PA: 
@@ -455,11 +464,11 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 
 
 
-### 3.x. Change request assessment options
+### 3.x. Change request assessment decision options
 
-* The assessment options for change requests are as follows:
+* The assessment decision options for change requests are as follows:
 
-| Assessment option | Change request type | Assessment option description |
+| Assessment decision | Applicable for CR type | Assessment decision impact |
 |:------------------|:--------------------|:---|
 | Grant | Promoter change request & works extension | Changes will be applied to the PA. |
 | Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment. | 
