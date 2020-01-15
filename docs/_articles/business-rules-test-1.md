@@ -23,7 +23,7 @@ status: publish
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
-  1.2. [Dates and times](#12-datetime)<br />
+  1.2. [Date and time format](#12-datetime)<br />
   1.3. [Coordinates](#13-coordinates)<br />
   1.4. [USRN](#14-usrn)<br />
   1.5. [Text character limits](#15-charlimits)<br />
@@ -96,7 +96,7 @@ X. []()<br />
 All numbers within Street Manager system are non-negative.
 
 
-### <span id="1-datetime">1.2. Dates and times</span>
+### <span id="1-datetime">1.2. Date and time format</span>
 
 All dates and times must match the ISO 8601 standard date format.
 
@@ -110,6 +110,8 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 <br />
 
 ### 1.4. Unique Street Reference Number (USRN)
+
+A unique identifier for a street as defined in BS7666. 
 
 USRN must be a value between 100001 and 99999999.
 
