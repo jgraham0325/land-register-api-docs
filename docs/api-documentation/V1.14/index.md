@@ -2462,7 +2462,7 @@ Work API has been updated with the following changes:
 <ol class="govuk-list govuk-list--bullet">
     <li><code>POST /works/{workReferenceNumber}/comments</code> updated to remove comment_id</li>
     <li>The <code>WorkType</code> enum has been updated to include <code>hs2_highway_works</code> as a valid type</li>
-    <li>The <code>WorkCategory</code> enum has been updated to include <code>hs2_highwaycode> as a valid category</li>
+    <li>The <code>WorkCategory</code> enum has been updated to include <code>hs2_highwaycode</code> as a valid category</li>
     <li>The Permit and Work endpoints have been extended to include HS2 specific fields</li>
     <li>The <code>WorkResponse</code> has been updated to no longer return the <code>historical_permit_reference</code></li>
     <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
