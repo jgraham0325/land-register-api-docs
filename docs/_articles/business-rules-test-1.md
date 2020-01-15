@@ -43,7 +43,7 @@ status: publish
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA]()<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses]()<br />
-4. [Changing applications and permits](#changes)<br />
+4. [Changing permit applications](#changes)<br />
   x.x [Change request reference number]()<br />
   x.x [Change request types]()<br />
   x.x [Adding change requests]()<br />
@@ -51,7 +51,7 @@ status: publish
   x.x [Change request response period]()<br />
   x.x [Cancelling change requests]()<br />
   x.x [Change request statuses]()<br />
-5. [Revoking a permit]()<br />
+5. [Revoking a PA]()<br />
 6. [Delivering and executing works]()<br />
 7. [Viewing and managing records]()<br />
 8. [Sites and reinstatements]()<br />
@@ -236,6 +236,7 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 
 ### 3.2. Forward plans
 
+* Forward plans are for giving advance notice of major works only.
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
 * Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
 * All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
@@ -258,7 +259,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 * The permit reference number is generated in the following format: {WRN} - {numerical suffix}
     * **WRN** - See the works reference number section for more details.
-    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first PAA or permit application created on the works record and counts up consecutively for each additional permit application (i.e. -01, -02, -03 etc).
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first PAA or PA created on the works record and counts up consecutively for each additional PA (i.e. -01, -02, -03 etc).
 * A permit reference number is automatically generated when a PAA or permit application has been submitted.
 * The permit reference number is the reference number that promoters needs to display on on-site permit boards.
 
@@ -322,8 +323,8 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 
 #### 3.3.5. Early start
 
-* If a permit application does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
-* The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for permit process.
+* If a PAA/PA does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
+* The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for PAA/PA process.
 * The early start calculation will include the day of the application is made.
 * The minimum notice period by works category are as follows:
 
@@ -349,7 +350,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 #### 3.3.6. PAA & PA response periods
 
-* The response period is the time period that a Highway Authority (HA) has to assess and evaluate a permit application (or any other promoter request) prior to the permit deeming.
+* The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
 * The response period will begin from the next working day after application submission.
 * The response period for each works category are as follows:
 
@@ -392,7 +393,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 < Insert diagram >
 
-##### 3.3.1.2. Permit statuses
+##### 3.3.1.2. PA statuses
 
 < Insert diagram >
 
@@ -409,7 +410,7 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Changing applications and permits
+## Changing permit applications
 <!-- ==================================================== -->
 
 ### 4.x. Change request reference number
@@ -485,7 +486,7 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 ### 4.x. Cancelling change requests
 
-* Promoters may only cancel change requests for permit applications that they have full permissions to.
+* Promoters may only cancel change requests for PAs that they have full-access permissions to.
 
 
 ### 4.x. Change request statuses
@@ -507,12 +508,12 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## Revoking a permit
+## Revoking a PA
 <!-- ==================================================== -->
 
-* HA may revoke a permit that has been granted and before works stop has been logged.
+* HA may revoke a PA that has been granted and before works stop has been logged.
 * If a PA is revoked 
-    * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the permit by the promoter.
+    * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the PA by the promoter.
     * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
     * with a change request awaiting assessment on a PA, the change request be revoked automatically.
 
@@ -684,9 +685,9 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
 | High impact traffic management | Includes applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
 | Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs < tbc test results > . |
-| Works with excavation | On works record list: return works records where latest ???? permits indicating that excavation is required. On PA list: return any PAs where excavation is required. |
+| Works with excavation | On works record list: return works records where latest ???? PA indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
-| Early start | Proposed timings have indicated that the permit is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
+| Early start | Proposed timings have indicated that the PAA/PA is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
 | Lane rental charges (potentially) apply | Work takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
 | Lane rental charges not agreed | A lane rental assessment has been added with an outcome of "Chargeable" and charges have not been agreed. |
 | Duration extension | On change request list only: change requests with works extension request |
@@ -758,14 +759,14 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 ### 4.x. Adding reinstatements
 
-* To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
+* To add a reinstatement, the latest PA must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
     * the current date or in the past
     * on or after the actual start date
     * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
 * This functionality may be used to correct a mistake on the previous reinstatement.
-  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new permit would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
+  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
 
 _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
@@ -776,7 +777,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 ### 4.x. Making interim sites permanent
 
-* If an existing site is in 'interim' state, a new permit must be raised to add a 'permanent' reinstatement to the existing site.
+* If an existing site is in 'interim' state, a new PA must be raised to add a 'permanent' reinstatement to the existing site.
 
 _(Previously section 4.4 in Business rules v0.1 draft)_
 
@@ -966,9 +967,9 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 _(Previously section 18.1 in Business rules v0.1 draft)_ 
 
 
-### Adding a lane rental assessment to a permit
+### Adding a lane rental assessment to a PA
 
-* HA may add a lane rental assessment or charge on any permit at any time.
+* HA may add a lane rental assessment or charge on any PA at any time.
 * If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
 
 _(Previously section 18.1 in Business rules v0.1 draft)_ 
@@ -987,8 +988,8 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
 
 * A fee report is available showing individual entries for every chargeable transaction within a specified date range. Dates queried are the date of the chargeable transaction.
 * The chargeable transactions included are as follows:
-    * Granting of a permit application
-    * PAA progressed to PA - note, this occurs upon receipt of the permit application, not when it is granted
+    * Granting of a PA
+    * PAA progressed to PA - note, this occurs upon receipt of the PA, not when it is granted
     * Granting of a change request
     * A change in work category
 * The maximum date range for the fee report is 31 calendar days.
@@ -999,12 +1000,12 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
     * **Is street is traffic-sensitive** - are there any traffic-sensitive designations for the works' USRN?
     * **Is works is traffic-sensitive** - were any traffic-sensitive designations selected by the promoter on the PA?
 
-* Note: The works category field will be populated with the permit application's current works category at the time the report is run as opposed to showing the works category of the permit at the time the chargeable transaction took place.
-* For example, if a permit is granted then soon after a work extension was also granted changing it from a standard to a major permit, there would be three transactions for this permit in the fee report:
-    * granting of a permit application, 
+* Note: The works category field will be populated with the PAA/PA's current works category at the time the report is run as opposed to showing the works category of the PAA/PA at the time the chargeable transaction took place.
+* For example, if a PA is granted then soon after a work extension was also granted changing it from a standard to a major PA, there would be three transactions for this PA in the fee report:
+    * granting of a PA
     * granting of a change request 
     * change in work category
-    * The works category field for all three of these transactions will be 'major'.
+    * The works category field for all three of these transactions will be 'major'
 
 * Out of scope: inspection chargeable transaction ; fee amounts
 
