@@ -23,7 +23,7 @@ status: publish
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
-  1.2. [Dates and times](#12-datetime)<br />
+  1.2. [Date and time format](#12-datetime)<br />
   1.3. [Coordinates](#13-coordinates)<br />
   1.4. [USRN](#14-usrn)<br />
   1.5. [Text character limits](#15-charlimits)<br />
@@ -96,7 +96,7 @@ X. []()<br />
 All numbers within Street Manager system are non-negative.
 
 
-### <span id="1-datetime">1.2. Dates and times</span>
+### <span id="1-datetime">1.2. Date and time format</span>
 
 All dates and times must match the ISO 8601 standard date format.
 
@@ -107,7 +107,7 @@ See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/o
 
 Coordinates must be a GeoJSON geometry (using British National Grid, easting and northing pairs).
 
-<br />
+
 
 ### 1.4. Unique Street Reference Number (USRN)
 
@@ -119,8 +119,6 @@ _(Previously section 16.3 in Business rules v0.1 draft)_
 
 
 
-
-<br />
 
 ### 1.3. Text character limits
 
@@ -639,23 +637,10 @@ _(Previously section 16 in Business rules v0.1 draft)_
     * Registered reinstatements
 * Search by works reference number, permit reference number or road/street
     * Partial search compatible - Street Manager will return results that contain the search term and does not need the full reference or street.
-* Search and filtering may be used in combination.
+* Search and filtering functionality may be used in combination.
 
 _(Previously section 17.1 in Business rules v0.1 draft)_
 
-
-### Exporting records
-
-* Export functionality is available on the following list pages:
-    * Permit applications
-    * Change requests
-    * Works records
-    * PAAs to progress
-    * Forward plans
-    * Fixed penalty notices (FPN)
-    * Inspections
-    * Registered reinstatements (coming soon)
-    * Comments (coming soon)
 
 ### Advanced filtering
 
@@ -679,7 +664,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Lane rental - Exempt     | x |
 | Lane rental - Charges not applicable | x |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
-| High impact traffic management | Traffic management type: Road closure; Contraflow<br />Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| High impact traffic management | Includes applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
 | Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs < tbc test results > . |
 | Works with excavation | On works record list: return works records where latest ???? permits indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
@@ -692,17 +677,28 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 
 
-List pages, search and filtering
 
-Expiring interim page is xxx
+### Exporting records
+
+* Export functionality is available on the following list pages:
+    * Permit applications
+    * Change requests (coming soon)
+    * Works records
+    * PAAs to progress
+    * Forward plans
+    * Fixed penalty notices (FPN)
+    * Inspections
+    * Registered reinstatements (coming soon)
+    * Comments (coming soon)
 
 
 
 
-Map Filtering
+
+
 
 Map Search
-Topic
+
 
 
 
@@ -916,7 +912,6 @@ _(Previously section 2.2 in Business rules v0.1 draft)_
 
 _(Previously section 2.1 in Business rules v0.1 draft)_ 
 
-<br />
 
 
 
@@ -926,7 +921,25 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+
+
+
+
+<!-- ==================================================== -->
+## Lane rental
+<!-- ==================================================== -->
+
+### Lane rental assessment or charge types
+
+
+### Adding a lane rental assessment to a permit
+
+* HA may add a lane rental assessment or charge on any permit.
+* If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
