@@ -316,7 +316,7 @@ The CSV will contain:
   <li>Promoter SWA code</li>
   <li>Promoter organisation</li>
   <li>Highway authority</li>
-  <li>Works location coordinates</li>
+  <li>Works location coordinates (in <a title="Well-known Text" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> format)</li>
   <li>Works location description</li>
   <li>Street name</li>
   <li>Area name</li>
