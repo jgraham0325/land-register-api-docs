@@ -71,12 +71,13 @@ status: publish
 11. [Fixed penalty notice (FPN)]()<br />
   x.x [FPN reference number]()<br />
   x.x [FPN statuses]()<br />
-12. [Fee reporting]()<br />
+12. [Lane rental]()<br />
+13. [Fee reporting]()<br />
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
   x.x []()<br />
-13. [Changes](#changes)<br />
+14. [Changes](#changes)<br />
 
 
 X. []()<br />
@@ -116,8 +117,12 @@ USRN must be a value between 100001 and 99999999.
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
 
+### File upload size
 
+* Maximum file size must be less than 5MB.
+* All files on a single permit application must total less than 100mb.
 
+_(Previously section 19 in Business rules v0.1 draft)_
 
 
 ### 1.3. Text character limits
@@ -532,6 +537,19 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 _(Previously section 11.1 in Business rules v0.1 draft)_ 
 
 
+### Reverting works start
+
+* Works start may be reverted if
+    * works stop is not logged for the current PA
+    * a reinstatement has not been logged for the current PA
+    * for planned works (i.e. not immediate works)
+    * the PA has not been revoked.
+
+_(Previously section 21.1 in Business rules v0.1 draft)_ 
+
+
+
+
 ### Logging works stop
 
 * To log a works stop
@@ -541,6 +559,17 @@ _(Previously section 11.1 in Business rules v0.1 draft)_
     * date must occur today or a date in the past
 
 _(Previously section 11.2 in Business rules v0.1 draft)_ 
+
+
+
+### Reverting works stop
+
+* Works stop may be reverted if
+    * a PA has not been added on the same works record after the works stop was logged.
+
+_(Previously section 21.2 in Business rules v0.1 draft)_ 
+
+
 
 
 ### Validity periods
@@ -564,24 +593,13 @@ _(Previously section 13 in Business rules v0.1 draft)_
 
 ### Changing the number of inspection units
 
-* The number of inspection units will be added when the first reinstatement is submitted.
-    * The number of inspection units is defaulted to 1.
-* The number of inspection units may be changed without submitting another reinstatement.
+* The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
+     * The number of inspection units is defaulted to 1.
 
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
 
 
-Rules
 
-Log works stop - can you log a stop date that is before a reinstatement date that was added whilst the works was in progress?
-
-Rules
-
-Revert works start / works stop
-
-Inspection units
-
-Validity period
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -935,11 +953,26 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 ### Lane rental assessment or charge types
 
+* The lane rental charge types and descriptions are as follows:
+
+| Lane rental type | Description |
+|:-----------------|:------------|
+| Chargeable       | Works will incur a lane rental charge |
+| Potentially chargeable | Flagged or HA to follow up for inspection |
+| Charges waived   | Charges do not need to be paid e.g. due to collaborative works |
+| Exempt           | Works fall outside the lane rental scheme |
+| Charges not applicable to works | Not applicable |
+
+_(Previously section 18.1 in Business rules v0.1 draft)_ 
+
 
 ### Adding a lane rental assessment to a permit
 
-* HA may add a lane rental assessment or charge on any permit.
+* HA may add a lane rental assessment or charge on any permit at any time.
 * If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
+
+_(Previously section 18.1 in Business rules v0.1 draft)_ 
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -986,10 +1019,10 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 
-
-<!-- ==================================================== -->
+<!--
+<!-- ==================================================== 
 ## Changes
-<!-- ==================================================== -->
+<!-- ==================================================== 
 
 | Section | Change comment |
 |:--------|:---------------|
@@ -997,7 +1030,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 | 1.1.    | Updated |
 | 1.2.    | Updated |
 
-
+-->
 
 
 
