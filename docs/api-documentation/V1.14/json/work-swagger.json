@@ -699,6 +699,18 @@
 				"hs2_is_consent": {
 					"type": "boolean",
 					"x-nullable": true
+				},
+				"additional_contact": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"additional_contact_number": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"additional_contact_email": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -929,6 +941,21 @@
 				},
 				"close_footway": {
 					"$ref": "#/definitions/CloseFootway"
+				},
+				"additional_contact": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_number": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				},
 				"permit_asds": {
 					"type": "array",
@@ -2015,6 +2042,21 @@
 				"hs2_highway_exemption": {
 					"$ref": "#/definitions/HS2HighwayExemption",
 					"description": "Required if work_type = 'hs2_highway_works' and hs2_in_act_limits = true",
+					"x-nullable": true
+				},
+				"additional_contact": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_number": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
 					"x-nullable": true
 				}
 			},
@@ -3346,6 +3388,21 @@
 				},
 				"close_footway": {
 					"$ref": "#/definitions/CloseFootway"
+				},
+				"additional_contact": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_number": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"additional_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				},
 				"permit_alteration_reason": {
 					"type": "string",
