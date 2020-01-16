@@ -1031,7 +1031,7 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
     * Granting of a PA
     * PAA progressed to PA - note, this occurs upon receipt of the PA, not when it is granted
     * Granting of a change request
-    * A change in work category
+    * A change in works category
 * The maximum date range for the fee report is 31 calendar days.
 * The fee report results are sorted by date of the chargeable transaction in ascending order.
 
@@ -1041,13 +1041,13 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
     * **Is works is traffic-sensitive** - were any traffic-sensitive designations selected by the promoter on the PA?
 
 * Note: The works category field will be populated with the PAA/PA's current works category at the time the report is run as opposed to showing the works category of the PAA/PA at the time the chargeable transaction took place.
-* For example, if a PA is granted then soon after a work extension was also granted changing it from a standard to a major PA, there would be three transactions for this PA in the fee report:
+* For example, if a PA is granted then soon after a works extension was also granted changing it from a standard to a major PA, there would be three transactions for this PA in the fee report:
     * granting of a PA
     * granting of a change request 
-    * change in work category
+    * change in works category
     * The works category field for all three of these transactions will be 'major'
 
-* Out of scope: inspection chargeable transaction ; fee amounts
+* Not included: inspection chargeable transactions; fee amounts
 
 _(Previously section 14.1 in Business rules v0.1 draft)_ 
 
