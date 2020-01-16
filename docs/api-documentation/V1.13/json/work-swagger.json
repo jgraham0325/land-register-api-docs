@@ -4419,6 +4419,15 @@
 				"section_81_work_type": {
 					"$ref": "#/definitions/Section81WorkType",
 					"x-nullable": true
+				},
+				"promoter_status": {
+					"$ref": "#/definitions/Section81Status",
+					"x-nullable": true
+				},
+				"promoter_status_changed_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
 				}
 			},
 			"required": [
