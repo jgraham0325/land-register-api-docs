@@ -283,8 +283,8 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
 #### 3.4.2. Works types
 
 * Works types are as follows:
-    * **Planned** - Minor, Standard, and Major works that are not Immediate
-    * **Immediate** - See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works.  The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
+    * **Planned** - Minor, Standard, and Major works and are not Immediate
+    * **Immediate** - See the [NRSWA \(link available from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works.  The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
 
 _(Previously section 1.3 in Business rules v0.1 draft)_  
 
@@ -298,7 +298,7 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
     * **Standard**
     * **Major PAA/PA**
 
-See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
+See the [NRSWA \(link available from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg" alt="Street Manager - Works category logic" width="100%" /></a>
 A diagram of Works category logic</div>
