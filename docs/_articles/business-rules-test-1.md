@@ -249,7 +249,7 @@ A diagram of works statuses</div>
 * Forward plans are for giving advance notice of major works only.
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
 * Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
-* All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
+* All forward plan details can be edited with the exception of namely the workstream, the highway authority and the USRN.
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
