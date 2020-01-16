@@ -319,8 +319,8 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 #### 3.4.5. Adding PAA & PA
 
-* PA's may be added from the Home page resulting in a new works record or added to an existing works record.
-* PA's can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
+* PAs may be added from the Home page resulting in a new works record or added to an existing works record.
+* PAs can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
 * Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
 * A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
 
