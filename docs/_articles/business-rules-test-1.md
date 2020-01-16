@@ -11,8 +11,8 @@ status: publish
 <!-- ==================================================== -->
 
 <span class="govuk-body-l" style="float:left">Version 1.13
-<br />
-&copy; Crown copyright 2020, except where otherwise stated.</span>
+<br /><br />
+_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
 <!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span--><br /><br />
 
@@ -330,7 +330,7 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 
 #### 3.4.6. Early start
 
-* If a PAA/PA does not provide sufficient advance notice (based on the proposed start date provided) including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
+* If a PAA/PA does not provide sufficient advance notice (based on the proposed start date provided), including when the proposed start date is altered during a change request, the promoter will be required to specify if they have pre-approval for an early start and additional information.
 * The early start calculation will be carried out immediately after the proposed start and end dates have been entered during the apply for PAA/PA process.
 * The early start calculation will include the day of the application is made.
 * The minimum notice period by works category are as follows:
@@ -704,11 +704,6 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 |:-------------------------|:------------------|
 | Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
 | Awaiting assessment      | Applications awaiting assessment - often the records have the status of 'Submitted' |
-| Lane rental - Chargeable | x |
-| Lane rental - Potentially chargeable | x |
-| Lane rental - Charges waived | x |
-| Lane rental - Exempt     | x |
-| Lane rental - Charges not applicable | x |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
 | High impact traffic management | Includes applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
 | Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs < tbc test results > . |
