@@ -11,13 +11,17 @@ status: publish
 <!-- ==================================================== -->
 
 <span style="clear:both">
+
 <span class="govuk-body-l" style="float:left">Version 1.13</span>
+
 <span style="float:right">[Street Manager Glossary]()</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
+
 </span>
 
 <span>
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
