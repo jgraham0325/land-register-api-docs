@@ -13,7 +13,7 @@ status: publish
 <span class="govuk-body-l">Version 1.13</span>
 <br /><br />
 _&copy; Crown copyright 2020, except where otherwise stated._
-<br />
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
