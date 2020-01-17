@@ -23,7 +23,7 @@ _&copy; Crown copyright 2020, except where otherwise stated._
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
-  1.2. [Date and time format](#12-date-and-time-format)<br />
+  1.2. [Dates and times](#12-dates-and-times)<br />
   1.3. [Coordinates](#13-coordinates)<br />
   1.4. [USRN](#14-unique-street-reference-number-usrn)<br />
   1.5. [File upload size](#15-file-upload-size)<br />
@@ -105,12 +105,23 @@ _&copy; Crown copyright 2020, except where otherwise stated._
 All numbers within Street Manager system are non-negative.
 
 
-### <span id="1-datetime">1.2. Date and time format</span>
+### <span id="1-datetime">1.2. Dates and times</span>
+
+#### 1.2.1. Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
+#### 1.2.1. Calendar days
+
+Street Manager calculates calendar days based on a 24 hour clock.
+
+For example, the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
+
+#### 1.2.2. Calendar month
+
+Street Manager calculates a calendar month as 28 calendar days for the purpose of deeming and early start.
 
 ### 1.3. Coordinates
 
