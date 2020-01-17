@@ -17,10 +17,10 @@ status: publish
 
 ## Business rules
 
-* Wherever possible, describe the raw business rules only and not functionality as System functionality changes regularly and it would be difficult to keep up in this documentation. This includes avoiding:
+* Wherever possible, describe the raw business rules only and not functionality as system functionality changes regularly and it would be difficult to keep up in this documentation. This includes avoiding:
     * what is clicked and what is presented to the user next; 
     * where on the system they can access the functionality like the home page; and 
-    * technical functionality. .
+    * technical functionality. 
 * If functionality must be described, consider having training guides/knowledge base articles created for this instead.
 * Avoid having rules that describe permission access only e.g. promoter user can do x. Better to be added to a permission and roles table (to be produced separately) which can be managed much more easily.
 * Consider defining terms in the glossary rather than in business rules.
