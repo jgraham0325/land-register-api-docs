@@ -10,11 +10,13 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.13
+<span class="govuk-body-l">Version 1.13</span>
 <br /><br />
-_&copy; Crown copyright 2020, except where otherwise stated._</span>
+_&copy; Crown copyright 2020, except where otherwise stated._
 
-<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span--><br /><br />
+<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span-->
+
+<br /><br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -323,8 +325,8 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
     * **Section 50**
     * **Statutory infrastructure works**
     * **Utility asset works:** Works undertaken by a Utility Works Promoter as part of a rehabilitation or replacement scheme. These are usually planned works. 
-    * **Utility repair and maintenance works:** Works undertaken by a Utility Works Promoter in repairing or maintaining its asset. These works are usually short duration works or works that are not planned. 
-    * **Works for rail purposes**
+    * **Utility repair and maintenance works:** Works undertaken by a Utility Works Promoter in repairing or maintaining its asset. These works are usually short duration works or works that are not planned.
+    * **Works for rail purposes**
     * **Works for road purposes:** (coming soon) As defined in section 86(2) of NRSWA, "works for road purposes means works of any of the following descriptions executed in relation to a highway: (a) works for the maintenance of the highway; (b) any works under powers conferred by Part V of the Highways Act 1980 (improvement); (c) the erection, maintenance, alteration or removal of traffic signs on or near the highway; or (d) the construction of a crossing for vehicles across a footway or grass verge or the strengthening or adaptation of a footway for use as a crossing for vehicles"
 
 
