@@ -10,11 +10,13 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.13
+<span class="govuk-body-l">Version 1.13</span>
 <br /><br />
-_&copy; Crown copyright 2020, except where otherwise stated._</span>
+_&copy; Crown copyright 2020, except where otherwise stated._
 
-<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span--><br /><br />
+<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span-->
+
+<br /><br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
