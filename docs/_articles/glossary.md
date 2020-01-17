@@ -81,7 +81,7 @@ AT BOTTOM!!!!!!!
 <p>Forward plan</p>
 </td>
 <td width="479">
-<p>A record containing information on promoter&rsquo;s potential major road or street works that has been planned as part of their long-term programme.</p>
+<p>A record containing information on a promoter&rsquo;s potential major road or street works that has been planned as part of their long-term programme.</p>
 <p>Previously known as &lsquo;forward planning information&rsquo;.</p>
 </td>
 </tr>
@@ -106,7 +106,7 @@ AT BOTTOM!!!!!!!
 <p>Modification requested</p>
 </td>
 <td width="479">
-<p>An indication that the HA has requested for changes to be made after assessing the PA.</p>
+<p>HA has requested for changes to be made after assessing the PA.</p>
 </td>
 </tr>
 <tr>
