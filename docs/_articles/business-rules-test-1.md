@@ -10,17 +10,14 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<span style="clear:both">
-
 <span class="govuk-body-l" style="float:left">Version 1.13</span>
 
 <span style="float:right">[Street Manager Glossary]()</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
-</span>
 
-<span>
+<span style="clear:both">
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -113,7 +110,7 @@ status: publish
 All numbers within Street Manager system are non-negative.
 
 
-### <span id="1-datetime">1.2. Dates and times</span>
+### 1.2. Dates and times
 
 #### 1.2.1. Date and time format
 
