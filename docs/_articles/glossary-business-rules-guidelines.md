@@ -12,16 +12,19 @@ status: publish
 
 * Only define terms that have not been previously defined elsewhere such as NRSWA, GeoPlace and other legislation.
 * Is the term currently used in legislation or EToN specification and not currently defined in those documents? If yes, is there a strong need for us to define the term that already exists in the industry?
-* Consider adding the new terms Street Manager has adopted e.g. Change requests.
+* Include all new terms Street Manager has constructed e.g. Change requests.
 * Do not include business rules or description of functionality.
 
 ## Business rules
 
-* Wherever possible, describe the raw business rules only and not functionality including flow diagrams of exactly what is clicked and what is presented next; where on the system they can access the functionality like the home page; and technical functionality. System functionality changes regularly and it would be difficult to keep up in this documentation.
-* If functionality must be described, consider having knowledge base articles created for this instead.
+* Wherever possible, describe the raw business rules only and not functionality as System functionality changes regularly and it would be difficult to keep up in this documentation. This includes avoiding:
+    * what is clicked and what is presented to the user next; 
+    * where on the system they can access the functionality like the home page; and 
+    * technical functionality. .
+* If functionality must be described, consider having training guides/knowledge base articles created for this instead.
 * Avoid having rules that describe permission access only e.g. promoter user can do x. Better to be added to a permission and roles table (to be produced separately) which can be managed much more easily.
 * Consider defining terms in the glossary rather than in business rules.
-* Avoid narrative around why a rule or functionality is the way that it is
+* Avoid narrative around why a rule or functionality is the way that it is and what it is for. Guides/knowledge base articles may be a better place for this.
 
 ## Permissions and roles table
 
