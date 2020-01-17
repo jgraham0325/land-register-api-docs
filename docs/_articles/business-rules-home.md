@@ -18,7 +18,7 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 ### Current
 
-* [Version 1.13 \(Released xx/01/20\)](url_tbc)
+* [Version 1.14 \(Released xx/01/20\)](url_tbc)
 
 ### Previous
 
