@@ -11,12 +11,14 @@ status: publish
 
 <span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span>
 
-<span style="display:block;float:left;clear:both;width:100%;text-align:left;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
+<span style="float:left;clear:both;font-size:12px;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
 
-
+<br /><br /><br /><br /><br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+## External resources
 
 Useful resources containing Street-works-related glossary sections below:
 * New Roads and Street Works Act (NRSWA): <br /><https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/43578/street-works-code-of-practice.pdf><br /><br />
@@ -33,7 +35,7 @@ To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table 
 --------------------------------------------------------- -->
 
 
-
+## Street Manager Glossary
 
 <table>
 <tbody>
