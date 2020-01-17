@@ -411,7 +411,6 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
     * reinstatement(s) have been added
     * the immediate PA has been revoked
 * If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
-* Promoters may only cancel PAA & PA that they have full permissions to.
 * The PAA/PA status and works status will be set to 'Cancelled'.
 
 _(Previously section 7 in Business rules v0.1 draft)_ 
