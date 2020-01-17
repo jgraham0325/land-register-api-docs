@@ -18,6 +18,8 @@ status: publish
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+## External resources
+
 Useful resources containing Street-works-related glossary sections below:
 * New Roads and Street Works Act (NRSWA): <br /><https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/43578/street-works-code-of-practice.pdf><br /><br />
 * GeoPlace glossary: <br /><https://www.geoplace.co.uk/helpdesk/faqs/glossary>
@@ -33,7 +35,7 @@ To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table 
 --------------------------------------------------------- -->
 
 
-
+## Street Manager Glossary
 
 <table>
 <tbody>
