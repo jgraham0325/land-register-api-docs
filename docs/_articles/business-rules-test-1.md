@@ -15,6 +15,8 @@ status: publish
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
+
+<div>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -1099,7 +1101,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 -->
 
-
+</div>
 
 
 
