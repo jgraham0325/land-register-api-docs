@@ -315,7 +315,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
     * **Highway improvement works**
     * **Highway repair and maintenance works**  
     * **New service connection:** (coming soon) Works type undertaken to connect new supplies usually for individual customers.
-    * **Optional permit (no fee):** (coming soon) e.g. for traffic management
+    * **Optional permit (no fee):** (coming soon) e.g. for traffic management. HA may add discount to permit fee if applicable.
     * **Permanent reinstatement:** Works undertaken by a works promoter to replace interim reinstatement with a permanent reinstatement. 
     * **Remedial works:** Works undertaken by a works promoter where the initial reinstatement was not compliant with the specification. 
     * **Section 50**
