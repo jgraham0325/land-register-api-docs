@@ -73,7 +73,7 @@ _&copy; Crown copyright 2020, except where otherwise stated._
   8.3. [Adding reinstatements](#83-adding-reinstatements)<br />
   8.4. [Making interim sites permanent](#84-making-interim-sites-permanent)<br />
   8.5. [Reinstatement end dates](#85-reinstatement-end-dates)<br />
-  8.6. [Registering final sites](#86-registering-final-sites)<br />
+  8.6. [Indicating when final site has been registered](#86-indicating-when-final-site-has-been-registered)<br />
 9. [Activities](#9-activities)<br />
   9.1. [Activity reference number](#91-activity-reference-number)<br />
   9.2. [Activity statuses](#92-activity-statuses)<br />
@@ -837,10 +837,10 @@ _(Previously section 4.1 in Business rules v0.1 draft)_
 
 
 
-### 8.6. Registering final sites
+### 8.6. Indicating when final site has been registered
 
-* Final sites may be registered by marking 'Are you registering the final site?' as 'Yes' when adding a reinstatement.
-* Alternatively, select 'Change' on the works record level against 'Final site registered'.
+* Final site registered may be set to 'Yes' as part of a reinstatement submission or directly on the works record level.
+* Final site registered should be indicated for each PA where excavation was required.
 
 _(Previously section 4.3 in Business rules v0.1 draft)_
 
