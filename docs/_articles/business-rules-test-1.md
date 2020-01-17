@@ -10,14 +10,14 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<div style="clear:both">
+<span style="clear:both">
 <span class="govuk-body-l" style="float:left">Version 1.13</span>
 <span style="float:right">[Street Manager Glossary]()</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
-</div>
+</span>
 
-<div>
+<span>
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -1102,7 +1102,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 -->
 
-</div>
+</span>
 
 
 
