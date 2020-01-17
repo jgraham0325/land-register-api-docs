@@ -13,11 +13,7 @@ status: publish
 <span class="govuk-body-l">Version 1.13</span>
 <br /><br />
 _&copy; Crown copyright 2020, except where otherwise stated._
-
-<!--span style="float:right">[Business rules - All versions](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span-->
-
-<br /><br />
-
+<br />
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -722,11 +718,11 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Filter name              | Logic/description |
 |:-------------------------|:------------------|
 | Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
-| Awaiting assessment      | Applications awaiting assessment - often the records have the status of 'Submitted' |
+| Awaiting assessment      | Applications awaiting assessment - the records often have the status of 'Submitted' |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
 | High impact traffic management | Includes applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
-| Not submitted final registration | On works record list: return the works records where final registration has not been added. On PA list: return PAs < tbc test results > . |
-| Works with excavation | On works record list: return works records where latest ???? PA indicating that excavation is required. On PA list: return any PAs where excavation is required. |
+| Not submitted final registration | Final site registered = "No". On works record list: return the works records where this condition is met. On PA list: return all PAs associated with the works records where this condition is met. |
+| Works with excavation | On works record list: return works records where latest PA indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
 | Early start | Proposed timings have indicated that the PAA/PA is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
 | Lane rental charges (potentially) apply | Work takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
