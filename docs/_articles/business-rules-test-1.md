@@ -997,7 +997,7 @@ _(Previously section 2.2 in Business rules v0.1 draft)_
     * **Paid (Discounted)** - HA acknowledge that the promoter payment (with discount) has been received. (if applicable)
 
 
-<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg" alt="Street Manager - FPN statuses" width="100%" />
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg" alt="Street Manager - FPN statuses" width="100%" /></a>
 A diagram of FPN statuses</div>
 
 
