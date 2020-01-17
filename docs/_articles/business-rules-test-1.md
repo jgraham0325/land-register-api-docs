@@ -12,7 +12,7 @@ status: publish
 
 <span class="govuk-body-l" style="float:left">Version 1.13</span>
 
-<span style="float:right">[Street Manager Glossary]()</span>
+<span style="float:right">[Street Manager Glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html)</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
