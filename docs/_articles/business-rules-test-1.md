@@ -110,7 +110,7 @@ status: publish
 All numbers within Street Manager system are non-negative.
 
 
-### <span id="1-datetime">1.2. Dates and times</span>
+### 1.2. Dates and times
 
 #### 1.2.1. Date and time format
 
