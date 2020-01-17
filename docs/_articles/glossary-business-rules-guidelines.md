@@ -12,7 +12,7 @@ status: publish
 
 * Only define terms that have not been previously defined elsewhere such as NRSWA, GeoPlace and other legislation.
 * Is the term currently used in legislation or EToN specification and not currently defined in those documents? If yes, is there a strong need for us to define the term that already exists in the industry?
-* Consider adding the new terms Street Manager has adopted e.g. Change requests.
+* Include all new terms Street Manager has constructed e.g. Change requests.
 * Do not include business rules or description of functionality.
 
 ## Business rules
