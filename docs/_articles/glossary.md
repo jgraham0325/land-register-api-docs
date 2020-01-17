@@ -38,8 +38,7 @@ AT BOTTOM!!!!!!!
 -------------------------------------------------------------
 --------------------------------------------------------- -->
 
-
-<table>
+<table width="624">
 <tbody>
 <tr>
 <td width="145">
@@ -55,6 +54,7 @@ AT BOTTOM!!!!!!!
 </td>
 <td width="479">
 <p>A record of a public event or highway license.</p>
+<p>&nbsp;</p>
 <p>Note: this is different to &ldquo;Works activity&rdquo; that is defined separately in this glossary.</p>
 </td>
 </tr>
@@ -64,7 +64,34 @@ AT BOTTOM!!!!!!!
 </td>
 <td width="479">
 <p>An application to amend an existing PAA or Permit Application (PA).</p>
+<p>&nbsp;</p>
 <p>Related to what was previously known as &ldquo;Works Data Alteration&rdquo;</p>
+</td>
+</tr>
+<tr>
+<td width="145">
+<p>Designations</p>
+</td>
+<td width="479">
+<p>Should be interpreted to mean Special Designations (except where otherwise qualified).</p>
+<p>&nbsp;</p>
+<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
+</td>
+</tr>
+<tr>
+<td width="145">
+<p>Failed &mdash; high</p>
+</td>
+<td width="479">
+<p>A failed outcome of any inspection with higher risk inadequacies or defects causing danger. See the <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/4386/codeofpracticeforinspections.pdf">Code of Practice for Inspections</a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td width="145">
+<p>Failed &mdash; low</p>
+</td>
+<td width="479">
+<p>A failed outcome of any inspection with higher risk inadequacies or defects are not causing danger. See the <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/4386/codeofpracticeforinspections.pdf">Code of Practice for Inspections</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -73,6 +100,7 @@ AT BOTTOM!!!!!!!
 </td>
 <td width="479">
 <p>An indicator to advise when no more sites will be registered for the latest PA.</p>
+<p>&nbsp;</p>
 <p>Related to what was previously known as &lsquo;full registration&rsquo;.</p>
 </td>
 </tr>
@@ -82,6 +110,7 @@ AT BOTTOM!!!!!!!
 </td>
 <td width="479">
 <p>A record containing information on a promoter&rsquo;s potential major road or street works that has been planned as part of their long-term programme.</p>
+<p>&nbsp;</p>
 <p>Previously known as &lsquo;forward planning information&rsquo;.</p>
 </td>
 </tr>
@@ -114,7 +143,7 @@ AT BOTTOM!!!!!!!
 <p>Minimum notice period</p>
 </td>
 <td width="479">
-<p>The minimum period of notice to be given to the Highway Authority for street works. See the NRSWA for more information.</p>
+<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -135,10 +164,10 @@ AT BOTTOM!!!!!!!
 </tr>
 <tr>
 <td width="145">
-<p>Promo<span data-ccp-para="">t</span><span data-ccp-para="">er</span>&nbsp;/ Works&nbsp;promo<span data-ccp-para="">t</span><span data-ccp-para="">er</span>&nbsp;/&nbsp;Promo<span data-ccp-para="">t</span><span data-ccp-para="">er</span>&nbsp;organisation</p>
+<p>Promoter&nbsp;/ Works&nbsp;promoter&nbsp;/&nbsp;Promoter&nbsp;organisation&nbsp;</p>
 </td>
 <td width="479">
-<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the NRSWA/<a href="http://www.legislation.gov.uk/ukpga/2004/18/contents"><span data-ccp-char=""><span data-contrast="none">Traffic Management Act</span></span></a><span data-ccp-para=""><span data-contrast="auto">&nbsp;(TMA) legislative framework.</span></span></p>
+<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -154,15 +183,17 @@ AT BOTTOM!!!!!!!
 <p>Working day</p>
 </td>
 <td width="479">
-<p>As defined in the Glossary of the NRSWA.</p>
+<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a>.</p>
 </td>
 </tr>
 <tr>
 <td width="145">
 <p>Works activity</p>
+<p>&nbsp;</p>
 </td>
 <td width="479">
 <p>The reason for undertaking the works.</p>
+<p>&nbsp;</p>
 <p>Note: this is different to &ldquo;Activity&rdquo; that is defined separately in this glossary.</p>
 </td>
 </tr>
@@ -188,6 +219,7 @@ AT BOTTOM!!!!!!!
 </td>
 <td width="479">
 <p>An area within a promoter or HA organisation used to divide works and records for planner users.</p>
+<p>&nbsp;</p>
 <p>Related to what were previously known as &lsquo;operational districts&rsquo;.</p>
 </td>
 </tr>
