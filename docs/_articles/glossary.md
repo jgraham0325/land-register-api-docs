@@ -10,7 +10,12 @@ status: publish
 <span style="float:left">Version 0.1.0 draft</span>
 
 <span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span>
-<br />
+
+<span style="float:left;clear:both;width:100%;text-align:left;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 Useful resources containing Street-works-related glossary sections below:
@@ -182,3 +187,5 @@ To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table 
 </tr>
 </tbody>
 </table>
+
+
