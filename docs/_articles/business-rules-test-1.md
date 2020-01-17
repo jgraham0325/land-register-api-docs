@@ -13,7 +13,7 @@ status: publish
 <span class="govuk-body-l">Version 1.13</span>
 <br /><br />
 _&copy; Crown copyright 2020, except where otherwise stated._
-<br />
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
@@ -374,11 +374,11 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 | Refuse               | All PAA/PA     |
 | Modification request | PA only        |
 
-* HA may change the assessment decision to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
+* The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
 * Street Manager will automatically set a record's assessment decision under the following circumstances:
-    * Immediate works that are started and completed before the HA has provided an assessment decision will have the assessment decision of "Granted (auto)".
-    * When a major PA is assessed, the associated PAA will take on the matching assessment decision if the HA has separately not provided an assessment decision for the PAA. e.g. if a major PA is refused, the PAA will have the assessment decision of "Refused (auto)".
+    * Immediate works that are started and completed before an assessment decision has been manually submitted will have the assessment decision of "Granted (auto)".
+    * When a major PA is assessed, the associated PAA will take on the matching assessment decision if the an assessment decision has not been manually submitted for the PAA. e.g. if a major PA is refused, the PAA will have the assessment decision of "Refused (auto)".
 
 _(Previously section 25.3 in Business rules v0.1 draft)_ 
 
@@ -411,7 +411,6 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
     * reinstatement(s) have been added
     * the immediate PA has been revoked
 * If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
-* Promoters may only cancel PAA & PA that they have full permissions to.
 * The PAA/PA status and works status will be set to 'Cancelled'.
 
 _(Previously section 7 in Business rules v0.1 draft)_ 
@@ -507,7 +506,7 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 |:------------------|:--------------------|:---|
 | Grant | Promoter change request & works extension | Changes will be applied to the PA. |
 | Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment. | 
-| Grant with duration challenge | Works extension | HA to provide a reasonable period end date and reason for the duration challenge. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
+| Grant with duration challenge | Works extension | A reasonable period end date and reason for the duration challenge must be provided. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
 
 * Note: Currently, granting or refusing a change request created as a response to 'modification request' will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon).
 
@@ -553,7 +552,7 @@ A diagram of Change request statuses</div>
 ## 5. Revoking a PA
 <!-- ==================================================== -->
 
-* HA may revoke a PA that has been granted and before works stop has been logged.
+* A PA may be revoked if the PA has been granted and before works stop has been logged.
 * If a PA is revoked 
     * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the PA by the promoter.
     * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
@@ -905,7 +904,7 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 
 ### 10.2. Inspection types and categories
 
-* Inspections may be added by a HA at any stage of a works record.
+* Inspections may be added at any stage of a works record.
 
 | Inspection type | Inspection categories |
 |:----------------|:----------------------|
@@ -921,8 +920,8 @@ _(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_
 ### 10.3. Inspection outcomes
 
 * If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided.
-* If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was made safe by HA.
-* Additional information and evidence/photos may be provided by HA for all outcomes.
+* If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was 'made safe by HA'.
+* Additional information and evidence/photos may be provided for all outcomes.
 * The inspection outcomes available for inspection types and categories are as below:
 
 | Inspection type | Inspection outcomes |
@@ -939,7 +938,7 @@ _(Previously section 3.3 & 3.5 in Business rules v0.1 draft)_
 
 ### 10.4. Scheduling inspections
 
-* HA may schedule one inspection against a works record.
+* One inspection may be scheduled against a works record.
 * A scheduled inspection consists of a date, time (optional) and inspection type & category.
 * The date provided must be today or in the future. If time is provided, it must occur in the future.
 * A scheduled inspection may be cancelled from the works record.
@@ -1024,7 +1023,7 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
 
 ### 12.2. Adding a lane rental assessment to a PA
 
-* HA may add a lane rental assessment or charge on any PA at any time.
+* A lane rental assessment or charge may be added on any PA at any time.
 * If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
 
 _(Previously section 18.1 in Business rules v0.1 draft)_ 
