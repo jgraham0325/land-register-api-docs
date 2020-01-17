@@ -18,24 +18,26 @@ status: publish
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## External resources
+## Table of contents
 
-Useful resources containing Street-works-related glossary sections below:
-* New Roads and Street Works Act (NRSWA): <br /><https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/43578/street-works-code-of-practice.pdf><br /><br />
-* GeoPlace glossary: <br /><https://www.geoplace.co.uk/helpdesk/faqs/glossary>
+* [Street Manager Glossary](#street-manager-glossary)<br />
+* [External Glossaries](#external-glossaries)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+## Street Manager Glossary
 
 <!-- ---------------------------------------------------------
 --------------------------------------------------------------
 To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table and paste the HTML below.
 
-**** PASTE BELOW THIS SECTION ****
+**** PASTE BELOW THIS SECTION **** 
+CAREFUL NOT TO DELETE 
+EXTERNAL GLOSSARIES SECTION 
+AT BOTTOM!!!!!!!
 -------------------------------------------------------------
 --------------------------------------------------------- -->
 
-
-## Street Manager Glossary
 
 <table>
 <tbody>
@@ -193,3 +195,11 @@ To convert from Word doc to HTML, use https://wordhtml.com/ Copy glossary table 
 </table>
 
 
+
+<br /><br /><br />
+
+## External Glossaries
+
+Useful resources containing Street-works-related glossary sections below:
+* New Roads and Street Works Act (NRSWA): <br /><https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/43578/street-works-code-of-practice.pdf><br /><br />
+* GeoPlace glossary: <br /><https://www.geoplace.co.uk/helpdesk/faqs/glossary>
