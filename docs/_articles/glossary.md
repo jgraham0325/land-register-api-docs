@@ -11,10 +11,10 @@ status: publish
 
 <span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span>
 
-<span style="float:left;clear:both">_&copy; Crown copyright 2020, except where otherwise stated._</span>
+<span style="float:left;clear:both;font-size:12px;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
 
 
-
+<br /><br /><br /><br /><br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
