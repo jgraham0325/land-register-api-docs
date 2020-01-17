@@ -8,6 +8,8 @@ status: publish
 ---
 # Glossary & Business Rules Guidelines
 
+* DON'T USE 'Rich Text' as you get much more control and flexibility with Markdown ([Markdown cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet))
+
 ## Glossary
 
 * Only define terms that have not been previously defined elsewhere such as NRSWA, GeoPlace and other legislation.
@@ -25,6 +27,8 @@ status: publish
 * Avoid having rules that describe permission access only e.g. promoter user can do x. Better to be added to a permission and roles table (to be produced separately) which can be managed much more easily.
 * Consider defining terms in the glossary rather than in business rules.
 * Avoid narrative around why a rule or functionality is the way that it is and what it is for. Guides/knowledge base articles may be a better place for this.
+Consistent use of terms. Permit applications only appear at the beginning of the document - later these are always referred to as PA. Always include PAA with PA if applicable as PA does not include PAA.
+* Where a new record type is introduced, always begin with the breakdown of what the record reference consists of using the existing template.
 
 ## Permissions and roles table
 
