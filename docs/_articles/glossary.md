@@ -63,7 +63,7 @@ AT BOTTOM!!!!!!!
 <p>Change Request (CR)</p>
 </td>
 <td width="479">
-<p>An application to amend an existing PAA or Permit Application (PA).</p>
+<p>An application to amend (or a historical record of an amendment of) an existing PAA or Permit Application (PA).</p>
 <p>&nbsp;</p>
 <p>Related to what was previously known as &ldquo;Works Data Alteration&rdquo;</p>
 </td>
