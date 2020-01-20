@@ -691,7 +691,16 @@ _(Previously section 8 in Business rules v0.1 draft)_
     * Topic
     * Details (description of the event)
     * Username
-
+* Works history topics include:
+    * Forward Plan
+    * PAA
+    * Permit
+    * Inspection
+    * Scheduled Inspection
+    * FPN
+    * Reinstatement
+    * Comment
+    * Section 81
 
 ### 7.3. Map application
 
@@ -1087,7 +1096,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## 14. Section 81
+## 14. Section 81 (work in progress)
 <!-- ==================================================== -->
 
 
@@ -1112,7 +1121,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## 15. Historic works
+## 15. Historic works (work in progress)
 <!-- ==================================================== -->
 
 * 
@@ -1120,7 +1129,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## 16. HS2
+## 16. HS2 (work in progress)
 <!-- ==================================================== -->
 
 * HS2 functionality will only be available to HAs marked as HS2-applicable.
