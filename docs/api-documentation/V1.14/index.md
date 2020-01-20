@@ -1997,7 +1997,7 @@ Uploading a file is achieved through the file upload endpoint. This endpoint is 
 Once a file has been uploaded the response will contain a file ID. This is the unique identifier of the file in our system. Behind the scenes the file will be uploaded to S3 and virus scanned. This file ID can then be provided in the requests of the flows discussed above. Once a valid file ID is provided in the requests of the above flows, the file is then associated with the relevant entity.
 {: .govuk-body}
 
-One file can be uploaded at a time. This file cannot exceed 5MB.
+One file can be uploaded at a time. This file cannot exceed 10MB.
 {: .govuk-body}
 
 The optional swaCode parameter is required for contractor users only. Contractors should provide the swaCode of the organisation they are working on behalf of.
