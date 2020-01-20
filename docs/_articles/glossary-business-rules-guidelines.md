@@ -24,13 +24,14 @@ status: publish
     * where on the system they can access the functionality like the home page; and 
     * technical functionality. 
 * If functionality must be described, consider having training guides/knowledge base articles created for this instead.
-* Avoid having rules that describe permission access only e.g. promoter user can do x. Better to be added to a permission and roles table (to be produced separately) which can be managed much more easily.
+* Avoid having rules that describe permission access only e.g. promoter user can do x. Better to be added to a permission and roles table (to be produced separately) which can be managed much more easily. Avoid referring to the user/HA/promoter.
 * Consider defining terms in the glossary rather than in business rules.
 * Avoid narrative around why a rule or functionality is the way that it is and what it is for. Guides/knowledge base articles may be a better place for this.
 * Consistent use of terms - e.g. 'Permit applications' only appear at the beginning of the document; later these are always referred to as 'PA'. 
     * Always include PAA with PA if applicable as PA does not include PAA. 
     * Do not use apostrophe when making an acronym plural e.g. 'PAs'
 * Where a new record type is introduced, always begin with the breakdown of what the record reference consists of using the existing template.
+* For consistency, use present participles in headings as opposed to the dynamic verb e.g. use 'delivering' and not 'deliver'
 
 ## Permissions and roles table
 
