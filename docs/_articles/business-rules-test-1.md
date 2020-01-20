@@ -572,7 +572,7 @@ A diagram of Change request statuses</div>
 * If a PA is revoked 
     * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the PA by the promoter.
     * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
-    * with a change request awaiting assessment on a PA, the change request be revoked automatically.
+    * with a change request awaiting assessment on a PA, the change request will be revoked automatically.
 
 _(Previously section 6.1 in Business rules v0.1 draft)_ 
 
