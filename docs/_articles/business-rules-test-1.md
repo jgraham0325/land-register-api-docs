@@ -691,7 +691,16 @@ _(Previously section 8 in Business rules v0.1 draft)_
     * Topic
     * Details (description of the event)
     * Username
-
+* Works history topics include:
+    * Forward Plan
+    * PAA
+    * Permit
+    * Inspection
+    * Scheduled Inspection
+    * FPN
+    * Reinstatement
+    * Comment
+    * Section 81
 
 ### 7.3. Map application
 
@@ -1085,6 +1094,52 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+<!-- ==================================================== -->
+## 14. Section 81 (work in progress)
+<!-- ==================================================== -->
+
+
+### 14.1. Section 81 reference number
+
+* The section 81 reference number is generated in the following format: {WRN}-S81-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+
+### 14.2. Managing section 81
+
+* The following can be added to a section 81 record:
+    * Scheduled inspections
+    * Inspections
+    * FPNs
+    * Files
+    * Comments
+* The following cannot be added to a section 81 record:
+    * Forward plans
+    * PAA/PAs
+    * Reinstatements
+
+
+### 14.3. section 81 statuses
+
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
+A diagram of S81 statuses</div>
+
+
+
+<!-- ==================================================== -->
+## 15. Historic works (work in progress)
+<!-- ==================================================== -->
+
+* 
+
+
+
+<!-- ==================================================== -->
+## 16. HS2 (work in progress)
+<!-- ==================================================== -->
+
+* HS2 functionality will only be available to HAs marked as HS2-applicable.
 
 
 
