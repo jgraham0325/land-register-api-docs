@@ -426,7 +426,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
     * works stop has been logged
     * reinstatement(s) have been added
     * the immediate PA has been revoked
-* If an immediate PA with a change request awaiting assessment is cancelled, the change request be cancelled automatically.
+* If a PA with a change request awaiting assessment is cancelled, the outstanding change request will also be cancelled automatically.
 * The PAA/PA status and works status will be set to 'Cancelled'.
 
 _(Previously section 7 in Business rules v0.1 draft)_ 
@@ -542,7 +542,8 @@ _(Previously section 5.7 in Business rules v0.1 draft)_
 
 ### 4.6. Cancelling change requests
 
-* Promoters may only cancel change requests for PAs that they have full-access permissions to.
+* It is currently not possible to cancel change requests.
+
 
 
 ### 4.7. Change request statuses
