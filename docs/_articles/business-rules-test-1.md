@@ -1086,6 +1086,45 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
+<!-- ==================================================== -->
+## 14. Section 81
+<!-- ==================================================== -->
+
+
+### 14.1. Section 81 reference number
+
+* The section 81 reference number is generated in the following format: {WRN}-S81-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+
+### 14.2. Managing section 81
+
+* The following can be added to a section 81 record:
+    * Scheduled inspections
+    * Inspections
+    * FPNs
+    * Files
+    * Comments
+* The following cannot be added to a section 81 record:
+    * Forward plans
+    * PAA/PAs
+    * Reinstatements
+
+
+<!-- ==================================================== -->
+## 15. Historic works
+<!-- ==================================================== -->
+
+* 
+
+
+
+<!-- ==================================================== -->
+## 16. HS2
+<!-- ==================================================== -->
+
+* HS2 functionality will only be available to HAs marked as HS2-applicable.
+
 
 
 
