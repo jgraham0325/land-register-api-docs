@@ -1142,7 +1142,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 * See works statuses for more details on how works records are differentiated.
 
 
-### 14.3. section 81 statuses
+### 14.4. Section 81 statuses
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
 A diagram of S81 statuses</div>
