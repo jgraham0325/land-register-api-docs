@@ -136,7 +136,13 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 ### 1.4. Unique Street Reference Number (USRN)
 
-USRN must be a value between 100001 and 99999999.
+* USRN must be a value between 100001 and 99999999.
+* Currently supported USRNs:
+    * Street state codes: 1, 2 & 4 (?) (See NSG spec v2.10 table 5.1.2)
+    * Reinstatement type codes: 1-5 (See NSG spec v2.10 table 7.2)
+    * Street Maintenance responsibility (STREET_STATUS): 1, 2 & 3 (See NSG spec v2.10 table 6.1)
+* USRNs to be supported by April 2020:
+    * Addition of Reinstatement type codes: 6-10
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
@@ -205,6 +211,12 @@ All other text areas are limited to 500 characters. These include:
 * FPN status reason
 * Activity location description
 * Cancellation reason
+
+
+
+
+
+
 
 
 
@@ -1130,7 +1142,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 * See works statuses for more details on how works records are differentiated.
 
 
-### 14.3. section 81 statuses
+### 14.4. Section 81 statuses
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
 A diagram of S81 statuses</div>
