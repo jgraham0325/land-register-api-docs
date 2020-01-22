@@ -721,6 +721,7 @@ _(Previously section 16 in Business rules v0.1 draft)_
     * PAAs to progress
     * Forward plans
     * Registered reinstatements
+    * Section 81s
 * Search by works reference number, permit reference number or road/street
     * Partial search compatible - Street Manager will return results that contain the search term and does not need the full reference or street.
 * Search and filtering functionality may be used in combination.
@@ -1122,7 +1123,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 ### 14.3. section 81 statuses
 
-<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
 A diagram of S81 statuses</div>
 
 
@@ -1131,12 +1132,24 @@ A diagram of S81 statuses</div>
 ## 15. Historic works (work in progress)
 <!-- ==================================================== -->
 
+* A new historical works record may be initiated by the adding of an inspection or FPN for works recorded outside of Street Manager.
+* PAs may be created on an existing historical works record.
+    * Workstream to be set when creating the first PA.
 * 
+
+
+<!-- ==================================================== -->
+## 16. Non-notifiable works (work in progress)
+<!-- ==================================================== -->
+
+* PAs may be created on an existing non-notifiable works record.
+    * Workstream to be set when creating the first PA.
+
 
 
 
 <!-- ==================================================== -->
-## 16. HS2 (work in progress)
+## 17. HS2 (work in progress)
 <!-- ==================================================== -->
 
 * HS2 functionality will only be available to HAs marked as HS2-applicable.
