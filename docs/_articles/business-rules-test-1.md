@@ -772,6 +772,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Inspections
     * Registered reinstatements (coming soon)
     * Comments (coming soon)
+    * Section 81s (coming soon)
 
 
 
@@ -1101,13 +1102,19 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 <!-- ==================================================== -->
 
 
-### 14.1. Section 81 reference number
+### 14.1. Section 81 WRN
 
-* The section 81 reference number is generated in the following format: {WRN}-S81-{numerical suffix}
-    * **WRN** - See the works reference number section for more details.
-    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
 
-### 14.2. Managing section 81
+
+* The section 81 WRN is generated in the following format: {HA SWA prefix}S81{numerical suffix}
+    * **HA SWA prefix** - Two characters of the related HA organisation from the SWA code list.
+    * **Numerical suffix** - randomly generated 8-digit number (following the unique WRN rule).
+
+### 14.2. Section 81 reference number
+
+* The section 81 reference number is generated in the following format: {WRN}-S81
+
+### 14.3. Managing section 81
 
 * The following can be added to a section 81 record:
     * Scheduled inspections
@@ -1119,6 +1126,8 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
+* 
+* See works statuses for more details on how works records are differentiated.
 
 
 ### 14.3. section 81 statuses
@@ -1129,21 +1138,36 @@ A diagram of S81 statuses</div>
 
 
 <!-- ==================================================== -->
-## 15. Historic works (work in progress)
+## 15. Historical works (work in progress)
 <!-- ==================================================== -->
 
-* A new historical works record may be initiated by the adding of an inspection or FPN for works recorded outside of Street Manager.
+### 15.1. Managing historical works
+
+* A new historical works record will be automatically created when adding  an inspection or FPN for works recorded outside of Street Manager.
+* The existing historical reference number in EToN is entered manually to match and will also form the Street Manager WRN on the works record.
 * PAs may be created on an existing historical works record.
     * Workstream to be set when creating the first PA.
-* 
+    * The historical works reference number will not change.
+* See works statuses for more details on how works records are differentiated.
 
 
 <!-- ==================================================== -->
 ## 16. Non-notifiable works (work in progress)
 <!-- ==================================================== -->
 
+### 16.1. Non-notifiable works reference number
+
+* The historic works reference number is generated in the following format: {WRN}-xxxxx-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+
+
+### 16.2. Managing non-notifiable works
+
 * PAs may be created on an existing non-notifiable works record.
     * Workstream to be set when creating the first PA.
+    * The non-notifiable works reference number will not change.
+* See works statuses for more details on how works records are differentiated.
 
 
 
