@@ -1129,21 +1129,40 @@ A diagram of S81 statuses</div>
 
 
 <!-- ==================================================== -->
-## 15. Historic works (work in progress)
+## 15. Historical works (work in progress)
 <!-- ==================================================== -->
 
-* A new historical works record may be initiated by the adding of an inspection or FPN for works recorded outside of Street Manager.
+### 15.1. Historical works reference number
+
+* The historic works reference number is generated in the following format: {WRN}-xxxxx-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+
+
+### 15.2. Managing historical works
+
+* A new historical works record will be automatically created when adding  an inspection or FPN for works recorded outside of Street Manager.
 * PAs may be created on an existing historical works record.
     * Workstream to be set when creating the first PA.
-* 
+    * The historical works reference number will not change.
 
 
 <!-- ==================================================== -->
 ## 16. Non-notifiable works (work in progress)
 <!-- ==================================================== -->
 
+### 16.1. Non-notifiable works reference number
+
+* The historic works reference number is generated in the following format: {WRN}-xxxxx-{numerical suffix}
+    * **WRN** - See the works reference number section for more details.
+    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+
+
+### 16.2. Managing non-notifiable works
+
 * PAs may be created on an existing non-notifiable works record.
     * Workstream to be set when creating the first PA.
+    * The non-notifiable works reference number will not change.
 
 
 
