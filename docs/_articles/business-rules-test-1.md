@@ -136,7 +136,13 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 ### 1.4. Unique Street Reference Number (USRN)
 
-USRN must be a value between 100001 and 99999999.
+* USRN must be a value between 100001 and 99999999.
+* Currently supported USRNs:
+    * Street state codes: 1, 2 & 4 (?) (See NSG spec v2.10 table 5.1.2)
+    * Reinstatement type codes: 1-5 (See NSG spec v2.10 table 7.2)
+    * Street Maintenance responsibility (STREET_STATUS): 1, 2 & 3 (See NSG spec v2.10 table 6.1)
+* USRNs to be supported by April 2020:
+    * Addition of Reinstatement type codes: 6-10
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
@@ -205,6 +211,12 @@ All other text areas are limited to 500 characters. These include:
 * FPN status reason
 * Activity location description
 * Cancellation reason
+
+
+
+
+
+
 
 
 
