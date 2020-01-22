@@ -1119,6 +1119,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
+* See works statuses for more details on how works records are differentiated.
 
 
 ### 14.3. section 81 statuses
@@ -1145,6 +1146,7 @@ A diagram of S81 statuses</div>
 * PAs may be created on an existing historical works record.
     * Workstream to be set when creating the first PA.
     * The historical works reference number will not change.
+* See works statuses for more details on how works records are differentiated.
 
 
 <!-- ==================================================== -->
@@ -1163,6 +1165,7 @@ A diagram of S81 statuses</div>
 * PAs may be created on an existing non-notifiable works record.
     * Workstream to be set when creating the first PA.
     * The non-notifiable works reference number will not change.
+* See works statuses for more details on how works records are differentiated.
 
 
 
