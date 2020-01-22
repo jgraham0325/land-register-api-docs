@@ -1107,16 +1107,12 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 * The section 81 WRN is generated in the following format: {HA SWA prefix}S81{numerical suffix}
-    * **HA SWA prefix** - See the works reference number section for more details.
+    * **HA SWA prefix** - Two characters of the related HA organisation from the SWA code list.
     * **Numerical suffix** - randomly generated 8-digit number (following the unique WRN rule).
 
 ### 14.2. Section 81 reference number
 
-randomly generated 8-digit number (following the unique WRN rule)
-
-* The section 81 reference number is generated in the following format: {HA SWA prefix}S81{numerical suffix}
-    * **WRN** - See the works reference number section for more details.
-    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+* The section 81 reference number is generated in the following format: {WRN}-S81
 
 ### 14.3. Managing section 81
 
