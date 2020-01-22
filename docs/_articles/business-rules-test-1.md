@@ -772,6 +772,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Inspections
     * Registered reinstatements (coming soon)
     * Comments (coming soon)
+    * Section 81s (coming soon)
 
 
 
@@ -1103,6 +1104,8 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 ### 14.1. Section 81 reference number
 
+CTS 10 digits -s81 - how is the reference generated?
+
 * The section 81 reference number is generated in the following format: {WRN}-S81-{numerical suffix}
     * **WRN** - See the works reference number section for more details.
     * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
@@ -1119,6 +1122,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
+* 
 * See works statuses for more details on how works records are differentiated.
 
 
