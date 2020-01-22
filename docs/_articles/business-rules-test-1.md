@@ -323,6 +323,8 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
     * **Minor**
     * **Standard**
     * **Major PAA/PA**
+    * **Immediate (Urgent)**
+    * **Immediate (Emergency)**
 
 See the [NRSWA \(link available from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
@@ -1126,7 +1128,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 * The section 81 reference number is generated in the following format: {WRN}-S81
 
-### 14.3. Managing section 81
+### 14.3. Managing section 81s
 
 * The following can be added to a section 81 record:
     * Scheduled inspections
