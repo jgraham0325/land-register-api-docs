@@ -230,7 +230,7 @@ All other text areas are limited to 500 characters. These include:
 ## 2. Workstreams
 <!-- ==================================================== -->
 
-The Street Manager system will, by default, create a workstream with the prefix of ‘000’ for every organisation. Before users start raising works in Street Manager (production), their organisation **must** set up their workstreams.
+The Street Manager system will, by default, create a workstream with the prefix of ‘000’ for every organisation. Before users start raising works in Street Manager (production), their organisation **must** set up their workstreams as PAA/PAs cannot be raised using the '000' workstream.
 
 When organisations set up their workstreams, they can choose to allocate numerical prefixes between 1 - 999.
 See works reference number (WRN) section for details on how the workstream prefix will be used when raising works.
