@@ -1155,14 +1155,23 @@ A diagram of S81 statuses</div>
 ## 15. Historical works (work in progress)
 <!-- ==================================================== -->
 
-### 15.1. Managing historical works
+### 15.1. Adding records for historical works
 
-* A new historical works record will be automatically created when adding  an inspection or FPN for works recorded outside of Street Manager.
-* The existing historical reference number in EToN is entered manually to match and will also form the Street Manager WRN on the works record.
-* PAs may be created on an existing historical works record.
-    * Workstream to be set when creating the first PA.
-    * The historical works reference number will not change.
+* The following records may be created for historical works:
+    * Inspection
+    * FPN
+* In addition to the inspection or FPN record, a new historical works record will be automatically created and assigned to workstream '000'.
+    * The works reference number in Street Manager will be set to the 'historical permit reference number' entered in the process of adding an inspection or FPN for historical works.
 * See works statuses for more details on how works records are differentiated.
+
+
+
+### 15.2. Managing historical works
+
+* PAs may be created on an existing historical works record.
+    * Workstream to be specified when creating the first PA and may be different to what was previously set in EToN.
+    * The historical works reference number will not change as a result of adding a new PA or selecting a different workstream.
+
 
 
 <!-- ==================================================== -->
@@ -1179,7 +1188,7 @@ A diagram of S81 statuses</div>
 ### 16.2. Managing non-notifiable works
 
 * PAs may be created on an existing non-notifiable works record.
-    * Workstream to be set when creating the first PA.
+    * Workstream to be specified when creating the first PA and may be different to what was previously set in EToN.
     * The non-notifiable works reference number will not change.
 * See works statuses for more details on how works records are differentiated.
 
