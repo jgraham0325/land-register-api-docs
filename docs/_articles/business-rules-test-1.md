@@ -266,7 +266,7 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 
 ### 3.2. Works statuses
 
-<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20statuses.jpg" alt="Street Manager - Works statuses" width="100%" />
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20statuses.jpg" alt="Street Manager - Works statuses" width="100%" /></a>
 A diagram of works statuses</div>
 
 
@@ -1140,7 +1140,6 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
-* 
 * See works statuses for more details on how works records are differentiated.
 
 
