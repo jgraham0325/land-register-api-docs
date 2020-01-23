@@ -1112,38 +1112,43 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## 14. Section 81 (work in progress)
+## 14. Section 81 (S81) (work in progress)
 <!-- ==================================================== -->
 
 
-### 14.1. Section 81 WRN
+### 14.1. S81 WRN
 
-
-
-* The section 81 WRN is generated in the following format: {HA SWA prefix}S81{numerical suffix}
+* The S81 WRN is generated in the following format: {HA SWA prefix}S81{numerical suffix}
     * **HA SWA prefix** - Two characters of the related HA organisation from the SWA code list.
     * **Numerical suffix** - randomly generated 8-digit number (following the unique WRN rule).
+* 
 
-### 14.2. Section 81 reference number
+### 14.2. S81 reference number
 
-* The section 81 reference number is generated in the following format: {WRN}-S81
+* The S81 reference number is generated in the following format: {WRN}-S81
 
-### 14.3. Managing section 81s
 
-* The following can be added to a section 81 record:
+### 14.3. Adding S81s
+
+* In addition to the S81 record, a new section 81 works record will be automatically created and assigned to workstream '000'.
+* See works statuses for more details on how works records are differentiated.
+
+### 14.4. Managing S81
+
+* The following can be added to a S81 record:
     * Scheduled inspections
     * Inspections
     * FPNs
     * Files
     * Comments
-* The following cannot be added to a section 81 record:
+* The following cannot be added to a S81 record:
     * Forward plans
     * PAA/PAs
     * Reinstatements
 * See works statuses for more details on how works records are differentiated.
 
 
-### 14.4. Section 81 statuses
+### 14.5. S81 statuses
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20S81%20statuses.jpg" alt="Street Manager - S81 statuses" width="100%" /></a>
 A diagram of S81 statuses</div>
