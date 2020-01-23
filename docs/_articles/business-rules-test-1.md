@@ -1154,7 +1154,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 ### 14.3. Adding S81s
 
-* In addition to the S81 record, a new section 81 works record will be automatically created and assigned to workstream '000'.
+* In addition to the S81 record, a new Section 81 works record will be automatically created and assigned to workstream '000'.
 * See works statuses for more details on how works records are differentiated.
 
 ### 14.4. Managing S81
