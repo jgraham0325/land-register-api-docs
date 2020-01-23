@@ -22,5 +22,5 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 ### Previous
 
-* [Version 0.1](https://departmentfortransport.github.io/street-manager-docs/business-rules/)
+* [Version 0.1 \(Archived xx/01/20\)](https://departmentfortransport.github.io/street-manager-docs/business-rules/)
 
