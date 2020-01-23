@@ -72,6 +72,7 @@ status: publish
   7.4. [Searching records](#74-searching-records)<br />
   7.5. [Advanced filtering](#75-advanced-filtering)<br />
   7.6. [Exporting records](#76-exporting-records)<br />
+  7.7. [Geographical areas and views](#77-geographical-areas-and-views)<br />
 8. [Sites and reinstatements](#8-sites-and-reinstatements)<br />
   8.1. [Sites and site numbers](#81-sites-and-site-numbers)<br />
   8.2. [Reinstatement types](#82-reinstatement-types)<br />
@@ -95,7 +96,11 @@ status: publish
   12.1. [Lane rental assessment or charge types](#121-lane-rental-assessment-or-charge-types)<br />
   12.2. [Adding a lane rental assessment to a PA](#122-adding-a-lane-rental-assessment-to-a-pa)<br />
 13. [Fee reporting](#13-fee-reporting)<br />
-<!-- 14. [Changes](#changes)<br /> -->
+14. [Section 81 (S81)](#)<br />
+15. [Historical works](#g)<br />
+16. [Non-notifiable works](#)<br />
+17. [HS2](#)<br />
+<!-- [Changes](#changes)<br /> -->
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -787,6 +792,25 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Registered reinstatements
     * Comments (coming soon)
     * Section 81s (coming soon)
+
+
+
+### 7.7. Geographical areas and views
+
+(work in progress)
+
+### 7.7.1. Managing geographical areas
+
+* Each geographical area is defined by a list of USRNs.
+    * The list of USRNs must be provided as a csv file.
+    * The maximum number of USRNs per geographical area is 10,000.
+    * The maximum number of geographical areas is 100.
+
+### 7.7.2. Viewing geographical areas
+
+* HA users may select up to a total of 60,000 USRNs to be filtered on. This is the combined total number of USRNs of all geographical areas selected.
+* All list pages will be filtered to only show records associated to the geographical areas selected.
+
 
 
 
