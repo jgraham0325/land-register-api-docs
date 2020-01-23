@@ -1145,7 +1145,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 * The S81 WRN is generated in the following format: {HA SWA prefix}S81{numerical suffix}
     * **HA SWA prefix** - Two characters of the related HA organisation from the SWA code list.
     * **Numerical suffix** - randomly generated 8-digit number (following the unique WRN rule).
-* 
+
 
 ### 14.2. S81 reference number
 
