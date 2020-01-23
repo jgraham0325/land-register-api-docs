@@ -10,7 +10,7 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.13</span>
+<span class="govuk-body-l" style="float:left">Version 1.13 (Released xx/01/20)</span>
 
 <span style="float:right">[Street Manager Glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html)</span>
 
