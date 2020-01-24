@@ -632,8 +632,8 @@ _(Previously section 21.1 in Business rules v0.1 draft)_
 
 * To log a works stop
     * works must be in 'in progress' status,
-    * date and time must be provided, and
-    * date must occur on or after the actual start date
+    * date and time must be provided,
+    * date must occur on or after the actual start date, and
     * date must occur today or a date in the past
 
 _(Previously section 11.2 in Business rules v0.1 draft)_ 
