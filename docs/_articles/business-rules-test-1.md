@@ -632,8 +632,8 @@ _(Previously section 21.1 in Business rules v0.1 draft)_
 
 * To log a works stop
     * works must be in 'in progress' status,
-    * date and time must be provided, and
-    * date must occur on or after the actual start date
+    * date and time must be provided,
+    * date must occur on or after the actual start date, and
     * date must occur today or a date in the past
 
 _(Previously section 11.2 in Business rules v0.1 draft)_ 
@@ -1208,6 +1208,7 @@ A diagram of S81 statuses</div>
     * Comments
 * Workstream must be specified when creating the first PA and may be different to what was previously set in EToN.
     * The historical works reference number will not change as a result of adding a new PA.
+* Note: Historical works records will not appear in the Works records list until a new PA has been added in Street Manager i.e. no longer have works status of 'historical works'.
 
 
 
@@ -1244,7 +1245,7 @@ A diagram of S81 statuses</div>
     * FPNs
     * Files
     * Comments
-
+* Note: Non-notifiable works records will not appear in the Works records list until a new PA has been added in Street Manager i.e. no longer have works status of 'Non-notifiable works'.
 
 
 
