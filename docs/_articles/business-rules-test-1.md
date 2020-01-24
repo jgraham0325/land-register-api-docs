@@ -1208,6 +1208,7 @@ A diagram of S81 statuses</div>
     * Comments
 * Workstream must be specified when creating the first PA and may be different to what was previously set in EToN.
     * The historical works reference number will not change as a result of adding a new PA.
+* Note: Historical works records will not appear in the Works records list until a new PA has been added in Street Manager i.e. no longer have works status of 'historical works'.
 
 
 
@@ -1244,7 +1245,7 @@ A diagram of S81 statuses</div>
     * FPNs
     * Files
     * Comments
-
+* Note: Non-notifiable works records will not appear in the Works records list until a new PA has been added in Street Manager i.e. no longer have works status of 'Non-notifiable works'.
 
 
 
