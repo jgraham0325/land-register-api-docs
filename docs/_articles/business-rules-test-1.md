@@ -96,10 +96,10 @@ status: publish
   12.1. [Lane rental assessment or charge types](#121-lane-rental-assessment-or-charge-types)<br />
   12.2. [Adding a lane rental assessment to a PA](#122-adding-a-lane-rental-assessment-to-a-pa)<br />
 13. [Fee reporting](#13-fee-reporting)<br />
-14. [Section 81 (S81)](#)<br />
-15. [Historical works](#g)<br />
-16. [Non-notifiable works](#)<br />
-17. [HS2](#)<br />
+14. [Section 81 (S81)](#14-section-81-s81)<br />
+15. [Historical works](#15-historical-works)<br />
+16. [Non-notifiable works](#16-non-notifiable-works)<br />
+17. [HS2](#17-hs2)<br />
 <!-- [Changes](#changes)<br /> -->
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -1136,9 +1136,10 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 
 <!-- ==================================================== -->
-## 14. Section 81 (S81) (work in progress)
+## 14. Section 81 (S81)
 <!-- ==================================================== -->
 
+(work in progress)
 
 ### 14.1. S81 WRN
 
@@ -1180,8 +1181,10 @@ A diagram of S81 statuses</div>
 
 
 <!-- ==================================================== -->
-## 15. Historical works (work in progress)
+## 15. Historical works
 <!-- ==================================================== -->
+
+(work in progress)
 
 ### 15.1. Adding records for historical works
 
@@ -1211,8 +1214,10 @@ A diagram of S81 statuses</div>
 
 
 <!-- ==================================================== -->
-## 16. Non-notifiable works (work in progress)
+## 16. Non-notifiable works
 <!-- ==================================================== -->
+
+(work in progress)
 
 ### 16.1. Non-notifiable works reference number
 
@@ -1246,8 +1251,9 @@ A diagram of S81 statuses</div>
 
 
 <!-- ==================================================== -->
-## 17. HS2 (work in progress)
+## 17. HS2
 <!-- ==================================================== -->
+(work in progress)
 
 * HS2 functionality will only be available to HAs marked as HS2-applicable.
 
