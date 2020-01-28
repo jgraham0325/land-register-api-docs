@@ -2455,31 +2455,38 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.14 (23/01/2019):
 {: .govuk-heading-s}
 
+Work API has been updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>The <code>PermitRequest</code> has been updated to include the <code>additional_contact</code>, <code>additional_contact_number</code>, and <code>additional_contact_email</code> properties</li>
+  <li>The <code>PermitResponse</code> has been updated to return the <code>additional_contact</code>, <code>additional_contact_number</code>, and <code>additional_contact_email</code> properties</li>
+  <li>The <code>WorkCreateRequest</code> has been updated to include the <code>additional_contact</code>, <code>additional_contact_number</code>, and <code>additional_contact_email</code> properties</li>
+</ol>
+
 Party API has been updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-    <li>Added <code>PUT /users/{email} </code> endpoint to allow updating of users names </li>
+  <li>Added <code>PUT /users/{email} </code> endpoint to allow updating of users names </li>
 </ol>
 
 Version 1.13 (08/01/2019):
 {: .govuk-heading-s}
 
-
 Work API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>POST /works/{workReferenceNumber}/comments</code> updated to remove comment_id</li>
-    <li>The <code>WorkType</code> enum has been updated to include <code>hs2_highway_works</code> as a valid type</li>
-    <li>The <code>WorkCategory</code> enum has been updated to include <code>hs2_highwaycode</code> as a valid category</li>
-    <li>The Permit and Work endpoints have been extended to include HS2 specific fields</li>
-    <li>The <code>WorkResponse</code> has been updated to no longer return the <code>historical_permit_reference</code></li>
-    <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
-    <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
-    <li>The <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> endpoint has been updated to remove the id of the created reinstatement</li>
-    <li>The <code>POST /works/{workReferenceNumber}/comments</code> endpoint has been updated to remove the id of the created comment</li>
-    <li>The <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> endpoint has been updated to include <code>status_changed_date</code></li>
-    <li>The <code>GET /permits/category</code> endpoint has been extended to accept a <code>hs2_highway_works</code> parameter</li>
+  <li><code>POST /works/{workReferenceNumber}/comments</code> updated to remove comment_id</li>
+  <li>The <code>WorkType</code> enum has been updated to include <code>hs2_highway_works</code> as a valid type</li>
+  <li>The <code>WorkCategory</code> enum has been updated to include <code>hs2_highwaycode</code> as a valid category</li>
+  <li>The Permit and Work endpoints have been extended to include HS2 specific fields</li>
+  <li>The <code>WorkResponse</code> has been updated to no longer return the <code>historical_permit_reference</code></li>
+  <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
+  <li>The <code>WorkResponse</code> has been updated to return the <code>description_of_work</code> property</li>
+  <li>The <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> endpoint has been updated to remove the id of the created reinstatement</li>
+  <li>The <code>POST /works/{workReferenceNumber}/comments</code> endpoint has been updated to remove the id of the created comment</li>
+  <li>The <code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code> endpoint has been updated to include <code>status_changed_date</code></li>
+  <li>The <code>GET /permits/category</code> endpoint has been extended to accept a <code>hs2_highway_works</code> parameter</li>
 </ol>
 
 Reporting API has been updated with the following changes:
