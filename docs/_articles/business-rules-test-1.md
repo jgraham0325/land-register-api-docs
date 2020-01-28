@@ -1,6 +1,6 @@
 ---
 layout: article
-title: 'Business rules - Version 1.13 - archived, do not use'
+title: 'Business rules - Version 0.2 - archived, do not use'
 date: 2020-01-02T00:00:00.000Z
 type: article
 published: 'true'
