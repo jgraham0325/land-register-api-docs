@@ -22,6 +22,16 @@ The simplest way to get data into PowerBI is to manually export the data using t
 
 3. Navigate to PowerBI and the Workspace you are going to use then create a new Dataset
 
-![]()
+![new dataset](/docs/assets/images/cms/powerbi-new-dataset.png "new dataset")
 
-4.
+4. On the Get Data screen, click Get for Create new content > Files
+
+![PowerBI get data file](/docs/assets/images/cms/powerbi-get-data.png "PowerBI get data file")
+
+5. Select "Local File" and upload the CSV you get from the Street Manager list screen
+
+6. Your data will appear as a new Dashboard and Dataset which you can visualise and generate Reports from
+
+![Dashboard](/docs/assets/images/cms/powerbi-dashboard.png "Dashboard")
+
+![Report](/docs/assets/images/cms/powerbi-report.png "Report")
