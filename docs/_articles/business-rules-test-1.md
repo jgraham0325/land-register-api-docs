@@ -841,6 +841,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Core holes
     * Pole testing
 * Reinstatement measurements and whether the reinstatement is a final reinstatement must be provided for excavation reinstatement type.
+    * A second set of coordinates may be provided when required.
 * Number of holes must be provided for bar holes, core holes and pole testing reinstatement types.
 
 _(Previously section 4.7 in Business rules v0.1 draft)_
@@ -1155,7 +1156,8 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 ### 14.3. Adding S81s
 
-* In addition to the S81 record, a new Section 81 works record will be automatically created and assigned to workstream '000'.
+* A promoter organisation must be assigned to the S81 by the HA. All promoter organisations within Street Manager will be available for selection.
+* A new Section 81 works record will be automatically created and assigned to workstream ‘000’, upon submission of the Section 81 to the promoter.
 * See works statuses for more details on how works records are differentiated.
 
 ### 14.4. Managing S81
@@ -1170,6 +1172,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
+* S81 may be cancelled or resolved at any S81 status other than at 'cancelled' or 'resolved'.
 * See works statuses for more details on how works records are differentiated.
 
 
@@ -1191,6 +1194,7 @@ A diagram of S81 statuses</div>
 * The following records may be created for historical works:
     * Inspection
     * FPN
+* A promoter organisation must be assigned to the S81 by the HA. All promoter organisations within Street Manager will be available for selection.
 * In addition to the inspection or FPN record, a new historical works record will be automatically created and assigned to workstream '000'.
     * The works reference number in Street Manager will be set to the 'historical permit reference number' entered in the process of adding an inspection or FPN for historical works.
 * See works statuses for more details on how works records are differentiated.
@@ -1227,7 +1231,7 @@ A diagram of S81 statuses</div>
 ### 16.2. Adding records for non-notifiable works
 
 * The following records may be created for non-notifiable works:
-    * Reinstatement
+    * Reinstatement (types: bar holes, core holes & pole testing)
 * In addition to the reinstatement record, a new non-notifiable works record will be automatically created.
 * See works statuses for more details on how works records are differentiated.
 
