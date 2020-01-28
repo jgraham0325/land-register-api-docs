@@ -771,7 +771,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Not submitted final registration | Final site registered = "No" against the PA |
 | Works with excavation | Excavation is marked as required on the PAA/PA |
 | Deemed | PAs that have deemed. Change request list will only show change requests that have deemed. |
-| Early start | Proposed timings have indicated that the PAA/PA is due for an early start (any PAs where early start details were completed) |
+| Early start | Proposed timings have indicated that the PAA/PA is due for an early start (where early start details were completed) |
 | Lane rental charges (potentially) apply | Works takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
 | Lane rental charges not agreed | A lane rental assessment has been added with an outcome of "Chargeable" and charges have not been agreed. |
 | Duration extension | On change request list only: change requests with works extension request |
