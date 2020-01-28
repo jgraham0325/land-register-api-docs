@@ -841,7 +841,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Core holes
     * Pole testing
 * Reinstatement measurements and whether the reinstatement is a final reinstatement must be provided for excavation reinstatement type.
-    * A second set of coordinates may be provided when required.
+    * A second set of coordinates may be provided.
 * Number of holes must be provided for bar holes, core holes and pole testing reinstatement types.
 
 _(Previously section 4.7 in Business rules v0.1 draft)_
