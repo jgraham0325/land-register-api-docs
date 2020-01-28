@@ -760,17 +760,19 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 * Advanced filters and descriptions below:
 
-| Filter name              | Logic/description |
+    * Note: Unless otherwise specified, **change requests list** will return all change requests where the related PA fulfils the condition, and **works records list** will return results where the latest PAA/PA fulfil the condition.
+
+| Filter name              | Condition |
 |:-------------------------|:------------------|
 | Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
-| Awaiting assessment      | PA list - PAA/PA with 'submitted' status<br />WR list - Works records where latest PAA/PA fulfils the condition above |
-| Working within traffic-sensitive times | PA list - A traffic-sensitive designation has been selected by the promoter on the PAA/PA.<br />CR list - Coming soon (currently will not return results) <br />WR list - TBC |
-| High impact traffic management | PAA/PA list - Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals<br />CR list - All CR where the related PAA/PA fulfils the condition above <br />WR list - TBC |
-| Not submitted final registration | Final site registered = "No". On works record list: return the works records where this condition is met. On PA list: return all PAs associated with the works records where this condition is met. |
-| Works with excavation | On works record list: return works records where latest PA indicating that excavation is required. On PA list: return any PAs where excavation is required. |
-| Deemed | PA or change request that have deemed. |
-| Early start | Proposed timings have indicated that the PAA/PA is due for an early start. On PA list: return any PAs where early start details were completed. On change request list: return any change requests associated to a PA where early start details were completed. |
-| Lane rental charges (potentially) apply | Work takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
+| Awaiting assessment      | PAA/PA with 'submitted' status |
+| Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PAA/PA |
+| High impact traffic management | Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| Not submitted final registration | Final site registered = "No" against the PA |
+| Works with excavation | Excavation is marked as required on the PAA/PA |
+| Deemed | PAs that have deemed. Change request list will only show change requests that have deemed. |
+| Early start | Proposed timings have indicated that the PAA/PA is due for an early start (any PAs where early start details were completed) |
+| Lane rental charges (potentially) apply | Works takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
 | Lane rental charges not agreed | A lane rental assessment has been added with an outcome of "Chargeable" and charges have not been agreed. |
 | Duration extension | On change request list only: change requests with works extension request |
 
