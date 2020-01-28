@@ -751,10 +751,10 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 ### 7.5. Advanced filtering
 
 * Advanced filtering is available on the following list pages:
-    * Permit applications
-    * Change requests
-    * Works records
-    * Forward plans
+    * Permit applications (PAA/PA)
+    * Change requests (CR)
+    * Works records (WR)
+    * Forward plans (FP)
 * Each list page have different filter options available.
 * Note: the URL/web address may be shared or bookmarked/saved with filters currently applied.
 
@@ -763,9 +763,9 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Filter name              | Logic/description |
 |:-------------------------|:------------------|
 | Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
-| Awaiting assessment      | Applications awaiting assessment - the records often have the status of 'Submitted' |
-| Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PA. |
-| High impact traffic management | Includes applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
+| Awaiting assessment      | PA list - PAA/PA with 'submitted' status<br />WR list - Works records where latest PAA/PA fulfils the condition above |
+| Working within traffic-sensitive times | PA list - A traffic-sensitive designation has been selected by the promoter on the PAA/PA.<br />CR list - Coming soon (currently will not return results) <br />WR list - TBC |
+| High impact traffic management | PAA/PA list - Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals<br />CR list - All CR where the related PAA/PA fulfils the condition above <br />WR list - TBC |
 | Not submitted final registration | Final site registered = "No". On works record list: return the works records where this condition is met. On PA list: return all PAs associated with the works records where this condition is met. |
 | Works with excavation | On works record list: return works records where latest PA indicating that excavation is required. On PA list: return any PAs where excavation is required. |
 | Deemed | PA or change request that have deemed. |
