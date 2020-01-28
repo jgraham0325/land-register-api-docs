@@ -18,7 +18,7 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 ### Current
 
-* [Version 1.14 \(Released xx/01/20\)](url_tbc)
+* [Version 1.15 \(Due for release to SANDBOX 02/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-15.html)
 
 ### Previous
 
