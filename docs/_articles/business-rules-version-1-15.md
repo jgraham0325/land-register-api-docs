@@ -143,7 +143,7 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 * USRN must be a value between 100001 and 99999999.
 * Currently supported USRNs:
-    * Street state codes: 1, 2 & 4 (?) (See NSG spec v2.10 table 5.1.2)
+    * Street state codes: 1 and 2 (See NSG spec v2.10 table 5.1.2)
     * Reinstatement type codes: 1-5 (See NSG spec v2.10 table 7.2)
     * Street Maintenance responsibility (STREET_STATUS): 1, 2 & 3 (See NSG spec v2.10 table 6.1)
 * USRNs to be supported by April 2020:
