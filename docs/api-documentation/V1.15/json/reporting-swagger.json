@@ -432,6 +432,10 @@
 				"made_safe_by_ha": {
 					"type": "boolean",
 					"x-nullable": true
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -444,7 +448,8 @@
 				"inspection_type",
 				"inspection_category",
 				"highway_authority",
-				"promoter_organisation"
+				"promoter_organisation",
+				"date_created"
 			],
 			"type": "object"
 		},
@@ -585,6 +590,10 @@
 				},
 				"forward_plan_status": {
 					"$ref": "#/definitions/ForwardPlanStatus"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
@@ -597,7 +606,8 @@
 				"area",
 				"proposed_start_date",
 				"proposed_end_date",
-				"forward_plan_status"
+				"forward_plan_status",
+				"date_created"
 			],
 			"type": "object"
 		},
@@ -1266,7 +1276,8 @@
 							"date_created",
 							"deadline_date",
 							"end_date",
-							"start_date"
+							"start_date",
+							"status_changed_date"
 						],
 						"type": "string"
 					},
