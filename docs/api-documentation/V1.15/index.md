@@ -52,7 +52,7 @@ For supplemental details, please see the following documents:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="/street-manager-docs/business-rules/">Business rules</a>, for details on Street Managers business processes and logic</li>
+  <li><a href="/street-manager-docs/articles/business-rules-version-1-15.html">Business rules</a>, for details on Street Managers business processes and logic</li>
   <li><a href="/street-manager-docs/onboarding/">Onboarding</a>, for details on how to start using Street Manager with-in your organisation</li>
 </ol>
 
@@ -157,7 +157,7 @@ Therefore, if your IT department restrict outbound internet access from your API
 ## Timing
 {: .govuk-heading-l #timing}
 
-All Street Manager environments use standard [NTP Pool](https://www.ntppool.org/en/) servers to synchronise their system clocks, ensuring they keep accurate and consistent time. To learn more about how Street Manager uses time and defines rules like working day, see the [Business rules](/street-manager-docs/business-rules/).
+All Street Manager environments use standard [NTP Pool](https://www.ntppool.org/en/) servers to synchronise their system clocks, ensuring they keep accurate and consistent time. To learn more about how Street Manager uses time and defines rules like working day, see the [Business rules](/street-manager-docs/articles/business-rules-version-1-15.html).
 {: .govuk-body}
 
 
