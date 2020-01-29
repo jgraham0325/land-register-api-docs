@@ -349,8 +349,8 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
     * **Diversionary works:** Works undertaken by a Works Promoter to move or divert its existing apparatus to enable 3rd party works to be happen.  
     * **Highway improvement works**
     * **Highway repair and maintenance works**  
-    * **New service connection:** (coming soon) Works type undertaken to connect new supplies usually for individual customers.
-    * **Optional permit (no fee):** (coming soon) e.g. for traffic management. HA may add discount to permit fee if applicable.
+    * **New service connection:** (Planned for the future) Works type undertaken to connect new supplies usually for individual customers.
+    * **Optional permit (no fee):** (Planned for the future) e.g. for traffic management. HA may add discount to permit fee if applicable.
     * **Permanent reinstatement:** Works undertaken by a works promoter to replace interim reinstatement with a permanent reinstatement. 
     * **Remedial works:** Works undertaken by a works promoter where the initial reinstatement was not compliant with the specification. 
     * **Section 50**
@@ -358,7 +358,7 @@ _(Previously section 1.4 in Business rules v0.1 draft)_
     * **Utility asset works:** Works undertaken by a Utility Works Promoter as part of a rehabilitation or replacement scheme. These are usually planned works. 
     * **Utility repair and maintenance works:** Works undertaken by a Utility Works Promoter in repairing or maintaining its asset. These works are usually short duration works or works that are not planned.
     * **Works for rail purposes**
-    * **Works for road purposes:** (coming soon) As defined in section 86(2) of NRSWA, "works for road purposes means works of any of the following descriptions executed in relation to a highway: (a) works for the maintenance of the highway; (b) any works under powers conferred by Part V of the Highways Act 1980 (improvement); (c) the erection, maintenance, alteration or removal of traffic signs on or near the highway; or (d) the construction of a crossing for vehicles across a footway or grass verge or the strengthening or adaptation of a footway for use as a crossing for vehicles"
+    * **Works for road purposes:** (Planned for the future) As defined in section 86(2) of NRSWA, "works for road purposes means works of any of the following descriptions executed in relation to a highway: (a) works for the maintenance of the highway; (b) any works under powers conferred by Part V of the Highways Act 1980 (improvement); (c) the erection, maintenance, alteration or removal of traffic signs on or near the highway; or (d) the construction of a crossing for vehicles across a footway or grass verge or the strengthening or adaptation of a footway for use as a crossing for vehicles"
 
 
 
