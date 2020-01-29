@@ -700,6 +700,15 @@
 					"type": "boolean",
 					"x-nullable": true
 				},
+				"hs2_acknowledged": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"hs2_acknowledged_date_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
 				"additional_contact": {
 					"type": "string",
 					"x-nullable": true

@@ -707,6 +707,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
   </tbody>
 </table>
 
@@ -2119,6 +2124,14 @@ This alteration endpoint returns both the original and the proposed changes of a
 This alteration endpoint allows a HA to amend permit discounts applied and reason after assessment.
 {: .govuk-body}
 
+#### Acknowledge HS2 applications endpoint
+{: .govuk-heading-s}
+
+<code>PUT /works/{work reference number}/permits/{permit reference number}/hs2_acknowledgement</code>
+
+This endpoint allows HAs to acknowledge a HS2 consultation application.
+{: .govuk-body}
+
 #### Events and Activities
 {: .govuk-heading-s}
 
@@ -2451,6 +2464,18 @@ The Data Export API will be updated to export other data, including forward plan
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 1.15 (06/02/2019):
+{: .govuk-heading-s}
+
+Work API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code> endpoint has been added to acknowledge HS2 applications</li>
+    <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged</code> property</li>
+    <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged_date_time</code> property</li>
+</ol>
 
 Version 1.14 (23/01/2019):
 {: .govuk-heading-s}
