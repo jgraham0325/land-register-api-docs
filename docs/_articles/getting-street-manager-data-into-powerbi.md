@@ -6,6 +6,8 @@ type: article
 published: 'true'
 status: publish
 ---
+# Getting Street Manager data into PowerBI
+
 This is a basic guide for how to import Street Manager data into [PowerBI](https://powerbi.microsoft.com/en-us/) for reporting purposes. This is based on the online version of PowerBI and last updated on 28/01/2020, so there may be differences if you are using the desktop client or an updated version.
 
 ## Export CSV via UI and upload
