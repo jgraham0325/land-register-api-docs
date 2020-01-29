@@ -15,6 +15,7 @@ This is a basic guide for how to import Street Manager data into [PowerBI](https
 The simplest way to get data into PowerBI is to manually export the data using the   CSV export links available on the Dashboard list pages and upload them into PowerBI for processing.
 
 1. Log into Street Manager and go to the list page with the data you are interested in and set the filter criteria, e.g. Permits completed within a specific month.
+    
     ![permit list for export](/docs/assets/images/cms/permit-list-for-export-1.png "permit list for export")
 2. Click the "Export results" link at the bottom of the list to download a CSV file with the data.
     ![download csv link](/docs/assets/images/cms/permit-list-for-export-2.png "download csv link")
