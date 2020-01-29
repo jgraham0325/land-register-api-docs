@@ -16,19 +16,19 @@ The simplest way to get data into PowerBI is to manually export the data using t
 
 1. Log into Street Manager and go to the list page with the data you are interested in and set the filter criteria, e.g. Permits completed within a specific month.
     
-![permit list for export](/docs/assets/images/cms/permit-list-for-export-1.png "permit list for export")
+    ![permit list for export](/docs/assets/images/cms/permit-list-for-export-1.png "permit list for export")
     
 2. Click the "Export results" link at the bottom of the list to download a CSV file with the data.
     
-![download csv link](/docs/assets/images/cms/permit-list-for-export-2.png "download csv link")
+    ![download csv link](/docs/assets/images/cms/permit-list-for-export-2.png "download csv link")
     
 3. Navigate to PowerBI and the Workspace you are going to use then create a new Dataset.
     
-![new dataset](/docs/assets/images/cms/powerbi-new-dataset.png "new dataset")
+    ![new dataset](/docs/assets/images/cms/powerbi-new-dataset.png "new dataset")
     
 4. On the Get Data screen, click Get for Create new content > Files.
     
-![PowerBI get data file](/docs/assets/images/cms/powerbi-get-data.png "PowerBI get data file")
+    ![PowerBI get data file](/docs/assets/images/cms/powerbi-get-data.png "PowerBI get data file")
     
 5. Select "Local File" and upload the CSV you get from the Street Manager list screen.
     
@@ -36,6 +36,6 @@ The simplest way to get data into PowerBI is to manually export the data using t
     
 6. Your data will appear as a new Dashboard and Dataset which you can visualise and generate Reports.
     
-![Dashboard](/docs/assets/images/cms/powerbi-dashboard.png "Dashboard")
+    ![Dashboard](/docs/assets/images/cms/powerbi-dashboard.png "Dashboard")
     
-![Report](/docs/assets/images/cms/powerbi-report.png "Report")
+    ![Report](/docs/assets/images/cms/powerbi-report.png "Report")
