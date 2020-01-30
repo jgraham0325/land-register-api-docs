@@ -1727,6 +1727,17 @@ Retrieves a list of section 81s which are associated with the authenticated user
 Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
+#### CSV Exports
+{: .govuk-heading-s}
+
+<code>GET /csv-exports</code>
+
+Retrieves a list of CSV exports which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+{: .govuk-body}
+
 ### **Work API**
 {: .govuk-heading-m}
 
@@ -2287,6 +2298,14 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 ### Party API
 {: .govuk-heading-m}
 
+#### Get user
+{: .govuk-heading-s}
+
+<code>GET /users/{username}</code>
+
+Returns the UserResponse associated with the username provided.
+{: .govuk-body}
+
 #### Get workstream
 {: .govuk-heading-s}
 
@@ -2475,6 +2494,18 @@ Work API has been updated with the following changes:
     <li><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code> endpoint has been added to acknowledge HS2 applications</li>
     <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged</code> property</li>
     <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged_date_time</code> property</li>
+</ol>
+
+Party API has been updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /users/{username}</code> endpoint has been added to return user details</li>
+</ol>
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /csv-exports</code> endpoint has been added return a list of CSV exports which are associated with the authenticated user's organisation</li>
 </ol>
 
 Version 1.14 (23/01/2019):
