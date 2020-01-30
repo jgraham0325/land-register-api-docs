@@ -1735,7 +1735,7 @@ Contractors are required to provide optional swa_code parameter in order to stat
 Retrieves a list of CSV exports which are associated with the authenticated user's organisation.
 {: .govuk-body}
 
-Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Contractors are able to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 ### **Work API**
