@@ -39,16 +39,16 @@ status: publish
   3.2. [Works statuses](#32-works-statuses)<br />
   3.3. [Forward plans](#33-forward-plans)<br />
   3.4. [PAA and permit applications (PA)](#34-paa-and-permit-applications-pa)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.1. [Permit reference number](#341-permit-reference-number)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.2. [Works types](#342-works-types)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.3. [Works categories](#343-works-categories)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types](#344-works-activity-types)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA](#345-adding-paa--pa)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start](#346-early-start)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options](#347-paa--pa-assessment-decision-options)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods](#348-paa--pa-response-periods)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA](#349-cancelling-paa--pa)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses](#3410-paa--pa-statuses)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.1. [Permit reference number](#341-permit-reference-number)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.2. [Works types](#342-works-types)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.3. [Works categories](#343-works-categories)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.4. [Works activity types](#344-works-activity-types)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.5. [Adding PAA & PA](#345-adding-paa--pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.6. [Early start](#346-early-start)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.7. [PAA & PA assessment decision options](#347-paa--pa-assessment-decision-options)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.8. [PAA & PA response periods](#348-paa--pa-response-periods)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.9. [Cancelling PAA & PA](#349-cancelling-paa--pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.10. [PAA & PA statuses](#3410-paa--pa-statuses)<br />
 4. [Change requests (CR)](#4-change-requests-cr)<br />
   4.1. [Change request reference number](#41-change-request-reference-number)<br />
   4.2. [Change request types](#42-change-request-types)<br />
