@@ -139,7 +139,7 @@ AT BOTTOM!!!!!!!
 <p>Modification requested</p>
 </td>
 <td>
-<p>HA has requested for changes to be made after assessing the PA.</p>
+<p>HA has requested for changes to be made on a PA.</p>
 </td>
 </tr>
 <tr>
