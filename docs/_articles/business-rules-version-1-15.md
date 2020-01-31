@@ -117,6 +117,8 @@ All numbers within Street Manager system are non-negative.
 
 ### 1.2. Dates and times
 
+Note: Street Manager receives bank holiday data from gov.uk up to the end of the following year, any works that extend beyond that will not be factoring in bank holidays.
+
 #### 1.2.1. Date and time format
 
 All dates and times must match the ISO 8601 standard date format.
