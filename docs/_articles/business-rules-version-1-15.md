@@ -125,13 +125,13 @@ All dates and times must match the ISO 8601 standard date format.
 
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
-#### 1.2.1. Calendar days
+#### 1.2.2. Calendar days
 
 Street Manager calculates calendar days based on a 24 hour clock.
 
 For example, the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
 
-#### 1.2.2. Calendar month
+#### 1.2.3. Calendar month
 
 Street Manager calculates a calendar month as 28 calendar days for the purpose of deeming and early start.
 
