@@ -712,6 +712,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /geographical-areas</code></td>
+      <td class="govuk-table__cell">Admin (associated with a Highway Authority)</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
   </tbody>
 </table>
 
@@ -931,8 +936,7 @@ with the same request body.
 
 <code>POST /authenticate/initial</code>
 
-After a user has been invited to the system by their organisation admin using the
-Party API <code>/invite-user</code> endpoint, they need to set a new password. This
+After a user has been invited to the system by their organisation admin, they need to set a new password. This
 endpoint can be called with a new user's email address and temporary password, and will
 return a token that should be provided to the Party API <code>/set-password</code> endpoint.
 {: .govuk-body}
@@ -2219,6 +2223,25 @@ The GET endpoint will require the work reference number and section 81 reference
 The PUT endpoint will update the status of a section 81 and will require a work reference number, section 81 reference number and optionally a promoter response or work type depending on the desired status outcome.
 {: .govuk-body}
 
+#### Geographical Areas
+{: .govuk-heading-s}
+
+<code>POST /geographical-areas</code>
+
+Geographical Areas allow Admins of a Highway Authority orgnanistation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
+{: .govuk-body}
+
+The POST endpoint accepts a CSV file of USRNs and will create a Geographical Area containing those USRNs. The file must:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Be a valid .csv file type</li>
+  <li>Contain max 10,000 USRNs</li>
+  <li>Contain a single column of USRNs (without a heading)</li>
+  <li>Contain unique USRNs</li>
+  <li>Contain valid USRNs</li>
+</ol>
+
 ### GeoJSON API
 {: .govuk-heading-m}
 
@@ -2376,7 +2399,7 @@ Accepts the user's email address, verification code and the new password. The ve
 
 <code>POST /set-password</code>
 
-Accepts the user's email address, new password and token (returned from the Work API <code>/authenticate/initial</code> endpoint). This will overwrite the temporary password received by email (from the <code>/invite-user</code> endpoint) and activate the user's account. The response will include the same authentication tokens returned from the Work API <code>/authenticate</code> endpoint.
+Accepts the user's email address, new password and token (returned from the Work API <code>/authenticate/initial</code> endpoint). This will overwrite the temporary password received by email and activate the user's account. The response will include the same authentication tokens returned from the Work API <code>/authenticate</code> endpoint.
 {: .govuk-body}
 
 ### Data Export API
@@ -2475,6 +2498,7 @@ Work API has been updated with the following changes:
     <li><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code> endpoint has been added to acknowledge HS2 applications</li>
     <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged</code> property</li>
     <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged_date_time</code> property</li>
+    <li><code>POST /geographical-areas</code> endpoint has been added to upload Geographical Areas</li>
 </ol>
 
 Version 1.14 (23/01/2019):
