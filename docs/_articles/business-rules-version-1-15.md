@@ -154,7 +154,7 @@ _(Previously section 16.3 in Business rules v0.1 draft)_
 
 ### 1.5. File upload size
 
-* Maximum file size is 5MB.
+* Maximum file size is 10MB.
 * All files on a single permit application must total less than 100mb.
 
 _(Previously section 19 in Business rules v0.1 draft)_
