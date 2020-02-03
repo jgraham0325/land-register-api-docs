@@ -991,7 +991,10 @@ _(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_
 
 ### 10.3. Inspection outcomes
 
-* If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided.
+* If a failed inspection outcome is selected for Live site, reinstatement or non-compliance follow up inspection types, details of non-compliant areas must be provided by selecting from a defined list.
+    * The non-compliant area list is dependent on the inspection type and category.
+    * Any number of non-compliant areas may be chosen.
+    * Each non-compliant area selected 
 * If a failed inspection outcome is selected for Section 81, the inspection may advise if the site was 'made safe by HA'.
 * Additional information and evidence/photos may be provided for all outcomes.
 * The inspection outcomes available for inspection types and categories are as below:
