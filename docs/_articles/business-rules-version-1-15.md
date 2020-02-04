@@ -777,6 +777,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 | Lane rental charges (potentially) apply | Works takes place on a lane rental applicable road (indicated in the designations), and/or a lane rental assessment has been added with an outcome of "Chargeable" or "Potentially chargeable". |
 | Lane rental charges not agreed | A lane rental assessment has been added with an outcome of "Chargeable" and charges have not been agreed. |
 | Duration extension | On change request list only: change requests with works extension request |
+| Ever modification requested | PAs that have previously received a modification request assessment decision |
 
 _(Previously section 17.2 in Business rules v0.1 draft)_
 
