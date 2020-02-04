@@ -811,7 +811,9 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 * Each geographical area is defined by a list of USRNs.
     * The list of USRNs must be provided as a csv file with one column of USRNs.
     * The maximum number of USRNs per geographical area is 10,000.
-    * The maximum number of geographical areas is 100.
+* The maximum number of geographical areas is 100.
+* The geographical area name is derived from the csv file name (without the extension).
+* The area name and list of USRNs may be changed by uploading a replacement csv file.
 
 <!--
 ### 7.7.2. Viewing geographical areas
