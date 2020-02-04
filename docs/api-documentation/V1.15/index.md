@@ -2303,7 +2303,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 
 <code>GET /users/{username}</code>
 
-Returns the UserResponse associated with the username provided.
+Returns the UserResponse associated with the base 64 encoded username provided.
 {: .govuk-body}
 
 #### Get workstream
