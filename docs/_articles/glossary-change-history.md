@@ -14,7 +14,7 @@ status: publish
 
 | Version | Date | Action | Term | Previous definition | New definition |
 |:--------|:-----|:-------|:-----|:---------------|:---------------|
-| 0.1.0   | xx/01/20 | Glossary version released | n/a | n/a | n/a |
+| 0.1.0   | 06/02/2020 | Glossary released | n/a | n/a | n/a |
 
 <!-- EXAMPLE TABLE CONTENT FORMAT BELOW
 
