@@ -786,6 +786,8 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 ### 7.6. Exporting records
 
+* Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
+    * All users in the organisation may view and download all files from the CSV Exports page.
 * Export functionality is available on the following list pages:
     * Permit applications
     * Change requests (coming soon)
@@ -802,12 +804,12 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 ### 7.7. Geographical areas and views
 
-(work in progress - details may change until 06/02/20)
+(work in progress)
 
 ### 7.7.1. Managing geographical areas
 
 * Each geographical area is defined by a list of USRNs.
-    * The list of USRNs must be provided as a csv file.
+    * The list of USRNs must be provided as a csv file with one column of USRNs.
     * The maximum number of USRNs per geographical area is 10,000.
     * The maximum number of geographical areas is 100.
 
