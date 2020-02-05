@@ -6,13 +6,13 @@ type: article
 published: 'true'
 status: publish
 ---
-Permissions and roles
+
 
 <table>
 <tbody>
 <tr>
 <td>
-<p><strong>Access \ Role</strong></p>
+<p><strong>Access (&darr;) \ Role (&rarr;)</strong></p>
 </td>
 <td>
 <p><strong>Users with Street Manager account</strong></p>
@@ -30,46 +30,36 @@ Permissions and roles
 <p><strong>Contractor admin</strong></p>
 </td>
 <td>
-<p><strong>Promoter admin</strong></p>
+<p><strong>Promoter&nbsp; admin</strong></p>
 </td>
 <td>
 <p><strong>HA admin</strong></p>
 </td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td>
-<p>General access</p>
+<p><strong>General access</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 </tr>
 <tr>
@@ -214,7 +204,7 @@ Permissions and roles
 </tr>
 <tr>
 <td>
-<p>View works record's location on map with forward plan's, activity's or latest PA's works area</p>
+<p>View works record's location on map with forward plan's, activity's or latest PA's&nbsp; works area</p>
 </td>
 <td>
 <p>Y</p>
@@ -254,28 +244,54 @@ Permissions and roles
 </tr>
 <tr>
 <td>
-<p>View only access</p>
+<p><strong>Access (&darr;) \ Role (&rarr;)</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Users with Street Manager account</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter / Contractor planner - View only to workstream</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter / Contractor Planner - Full access to workstream</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Highway Authority</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Contractor admin</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter&nbsp; admin</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>HA admin</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p><strong>View only access</strong></p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
 </td>
 </tr>
 <tr>
@@ -495,39 +511,55 @@ Permissions and roles
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>
+<p><strong>Access (&darr;) \ Role (&rarr;)</strong></p>
+</td>
+<td>
+<p><strong>Users with Street Manager account</strong></p>
+</td>
+<td>
+<p><strong>Promoter / Contractor planner - View only to workstream</strong></p>
+</td>
+<td>
+<p><strong>Promoter / Contractor Planner - Full access to workstream</strong></p>
+</td>
+<td>
+<p><strong>Highway Authority</strong></p>
+</td>
+<td>
+<p><strong>Contractor admin</strong></p>
+</td>
+<td>
+<p><strong>Promoter&nbsp; admin</strong></p>
+</td>
+<td>
+<p><strong>HA admin</strong></p>
+</td>
 </tr>
 <tr>
 <td>
-<p>Shared actions for main organisations associated with the records</p>
+<p><strong>Shared actions for main organisations associated with the records</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 </tr>
 <tr>
@@ -563,39 +595,29 @@ Permissions and roles
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td>
-<p>Planner actions for main promoter/contractor associated with the records</p>
+<p><strong>Planner actions for main promoter/contractor associated with the records</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 </tr>
 <tr>
@@ -753,44 +775,60 @@ Permissions and roles
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td>
-<p>HA actions for main HA associated with the records</p>
+<p><strong>Access (&darr;) \ Role (&rarr;)</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Users with Street Manager account</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter / Contractor planner - View only to workstream</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter / Contractor Planner - Full access to workstream</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Highway Authority</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Contractor admin</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>Promoter&nbsp; admin</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p><strong>HA admin</strong></p>
 </td>
 </tr>
 <tr>
 <td>
-<p>Add/edit/cancel own organisation's activity</p>
+<p><strong>HA actions for main HA associated with the records</strong></p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+<td>
+<p>-</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Add/edit/cancel own organisation's&nbsp; activity</p>
 </td>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
@@ -985,49 +1023,55 @@ Permissions and roles
 <td>&nbsp;</td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>
+<p><strong>Access (&darr;) \ Role (&rarr;)</strong></p>
+</td>
+<td>
+<p><strong>Users with Street Manager account</strong></p>
+</td>
+<td>
+<p><strong>Promoter / Contractor planner - View only to workstream</strong></p>
+</td>
+<td>
+<p><strong>Promoter / Contractor Planner - Full access to workstream</strong></p>
+</td>
+<td>
+<p><strong>Highway Authority</strong></p>
+</td>
+<td>
+<p><strong>Contractor admin</strong></p>
+</td>
+<td>
+<p><strong>Promoter&nbsp; admin</strong></p>
+</td>
+<td>
+<p><strong>HA admin</strong></p>
+</td>
 </tr>
 <tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-</tr>
-<tr>
 <td>
-<p>Admin actions</p>
+<p><strong>Admin actions</strong></p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 <td>
-<p>&nbsp;</p>
+<p>-</p>
 </td>
 </tr>
 <tr>
@@ -1190,4 +1234,3 @@ Permissions and roles
 </tr>
 </tbody>
 </table>
-<p>Learn <a href="https://cube3x3.com/how-to-solve-a-rubiks-cube/">how to solve the Rubiks Cube</a> or use the online solver to fix it.</p>
