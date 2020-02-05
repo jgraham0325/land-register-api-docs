@@ -21,16 +21,16 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### Plan
 
-1. Business Change Playbook Part 1 (Plan)
-2. Checklist with and recommended order of activities
-3. Impact assessment
-4. Organisation Readiness Assessment
-5. Stakeholder analysis
-6. Personas
-7. High-level roadmap
-8. Business case template
-9. Delivery and Roll-out plan
-10. RACI
+1. [Business Change Playbook Part 1 (Plan)](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Business%20Change%20Playbook.pdf)
+2. [Checklist with and recommended order of activities](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Playbook%20checklist%20with%20recommended%20order%20of%20activities.docx)
+3. [Impact assessment](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Impact%20assessment.xlsx)
+4. [Organisation Readiness Assessment](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Readiness%20Assessment.xlsx)
+5. [Stakeholder analysis](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Stakeholder%20Analysis.xlsx)
+6. [Personas](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Personas%20.pdf)
+7. [High-level roadmap](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20-%20High-level%20roadmap.pptx)
+8. [Business case template](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/May%202019_Street%20Manager_business%20case%20template.docx)
+9. [Delivery and Roll-out plan](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Delivery%20and%20roll-out%20plan.xlsx)
+10. [RACI](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/RACI%20.pdf)
 
 ### Deliver & Measure
 
@@ -77,6 +77,7 @@ Welcome to the Business Change page! Here you will find all the support material
 3. Street Manager Knowledge base articles and how-to guides for users
 
 ### Scope and UI Navigation webinar
+
 1. Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording
 2. Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ
 
