@@ -48,23 +48,23 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### General Guidance
 
-1. DfT Street Manager Business Change strategy
-2. Transition guidance part 1: Adoption options (UI, API and combination)
-3. Transition guidance part 2: Public beta
-4. Transition rules
-5. Street Manager transition case studies
+1. [DfT Street Manager Business Change strategy](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20Business%20Change%20strategy%20-%20external%20(May%2019)%20(1).pdf)
+2. [Transition guidance part 1: Adoption options (UI, API and combination)](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI%20and%20API%20Information%20.pdf)
+3. [Transition guidance part 2: Public beta](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Public%20Beta%20Guidance.pdf)
+4. [Transition rules](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Transition%20rules%20v2%2031.10.docx)
+5. [Street Manager transition case studies](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20transition%20case%20studies.pdf)
 
 ### Specific Topics
 
-1. Transition guidance for Contractors
-2. Street Manager roles
-3. Transition Checklist for API Users
-4. Transition Checklist for API/UI Combination Users
-5. Transition Checklist for UI Users
+1. [Transition guidance for Contractors](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20-%20Guidance%20for%20contractors.%20Jan2020.pdf)
+2. [Street Manager roles](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Roles%20and%20responsibilities%20(1).pdf)
+3. [Transition Checklist for API Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API_readiness_checklist.pdf)
+4. [Transition Checklist for API/UI Combination Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI_API_combination_readiness_checklist.pdf)
+5. [Transition Checklist for UI Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI_readiness_checklist.pdf)
 
 ### Transition Tracker
 
-1. TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER
+1. [TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Transition-live-tracker(2).xlsx)
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -72,28 +72,29 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### General
 
-1. Training pack - August 2019
-2. Street Manager Business Change app guidance
-3. Street Manager Knowledge base articles and how-to guides for users
+1. [Training pack - August 2019](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Training%20Pack%20-%20August%20update.pptx)
+2. [Street Manager Business Change app guidance](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20Business%20Change%20app%20guidance.pdf)
+3. [Street Manager Knowledge base articles and how-to guides for users](https://streetmanager.atlassian.net/servicedesk/customer/portal/1)
 
 ### Scope and UI Navigation webinar
 
-1. Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording
-2. Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ
+1. [Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording](https://clarasys.zoom.us/recording/play/W4xPXuQILuEwts898002XqF0Hm8Ndga4BtpgN0m-sGNrxE0PgDak9UHjhW7zV08F?continueMode=true)
+2. [Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Scope%20FAQ.xlsx)
 
 ### API webinar
 
-1. Street Manager Webinar - Dec 2019 - API: Recording
-2. Street Manager Webinar - Dec 2019 - API: slides
-3. Street Manager Webinar - Dec 2019 - API: FAQ
+1. [Street Manager Webinar - Dec 2019 - API: Recording](https://clarasys.zoom.us/recording/share/q7jzQ4EHt80d3CBpmZ2-MOADJsyyzZvsS7SB9YrJbWuwIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - API: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API%20Webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - API: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API%20FAQ.xlsx)
 
 ### Change webinar
 
-1. Street Manager Webinar - Dec 2019 - Business change: Recording
-2. Street Manager Webinar - Dec 2019 - Business change: slides
-3. Street Manager Webinar - Dec 2019 - Business change: FAQ
+1. [Street Manager Webinar - Dec 2019 - Business change: Recording](https://clarasys.zoom.us/recording/share/bq4ag52lzvomIDiM63SmJfoxnSGWpASApqRhgqZKkIOwIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - Business change: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Change%20webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - Business change: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Change%20FAQ.xlsx)
 
 ### Contractors webinar
 
-1. Street Manager Webinar - Dec 2019 - Contractors: Recording
-2. Street Manager Webinar - Dec 2019 - Contractors: slides
+1. [Street Manager Webinar - Dec 2019 - Contractors: Recording](https://clarasys.zoom.us/recording/share/4imgC_ukcJcivvf187NfDWxam972QNpx0gzkonogYe6wIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - Contractors: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Contractor%20webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - Contractors: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Contractor%20FAQ.xlsx)
