@@ -10,6 +10,8 @@ status: publish
 
 Welcome to the Business Change page! Here you will find all the support materials your organisation needs to manage the transition over to Street Manager. The Documentation section of this page lists all of the useful templates/documents you will need to carry out transition activities. The Transition Guidance section includes an array of informative documents on different transition topics. The Other supporting materials section includes the recordings, FAQs and slides from the webinar sessions the Business Change Team facilitated during Public Beta.
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
 ## Documentation
 
 ### Overview
@@ -19,43 +21,78 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### Plan
 
+1. Business Change Playbook Part 1 (Plan)
+2. Checklist with and recommended order of activities
+3. Impact assessment
+4. Organisation Readiness Assessment
+5. Stakeholder analysis
+6. Personas
+7. High-level roadmap
+8. Business case template
+9. Delivery and Roll-out plan
+10. RACI
+
 ### Deliver & Measure
+
+1. Business Change Playbook Part 2 (Deliver) & 3 (Measure)
+2. Change management strategy
+3. Communications approach
+4. Training approach
+5. Engagement & training needs assessment and progress tracker
+6. Benefits and progress tracker
+7. Risk, issues, actions and decisions register
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Transition Guidance
 
-General Guidance
-DfT Street Manager Business Change strategy
-Transition guidance part 1: Adoption options (UI, API and combination)
-Transition guidance part 2: Public beta
-Transition rules
-Street Manager transition case studies
-Specific Topics
-Transition guidance for Contractors
-Street Manager roles
-Transition Checklist for API Users
-Transition Checklist for API/UI Combination Users
-Transition Checklist for UI Users
-Transition Tracker
-TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER
+### General Guidance
 
+1. DfT Street Manager Business Change strategy
+2. Transition guidance part 1: Adoption options (UI, API and combination)
+3. Transition guidance part 2: Public beta
+4. Transition rules
+5. Street Manager transition case studies
 
+### Specific Topics
 
-Other supporting documentation
-General
-Training pack - August 2019
-Street Manager Business Change app guidance
-Street Manager Knowledge base articles and how-to guides for users
-Scope and UI Navigation webinar
-Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording
-Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ
-API webinar
-Street Manager Webinar - Dec 2019 - API: Recording
-Street Manager Webinar - Dec 2019 - API: slides
-Street Manager Webinar - Dec 2019 - API: FAQ
-Change webinar
-Street Manager Webinar - Dec 2019 - Business change: Recording
-Street Manager Webinar - Dec 2019 - Business change: slides
-Street Manager Webinar - Dec 2019 - Business change: FAQ
-Contractors webinar
-Street Manager Webinar - Dec 2019 - Contractors: Recording
-Street Manager Webinar - Dec 2019 - Contractors: slides
+1. Transition guidance for Contractors
+2. Street Manager roles
+3. Transition Checklist for API Users
+4. Transition Checklist for API/UI Combination Users
+5. Transition Checklist for UI Users
+
+### Transition Tracker
+
+1. TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
+
+## Other supporting documentation
+
+### General
+
+1. Training pack - August 2019
+2. Street Manager Business Change app guidance
+3. Street Manager Knowledge base articles and how-to guides for users
+
+### Scope and UI Navigation webinar
+1. Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording
+2. Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ
+
+### API webinar
+
+1. Street Manager Webinar - Dec 2019 - API: Recording
+2. Street Manager Webinar - Dec 2019 - API: slides
+3. Street Manager Webinar - Dec 2019 - API: FAQ
+
+### Change webinar
+
+1. Street Manager Webinar - Dec 2019 - Business change: Recording
+2. Street Manager Webinar - Dec 2019 - Business change: slides
+3. Street Manager Webinar - Dec 2019 - Business change: FAQ
+
+### Contractors webinar
+
+1. Street Manager Webinar - Dec 2019 - Contractors: Recording
+2. Street Manager Webinar - Dec 2019 - Contractors: slides
