@@ -72,28 +72,29 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### General
 
-1. Training pack - August 2019
-2. Street Manager Business Change app guidance
-3. Street Manager Knowledge base articles and how-to guides for users
+1. [Training pack - August 2019](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Training%20Pack%20-%20August%20update.pptx)
+2. [Street Manager Business Change app guidance](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20Business%20Change%20app%20guidance.pdf)
+3. [Street Manager Knowledge base articles and how-to guides for users](https://streetmanager.atlassian.net/servicedesk/customer/portal/1)
 
 ### Scope and UI Navigation webinar
 
-1. Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording
-2. Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ
+1. [Street Manager Webinar - Dec 2019 - Scope and UI navigation: Recording](https://clarasys.zoom.us/recording/play/W4xPXuQILuEwts898002XqF0Hm8Ndga4BtpgN0m-sGNrxE0PgDak9UHjhW7zV08F?continueMode=true)
+2. [Street Manager Webinar - Dec 2019 - Scope and UI navigation: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Scope%20FAQ.xlsx)
 
 ### API webinar
 
-1. Street Manager Webinar - Dec 2019 - API: Recording
-2. Street Manager Webinar - Dec 2019 - API: slides
-3. Street Manager Webinar - Dec 2019 - API: FAQ
+1. [Street Manager Webinar - Dec 2019 - API: Recording](https://clarasys.zoom.us/recording/share/q7jzQ4EHt80d3CBpmZ2-MOADJsyyzZvsS7SB9YrJbWuwIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - API: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API%20Webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - API: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API%20FAQ.xlsx)
 
 ### Change webinar
 
-1. Street Manager Webinar - Dec 2019 - Business change: Recording
-2. Street Manager Webinar - Dec 2019 - Business change: slides
-3. Street Manager Webinar - Dec 2019 - Business change: FAQ
+1. [Street Manager Webinar - Dec 2019 - Business change: Recording](https://clarasys.zoom.us/recording/share/bq4ag52lzvomIDiM63SmJfoxnSGWpASApqRhgqZKkIOwIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - Business change: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Change%20webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - Business change: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Change%20FAQ.xlsx)
 
 ### Contractors webinar
 
-1. Street Manager Webinar - Dec 2019 - Contractors: Recording
-2. Street Manager Webinar - Dec 2019 - Contractors: slides
+1. [Street Manager Webinar - Dec 2019 - Contractors: Recording](https://clarasys.zoom.us/recording/share/4imgC_ukcJcivvf187NfDWxam972QNpx0gzkonogYe6wIumekTziMw)
+2. [Street Manager Webinar - Dec 2019 - Contractors: slides](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Contractor%20webinar%20slides.pdf)
+3. [Street Manager Webinar - Dec 2019 - Contractors: FAQ](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Contractor%20FAQ.xlsx)
