@@ -48,23 +48,23 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### General Guidance
 
-1. DfT Street Manager Business Change strategy
-2. Transition guidance part 1: Adoption options (UI, API and combination)
-3. Transition guidance part 2: Public beta
-4. Transition rules
-5. Street Manager transition case studies
+1. [DfT Street Manager Business Change strategy](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20Business%20Change%20strategy%20-%20external%20(May%2019)%20(1).pdf)
+2. [Transition guidance part 1: Adoption options (UI, API and combination)](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI%20and%20API%20Information%20.pdf)
+3. [Transition guidance part 2: Public beta](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Public%20Beta%20Guidance.pdf)
+4. [Transition rules](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Transition%20rules%20v2%2031.10.docx)
+5. [Street Manager transition case studies](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20transition%20case%20studies.pdf)
 
 ### Specific Topics
 
-1. Transition guidance for Contractors
-2. Street Manager roles
-3. Transition Checklist for API Users
-4. Transition Checklist for API/UI Combination Users
-5. Transition Checklist for UI Users
+1. [Transition guidance for Contractors](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Street%20Manager%20-%20Guidance%20for%20contractors.%20Jan2020.pdf)
+2. [Street Manager roles](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Roles%20and%20responsibilities%20(1).pdf)
+3. [Transition Checklist for API Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/API_readiness_checklist.pdf)
+4. [Transition Checklist for API/UI Combination Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI_API_combination_readiness_checklist.pdf)
+5. [Transition Checklist for UI Users](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/UI_readiness_checklist.pdf)
 
 ### Transition Tracker
 
-1. TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER
+1. [TRANSITION LIVE TRACKER - SEE WHO IS ON STREET MANAGER](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Transition-live-tracker(2).xlsx)
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
