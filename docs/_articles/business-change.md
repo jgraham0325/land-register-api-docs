@@ -34,13 +34,13 @@ Welcome to the Business Change page! Here you will find all the support material
 
 ### Deliver & Measure
 
-1. Business Change Playbook Part 2 (Deliver) & 3 (Measure)
-2. Change management strategy
-3. Communications approach
-4. Training approach
-5. Engagement & training needs assessment and progress tracker
-6. Benefits and progress tracker
-7. Risk, issues, actions and decisions register
+1. [Business Change Playbook Part 2 (Deliver) & 3 (Measure)](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Playbook%20Part%202%20&%203.pdf)
+2. [Change management strategy](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Playbook%20Street%20Manager%20Change%20management%20strategy.pptx)
+3. [Communications approach](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Comms%20Approach.pptx)
+4. [Training approach](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Training%20approach.pptx)
+5. [Engagement & training needs assessment and progress tracker](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Engagement%20and%20training%20tracker.xlsx)
+6. [Benefits and progress tracker](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Benefits%20Tracker.xlsx)
+7. [Risk, issues, actions and decisions register](https://departmentfortransport.github.io/street-manager-docs/assets/files/business-change/Risks,%20issues%20and%20actions%20register.xlsx)
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
