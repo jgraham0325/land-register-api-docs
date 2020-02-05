@@ -29,7 +29,7 @@ status: publish
 
 <!-- ---------------------------------------------------------
 --------------------------------------------------------------
-To convert from Word doc to HTML, use https://wordhtml.com/ -> click Clean.
+To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
 Copy glossary table and paste the HTML below.
 
 **** PASTE BELOW THIS SECTION **** 
