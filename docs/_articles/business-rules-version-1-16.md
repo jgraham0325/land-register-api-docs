@@ -788,8 +788,21 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 ### 7.6. Exporting records
 
 * Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
+    * The export page is limited show files from the user's organisation or, in the case of contractor users, the assumed organisation.
     * All users in the organisation may view and download all files from the CSV Exports page.
-    * xxxxxxx
+    * Each user may have one (1) export in the 'queued' status.
+    * The export file statuses are as follows:
+
+| Status | Status description |
+|:-------|:-------------------| 
+| Queued | Awaiting processing |
+| In progress | CSV in process of being generated |
+| Ready  | File may be downloaded |
+| Failed | An error has occurred |
+
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Export%20file%20flow.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Export%20file%20flow.jpg" alt="Street Manager - Export file process" width="100%" /></a>
+A diagram of export file process</div>
+
 * Export functionality is available on the following list pages:
     * Permit applications
     * Change requests (coming soon)
