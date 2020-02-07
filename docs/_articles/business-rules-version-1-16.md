@@ -790,7 +790,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 * Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
     * The export page is limited show files from the user's organisation or, in the case of contractor users, the assumed organisation.
     * All users in the organisation may view and download all files from the CSV Exports page.
-    * Each user may have one (1) export in the 'queued' status.
+    * Each user may have one (1) export in the 'queued' status. Subsequent export requests will be rejected.
     * The export file statuses are as follows:
 
 | Status | Status description |
