@@ -26,6 +26,7 @@ status: publish
 <!-- ==================================================== -->
 ## Table of contents
 <!-- ==================================================== -->
+- [Changes](#changes)<br />
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
@@ -101,7 +102,7 @@ status: publish
 15. [Historical works](#15-historical-works)<br />
 16. [Non-notifiable works](#16-non-notifiable-works)<br />
 17. [HS2](#17-hs2)<br />
-<!-- [Changes](#changes)<br /> -->
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -1297,7 +1298,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 7.6. Exporting records | Updated to include more rules about the CSV Export page |
+| 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram |
 | 1.1.    | Updated |
 | 1.2.    | Updated |
 
