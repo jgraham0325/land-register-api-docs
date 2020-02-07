@@ -789,6 +789,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 * Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
     * All users in the organisation may view and download all files from the CSV Exports page.
+    * xxxxxxx
 * Export functionality is available on the following list pages:
     * Permit applications
     * Change requests (coming soon)
@@ -1283,7 +1284,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 1.      | Added |
+| 7.6. Exporting records | Updated to include more rules about the CSV Export page |
 | 1.1.    | Updated |
 | 1.2.    | Updated |
 
