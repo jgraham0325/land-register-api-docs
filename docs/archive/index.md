@@ -95,4 +95,10 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2020 - 17
     </a>
   </li>
+  <li>
+    <a class="govuk-link" href="{{ site.baseurl 
+}}/assets/files/archive/Street%20Manager%20Newsletter%2018_10%20February%202020.pdf">
+      Street Manager Newsletter - 2020 - 18
+    </a>
+  </li>
 </ul>
