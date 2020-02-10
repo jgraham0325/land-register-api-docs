@@ -1287,6 +1287,59 @@ A diagram of S81 statuses</div>
 
 * HS2 functionality will only be available to HAs marked as HS2-applicable.
 
+### 17.1. Act limits
+
+* Geographical limits of the High Speed Rail Act are visible in the Map application for HS2 promoters and HS2 impacted highways authorities. 
+* Identifying a works as in-act limits or outside act limits will determine whether the application requires consultation or consent from the highways authority 
+
+### 17.2. HS2 applications
+
+* HS2 promoters have the ability to submit both highways and street work applications. 
+* Additional fields are available for HS2 promoters when submitting applications to capture additional information relevant to HS2 works. 
+* HS2 promoter and HS2-impacted highways authorities have additional filters to manage HS2 specific works available in the Applications and Works lists.
+
+### 17.2.1. Highway applications
+
+* Highways applications submitted have a Works Category of HS2 (Highway)
+* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application. 
+* If protective provisions are selected (other than ‘none applicable’), then the Highways Authority will need to consent to the application, and grant or refuse as applicable.
+* Application Out of Act limits must be granted or refused by highways authority. Out of act limits applications will deem after 28 days (or after 42 days for TfL).
+* Designations and Conditions are not applicable for Highways applications and are not available in the application journey
+* A ‘requested response date’ can be provided by the promoter to indicate when the highways authority should provide consent/consultation by
+* The highways authority cannot impose any changes on the HS2 promoter for highways works, or apply any lane rental charges or permit discounts
+* Additional works location area options are available for HS2 applications
+    * Parking place
+    * Bus stop or stand
+    * Cycle hire docking station
+    * Taxi rank
+
+
+### 17.2.2. Street works applications
+
+* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application. 
+* Designations and Conditions are not applicable for In-Act limit street works applications
+* The highways authority cannot impose any changes on the HS2 promoter for street  works within act limits, or apply any lane rental charges or permit discounts
+* Additional works location area options are available for HS2 Applications
+    * Parking place
+    * Bus stop or stand
+    * Cycle hire docking station
+    * Taxi rank
+
+
+### 17.3. Acknowledge applications 
+
+* Highways authority can Acknowledge receipt of Highways or Street works within act limits, but cannot grant or refuse the application. 
+
+
+### 17.4 Auto-grant of change requests
+
+* Change requests for all highways applications and street works in act limits will be automatically applied.
+
+
+### 17.5 Notifications 
+
+* Two email addresses can be captured in the application journey which will trigger the sending of a Gov Notify email to the provided recipients.
+
 
 
 
@@ -1299,7 +1352,7 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
-| 1.1.    | Updated |
+| 17.    | All HS2 sections are new |
 | 1.2.    | Updated |
 
 
