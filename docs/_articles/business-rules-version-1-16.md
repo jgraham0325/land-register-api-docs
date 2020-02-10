@@ -806,7 +806,7 @@ A diagram of export file process</div>
 
 * Export functionality is available on the following list pages:
     * Permit applications
-    * Change requests (coming soon)
+    * Change requests
     * Works records
     * PAAs to progress
     * Forward plans
@@ -814,7 +814,7 @@ A diagram of export file process</div>
     * Inspections
     * Registered reinstatements
     * Comments (coming soon)
-    * Section 81s (coming soon)
+    * Section 81s
 
 
 
@@ -1298,7 +1298,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram |
+| 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
 | 1.1.    | Updated |
 | 1.2.    | Updated |
 
