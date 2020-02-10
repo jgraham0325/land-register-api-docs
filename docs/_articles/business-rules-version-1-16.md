@@ -1283,10 +1283,6 @@ A diagram of S81 statuses</div>
 ## 17. HS2
 <!-- ==================================================== -->
 
-(work in progress)
-
-* HS2 functionality will only be available to HAs marked as HS2-applicable.
-
 ### 17.1. Act limits
 
 * Geographical limits of the High Speed Rail Act are visible in the Map application for HS2 promoters and HS2 impacted highways authorities. 
