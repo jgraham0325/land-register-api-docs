@@ -1334,7 +1334,7 @@ A diagram of S81 statuses</div>
 
 ### 17.5 Notifications 
 
-* Two email addresses can be captured in the application journey which will trigger the sending of a Gov Notify email to the provided recipients.
+* Two email addresses can be captured in the application journey which will result in the sending of an email to the provided recipients.
 
 
 
