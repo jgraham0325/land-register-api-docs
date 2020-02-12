@@ -24,6 +24,7 @@ As of Version 1.12, this document details all the legally required API functions
   <li><a class="govuk-link" href="#timing">Timing</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
+  <li><a class="govuk-link" href="#integration-guide">Integration guide</a></li>
   <li><a class="govuk-link" href="#testing">Testing</a></li>
   <li><a class="govuk-link" href="#security">Security</a></li>
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
@@ -407,6 +408,93 @@ The following are examples of what we consider to be breaking and non-breaking c
 When the first participant organisations are approaching production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX environment alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to minimise them, the occasional breaking change may be required in order to release critical fixes.
 {: .govuk-body}
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+## Integration guide
+{: .govuk-heading-l #integration-guide}
+
+This section is a brief guide on how to design your API integration with Street Manager with some best practises and guidance.
+{: .govuk-body}
+
+### Integration for an organisations line of business application
+{: .govuk-heading-s}
+
+An example of this would be a new or existing line of business application used by many users in an organisation involved in street works. The application could have many functions specific to the organisation and complex case management workflows, but also need to submit and retrieve data about street works to Street Manager. Many users in the organisation use the application to interact with their organisations street works but do not necessarily have UI accounts to
+{: .govuk-body}
+
+* Diagram of integration TODO
+
+In this case the application will need an API account created for the service user (or two if acting as both an HA and Promoter). This account will be for API use only, assigned with permissions appropriate for all organisation users and should identifiable as a service account.
+{: .govuk-body}
+
+### Integration for software acting for a single user
+{: .govuk-heading-s}
+
+An example of this would be an application used to submit or retrieve information on works relating to a single user calling the Street Manager API synchronously, such as a mobile application used by an  inspector to view permit details and submit inspection results.
+{: .govuk-body}
+
+![single user diagram](images/diagram-single-user-application.png)
+
+The users for this application should be setup as both UI/API users. These accounts should not be shared between users, so actions carried out by the user can be traced back to individuals.
+{: .govuk-body}
+
+### Integration for extracting reporting data on street works
+{: .govuk-heading-s}
+
+An example of this would be an application used by an organisation to extract specific street work data for organisation specific reporting. This could be for automating operational reports that are generated on a scheduled basis.
+{: .govuk-body}
+
+* Diagram of integration TODO
+
+This account should use an individual API account which only allow it to retrieve necessary data for reporting, as some data export calls are limited to single concurrent calls per user.
+{: .govuk-body}
+
+### Authentication best practises
+{: .govuk-heading-s}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    You do not need to authenticate each time you make an API call. The same authentication token should be used for multiple API calls from the same use until it expires to avoid unnecessarily authentication calls.
+  </li>
+  <li>
+    The refresh token given in the <code>/authenticate</code> endpoint has a much longer expiry than the id token, you should store and use it to get a new id token when it expires via the Party API <code>/party/refresh</code> endpoint. This avoids needing to pass your credentials unnecessarily.
+  </li>
+  <li>
+    Logging in again will not invalidate a previous token. To explicitly invalidate all a users tokens you must call the Party API <code>/party/logout</code> endpoint.
+  </li>
+  <li>
+    There are system limits on the number of concurrent authentication requests, so you should have exception handling to retry authentication in case the service is busy.
+  </li>
+  <li>
+    Do not use the same API credentials for multiple systems, as makes calls from different systems appear to come from the same source and risks multiple systems going down if the shared user is disabled.
+  </li>
+  <li>
+    Update your passwords for API accounts on a sensible schedule.
+  </li>
+  <li>
+    Do not store or send passwords or tokens in plain text.
+  </li>
+  <li>
+    See the <a href="#jwt">JWT</a> section for full details on authentication.
+  </li>
+</ol>
+
+
+### Rate limiting and error handling best practises
+{: .govuk-heading-s}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    Street Manager uses rate limiting for denial of service protection, see <a href="#rate-limiting">rate limiting</a> section for details.
+  </li>
+  <li>
+    Employ a sensible retry policy for your API call failures to avoid cascading failures, where you repeatedly retry many failed calls at the same time continually triggering rate limiting <code>405</code> errors. Use a sensible retry count with delays between calls.
+  </li>
+  <li>
+    <code>GET</code> calls can be retried without side effects, but repeating <code>POST</code> and <code>PUT</code> calls could cause duplicate data. Your error handling logic on important submit/update calls should check error responses to ensure the call did not complete a transaction.
+  </li>
+</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
