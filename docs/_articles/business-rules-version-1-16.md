@@ -12,7 +12,7 @@ status: publish
 
 <span class="govuk-body-l" style="float:left">Version 1.16 (Released to sandbox 20/02/20)</span>
 
-<span style="float:right;text-align:right;">[Street Manager Glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html)<br />
+<span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
@@ -1349,7 +1349,7 @@ A diagram of S81 statuses</div>
 |:--------|:---------------|
 | 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
 | 17.    | All HS2 sections are new |
-| 1.2.    | Updated |
+
 
 
 
