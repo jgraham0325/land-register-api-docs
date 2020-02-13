@@ -248,7 +248,7 @@ works.
 {: .govuk-body}
 
 ### Getting data from Street Manager
-{: .govuk-heading-m}
+{: .govuk-heading-m #getting-data-from-street-manager}
 
 External systems integrating with Street Manager need to retrieve data
 from the service to give their users the most up-to-date view on what is
@@ -423,9 +423,15 @@ This section is a brief guide on how to design your API integration with Street 
 An example of this would be a new or existing line of business application used by many users in an organisation involved in street works. The application could have many functions specific to the organisation and complex case management workflows, but also need to submit and retrieve data about street works to Street Manager. Many users in the organisation use the application to interact with their organisations street works but do not necessarily have UI accounts to
 {: .govuk-body}
 
-* Diagram of integration TODO
+![diagram line of business application](images/diagram-line-of-business-application.png)
 
 In this case the application will need an API account created for the service user (or two if acting as both an HA and Promoter). This account will be for API use only, assigned with permissions appropriate for all organisation users and should identifiable as a service account.
+{: .govuk-body}
+
+Applications should use a synchronous approach for submitting and updating items, calling the API when a user makes a significant change that would affect a work, as the user may miss an error returned by API (validation/duplicate data etc.) if updates are pushed onto a backround queue.
+{: .govuk-body}
+
+If notifcations for changes to items (e.g. Permit rejections/comments) to organisation users are required, the application should monitor Street Manager for updates. See the [Getting data from Street Manager](#getting-data-from-street-manager) section for details on this.
 {: .govuk-body}
 
 ### Integration for software acting for a single user
@@ -434,7 +440,7 @@ In this case the application will need an API account created for the service us
 An example of this would be an application used to submit or retrieve information on works relating to a single user calling the Street Manager API synchronously, such as a mobile application used by an  inspector to view permit details and submit inspection results.
 {: .govuk-body}
 
-![single user diagram](images/diagram-single-user-application.png)
+![diagram single user application](images/diagram-single-user-application.png)
 
 The users for this application should be setup as both UI/API users. These accounts should not be shared between users, so actions carried out by the user can be traced back to individuals.
 {: .govuk-body}
@@ -445,7 +451,8 @@ The users for this application should be setup as both UI/API users. These accou
 An example of this would be an application used by an organisation to extract specific street work data for organisation specific reporting. This could be for automating operational reports that are generated on a scheduled basis.
 {: .govuk-body}
 
-* Diagram of integration TODO
+![diagram reporting application](images/diagram-re
+porting-application.png)
 
 This account should use an individual API account which only allow it to retrieve necessary data for reporting, as some data export calls are limited to single concurrent calls per user.
 {: .govuk-body}
@@ -473,7 +480,7 @@ This account should use an individual API account which only allow it to retriev
     Update your passwords for API accounts on a sensible schedule.
   </li>
   <li>
-    Do not store or send passwords or tokens in plain text.
+    Do not store or send passwords and tokens in plain text.
   </li>
   <li>
     See the <a href="#jwt">JWT</a> section for full details on authentication.
@@ -489,7 +496,7 @@ This account should use an individual API account which only allow it to retriev
     Street Manager uses rate limiting for denial of service protection, see <a href="#rate-limiting">rate limiting</a> section for details.
   </li>
   <li>
-    Employ a sensible retry policy for your API call failures to avoid cascading failures, where you repeatedly retry many failed calls at the same time continually triggering rate limiting <code>405</code> errors. Use a sensible retry count with delays between calls.
+    Employ a sensible retry policy for your API call failures to avoid cascading failures, where you repeatedly retry many failed calls at the same time continually triggering rate limiting <code>429</code> errors. Use a sensible retry count with delays between calls.
   </li>
   <li>
     <code>GET</code> calls can be retried without side effects, but repeating <code>POST</code> and <code>PUT</code> calls could cause duplicate data. Your error handling logic on important submit/update calls should check error responses to ensure the call did not complete a transaction.
@@ -1064,8 +1071,8 @@ to your organization.
 {: .govuk-heading-m}
 
 To protect the system from denial of service attacks, repeated calls
-made in a short period of time from a single IP source will receive 405
-status responses. If you are receiving 405 responses ensure you are not
+made in a short period of time from a single IP source will receive 429
+status responses. If you are receiving 429 responses ensure you are not
 sending an excessive number of calls.
 {: .govuk-body}
 
