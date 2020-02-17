@@ -465,7 +465,7 @@ This account should use an individual API service account with only permissions 
     You should not re-authenticate each time you make an API call. The same authentication token should be used for multiple API calls until it expires.
   </li>
   <li>
-    The refresh token given in the <code>/authenticate</code> endpoint has a much longer expiry than the id token, you should store and use it to get a new id token when it expires via the Party API <code>/party/refresh</code> endpoint. This avoids needing to re-authenticate with credentials and reduces unnecessary load on the systems.
+    The refresh token given in the <code>/authenticate</code> endpoint has a much longer expiry than the id token, you should store and use it to get a new id token when it expires via the Party API <code>/party/refresh</code> endpoint. This avoids needing to re-authenticate with credentials, useful if using user supplied credentials, and reduces unnecessary load on the systems.
   </li>
   <li>
     Logging in again will not invalidate a previous token. To explicitly invalidate all a users tokens you must call the Party API <code>/party/logout</code> endpoint.
