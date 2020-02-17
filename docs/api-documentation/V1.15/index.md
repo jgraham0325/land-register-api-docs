@@ -425,7 +425,7 @@ An example of this would be a new or existing line of business application used 
 
 ![diagram line of business application](images/diagram-line-of-business-application.png)
 
-In this case the application will need an API account created for the service user (or two if acting as both an HA and Promoter). This account will be for API use only, assigned with permissions appropriate for all organisation users and should identifiable as a service account.
+In this case the application will need an API account created for the service user (or two if acting as both an HA and Promoter). This account will be for API use only, assigned with permissions appropriate for all organisation users and should identifiable as a service account. Internal system user identifiers should be passed via the `internal_user_identifier` and `internal_user_name` in POST/PUT requests to allow Street Manager to record and display who performed actions submitted from your system.
 {: .govuk-body}
 
 Applications should use a synchronous approach for submitting and updating items, calling the API when a user makes a significant change that would affect a work, as the user may miss an error returned by API (validation/duplicate data etc.) if updates are pushed onto a backround queue.
@@ -454,7 +454,7 @@ An example of this would be an application used by an organisation to extract sp
 ![diagram reporting application](images/diagram-re
 porting-application.png)
 
-This account should use an individual API account which only allow it to retrieve necessary data for reporting, as some data export calls are limited to single concurrent calls per user.
+This account should use an individual API service account with only permissions to retrieve necessary data for reporting, not a shared account used by other systems. This ensures that the account cannot accidentally submit information or affect your other systems integration.
 {: .govuk-body}
 
 ### Authentication best practises
@@ -462,16 +462,16 @@ This account should use an individual API account which only allow it to retriev
 
 <ol class="govuk-list govuk-list--bullet">
   <li>
-    You do not need to authenticate each time you make an API call. The same authentication token should be used for multiple API calls from the same use until it expires to avoid unnecessarily authentication calls.
+    You should not re-authenticate each time you make an API call. The same authentication token should be used for multiple API calls until it expires.
   </li>
   <li>
-    The refresh token given in the <code>/authenticate</code> endpoint has a much longer expiry than the id token, you should store and use it to get a new id token when it expires via the Party API <code>/party/refresh</code> endpoint. This avoids needing to pass your credentials unnecessarily.
+    The refresh token given in the <code>/authenticate</code> endpoint has a much longer expiry than the id token, you should store and use it to get a new id token when it expires via the Party API <code>/party/refresh</code> endpoint. This avoids needing to re-authenticate with credentials and reduces unnecessary load on the systems.
   </li>
   <li>
     Logging in again will not invalidate a previous token. To explicitly invalidate all a users tokens you must call the Party API <code>/party/logout</code> endpoint.
   </li>
   <li>
-    There are system limits on the number of concurrent authentication requests, so you should have exception handling to retry authentication in case the service is busy.
+    There are system limits on the number of concurrent authentication requests, so you should have exception handling to retry authentication using a sensible exponential back-off algorithm in case the service is busy.
   </li>
   <li>
     Do not use the same API credentials for multiple systems, as makes calls from different systems appear to come from the same source and risks multiple systems going down if the shared user is disabled.
@@ -496,10 +496,10 @@ This account should use an individual API account which only allow it to retriev
     Street Manager uses rate limiting for denial of service protection, see <a href="#rate-limiting">rate limiting</a> section for details.
   </li>
   <li>
-    Employ a sensible retry policy for your API call failures to avoid cascading failures, where you repeatedly retry many failed calls at the same time continually triggering rate limiting <code>429</code> errors. Use a sensible retry count with delays between calls.
+    Employ a sensible retry policy for your API call failures to avoid cascading failures, where you repeatedly retry many failed calls at the same time continually triggering rate limiting <code>429</code> errors. Use a sensible exponential back-off algorithm in case the service is busy.
   </li>
   <li>
-    <code>GET</code> calls can be retried without side effects, but repeating <code>POST</code> and <code>PUT</code> calls could cause duplicate data. Your error handling logic on important submit/update calls should check error responses to ensure the call did not complete a transaction.
+    <code>GET</code> calls can be retried without side effects within rate limit constraints, but repeating <code>POST</code> and <code>PUT</code> calls could cause duplicate data. Your error handling logic on important submit/update calls should check error responses to ensure the call did not complete a transaction.
   </li>
 </ol>
 
