@@ -1587,6 +1587,10 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
+  <li><strong>work_start_date_from</strong>: Date filtering by actual start date if available, otherwise filter permits by proposed start date</li>
+  <li><strong>work_start_date_to</strong>: Date filtering by actual start date if available, otherwise filter permits by proposed start date</li>
+  <li><strong>work_end_date_from</strong>: Date filtering by actual end date if available, otherwise filter permits by proposed end date</li>
+  <li><strong>work_end_date_to</strong>: Date filtering by actual end date if available, otherwise filter permits by proposed end date</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
   <li><strong>is_traffic_sensitive</strong>: When true this will return permits where a traffic sensitive ASD has been selected</li>
   <li><strong>is_high_impact_traffic_management</strong>: When true this will return permits with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
@@ -1667,6 +1671,10 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>proposed_start_date</strong>: Date range filtering based on the proposed forward plan dates</li>
   <li><strong>proposed_end_date</strong>: Date range filtering based on the proposed forward plan dates</li>
+  <li><strong>work_start_date_from</strong>: Date filtering based on the proposed forward plan start date</li>
+  <li><strong>work_start_date_to</strong>: Date filtering based on the proposed forward plan start date</li>
+  <li><strong>work_end_date_from</strong>: Date filtering based on the proposed forward plan end date</li>
+  <li><strong>work_end_date_to</strong>: Date filtering based on the proposed forward plan end date</li>
   <li><strong>query</strong>: Search field for work reference number, permit reference number or street (partial match)</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
@@ -2506,6 +2514,23 @@ The Data Export API will be updated to export other data, including forward plan
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 1.16 (20/02/2019):
+{: .govuk-heading-s}
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /permits</code> and <code>GET /forward-plans</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+</ol>
+
+Data Export API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>POST /permits/csv</code> and <code>POST /forward-plans/csv</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+</ol>
 
 Version 1.15 (06/02/2019):
 {: .govuk-heading-s}
