@@ -1588,6 +1588,10 @@ Query params:
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>hs2_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. This will return all HS2 works.</li>
+  <li><strong>consultation_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 consultation works.</li>
+  <li><strong>consent_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 consent works</li>
+  <li><strong>unacknowledged_by_ha_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 applications that have not yet been acknowledged by a HA.</li>
   <li><strong>is_traffic_sensitive</strong>: When true this will return permits where a traffic sensitive ASD has been selected</li>
   <li><strong>is_high_impact_traffic_management</strong>: When true this will return permits with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
   <li><strong>has_no_final_registration</strong>: When true this will return permits that have not yet submitted their final reinstatement</li>
@@ -2506,6 +2510,21 @@ The Data Export API will be updated to export other data, including forward plan
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 1.16 (13/02/2019):
+{: .govuk-heading-s}
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+The <code>GET /permits</code> endpoint has been extended to accept the following parameters:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+     <li><code>hs2_works_only</code></li>
+     <li><code>consultation_works_only</code></li>
+     <li><code>consent_works_only</code></li>
+     <li><code>unacknowledged_by_ha_only</code></li>
+</ol>
 
 Version 1.15 (06/02/2019):
 {: .govuk-heading-s}
