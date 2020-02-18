@@ -1340,7 +1340,8 @@ A diagram of S81 statuses</div>
 
 
 
-
+<br /><br /><br />
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" /><br /><br />
 
 <!-- ==================================================== -->
 ## Changes
@@ -1350,6 +1351,7 @@ A diagram of S81 statuses</div>
 |:--------|:---------------|
 | 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
 | 17.    | All HS2 sections are new |
+| Glossary | Incorporated the glossary into the business rules page rather than a separate page |
 
 
 
