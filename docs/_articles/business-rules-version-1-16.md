@@ -1350,7 +1350,7 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
-| 17.    | All HS2 sections are new |
+| 17. HS2 | All HS2 sections are new |
 | Glossary | Incorporated the glossary into the business rules page rather than a separate page |
 | Header | Added link to the user roles & permissions table PDF |
 
