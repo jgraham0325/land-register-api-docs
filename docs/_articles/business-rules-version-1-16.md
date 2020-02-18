@@ -830,7 +830,7 @@ A diagram of export file process</div>
     * The maximum number of USRNs per geographical area is 10,000.
 * The maximum number of geographical areas is 100.
 * The geographical area name is derived from the csv file name (without the extension).
-* The area name and list of USRNs may be changed by uploading a replacement csv file.
+<!-- * The area name and list of USRNs may be changed by uploading a replacement csv file. -->
 
 <!--
 ### 7.7.2. Viewing geographical areas
@@ -1352,6 +1352,7 @@ A diagram of S81 statuses</div>
 | 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
 | 17.    | All HS2 sections are new |
 | Glossary | Incorporated the glossary into the business rules page rather than a separate page |
+| Header | Added link to the user roles & permissions table PDF |
 
 
 
@@ -1424,13 +1425,13 @@ Useful resources containing Street-works-related glossary sections below:
 
 
 <!-- ==================================================== -->
-To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
+<!-- To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
 Copy glossary table and paste the HTML below.
 
 **** PASTE BELOW THIS SECTION **** 
 CAREFUL NOT TO DELETE 
 EXTERNAL GLOSSARIES SECTION 
-AT BOTTOM!!!!!!!
+AT BOTTOM!!!!!!! -->
 <!-- ==================================================== -->
 
 
