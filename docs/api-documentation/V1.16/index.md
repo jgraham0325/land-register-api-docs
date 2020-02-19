@@ -2525,7 +2525,7 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.16 (20/02/2019):
+Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
 
 Reporting API has been updated with the following changes:
@@ -2545,7 +2545,7 @@ Data Export API has been updated with the following changes:
     <li><code>POST /permits/csv</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
 </ol>
 
-Version 1.15 (06/02/2019):
+Version 1.15 (06/02/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:
@@ -2570,7 +2570,7 @@ Reporting API has been updated with the following changes:
     <li><code>GET /csv-exports</code> endpoint has been added return a list of CSV exports which are associated with the authenticated user's organisation</li>
 </ol>
 
-Version 1.14 (23/01/2019):
+Version 1.14 (23/01/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:
@@ -2587,7 +2587,7 @@ Party API has been updated with the following changes:
   <li>Added <code>PUT /users/{email} </code> endpoint to allow updating of users names </li>
 </ol>
 
-Version 1.13 (08/01/2019):
+Version 1.13 (08/01/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:
