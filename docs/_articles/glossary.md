@@ -31,18 +31,6 @@ GLOSSARY CONSOLIDATED WITH BUSINESS RULES. Please see the latest business rules 
 
 ## Street Manager Glossary
 
-<!-- ---------------------------------------------------------
---------------------------------------------------------------
-To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
-Copy glossary table and paste the HTML below.
-
-**** PASTE BELOW THIS SECTION **** 
-CAREFUL NOT TO DELETE 
-EXTERNAL GLOSSARIES SECTION 
-AT BOTTOM!!!!!!!
--------------------------------------------------------------
---------------------------------------------------------- -->
-
 <table>
 <tbody>
 <tr>
