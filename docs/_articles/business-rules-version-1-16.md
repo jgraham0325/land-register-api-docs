@@ -1468,7 +1468,7 @@ AT BOTTOM!!!!!!! -->
 </td>
 <td>
 <p>Should be interpreted to mean Special Designations (except where otherwise qualified).</p>
-<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
+<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
 </td>
 </tr>
 <tr>
@@ -1542,7 +1542,7 @@ AT BOTTOM!!!!!!! -->
 <p>Minimum notice period</p>
 </td>
 <td>
-<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> for more information.</p>
+<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -1566,7 +1566,7 @@ AT BOTTOM!!!!!!! -->
 <p>Promoter&nbsp;/ Works&nbsp;promoter&nbsp;/&nbsp;Promoter&nbsp;organisation&nbsp;</p>
 </td>
 <td>
-<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
+<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -1582,7 +1582,7 @@ AT BOTTOM!!!!!!! -->
 <p>Working day</p>
 </td>
 <td>
-<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a>.</p>
+<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a>.</p>
 </td>
 </tr>
 <tr>
