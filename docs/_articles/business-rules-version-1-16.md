@@ -789,9 +789,8 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 ### 7.6. Exporting records
 
-* Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
-    * The export page is limited show files from the user's organisation or, in the case of contractor users, the assumed organisation.
-    * All users in the organisation may view and download all files from the CSV Exports page.
+* Exports requested will be placed into a queue and available for download from the user's CSV Exports page.
+    * The export page is limited to show exports requested the user or, in the case of contractor users, requested by the user for the assumed organisation.
     * Each user may have one (1) export in the 'queued' status. Subsequent export requests will be rejected.
     * The export file statuses are as follows:
 
@@ -1349,7 +1348,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
+| 7.6. Exporting records | Updated to include updated rules about the CSV Export page (e.g. export page is limited to the user's exports only)  including a flow diagram, and export functionality added on change request & S81 lists.  |
 | 17. HS2 | All HS2 sections are new |
 | Glossary | Incorporated the glossary into the business rules page rather than a separate page |
 | Header | Added link to the user roles & permissions table PDF |
@@ -1469,7 +1468,7 @@ AT BOTTOM!!!!!!! -->
 </td>
 <td>
 <p>Should be interpreted to mean Special Designations (except where otherwise qualified).</p>
-<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
+<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
 </td>
 </tr>
 <tr>
@@ -1543,7 +1542,7 @@ AT BOTTOM!!!!!!! -->
 <p>Minimum notice period</p>
 </td>
 <td>
-<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> for more information.</p>
+<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> for more information.</p>
 </td>
 </tr>
 <tr>
@@ -1567,7 +1566,7 @@ AT BOTTOM!!!!!!! -->
 <p>Promoter&nbsp;/ Works&nbsp;promoter&nbsp;/&nbsp;Promoter&nbsp;organisation&nbsp;</p>
 </td>
 <td>
-<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
+<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
 </td>
 </tr>
 <tr>
@@ -1583,7 +1582,7 @@ AT BOTTOM!!!!!!! -->
 <p>Working day</p>
 </td>
 <td>
-<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html#external-glossaries">NRSWA</a>.</p>
+<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a>.</p>
 </td>
 </tr>
 <tr>
