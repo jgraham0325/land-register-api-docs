@@ -23,6 +23,6 @@ Refer to the glossary for definitions of terms: <https://departmentfortransport.
 
 ### Previous
 
-* [Version 1.15 \(Due for release to SANDBOX 06/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-15.html)
+* [Version 1.15 (Released to SANDBOX 06/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-15.html)
 * [Version 0.1 \(Archived 06/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/business-rules/)
 
