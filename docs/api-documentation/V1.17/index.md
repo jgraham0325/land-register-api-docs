@@ -1610,6 +1610,7 @@ Query params:
   <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
   <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
   <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permits that have a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
+  <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
 </ol>
 
 #### Get inspections
@@ -1623,6 +1624,7 @@ Query params:
   <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
 </ol>
 
 #### Get FPNs
@@ -1665,6 +1667,7 @@ Query params:
   <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
   <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
   <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
+  <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
 </ol>
 
 #### Get forward plans
@@ -1687,6 +1690,7 @@ Query params:
   <li><strong>work_end_date_to</strong>: Date filtering based on the proposed forward plan end date</li>
   <li><strong>query</strong>: Search field for work reference number, permit reference number or street (partial match)</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
 </ol>
 
 #### Polling
@@ -2524,6 +2528,36 @@ The Data Export API will be updated to export other data, including forward plan
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 1.17 (05/03/2020):
+{: .govuk-heading-s}
+
+The following Reporting API endpoints have been updated with a new <code>geographical_area_reference_number</code> property that enables HA users to filter their lists based on one or more Geographical Areas within their organisation:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /permits</code></li>
+    <li><code>GET /alterations</code></li>
+    <li><code>GET /forward-plans</code></li>
+    <li><code>GET /reinstatements</code></li>
+    <li><code>GET /section-81s</code></li>
+    <li><code>GET /inspections</code></li>
+    <li><code>GET /comments</code></li>
+    <li><code>GET /fixed-penalty-notices</code></li>
+</ol>
+
+The following Data Export API endpoints have also been updated with the new <code>geographical_area_reference_number</code> property:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>POST /permits/csv</code></li>
+    <li><code>POST /alterations/csv</code></li>
+    <li><code>POST /forward-plans/csv</code></li>
+    <li><code>POST /reinstatements/csv</code></li>
+    <li><code>POST /section-81s/csv</code></li>
+    <li><code>POST /inspections/csv</code></li>
+    <li><code>POST /fixed-penalty-notices/csv</code></li>
+</ol>
 
 Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
