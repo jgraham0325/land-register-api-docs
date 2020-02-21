@@ -2546,6 +2546,16 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.17 (05/03/2020):
+{: .govuk-heading-s}
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
+</ol>
+
 Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
 
