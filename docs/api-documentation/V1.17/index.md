@@ -323,14 +323,18 @@ The CSV will contain:
   <li>Promoter SWA code</li>
   <li>Promoter organisation</li>
   <li>Highway authority</li>
+  <li>Highway authority SWA code</li>
   <li>Works location coordinates (in <a title="Well-known Text" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> format)</li>
   <li>Works location description</li>
   <li>Street name</li>
   <li>Area name</li>
   <li>Work category</li>
+  <li>Work category reference</li>
   <li>Description of work</li>
   <li>Traffic management type</li>
+  <li>Traffic management type reference</li>
   <li>Assessment status</li>
+  <li>Assessment status reference</li>
   <li>Proposed start date</li>
   <li>Proposed end date</li>
   <li>Proposed start time</li>
@@ -338,7 +342,9 @@ The CSV will contain:
   <li>Actual start date</li>
   <li>Actual end date</li>
   <li>Permit status</li>
+  <li>Permit status reference</li>
   <li>Work status</li>
+  <li>Work status reference</li>
   <li>Deadline date</li>
   <li>Date created</li>
   <li>Status changed date</li>
