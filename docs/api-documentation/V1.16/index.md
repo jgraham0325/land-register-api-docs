@@ -2071,7 +2071,28 @@ Deletes a file from the system. Users can only delete files which their organisa
 The history endpoint returns audit events associated with that works record such as when a permit is assessed, a comment is added etc.
 {: .govuk-body}
 
-Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
+Audit events in the history response will include a <code>topic</code> property to indicate what type of object triggered this audit. The <code>topic</code> property may conatin one of following:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Application</strong>: A permit action prior to assessment</li>
+  <li><strong>Permit</strong>: A permit action once it has been granted</li>
+  <li><strong>PAA</strong>: A permit action when it has a work_category of paa</li>
+  <li><strong>ChangeRequest</strong>: A permit alteration action</li>
+  <li><strong>FPN</strong>: A fixed penalty notice action</li>
+  <li><strong>Reinstatement</strong>: A site or reinstatement action</li>
+  <li><strong>Inspection</strong>: An inspection action</li>
+  <li><strong>ScheduledInspection</strong>: A scheduled inspection action</li>
+  <li><strong>Work</strong>: A work record action i.e. uploading a file</li>
+  <li><strong>ForwardPlan</strong>: A forward plan action</li>
+  <li><strong>Comment</strong>: Logging a comment</li>
+  <li><strong>Section81</strong>: A section 81 action</li>
+</ol>
+
+Note that the <code>topic</code> property is subject to change. A more reliable option is the <code>event</code> enum property that details what specific action trigger the audit. See the <code>AuditEvent</code> enum in the Work API Swagger definition for a full list of possible events in Street Manager.
+{: .govuk-body}
+
+Audit events in the history response will also include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2527,6 +2548,13 @@ This section lists any significant changes made to this document (and by extensi
 
 Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
+
+Work API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li>The <code>topic</code> property on <code>WorkHistoryResponse</code> has been updated with new values specific to permit alterations and permit applications. The content of the <code>details</code> property has also been updated for muliple audit events. This will affect the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+</ol>
 
 Reporting API has been updated with the following changes:
 {: .govuk-body}
