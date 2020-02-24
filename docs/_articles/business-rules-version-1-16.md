@@ -522,10 +522,10 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 ### 4.3. Adding change requests
 
 * Each PA may have only one change request awaiting assessment. 
-* A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'
+* A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'.
 * The works category may be updated if the works duration is changed.
 * Change requests may not be added to a PAA.
-* The following cannot be changed on a PA: 
+* All fields apart from the following can be changed on a PA: 
     * Permit reference number or works reference number
     * USRN
     * USRN address e.g. road/street
