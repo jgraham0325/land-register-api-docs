@@ -550,7 +550,6 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 | Refuse | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment. | 
 | Grant with duration challenge | Works extension | A reasonable period end date and reason for the duration challenge must be provided. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
 
-* Note: Currently, granting or refusing a change request created as a response to 'modification request' will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon).
 
 
 _(Previously section 5.1, 5.4, 5.5 & 25.3 in Business rules v0.1 draft)_ 
@@ -1355,7 +1354,7 @@ A diagram of S81 statuses</div>
 | Glossary | Incorporated the glossary into the business rules page rather than a separate page |
 | Header | Added link to the user roles & permissions table PDF |
 | 4.2. Change request types | Updated to include new CR type 'Modified permit' - a response to modification requested, and the rules related. |
-
+| 4.4. Change request assessment decision options | Removed "Note: Currently, granting or refusing a change request created as a response to ‘modification request’ will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon)." |
 
 
 
