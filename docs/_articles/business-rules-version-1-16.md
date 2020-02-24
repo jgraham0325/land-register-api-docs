@@ -501,11 +501,11 @@ A diagram of PA statuses</div>
 
 | Change request type | Available for | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
-| Promoter imposed change (modified application) | Promoter | PA is awaiting assessment | No |
-| Promoter change request | Promoter |  PA in status 'Granted' or 'In progress' | Yes |
-| Modified permit | Promoter |  PA in status 'Modification requested' | No |
+| Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No |
+| Promoter change request | Promoter | Change initiated when PA is in status 'Granted' or 'In progress' | Yes |
+| Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No |
 | Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
-| HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
+| HA imposed change | HA | Change initiated when PA is in status 'Granted' or 'In progress' | No |
 
 * For modified permit, promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
     * In the case of a modified permit change request (response to modification requested by HA), this means that only the outstanding PA will need to be assessed once the changes have been applied.
