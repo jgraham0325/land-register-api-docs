@@ -502,15 +502,17 @@ A diagram of PA statuses</div>
 | Change request type | Available for | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
 | Promoter imposed change (modified application) | Promoter | PA is awaiting assessment | No |
-| Promoter change request | Promoter |  PA in status 'Granted', 'In progress' or 'Modification Requested' | Yes |
+| Promoter change request | Promoter |  PA in status 'Granted' or 'In progress' | Yes |
+| Modified permit | Promoter |  PA in status 'Modification requested' | No |
 | Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
 | HA imposed change | HA | PA in status 'Granted' or 'In progress' | No |
 
-* For promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
+* For modified permit, promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
+    * In the case of a modified permit change request (response to modification requested by HA), this means that only the outstanding PA will need to be assessed once the changes have been applied.
 * A PA's response period is not affected by promoter imposed changes (i.e. changes while the PA is awaiting assessment).
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
-* Promoter change requests include the change requests submitted as a response to a 'modification request' assessment decision.
+
 
 _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_ 
 
@@ -1352,6 +1354,7 @@ A diagram of S81 statuses</div>
 | 17. HS2 | All HS2 sections are new |
 | Glossary | Incorporated the glossary into the business rules page rather than a separate page |
 | Header | Added link to the user roles & permissions table PDF |
+| 4.2. Change request types | Updated to include new CR type 'Modified permit' - a response to modification requested, and the rules related. |
 
 
 
