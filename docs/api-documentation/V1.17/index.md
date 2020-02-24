@@ -2681,6 +2681,17 @@ The following Data Export API endpoints have also been updated with the new <cod
     <li><code>POST /section-81s/csv</code></li>
     <li><code>POST /inspections/csv</code></li>
     <li><code>POST /fixed-penalty-notices/csv</code></li>
+
+Works data export csv scheduled job updated to include the following additional fields in generated CSVs:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>Highway authority swa code</code></li>
+  <li><code>Works category reference</code></li>
+  <li><code>Traffic management type reference</code></li>
+  <li><code>Assessment status reference</code></li>
+  <li><code>Permit status reference</code></li>
+  <li><code>Work status reference</code></li>
 </ol>
 
 Reporting API has been updated with the following changes:
