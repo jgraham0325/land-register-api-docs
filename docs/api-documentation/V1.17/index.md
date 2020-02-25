@@ -2541,7 +2541,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 
 <code>GET /users/{username}</code>
 
-Returns the UserResponse associated with the base 64 encoded username provided.
+Returns the UserResponse associated with the base 64 encoded username provided. An optional <code>swaCode</code> query param can be provided by contractors to see the associated workstreams available to them for a particular organisation.
 {: .govuk-body}
 
 #### Get workstream
@@ -3150,6 +3150,12 @@ Updated Work API with the following changes:
   <li>Update the validation of <code>POST /works/{workReferenceNumber}/inspections</code> the fields <code>was_call_logged</code>, <code>call_logged_to</code>, <code>call_logged_summary</code>, <code>call_logged_reference</code> are only accepted when when the InspectionType is set to <code>live_site</code> and the inspection outcome is set to <code>failed_high</code></li>
   <li>Update the of <code>POST /works</code> and <code>POST /works/{workReferenceNumber}/permits</code> to automatically add the manditory permit conditions <code>NCT01a</code> and <code>NCT01b</code>. If these conditions are supplied as part of the create requests their <code>comment</code> property will be ignored</li>
   <li>Updated the `object_reference` of audits relating to the `event_type` of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+</ol>
+
+Update Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>GET /users/{email}</code> endpoint to accept <code>swaCode</code> query parameter. This can be used by contractors to see the workstreams they have available for a particular contract</li>
 </ol>
 
 Update Reporting API with the following changes:
