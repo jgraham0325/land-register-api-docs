@@ -1325,12 +1325,14 @@ A diagram of S81 statuses</div>
 
 ### 17.3. Acknowledge applications 
 
-* Highways authority can Acknowledge receipt of Highways or Street works within act limits, but cannot grant or refuse the application. 
+* Highways authority can only Acknowledge receipt of Highways or Street works within act limits.
+    * For Highways works within act limit, acknowledge option will only be available if "Protected provisions (exemptions)" is "Not applicable".
+    * Grant, refuse or modification requests are available for all other application types.
 
 
 ### 17.4 Auto-grant of change requests
 
-* Change requests for all highways applications and street works in act limits will be automatically applied.
+* Change requests for all highways applications (within and outside of act limits) and street works (within act limits) will be automatically applied.
 
 
 ### 17.5 Notifications 
