@@ -2647,6 +2647,78 @@ Accepts the user's email address, new password and token (returned from the Work
 Retrieves data of permits which have been added or changed within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
 {: .govuk-body}
 
+#### Generate Section 81s CSV
+{: .govuk-heading-s}
+
+<code>POST /section-81s/csv</code>
+
+Retrieves a CSV list of Section 81s which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Reinstatements CSV
+{: .govuk-heading-s}
+
+<code>POST /reinstatements/csv</code>
+
+Retrieves a CSV list of reinstatements which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate FPNs CSV
+{: .govuk-heading-s}
+
+<code>POST /fixed-penalty-notices/csv</code>
+
+Retrieves a CSV list of FPNs which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Fees CSV
+{: .govuk-heading-s}
+
+<code>POST /fees/csv</code>
+
+Retrieves a CSV list of fees which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Permits CSV
+{: .govuk-heading-s}
+
+<code>POST /permits/csv</code>
+
+Retrieves a CSV list of permits which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Inspections CSV
+{: .govuk-heading-s}
+
+<code>POST /inspections/csv</code>
+
+Retrieves a CSV list of inspections which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Comments CSV
+{: .govuk-heading-s}
+
+<code>POST /forward-plans/csv</code>
+
+Retrieves a CSV list of forward plans which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Alterations CSV
+{: .govuk-heading-s}
+
+<code>POST /alterations/csv</code>
+
+Retrieves a CSV list of alterations which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+#### Generate Comments CSV
+{: .govuk-heading-s}
+
+<code>POST /comments/csv</code>
+
+Retrieves a CSV list of comments which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 ## Roadmap
@@ -2769,6 +2841,12 @@ Reporting API has been updated with the following changes:
 
 <ol class="govuk-list govuk-list--bullet">
     <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
+</ol>
+
+Data Export API updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
 </ol>
 
 Version 1.16 (20/02/2020):
