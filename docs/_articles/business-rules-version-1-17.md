@@ -1352,12 +1352,8 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 7.6. Exporting records | Updated to include updated rules about the CSV Export page (e.g. export page is limited to the user's exports only)  including a flow diagram, and export functionality added on change request & S81 lists.  |
-| 17. HS2 | All HS2 sections are new |
-| Glossary | Incorporated the glossary into the business rules page rather than a separate page |
-| Header | Added link to the user roles & permissions table PDF |
-| 4.2. Change request types | Updated to include new CR type 'Modified permit' - a response to modification requested, and the rules related. |
-| 4.4. Change request assessment decision options | Removed "Note: Currently, granting or refusing a change request created as a response to ‘modification request’ will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon)." |
+| 1.4. USRN | Added sign post to API documentation |
+| Glossary | Added entry for Environmental health notified |
 
 
 
@@ -1429,7 +1425,7 @@ Useful resources containing Street-works-related glossary sections below:
 
 
 <!-- ==================================================== -->
-<!-- To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
+<!-- Use the word doc from SharePoint. To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
 Copy glossary table and paste the HTML below.
 
 **** PASTE BELOW THIS SECTION **** 
