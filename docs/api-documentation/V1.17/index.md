@@ -1671,7 +1671,7 @@ Endpoints which support the `Planner` role on the API are protected by workstrea
   <li>no-access: User is not permitted to perform write or read actions on work records and related resources associated with that workstream</li>
 </ul>
 
-The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot. 
+The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot.
 {: .govuk-body}
 
 The Reporting and Data Export APIs will automatically filter data in endpoint responses based upon the users allocated workstreams.
@@ -2769,6 +2769,7 @@ Reporting API has been updated with the following changes:
 
 <ol class="govuk-list govuk-list--bullet">
     <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
+    <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
 </ol>
 
 Version 1.16 (20/02/2020):
