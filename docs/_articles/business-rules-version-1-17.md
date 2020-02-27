@@ -153,6 +153,7 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
     * Street Maintenance responsibility (STREET_STATUS): 1, 2 & 3 (See NSG spec v2.10 table 6.1)
 * USRNs to be supported by April 2020:
     * Addition of Reinstatement type codes: 6-10
+* See the [API documentation](https://departmentfortransport.github.io/street-manager-docs/api-documentation/) for details on backwards compatibility.
 
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
