@@ -1680,7 +1680,7 @@ The Reporting and Data Export APIs will automatically filter data in endpoint re
 #### Role Based Access - HighwayAuthority
 {: .govuk-heading-s}
 
-`HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. In a future release we will introduce Geographic Views, a way for `HighwayAuthority` users to filter resources based on a set list of USRNs.
+`HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. In a future release we will introduce Geographical Areas, a way for `HighwayAuthority` users to filter resources based on a set list of USRNs.
 {: .govuk-body}
 
 ## Resource Guide
@@ -2541,7 +2541,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 
 <code>GET /users/{username}</code>
 
-Returns the UserResponse associated with the base 64 encoded username provided.
+Returns the UserResponse associated with the base 64 encoded username provided. An optional <code>swaCode</code> query param can be provided by contractors to see the associated workstreams available to them for a particular organisation.
 {: .govuk-body}
 
 #### Get workstream
@@ -2724,6 +2724,19 @@ This section lists any significant changes made to this document (and by extensi
 
 Version 1.17 (05/03/2020):
 {: .govuk-heading-s}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol>
+  <li>Updated the `object_reference` of audits relating to the `event_type` of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+</ol>
+
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>GET /users/{email}</code> endpoint to accept <code>swaCode</code> query parameter. This can be used by contractors to see the workstreams they have available for a particular contract</li>
+</ol>
+
 
 The following Reporting API endpoints have been updated with a new <code>geographical_area_reference_number</code> property that enables HA users to filter their lists based on one or more Geographical Areas within their organisation:
 {: .govuk-body}
