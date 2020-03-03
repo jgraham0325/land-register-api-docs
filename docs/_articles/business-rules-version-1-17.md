@@ -1357,6 +1357,7 @@ A diagram of S81 statuses</div>
 | Glossary | Added entry for Environmental health notified |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
+| 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
 
 
 
