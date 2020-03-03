@@ -1627,7 +1627,7 @@ Endpoints which support the `Planner` role on the API are protected by workstrea
   <li>no-access: User is not permitted to perform write or read actions on work records and related resources associated with that workstream</li>
 </ul>
 
-The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot.
+The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot. The reporting API list endpoints and data export API csv endpoints will filter data automatically for planner and contractor users so that only information related to their assigned workstreams is returned
 {: .govuk-body}
 
 The Reporting and Data Export APIs will automatically filter data in endpoint responses based upon the users allocated workstreams.
@@ -2686,10 +2686,13 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.17 (05/03/2020):
 {: .govuk-heading-s}
 
+Workstream restrictions will be taking effect on the Work API. See the <a class="govuk-link" href="#access-and-permissions">access and permissions</a> section for further details.
+{: .govuk-body}
+
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the `object_reference` of audits relating to the `event_type` of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+  <li>Updated the `object_reference` of audits relating to the <code>event_type</code> of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
 </ol>
 
 Updated Party API with the following changes:
