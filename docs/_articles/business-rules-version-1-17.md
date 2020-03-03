@@ -503,10 +503,10 @@ A diagram of PA statuses</div>
 | Change request type | Available for | Criteria | Assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
 | Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No |
-| Promoter change request | Promoter | Change initiated when PA is in status 'Granted' or 'In progress' | Yes |
+| Promoter change request | Promoter | Change initiated when PA has assessment decision as 'Granted' | Yes |
 | Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No |
 | Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
-| HA imposed change | HA | Change initiated when PA is in status 'Granted' or 'In progress' | No |
+| HA imposed change | HA | Change initiated when PA has assessment decision as 'Granted' | No |
 
 * For modified permit, promoter imposed and HA imposed change types, the changes made will be applied automatically to the PA with the change request record available to see what has changed historically, and these change request types are not chargeable.
     * In the case of a modified permit change request (response to modification requested by HA), this means that only the outstanding PA will need to be assessed once the changes have been applied.
@@ -888,7 +888,8 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
     * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
 * This functionality may be used to correct a mistake on the previous reinstatement.
-  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
+* A reinstatement can be interim or permanent.
+  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent', a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
 
 _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
