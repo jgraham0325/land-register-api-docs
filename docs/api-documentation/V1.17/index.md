@@ -1627,7 +1627,7 @@ Endpoints which support the `Planner` role on the API are protected by workstrea
   <li>no-access: User is not permitted to perform write or read actions on work records and related resources associated with that workstream</li>
 </ul>
 
-The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot. The reporting API list endpoints and data export API csv endpoints will filter data automatically for planner and contractor users so that only information related to their assigned workstreams is returned
+The workstream restrictions set by administrators are applied to both UI and API user accounts. `no-access` users are still permitted to use the GeoJSON & Street Lookup API as well as view specific details of entities returned from those API responses, for example permit details can still be accessed via the work-api but the wider work-record details cannot.
 {: .govuk-body}
 
 The Reporting and Data Export APIs will automatically filter data in endpoint responses based upon the users allocated workstreams.
