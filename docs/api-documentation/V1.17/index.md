@@ -2605,10 +2605,13 @@ Accepts the user's email address, new password and token (returned from the Work
 Retrieves data of permits or activities across all organisations which have been added, changed, or deleted within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
 {: .govuk-body}
 
-An optional <code>csv_export_date</code> query parameter can be provided to retrieve a CSV generated from a particular date (within the last two weeks). If no date is provided, the current date is used as the default (which will retrieve the latest generated CSV).
+An optional <code>csvExportDate</code> query parameter can be provided to retrieve a CSV (within the last two weeks) that was available for download at the datetime provided. <code>csvExportDate</code> should be an ISO 8601 Date and time format. If no datetime is provided, the current datetime is used as the default (which will retrieve the latest generated CSV).
 {: .govuk-body}
 
-The CSV that was available for download at the time provided will be returned. For example, if a request is made at 15:00:00, the CSV generated at 14:00:00 will most likely be retrieved (due to the time it takes to process and upload the CSV data).
+Note: If the datetime now, for example, is <code>2020-01-01T15:00:00Z</code>, and a <code>csvExportDate</code> of <code>2020-01-01T15:00:00Z</code> is provided, the generated CSV at <code>2020-01-01T14:00:00Z</code> will most likely be retrieved.
+{: .govuk-body}
+
+This is due to the time it takes for the scheduled job to process and upload the CSV data. So the value of the <code>csvExportDate</code> query parameter should be more specific to ensure the correct CSV is retrieved (e.g., <code>2020-01-01T15:59:59Z</code>).
 {: .govuk-body}
 
 In the response, the <code>Content-Disposition</code> HTTP header will contain the name of the CSV file retrieved, which contains the file period information.
@@ -2720,7 +2723,6 @@ The fields to be used for this have already been added to the Work API as placeh
 
 The Reporting API continuous polling will be updated to allow the use of Transaction ID for filtering for easier polling.
 {: .govuk-body}
-
 
 ### Notifications
 {: .govuk-heading-s}
