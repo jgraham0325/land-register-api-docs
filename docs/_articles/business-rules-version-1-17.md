@@ -413,7 +413,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 |:---------------------|:---------------|
 | Grant                | All PAA/PA     |
 | Refuse               | All PAA/PA     |
-| Modification request | PA only        |
+| Modification request | PA only (not in 'Closed' status) |
 
 * The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
