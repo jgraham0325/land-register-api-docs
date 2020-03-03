@@ -445,7 +445,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 
 #### 3.4.9. Cancelling PAA & PA
 
-* PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment) or 'granted' statuses and works start has not been logged.
+* PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment), 'granted' or 'modification requested' statuses and works start has not been logged.
 * Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
 * Immediate PA may not be cancelled if
     * works stop has been logged
@@ -615,9 +615,9 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 ### 6.1. Logging works start
 
 * To log a works start
-    * PA must be in 'granted' status,
+    * PA must be in 'submitted', 'granted' or 'modification requested' status,
     * date and time must be provided, and
-    * works cannot be started in the future or before the proposed start.
+    * works cannot be started in the future.
 
 _(Previously section 11.1 in Business rules v0.1 draft)_ 
 
@@ -1354,8 +1354,8 @@ A diagram of S81 statuses</div>
 |:--------|:---------------|
 | 1.4. USRN | Added sign post to API documentation |
 | Glossary | Added entry for Environmental health notified |
-
-
+| 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
+| 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
 
 
 
