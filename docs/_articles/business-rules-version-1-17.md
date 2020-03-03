@@ -771,7 +771,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 | Filter name              | Condition |
 |:-------------------------|:------------------|
-| Works start / end date   | Note: due to be changed soon to have the start and end dates with their own To and From to give the user more control |
+| Works start / end date and Application submission date | If 'from' date is blank, will include all results earlier than the 'to' date and vice versa. If both 'from' and 'to' are blank, will include all results. |
 | Awaiting assessment      | PAA/PA with 'submitted' status |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PAA/PA |
 | High impact traffic management | Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
@@ -1354,10 +1354,11 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 1.4. USRN | Added sign post to API documentation |
-| Glossary | Added entry for Environmental health notified |
-| 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
 | 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
+| 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
+| 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
+| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacting works' |
 
 
 
