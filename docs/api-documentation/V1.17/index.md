@@ -2615,7 +2615,7 @@ An optional <code>csvExportDate</code> query parameter can be provided to retrie
 Note: If the datetime now, for example, is <code>2020-01-01T15:00:00Z</code>, and a <code>csvExportDate</code> of <code>2020-01-01T15:00:00Z</code> is provided, the generated CSV at <code>2020-01-01T14:00:00Z</code> will most likely be retrieved.
 {: .govuk-body}
 
-This is due to the time it takes for the scheduled job to process and upload the CSV data. So the value of the <code>csvExportDate</code> query parameter should be more specific to ensure the correct CSV is retrieved (e.g., <code>2020-01-01T15:59:59Z</code>).
+This is due to the time it takes for the scheduled job to process and upload the CSV data. So the value of the <code>csvExportDate</code> query parameter should be more specific to ensure the correct CSV is retrieved (e.g., <code>2020-01-01T15:05:00Z</code>).
 {: .govuk-body}
 
 In the response, the <code>Content-Disposition</code> HTTP header will contain the name of the CSV file retrieved, which contains the file period information.
