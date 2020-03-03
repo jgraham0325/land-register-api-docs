@@ -1639,6 +1639,12 @@ The Reporting and Data Export APIs will automatically filter data in endpoint re
 `HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. In a future release we will introduce Geographical Areas, a way for `HighwayAuthority` users to filter resources based on a set list of USRNs.
 {: .govuk-body}
 
+#### Default Workstream 
+{: .govuk-heading-s }
+
+A default workstream with the prefix "000" exists for every organisation. This is intended as a holding-place for work records without permits, for example historic works and section 81s are created against the default workstream for the associated promoter's organisation. When the first permit is created for a work record the promoter will be able to provide the correct workstream for which it should be associated. The default workstream should NOT be provided explicitely in requests when creating permits, this will result in a bad request error. Instead, a workstream for which the user has full-write access to should be provided.
+{: .govuk-body}
+
 ## Resource Guide
 {: .govuk-heading-l #resource-guide}
 
@@ -1936,10 +1942,8 @@ As a promoter, the HA SWA code you choose is the organisation which will be asso
 
 You may provide a workstream_prefix, which corresponds to the workstream with
 which you would like to associate the works. A default workstream with prefix
-"000" exists for every organisation. If you do not explicitly provide a
-workstream_prefix, the works are associated with your organisation's default
-workstream. The workstream_prefix must match the prefix of a workstream
-associated with the user's organisation.
+"000" exists for every organisation however this is NOT for permit applications. If you do not explicitly provide a
+workstream_prefix, we will try to find a non-default workstream associated with your organisation that the currently authenticated user has full-write access to. If this is not possible a work will not be creatable. When providing a prefix the workstream_prefix must match the prefix of a workstream associated with the user's organisation that they have full-write access to. See <a class="govuk-link" href="#access-and-permissions">access and permissions</a> for further information.
 {: .govuk-body}
 
 NSG related fields are optional. If not provided; street_name, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
