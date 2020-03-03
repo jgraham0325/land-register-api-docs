@@ -108,4 +108,3 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2020 - 19
     </a>
   </li>
-</ul>
