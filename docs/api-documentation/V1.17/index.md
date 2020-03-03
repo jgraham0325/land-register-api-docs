@@ -313,60 +313,11 @@ Contractors can use the Data Export API to extract data from the service in CSV 
 **Open Data**
 {: .govuk-body}
 
-Street Manager maintains an hourly scheduled job, which retrieves data of permits that have been added or changed in the past hour, and stores it as CSV. This data is only available to data export users.
+Street Manager maintains a number of hourly scheduled jobs for data exporting. Currently, these retrieve data of permits and activities across all organisations that have been added, changed, or deleted in the past hour, which is then stored in CSV format.
+This data is only available to data export users.
 {: .govuk-body}
-
-The CSV will contain:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Work reference number</li>
-  <li>Permit reference number</li>
-  <li>Promoter SWA code</li>
-  <li>Promoter organisation</li>
-  <li>Highway authority</li>
-  <li>Works location coordinates (in <a title="Well-known Text" href="https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry">WKT</a> format)</li>
-  <li>Works location description</li>
-  <li>Street name</li>
-  <li>Area name</li>
-  <li>Work category</li>
-  <li>Description of work</li>
-  <li>Traffic management type</li>
-  <li>Assessment status</li>
-  <li>Proposed start date</li>
-  <li>Proposed end date</li>
-  <li>Proposed start time</li>
-  <li>Proposed end time</li>
-  <li>Actual start date</li>
-  <li>Actual end date</li>
-  <li>Permit status</li>
-  <li>Work status</li>
-  <li>Deadline date</li>
-  <li>Date created</li>
-  <li>Status changed date</li>
-  <li>USRN</li>
-  <li>Is active permit</li>
-  <li>Permit conditions</li>
-  <li>Road category</li>
-  <li>Is traffic sensitive</li>
-  <li>Has no final reinstatement</li>
-  <li>Is deemed</li>
-  <li>Excavation carried out</li>
-  <li>Is early start</li>
-  <li>Is high impact traffic management</li>
-  <li>Is lane rental</li>
-  <li>Lane rental assessment outcome</li>
-  <li>Lane rental charges not agreed</li>
-  <li>Lane rental charges potentially apply</li>
-  <li>Highway authority SWA code</li>
-  <li>Work category reference</li>
-  <li>Traffic management type reference</li>
-  <li>Assessment status reference</li>
-  <li>Permit status reference</li>
-  <li>Work status reference</li>
-</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
 
 ## Versioning and Release Management
 {: .govuk-heading-l #versioningandreleasemanagement}
@@ -973,6 +924,11 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /work-data</code></td>
+      <td class="govuk-table__cell">DataExport</td>
+      <td class="govuk-table__cell">Not Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /activity-data</code></td>
       <td class="govuk-table__cell">DataExport</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
@@ -2639,12 +2595,23 @@ Accepts the user's email address, new password and token (returned from the Work
 ### Data Export API
 {: .govuk-heading-m}
 
-#### Get latest Work Data CSV
+#### Get Data CSV
 {: .govuk-heading-s}
 
 <code>GET /work-data</code>
 
-Retrieves data of permits which have been added or changed within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
+<code>GET /activity-data</code>
+
+Retrieves data of permits or activities across all organisations which have been added, changed, or deleted within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
+{: .govuk-body}
+
+An optional <code>csv_export_date</code> query parameter can be provided to retrieve a CSV generated from a particular date (within the last two weeks). If no date is provided, the current date is used as the default (which will retrieve the latest generated CSV).
+{: .govuk-body}
+
+The CSV that was available for download at the time provided will be returned. For example, if a request is made at 15:00:00, the CSV generated at 14:00:00 will most likely be retrieved (due to the time it takes to process and upload the CSV data).
+{: .govuk-body}
+
+In the response, the <code>Content-Disposition</code> HTTP header will contain the name of the CSV file retrieved, which contains the file period information.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -2710,12 +2677,6 @@ The Work API will be updated to allow submission of notices to noticing Highway 
 The Work API will be updated to include endpoints for correcting errors in submitted data against works.
 {: .govuk-body}
 
-### Data Export API
-{: .govuk-heading-s}
-
-The Data Export API will be updated to export other data, including forward plans and activities.
-{: .govuk-body}
-
 ## Versions and Changes
 {: .govuk-heading-l #versions}
 
@@ -2742,14 +2703,14 @@ The following Reporting API endpoints have been updated with a new <code>geograp
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>GET /permits</code></li>
-    <li><code>GET /alterations</code></li>
-    <li><code>GET /forward-plans</code></li>
-    <li><code>GET /reinstatements</code></li>
-    <li><code>GET /section-81s</code></li>
-    <li><code>GET /inspections</code></li>
-    <li><code>GET /comments</code></li>
-    <li><code>GET /fixed-penalty-notices</code></li>
+  <li><code>GET /permits</code></li>
+  <li><code>GET /alterations</code></li>
+  <li><code>GET /forward-plans</code></li>
+  <li><code>GET /reinstatements</code></li>
+  <li><code>GET /section-81s</code></li>
+  <li><code>GET /inspections</code></li>
+  <li><code>GET /comments</code></li>
+  <li><code>GET /fixed-penalty-notices</code></li>
 </ol>
 
 The following Data Export API endpoints have also been updated with the new <code>geographical_area_reference_number</code> property:
@@ -2765,7 +2726,15 @@ The following Data Export API endpoints have also been updated with the new <cod
   <li><code>POST /fixed-penalty-notices/csv</code></li>
 </ol>
 
-Works data export csv scheduled job updated to include the following additional fields in generated CSVs:
+Also the Data Export API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>GET /work-data</code> endpoint to allow previously generated CSVs to be retrieved.</li>
+  <li>New <code>GET /activity-data</code> endpoint added to retrieve data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format.</li>
+</ol>
+
+Works data export CSV scheduled job updated to include the following additional fields in generated CSVs:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2781,8 +2750,8 @@ Reporting API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
-    <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
+  <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
+  <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
 </ol>
 
 Version 1.16 (20/02/2020):
@@ -2792,27 +2761,27 @@ Work API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li>The <code>topic</code> property on <code>WorkHistoryResponse</code> has been updated with new values specific to permit alterations and permit applications. The content of the <code>details</code> property has also been updated for muliple audit events. This will affect the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
-    <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
+  <li>The <code>topic</code> property on <code>WorkHistoryResponse</code> has been updated with new values specific to permit alterations and permit applications. The content of the <code>details</code> property has also been updated for muliple audit events. This will affect the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+  <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
 </ol>
 
 Reporting API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>GET /permits</code> and <code>GET /forward-plans</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
-    <li><code>GET /permits</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
-    <li><code>GET /csv-exports</code> has been updated to only return the CSV Exports that were generated by the requester</li>
-    <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
+  <li><code>GET /permits</code> and <code>GET /forward-plans</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+  <li><code>GET /permits</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
+  <li><code>GET /csv-exports</code> has been updated to only return the CSV Exports that were generated by the requester</li>
+  <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
 </ol>
 
 Data Export API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>POST /permits/csv</code> and <code>POST /forward-plans/csv</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
-    <li><code>POST /permits/csv</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
-    <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
+  <li><code>POST /permits/csv</code> and <code>POST /forward-plans/csv</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+  <li><code>POST /permits/csv</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
+  <li>The <code>AlterationType</code> enum has been updated to include <code>modified_permit</code> as a valid type</li>
 </ol>
 
 Version 1.15 (06/02/2020):
@@ -2822,22 +2791,22 @@ Work API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code> endpoint has been added to acknowledge HS2 applications</li>
-    <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged</code> property</li>
-    <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged_date_time</code> property</li>
-    <li><code>POST /geographical-areas</code> endpoint has been added to upload Geographical Areas</li>
+  <li><code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/hs2_acknowledgement</code> endpoint has been added to acknowledge HS2 applications</li>
+  <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged</code> property</li>
+  <li>The <code>PermitResponse</code> has been updated to return the <code>hs2_acknowledged_date_time</code> property</li>
+  <li><code>POST /geographical-areas</code> endpoint has been added to upload Geographical Areas</li>
 </ol>
 
 Party API has been updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>GET /users/{username}</code> endpoint has been added to return user details</li>
+  <li><code>GET /users/{username}</code> endpoint has been added to return user details</li>
 </ol>
 
 Reporting API has been updated with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-    <li><code>GET /csv-exports</code> endpoint has been added return a list of CSV exports which are associated with the authenticated user's organisation</li>
+  <li><code>GET /csv-exports</code> endpoint has been added return a list of CSV exports which are associated with the authenticated user's organisation</li>
 </ol>
 
 Version 1.14 (23/01/2020):
