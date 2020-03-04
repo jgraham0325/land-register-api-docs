@@ -1202,9 +1202,6 @@ on Permit status values.
 ### Permits
 {: .govuk-heading-m}
 
-In order to carry out much of the actions against a work record the associated permit must be submitted and granted:
-{: .govuk-body}
-
 <ol class="govuk-list govuk-list--bullet">
   <li>
     <strong>Create a work record (Planner)</strong>: <code>POST /works</code>
@@ -1215,10 +1212,6 @@ In order to carry out much of the actions against a work record the associated p
   </li>
   <li>
     <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
 </ol>
 
@@ -1284,18 +1277,7 @@ In order to create an inspection the following steps should be followed:
     </p>
   </li>
   <li>
-    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
-  </li>
-  <li>
     <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/start</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
   <li>
     <strong>Upload supporting evidence (Highway Authority)</strong>: <code>POST /files</code>
@@ -1421,18 +1403,7 @@ The type is only specified when creating a site, any reinstatements created an a
     </p>
   </li>
   <li>
-    <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
-  </li>
-  <li>
     <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/start</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
   <li>
     <strong>Create a site (Planner)</strong>: <code>POST /works/{workReferenceNumber}/sites</code>
@@ -1470,10 +1441,6 @@ In order to create a promoter change request the following steps should be follo
   </li>
   <li>
     <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
   <li>
     <strong>Request a change (Planner)</strong>: <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code>
@@ -1509,10 +1476,6 @@ In order to create a work extension the following steps should be followed:
   </li>
   <li>
     <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
   <li>
     <strong>Start the work (Planner)</strong>: <code>PUT /works/{work reference number}/start</code>
@@ -1551,10 +1514,6 @@ In order to create a work extension the following steps should be followed:
   </li>
   <li>
     <strong>Approve the permit (Highway Authority)</strong>: <code>PUT /works/{work reference number}/permits/{permit reference number}/status</code>
-    <p>
-      As per the usual permit flow, if the work isn't an immediate, the Highway
-      Authority will need to grant the application before work can begin.
-    </p>
   </li>
   <li>
     <strong>Impose a change (Highway Authority)</strong>: <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code>
@@ -1990,7 +1949,7 @@ A permit can only be actioned by the promoter and highway authority organisation
 #### On site (start/stop works)
 {: .govuk-heading-s}
 
-Once a permit has been submitted and granted by an HA, the promoter which raised the permit is able to:
+Once a permit has been submitted, the promoter which raised the permit is able to:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2091,9 +2050,6 @@ Once a site has been created it can be retrieved using the GET endpoint, passing
 <code>POST /works/{work reference number}/sites/{site number}/reinstatements</code>
 
 A site can have multiple reinstatements associated with it so it is possible to add a new reinstatement to an existing site. This endpoint requires all of the same fields as the create site request.
-{: .govuk-body}
-
-A reinstatement can be interim or permanent. If the most recently added reinstatement on a site is interim, then a new permit is required to be granted and started before that site can be made permanent.
 {: .govuk-body}
 
 #### Inspections (HA)
@@ -2771,6 +2727,8 @@ Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Updated the `object_reference` of audits relating to the <code>event_type</code> of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+  <li>Planned permits no longer need to be granted by HA before works can be started</li>
+  <li>Planned permits can be assessed at any stage, provided they haven't been assessed or cancelled</li>
 </ol>
 
 Updated Party API with the following changes:
