@@ -425,6 +425,11 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 _(Previously section 25.3 in Business rules v0.1 draft)_ 
 
 
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg" alt="Street Manager - PAA/PA assessment decision options" width="100%" /></a>
+A diagram of PAA/PA assessment decision options</div>
+
+
+
 #### 3.4.8. PAA & PA response periods
 
 * The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
@@ -1356,7 +1361,7 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 1.4. USRN | Added sign post to API documentation |
-| 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status; added Granted with duration challenge for immediate PA |
+| 3.4.7. PAA & PA assessment decision options | (1) Diagram added;<br />(2) Added Modification request assessment decision not available when PA is in 'Closed' status;<br />(3) Added Granted with duration challenge for immediate PA |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
