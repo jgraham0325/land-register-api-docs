@@ -414,6 +414,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 | Grant                | All PAA/PA     |
 | Refuse               | All PAA/PA     |
 | Modification request | PA only (not in 'Closed' status) |
+| Grant with duration challenge | Immediate PA only |
 
 * The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
@@ -815,7 +816,7 @@ A diagram of export file process</div>
     * Fixed penalty notices (FPN)
     * Inspections
     * Registered reinstatements
-    * Comments (coming soon)
+    * Comments
     * Section 81s
     * Download all my data (promoter and HA admin users will be able to export raw data for their organisation)
 
@@ -834,13 +835,13 @@ A diagram of export file process</div>
 * The geographical area name is derived from the csv file name (without the extension).
 <!-- * The area name and list of USRNs may be changed by uploading a replacement csv file. -->
 
-<!--
+
 ### 7.7.2. Viewing geographical areas
 
 * HA users may select up to a total of 60,000 USRNs to be filtered on. This is the combined total number of USRNs of all geographical areas selected.
-* All list pages will be filtered to only show records associated to the geographical areas selected.
+* All list pages will be filtered to only show records associated to the geographical areas selected (fee report will not be affected).
 
--->
+
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -1359,8 +1360,9 @@ A diagram of S81 statuses</div>
 | 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
+| 7.6. Exporting records | Removed 'Coming soon' for Comments |
+| 7.7.2. Viewing geographical areas | Section added |
 | Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
-
 
 
 
