@@ -1367,7 +1367,7 @@ A diagram of S81 statuses</div>
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
 | 7.6. Exporting records | Removed 'Coming soon' for Comments |
 | 7.7.2. Viewing geographical areas | Section added |
-| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
+| Glossary | Added entries for 'Notifying Environmental Health' and 'Designations impacted' |
 
 
 
