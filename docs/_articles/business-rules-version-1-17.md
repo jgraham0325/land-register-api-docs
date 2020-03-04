@@ -777,7 +777,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 | Filter name              | Condition |
 |:-------------------------|:------------------|
-| Works start / end date and Application submission date | If 'from' date is blank, will include all results earlier than the 'to' date and vice versa. If both 'from' and 'to' are blank, will include all results. |
+| Works start / end date and Application submission date | If 'from' date is blank, will include all results before the 'to' date. If 'to' date is blank, will include all results after the 'from' date. If both 'from' and 'to' are blank, will include all results. |
 | Awaiting assessment      | PAA/PA with 'submitted' status |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PAA/PA |
 | High impact traffic management | Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
