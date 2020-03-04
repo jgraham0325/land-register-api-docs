@@ -1361,7 +1361,7 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 1.4. USRN | Added sign post to API documentation |
-| 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status; added Granted with duration challenge for immediate PA |
+| 3.4.7. PAA & PA assessment decision options | (1) Diagram added;<br />(2) Added Modification request assessment decision not available when PA is in 'Closed' status;<br />(3) Added Granted with duration challenge for immediate PA |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
