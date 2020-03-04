@@ -2733,7 +2733,7 @@ Updated Work API with the following changes:
   <li>Planned permits no longer need to be granted by HA before works can be started</li>
   <li>Planned permits can be assessed at any stage, provided they haven't been assessed or cancelled</li>
   <li>Updated the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint to now accept the additional values <code>reasonable_period_end_date</code> and <code>is_duration_challenged</code></li>
-  <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code>
+  <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code></li>
 </ol>
 
 Updated Party API with the following changes:
@@ -2742,25 +2742,11 @@ Updated Party API with the following changes:
   <li>Updated the <code>GET /users/{email}</code> endpoint to accept <code>swaCode</code> query parameter. This can be used by contractors to see the workstreams they have available for a particular contract</li>
 </ol>
 
-The following Reporting API endpoints have been updated with a new <code>geographical_area_reference_number</code> property that enables HA users to filter their lists based on one or more Geographical Areas within their organisation:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>GET /permits</code></li>
-  <li><code>GET /alterations</code></li>
-  <li><code>GET /forward-plans</code></li>
-  <li><code>GET /reinstatements</code></li>
-  <li><code>GET /section-81s</code></li>
-  <li><code>GET /inspections</code></li>
-  <li><code>GET /comments</code></li>
-  <li><code>GET /fixed-penalty-notices</code></li>
-</ol>
-
 The Data Export API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><code>POST /permits/csv</code>has been updated with the following new properties:
+  <li><code>POST /permits/csv</code> has been updated with the following new properties:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>geographical_area_reference_number</code></li>
       <li><code>is_duration_challenged</code></li>
@@ -2796,7 +2782,20 @@ Reporting API has been updated with the following changes:
   audit events in the documentation 'History' section.</li>
   <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
   <li><code>GET permits/csv</code> endpoint now accepts the additional value <code>is_duration_challenged</code></li>
+  <li>The following Reporting API endpoints have been updated with a new <code>geographical_area_reference_number</code> property that enables HA users to filter their lists based on one or more Geographical Areas within their organisation:
+  <ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /permits</code></li>
+    <li><code>GET /alterations</code></li>
+    <li><code>GET /forward-plans</code></li>
+    <li><code>GET /reinstatements</code></li>
+    <li><code>GET /section-81s</code></li>
+    <li><code>GET /inspections</code></li>
+    <li><code>GET /comments</code></li>
+    <li><code>GET /fixed-penalty-notices</code></li>
+  </ol>
+  </li>
 </ol>
+
 
 Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
