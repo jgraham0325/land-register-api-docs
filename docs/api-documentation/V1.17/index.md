@@ -240,7 +240,7 @@ authenticated users for use with mapping queries. This API returns data in the f
 #### Data Export API
 {: .govuk-heading-s}
 
-Street Manager supports an API for Open Data users. The Data Export API allows non street works authority users, such as Mobile Application developers, to retrieve information about works. See Open Data and the resource guide for details.
+Street Manager supports an API for Open Data users. The Data Export API allows non street works authority users, such as Mobile Application developers, to retrieve information about works. It also allows users of Street Manager to extract data within their organisation from the service in CSV format. See Open Data and the resource guide for details.
 {: .govuk-body}
 
 #### Reporting API
@@ -314,6 +314,9 @@ Contractors can use the Data Export API to extract data from the service in CSV 
 {: .govuk-body}
 
 Street Manager maintains a number of hourly scheduled jobs for data exporting. Currently, these retrieve data of permits and activities across all organisations that have been added, changed, or deleted in the past hour, which is then stored in CSV format.
+{: .govuk-body}
+
+For example, a CSV file named <code>Works_data_export_2020-01-01_13-00.csv</code> will contain data of permits across all organisations that have been added, changed, or deleted between <code>2020-01-01T12:00:00.000Z</code> and <code>2020-01-01T13:00:00.000Z</code>.
 This data is only available to data export users.
 {: .govuk-body}
 
@@ -1639,7 +1642,7 @@ The Reporting and Data Export APIs will automatically filter data in endpoint re
 `HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. In a future release we will introduce Geographical Areas, a way for `HighwayAuthority` users to filter resources based on a set list of USRNs.
 {: .govuk-body}
 
-#### Default Workstream 
+#### Default Workstream
 {: .govuk-heading-s }
 
 A default workstream with the prefix "000" exists for every organisation. This is intended as a holding-place for work records without permits, for example historic works and section 81s are created against the default workstream for the associated promoter's organisation. When the first permit is created for a work record the promoter will be able to provide the correct workstream for which it should be associated. The default workstream should NOT be provided explicitely in requests when creating permits, this will result in a bad request error. Instead, a workstream for which the user has full-write access to should be provided.
