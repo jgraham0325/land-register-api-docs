@@ -425,6 +425,11 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 _(Previously section 25.3 in Business rules v0.1 draft)_ 
 
 
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg" alt="Street Manager - PAA/PA assessment decision options" width="100%" /></a>
+A diagram of PAA/PA assessment decision options</div>
+
+
+
 #### 3.4.8. PAA & PA response periods
 
 * The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
