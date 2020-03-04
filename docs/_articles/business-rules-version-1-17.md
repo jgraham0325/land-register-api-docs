@@ -817,6 +817,7 @@ A diagram of export file process</div>
     * Registered reinstatements
     * Comments (coming soon)
     * Section 81s
+    * Download all my data (promoter and HA admin users will be able to export raw data for their organisation)
 
 
 
