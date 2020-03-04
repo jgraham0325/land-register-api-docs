@@ -1359,7 +1359,7 @@ A diagram of S81 statuses</div>
 | 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
-| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted by works' |
+| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
 
 
 
@@ -1478,7 +1478,7 @@ AT BOTTOM!!!!!!! -->
 </tr>
 <tr>
 <td>
-<p>Designations impacted by works</p>
+<p>Designations impacted</p>
 </td>
 <td>
 <p>The designations applicable to the works. This should be provided wherever a works is notified against a street where a designation exists and that designation applies to the application. This is especially important for some special designation codes including but not limited to Traffic Sensitive and Special Engineering Difficulty (SED).</p>
