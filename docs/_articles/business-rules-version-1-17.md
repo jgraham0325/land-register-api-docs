@@ -1358,7 +1358,7 @@ A diagram of S81 statuses</div>
 | 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
-| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacting works' |
+| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted by works' |
 
 
 
