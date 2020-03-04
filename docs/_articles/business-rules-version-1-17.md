@@ -1477,6 +1477,14 @@ AT BOTTOM!!!!!!! -->
 </tr>
 <tr>
 <td>
+<p>Designations impacted by works</p>
+</td>
+<td>
+<p>The designations applicable to the works. This should be provided wherever a works is notified against a street where a designation exists and that designation applies to the application. This is especially important for some special designation codes including but not limited to Traffic Sensitive and Special Engineering Difficulty (SED).</p>
+</td>
+</tr>
+<tr>
+<td>
 <p>Failed &mdash; high</p>
 </td>
 <td>
@@ -1551,6 +1559,15 @@ AT BOTTOM!!!!!!! -->
 </tr>
 <tr>
 <td>
+<p>Notifying Environmental health</p>
+</td>
+<td>
+<p>To advise if the works will generate noise on site outside of specified/restricted hours.</p>
+<p>The applicable types of works, noise, specified/restricted hours and pollution are as detailed in the <a href="http://www.legislation.gov.uk/ukpga/1974/40">Control of Pollution Act 1974</a> and/or as defined by the local authority (e.g. City of London).</p>
+</td>
+</tr>
+<tr>
+<td>
 <p>PAA</p>
 </td>
 <td>
@@ -1570,7 +1587,7 @@ AT BOTTOM!!!!!!! -->
 <p>Promoter&nbsp;/ Works&nbsp;promoter&nbsp;/&nbsp;Promoter&nbsp;organisation&nbsp;</p>
 </td>
 <td>
-<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
+<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.</p>
 </td>
 </tr>
 <tr>
