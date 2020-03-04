@@ -733,6 +733,7 @@ _(Previously section 8 in Business rules v0.1 draft)_
     * Reinstatement
     * Comment
     * Section 81
+    * Work
 
 ### 7.3. Map application
 
@@ -777,7 +778,7 @@ _(Previously section 17.1 in Business rules v0.1 draft)_
 
 | Filter name              | Condition |
 |:-------------------------|:------------------|
-| Works start / end date and Application submission date | If 'from' date is blank, will include all results before the 'to' date. If 'to' date is blank, will include all results after the 'from' date. If both 'from' and 'to' are blank, will include all results. |
+| Works start / end date and Application submission date | If 'from' date is blank, will include all results earlier than the 'to' date and vice versa. If both 'from' and 'to' are blank, will include all results. |
 | Awaiting assessment      | PAA/PA with 'submitted' status |
 | Working within traffic-sensitive times | A traffic-sensitive designation has been selected by the promoter on the PAA/PA |
 | High impact traffic management | Applications with any of the following traffic management types: Road closure; Contraflow; Lane closure; Convoy working; Multi-way signals; Two-way signals |
@@ -1364,10 +1365,11 @@ A diagram of S81 statuses</div>
 | 3.4.7. PAA & PA assessment decision options | (1) Diagram added;<br />(2) Added Modification request assessment decision not available when PA is in 'Closed' status;<br />(3) Added Granted with duration challenge for immediate PA |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
+| 7.2. Works history | Added topic 'Work' |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
 | 7.6. Exporting records | Removed 'Coming soon' for Comments |
 | 7.7.2. Viewing geographical areas | Section added |
-| Glossary | Added entries for 'Notifying Environmental Health' and 'Designations impacted' |
+| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
 
 
 
