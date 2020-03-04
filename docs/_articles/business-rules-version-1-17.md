@@ -1563,7 +1563,7 @@ AT BOTTOM!!!!!!! -->
 </td>
 <td>
 <p>To advise if the works will generate noise on site outside of specified/restricted hours.</p>
-<p>The applicable types of works, noise, specified/restricted hours and pollution are as detailed in the <a href="http://www.legislation.gov.uk/ukpga/1974/40">Control of Pollution Act 1974</a> and/or as defined by the local authority (e.g. City of London).</p>
+<p>The applicable types of works, noise and specified/restricted hours are as detailed in the <a href="http://www.legislation.gov.uk/ukpga/1974/40">Control of Pollution Act 1974</a> and/or as defined by the local authority (e.g. City of London).</p>
 </td>
 </tr>
 <tr>
