@@ -414,6 +414,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 | Grant                | All PAA/PA     |
 | Refuse               | All PAA/PA     |
 | Modification request | PA only (not in 'Closed' status) |
+| Grant with duration challenge | Immediate PA only |
 
 * The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
@@ -815,8 +816,9 @@ A diagram of export file process</div>
     * Fixed penalty notices (FPN)
     * Inspections
     * Registered reinstatements
-    * Comments (coming soon)
+    * Comments
     * Section 81s
+    * Download all my data (promoter and HA admin users will be able to export raw data for their organisation)
 
 
 
@@ -833,13 +835,13 @@ A diagram of export file process</div>
 * The geographical area name is derived from the csv file name (without the extension).
 <!-- * The area name and list of USRNs may be changed by uploading a replacement csv file. -->
 
-<!--
+
 ### 7.7.2. Viewing geographical areas
 
 * HA users may select up to a total of 60,000 USRNs to be filtered on. This is the combined total number of USRNs of all geographical areas selected.
-* All list pages will be filtered to only show records associated to the geographical areas selected.
+* All list pages will be filtered to only show records associated to the geographical areas selected (fee report will not be affected).
 
--->
+
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -1354,13 +1356,13 @@ A diagram of S81 statuses</div>
 | Section | Change comment |
 |:--------|:---------------|
 | 1.4. USRN | Added sign post to API documentation |
+| 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status; added Granted with duration challenge for immediate PA |
 | 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
-| 3.4.7. PAA & PA assessment decision options | Modification request assessment decision not available when PA is in 'Closed' status |
 | 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
 | 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
-| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted by works' |
-
-
+| 7.6. Exporting records | Removed 'Coming soon' for Comments |
+| 7.7.2. Viewing geographical areas | Section added |
+| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
 
 
 
@@ -1477,7 +1479,7 @@ AT BOTTOM!!!!!!! -->
 </tr>
 <tr>
 <td>
-<p>Designations impacted by works</p>
+<p>Designations impacted</p>
 </td>
 <td>
 <p>The designations applicable to the works. This should be provided wherever a works is notified against a street where a designation exists and that designation applies to the application. This is especially important for some special designation codes including but not limited to Traffic Sensitive and Special Engineering Difficulty (SED).</p>
@@ -1563,7 +1565,7 @@ AT BOTTOM!!!!!!! -->
 </td>
 <td>
 <p>To advise if the works will generate noise on site outside of specified/restricted hours.</p>
-<p>The applicable types of works, noise, specified/restricted hours and pollution are as detailed in the <a href="http://www.legislation.gov.uk/ukpga/1974/40">Control of Pollution Act 1974</a> and/or as defined by the local authority (e.g. City of London).</p>
+<p>The applicable types of works, noise and specified/restricted hours are as detailed in the <a href="http://www.legislation.gov.uk/ukpga/1974/40">Control of Pollution Act 1974</a> and/or as defined by the local authority (e.g. City of London).</p>
 </td>
 </tr>
 <tr>
