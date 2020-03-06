@@ -2448,7 +2448,7 @@ This endpoint takes min and max easting and northing values to select all HS2 ac
 
 <code>GET /nsg/streets</code>
 
-Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
 {: .govuk-body}
 
 #### Get streets endpoint (USRN)
@@ -2456,7 +2456,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -2471,6 +2471,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 {: .govuk-heading-s}
 
 Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released):
+{: .govuk-body}
 
 0 - This is currently mapped to reinstatement type code 5 for backward compatibility purposes, but this will be removed in a future version of Street Manager so we recommend providing reinstatement type code 5 (see below)
 1 - Carriageway type 1 (10 to 30 MSA)
