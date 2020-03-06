@@ -2472,6 +2472,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 
 Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released):
 
+0 - This is currently mapped to reinstatement type code 5 for backward compatibility purposes, but this will be removed in a future version of Street Manager so we recommend providing reinstatement type code 5 (see below)
 1 - Carriageway type 1 (10 to 30 MSA)
 2 - Carriageway type 2 (2.5 to 10 MSA)
 3 - Carriageway type 3 (0.5 to 2.5 MSA)
