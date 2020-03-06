@@ -2448,7 +2448,7 @@ This endpoint takes min and max easting and northing values to select all HS2 ac
 
 <code>GET /nsg/streets</code>
 
-Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
 {: .govuk-body}
 
 #### Get streets endpoint (USRN)
@@ -2456,7 +2456,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -2465,6 +2465,25 @@ Returns NSG data based on a USRN. The information returned can be used to popula
 <code>GET /nsg/search</code>
 
 Returns street data based on a query search across the NSG street_descriptor, locality_name, town_name and administrative_area.
+{: .govuk-body}
+
+#### Reinstatement type codes
+{: .govuk-heading-s}
+
+Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released):
+{: .govuk-body}
+
+0 - This is currently mapped to reinstatement type code 5 for backward compatibility purposes, but this will be removed in a future version of Street Manager so we recommend providing reinstatement type code 5 (see below)
+1 - Carriageway type 1 (10 to 30 MSA)
+2 - Carriageway type 2 (2.5 to 10 MSA)
+3 - Carriageway type 3 (0.5 to 2.5 MSA)
+4 - Carriageway type 4 (up to 0.5 MSA)
+5 - Carriageway type 0 (30 to 125 MSA)
+6 - High Duty Footway
+7 - High Amenity Footway
+8 - Other Footways
+9 - Private Street – No definition information held by Street Authority
+10 - Carriageway type 6 (over 125 MSA)
 {: .govuk-body}
 
 ### Party API
@@ -2813,6 +2832,101 @@ Reporting API has been updated with the following changes:
 
 
 Version 1.18 (19/03/2020):
+{: .govuk-heading-s}
+
+Updated Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Property <code>road_category</code> marked as deprecated and will be removed from the response of the following endpoints in a future release: <code>GET /nsg/streets</code> and
+  <code>GET /nsg/streets/{usrn}</code>.</li>
+  <li>Property <code>reinstatement_types</code> added to the response of the following endpoints: <code>GET /nsg/streets</code> and <code>GET /nsg/streets/{usrn}</code>. This property contains a
+  collection of reinstatement type codes and corresponding location text. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section above.</li>
+  <li>The streets returned in the response of the following endpoints now include streets with reinstatement type code value of up to 10 and where the street state does not equal 4: <code>GET /nsg/streets</code> and <code>GET /nsg/streets/{usrn}</code>.
+</ol>
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>All existing create endpoints which currently accept the property <code>road_category</code> have been updated to now accept a value of up to 10.
+</ol>
+
+Version 1.17 (05/03/2020):
+{: .govuk-heading-s}
+
+Workstream restrictions will be taking effect on the Work API. See the <a class="govuk-link" href="#access-and-permissions">access and permissions</a> section for further details.
+{: .govuk-body}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the `object_reference` of audits relating to the <code>event_type</code> of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+  <li>Planned permits no longer need to be granted by HA before works can be started</li>
+  <li>Planned permits can be assessed at any stage, provided they haven't been assessed or cancelled</li>
+  <li>Updated the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint to now accept the additional values <code>reasonable_period_end_date</code> and <code>is_duration_challenged</code></li>
+  <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code></li>
+</ol>
+
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>GET /users/{email}</code> endpoint to accept <code>swaCode</code> query parameter. This can be used by contractors to see the workstreams they have available for a particular contract</li>
+</ol>
+
+The Data Export API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>POST /permits/csv</code> has been updated with the following new properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>geographical_area_reference_number</code></li>
+      <li><code>is_duration_challenged</code></li>
+    </ol>
+  </li>
+  <li><code>POST /permits/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /alterations/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /forward-plans/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /reinstatements/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /section-81s/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /inspections/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /fixed-penalty-notices/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li>Updated the <code>GET /work-data</code> endpoint to allow previously generated CSVs to be retrieved.</li>
+  <li>Updated the <code>GET /work-data</code> endpoint to include the following additional fields in generated CSVs:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Highway authority swa code</code></li>
+      <li><code>Works category reference</code></li>
+      <li><code>Traffic management type reference</code></li>
+      <li><code>Assessment status reference</code></li>
+      <li><code>Permit status reference</code></li>
+      <li><code>Work status reference</code></li>
+    </ol>
+  </li>
+  <li>New <code>GET /activity-data</code> endpoint added to retrieve data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format.</li>
+  <li>New <code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
+</ol>
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>GET works/updates</code> endpoint has been updated to return the <code>event_type</code> and <code>object_type</code> properties. Returns updates for new events, for more information, see
+  audit events in the documentation 'History' section.</li>
+  <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
+  <li><code>GET permits/csv</code> endpoint now accepts the additional value <code>is_duration_challenged</code></li>
+  <li>The following Reporting API endpoints have been updated with a new <code>geographical_area_reference_number</code> property that enables HA users to filter their lists based on one or more Geographical Areas within their organisation:
+  <ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /permits</code></li>
+    <li><code>GET /alterations</code></li>
+    <li><code>GET /forward-plans</code></li>
+    <li><code>GET /reinstatements</code></li>
+    <li><code>GET /section-81s</code></li>
+    <li><code>GET /inspections</code></li>
+    <li><code>GET /comments</code></li>
+    <li><code>GET /fixed-penalty-notices</code></li>
+  </ol>
+  </li>
+</ol>
+
+Version 1.16 (20/02/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:
