@@ -2448,7 +2448,7 @@ This endpoint takes min and max easting and northing values to select all HS2 ac
 
 <code>GET /nsg/streets</code>
 
-Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
 {: .govuk-body}
 
 #### Get streets endpoint (USRN)
@@ -2456,7 +2456,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released)
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -2465,6 +2465,23 @@ Returns NSG data based on a USRN. The information returned can be used to popula
 <code>GET /nsg/search</code>
 
 Returns street data based on a query search across the NSG street_descriptor, locality_name, town_name and administrative_area.
+{: .govuk-body}
+
+#### Reinstatement type codes
+{: .govuk-heading-s}
+
+Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released):
+
+1 - Carriageway type 1 (10 to 30 MSA)
+2 - Carriageway type 2 (2.5 to 10 MSA)
+3 - Carriageway type 3 (0.5 to 2.5 MSA)
+4 - Carriageway type 4 (up to 0.5 MSA)
+5 - Carriageway type 0 (30 to 125 MSA)
+6 - High Duty Footway
+7 - High Amenity Footway
+8 - Other Footways
+9 - Private Street – No definition information held by Street Authority
+10 - Carriageway type 6 (over 125 MSA)
 {: .govuk-body}
 
 ### Party API
@@ -2821,7 +2838,7 @@ Updated Street Lookup API with the following changes:
   <li>Property <code>road_category</code> marked as deprecated and will be removed from the response of the following endpoints in a future release: <code>GET /nsg/streets</code> and
   <code>GET /nsg/streets/{usrn}</code>.</li>
   <li>Property <code>reinstatement_types</code> added to the response of the following endpoints: <code>GET /nsg/streets</code> and <code>GET /nsg/streets/{usrn}</code>. This property contains a
-  collection of reinstatement type codes and corresponding location text.</li>
+  collection of reinstatement type codes and corresponding location text. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section above.</li>
   <li>The streets returned in the response of the following endpoints now include streets with reinstatement type code value of up to 10 and where the street state does not equal 4: <code>GET /nsg/streets</code> and <code>GET /nsg/streets/{usrn}</code>.
 </ol>
 
