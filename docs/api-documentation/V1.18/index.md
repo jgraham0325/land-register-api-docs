@@ -2170,7 +2170,7 @@ Typically the virus scanning process will only take a few seconds.
 
 <code>DELETE /files/{file ID}</code>
 
-Deletes a file from the system. Users can only delete files which their organisation uploaded. You cannot remove a file that's been linked to an entity. As soon as the file id is used as part of a create permit/reinstatement/FPN/inspection request then it is considered linked to that entity.
+Deletes a file from the system. Users can only delete files which their organisation uploaded. You cannot remove a file that's been linked to an entity. For example as soon as the file id is used as part of a create request for permits/reinstatements/FPNs/inspections etc. or the file was uploaded against a work reference number it is considered linked to that entity.
 {: .govuk-body}
 
 #### History
@@ -2768,6 +2768,8 @@ Updated Work API with the following changes:
   <li>Planned permits can be assessed at any stage, provided they haven't been assessed or cancelled</li>
   <li>Updated the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint to now accept the additional values <code>reasonable_period_end_date</code> and <code>is_duration_challenged</code></li>
   <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code></li>
+  <li>Fixed a defect with the <code>DELETE /files/{fileId}</code> endpoint so it now correctly returns a precondition failed error if the file has already been associated with a work</li>
+  <li>Fixed a defect with the <code>GET /works/{workReferenceNumber}/history</code> endpoint so it now correctly returns <code>inspection_agreed_site_compliance</code> AuditEvent enum where applicable instead of the event not being returned</li>
 </ol>
 
 Updated Party API with the following changes:
