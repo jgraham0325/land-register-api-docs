@@ -50,5 +50,5 @@ title: Offline
 
 <ul class="govuk-list govuk-list--bullet">
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/PERMIT-APPLICATION-INCLUDING-RESPONSES.pdf">Permit form</a></li>
-  <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/SM-InpectionForm-v2-AB.pdf">Inspection form</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/Street%20Manager%20-%20inpection%20form%20printable.pdf">Inspection form v1.0</a></li>
 </ul>
