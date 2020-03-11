@@ -417,6 +417,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 | Grant with duration challenge | Immediate PA only |
 
 * The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
+    * Modification requested PAs will not deem as the action is with the promoter.
 
 * Street Manager will automatically set a record's assessment decision under the following circumstances:
     * Immediate works that are started and completed before an assessment decision has been manually submitted will have the assessment decision of "Granted (auto)".
@@ -1362,15 +1363,8 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 1.4. USRN | Added sign post to API documentation |
-| 3.4.7. PAA & PA assessment decision options | (1) Diagram added;<br />(2) Added Modification request assessment decision not available when PA is in 'Closed' status;<br />(3) Added Granted with duration challenge for immediate PA |
-| 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
-| 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
-| 7.2. Works history | Added topic 'Work' |
-| 7.5. Advanced filtering | Updated description for Date filters to advise behaviour when blank |
-| 7.6. Exporting records | Removed 'Coming soon' for Comments |
-| 7.7.2. Viewing geographical areas | Section added |
-| Glossary | Added entry for 'Notifying Environmental Health' and 'Designations impacted' |
+| 3.4.8. PAA & PA response periods | Added modified PA |
+
 
 
 
