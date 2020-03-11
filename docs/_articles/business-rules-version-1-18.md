@@ -1363,6 +1363,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
+| 3.4.7. PAA & PA assessment decision options | Add "Modification requested PAs will not deem as the action is with the promoter." |
 | 3.4.8. PAA & PA response periods | Added modified PA |
 
 
