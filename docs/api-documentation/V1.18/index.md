@@ -1923,7 +1923,7 @@ which you would like to associate the works. A default workstream with prefix
 workstream_prefix, we will try to find a non-default workstream associated with your organisation that the currently authenticated user has full-write access to. If this is not possible a work will not be creatable. When providing a prefix the workstream_prefix must match the prefix of a workstream associated with the user's organisation that they have full-write access to. See <a class="govuk-link" href="#access-and-permissions">access and permissions</a> for further information.
 {: .govuk-body}
 
-NSG related fields are optional. If not provided; street_name, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
+NSG related fields are optional. If not provided; street_name, town, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
 {: .govuk-body}
 
 permit_asds for the provided USRN can be found at Street Lookup API endpoint /nsg/usrn
@@ -2925,6 +2925,25 @@ Reporting API has been updated with the following changes:
     <li><code>GET /comments</code></li>
     <li><code>GET /fixed-penalty-notices</code></li>
   </ol>
+  </li>
+</ol>
+
+Town added to creation and response:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>The following API endpoints have been updated to include the optional property <code>town</code> in its create request:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST /works</code></li>
+      <li><code>POST /activity</code></li>
+    </ol>
+  </li>
+
+  <li>The following API endpoints have been updated to return the property <code>town</code>, in its responses, that is either explicitly stated or implicit retrieved from NSG data upon creation:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /permits</code></li>
+      <li><code>GET /activity/{activityReferenceNumber}</code></li>
+    </ol>
   </li>
 </ol>
 

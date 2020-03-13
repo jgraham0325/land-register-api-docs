@@ -479,6 +479,10 @@
 				"street_name": {
 					"type": "string"
 				},
+				"town": {
+					"type": "string",
+					"x-nullable": true
+				},
 				"area_name": {
 					"type": "string",
 					"x-nullable": true
@@ -1769,6 +1773,10 @@
 				"street_name": {
 					"type": "string"
 				},
+				"town": {
+					"type": "string",
+					"x-nullable": true
+				},
 				"area_name": {
 					"type": "string",
 					"x-nullable": true
@@ -1930,6 +1938,11 @@
 					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
 				},
 				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"town": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
@@ -3703,6 +3716,11 @@
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
 				},
+				"town": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
 				"area_name": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
@@ -3809,6 +3827,10 @@
 					"format": "double"
 				},
 				"street_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"town": {
 					"type": "string",
 					"x-nullable": true
 				},
@@ -4062,6 +4084,11 @@
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
 				},
+				"town": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
 				"area_name": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
@@ -4181,6 +4208,10 @@
 				},
 				"street_name": {
 					"type": "string"
+				},
+				"town": {
+					"type": "string",
+					"x-nullable": true
 				},
 				"area_name": {
 					"type": "string",
@@ -4387,6 +4418,11 @@
 					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
 				},
 				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"town": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
@@ -4738,6 +4774,11 @@
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
 				},
+				"town": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
 				"area_name": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
@@ -4870,6 +4911,11 @@
 					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
 				},
 				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"town": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
@@ -5034,6 +5080,11 @@
 					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
 				},
 				"street_name": {
+					"type": "string",
+					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
+					"x-nullable": true
+				},
+				"town": {
 					"type": "string",
 					"description": "Max length 100 characters\nUse Street Lookup API endpoint /nsg/streets to lookup this information\nIf not provided, populated with NSG data related to supplied USRN",
 					"x-nullable": true
