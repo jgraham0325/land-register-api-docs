@@ -927,12 +927,12 @@ The table below shows the current permissions per endpoint.
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /work-data</code></td>
-      <td class="govuk-table__cell">DataExport</td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer, DataExport and Admin</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /activity-data</code></td>
-      <td class="govuk-table__cell">DataExport</td>
+      <td class="govuk-table__cell">Planner, Contractor, HAOfficer, DataExport and Admin</td>
       <td class="govuk-table__cell">Not Required</td>
     </tr>
     <tr class="govuk-table__row">
@@ -2796,6 +2796,15 @@ The Data Export API has been updated with the following changes:
   <li><code>POST /inspections/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li><code>POST /fixed-penalty-notices/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li>Updated the <code>GET /work-data</code> endpoint to allow previously generated CSVs to be retrieved.</li>
+  <li>Updated the <code>GET /work-data</code> endpoint so that it is now accessible to users with the following roles:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Planner</code></li>
+      <li><code>Contractor</code></li>
+      <li><code>HighwayAuthority</code></li>
+      <li><code>Admin</code></li>
+      <li><code>DataExport</code></li>
+    </ol>
+  </li>
   <li>Updated the <code>GET /work-data</code> endpoint to include the following additional fields in generated CSVs:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>Highway authority swa code</code></li>
