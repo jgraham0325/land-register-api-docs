@@ -2928,21 +2928,87 @@ Reporting API has been updated with the following changes:
   </li>
 </ol>
 
-Town added to creation and response:
+Town will now be stored in Street Manager:
 {: .govuk-body}
 
+±±±±± EXAMPLE
 <ol class="govuk-list govuk-list--bullet">
-  <li>The following API endpoints have been updated to include the optional property <code>town</code> in its create request:
+  <li><code>POST /permits/csv</code> has been updated with the following new properties:
     <ol class="govuk-list govuk-list--bullet">
-      <li><code>POST /works</code></li>
+      <li><code>geographical_area_reference_number</code></li>
+      <li><code>is_duration_challenged</code></li>
+    </ol>
+  </li>
+  <li><code>POST /permits/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+
+  <li>Updated the <code>GET /work-data</code> endpoint to include the following additional fields in generated CSVs:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Highway authority swa code</code></li>
+      <li><code>Works category reference</code></li>
+      <li><code>Traffic management type reference</code></li>
+      <li><code>Assessment status reference</code></li>
+      <li><code>Permit status reference</code></li>
+      <li><code>Work status reference</code></li>
+    </ol>
+  </li>
+  <li>New <code>GET /activity-data</code> endpoint added to retrieve data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format.</li>
+  <li>New <code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
+</ol>
+±±±±± EXAMPLE END
+  <li>In the Works API, the following endpoints have been updated to include the optional property <code>town</code> in its request body. (If not provided, it will be inferred from the nsg data):
+    <ol class="govuk-list govuk-list--bullet">
       <li><code>POST /activity</code></li>
+      <li><code>POST /works</code></li>
+      <li><code>POST /forward-plans</code></li>
+      <li><code>POST /section-81</code></li>
+      <li><code>POST /historic-works/fixed-penalty-notices</code></li>
+      <li><code>POST ​/non-notifiable-works​/sites</code></li>
+      <li><code>POST ​/historic-works​/inspections</code></li>
+      <li><code>POST ​/works​/{workReferenceNumber}​/permits/code></li>
     </ol>
   </li>
 
-  <li>The following API endpoints have been updated to return the property <code>town</code>, in its responses, that is either explicitly stated or implicit retrieved from NSG data upon creation:
+  <li>In the Works API, the following sections have updated their responses to include town:
     <ol class="govuk-list govuk-list--bullet">
-      <li><code>GET /permits</code></li>
-      <li><code>GET /activity/{activityReferenceNumber}</code></li>
+    PermitResponse
+    WorkResponse
+    ActivityResponse
+    ForwardPlanResponse
+    PermitResponse
+
+      <li><code>Alterations</code></li>
+      <li><code>Forward Plans</code></li>
+      <li><code>Inspections</code></li>
+      <li><code>Permit</code></li>
+      <li><code>Reinstatements</code></li>
+      <li><code>Section 81s</code></li>
+      <li><code>Work</code></li>
+    </ol>
+  </li>
+
+  <li>In the Reporting-API, the following sections have updated their responses to include town:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Alterations</code></li>
+      <li><code>Forward Plans</code></li>
+      <li><code>Inspections</code></li>
+      <li><code>Permit</code></li>
+      <li><code>Reinstatements</code></li>
+      <li><code>Section 81s</code></li>
+      <li><code>Work</code></li>
+    </ol>
+  </li>
+
+   <li>Town will also be returned on the following list pages
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Alterations</code></li>
+      <li><code>Inspections</code></li>
+      <li><code>Reinstatements</code></li>
+      <li><code>Section 81s</code></li>
+      <li><code>Applications and Permit</code></li>
+      <li><code>Change requests</code></li>
+      <li><code>Works record</code></li>
+      <li><code>PAA to progress</code></li>
+      <li><code>Forward Plans</code></li>
     </ol>
   </li>
 </ol>
