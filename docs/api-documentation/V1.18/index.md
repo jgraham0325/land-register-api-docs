@@ -2760,6 +2760,54 @@ Version 1.18 (19/03/2020):
 Workstream restrictions will be taking effect on the Work API. See the <a class="govuk-link" href="#access-and-permissions">access and permissions</a> section for further details.
 {: .govuk-body}
 
+Town will now be stored in Street Manager:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+
+  In the Works API, the following endpoints have been updated to include the optional property <code>town</code> in its request body (if not provided, it will be inferred from NSG data):
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST /activity</code></li>
+      <li><code>POST /forward-plans</code></li>
+      <li><code>POST /historic-works/fixed-penalty-notices</code></li>
+      <li><code>POST ​/historic-works​/inspections</code></li>
+      <li><code>POST ​/non-notifiable-works​/sites</code></li>
+      <li><code>POST /section-81-works/section-81s</code></li>
+      <li><code>POST /works</code></li>
+    </ol>
+  </li>
+
+  In the Works API, the following endpoints now include <code>town</code> in their respective responses:
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /works/{workReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code></li>
+    </ol>
+  </li>
+
+  In the Reporting API, the following endpoints now include <code>town</code> in their respective responses:
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /alterations</code></li>
+      <li><code>GET /forward-plans</code></li>
+      <li><code>GET /inspections</code></li>
+      <li><code>GET /permits</code></li>
+      <li><code>GET /reinstatements</code></li>
+      <li><code>GET /section-81s</code></li>
+    </ol>
+  </li>
+</ol>
+
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
@@ -2925,91 +2973,6 @@ Reporting API has been updated with the following changes:
     <li><code>GET /comments</code></li>
     <li><code>GET /fixed-penalty-notices</code></li>
   </ol>
-  </li>
-</ol>
-
-Town will now be stored in Street Manager:
-{: .govuk-body}
-
-±±±±± EXAMPLE
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>POST /permits/csv</code> has been updated with the following new properties:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>geographical_area_reference_number</code></li>
-      <li><code>is_duration_challenged</code></li>
-    </ol>
-  </li>
-  <li><code>POST /permits/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
-
-  <li>Updated the <code>GET /work-data</code> endpoint to include the following additional fields in generated CSVs:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>Highway authority swa code</code></li>
-      <li><code>Works category reference</code></li>
-      <li><code>Traffic management type reference</code></li>
-      <li><code>Assessment status reference</code></li>
-      <li><code>Permit status reference</code></li>
-      <li><code>Work status reference</code></li>
-    </ol>
-  </li>
-  <li>New <code>GET /activity-data</code> endpoint added to retrieve data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format.</li>
-  <li>New <code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
-</ol>
-±±±±± EXAMPLE END
-  <li>In the Works API, the following endpoints have been updated to include the optional property <code>town</code> in its request body. (If not provided, it will be inferred from the nsg data):
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>POST /activity</code></li>
-      <li><code>POST /works</code></li>
-      <li><code>POST /forward-plans</code></li>
-      <li><code>POST /section-81</code></li>
-      <li><code>POST /historic-works/fixed-penalty-notices</code></li>
-      <li><code>POST ​/non-notifiable-works​/sites</code></li>
-      <li><code>POST ​/historic-works​/inspections</code></li>
-      <li><code>POST ​/works​/{workReferenceNumber}​/permits/code></li>
-    </ol>
-  </li>
-
-  <li>In the Works API, the following sections have updated their responses to include town:
-    <ol class="govuk-list govuk-list--bullet">
-    PermitResponse
-    WorkResponse
-    ActivityResponse
-    ForwardPlanResponse
-    PermitResponse
-
-      <li><code>Alterations</code></li>
-      <li><code>Forward Plans</code></li>
-      <li><code>Inspections</code></li>
-      <li><code>Permit</code></li>
-      <li><code>Reinstatements</code></li>
-      <li><code>Section 81s</code></li>
-      <li><code>Work</code></li>
-    </ol>
-  </li>
-
-  <li>In the Reporting-API, the following sections have updated their responses to include town:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>Alterations</code></li>
-      <li><code>Forward Plans</code></li>
-      <li><code>Inspections</code></li>
-      <li><code>Permit</code></li>
-      <li><code>Reinstatements</code></li>
-      <li><code>Section 81s</code></li>
-      <li><code>Work</code></li>
-    </ol>
-  </li>
-
-   <li>Town will also be returned on the following list pages
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>Alterations</code></li>
-      <li><code>Inspections</code></li>
-      <li><code>Reinstatements</code></li>
-      <li><code>Section 81s</code></li>
-      <li><code>Applications and Permit</code></li>
-      <li><code>Change requests</code></li>
-      <li><code>Works record</code></li>
-      <li><code>PAA to progress</code></li>
-      <li><code>Forward Plans</code></li>
-    </ol>
   </li>
 </ol>
 
