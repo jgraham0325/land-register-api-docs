@@ -679,6 +679,7 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 | Standard       | 5 working days         |
 | Minor          | 2 working days         |
 | Immediate      | Not applicable         |
+| Any HS2 works  | Not applicable         |
 
 _(Previously section 13 in Business rules v0.1 draft)_ 
 
@@ -1365,7 +1366,7 @@ A diagram of S81 statuses</div>
 |:--------|:---------------|
 | 3.4.7. PAA & PA assessment decision options | Add "Modification requested PAs will not deem as the action is with the promoter." |
 | 3.4.8. PAA & PA response periods | Added modified PA |
-
+| 6.5. Validity periods | Added that validity period is not applicable for HS2 works |
 
 
 
