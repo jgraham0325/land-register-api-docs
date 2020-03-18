@@ -2770,6 +2770,15 @@ Updated Work API with the following changes:
   <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code></li>
   <li>Fixed a defect with the <code>DELETE /files/{fileId}</code> endpoint so it now correctly returns a precondition failed error if the file has already been associated with a work</li>
   <li>Fixed a defect with the <code>GET /works/{workReferenceNumber}/history</code> endpoint so it now correctly returns <code>inspection_agreed_site_compliance</code> AuditEvent enum where applicable instead of the event not being returned</li>
+  <li>Users can now update the <code>works_coordinates</code> property when submitting a Permit Alteration to the <code>/works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint.</li>
+  <li>Updated <code>width</code>, <code>depth</code>, <code>length</code>, <code>inspection_units</code> and <code>number_of_holes</code> request properties to now allow a value of 0. This will impact the following endpoints:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST /non-notifiable-works/sites</code></li>
+      <li><code>POST /works/{workReferenceNumber}/sites</code></li>
+      <li><code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code></li>
+      <li><code>PUT /works/{workReferenceNumber}/inspection-units</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Party API with the following changes:
