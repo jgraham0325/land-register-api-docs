@@ -153,6 +153,8 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
     * Street Maintenance responsibility (STREET_STATUS): 1, 2 & 3 (See NSG spec v2.10 table 6.1)
 * See the [API documentation](https://departmentfortransport.github.io/street-manager-docs/api-documentation/) for details on backwards compatibility.
 
+* If there are multiple reinstatement type codes, one must be selected when raising a forward plan or PAA/PA.
+
 _(Previously section 16.3 in Business rules v0.1 draft)_
 
 
@@ -1365,6 +1367,7 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
+| 1.4. Unique Street Reference Number (USRN) | Added "If there are multiple reinstatement type codes, one must be selected when raising a forward plan or PAA/PA." |
 | 3.4.7. PAA & PA assessment decision options | Add "Modification requested PAs will not deem as the action is with the promoter." |
 | 3.4.8. PAA & PA response periods | Added modified PA |
 | 6.5. Validity periods | Added that validity period is not applicable for HS2 works |
