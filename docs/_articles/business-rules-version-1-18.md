@@ -508,11 +508,11 @@ A diagram of PA statuses</div>
 
 * The change request types are as follows:
 
-| Change request type | Available for | Criteria | Assessment required? |
+| Change request type | Available for | Criteria | CR assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
-| Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No |
+| Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No (Assess PAA/PA directly) |
 | Promoter change request | Promoter | Change initiated when PA has assessment decision as 'Granted' | Yes |
-| Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No |
+| Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No (Assess PA directly) |
 | Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
 | HA imposed change | HA | Change initiated when PA has assessment decision as 'Granted' | No |
 
@@ -679,6 +679,7 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 | Standard       | 5 working days         |
 | Minor          | 2 working days         |
 | Immediate      | Not applicable         |
+| Any HS2 works  | Not applicable         |
 
 _(Previously section 13 in Business rules v0.1 draft)_ 
 
@@ -687,7 +688,8 @@ _(Previously section 13 in Business rules v0.1 draft)_
 ### 6.6. Changing the number of inspection units
 
 * The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
-     * The number of inspection units is defaulted to 1.
+     * The number of inspection units is defaulted to 1 (one) and may be changed to 0 (zero) if subsumed/combined.
+
 
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
 
@@ -896,11 +898,12 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
     * the current date or in the past
     * on or after the actual start date
     * on or before the actual end date if works stop has been logged
-* To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
+* To update a site with a new reinstatement, select 'Update reinstatement' on the 'site record' level.
 * This functionality may be used to correct a mistake on the previous reinstatement.
 * A reinstatement can be interim or permanent.
   + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent', a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
+* Reinstatement site measurements or number of holes may be set to zero if the site has been subsumed/combined.
 
 _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
@@ -1365,6 +1368,9 @@ A diagram of S81 statuses</div>
 |:--------|:---------------|
 | 3.4.7. PAA & PA assessment decision options | Add "Modification requested PAs will not deem as the action is with the promoter." |
 | 3.4.8. PAA & PA response periods | Added modified PA |
+| 6.5. Validity periods | Added that validity period is not applicable for HS2 works |
+| 6.6. Changing the number of inspection units | Added that units may be set to 0 |
+| 8.3. Adding reinstatements |  Added that site measurements or number of holes may be set to 0; and link content updated to  "Update reinstatement" |
 
 
 
