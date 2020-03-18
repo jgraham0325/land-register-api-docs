@@ -508,11 +508,11 @@ A diagram of PA statuses</div>
 
 * The change request types are as follows:
 
-| Change request type | Available for | Criteria | Assessment required? |
+| Change request type | Available for | Criteria | CR assessment required? |
 |:--------------------|:---------------------|:---------|:------------------------|
-| Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No |
+| Promoter imposed change | Promoter | Change initiated when PA is in status 'Submitted' (awaiting assessment) | No (Assess PAA/PA directly) |
 | Promoter change request | Promoter | Change initiated when PA has assessment decision as 'Granted' | Yes |
-| Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No |
+| Modified permit | Promoter | Change initiated when PA is in status 'Modification requested' | No (Assess PAA/PA directly) |
 | Works extension | Promoter | Same criteria as 'Promoter change request' and includes a change to the proposed end date | Yes |
 | HA imposed change | HA | Change initiated when PA has assessment decision as 'Granted' | No |
 
