@@ -1923,7 +1923,7 @@ which you would like to associate the works. A default workstream with prefix
 workstream_prefix, we will try to find a non-default workstream associated with your organisation that the currently authenticated user has full-write access to. If this is not possible a work will not be creatable. When providing a prefix the workstream_prefix must match the prefix of a workstream associated with the user's organisation that they have full-write access to. See <a class="govuk-link" href="#access-and-permissions">access and permissions</a> for further information.
 {: .govuk-body}
 
-NSG related fields are optional. If not provided; street_name, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
+NSG related fields are optional. If not provided; street_name, town, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
 {: .govuk-body}
 
 permit_asds for the provided USRN can be found at Street Lookup API endpoint /nsg/usrn
@@ -2759,6 +2759,54 @@ Version 1.18 (19/03/2020):
 
 Workstream restrictions will be taking effect on the Work API. See the <a class="govuk-link" href="#access-and-permissions">access and permissions</a> section for further details.
 {: .govuk-body}
+
+Town will now be stored in Street Manager:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+
+  In the Works API, the following endpoints have been updated to include the optional property <code>town</code> in its request body (if not provided, it will be inferred from NSG data):
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST /activity</code></li>
+      <li><code>POST /forward-plans</code></li>
+      <li><code>POST /historic-works/fixed-penalty-notices</code></li>
+      <li><code>POST ​/historic-works​/inspections</code></li>
+      <li><code>POST ​/non-notifiable-works​/sites</code></li>
+      <li><code>POST /section-81-works/section-81s</code></li>
+      <li><code>POST /works</code></li>
+    </ol>
+  </li>
+
+  In the Works API, the following endpoints now include <code>town</code> in their respective responses:
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /works/{workReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations/{permitAlterationReferenceNumber}</code></li>
+      <li><code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code></li>
+    </ol>
+  </li>
+
+  In the Reporting API, the following endpoints now include <code>town</code> in their respective responses:
+  {: .govuk-body}
+
+  <li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /alterations</code></li>
+      <li><code>GET /forward-plans</code></li>
+      <li><code>GET /inspections</code></li>
+      <li><code>GET /permits</code></li>
+      <li><code>GET /reinstatements</code></li>
+      <li><code>GET /section-81s</code></li>
+    </ol>
+  </li>
+</ol>
 
 Updated Work API with the following changes:
 {: .govuk-body}
