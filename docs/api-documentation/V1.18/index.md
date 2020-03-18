@@ -2827,6 +2827,16 @@ Updated Work API with the following changes:
       <li><code>PUT /works/{workReferenceNumber}/inspection-units</code></li>
     </ol>
   </li>
+  <li>The following audit event types have been added, these are used when creating a work:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>planned_works_record_created</code></li>
+      <li><code>in_progress_works_record_created</code></li>
+      <li><code>historic_works_record_created</code></li>
+      <li><code>non_notifiable_works_record_created</code></li>
+      <li><code>section_81_works_record_created</code></li>
+      <li><code>unattributable_works_record_created</code></li>
+    </ol>
+  <li>
 </ol>
 
 Updated Party API with the following changes:
