@@ -688,7 +688,8 @@ _(Previously section 13 in Business rules v0.1 draft)_
 ### 6.6. Changing the number of inspection units
 
 * The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
-     * The number of inspection units is defaulted to 1 (one) and may be changed to 0 (zero) if subsumed/combined.
+     * The number of inspection units is defaulted to 1 (one) 
+     * The number of units may be changed to 0 (zero) if all sites have been subsumed/combined.
 
 
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
