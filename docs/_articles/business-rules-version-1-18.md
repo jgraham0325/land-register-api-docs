@@ -1373,6 +1373,7 @@ A diagram of S81 statuses</div>
 | 6.5. Validity periods | Added that validity period is not applicable for HS2 works |
 | 6.6. Changing the number of inspection units | Added that units may be set to 0 |
 | 8.3. Adding reinstatements |  Added that site measurements or number of holes may be set to 0; and link content updated to  "Update reinstatement" |
+| Glossary | Added 'Road type' |
 
 
 
@@ -1609,6 +1610,14 @@ AT BOTTOM!!!!!!! -->
 </td>
 <td>
 <p>The maximum period that a Highway Authority has to respond to an application prior to the application deeming.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Road type</p>
+</td>
+<td>
+<p>Synonym for ‘Reinstatement type code’ (See NSG Type 62 record).<br />Examples include Carriageway types (1, 2, 3, 4 & 0), High Duty Footway and Private Street.</p>
 </td>
 </tr>
 <tr>
