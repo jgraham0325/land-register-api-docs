@@ -2754,6 +2754,22 @@ The Work API will be updated to include endpoints for correcting errors in submi
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.19 (25/03/2020):
+{: .govuk-heading-s}
+
+Updated Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Fixed defect on the <code>GET /nsg/search</code> endpoint to allow users to input multiple spaces and special characters in the <code>query</code> param</li>
+</ol>
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Fixed defect on the <code>POST 
+​/works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
+</ol>
+
 Version 1.18 (19/03/2020):
 {: .govuk-heading-s}
 
