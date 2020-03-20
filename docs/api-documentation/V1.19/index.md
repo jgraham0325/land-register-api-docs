@@ -989,7 +989,7 @@ The authenticate endpoint takes a case sensitive username (email
 address) and password, returning JWT ID, Access and Refresh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
 is valid for 1 day.** Once the ID token has been acquired it can be added to all
-protected resource requests made via swagger using the Authorize button. Users who have has their account disabled will not be able to successfully.
+protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate.
 {: .govuk-body}
 
 Example response:
