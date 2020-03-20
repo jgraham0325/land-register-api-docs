@@ -2776,6 +2776,8 @@ Updated Works API with the following changes:
   /works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
   <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
   <li>Updated validation on <code>POST /works/{workReferenceNumber}/inspections</code> and <code>POST /historic-works/inspections</code> endpoints. An empty array value (<code>[]</code>) for the <code>failure_reason_details</code> property for failed inspections will result in a bad request error.</li>
+  <li>Validation has been added to the proposed_start_time field in the <code>POST /work</code> request to prevent immediate works being created without a time being specified.</li>
+  <li>The work_end_date and work_end_time are now being correectly updated where the proposed_end_date/time slide as a result of validity period.</li>
 </ol>
 
 Version 1.18 (19/03/2020):
