@@ -2766,7 +2766,7 @@ Updated Work API with the following changes:
 Updated Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated authentication error message when attempting to reset password with a user who has not successfully set password after account creation using <code>POST /forgot-password</code> endpoint</li>
+  <li>Updated authentication error message when attempting to reset password with a user who has not successfully set password after account creation will now return 401 using <code>POST /forgot-password</code> endpoint</li>
 </ol>
 
 Version 1.18 (19/03/2020):
