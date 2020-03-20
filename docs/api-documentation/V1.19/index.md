@@ -989,7 +989,7 @@ The authenticate endpoint takes a case sensitive username (email
 address) and password, returning JWT ID, Access and Refresh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
 is valid for 1 day.** Once the ID token has been acquired it can be added to all
-protected resource requests made via swagger using the Authorize button.
+protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate.
 {: .govuk-body}
 
 Example response:
@@ -2570,7 +2570,7 @@ Accepts the user's Access JWT token and invalidates all JWTs associated with a u
 
 <code>POST /forgot-password</code>
 
-Accepts the user's email address. An email will be sent to this address with a verification code, if a user with the address exists in Street Manager.
+Accepts the user's email address. An email will be sent to this address with a verification code, if a user with the address exists in Street Manager. This will only work if the user has activated their account by using the <code>POST /set-password</code> endpoint.
 {: .govuk-body}
 
 #### Reset Forgotten Password
@@ -2757,6 +2757,12 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.19 (25/03/2020):
 {: .govuk-heading-s}
 
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated authentication error message when attempting to reset password with a user who has not successfully set password after account creation will now return 401 using <code>POST /forgot-password</code> endpoint</li>
+</ol>
+
 Updated Street Lookup API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
@@ -2768,6 +2774,7 @@ Updated Works API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>Fixed defect on the <code>POST 
 ​/works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
+   <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
 </ol>
 
 Version 1.18 (19/03/2020):
