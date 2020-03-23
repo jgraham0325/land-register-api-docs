@@ -2772,9 +2772,10 @@ Updated Street Lookup API with the following changes:
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Fixed defect on the <code>POST 
-​/works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
-   <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
+  <li>Fixed defect on the <code>POST
+  /works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
+  <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
+  <li>Updated validation on <code>POST /works/{workReferenceNumber}/inspections</code> and <code>POST /historic-works/inspections</code> endpoints. An empty array value (<code>[]</code>) for the <code>failure_reason_details</code> property for failed inspections will result in a bad request error.</li>
 </ol>
 
 Version 1.18 (19/03/2020):
