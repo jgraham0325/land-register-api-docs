@@ -2778,6 +2778,12 @@ Updated Works API with the following changes:
   <li>Updated validation on <code>POST /works/{workReferenceNumber}/inspections</code> and <code>POST /historic-works/inspections</code> endpoints. An empty array value (<code>[]</code>) for the <code>failure_reason_details</code> property for failed inspections will result in a bad request error.</li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+
+The <code>GET /*/csv</code> endpoints which were deprecated in V1.12 have been completely removed. All CSV exporting is available via the Data Export API. This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
+{: .govuk-body}
+
 Version 1.18 (19/03/2020):
 {: .govuk-heading-s}
 
