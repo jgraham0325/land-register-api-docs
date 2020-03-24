@@ -6,7 +6,7 @@ type: article
 published: 'true'
 status: publish
 ---
-This page lists all known occurences of Street Manager service being unavailable.
+This page lists all known occurrences of Street Manager service being unavailable.
 
 ## February 2020
 
