@@ -2784,6 +2784,7 @@ Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>The <code>GET /inspections</code> endpoint now returns a maximum <code>total_rows</code> value of 501, similar to other Reporting API endpoints</li>
+  <li>The <code>GET /*/csv</code> endpoints which were deprecated in V1.12 have been completely removed. All CSV exporting is available via the Data Export API. This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.</li>
 </ol>
 
 Updated Data Export API with the following changes:
@@ -2793,12 +2794,6 @@ Updated Data Export API with the following changes:
   <li>The <code>POST /permits/csv</code> endpoint will now generate a CSV that will include the following new columns: <code>actual_start_date</code>, <code>actual_end_date</code>, <code>revoke_reason</code> and <code>reasonable_period_end_date</code></li>
   <li>The <code>POST /fees/csv</code> endpoint will now generate a CSV that will include a new <code>Area</code> column</li>
 </ol>
-
-Updated Reporting API with the following changes:
-{: .govuk-body}
-
-The <code>GET /*/csv</code> endpoints which were deprecated in V1.12 have been completely removed. All CSV exporting is available via the Data Export API. This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
-{: .govuk-body}
 
 Version 1.18 (19/03/2020):
 {: .govuk-heading-s}
