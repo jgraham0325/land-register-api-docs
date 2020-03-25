@@ -2794,6 +2794,12 @@ Updated Data Export API with the following changes:
   <li>The <code>POST /fees/csv</code> endpoint will now generate a CSV that will include a new <code>Area</code> column</li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+
+The <code>GET /*/csv</code> endpoints which were deprecated in V1.12 have been completely removed. All CSV exporting is available via the Data Export API. This applies to CSV exports for Permits, Fees, FPNs, Inspections and Forward plans.
+{: .govuk-body}
+
 Version 1.18 (19/03/2020):
 {: .govuk-heading-s}
 
