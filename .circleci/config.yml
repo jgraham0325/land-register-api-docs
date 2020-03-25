@@ -29,7 +29,6 @@ jobs:
             cd docs
             bundle exec jekyll build
 workflows:
-  version: 2.1
   check-build:
     jobs:
       - build
