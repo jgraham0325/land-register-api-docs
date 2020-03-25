@@ -1,6 +1,6 @@
 defaults: &defaults
   working_directory: ~/repo
-version: 2
+version: 2.1
 jobs:
   build:
     <<: *defaults
@@ -29,7 +29,6 @@ jobs:
             cd docs
             bundle exec jekyll build
 workflows:
-  version: 2
   check-build:
     jobs:
       - build
