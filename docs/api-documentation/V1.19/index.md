@@ -2791,7 +2791,13 @@ Updated Data Export API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>The <code>POST /*/csv</code> endpoints will now generate CSVs that will include a new <code>town</code> column</li>
   <li>The <code>POST /permits/csv</code> endpoint will now generate a CSV that will include the following new columns: <code>actual_start_date</code>, <code>actual_end_date</code>, <code>revoke_reason</code> and <code>reasonable_period_end_date</code></li>
-  <li>The <code>POST /fees/csv</code> endpoint will now generate a CSV that will include a new <code>Area</code> column</li>
+  <li>The <code>POST /fees/csv</code> endpoint will now generate a CSV that will include a new <code>Area</code> column<li>
+  <li>Updated the hourly scheduled job which returns data as part of the <code>GET /work-data</code> endpoint to include the following event types when checking for changes:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>alteration_deemed</code></li>
+      <li><code>permit_hs2_acknowledged</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:
