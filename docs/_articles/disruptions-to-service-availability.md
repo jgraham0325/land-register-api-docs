@@ -8,13 +8,11 @@ status: publish
 ---
 This page lists all known occurrences of Street Manager service being unavailable.
 
-
-
 ## March 2020
 
 **Production environment**
 
-* 23/03/2020 09:41am: Sandbox environment unavailable for 60 mins due to planned release
+* 23/03/2020 09:41am: Production environment unavailable for 60 mins due to planned release
 
 **Sandbox environment**
 
