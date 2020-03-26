@@ -10,7 +10,7 @@ status: publish
 # Business rules
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.19 (Released to sandbox xx/03/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.19 (Released to sandbox 26/03/20)</span>
 
 <span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -681,7 +681,6 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 | Immediate      | Not applicable         |
 | Any HS2 works  | Not applicable         |
 
-* __ Test for Tom
 
 _(Previously section 13 in Business rules v0.1 draft)_ 
 
