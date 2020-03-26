@@ -344,7 +344,7 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information",
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -389,7 +389,7 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information",
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -427,7 +427,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Street Lookup API > Get nsg search endpoint for more information",
+				"description": "See API specification Resource Guide > Street Lookup API > Get nsg search endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [

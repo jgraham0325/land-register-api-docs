@@ -4,6 +4,19 @@
 		"application/json"
 	],
 	"definitions": {
+		"WorkStatus": {
+			"enum": [
+				"planned",
+				"in_progress",
+				"completed",
+				"cancelled",
+				"unattributable",
+				"historical",
+				"non_notifiable",
+				"section_81"
+			],
+			"type": "string"
+		},
 		"WorkCategory": {
 			"enum": [
 				"minor",
@@ -15,6 +28,181 @@
 				"hs2_highway"
 			],
 			"type": "string"
+		},
+		"AlterationStatus": {
+			"enum": [
+				"submitted",
+				"granted",
+				"granted_with_duration_challenge",
+				"refused",
+				"deemed",
+				"cancelled",
+				"revoked",
+				"auto_applied"
+			],
+			"type": "string"
+		},
+		"AlterationType": {
+			"enum": [
+				"PROMOTER_IMPOSED_CHANGE",
+				"PROMOTER_CHANGE_REQUEST",
+				"HA_CHANGE_REQUEST",
+				"HA_IMPOSED_CHANGE",
+				"WORK_EXTENSION",
+				"DURATION_CHALLENGE",
+				"MODIFIED_PERMIT"
+			],
+			"type": "string"
+		},
+		"LaneRentalAssessmentOutcome": {
+			"enum": [
+				"chargeable",
+				"potentially_chargeable",
+				"charges_waived",
+				"exempt",
+				"charges_not_applicable"
+			],
+			"type": "string"
+		},
+		"AlterationSummaryResponse": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"permit_reference_number": {
+					"type": "string"
+				},
+				"alteration_reference_number": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"promoter": {
+					"type": "string"
+				},
+				"work_status": {
+					"$ref": "#/definitions/WorkStatus"
+				},
+				"proposed_start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"proposed_end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"proposed_start_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"proposed_end_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"work_category": {
+					"$ref": "#/definitions/WorkCategory"
+				},
+				"alteration_status": {
+					"$ref": "#/definitions/AlterationStatus"
+				},
+				"alteration_type": {
+					"$ref": "#/definitions/AlterationType"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"deadline_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"status_changed_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"lane_rental_assessment_outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
+					"x-nullable": true
+				},
+				"lane_rental_charges_not_agreed": {
+					"type": "boolean"
+				},
+				"lane_rental_charges_potentially_apply": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"permit_reference_number",
+				"alteration_reference_number",
+				"street",
+				"town",
+				"area",
+				"location_description",
+				"highway_authority",
+				"promoter",
+				"work_status",
+				"proposed_start_date",
+				"proposed_end_date",
+				"work_category",
+				"alteration_status",
+				"alteration_type",
+				"date_created",
+				"deadline_date",
+				"status_changed_date",
+				"lane_rental_charges_not_agreed",
+				"lane_rental_charges_potentially_apply"
+			],
+			"type": "object"
+		},
+		"PaginationResponse": {
+			"properties": {
+				"total_rows": {
+					"type": "number",
+					"format": "double"
+				},
+				"has_next_page": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"total_rows",
+				"has_next_page"
+			],
+			"type": "object"
+		},
+		"AlterationReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/AlterationSummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
+			"type": "object"
 		},
 		"TrafficManagementType": {
 			"enum": [
@@ -56,19 +244,6 @@
 			],
 			"type": "string"
 		},
-		"WorkStatus": {
-			"enum": [
-				"planned",
-				"in_progress",
-				"completed",
-				"cancelled",
-				"unattributable",
-				"historical",
-				"non_notifiable",
-				"section_81"
-			],
-			"type": "string"
-		},
 		"PermitConditionType": {
 			"enum": [
 				"NCT01a",
@@ -106,16 +281,6 @@
 				"condition"
 			],
 			"type": "object"
-		},
-		"LaneRentalAssessmentOutcome": {
-			"enum": [
-				"chargeable",
-				"potentially_chargeable",
-				"charges_waived",
-				"exempt",
-				"charges_not_applicable"
-			],
-			"type": "string"
 		},
 		"PermitSummaryResponse": {
 			"properties": {
@@ -294,22 +459,6 @@
 			],
 			"type": "object"
 		},
-		"PaginationResponse": {
-			"properties": {
-				"total_rows": {
-					"type": "number",
-					"format": "double"
-				},
-				"has_next_page": {
-					"type": "boolean"
-				}
-			},
-			"required": [
-				"total_rows",
-				"has_next_page"
-			],
-			"type": "object"
-		},
 		"PermitReportingResponse": {
 			"properties": {
 				"pagination": {
@@ -339,6 +488,140 @@
 					"x-nullable": true
 				}
 			},
+			"type": "object"
+		},
+		"OffenceCode": {
+			"enum": [
+				"offence_code_05",
+				"offence_code_06",
+				"offence_code_08",
+				"offence_code_09"
+			],
+			"type": "string"
+		},
+		"FPNStatus": {
+			"enum": [
+				"issued",
+				"accepted",
+				"paid",
+				"paid_discounted",
+				"disputed",
+				"withdrawn"
+			],
+			"type": "string"
+		},
+		"FPNSummaryResponse": {
+			"properties": {
+				"fpn_reference_number": {
+					"type": "string"
+				},
+				"work_reference_number": {
+					"type": "string"
+				},
+				"promoter": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"offence_code": {
+					"$ref": "#/definitions/OffenceCode"
+				},
+				"street_name": {
+					"type": "string"
+				},
+				"issue_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"status": {
+					"$ref": "#/definitions/FPNStatus"
+				}
+			},
+			"required": [
+				"fpn_reference_number",
+				"work_reference_number",
+				"promoter",
+				"highway_authority",
+				"offence_code",
+				"street_name",
+				"issue_date",
+				"status"
+			],
+			"type": "object"
+		},
+		"FPNReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FPNSummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
+			"type": "object"
+		},
+		"CommentTopic": {
+			"enum": [
+				"GENERAL",
+				"SECTION_74",
+				"INSPECTION",
+				"FPN",
+				"OVERRUN"
+			],
+			"type": "string"
+		},
+		"CommentSummaryResponse": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"topic": {
+					"$ref": "#/definitions/CommentTopic"
+				},
+				"author_email_address": {
+					"type": "string"
+				},
+				"detail": {
+					"type": "string"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"topic",
+				"author_email_address",
+				"detail",
+				"date_created"
+			],
+			"type": "object"
+		},
+		"CommentReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/CommentSummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
 			"type": "object"
 		},
 		"InspectionResponseType": {
@@ -471,373 +754,6 @@
 					"type": "array",
 					"items": {
 						"$ref": "#/definitions/InspectionSummaryResponse"
-					}
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object"
-		},
-		"OffenceCode": {
-			"enum": [
-				"offence_code_05",
-				"offence_code_06",
-				"offence_code_08",
-				"offence_code_09"
-			],
-			"type": "string"
-		},
-		"FPNStatus": {
-			"enum": [
-				"issued",
-				"accepted",
-				"paid",
-				"paid_discounted",
-				"disputed",
-				"withdrawn"
-			],
-			"type": "string"
-		},
-		"FPNSummaryResponse": {
-			"properties": {
-				"fpn_reference_number": {
-					"type": "string"
-				},
-				"work_reference_number": {
-					"type": "string"
-				},
-				"promoter": {
-					"type": "string"
-				},
-				"highway_authority": {
-					"type": "string"
-				},
-				"offence_code": {
-					"$ref": "#/definitions/OffenceCode"
-				},
-				"street_name": {
-					"type": "string"
-				},
-				"issue_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"status": {
-					"$ref": "#/definitions/FPNStatus"
-				}
-			},
-			"required": [
-				"fpn_reference_number",
-				"work_reference_number",
-				"promoter",
-				"highway_authority",
-				"offence_code",
-				"street_name",
-				"issue_date",
-				"status"
-			],
-			"type": "object"
-		},
-		"FPNReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/FPNSummaryResponse"
-					}
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object"
-		},
-		"ForwardPlanStatus": {
-			"enum": [
-				"raised",
-				"cancelled",
-				"progressed"
-			],
-			"type": "string"
-		},
-		"ForwardPlanSummaryResponse": {
-			"properties": {
-				"work_reference_number": {
-					"type": "string"
-				},
-				"forward_plan_reference_number": {
-					"type": "string"
-				},
-				"promoter_organisation": {
-					"type": "string"
-				},
-				"highway_authority": {
-					"type": "string"
-				},
-				"location_description": {
-					"type": "string"
-				},
-				"street": {
-					"type": "string"
-				},
-				"town": {
-					"type": "string"
-				},
-				"area": {
-					"type": "string"
-				},
-				"proposed_start_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"proposed_end_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"forward_plan_status": {
-					"$ref": "#/definitions/ForwardPlanStatus"
-				},
-				"date_created": {
-					"type": "string",
-					"format": "date-time"
-				}
-			},
-			"required": [
-				"work_reference_number",
-				"forward_plan_reference_number",
-				"promoter_organisation",
-				"highway_authority",
-				"location_description",
-				"street",
-				"town",
-				"area",
-				"proposed_start_date",
-				"proposed_end_date",
-				"forward_plan_status",
-				"date_created"
-			],
-			"type": "object"
-		},
-		"ForwardPlanReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/ForwardPlanSummaryResponse"
-					}
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object"
-		},
-		"AlterationStatus": {
-			"enum": [
-				"submitted",
-				"granted",
-				"granted_with_duration_challenge",
-				"refused",
-				"deemed",
-				"cancelled",
-				"revoked",
-				"auto_applied"
-			],
-			"type": "string"
-		},
-		"AlterationType": {
-			"enum": [
-				"PROMOTER_IMPOSED_CHANGE",
-				"PROMOTER_CHANGE_REQUEST",
-				"HA_CHANGE_REQUEST",
-				"HA_IMPOSED_CHANGE",
-				"WORK_EXTENSION",
-				"DURATION_CHALLENGE",
-				"MODIFIED_PERMIT"
-			],
-			"type": "string"
-		},
-		"AlterationSummaryResponse": {
-			"properties": {
-				"work_reference_number": {
-					"type": "string"
-				},
-				"permit_reference_number": {
-					"type": "string"
-				},
-				"alteration_reference_number": {
-					"type": "string"
-				},
-				"street": {
-					"type": "string"
-				},
-				"town": {
-					"type": "string"
-				},
-				"area": {
-					"type": "string"
-				},
-				"location_description": {
-					"type": "string"
-				},
-				"highway_authority": {
-					"type": "string"
-				},
-				"promoter": {
-					"type": "string"
-				},
-				"work_status": {
-					"$ref": "#/definitions/WorkStatus"
-				},
-				"proposed_start_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"proposed_end_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"proposed_start_time": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"proposed_end_time": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"work_category": {
-					"$ref": "#/definitions/WorkCategory"
-				},
-				"alteration_status": {
-					"$ref": "#/definitions/AlterationStatus"
-				},
-				"alteration_type": {
-					"$ref": "#/definitions/AlterationType"
-				},
-				"date_created": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"deadline_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"status_changed_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"lane_rental_assessment_outcome": {
-					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
-					"x-nullable": true
-				},
-				"lane_rental_charges_not_agreed": {
-					"type": "boolean"
-				},
-				"lane_rental_charges_potentially_apply": {
-					"type": "boolean"
-				}
-			},
-			"required": [
-				"work_reference_number",
-				"permit_reference_number",
-				"alteration_reference_number",
-				"street",
-				"town",
-				"area",
-				"location_description",
-				"highway_authority",
-				"promoter",
-				"work_status",
-				"proposed_start_date",
-				"proposed_end_date",
-				"work_category",
-				"alteration_status",
-				"alteration_type",
-				"date_created",
-				"deadline_date",
-				"status_changed_date",
-				"lane_rental_charges_not_agreed",
-				"lane_rental_charges_potentially_apply"
-			],
-			"type": "object"
-		},
-		"AlterationReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/AlterationSummaryResponse"
-					}
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object"
-		},
-		"CommentTopic": {
-			"enum": [
-				"GENERAL",
-				"SECTION_74",
-				"INSPECTION",
-				"FPN",
-				"OVERRUN"
-			],
-			"type": "string"
-		},
-		"CommentSummaryResponse": {
-			"properties": {
-				"work_reference_number": {
-					"type": "string"
-				},
-				"topic": {
-					"$ref": "#/definitions/CommentTopic"
-				},
-				"author_email_address": {
-					"type": "string"
-				},
-				"detail": {
-					"type": "string"
-				},
-				"date_created": {
-					"type": "string",
-					"format": "date-time"
-				}
-			},
-			"required": [
-				"work_reference_number",
-				"topic",
-				"author_email_address",
-				"detail",
-				"date_created"
-			],
-			"type": "object"
-		},
-		"CommentReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/CommentSummaryResponse"
 					}
 				}
 			},
@@ -1136,6 +1052,90 @@
 			],
 			"type": "object"
 		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"progressed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanSummaryResponse": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"proposed_start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"proposed_end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatus"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"forward_plan_reference_number",
+				"promoter_organisation",
+				"highway_authority",
+				"location_description",
+				"street",
+				"town",
+				"area",
+				"proposed_start_date",
+				"proposed_end_date",
+				"forward_plan_status",
+				"date_created"
+			],
+			"type": "object"
+		},
+		"ForwardPlanReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ForwardPlanSummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
+			"type": "object"
+		},
 		"Section81Severity": {
 			"enum": [
 				"high",
@@ -1415,6 +1415,193 @@
 		}
 	},
 	"paths": {
+		"/alterations": {
+			"get": {
+				"operationId": "GetAlterations",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/AlterationReportingResponse",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/AlterationSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "Returns all alterations associated with the logged in user's organisation. Optional date range filter for date_created\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "alteration_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/AlterationStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "alteration_type",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/AlterationType"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "work_category",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkCategory"
+						}
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_assessment_outcome",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/LaneRentalAssessmentOutcome"
+						}
+					},
+					{
+						"in": "query",
+						"name": "start_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date_created",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"type": "integer"
+					},
+					{
+						"in": "query",
+						"name": "sort_column",
+						"required": false,
+						"enum": [
+							"date_created",
+							"proposed_start_date",
+							"proposed_end_date",
+							"status_changed_date"
+						],
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_direction",
+						"required": false,
+						"enum": [
+							"asc",
+							"desc"
+						],
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "is_traffic_sensitive",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_high_impact_traffic_management",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_duration_extension",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_early_start",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "is_deemed",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_not_agreed",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_potentially_apply",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "geographical_area_reference_number",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
 		"/permits": {
 			"get": {
 				"operationId": "GetPermits",
@@ -1433,7 +1620,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get Permits for more information",
+				"description": "See API specification Resource Guide > Reporting API > Get Permits for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -1694,6 +1881,7 @@
 						}
 					}
 				},
+				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -1715,6 +1903,134 @@
 				]
 			}
 		},
+		"/fixed-penalty-notices": {
+			"get": {
+				"operationId": "GetFPNs",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/FPNReportingResponse",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/FPNSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > Get FPNs for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/FPNStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"type": "integer"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "geographical_area_reference_number",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
+		"/comments": {
+			"get": {
+				"operationId": "GetComments",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/CommentReportingResponse"
+						}
+					}
+				},
+				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "geographical_area_reference_number",
+						"required": false,
+						"collectionFormat": "multi",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					}
+				]
+			}
+		},
 		"/inspections": {
 			"get": {
 				"operationId": "GetInspections",
@@ -1729,7 +2045,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get inspections for more information",
+				"description": "See API specification Resource Guide > Reporting API > Get inspections for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -1809,9 +2125,9 @@
 				]
 			}
 		},
-		"/fixed-penalty-notices": {
+		"/works/updates": {
 			"get": {
-				"operationId": "GetFPNs",
+				"operationId": "GetUpdates",
 				"produces": [
 					"application/json"
 				],
@@ -1819,40 +2135,24 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"$ref": "#/definitions/FPNReportingResponse",
 							"type": "array",
 							"items": {
-								"$ref": "#/definitions/FPNSummaryResponse"
+								"$ref": "#/definitions/WorkUpdateResponse"
 							}
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get FPNs for more information",
+				"description": "See API specification Resource Guide > Reporting API > Polling for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
 							"Planner",
+							"Contractor",
 							"HighwayAuthority"
 						]
 					}
 				],
 				"parameters": [
-					{
-						"in": "query",
-						"name": "status",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/FPNStatus"
-						}
-					},
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"type": "integer"
-					},
 					{
 						"in": "query",
 						"name": "start_date",
@@ -1869,16 +2169,139 @@
 					},
 					{
 						"in": "query",
+						"name": "previous_minutes",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "exclude_events_from",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/workstreams": {
+			"get": {
+				"operationId": "GetWorkstreams",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/WorkstreamReportingResponse",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/WorkstreamSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "Returns all workstreams associated with the logged in user's organisation. Optional filter by status\nAuthenticated user must have one of the following roles: Admin",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/WorkstreamStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"type": "integer"
+					}
+				]
+			}
+		},
+		"/reinstatements": {
+			"get": {
+				"operationId": "GetReinstatements",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ReinstatementReportingResponse"
+						}
+					}
+				},
+				"description": "Returns all reinstatements associated with the logged in user's organisation. Optional filter by status\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "status",
+						"required": false,
+						"collectionFormat": "multi",
+						"type": "array",
+						"items": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "offset",
+						"required": false,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
 						"name": "swa_code",
 						"required": false,
 						"type": "string"
 					},
 					{
 						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "latest_reinstatements_only",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
 						"name": "geographical_area_reference_number",
 						"required": false,
-						"type": "array",
 						"collectionFormat": "multi",
+						"type": "array",
 						"items": {
 							"type": "string"
 						}
@@ -1904,7 +2327,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get ForwardPlans for more information",
+				"description": "See API specification Resource Guide > Reporting API > Get ForwardPlans for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -2013,427 +2436,6 @@
 				]
 			}
 		},
-		"/alterations": {
-			"get": {
-				"operationId": "GetAlterations",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/AlterationReportingResponse",
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/AlterationSummaryResponse"
-							}
-						}
-					}
-				},
-				"description": "Returns all alterations associated with the logged in user's organisation. Optional date range filter for date_created",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "alteration_status",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/AlterationStatus"
-						}
-					},
-					{
-						"in": "query",
-						"name": "alteration_type",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/AlterationType"
-						}
-					},
-					{
-						"in": "query",
-						"name": "work_status",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/WorkStatus"
-						}
-					},
-					{
-						"in": "query",
-						"name": "work_category",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/WorkCategory"
-						}
-					},
-					{
-						"in": "query",
-						"name": "lane_rental_assessment_outcome",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/LaneRentalAssessmentOutcome"
-						}
-					},
-					{
-						"in": "query",
-						"name": "start_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "end_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"type": "integer"
-					},
-					{
-						"in": "query",
-						"name": "sort_column",
-						"required": false,
-						"enum": [
-							"date_created",
-							"proposed_start_date",
-							"proposed_end_date",
-							"status_changed_date"
-						],
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "sort_direction",
-						"required": false,
-						"enum": [
-							"asc",
-							"desc"
-						],
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "is_traffic_sensitive",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "is_high_impact_traffic_management",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "is_duration_extension",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "is_early_start",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "is_deemed",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "lane_rental_charges_not_agreed",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "lane_rental_charges_potentially_apply",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "geographical_area_reference_number",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"type": "string"
-						}
-					}
-				]
-			}
-		},
-		"/comments": {
-			"get": {
-				"operationId": "GetComments",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/CommentReportingResponse"
-						}
-					}
-				},
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "geographical_area_reference_number",
-						"required": false,
-						"collectionFormat": "multi",
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					}
-				]
-			}
-		},
-		"/works/updates": {
-			"get": {
-				"operationId": "GetUpdates",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/WorkUpdateResponse"
-							}
-						}
-					}
-				},
-				"description": "See API specification Resource Guide > Reporting API > Polling for more information",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "start_date",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "end_date",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "previous_minutes",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "query",
-						"name": "exclude_events_from",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					}
-				]
-			}
-		},
-		"/workstreams": {
-			"get": {
-				"operationId": "GetWorkstreams",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/WorkstreamReportingResponse",
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/WorkstreamSummaryResponse"
-							}
-						}
-					}
-				},
-				"description": "Returns all workstreams associated with the logged in user's organisation. Optional filter by status",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "status",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/WorkstreamStatus"
-						}
-					},
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"type": "integer"
-					}
-				]
-			}
-		},
-		"/reinstatements": {
-			"get": {
-				"operationId": "GetReinstatements",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/ReinstatementReportingResponse"
-						}
-					}
-				},
-				"description": "Returns all reinstatements associated with the logged in user's organisation. Optional filter by status",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"Contractor",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "status",
-						"required": false,
-						"collectionFormat": "multi",
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "latest_reinstatements_only",
-						"required": false,
-						"type": "boolean"
-					},
-					{
-						"in": "query",
-						"name": "geographical_area_reference_number",
-						"required": false,
-						"collectionFormat": "multi",
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					}
-				]
-			}
-		},
 		"/section-81s": {
 			"get": {
 				"operationId": "GetSection81s",
@@ -2452,7 +2454,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get Section 81s for more information",
+				"description": "See API specification Resource Guide > Reporting API > Get Section 81s for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -2547,13 +2549,14 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Reporting API > Get CSV Exports for more information",
+				"description": "See API specification Resource Guide > Reporting API > Get CSV Exports for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
 				"security": [
 					{
 						"token": [
 							"Planner",
 							"Contractor",
-							"HighwayAuthority"
+							"HighwayAuthority",
+							"Admin"
 						]
 					}
 				],
@@ -2591,7 +2594,7 @@
 						}
 					}
 				},
-				"description": "Returns all geographic areas associated with the logged in user's organisation.",
+				"description": "Returns all geographic areas associated with the logged in user's organisation\nAuthenticated user must have one of the following roles: Admin, HighwayAuthority",
 				"security": [
 					{
 						"token": [

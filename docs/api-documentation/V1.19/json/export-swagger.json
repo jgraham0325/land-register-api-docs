@@ -692,7 +692,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Section 81s CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Section 81s CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -728,7 +728,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Reinstatements CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Reinstatements CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -764,7 +764,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -800,7 +800,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Fees CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Fees CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -836,7 +836,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Permits CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Permits CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -872,7 +872,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Inspections CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Inspections CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -908,7 +908,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Forward plans CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Forward plans CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -944,7 +944,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Permit alterations CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Permit alterations CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -980,7 +980,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Data Export API > Generate Comments CSV for more information",
+				"description": "See API specification Resource Guide > Data Export API > Generate Comments CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [

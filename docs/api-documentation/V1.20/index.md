@@ -2772,7 +2772,7 @@ Updated Works API with the following changes:
 <li>The following audit event types have been added:
   <ol class="govuk-list govuk-list--bullet">
     <li><code>update_geographical_area</code></li>
-    <li><code>upcoming_event</code></li> (placeholder for a future audit event)
+    <li><code>upcoming_event</code> (placeholder for a future audit event)</li>
   </ol>
 </li>
 
