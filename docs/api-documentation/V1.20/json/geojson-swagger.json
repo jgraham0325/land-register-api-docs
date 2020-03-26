@@ -455,7 +455,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > GeoJSON API > Get works endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See API specification Resource Guide > GeoJSON API > Get works endpoint for more information",
 				"security": [
 					{
 						"token": [
@@ -531,7 +531,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > GeoJSON API > Get activities endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See API specification Resource Guide > GeoJSON API > Get activities endpoint for more information",
 				"security": [
 					{
 						"token": [
@@ -601,7 +601,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > GeoJSON API > Get ForwardPlans endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See API specification Resource Guide > GeoJSON API > Get ForwardPlans endpoint for more information",
 				"security": [
 					{
 						"token": [
@@ -677,7 +677,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > GeoJSON API > Get Hs2ActLimits endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See API specification Resource Guide > GeoJSON API > Get Hs2ActLimits endpoint for more information",
 				"security": [
 					{
 						"token": [

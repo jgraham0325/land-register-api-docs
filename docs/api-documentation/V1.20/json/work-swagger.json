@@ -5305,7 +5305,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 3.4 - PAA and permit applications (PA)\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 3.4 - PAA and permit applications (PA)",
 				"security": [
 					{
 						"token": [
@@ -5350,7 +5350,7 @@
 						"description": "Conflict"
 					}
 				},
-				"description": "See business rules section 3.4 - PAA and permit applications (PA)\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 3.4 - PAA and permit applications (PA)",
 				"security": [
 					{
 						"token": [
@@ -5391,7 +5391,7 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "See business rules section 3.4.9 - Cancelling PAA & PA\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 5 - Revoking a PA\nSee business rules section 3.4.9 - Cancelling PAA & PA\nSee business rules section 3.4.10 - PAA & PA statuses",
 				"security": [
 					{
 						"token": [
@@ -5438,7 +5438,6 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "See business rule section 5 - Revoking a PA\nSee business rule section 3.4.7 - PAA & PA assessment decision options\nAuthenticated user must have one of the following roles: HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -5526,7 +5525,7 @@
 						"description": "No Content"
 					}
 				},
-				"description": "See business rule section 12.2 - Adding a lane rental assessment to a PA\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rule section 12.2 - Adding a lane rental assessment to a PA",
 				"security": [
 					{
 						"token": [
@@ -5572,7 +5571,6 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -5618,7 +5616,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 3.4.3 - Works categories\nUtility endpoint. Can be used to check what category will be assigned to a permit\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 3.4.3 - Works categories\nUtility endpoint. Can be used to check what category will be assigned to a permit",
 				"security": [
 					{
 						"token": [
@@ -5689,7 +5687,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 3 - Works submissions and applications\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 3 - Works submissions and applications",
 				"security": [
 					{
 						"token": [
@@ -5726,7 +5724,7 @@
 						"description": "Conflict"
 					}
 				},
-				"description": "See business rules section 3 - Works submissions and applications\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 3 - Works submissions and applications",
 				"security": [
 					{
 						"token": [
@@ -5758,7 +5756,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 6.1 - Logging works start\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 6.1 - Logging works start",
 				"security": [
 					{
 						"token": [
@@ -5796,7 +5794,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 6.2 - Reverting works start\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 6.2 - Reverting works start",
 				"security": [
 					{
 						"token": [
@@ -5834,7 +5832,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 6.3 - Logging works stop\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 6.3 - Logging works stop",
 				"security": [
 					{
 						"token": [
@@ -5872,7 +5870,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 6.4 - Reverting works stop\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 6.4 - Reverting works stop",
 				"security": [
 					{
 						"token": [
@@ -5916,7 +5914,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 7.2 - Works history\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 7.2 - Works history",
 				"security": [
 					{
 						"token": [
@@ -5950,7 +5948,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 8 - Sites and reinstatements\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 8 - Sites and reinstatements",
 				"security": [
 					{
 						"token": [
@@ -5991,7 +5989,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 8 - Sites and reinstatements\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 8 - Sites and reinstatements",
 				"security": [
 					{
 						"token": [
@@ -6029,7 +6027,7 @@
 						"description": "Created"
 					}
 				},
-				"description": "See business rules section 8 - Sites and reinstatements\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 8 - Sites and reinstatements",
 				"security": [
 					{
 						"token": [
@@ -6077,7 +6075,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 10 - Inspections and non-compliance\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 10 - Inspections and non-compliance",
 				"security": [
 					{
 						"token": [
@@ -6117,7 +6115,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 10 - Inspections and non-compliance\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 10 - Inspections and non-compliance",
 				"security": [
 					{
 						"token": [
@@ -6154,7 +6152,6 @@
 						"description": ""
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -6181,7 +6178,7 @@
 						"description": "Created"
 					}
 				},
-				"description": "See business rules section 10.4 - Scheduling inspections\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 10.4 - Scheduling inspections",
 				"security": [
 					{
 						"token": [
@@ -6249,7 +6246,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Works API > File upload for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Works API > File upload for more information",
 				"security": [
 					{
 						"token": [
@@ -6328,7 +6325,7 @@
 						"description": "No content"
 					}
 				},
-				"description": "See API specification Resource Guide > Works API > File upload for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Works API > File upload for more information",
 				"security": [
 					{
 						"token": [
@@ -6357,7 +6354,7 @@
 						"description": ""
 					}
 				},
-				"description": "See API specification Resource Guide > Works API > File upload for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Works API > File upload for more information",
 				"security": [
 					{
 						"token": [
@@ -6393,7 +6390,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 11 - Fixed penalty notice (FPN)\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 11 - Fixed penalty notice (FPN)",
 				"security": [
 					{
 						"token": [
@@ -6433,7 +6430,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 11 - Fixed penalty notice (FPN)\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 11 - Fixed penalty notice (FPN)",
 				"security": [
 					{
 						"token": [
@@ -6470,7 +6467,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 11.2 - FPN statuses\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 11.2 - FPN statuses",
 				"security": [
 					{
 						"token": [
@@ -6515,7 +6512,7 @@
 						"description": "Created"
 					}
 				},
-				"description": "See business rules section 7.1 - Commenting on a works record\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 7.1 - Commenting on a works record",
 				"security": [
 					{
 						"token": [
@@ -6557,7 +6554,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 1.2 - Dates and times\nSee glossary - Working day\nUtility endpoint. Can be used to check what durations will be assigned to a work/permit based on start and end date\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 1.2 - Dates and times\nSee glossary - Working day\nUtility endpoint. Can be used to check what durations will be assigned to a work/permit based on start and end date",
 				"security": [
 					{
 						"token": [
@@ -6602,7 +6599,7 @@
 						"description": "Conflict"
 					}
 				},
-				"description": "See business rules section 4 - Change requests (CR)\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 4 - Change requests (CR)",
 				"security": [
 					{
 						"token": [
@@ -6650,7 +6647,7 @@
 						"description": "Not Found"
 					}
 				},
-				"description": "See business rules section 4.7 - Change request statuses\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 4.7 - Change request statuses",
 				"security": [
 					{
 						"token": [
@@ -6702,7 +6699,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 4 - Change requests (CR)\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 4 - Change requests (CR)",
 				"security": [
 					{
 						"token": [
@@ -6745,7 +6742,7 @@
 						"description": "Created"
 					}
 				},
-				"description": "See API specification Resource Guide > Works API > File upload for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See API specification Resource Guide > Works API > File upload for more information",
 				"security": [
 					{
 						"token": [
@@ -6787,7 +6784,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 9 - Activities\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 9 - Activities",
 				"security": [
 					{
 						"token": [
@@ -6821,7 +6818,6 @@
 						}
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -6850,7 +6846,6 @@
 						"description": "Altered"
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -6887,7 +6882,6 @@
 						"description": ""
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -6930,7 +6924,7 @@
 						"description": "Conflict"
 					}
 				},
-				"description": "See business rules section 3.3 - Forward plans\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 3.3 - Forward plans",
 				"security": [
 					{
 						"token": [
@@ -6965,7 +6959,6 @@
 						}
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
 				"security": [
 					{
 						"token": [
@@ -7000,7 +6993,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 3.3 - Forward plans\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 3.3 - Forward plans",
 				"security": [
 					{
 						"token": [
@@ -7044,7 +7037,6 @@
 						"description": ""
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: Planner, Contractor",
 				"security": [
 					{
 						"token": [
@@ -7091,7 +7083,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 14.3 - Adding S81s\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 14.3 - Adding S81s",
 				"security": [
 					{
 						"token": [
@@ -7125,7 +7117,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 14 - Section 81 (S81)\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 14 - Section 81 (S81)",
 				"security": [
 					{
 						"token": [
@@ -7162,7 +7154,7 @@
 						"description": ""
 					}
 				},
-				"description": "See business rules section 14.5 - S81 statuses\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"description": "See business rules section 14.5 - S81 statuses",
 				"security": [
 					{
 						"token": [
@@ -7286,7 +7278,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 15 - Historical works\nSee business rules section 11.2 - FPN statuses\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 15 - Historical works\nSee business rules section 11.2 - FPN statuses",
 				"security": [
 					{
 						"token": [
@@ -7320,7 +7312,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 8 - Sites and reinstatements\nAuthenticated user must have one of the following roles: Planner, Contractor",
+				"description": "See business rules section 8 - Sites and reinstatements",
 				"security": [
 					{
 						"token": [
@@ -7355,7 +7347,7 @@
 						}
 					}
 				},
-				"description": "See business rules section 15 - Historical works\nSee business rules section 10 - Inspections and non-compliance\nAuthenticated user must have one of the following roles: HighwayAuthority",
+				"description": "See business rules section 15 - Historical works\nSee business rules section 10 - Inspections and non-compliance",
 				"security": [
 					{
 						"token": [
@@ -7389,7 +7381,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Works API > Geographical Areas for more information\nAuthenticated user must have one of the following roles: HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Works API > Geographical Areas for more information",
 				"security": [
 					{
 						"token": [

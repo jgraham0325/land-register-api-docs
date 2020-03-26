@@ -664,7 +664,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Get workstream for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Party API > Get workstream for more information",
 				"security": [
 					{
 						"token": [
@@ -700,7 +700,7 @@
 						"description": ""
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Put workstream for more information\nAuthenticated user must have one of the following roles: Planner, Admin",
+				"description": "See API specification Resource Guide > Party API > Put workstream for more information",
 				"security": [
 					{
 						"token": [
@@ -750,7 +750,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Get workstreams for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, Admin",
+				"description": "See API specification Resource Guide > Party API > Get workstreams for more information",
 				"security": [
 					{
 						"token": [
@@ -782,7 +782,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Post workstreams for more information\nAuthenticated user must have one of the following roles: Planner, Admin",
+				"description": "See API specification Resource Guide > Party API > Post workstreams for more information",
 				"security": [
 					{
 						"token": [
@@ -823,7 +823,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Get organisation for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Party API > Get organisation for more information",
 				"security": [
 					{
 						"token": [
@@ -861,7 +861,7 @@
 						}
 					}
 				},
-				"description": "See API specification Resource Guide > Party API > Get organisations for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"description": "See API specification Resource Guide > Party API > Get organisations for more information",
 				"security": [
 					{
 						"token": [
@@ -907,7 +907,6 @@
 						}
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
 				"security": [
 					{
 						"token": [
@@ -943,7 +942,6 @@
 						"description": "No content"
 					}
 				},
-				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
 				"security": [
 					{
 						"token": [
