@@ -24,7 +24,7 @@ Refer to the glossary for definitions of terms within the latest business rules 
 
 ### Previous
 
-* [Version 1.18 \(Due for release to SANDBOX 19/03/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-18.html)
+* [Version 1.18 \(Released to SANDBOX 19/03/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-18.html)
 * [Version 1.17 \(Released to SANDBOX 05/03/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-17.html)
 * [Version 1.16 \(Released to SANDBOX 20/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html)
 * [Version 1.15 (Released to SANDBOX 06/02/2020\)](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-15.html)
