@@ -2392,12 +2392,13 @@ The PUT endpoint will update the status of a section 81 and will require a work 
 {: .govuk-heading-s}
 
 <code>POST /geographical-areas</code>
-<code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> (Available in upcoming release)
+
+<code>PUT /{geographicalAreaReferenceNumber}/geographical-areas (Available in upcoming release) </code>
 
 Geographical Areas allow Admins of a Highway Authority orgnanistation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
 {: .govuk-body}
 
-The POST endpoint accepts a CSV file of USRNs and will create a Geographical Area containing those USRNs. The file must:
+The POST endpoint accepts a CSV file of USRNs and will create a Geographical Area containing those USRNs.
 {: .govuk-body}
 
 The PUT endpoint accepts a CSV file of USRNs and will update the Geographical Area specified by the Geographical Area Reference number in the request, with the USRNs in the file.
