@@ -2392,6 +2392,7 @@ The PUT endpoint will update the status of a section 81 and will require a work 
 {: .govuk-heading-s}
 
 <code>POST /geographical-areas</code>
+<code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> (Available in upcoming release)
 
 Geographical Areas allow Admins of a Highway Authority orgnanistation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
 {: .govuk-body}
@@ -2399,6 +2400,11 @@ Geographical Areas allow Admins of a Highway Authority orgnanistation to divide 
 The POST endpoint accepts a CSV file of USRNs and will create a Geographical Area containing those USRNs. The file must:
 {: .govuk-body}
 
+The PUT endpoint accepts a CSV file of USRNs and will update the Geographical Area specified by the Geographical Area Reference number in the request, with the USRNs in the file.
+{: .govuk-body}
+
+The file must:
+{: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Be a valid .csv file type</li>
   <li>Contain max 10,000 USRNs</li>
@@ -2764,17 +2770,19 @@ Version 1.20 (02/04/2020):
 
 Updated Works API with the following changes:
 {: .govuk-body}
-<li>The following endpoint will be available on the Works API in a future release:
-  <ol class="govuk-list govuk-list--bullet">
-    <li>Update a geographical area <code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> endpoint</li>
-  </ol>
-</li>
-<li>The following audit event types have been added:
-  <ol class="govuk-list govuk-list--bullet">
-    <li><code>update_geographical_area</code></li>
-    <li><code>upcoming_event</code> (placeholder for a future audit event)</li>
-  </ol>
-</li>
+<ol class="govuk-list govuk-list--bullet">
+  <li>The following endpoint will be available on the Works API in a future release:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>Update a geographical area <code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> endpoint</li>
+    </ol>
+  </li>
+  <li>The following audit event types have been added:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>update_geographical_area</code></li>
+      <li><code>upcoming_event</code> (placeholder for a future audit event)</li>
+    </ol>
+  </li>
+<ol>
 
 Version 1.19 (26/03/2020):
 {: .govuk-heading-s}
