@@ -782,7 +782,7 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code></td>
+      <td class="govuk-table__cell"><code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code></td>
       <td class="govuk-table__cell">Admin (associated with a Highway Authority), HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
@@ -2393,7 +2393,7 @@ The PUT endpoint will update the status of a section 81 and will require a work 
 
 <code>POST /geographical-areas</code>
 
-<code>PUT /{geographicalAreaReferenceNumber}/geographical-areas (Available in upcoming release) </code>
+<code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code>
 
 Geographical Areas allow Admins of a Highway Authority orgnanistation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
 {: .govuk-body}
@@ -2766,6 +2766,15 @@ The Work API will be updated to include endpoints for correcting errors in submi
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.21 (16/04/2020):
+{: .govuk-heading-s}
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Implemented the new <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code> endpoint allowing a geographical area to be updated.</li>
+</ol>
+
 Version 1.20 (02/04/2020):
 {: .govuk-heading-s}
 
@@ -2774,7 +2783,7 @@ Updated Works API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>The following endpoint will be available on the Works API in a future release:
     <ol class="govuk-list govuk-list--bullet">
-      <li>Update a geographical area <code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> endpoint</li>
+      <li>Update a geographical area <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code> endpoint</li>
     </ol>
   </li>
   <li>The following audit event types have been added:
@@ -2783,7 +2792,7 @@ Updated Works API with the following changes:
       <li><code>upcoming_event</code> (placeholder for a future audit event)</li>
     </ol>
   </li>
-<ol>
+</ol>
 
 Version 1.19 (26/03/2020):
 {: .govuk-heading-s}
