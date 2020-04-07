@@ -5,7 +5,7 @@ title: API specification V1.21
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.19
+Version 1.21
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
