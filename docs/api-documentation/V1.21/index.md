@@ -2773,6 +2773,7 @@ Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Implemented the new <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code> endpoint allowing a geographical area to be updated.</li>
+  <li>New optional <code>permit_reference_number</code> property added to <code>POST /works/{workReferenceNumber}/fixed-penalty-notices</code> endpoint allowing a fixed penalty notice to be associated with a permit.</li>
 </ol>
 
 Version 1.20 (02/04/2020):
