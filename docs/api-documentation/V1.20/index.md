@@ -2772,6 +2772,7 @@ Version 1.20 (02/04/2020):
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
+  <li>Fixed a bug related to <code>reasonable_period_end_date</code> not updating in change requests</li>
   <li>The following endpoint will be available on the Works API in a future release:
     <ol class="govuk-list govuk-list--bullet">
       <li>Update a geographical area <code>PUT /{geographicalAreaReferenceNumber}/geographical-areas</code> endpoint</li>
