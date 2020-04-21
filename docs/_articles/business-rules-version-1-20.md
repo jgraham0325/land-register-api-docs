@@ -14,7 +14,7 @@ status: publish
 
 <span class="govuk-body-l" style="float:left">Version 1.20 (Released to sandbox 16/04/20)</span>
 
-<span style="float:right;text-align:right;">[User roles & permissions table \[PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
+<span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>
