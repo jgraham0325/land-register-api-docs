@@ -2766,6 +2766,15 @@ The Work API will be updated to include endpoints for correcting errors in submi
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.22 (30/04/2020):
+{: .govuk-heading-s}
+
+Updated Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>AdditionalSpecialDesignationsResponse updated to include the optional <code>whole_road: boolean</code> and <code>asd_coordinate_geometry: GeoJSONGeometry</code> properties.</li>
+</ol>
+
 Version 1.21 (16/04/2020):
 {: .govuk-heading-s}
 
