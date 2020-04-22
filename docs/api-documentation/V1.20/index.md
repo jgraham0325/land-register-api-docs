@@ -2784,7 +2784,7 @@ Updated Works API with the following changes:
       <li><code>upcoming_event</code> (placeholder for a future audit event)</li>
     </ol>
   </li>
-<ol>
+</ol>
 
 Version 1.19 (26/03/2020):
 {: .govuk-heading-s}
