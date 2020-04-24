@@ -2769,6 +2769,39 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.22 (30/04/2020):
 {: .govuk-heading-s}
 
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>ActivityType request model has been updated to include additional values.
+    <code>new_service_connection, works_for_road_purposes, optional_permit_no_fee</code>
+    <br>
+    This is a documentation update only.
+    The application will begin to accept these values in an upcoming release.
+  </li>
+  <li>AuditEvent response model has been updated to include additional values.
+    <code>sample_inspection_target_created, sample_inspection_target_updated, sample_inspection_created,
+      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired
+    </code>
+    <br>
+    This is a documentation update only.
+    The application will begin to return these values in an upcoming release.
+  </li>
+  <li><code>road_category: number</code> documentation on create request models has been updated from 0-4 to 0-10 in line with the values accepted by the application.</li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>AuditEvent response model has been updated to include additional values.
+    <code>sample_inspection_target_created, sample_inspection_target_updated, sample_inspection_created,
+      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired
+    </code>
+    <br>
+    This is a documentation update only.
+    The application will begin to return these values in an upcoming release.
+  </li>
+</ol>
+
 Updated Street Lookup API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
