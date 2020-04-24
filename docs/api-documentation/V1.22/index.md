@@ -2760,6 +2760,19 @@ The Work API will be updated to allow submission of notices to noticing Highway 
 The Work API will be updated to include endpoints for correcting errors in submitted data against works.
 {: .govuk-body}
 
+### Comments V2
+{: .govuk-heading-s}
+
+Future releases will include new features relating to Comments. These include:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Comment reference numbers will be introduced to give API users a way to identify specific comments more easily and will be used as the resource identifier</li>
+  <li>The ability to create comments flagged as internal. Internal comments can only be read by your own organisation</li>
+  <li>The ability to mark comments as read. This can be done by either the author or recipient, and will be displayed on the comments list page along with the date
+  and time the comment was marked as read</li>
+  <li>New filter options on comment list pages and exports, including filtering by comment date and topic</li>
+</ol>
+
 ## Versions and Changes
 {: .govuk-heading-l #versions}
 
@@ -2780,7 +2793,7 @@ Updated Works API with the following changes:
   </li>
   <li>AuditEvent response model has been updated to include additional values.
     <code>sample_inspection_target_created, sample_inspection_target_updated, sample_inspection_created,
-      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired
+      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired, internal_comment_submitted, comment_read
     </code>
     <br>
     This is a documentation update only.
@@ -2795,7 +2808,7 @@ Updated Reporting API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>AuditEvent response model has been updated to include additional values.
     <code>sample_inspection_target_created, sample_inspection_target_updated, sample_inspection_created,
-      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired
+      sample_inspection_completed, sample_inspection_removed, sample_inspection_expired, internal_comment_submitted, comment_read
     </code>
     <br>
     This is a documentation update only.
@@ -2813,6 +2826,26 @@ Updated Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Specific authentication error message when attempting to reset password with a user who has not successfully set password after account creation will now return 401 using <code>POST /forgot-password</code> endpoint, which was added in V1.19, has been removed.</li>
+</ol>
+
+The following changes will be made to the Works API in a future release:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New optional <code>is_internal</code> property will be added to <code>POST /works/{workReferenceNumber}/comments</code> endpoint allowing a comment to be marked as internal.</li>
+  <li>New endpoint <code>PUT /works/{workReferenceNumber}/comments/{commentReferenceNumber}/read</code> will be available to mark comments as read</li>
+</ol>
+
+The following changes will be made to the Reporting API in a future release:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Response from <code>GET /comments</code> endpoint updated to include the following properties:</li>
+  <ol class="govuk-list govuk-list--bullet">
+    <li><code>comment_reference_number</code></li>
+    <li><code>is_internal</code> (boolean)</li>
+    <li><code>is_read</code> (boolean)</li>
+    <li><code>read_by</code> (optional string - should be the user's email address)</li>
+    <li><code>read_on_date</code> (optional date)</li>
+  </ol>
 </ol>
 
 Version 1.21 (16/04/2020):
