@@ -2769,7 +2769,7 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.22 (30/04/2020):
 {: .govuk-heading-s}
 
-Updated Work API with the following changes:
+Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>ActivityType request model has been updated to include additional values.
@@ -2787,6 +2787,7 @@ Updated Work API with the following changes:
     The application will begin to return these values in an upcoming release.
   </li>
   <li><code>road_category: number</code> documentation on create request models has been updated from 0-4 to 0-10 in line with the values accepted by the application.</li>
+  <li>Specific authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint, which was added in V1.19, has been removed. Users will see a generic error message.</li>
 </ol>
 
 Updated Reporting API with the following changes:
@@ -2806,6 +2807,12 @@ Updated Street Lookup API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>AdditionalSpecialDesignationsResponse updated to include the optional <code>whole_road: boolean</code> and <code>asd_coordinate_geometry: GeoJSONGeometry</code> properties.</li>
+</ol>
+
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Specific authentication error message when attempting to reset password with a user who has not successfully set password after account creation will now return 401 using <code>POST /forgot-password</code> endpoint, which was added in V1.19, has been removed.</li>
 </ol>
 
 Version 1.21 (16/04/2020):
