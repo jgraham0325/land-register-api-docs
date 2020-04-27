@@ -2801,6 +2801,7 @@ Updated Works API with the following changes:
   </li>
   <li><code>road_category: number</code> documentation on create request models has been updated from 0-4 to 0-10 in line with the values accepted by the application.</li>
   <li>Specific authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint, which was added in V1.19, has been removed. Users will see a generic error message.</li>
+  <li>Fixed an issue where calendar day and working day durations would incorrectly be adding an additional day when proposed_end_time was not provided on create work requests</li>
 </ol>
 
 Updated Reporting API with the following changes:
