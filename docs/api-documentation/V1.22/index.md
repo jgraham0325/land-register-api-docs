@@ -2815,6 +2815,13 @@ Updated Reporting API with the following changes:
     This is a documentation update only.
     The application will begin to return these values in an upcoming release.
   </li>
+  <li>The <code>GET /comments</code> endpoint has been updated with the following optional properties for filtering:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>date_created_from</code></li>
+      <li><code>date_created_to</code></li>
+      <li><code>topic</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Street Lookup API with the following changes:
@@ -2827,6 +2834,18 @@ Updated Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Specific authentication error message when attempting to reset password with a user who has not successfully set password after account creation will now return 401 using <code>POST /forgot-password</code> endpoint, which was added in V1.19, has been removed.</li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>The <code>POST ​/comments​/csv</code> endpoint has been updated with the following optional properties for filtering:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>date_created_from</code></li>
+      <li><code>date_created_to</code></li>
+      <li><code>topic</code></li>
+    </ol>
+  </li>
 </ol>
 
 The following changes will be made to the Works API in a future release:
