@@ -16,10 +16,10 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Production environment**
 
-* 23/04/2020 09:12am: Production environment unavailable for 48 mins due to planned release
+* 23/04/2020 09:12 to 10:00: Production environment partially unavailable for 48 mins due to planned release
 
 **Sandbox environment**
 
-* 16/04/2020 12:58pm: Sandbox environment unavailable for 37 mins due to planned release
+* 16/04/2020 12:58 to 13:35: Sandbox environment partially unavailable for 37 mins due to planned release
 
 ****
