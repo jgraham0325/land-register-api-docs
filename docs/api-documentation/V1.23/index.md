@@ -2779,6 +2779,15 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.23 (14/05/2020):
+{: .govuk-heading-s}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>CommentReportingResponse</code> updated to include the string property <code>comment_reference_number</code>.</li>
+</ol>
+
 Version 1.22 (30/04/2020):
 {: .govuk-heading-s}
 
