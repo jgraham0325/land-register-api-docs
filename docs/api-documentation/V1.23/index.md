@@ -2782,6 +2782,18 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.23 (14/05/2020):
 {: .govuk-heading-s}
 
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>ActivityType request model has been updated to include the following additional values:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>new_service_connection</code></li>
+      <li><code>works_for_road_purposes</code></li>
+      <li><code>optional_permit_no_fee</code></li>
+    </ol>
+  </li>
+</ol>
+
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
