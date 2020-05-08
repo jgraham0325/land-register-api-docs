@@ -2800,6 +2800,12 @@ Updated Reporting API with the following changes:
   <li><code>CommentReportingResponse</code> updated to include the string property <code>comment_reference_number</code>.</li>
 </ol>
 
+Updated Street Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>AdditionalSpecialDesignationsResponse</code> updated to include new optional date properties <code>special_desig_start_date</code> and <code>special_desig_end_date</code>. This is a documentation change only, the api will be updated to return these values in a future release.</li>
+</ol>
+
 Version 1.22 (30/04/2020):
 {: .govuk-heading-s}
 
