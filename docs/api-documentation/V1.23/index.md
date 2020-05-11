@@ -2792,12 +2792,30 @@ Updated Works API with the following changes:
       <li><code>optional_permit_no_fee</code></li>
     </ol>
   </li>
+  <li>CommentTopic model has been updated to include the following additional values (please note these will not be useable until a future release):
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>FORWARD_PLAN</code></li>
+      <li><code>CHANGE_REQUEST</code></li>
+      <li><code>IMPOSED_VARIATION</code></li>
+      <li><code>DURATION_CHALLENGE</code></li>
+      <li><code>SECTION_81</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li><code>CommentReportingResponse</code> updated to include the string property <code>comment_reference_number</code>.</li>
+    <li>CommentTopic model has been updated to include the following additional values (please note these will not be useable until a future release):
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>FORWARD_PLAN</code></li>
+      <li><code>CHANGE_REQUEST</code></li>
+      <li><code>IMPOSED_VARIATION</code></li>
+      <li><code>DURATION_CHALLENGE</code></li>
+      <li><code>SECTION_81</code></li>
+    </ol>
+  </li>
 </ol>
 
 Version 1.22 (30/04/2020):
