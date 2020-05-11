@@ -2801,13 +2801,16 @@ Updated Works API with the following changes:
       <li><code>SECTION_81</code></li>
     </ol>
   </li>
+  <li>
+    The <code>InspectionResponse</code> and <code>InspectionSummaryResponse</code> response models have been updated to make the <code>inspection_category</code> property optional.
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li><code>CommentReportingResponse</code> updated to include the string property <code>comment_reference_number</code>.</li>
-    <li>CommentTopic model has been updated to include the following additional values (please note these will not be useable until a future release):
+  <li>CommentTopic model has been updated to include the following additional values (please note these will not be useable until a future release):
     <ol class="govuk-list govuk-list--bullet">
       <li><code>FORWARD_PLAN</code></li>
       <li><code>CHANGE_REQUEST</code></li>
@@ -2815,6 +2818,9 @@ Updated Reporting API with the following changes:
       <li><code>DURATION_CHALLENGE</code></li>
       <li><code>SECTION_81</code></li>
     </ol>
+  </li>
+  <li>
+    The <code>InspectionSummaryResponse</code> response model has been updated to make the <code>inspection_category</code> property optional.
   </li>
 </ol>
 
