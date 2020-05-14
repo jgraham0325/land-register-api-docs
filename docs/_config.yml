@@ -5,3 +5,4 @@ collections:
 
 include:
   - _redirects # netlify redirects file
+theme: jekyll-theme-minimal
